@@ -99,8 +99,8 @@ export function mountSeedling(host: HTMLElement, opts: SceneOptions): () => void
   key.position.set(3, 4, 4);
   scene.add(key);
 
-  const camera = new THREE.PerspectiveCamera(28, 1, 0.1, 50);
-  camera.position.set(0, 0.55, 7.4);
+  const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 50);
+  camera.position.set(0, 0.55, 9.4);
   camera.lookAt(0, 0.55, 0);
 
   const root = new THREE.Group();
@@ -189,7 +189,7 @@ export function mountSeedling(host: HTMLElement, opts: SceneOptions): () => void
     mesh.scale.setScalar(0.001);
     root.add(mesh);
     const angle = (i / letters.length) * Math.PI * 2 + 0.5;
-    return { mesh, angle, radius: 1.7 + (i % 3) * 0.2, height: 0.15 + ((i * 0.37) % 1.5), phase: i * 1.3 };
+    return { mesh, angle, radius: 1.45 + (i % 3) * 0.17, height: 0.15 + ((i * 0.37) % 1.5), phase: i * 1.3 };
   });
 
   let width = 1;

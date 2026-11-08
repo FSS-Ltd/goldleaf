@@ -82,7 +82,7 @@ export function SeedlingScene({ letters, poster, label, maxGrowth, scrollGrowth,
   return (
     <div ref={wrap} role="img" aria-label={label} className={`relative ${className}`}>
       <div className={`absolute inset-0 transition-opacity duration-700 ${ready ? "opacity-0" : "opacity-100"}`}>{poster}</div>
-      <div ref={host} className={`absolute inset-[-6%] transition-opacity duration-700 ${ready ? "opacity-100" : "opacity-0"}`} />
+      <div ref={host} className={`absolute inset-[-10%] transition-opacity duration-700 ${ready ? "opacity-100" : "opacity-0"}`} />
     </div>
   );
 }

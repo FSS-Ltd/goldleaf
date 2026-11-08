@@ -12,7 +12,7 @@ const nav = [
 
 export function Header() {
   return (
-    <header className="relative border-b border-line bg-paper md:sticky md:top-0 md:z-40">
+    <header className="site-header relative border-b border-line bg-paper md:sticky md:top-0 md:z-40">
       <div className="wrap flex items-center justify-between gap-4 py-3">
         <Link href="/" aria-label="Goldleaf Learning, home" className="block transition-transform duration-200 hover:-rotate-1 hover:scale-[1.03]">
           <Image

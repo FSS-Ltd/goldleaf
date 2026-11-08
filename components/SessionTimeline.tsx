@@ -17,10 +17,14 @@ export function SessionTimeline() {
               <span aria-hidden="true" className="hidden md:block" />
               <div>
                 <p className="text-ink-soft">{b.what}</p>
-                <dl className="mt-3 grid gap-2 sm:grid-cols-2">
-                  <div className="rounded-card bg-paper-deep p-3"><dt className="text-sm font-semibold">Age 2</dt><dd>{b.age2}</dd></div>
-                  <div className="rounded-card bg-paper-deep p-3"><dt className="text-sm font-semibold">Ages 3 to 4</dt><dd>{b.age34}</dd></div>
-                </dl>
+                {b.age2 === b.age34 ? (
+                  <p className="mt-3 rounded-card bg-paper-deep p-3 text-sm font-semibold">The same for every age</p>
+                ) : (
+                  <dl className="mt-3 grid gap-2 sm:grid-cols-2">
+                    <div className="rounded-card bg-paper-deep p-3"><dt className="text-sm font-semibold">Age 2</dt><dd>{b.age2}</dd></div>
+                    <div className="rounded-card bg-paper-deep p-3"><dt className="text-sm font-semibold">Ages 3 to 4</dt><dd>{b.age34}</dd></div>
+                  </dl>
+                )}
               </div>
             </div>
           </details>
@@ -49,8 +53,14 @@ export function SessionTable() {
             <tr key={b.name} className="border-b border-line align-top last:border-0">
               <td className="p-3 whitespace-nowrap text-ink-soft">{b.time}</td>
               <th scope="row" className="p-3 font-semibold">{b.name}<span className="block font-normal text-ink-soft">{b.what}</span></th>
-              <td className="p-3">{b.age2}</td>
-              <td className="p-3">{b.age34}</td>
+              {b.age2 === b.age34 ? (
+                <td colSpan={2} className="p-3 text-ink-soft">The same for every age</td>
+              ) : (
+                <>
+                  <td className="p-3">{b.age2}</td>
+                  <td className="p-3">{b.age34}</td>
+                </>
+              )}
             </tr>
           ))}
         </tbody>

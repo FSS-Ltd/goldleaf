@@ -5,7 +5,7 @@
   --color-paper-deep: #f6eee2;
   --color-ink: #06451d;
   --color-ink-hover: #0b5a2a;
-  --color-ink-soft: #3d6650;
+  --color-ink-soft: #35594a;
   --color-gold: #c9971c;
   --color-gold-ink: #7a5a0c;
   --color-gold-light: #ecd081;
@@ -170,3 +170,14 @@ details > summary::-webkit-details-marker { display: none; }
 }
 @keyframes tile-pop { from { opacity: 0; transform: scale(0.6) translateY(12px); } }
 .chip { display: inline-block; padding: 0.1rem 0.6rem; margin: 0.15rem 0.2rem 0.15rem 0; border-radius: 999px; background: var(--color-paper-deep); border: 1.5px solid var(--color-line); font-family: var(--font-display); font-weight: 500; font-size: 1.05em; }
+
+/* Sound moment rows drift sideways as the section scrolls past */
+.sound-row { padding-inline: 4vw; word-spacing: 0.18em; }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .sound-row { animation: drift-l linear both; animation-timeline: view(); animation-range: entry 0% exit 100%; }
+    .sound-row.r { animation-name: drift-r; }
+  }
+}
+@keyframes drift-l { from { transform: translateX(8vw); } to { transform: translateX(-22vw); } }
+@keyframes drift-r { from { transform: translateX(-26vw); } to { transform: translateX(4vw); } }

@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description:
     "Ask about a place with Goldleaf Tutoring in Ashford, Kent. A short form, a reply within 2 working days, then a chat.",
   alternates: { canonical: "/enquire" },
+  openGraph: { title: "Enquire about tutoring", url: "/enquire", images: ["/opengraph-image.png"] },
 };
 
 const steps = [

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description:
     "Goldleaf is a Christian-run early learning business in Ashford, Kent. Meet your tutor and see how one reading path runs through everything we do.",
   alternates: { canonical: "/about" },
+  openGraph: { title: "About Goldleaf", url: "/about", images: ["/opengraph-image.png"] },
 };
 
 export default function About() {

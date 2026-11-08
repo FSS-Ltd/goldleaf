@@ -23,3 +23,25 @@ test("pricing table shows the client's numbers", async ({ page }) => {
   await expect(table).toContainText("£185");
   await expect(table).toContainText("£802");
 });
+
+test("unknown route shows the custom 404", async ({ page }) => {
+  const res = await page.goto("/this-page-does-not-exist");
+  expect(res?.status()).toBe(404);
+  await expect(page.getByRole("heading", { level: 1, name: "This page has not sprouted yet" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Back to the home page" })).toBeVisible();
+});
+
+test("home hero draws a 3D canvas without console errors", async ({ page }) => {
+  const errors: string[] = [];
+  page.on("console", (m) => m.type() === "error" && !m.text().includes("_vercel") && errors.push(m.text()));
+  await page.goto("/");
+  await expect(page.locator("canvas")).toHaveCount(1, { timeout: 15_000 });
+  expect(errors).toEqual([]);
+});
+
+test("mobile menu opens and lists the pages", async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.goto("/");
+  await page.getByRole("button", { name: "Open menu" }).click();
+  await expect(page.locator("#mobile-menu").getByRole("link", { name: "How we teach" })).toBeVisible();
+});

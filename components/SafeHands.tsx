@@ -1,4 +1,3 @@
-import { Check } from "lucide-react";
 import { site } from "@/content/site";
 
 export function SafeHands() {
@@ -12,13 +11,13 @@ export function SafeHands() {
   if (site.trust.insured) items.push("Public liability and professional indemnity insurance in place.");
   if (site.trust.safeguardingPolicy) items.push("A written safeguarding policy, available on request.");
   return (
-    <ul className="grid gap-4 md:grid-cols-2">
-      {items.map((t) => (
-        <li key={t} className="flex gap-3 rounded-card border border-line bg-paper p-5">
-          <Check aria-hidden="true" className="mt-1 size-5 flex-none text-clay" />
-          <span>{t}</span>
+    <ol className="grid gap-x-14 md:grid-cols-2">
+      {items.map((t, i) => (
+        <li key={t} className="grid grid-cols-[3.5rem_1fr] items-baseline gap-4 border-t-2 border-gold/60 py-6">
+          <span aria-hidden="true" className="font-display text-4xl font-semibold text-clay md:text-5xl">{String(i + 1).padStart(2, "0")}</span>
+          <span className="text-[1.05em]">{t}</span>
         </li>
       ))}
-    </ul>
+    </ol>
   );
 }

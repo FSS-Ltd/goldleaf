@@ -12,6 +12,8 @@ import { JsonLd } from "@/components/JsonLd";
 import { PricingTable } from "@/components/PricingTable";
 import { SafeHands } from "@/components/SafeHands";
 import { SessionTimeline } from "@/components/SessionTimeline";
+import { SeedlingScene } from "@/components/seedling/SeedlingScene";
+import { SoundMoment } from "@/components/SoundMoment";
 import { StagePath } from "@/components/StagePath";
 import { site, foundingOpen } from "@/content/site";
 import { faqSchema, organisationSchema } from "@/lib/schema-org";
@@ -21,7 +23,10 @@ export const metadata: Metadata = {
   description:
     "One-to-one, play-based phonics, maths and music tutoring for 2 to 4 year olds in Ashford, Kent. In your home or at a local church. Founding places open.",
   alternates: { canonical: "/" },
+  openGraph: { title: "Phonics & Early Years Tutor in Ashford, Kent | Goldleaf", url: "/", images: ["/opengraph-image.png"] },
 };
+
+const heroLetters = ["s", "a", "t", "p", "i", "n", "m", "d"];
 
 const facts = [
   { icon: Sprout, title: "Ages 2 to 4", text: "For children not yet in school." },
@@ -38,7 +43,7 @@ export default function Home() {
       {/* Hero */}
       <section className="section pb-12 md:pb-20">
         <div className="wrap grid items-center gap-10 md:grid-cols-[1.2fr_0.8fr] md:gap-14">
-          <div className="order-2 md:order-1">
+          <div className="order-1">
             <Eyebrow left>Tutoring in Ashford, Kent</Eyebrow>
             <h1 className="mt-4">A gentle head start in reading for 2 to 4 year olds in Ashford</h1>
             <p className="prose-x mt-6 text-ink-soft">
@@ -50,18 +55,23 @@ export default function Home() {
               <ButtonLink href="/how-we-teach" variant="ghost">See how we teach</ButtonLink>
             </div>
           </div>
-          <div className="order-1 w-24 sm:w-40 md:order-2 md:mx-auto md:w-full md:max-w-none">
-            <div>
-              <Image
-                src="/brand/goldleaf-hero-mark.webp"
-                alt="The Goldleaf logo: a green letter G holding a pot with a golden seedling growing from it"
-                width={660}
-                height={528}
-                priority
-                sizes="(min-width: 768px) 40vw, 22rem"
-                className="h-auto w-full"
-              />
-            </div>
+          <div className="order-2 mx-auto w-full max-w-sm md:order-2 md:max-w-none">
+            <SeedlingScene
+              letters={heroLetters}
+              label="A golden seedling growing in a terracotta pot, surrounded by floating letter tiles for the first sounds s, a, t, p, i, n, m and d"
+              scrollGrowth
+              className="aspect-square w-full"
+              poster={
+                <Image
+                  src="/brand/goldleaf-hero-mark.webp"
+                  alt=""
+                  width={660}
+                  height={528}
+                  sizes="(min-width: 768px) 40vw, 24rem"
+                  className="absolute inset-[8%] h-[84%] w-[84%] object-contain"
+                />
+              }
+            />
           </div>
         </div>
       </section>
@@ -119,6 +129,8 @@ export default function Home() {
           </ul>
         </div>
       </section>
+
+      <SoundMoment />
 
       {/* Pricing */}
       <section id="pricing" className="section section-deep" aria-labelledby="pricing-title">

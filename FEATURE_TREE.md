@@ -14,6 +14,11 @@ Canonical inventory for this repo. Status values: implemented, partial, planned.
 | SESSION-TIMELINE | Session blocks (list and table) | implemented | `components/SessionTimeline.tsx` | `content/session.ts` | CONTENT | LANDING, HOW-WE-TEACH | none |
 | HOW-WE-TEACH | Progression table (cards on phones), age map, session table (list on phones), sound tiles and chips | implemented | `/how-we-teach` | `app/how-we-teach/page.tsx` | STAGE-PATH, SESSION-TIMELINE, CONTENT | none | e2e |
 | ABOUT | Tutor, why Goldleaf, safe hands | implemented (bio is a placeholder) | `/about` | `app/about/page.tsx` | SAFE-HANDS, CONTENT | none | e2e |
+| SEEDLING-3D | Three.js hero scene: gold seedling in a pot, floating letter tiles, pointer tilt, scroll growth. Loads after idle, falls back to the static logo when WebGL is missing or the context is lost, renders one still frame under reduced motion | implemented | `components/seedling/SeedlingScene.tsx` | `components/seedling/scene.ts` (three, RoomEnvironment, RoundedBoxGeometry) | CONTENT (font var) | LANDING, NOT-FOUND | `tests/e2e/site.spec.ts` (canvas appears, no console errors); frame rate not measured on a real phone |
+| SOUND-MOMENT | Full-bleed drifting sounds section | implemented | `components/SoundMoment.tsx` | CSS `.sound-row` | none | LANDING | none |
+| MOBILE-NAV | Compact menu below md | implemented | `components/MobileNav.tsx` | `components/Header.tsx` | none | SITE-LAYOUT | `tests/e2e/site.spec.ts` |
+| NOT-FOUND | Custom 404 with 3D sprout and static fallback | implemented | `app/not-found.tsx` | `components/LostTiles.tsx`, SEEDLING-3D | none | none | `tests/e2e/site.spec.ts` |
+| ERROR-SCREENS | Route error page and global error page | implemented | `app/error.tsx`, `app/global-error.tsx` | none | none | none | none (not exercised) |
 | ROUTE-TRANSITIONS | Content fades and lifts between routes (React ViewTransition around page content) | implemented | `app/layout.tsx` | CSS `::view-transition-*` in `app/globals.css` | none | all pages | visual check only |
 | SOUND-TILES | Decorative letter tiles and sound chips | implemented | `components/SoundTiles.tsx` | `content/progression.ts` | none | HOW-WE-TEACH | none |
 | SAFE-HANDS | Safeguarding practices, trust flags gate extra lines | implemented | `components/SafeHands.tsx` | `content/site.ts` (`trust`) | CONTENT | LANDING, ABOUT | none |
@@ -28,5 +33,6 @@ Canonical inventory for this repo. Status values: implemented, partial, planned.
 ## Known gaps
 - Real email sending is untested until Resend keys exist.
 - Tutor bio and photo are placeholders. Contact email is a placeholder (`hello@example.com`).
-- STAGE-PATH, SESSION-TIMELINE, FAQ and SAFE-HANDS have no automated tests.
+- STAGE-PATH, SESSION-TIMELINE, FAQ, SAFE-HANDS and the error screens have no automated tests.
+- The 3D scene has not been measured on a real phone. Check frame rate before launch.
 - Graphify map is structural only (AST of 40 code files: 69 nodes, 35 edges, 38 communities). Cross-file imports are thinly captured, and docs and images were not semantically extracted. Treat the tables above as the source for feature connections.

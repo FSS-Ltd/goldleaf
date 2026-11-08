@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Privacy notice",
   description: "How Goldleaf Learning uses the details you send in an enquiry.",
   alternates: { canonical: "/privacy" },
+  openGraph: { title: "Privacy notice", url: "/privacy", images: ["/opengraph-image.png"] },
 };
 
 export default function Privacy() {

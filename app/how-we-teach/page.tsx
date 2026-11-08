@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   description:
     "Phonics for 2 to 4 year olds, stage by stage: the sounds, tricky words and reading goals we follow, and how a play-based session runs.",
   alternates: { canonical: "/how-we-teach" },
+  openGraph: { title: "How we teach preschool phonics", url: "/how-we-teach", images: ["/opengraph-image.png"] },
 };
 
 export default function HowWeTeach() {

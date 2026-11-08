@@ -25,9 +25,10 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
+      # Build first: it generates the route types (LayoutProps, PageProps) that typecheck needs.
+      - run: pnpm build
       - run: pnpm typecheck
       - run: pnpm test:unit
-      - run: pnpm build
       - run: pnpm exec playwright test
         env:
           # The e2e dry run needs no key. Leave Resend unset so no real email is sent from CI.

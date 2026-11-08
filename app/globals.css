@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #fef8f3;
+  --color-paper-deep: #f6eee2;
+  --color-ink: #06451d;
+  --color-ink-hover: #0b5a2a;
+  --color-ink-soft: #3d6650;
+  --color-gold: #c9971c;
+  --color-gold-ink: #7a5a0c;
+  --color-gold-light: #ecd081;
+  --color-clay: #b95f25;
+  --color-clay-deep: #8f4617;
+  --color-line: #e3d7c3;
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-lexend), system-ui, sans-serif;
+  --radius-card: 14px;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+@media (min-width: 768px) {
+  body { font-size: 1.125rem; }
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; }
+h2 { font-size: clamp(1.9rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.3rem, 2.4vw, 1.65rem); line-height: 1.2; }
+p, li { text-wrap: pretty; }
+
+:focus-visible {
+  outline: 3px solid var(--color-clay);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.wrap { width: min(100% - 2rem, 70rem); margin-inline: auto; }
+.prose-x { max-width: 65ch; }
+/* Narrower column, still left-aligned with the main container edge. */
+.wrap-3xl, .wrap-4xl { margin-right: auto; margin-left: max(1rem, calc((100% - 70rem) / 2)); }
+.wrap-3xl { width: min(100% - 2rem, 48rem); }
+.wrap-4xl { width: min(100% - 2rem, 56rem); }
+
+.section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+.section-deep { background: var(--color-paper-deep); }
+
+/* Buttons: a colour sweeps in from the left on hover */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: 3rem; padding: 0.75rem 1.5rem; border-radius: 999px;
+  font-weight: 600; font-size: 1rem; line-height: 1.2; text-align: center;
+  border: 2px solid var(--color-ink);
+  background-repeat: no-repeat; background-position: left center; background-size: 0% 100%;
+  transition: background-size 280ms cubic-bezier(0.22, 1, 0.36, 1), color 200ms ease, border-color 200ms ease, transform 150ms ease;
+}
+.btn:hover { background-size: 100% 100%; }
+.btn:active { transform: scale(0.98); }
+.btn-primary { background-color: var(--color-ink); color: var(--color-paper); background-image: linear-gradient(var(--color-clay-deep), var(--color-clay-deep)); }
+.btn-primary:hover { border-color: var(--color-clay-deep); }
+.btn-ghost { background-color: transparent; color: var(--color-ink); background-image: linear-gradient(var(--color-ink), var(--color-ink)); }
+.btn-ghost:hover { color: var(--color-paper); }
+.btn-light { background-color: var(--color-paper); color: var(--color-ink); border-color: var(--color-paper); background-image: linear-gradient(var(--color-gold-light), var(--color-gold-light)); }
+.btn[disabled] { opacity: 0.6; cursor: not-allowed; }
+.btn[disabled]:hover { background-size: 0% 100%; }
+
+/* Text links: gold underline that thickens and shifts to clay on hover */
+.link-u {
+  display: inline-block; padding-block: 0.35rem;
+  text-decoration: underline; text-decoration-color: var(--color-gold); text-decoration-thickness: 2px; text-underline-offset: 6px;
+  transition: text-decoration-color 150ms ease, text-underline-offset 200ms ease, color 150ms ease;
+}
+.link-u:hover { text-decoration-color: var(--color-clay); text-underline-offset: 9px; color: var(--color-clay-deep); }
+
+.link-nav { text-decoration: underline; text-decoration-color: transparent; text-decoration-thickness: 2px; text-underline-offset: 10px; transition: text-decoration-color 150ms ease, text-underline-offset 200ms ease; }
+.link-nav:hover { text-decoration-color: var(--color-gold); text-underline-offset: 6px; }
+
+/* Focus ring that stays visible on the dark green bands */
+.on-ink :focus-visible { outline-color: var(--color-gold-light); }
+
+/* Eyebrow: echoes the LEARNING lockup in the logo */
+.eyebrow {
+  display: flex; align-items: center; gap: 0.9rem;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--color-gold-ink);
+}
+.eyebrow::before, .eyebrow::after {
+  content: ""; height: 2px; width: 2.25rem; background: var(--color-gold); flex: none;
+}
+.eyebrow.left::before { display: none; }
+.eyebrow.on-dark { color: var(--color-gold-light); }
+@media (max-width: 480px) { .eyebrow { letter-spacing: 0.2em; } .eyebrow.left::after { display: none; } .eyebrow::before, .eyebrow::after { width: 1.5rem; } }
+
+/* Form controls */
+.field > label, .field > legend { display: block; font-weight: 600; margin-bottom: 0.4rem; padding: 0; }
+.input {
+  width: 100%; min-height: 3rem; padding: 0.7rem 0.9rem; font: inherit; color: var(--color-ink);
+  background: #fff; border: 2px solid var(--color-ink-soft); border-radius: 10px;
+}
+.input[aria-invalid="true"] { border-color: #a1231b; }
+.err { color: #a1231b; font-size: 0.95rem; margin-top: 0.35rem; font-weight: 500; }
+
+/* Stage path: the vine draws itself on scroll where supported */
+.vine path { stroke-dasharray: 1; stroke-dashoffset: 0; }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .vine path {
+      stroke-dashoffset: 1;
+      animation: vine-draw linear both;
+      animation-timeline: view();
+      animation-range: cover 10% cover 75%;
+    }
+    .stage-glyph {
+      animation: glyph-grow linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 100%;
+    }
+  }
+}
+@keyframes vine-draw { to { stroke-dashoffset: 0; } }
+@keyframes glyph-grow { from { opacity: 0.25; transform: scale(0.7); } to { opacity: 1; transform: scale(1); } }
+
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }

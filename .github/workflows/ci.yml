@@ -1,0 +1,72 @@
+name: CI and deploy
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+  NEXT_PUBLIC_CONTACT_EMAIL: ${{ secrets.NEXT_PUBLIC_CONTACT_EMAIL }}
+  ENQUIRY_TO_EMAIL: ${{ secrets.ENQUIRY_TO_EMAIL }}
+  ENQUIRY_FROM_EMAIL: ${{ secrets.ENQUIRY_FROM_EMAIL }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test:unit
+      - run: pnpm build
+      - run: pnpm exec playwright test
+        env:
+          # The e2e dry run needs no key. Leave Resend unset so no real email is sent from CI.
+          RESEND_API_KEY: ""
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Fail early if the Vercel token is missing
+        run: test -n "$VERCEL_TOKEN" || { echo "VERCEL_TOKEN secret is not set"; exit 1; }
+      - name: Pull Vercel settings
+        run: pnpm dlx vercel@latest pull --yes --environment=${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }} --token="$VERCEL_TOKEN"
+      - name: Build
+        run: pnpm dlx vercel@latest build ${{ github.ref == 'refs/heads/main' && '--prod' || '' }} --token="$VERCEL_TOKEN"
+      - name: Deploy
+        id: deploy
+        run: |
+          url=$(pnpm dlx vercel@latest deploy --prebuilt ${{ github.ref == 'refs/heads/main' && '--prod' || '' }} --token="$VERCEL_TOKEN")
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          echo "Deployed to $url" >> "$GITHUB_STEP_SUMMARY"
+      - name: Comment the preview URL on the pull request
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr comment ${{ github.event.pull_request.number }} --body "Preview deployed: ${{ steps.deploy.outputs.url }}"

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { CtaBand } from "@/components/CtaBand";
 import { Eyebrow } from "@/components/Eyebrow";
 import { JsonLd } from "@/components/JsonLd";
+import { SoundChips, SoundTiles } from "@/components/SoundTiles";
 import { SessionTable, SessionTimeline } from "@/components/SessionTimeline";
 import { StagePath } from "@/components/StagePath";
 import { ageMap, stages } from "@/content/progression";
@@ -20,7 +21,8 @@ export default function HowWeTeach() {
       <JsonLd data={breadcrumbSchema([{ name: "How we teach", path: "/how-we-teach" }])} />
 
       <section className="section">
-        <div className="wrap-4xl">
+        <div className="wrap grid items-center gap-10 md:grid-cols-[1.1fr_0.9fr]">
+          <div>
           <Eyebrow left>How we teach</Eyebrow>
           <h1 className="mt-4">Phonics for 2 to 4 year olds, one clear stage at a time</h1>
           <p className="prose-x mt-6 text-ink-soft">
@@ -28,6 +30,8 @@ export default function HowWeTeach() {
             blending, then reading. We use the common UK order, so what your child learns matches the phases Reception
             teaches. Every reader and activity uses only the sounds and tricky words from its own stage and earlier ones.
           </p>
+          </div>
+          <SoundTiles />
         </div>
       </section>
 
@@ -46,7 +50,7 @@ export default function HowWeTeach() {
               <article key={s.id} className="rounded-card border border-line bg-paper p-5">
                 <h3>{s.name}</h3>
                 <dl className="mt-3 grid gap-3">
-                  <div><dt className="text-sm font-semibold text-gold-ink">New sounds</dt><dd>{s.sounds}</dd></div>
+                  <div><dt className="text-sm font-semibold text-gold-ink">New sounds</dt><dd>{[1, 2, 4].includes(s.id) ? <SoundChips text={s.sounds} /> : s.sounds}</dd></div>
                   <div><dt className="text-sm font-semibold text-gold-ink">Tricky words</dt><dd>{s.tricky}</dd></div>
                   <div><dt className="text-sm font-semibold text-gold-ink">Reading goal</dt><dd>{s.goal} <span className="text-ink-soft">({s.examples})</span></dd></div>
                 </dl>
@@ -68,7 +72,7 @@ export default function HowWeTeach() {
                 {stages.map((s) => (
                   <tr key={s.id} className="border-b border-line align-top last:border-0">
                     <th scope="row" className="p-3 font-semibold whitespace-nowrap">{s.name}</th>
-                    <td className="p-3">{s.sounds}</td>
+                    <td className="p-3">{[1, 2, 4].includes(s.id) ? <SoundChips text={s.sounds} /> : s.sounds}</td>
                     <td className="p-3">{s.tricky}</td>
                     <td className="p-3">{s.goal} <span className="text-ink-soft">({s.examples})</span></td>
                   </tr>

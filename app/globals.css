@@ -92,12 +92,12 @@ p, li { text-wrap: pretty; }
 .link-u {
   display: inline-block; padding-block: 0.35rem;
   text-decoration: underline; text-decoration-color: var(--color-gold); text-decoration-thickness: 2px; text-underline-offset: 6px;
-  transition: text-decoration-color 150ms ease, text-underline-offset 200ms ease, color 150ms ease;
+  transition: text-decoration-color 150ms ease, text-underline-offset 200ms ease, color 150ms ease, transform 200ms ease;
 }
-.link-u:hover { text-decoration-color: var(--color-clay); text-underline-offset: 9px; color: var(--color-clay-deep); }
+.link-u:hover { text-decoration-color: var(--color-clay); text-underline-offset: 9px; color: var(--color-clay-deep); transform: translateY(-2px); }
 
-.link-nav { text-decoration: underline; text-decoration-color: transparent; text-decoration-thickness: 2px; text-underline-offset: 10px; transition: text-decoration-color 150ms ease, text-underline-offset 200ms ease; }
-.link-nav:hover { text-decoration-color: var(--color-gold); text-underline-offset: 6px; }
+.link-nav { display: inline-block; text-decoration: underline; text-decoration-color: transparent; text-decoration-thickness: 2px; text-underline-offset: 10px; transition: text-decoration-color 150ms ease, text-underline-offset 200ms ease, transform 200ms ease; }
+.link-nav:hover { text-decoration-color: var(--color-gold); text-underline-offset: 6px; transform: translateY(-2px); }
 
 /* Focus ring that stays visible on the dark green bands */
 .on-ink :focus-visible { outline-color: var(--color-gold-light); }
@@ -146,3 +146,27 @@ p, li { text-wrap: pretty; }
 
 details > summary { list-style: none; cursor: pointer; }
 details > summary::-webkit-details-marker { display: none; }
+
+/* Route transitions: content fades and lifts, the header stays put */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(*) { animation: vt-out 180ms ease both; }
+  ::view-transition-new(*) { animation: vt-in 360ms cubic-bezier(0.22, 1, 0.36, 1) 120ms both; }
+}
+@keyframes vt-out { to { opacity: 0; transform: translateY(-6px); } }
+@keyframes vt-in { from { opacity: 0; transform: translateY(14px); } }
+
+/* Sound tiles */
+.tile {
+  display: grid; place-items: center; aspect-ratio: 1; border-radius: var(--radius-card);
+  background: var(--color-paper-deep); border: 2px solid var(--color-line);
+  font-family: var(--font-display); font-weight: 600; color: var(--color-ink);
+}
+.tile.accent { background: var(--color-ink); color: var(--color-paper); border-color: var(--color-ink); }
+.tile.gold { background: var(--color-gold-light); border-color: var(--color-gold); }
+@media (prefers-reduced-motion: no-preference) {
+  .tile-pop { animation: tile-pop 600ms cubic-bezier(0.34, 1.56, 0.64, 1) both; animation-delay: calc(var(--i, 0) * 70ms + 150ms); }
+  .tile-pop:hover { transform: translateY(-6px) rotate(-3deg); }
+  .tile-pop { transition: transform 200ms ease; }
+}
+@keyframes tile-pop { from { opacity: 0; transform: scale(0.6) translateY(12px); } }
+.chip { display: inline-block; padding: 0.1rem 0.6rem; margin: 0.15rem 0.2rem 0.15rem 0; border-radius: 999px; background: var(--color-paper-deep); border: 1.5px solid var(--color-line); font-family: var(--font-display); font-weight: 500; font-size: 1.05em; }

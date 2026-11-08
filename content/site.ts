@@ -10,8 +10,8 @@ export const site = {
     bio: "Deborah teaches one child at a time, building every session around play, songs and stories, and following one clear reading path from first sounds to first books.",
   },
   area: { town: "Ashford", county: "Kent", region: "GB" },
-  // Set NEXT_PUBLIC_CONTACT_EMAIL to show an email address. While empty, the site shows no email and relies on the enquiry form.
-  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
+  // Enquiries go here, and the address is shown as the fallback contact. Override with NEXT_PUBLIC_CONTACT_EMAIL.
+  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "admin@goldleaf.education",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   standardRate: 30,
   sessionMinutes: 105,

@@ -2,7 +2,7 @@
 
 Environment (Vercel project settings)
 - [ ] `NEXT_PUBLIC_SITE_URL` set to the live domain. If missing, the sitemap and canonical URLs point at localhost.
-- [ ] `NEXT_PUBLIC_CONTACT_EMAIL` (a public email address only shows on the site once this is set), `ENQUIRY_TO_EMAIL`, `ENQUIRY_FROM_EMAIL`, `RESEND_API_KEY` set. Verify the sending domain in Resend, then send one real test enquiry.
+- [ ] Enquiries go to admin@goldleaf.education (default in `content/site.ts`, also shown on the site as the fallback contact). Set `ENQUIRY_FROM_EMAIL` to an address on a domain verified in Resend (goldleaf.education), set `RESEND_API_KEY`, then send one real test enquiry.
 
 Content
 - [ ] Confirm the town. Ashford, Kent is assumed (`content/site.ts`, `area`).

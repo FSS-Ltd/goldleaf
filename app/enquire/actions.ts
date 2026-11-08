@@ -1,6 +1,7 @@
 "use server";
 
 import { Resend } from "resend";
+import { site } from "@/content/site";
 import { enquirySchema, fieldErrors, formDataToObject, type FieldErrors } from "@/lib/enquiry-schema";
 
 export type EnquiryState =
@@ -46,7 +47,7 @@ export async function sendEnquiry(_prev: EnquiryState, formData: FormData): Prom
     const resend = new Resend(key);
     const { error } = await resend.emails.send({
       from: process.env.ENQUIRY_FROM_EMAIL ?? "Goldleaf Enquiries <onboarding@resend.dev>",
-      to: process.env.ENQUIRY_TO_EMAIL ?? "",
+      to: process.env.ENQUIRY_TO_EMAIL ?? site.contactEmail,
       replyTo: d.email,
       subject: `Goldleaf enquiry: age ${d.childAge}, ${d.days} days a week`,
       text,

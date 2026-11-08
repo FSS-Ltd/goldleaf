@@ -12,8 +12,10 @@ Canonical inventory for this repo. Status values: implemented, partial, planned.
 | PRICING-TABLE | Days-by-days table, founding column hidden when full | implemented | `components/PricingTable.tsx` | PRICING | PRICING, CONTENT | LANDING | e2e |
 | STAGE-PATH | Signature scroll-drawn vine through Stages 0 to 4 | implemented | `components/StagePath.tsx` | CSS `.vine` in `globals.css` | `content/progression.ts` | LANDING, HOW-WE-TEACH | visual check only |
 | SESSION-TIMELINE | Session blocks (list and table) | implemented | `components/SessionTimeline.tsx` | `content/session.ts` | CONTENT | LANDING, HOW-WE-TEACH | none |
-| HOW-WE-TEACH | Progression table, age map, session table | implemented | `/how-we-teach` | `app/how-we-teach/page.tsx` | STAGE-PATH, SESSION-TIMELINE, CONTENT | none | e2e |
+| HOW-WE-TEACH | Progression table (cards on phones), age map, session table (list on phones), sound tiles and chips | implemented | `/how-we-teach` | `app/how-we-teach/page.tsx` | STAGE-PATH, SESSION-TIMELINE, CONTENT | none | e2e |
 | ABOUT | Tutor, why Goldleaf, safe hands | implemented (bio is a placeholder) | `/about` | `app/about/page.tsx` | SAFE-HANDS, CONTENT | none | e2e |
+| ROUTE-TRANSITIONS | Content fades and lifts between routes (React ViewTransition around page content) | implemented | `app/layout.tsx` | CSS `::view-transition-*` in `app/globals.css` | none | all pages | visual check only |
+| SOUND-TILES | Decorative letter tiles and sound chips | implemented | `components/SoundTiles.tsx` | `content/progression.ts` | none | HOW-WE-TEACH | none |
 | SAFE-HANDS | Safeguarding practices, trust flags gate extra lines | implemented | `components/SafeHands.tsx` | `content/site.ts` (`trust`) | CONTENT | LANDING, ABOUT | none |
 | FAQ | Questions, also feeds FAQPage JSON-LD | implemented | `components/Faq.tsx` | `content/faq.ts` | CONTENT | LANDING, SEO | none |
 | COMING-SOON | Readers and Curriculum note | implemented | `components/ComingSoon.tsx` | n/a | none | LANDING | none |

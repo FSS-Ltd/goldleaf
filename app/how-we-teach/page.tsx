@@ -5,7 +5,9 @@ import { JsonLd } from "@/components/JsonLd";
 import { SoundChips, SoundTiles } from "@/components/SoundTiles";
 import { SessionTable, SessionTimeline } from "@/components/SessionTimeline";
 import { StagePath } from "@/components/StagePath";
+import { SubjectGrid } from "@/components/SubjectGrid";
 import { ageMap, stages } from "@/content/progression";
+import { progressSteps, unitA } from "@/content/units";
 import { breadcrumbSchema } from "@/lib/schema-org";
 
 export const metadata: Metadata = {
@@ -33,6 +35,53 @@ export default function HowWeTeach() {
           </p>
           </div>
           <SoundTiles />
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="subjects-title">
+        <div className="wrap">
+          <h2 id="subjects-title">The subjects, and what each age works towards</h2>
+          <p className="prose-x mt-4 text-ink-soft">
+            Phonics is the thread through every session, not the whole of it. Goals are things to work towards at your
+            child&rsquo;s pace, not a checklist to pass.
+          </p>
+          <div className="mt-8"><SubjectGrid detail /></div>
+        </div>
+      </section>
+
+      <section className="section section-deep" aria-labelledby="unit-title">
+        <div className="wrap">
+          <h2 id="unit-title">Your first six weeks: {unitA.name}</h2>
+          <p className="prose-x mt-4 text-ink-soft">{unitA.intro} Each week has one picture book and one rhyme that run through every subject.</p>
+          <ol className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {unitA.weeks.map((w) => (
+              <li key={w.id} className="rounded-card border border-line bg-paper p-5">
+                <p className="text-sm font-semibold text-gold-ink">Week {w.id.slice(1)}</p>
+                <h3 className="mt-1">{w.title}</h3>
+                <dl className="mt-3 grid gap-2 text-sm">
+                  <div><dt className="font-semibold">Book</dt><dd className="text-ink-soft">{w.book}</dd></div>
+                  <div><dt className="font-semibold">Rhyme</dt><dd className="text-ink-soft">{w.rhyme}</dd></div>
+                  <div><dt className="font-semibold">Working towards</dt><dd className="text-ink-soft">{w.goal}</dd></div>
+                </dl>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-6 text-ink-soft">Next unit: {unitA.next}. We will ask for a few family and home photos.</p>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="progress-title">
+        <div className="wrap">
+          <h2 id="progress-title">How we track progress</h2>
+          <ol className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {progressSteps.map((s, i) => (
+              <li key={s.t} className="rounded-card border border-line bg-paper p-5">
+                <span aria-hidden="true" className="font-display text-3xl text-clay">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="mt-2">{s.t}</h3>
+                <p className="mt-1 text-ink-soft">{s.d}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -107,8 +156,8 @@ export default function HowWeTeach() {
           <h2 id="session-title">A session, block by block</h2>
           <p className="prose-x mt-4 text-ink-soft">
             Sessions last up to 1 hour 45 minutes, including arrival and handover. Two year olds do shorter, simpler
-            versions of each block. The tutor watches and notes progress during the making block, then gives you a
-            one-minute update at the end.
+            versions of each block. The tutor watches and notes progress throughout, then gives you a short
+            handover note at the end.
           </p>
           <div className="mt-8 hidden md:block"><SessionTable /></div>
           <div className="mt-8 md:hidden"><SessionTimeline /></div>

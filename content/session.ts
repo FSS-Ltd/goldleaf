@@ -1,4 +1,4 @@
-// Session routine, 1 hour 45 minutes. Blocks and timings from the Teacher's Manual standard routine (page 2).
+// Session routine, 2 hours, including review. Blocks and timings from the Teacher's Manual standard routine (page 2).
 // Age 3 to 4 column carried over from the earlier session plan; "Same" where the plan said so.
 export type Block = { time: string; name: string; what: string; age2: string; age34: string };
 
@@ -13,5 +13,6 @@ export const sessionBlocks: Block[] = [
   { time: "1:05 to 1:15", name: "Discover", what: "Science or social studies: our bodies, our senses, our feelings and the world around us.", age2: "Same", age34: "Same" },
   { time: "1:15 to 1:25", name: "Create", what: "Art, dough, mark making or role play. A different activity each day.", age2: "Sensory, scribbling", age34: "Mark-making, letter formation, crafts" },
   { time: "1:25 to 1:35", name: "Music", what: "Instruments and songs. Families who opt in add a short Faith Moment; everyone else does a kindness activity.", age2: "Same, shorter", age34: "Plus clapping syllables" },
-  { time: "1:35 to 1:45", name: "Goodbye", what: "Tidy-up song, a recap of the day and a short handover note for you.", age2: "Same", age34: "Same" },
+  { time: "1:35 to 1:50", name: "Review", what: "A look back at the day: the sounds, numbers and words we met, while the tutor notes progress.", age2: "Look back with pictures and actions", age34: "Recall the day's sound, number and word" },
+  { time: "1:50 to 2:00", name: "Goodbye", what: "Tidy-up song, a goodbye and a short handover note for you.", age2: "Same", age34: "Same" },
 ];

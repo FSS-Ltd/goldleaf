@@ -2,15 +2,15 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { DAYS, monthly, weekly } from "./pricing";
 
-// Expected values are the client's pricing table (business plan, page 5).
+// 2 hour sessions. Standard takes 5% off at 4 days and 10% at 5; the founding rate takes no discounts.
 const table = {
-  30: { weekly: [55, 105, 150, 190, 225], monthly: [238, 455, 650, 823, 975] },
-  25: { weekly: [45, 90, 125, 160, 185], monthly: [195, 390, 542, 693, 802] },
+  30: { discounted: true, weekly: [60, 120, 180, 230, 270], monthly: [260, 520, 780, 997, 1170] },
+  25: { discounted: false, weekly: [50, 100, 150, 200, 250], monthly: [217, 433, 650, 867, 1083] },
 } as const;
 
 for (const rate of [30, 25] as const) {
-  test(`pricing matches the client table at ${rate} pounds an hour`, () => {
-    const w = DAYS.map((d) => weekly(rate, d));
+  test(`pricing matches the table at ${rate} pounds an hour`, () => {
+    const w = DAYS.map((d) => weekly(rate, d, table[rate].discounted));
     assert.deepEqual(w, [...table[rate].weekly]);
     assert.deepEqual(w.map(monthly), [...table[rate].monthly]);
   });

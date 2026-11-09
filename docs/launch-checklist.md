@@ -9,7 +9,7 @@ Content
 - [ ] Tutor bio and photo (`content/site.ts`, `tutor`). No invented qualifications.
 - [ ] Confirm the founding offer wording: 5 places, 25 pounds an hour until Easter 2027, then 28 pounds an hour. Update `founding.taken` as places fill.
 - [ ] Confirm whether singing is part of Goldleaf or Orah Vocal Coaching (open question in the business plan).
-- [ ] Privacy notice reviewed. Check whether ICO registration is needed.
+- [ ] Privacy notice approved by the client. Check whether ICO registration is needed.
 
 Trust flags (flip in `content/site.ts` only once true)
 - [ ] `dbsEnhanced`

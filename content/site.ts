@@ -14,7 +14,7 @@ export const site = {
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "admin@goldleaf.education",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   standardRate: 30,
-  sessionMinutes: 105,
+  sessionMinutes: 120,
   founding: {
     total: 5,
     taken: 0, // update as places fill

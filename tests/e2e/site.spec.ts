@@ -15,13 +15,13 @@ test("sitemap and robots respond", async ({ request }) => {
   expect((await request.get("/robots.txt")).status()).toBe(200);
 });
 
-test("pricing table shows the client's numbers", async ({ page }) => {
+test("pricing table shows the 2 hour prices", async ({ page }) => {
   await page.goto("/#pricing");
   const table = page.locator("#pricing table");
-  await expect(table).toContainText("£225");
-  await expect(table).toContainText("£975");
-  await expect(table).toContainText("£185");
-  await expect(table).toContainText("£802");
+  await expect(table).toContainText("£270");
+  await expect(table).toContainText("£1170");
+  await expect(table).toContainText("£250");
+  await expect(table).toContainText("£1083");
 });
 
 test("unknown route shows the custom 404", async ({ page }) => {

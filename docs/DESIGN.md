@@ -33,7 +33,7 @@ No database. Typed content: `site`, `progression`, `session`, `faq`. Enquiry pay
 ## Security and privacy
 - zod validation server side. Honeypot field. Form contents are never logged.
 - No secrets in the repo. `.env.example` lists names only.
-- UK GDPR notice at `/privacy`, marked draft for client review. Enquiries without a booking are deleted after 12 months (manual process, noted in launch checklist).
+- UK GDPR notice at `/privacy`, approved by the client. Enquiries without a booking are deleted after 12 months (manual process, noted in launch checklist).
 
 ## Rollout and rollback
 Vercel preview first, client review, then production on the client's domain. Rollback is a redeploy of the previous Vercel deployment.

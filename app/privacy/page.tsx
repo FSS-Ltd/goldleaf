@@ -12,8 +12,7 @@ export default function Privacy() {
   return (
     <section className="section">
       <div className="wrap-3xl">
-        <p className="rounded-card bg-paper-deep p-4 text-sm font-medium">Draft, to be checked by the client before launch.</p>
-        <h1 className="mt-8 !text-[clamp(2.2rem,5vw,3.5rem)]">Privacy notice</h1>
+        <h1 className="!text-[clamp(2.2rem,5vw,3.5rem)]">Privacy notice</h1>
         <div className="mt-8 grid gap-8 [&_h2]:!text-2xl [&_p]:max-w-[65ch] [&_ul]:grid [&_ul]:max-w-[65ch] [&_ul]:list-disc [&_ul]:gap-1 [&_ul]:pl-6">
           <div>
             <h2>Who we are</h2>

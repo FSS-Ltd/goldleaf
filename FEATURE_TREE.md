@@ -27,7 +27,7 @@ Canonical inventory for this repo. Status values: implemented, partial, planned.
 | COMING-SOON | Readers and Curriculum note | implemented | `components/ComingSoon.tsx` | n/a | none | LANDING | none |
 | CTA-BAND | Closing enquiry band | implemented | `components/CtaBand.tsx` | n/a | CONTENT | LANDING, HOW-WE-TEACH, ABOUT | none |
 | ENQUIRY | Form, server action, zod schema, Resend email, honeypot | implemented | `/enquire` | `app/enquire/page.tsx`, `actions.ts`, `components/EnquiryForm.tsx`, `lib/enquiry-schema.ts` | CONTENT, Resend | none | `lib/enquiry-schema.test.ts`, `tests/e2e/enquiry.spec.ts` (dev dry run; real send not tested) |
-| PRIVACY | UK GDPR notice (draft for client) | implemented | `/privacy` | `app/privacy/page.tsx` | CONTENT | ENQUIRY (linked) | e2e |
+| PRIVACY | UK GDPR notice (approved by client) | implemented | `/privacy` | `app/privacy/page.tsx` | CONTENT | ENQUIRY (linked) | e2e |
 | SEO | Metadata, canonical, sitemap, robots, JSON-LD, icons, OG image | implemented | `app/layout.tsx`, `app/sitemap.ts`, `app/robots.ts`, `app/*icon*`, `app/opengraph-image.png` | `lib/schema-org.ts`, `components/JsonLd.tsx` | CONTENT, FAQ | all pages | e2e (sitemap, robots), Lighthouse |
 | BRAND-ASSETS | Logo files and the script that trims them and makes icons | implemented | `scripts/make-brand-assets.mjs` | `public/brand/*` | sharp | SITE-LAYOUT, LANDING, SEO | none |
 

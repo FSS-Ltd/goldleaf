@@ -3,8 +3,8 @@ import { DAYS, DISCOUNT, monthly, weekly } from "@/lib/pricing";
 
 const gbp = (n: number) => `£${n}`;
 
-function Price({ rate, days, strong = false }: { rate: number; days: (typeof DAYS)[number]; strong?: boolean }) {
-  const w = weekly(rate, days);
+function Price({ rate, days, strong = false, discounted = true }: { rate: number; days: (typeof DAYS)[number]; strong?: boolean; discounted?: boolean }) {
+  const w = weekly(rate, days, discounted);
   return (
     <>
       <span className={`block whitespace-nowrap text-lg ${strong ? "font-semibold" : ""}`}>
@@ -23,7 +23,7 @@ export function PricingTable() {
       <div className="overflow-x-auto rounded-card border border-line bg-paper">
         <table className="w-full border-collapse text-left">
           <caption className="sr-only">
-            Prices per child for a 1 hour 45 minute session, by days a week, at the standard rate{foundingOpen ? " and the founding rate" : ""}.
+            Prices per child for a 2 hour session, by days a week, at the standard rate{foundingOpen ? " and the founding rate" : ""}.
           </caption>
           <thead>
             <tr className="border-b border-line bg-paper-deep text-sm">
@@ -44,7 +44,7 @@ export function PricingTable() {
                     {off > 0 && <span className="mt-1 block w-fit rounded-full bg-paper-deep px-2 py-0.5 text-xs font-medium text-gold-ink">{off}% off</span>}
                   </th>
                   <td className="px-2.5 py-3 md:p-4"><Price rate={std} days={d} /></td>
-                  {foundingOpen && <td className="px-2.5 py-3 md:p-4"><Price rate={f.rate} days={d} strong /></td>}
+                  {foundingOpen && <td className="px-2.5 py-3 md:p-4"><Price rate={f.rate} days={d} strong discounted={false} /></td>}
                 </tr>
               );
             })}
@@ -52,7 +52,7 @@ export function PricingTable() {
         </table>
       </div>
       <p className="mt-4 max-w-[65ch] text-sm text-ink-soft">
-        Sessions are 1 hour 45 minutes, including arrival and handover. 5% off at 3 days, 10% at 4, 15% at 5, rounded to the nearest £5.
+        Sessions are 2 hours, including arrival, review and handover. Standard rate only: 5% off at 4 days and 10% off at 5, rounded to the nearest £5. The founding rate is already discounted, so no further discounts apply.
         Monthly price is weekly &times; 52 &divide; 12.
         {foundingOpen && ` Founding prices run until ${f.endsLabel}, then founding families pay £${f.rateAfter} an hour.`}
       </p>

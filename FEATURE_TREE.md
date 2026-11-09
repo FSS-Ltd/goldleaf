@@ -4,15 +4,16 @@ Canonical inventory for this repo. Status values: implemented, partial, planned.
 
 | ID | Feature | Status | Entry points | Implementation | Uses | Used by | Tests |
 |---|---|---|---|---|---|---|---|
-| CONTENT | Typed business content | implemented | n/a | `content/site.ts`, `progression.ts`, `session.ts`, `faq.ts` | none | almost everything | indirect |
+| CONTENT | Typed business content | implemented | n/a | `content/site.ts`, `progression.ts`, `session.ts`, `subjects.ts`, `units.ts`, `faq.ts` | none | almost everything | indirect |
 | PRICING | Rate maths (weekly, monthly, discounts) | implemented | n/a | `lib/pricing.ts` | none | PRICING-TABLE | `lib/pricing.test.ts`, `tests/e2e/site.spec.ts` |
 | SITE-LAYOUT | Root layout, fonts, header, footer, skip link, analytics | implemented | `app/layout.tsx` | `components/Header.tsx`, `Footer.tsx`, `app/globals.css` | CONTENT | all pages | `tests/e2e/site.spec.ts` |
-| LANDING | Home page (hero, session, path, who for, pricing, safe hands, tutor, coming soon, FAQ, CTA) | implemented | `/` | `app/page.tsx` | CONTENT, FOUNDING-OFFER, SESSION-TIMELINE, STAGE-PATH, PRICING-TABLE, SAFE-HANDS, FAQ, COMING-SOON, CTA-BAND, SEO | none | e2e, Lighthouse |
+| LANDING | Home page (hero, session, path, who for, pricing, safe hands, tutor, coming soon, FAQ, CTA) | implemented | `/` | `app/page.tsx` | CONTENT, FOUNDING-OFFER, SESSION-TIMELINE, SUBJECTS, STAGE-PATH, PRICING-TABLE, SAFE-HANDS, FAQ, COMING-SOON, CTA-BAND, SEO | none | e2e, Lighthouse |
 | FOUNDING-OFFER | Founding band, switches to "full" when places run out | implemented | `components/FoundingBand.tsx` | `content/site.ts` (`founding`, `foundingOpen`) | CONTENT | LANDING, PRICING-TABLE, ENQUIRY | none |
 | PRICING-TABLE | Days-by-days table, founding column hidden when full | implemented | `components/PricingTable.tsx` | PRICING | PRICING, CONTENT | LANDING | e2e |
 | STAGE-PATH | Signature scroll-drawn vine through Stages 0 to 4 | implemented | `components/StagePath.tsx` | CSS `.vine` in `globals.css` | `content/progression.ts` | LANDING, HOW-WE-TEACH | visual check only |
+| SUBJECTS | Nine early-learning subjects with age goals (from the two-year-old teacher's manual) | implemented | `components/SubjectGrid.tsx` | `content/subjects.ts` | CONTENT | LANDING, HOW-WE-TEACH | e2e (page loads) |
 | SESSION-TIMELINE | Session blocks (list and table) | implemented | `components/SessionTimeline.tsx` | `content/session.ts` | CONTENT | LANDING, HOW-WE-TEACH | none |
-| HOW-WE-TEACH | Progression table (cards on phones), age map, session table (list on phones), sound tiles and chips | implemented | `/how-we-teach` | `app/how-we-teach/page.tsx` | STAGE-PATH, SESSION-TIMELINE, CONTENT | none | e2e |
+| HOW-WE-TEACH | Subjects grid, first six weeks (Unit A), progress tracking, progression table (cards on phones), age map, session table (list on phones), sound tiles and chips | implemented | `/how-we-teach` | `app/how-we-teach/page.tsx` | STAGE-PATH, SESSION-TIMELINE, SUBJECTS, CONTENT (`units.ts`) | none | e2e |
 | ABOUT | Tutor, why Goldleaf, safe hands | implemented (bio is a placeholder) | `/about` | `app/about/page.tsx` | SAFE-HANDS, CONTENT | none | e2e |
 | SEEDLING-3D | Three.js hero scene: gold seedling in a pot, floating letter tiles, pointer tilt, scroll growth. Loads after idle, falls back to the static logo when WebGL is missing or the context is lost, renders one still frame under reduced motion | implemented | `components/seedling/SeedlingScene.tsx` | `components/seedling/scene.ts` (three, RoomEnvironment, RoundedBoxGeometry) | CONTENT (font var) | LANDING, NOT-FOUND | `tests/e2e/site.spec.ts` (canvas appears, no console errors); frame rate not measured on a real phone |
 | SOUND-MOMENT | Full-bleed drifting sounds section | implemented | `components/SoundMoment.tsx` | CSS `.sound-row` | none | LANDING | none |
@@ -31,6 +32,8 @@ Canonical inventory for this repo. Status values: implemented, partial, planned.
 | BRAND-ASSETS | Logo files and the script that trims them and makes icons | implemented | `scripts/make-brand-assets.mjs` | `public/brand/*` | sharp | SITE-LAYOUT, LANDING, SEO | none |
 
 ## Known gaps
+- `content/session.ts` now follows the manual's routine. The ages 3 to 4 column is carried over from the earlier plan, and the manual covers age 2 only. Discover and Snack are marked "Same" for older ages without a source.
+- Only Unit A is public. Units B onward are not in the manual yet.
 - Real email sending is untested until Resend keys exist.
 - Tutor bio and photo are placeholders. Contact email is a placeholder (`hello@example.com`).
 - STAGE-PATH, SESSION-TIMELINE, FAQ, SAFE-HANDS and the error screens have no automated tests.

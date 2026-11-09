@@ -5,6 +5,7 @@ export function SafeHands() {
     "At home, a parent or carer stays in the house for the whole session.",
     "At church, children are signed in and out, and only go home with named adults. The door stays open or the room stays visible.",
     "You can stay for the session or drop off. Your child's routine, naps and mealtimes come first.",
+    "Food is safe by design. Allergies are checked before any tasting, we only offer foods you have approved, grapes are cut lengthways and whole nuts are never used.",
     "A short chat at handover keeps you in the loop on what your child tried and enjoyed.",
   ];
   if (site.trust.dbsEnhanced) items.push("Enhanced DBS checked.");

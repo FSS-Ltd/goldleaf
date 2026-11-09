@@ -16,7 +16,8 @@ export const metadata: Metadata = {
 const steps = [
   { n: "1", t: "You send an enquiry", d: "Tell us your child's age and the days you would like." },
   { n: "2", t: "We have a chat", d: `${site.tutor.firstName} replies within 2 working days to talk it through.` },
-  { n: "3", t: "A short play-based check", d: "A relaxed first visit so we know where your child's reading path begins." },
+  { n: "3", t: "A short play-based check", d: "A relaxed first visit so we know where your child's learning begins." },
+  { n: "4", t: "An All About Me form", d: "Before the first session you share your child's words, routines and comforters, and a few printed photos." },
 ];
 
 export default function Enquire() {

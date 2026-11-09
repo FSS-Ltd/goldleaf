@@ -12,6 +12,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { PricingTable } from "@/components/PricingTable";
 import { SafeHands } from "@/components/SafeHands";
 import { SessionTimeline } from "@/components/SessionTimeline";
+import { SubjectGrid } from "@/components/SubjectGrid";
 import { SeedlingScene } from "@/components/seedling/SeedlingScene";
 import { SoundMoment } from "@/components/SoundMoment";
 import { StagePath } from "@/components/StagePath";
@@ -21,7 +22,7 @@ import { faqSchema, organisationSchema } from "@/lib/schema-org";
 export const metadata: Metadata = {
   title: { absolute: "Phonics & Early Years Tutor in Ashford, Kent | Goldleaf" },
   description:
-    "One-to-one, play-based phonics, maths and music tutoring for 2 to 4 year olds in Ashford, Kent. In your home or at a local church. Founding places open.",
+    "One-to-one, play-based early learning for 2 to 4 year olds in Ashford, Kent: phonics, stories, maths, science, art and music. In your home or at a local church. Founding places open.",
   alternates: { canonical: "/" },
   openGraph: { title: "Phonics & Early Years Tutor in Ashford, Kent | Goldleaf", url: "/", images: ["/opengraph-image.png"] },
 };
@@ -45,10 +46,10 @@ export default function Home() {
         <div className="wrap grid items-center gap-10 md:grid-cols-[1.2fr_0.8fr] md:gap-14">
           <div className="order-1">
             <Eyebrow left>Tutoring in Ashford, Kent</Eyebrow>
-            <h1 className="mt-4">A gentle head start in reading for 2 to 4 year olds in Ashford</h1>
+            <h1 className="mt-4">A gentle head start in learning for 2 to 4 year olds in Ashford</h1>
             <p className="prose-x mt-6 text-ink-soft">
-              One-to-one, play-based sessions in phonics, early maths and music. In your home or at a local church,
-              following one clear reading path from first sounds to first books.
+              One-to-one, play-based sessions across reading, maths, science, art and music. In your home or at a local
+              church, with one clear reading path from first sounds to first books.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/enquire">{foundingOpen ? "Ask about a founding place" : "Make an enquiry"}</ButtonLink>
@@ -78,6 +79,24 @@ export default function Home() {
 
       <FoundingBand />
 
+      {/* Subjects */}
+      <section className="section" aria-labelledby="subjects-title">
+        <div className="wrap">
+          <Eyebrow left>What we teach</Eyebrow>
+          <h2 id="subjects-title" className="mt-3">Every part of early learning, not just reading</h2>
+          <p className="prose-x mt-4 text-ink-soft">
+            Sessions mix nine short subjects across the week, so your child builds language, number sense, curiosity,
+            coordination and confidence together.
+          </p>
+          <div className="mt-8"><SubjectGrid /></div>
+          <p className="mt-6">
+            <Link href="/how-we-teach#subjects-title" className="link-u font-semibold">
+              See what each subject covers at each age
+            </Link>
+          </p>
+        </div>
+      </section>
+
       {/* Session */}
       <section className="section" aria-labelledby="session-title">
         <div className="wrap grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-14">
@@ -85,10 +104,10 @@ export default function Home() {
             <Eyebrow left>A session</Eyebrow>
             <h2 id="session-title" className="mt-3">What a session looks like</h2>
             <p className="prose-x mt-4 text-ink-soft">
-              One hour 45 minutes of short, varied, play-based activities. Songs, movement, a story, counting games and
-              making, with a few minutes of phonics at the heart of it.
+              One hour 45 minutes of short, varied, play-based activities. Songs, movement, a story, counting games,
+              discovery and making, with phonics woven through it.
             </p>
-            <p className="mt-4 font-semibold">You get a one-minute update at the end of every session.</p>
+            <p className="mt-4 font-semibold">You get a short handover note at the end of every session.</p>
           </div>
           <SessionTimeline />
         </div>

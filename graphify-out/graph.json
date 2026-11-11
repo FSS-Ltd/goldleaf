@@ -1289,6 +1289,15 @@
       "source_location": null,
       "community": 0,
       "norm_label": "launch checklist"
+    },
+    {
+      "label": "sound-chips.test.ts",
+      "file_type": "code",
+      "source_file": "lib/sound-chips.test.ts",
+      "source_location": "L1",
+      "id": "lib_sound_chips_test_ts",
+      "community": 56,
+      "norm_label": "sound-chips.test.ts"
     }
   ],
   "links": [
@@ -2315,6 +2324,42 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/launch-checklist.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "app_how_we_teach_page_tsx",
+      "target": "components_soundtiles_tsx",
+      "_src": "app_how_we_teach_page_tsx",
+      "_tgt": "components_soundtiles_tsx",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/how-we-teach/page.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "lib_sound_chips_test_ts",
+      "target": "components_soundtiles_tsx",
+      "_src": "lib_sound_chips_test_ts",
+      "_tgt": "components_soundtiles_tsx",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/sound-chips.test.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "lib_sound_chips_test_ts",
+      "target": "content_progression_ts",
+      "_src": "lib_sound_chips_test_ts",
+      "_tgt": "content_progression_ts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/sound-chips.test.ts",
       "source_location": null,
       "weight": 1.0
     }

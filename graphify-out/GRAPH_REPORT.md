@@ -119,3 +119,7 @@ _Questions this graph is uniquely positioned to answer:_
 ## Coverage and incremental update
 
 Structural extraction used an allowlisted copy of tracked code, excluding runtime data, dependencies, build output and graph artifacts. Existing document and image nodes were retained. Founding migration, seed, provisioning, launch checklist and portal plan references are source-backed. Semantic coverage outside the portal archive and these references remains incomplete; unresolved AST edges may be omitted. The plan describes future work, not implemented portal features. After adding source-backed references, the graph contains 130 nodes and 87 directed edges.
+
+## Sound chip update
+
+An allowlisted structural refresh checked the shared sound chip component and its new regression test. Existing semantic nodes were preserved; direct source references link the test, component and progression content. The graph now contains 131 nodes and 90 directed edges. Existing semantic coverage limitations remain.

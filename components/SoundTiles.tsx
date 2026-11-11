@@ -19,7 +19,7 @@ export function SoundTiles() {
 
 /** Splits a sounds string into chips. Spaces inside brackets stay together, for example "oo (book)". */
 export function SoundChips({ text }: { text: string }) {
-  const tokens = text.split(/\s*·\s*|\s+(?![^(]*\))/).filter(Boolean);
+  const tokens = text.match(/[^\s·]+(?:\s+\([^)]*\))?/g) ?? [];
   return (
     <span>
       {tokens.map((t) => (

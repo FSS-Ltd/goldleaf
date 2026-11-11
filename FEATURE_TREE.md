@@ -22,7 +22,7 @@ Canonical inventory for this repo. Status values: implemented, partial, planned.
 | NOT-FOUND | Custom 404 with 3D sprout and static fallback | implemented | `app/not-found.tsx` | `components/LostTiles.tsx`, SEEDLING-3D | none | none | `tests/e2e/site.spec.ts` |
 | ERROR-SCREENS | Route error page and global error page | implemented | `app/error.tsx`, `app/global-error.tsx` | none | none | none | none (not exercised) |
 | ROUTE-TRANSITIONS | Content fades and lifts between routes (React ViewTransition around the single main element) | implemented | `app/layout.tsx` | CSS `::view-transition-*` in `app/globals.css` | none | all pages | `tests/e2e/site.spec.ts` (navigation and console errors); visual check |
-| SOUND-TILES | Decorative letter tiles and sound chips | implemented | `components/SoundTiles.tsx` | `content/progression.ts` | none | HOW-WE-TEACH | none |
+| SOUND-TILES | Decorative letter tiles and sound chips, keeping parenthetical examples with their sounds | implemented | `components/SoundTiles.tsx` (`SoundTiles`, `SoundChips`) | `content/progression.ts` | CONTENT | HOW-WE-TEACH (mobile and desktop stage tables) | `lib/sound-chips.test.ts`; `tests/e2e/site.spec.ts` navigation console check |
 | SAFE-HANDS | Safeguarding practices, trust flags gate extra lines | implemented | `components/SafeHands.tsx` | `content/site.ts` (`trust`) | CONTENT | LANDING, ABOUT | none |
 | FAQ | Questions, also feeds FAQPage JSON-LD | implemented | `components/Faq.tsx` | `content/faq.ts` | CONTENT | LANDING, SEO | none |
 | COMING-SOON | Readers and Curriculum note | implemented | `components/ComingSoon.tsx` | n/a | none | LANDING | none |
@@ -53,4 +53,4 @@ Canonical inventory for this repo. Status values: implemented, partial, planned.
 - Tutor bio and photo are placeholders. Contact email is a placeholder (`hello@example.com`).
 - STAGE-PATH, SESSION-TIMELINE, FAQ, SAFE-HANDS and the error screens have no automated tests.
 - The 3D scene has not been measured on a real phone. Check frame rate before launch.
-- Graphify covers an allowlisted structural refresh of tracked code plus the portal archive, six screenshots, founding database references and the portal plan (130 nodes, 87 directed edges). Other docs/images remain outside semantic coverage; unresolved AST import/call edges are omitted. Use this tree for domain connections and [the graph report](graphify-out/GRAPH_REPORT.md) for coverage limits.
+- Graphify covers an allowlisted structural refresh of tracked code plus the portal archive, six screenshots, founding database references and the portal plan (131 nodes, 90 directed edges). Other docs/images remain outside semantic coverage; unresolved AST import/call edges are omitted. Use this tree for domain connections and [the graph report](graphify-out/GRAPH_REPORT.md) for coverage limits.

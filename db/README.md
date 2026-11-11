@@ -41,6 +41,10 @@ SELECT total, remaining FROM public_offer.founding_availability;
 As the owner, run the following preflight. Every query must return zero rows; any result is a deployment blocker. These checks include inherited roles and column-level privileges. They make no writes.
 
 ```sql
+-- The login must not belong to any other role, including noninheriting roles.
+SELECT rolname FROM pg_roles
+WHERE rolname <> 'goldleaf_offer' AND pg_has_role('goldleaf_offer', oid, 'MEMBER');
+
 -- The login and any role it can assume must have no elevated attributes.
 SELECT r.rolname
 FROM pg_roles AS r
@@ -93,5 +97,13 @@ WHERE d.defaclobjtype = 'r'
 ```
 
 PostgreSQL grants database `TEMPORARY` to `PUBLIC` by default; the verified development role retains that privilege. This preflight requires no persistent object creation and does not revoke the shared default.
+
+After the preflight passes, retrieve the pooled scoped URI directly into the intended secret destination. For example, after linking the correct Vercel project and setting `GOLDLEAF_VERCEL_GIT_BRANCH` to the intended preview branch:
+
+```sh
+neon connection-string "$GOLDLEAF_NEON_BRANCH_ID" --project-id "$GOLDLEAF_NEON_PROJECT_ID" --role-name goldleaf_offer --database-name goldleaf --pooled | vercel env add GOLDLEAF_OFFER_DATABASE_URL preview "$GOLDLEAF_VERCEL_GIT_BRANCH" --sensitive
+```
+
+Never run the connection-string command without a protected destination. Set a separate production secret only through the authorised production deployment process.
 
 As the scoped login, verify `SELECT 1 FROM portal.families LIMIT 0` and `SELECT 1 FROM portal.founding_slots LIMIT 0` both fail with permission denied. The preflight above checks writes without attempting them. Run the preflight again whenever role membership, grants, default privileges or object ownership change. If a check fails, investigate the effective grants and stop; do not deploy or weaken the checks. Missing or unavailable configuration produces the standard-price enquiry state. Never copy development credentials or data into production.

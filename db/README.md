@@ -4,7 +4,7 @@ Apply `migrations/0001_founding_availability.sql` and then `migrations/0002_seed
 
 ## Assignment boundary
 
-The admin assignment flow is planned, not implemented. A future writer must create the family and claim a slot in one transaction. The claim must be conditional, not an unconditional update:
+The portal UI assignment flow is planned. The `set_founding` database function provides conditional assignment; any alternative writer must preserve the same constraint:
 
 ```sql
 UPDATE portal.founding_slots
@@ -107,3 +107,19 @@ neon connection-string "$GOLDLEAF_NEON_BRANCH_ID" --project-id "$GOLDLEAF_NEON_P
 Never run the connection-string command without a protected destination. Set a separate production secret only through the authorised production deployment process.
 
 As the scoped login, verify `SELECT 1 FROM portal.families LIMIT 0` and `SELECT 1 FROM portal.founding_slots LIMIT 0` both fail with permission denied. The preflight above checks writes without attempting them. Run the preflight again whenever role membership, grants, default privileges or object ownership change. If a check fails, investigate the effective grants and stop; do not deploy or weaken the checks. Missing or unavailable configuration produces the standard-price enquiry state. Never copy development credentials or data into production.
+
+## Portal onboarding foundation (local verification only)
+
+Apply `0003_portal_onboarding.sql` after `0001` and `0002` as the owner. It adds memberships, invitations, founding eligibility history and restricted functions; it does not configure a login, provider or production deployment. Existing family IDs and slot inventory remain authoritative. The migration is forward-only. Roll back application use by disabling callers and revoking function grants; preserve the tables and history, and make corrections with a new migration. Existing slot assignments predate the history table and must be reconciled explicitly before history is used for billing.
+
+The function caller is a trusted server boundary: only server code which has validated the Clerk server session, stable Clerk user ID and Clerk-verified email may supply them. Never accept these parameters from a client. A compromised server role can impersonate any subject; SQL cannot verify identity-provider claims. Do not grant it table access, owner rights, role membership, schema CREATE or `portal.require_admin`. Grant only schema USAGE and EXECUTE on the eight server functions (`create_family`, `active_memberships`, `family_memberships`, `revoke_membership`, `issue_invitation`, `revoke_invitation`, `accept_invitation`, `set_founding`) individually. The migration grants none by default. Use a separate credential from the public aggregate reader. `active_memberships` returns only current role and family IDs for the trusted, verified subject. `family_memberships` returns active family membership IDs and subjects only after an admin check. Future family data reads must check an active matching membership and family in the same query or transaction, and must not rely on client-supplied IDs as authority.
+
+For an atomic HTTP batch, generate a UUID on the server, pass it as the third `create_family` argument, and use the same ID for `issue_invitation` in the same database transaction. New family names are required, trimmed and bounded to 120 characters; the nullable column preserves legacy rows. `set_founding` raises SQLSTATE `P0001` on capacity, aborting the enclosing transaction.
+
+Bootstrap the first admin only through an authenticated, audited owner procedure after verifying the provider subject out of band. Insert an `admin` membership with that subject and no family. Restrict owner credentials to operators. The server function revokes parent and staff memberships only; administrator revocation and recovery require an owner-operated, audited procedure. Mutations lock the active admin membership until transaction completion. To reinstate a parent, an admin must issue a fresh invitation after revocation. Invitation input is a SHA-256 digest of a high-entropy token, never the token itself; the trusted server checks provider-verified email and must not log the token or invite URL. Resending invalidates outstanding invitations for the same family and canonical email. `set_founding` returns true for success, including no-op retries, and raises on capacity. Each real transition records actor, timestamp and prior state through the sequence of history rows. The history is not a billing snapshot; future invoices must snapshot applicable eligibility.
+
+Run `db/tests/onboarding.sql` and `db/tests/onboarding-grants.sql` only against a disposable local database after applying all three migrations. Never point this test at a live database. Clerk verification, delivery, deployment, and a production role are deliberately outside this foundation.
+
+For the concurrent final-slot check, use a fresh disposable database with migrations applied and run `sh db/tests/onboarding-concurrency.sh <local-host-or-socket-directory> <database-name>` against a local server on port 55439. This test inserts durable synthetic rows; destroy the disposable database afterwards.
+
+CI runs these SQL and concurrency tests against a dedicated PostgreSQL 17 service with synthetic data; it does not use Neon credentials.

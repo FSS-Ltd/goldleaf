@@ -1,12 +1,12 @@
 # Goldleaf Portal Implementation Plan
 
-> Implement one sprint per PR with Superpowers subagent-driven development. Sol owns the plan and integration. Terra agents implement and fix each slice. Sol calls Astra for advice when a Terra agent hits a concrete blocker. Terra applies the resolution.
+> Deliver each sprint through reviewable PRs with Superpowers subagent-driven development. Sol owns the plan and integration. Terra agents implement and fix each slice. Sol calls Astra for advice when a Terra agent hits a concrete blocker. Terra applies the resolution.
 
 **Goal.** Let Goldleaf onboard parents and staff, issue invoices, and manage the five founding places. Deliver the six existing Stitch views on the same system.
 
 **Architecture.** Extend the Next.js App Router application with server-rendered parent, staff and admin routes. A server-only data access layer enforces role and record scope on every access. Neon Postgres holds durable records. Onboarding, invoices and the public offer share the same family identity.
 
-**Stack.** Next.js 16.4.5, React 19, TypeScript, Tailwind v4, Zod, Resend and Neon Postgres 17. Keep the existing GitHub Actions and Vercel delivery path. Evaluate Neon Auth's Next.js adapter in development against the acceptance tests below before wiring production identity.
+**Stack.** Next.js 16.4.5, React 19, TypeScript, Tailwind v4, Zod, Resend and Neon Postgres 17. Keep the existing GitHub Actions and Vercel delivery path. Use Clerk for identity and verified sessions. Goldleaf stores app membership and family authorization in Neon.
 
 **Spec.** [Live Stitch project](https://stitch.withgoogle.com/projects/8457214603129819597), [six archived exports](../../portal-mockups/README.md), [portal brief](../../portal-mockups/DESIGN-BRIEF.md), [feature tree](../../../FEATURE_TREE.md) and [Graphify map](../../../graphify-out/graph.json).
 
@@ -35,17 +35,23 @@ Create companion Stitch frames for missing flows before implementing their visib
 
 ## Sprint 1 · Neon and live public availability
 
-**Owns** `db/migrations/0001_founding_availability.sql`, `db/migrations/0002_seed_founding_slots.sql`, `lib/founding-availability.ts`, `.env.example`, the public founding consumers and their tests. Development database: project `fragrant-grass-41713722`, branch `br-old-glade-b92x5418`, database `goldleaf`, region Frankfurt. Main branch: `br-muddy-bonus-b962akmt`. Provisioned empty via the connected Neon CLI.
+**Owns** `db/migrations/0001_founding_availability.sql`, `db/migrations/0002_seed_founding_slots.sql`, `lib/founding-availability.ts`, `.env.example`, the public founding consumers and their tests. Development database: project `fragrant-grass-41713722`, branch `br-old-glade-b92x5418`, database `goldleaf`, region Frankfurt. Main branch: `br-muddy-bonus-b962akmt`. Provisioned empty via the connected Neon CLI. [PR #6](https://github.com/FSS-Ltd/goldleaf/pull/6) shipped the Neon integration. [PR #7](https://github.com/FSS-Ltd/goldleaf/pull/7) restored green main CI after the navigation check exposed a phonics rendering issue. Production smoke verified 5 of 5 places.
 
-- [ ] Verify a clean migration against the development branch. Give `portal.families` a durable ID. Reserve five numbered slots with a database-constrained family assignment. A family can use one slot and each slot can have one family. Publish only one aggregate row from `public_offer.founding_availability`.
-- [ ] Run a privilege test as the separate read-only public role. It can select the aggregate. Access to private tables and writes must fail. Keep the migration owner out of runtime credentials.
-- [ ] Implement one request-scoped server read with an available or unavailable result. Thread the result through home, pricing, enquiry and shared CTA consumers. Render accurate 5, 1 and 0 states. On missing config or database failure, use neutral enquiry copy and standard pricing. Avoid a fabricated count.
-- [ ] Demonstrate that a committed slot change appears on the next request and an uncommitted change stays invisible. Check duplicate families, competing writes for the final slot and count parity across routes. No background reads. Update the feature maps and document a repeatable application and privilege-check procedure.
-- [ ] After review, apply the schema and scoped role to the empty main database, configure server-only credentials through Vercel and run a smoke against production. Check that previews use development credentials or the documented neutral state.
+- [x] Verify a clean migration against the development branch. Give `portal.families` a durable ID. Reserve five numbered slots with a database-constrained family assignment. A family can use one slot and each slot can have one family. Publish only one aggregate row from `public_offer.founding_availability`.
+- [x] Run a privilege test as the separate read-only public role. It can select the aggregate. Access to private tables and writes must fail. Keep the migration owner out of runtime credentials.
+- [x] Implement one request-scoped server read with an available or unavailable result. Thread the result through home, pricing, enquiry and shared CTA consumers. Render accurate 5, 1 and 0 states. On missing config or database failure, use neutral enquiry copy and standard pricing. Avoid a fabricated count.
+- [x] Demonstrate that a committed slot change appears on the next request and an uncommitted change stays invisible. Check duplicate families, competing writes for the final slot and count parity across routes. No background reads. Update the feature maps and document a repeatable application and privilege-check procedure.
+- [x] After review, apply the schema and scoped role to the empty main database, configure server-only credentials through Vercel and run a smoke against production. Check that previews use development credentials or the documented neutral state.
 
 ## Sprint 2 · Parent and admin onboarding with founding pricing
 
 **Owns** `app/(portal)/sign-in/`, `app/(portal)/invite/`, `app/(portal)/parent/`, `app/(portal)/admin/families/`, `lib/portal/access.ts`, `lib/portal/invitations.ts`, `lib/portal/families.ts`, and identity, family and assignment-history migrations. Keep the public enquiry form as an enquiry. Admin starts onboarding a family after accepting them.
+
+Ship the private database foundation first. Verify invitation acceptance, revocation, family isolation, and founding-slot races against Postgres before connecting request identity. The next PR connects the verified identity and scoped database operations to the Stitch-led forms and parent home. Release stays gated on the synthetic end-to-end workflow.
+
+Use the Dashboard-selected existing Clerk application from the user's setup handoff. At the authentication stage, follow that handoff's setup checklist and host CLI authentication steps. From this pnpm worktree, use `pnpm dlx clerk@latest init --app "$CLERK_APPLICATION_ID"` only after identifying an existing-project setup with no Clerk integration. Reuse existing integration and working keys if found. Keep development and production Clerk instances and keys separate. [Clerk CLI](https://clerk.com/docs/cli)
+
+The earlier isolated development Neon Auth probe established provider behavior before Clerk was selected. Goldleaf's app database does not depend on the probe. Use Clerk's server-verified user ID and a verified invitation email to call the provider-neutral onboarding operations. Read current Goldleaf membership on protected requests and mutations, including when a Clerk session remains valid.
 
 - [ ] Verify provider session retrieval, verified email, sign-out/revocation, trusted origins, branch isolation and secure cookie defaults. The initial admin is provisioned through a documented authenticated bootstrap. Application membership assigns admin, parent or staff role. No client-supplied role or provider user ID grants access.
 - [ ] Create a family and issue a scoped invitation through the admin form. Bind the invite to a canonical verified email and intended family. Store a hash for any app-owned token. Accept exactly once in a transaction. Resend and revoke invalidate outstanding tokens, and expired, reused, wrong-email and concurrent accepts are tested. Reuse Resend server-side for explicit invites after commit, with retry and a visible failed-delivery state. Keep URLs out of logs and remove invite parameters from the active URL after exchange.

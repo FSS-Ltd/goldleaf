@@ -123,3 +123,7 @@ Structural extraction used an allowlisted copy of tracked code, excluding runtim
 ## Sound chip update
 
 An allowlisted structural refresh checked the shared sound chip component and its new regression test. Existing semantic nodes were preserved; direct source references link the test, component and progression content. The graph now contains 131 nodes and 90 directed edges. Existing semantic coverage limitations remain.
+
+## Onboarding database scoped update
+
+`graphify update db` found no supported code files; SQL extraction is unsupported. `portal_onboarding_db` and its source-backed references were added manually to the existing graph. See `FEATURE_TREE.md` for the database boundary and test evidence. Full semantic coverage remains incomplete.

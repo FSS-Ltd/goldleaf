@@ -7,7 +7,7 @@ Environment (Vercel project settings)
 Content
 - [ ] Confirm the town. Ashford, Kent is assumed (`content/site.ts`, `area`).
 - [ ] Tutor bio and photo (`content/site.ts`, `tutor`). No invented qualifications.
-- [ ] Confirm the founding offer wording: 5 places, 25 pounds an hour until Easter 2027, then 28 pounds an hour. Update `founding.taken` as places fill.
+- [ ] Confirm the founding offer wording: 5 places, 25 pounds an hour until Easter 2027, then 28 pounds an hour. Set up and manage the inventory using the [database runbook](../db/README.md). An admin founding tag is planned, not yet available.
 - [ ] Confirm whether singing is part of Goldleaf or Orah Vocal Coaching (open question in the business plan).
 - [ ] Privacy notice approved by the client. Check whether ICO registration is needed.
 

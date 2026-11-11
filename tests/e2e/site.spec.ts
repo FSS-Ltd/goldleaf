@@ -45,3 +45,19 @@ test("mobile menu opens and lists the pages", async ({ page }) => {
   await page.getByRole("button", { name: "Open menu" }).click();
   await expect(page.locator("#mobile-menu").getByRole("link", { name: "How we teach" })).toBeVisible();
 });
+
+test("navigation renders without transition errors", async ({ page }) => {
+  const errors: string[] = [];
+  page.on("console", (message) => {
+    if (message.type() === "error" && !message.text().includes("_vercel")) errors.push(message.text());
+  });
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.goto("/");
+  await page.getByRole("link", { name: "See how we teach" }).click();
+  await expect(page).toHaveURL(/\/how-we-teach$/);
+  await expect(page.locator("main h1")).toBeVisible();
+  await page.getByRole("link", { name: "About", exact: true }).first().click();
+  await expect(page).toHaveURL(/\/about$/);
+  await expect(page.locator("main h1")).toBeVisible();
+  expect(errors).toEqual([]);
+});

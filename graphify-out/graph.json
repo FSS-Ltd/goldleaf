@@ -9,7 +9,7 @@
       "source_file": "playwright.config.ts",
       "source_location": "L1",
       "id": "playwright_config_ts",
-      "community": 27,
+      "community": 29,
       "norm_label": "playwright.config.ts"
     },
     {
@@ -18,7 +18,7 @@
       "source_file": "eslint.config.mjs",
       "source_location": "L1",
       "id": "eslint_config_mjs",
-      "community": 28,
+      "community": 30,
       "norm_label": "eslint.config.mjs"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "next.config.ts",
       "source_location": "L1",
       "id": "next_config_ts",
-      "community": 29,
+      "community": 31,
       "norm_label": "next.config.ts"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "app/robots.ts",
       "source_location": "L1",
       "id": "app_robots_ts",
-      "community": 14,
+      "community": 16,
       "norm_label": "robots.ts"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "app/robots.ts",
       "source_location": "L4",
       "id": "robots_robots",
-      "community": 14,
+      "community": 16,
       "norm_label": "robots()"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "app/sitemap.ts",
       "source_location": "L1",
       "id": "app_sitemap_ts",
-      "community": 15,
+      "community": 17,
       "norm_label": "sitemap.ts"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "app/sitemap.ts",
       "source_location": "L4",
       "id": "sitemap_sitemap",
-      "community": 15,
+      "community": 17,
       "norm_label": "sitemap()"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "app/layout.tsx",
       "source_location": "L1",
       "id": "app_layout_tsx",
-      "community": 30,
+      "community": 32,
       "norm_label": "layout.tsx"
     },
     {
@@ -81,7 +81,7 @@
       "source_file": "app/error.tsx",
       "source_location": "L1",
       "id": "app_error_tsx",
-      "community": 31,
+      "community": 33,
       "norm_label": "error.tsx"
     },
     {
@@ -90,7 +90,7 @@
       "source_file": "app/page.tsx",
       "source_location": "L1",
       "id": "app_page_tsx",
-      "community": 2,
+      "community": 1,
       "norm_label": "page.tsx"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "app/page.tsx",
       "source_location": "L40",
       "id": "page_home",
-      "community": 2,
+      "community": 1,
       "norm_label": "home()"
     },
     {
@@ -108,7 +108,7 @@
       "source_file": "app/global-error.tsx",
       "source_location": "L1",
       "id": "app_global_error_tsx",
-      "community": 32,
+      "community": 34,
       "norm_label": "global-error.tsx"
     },
     {
@@ -117,7 +117,7 @@
       "source_file": "app/not-found.tsx",
       "source_location": "L1",
       "id": "app_not_found_tsx",
-      "community": 16,
+      "community": 18,
       "norm_label": "not-found.tsx"
     },
     {
@@ -126,7 +126,7 @@
       "source_file": "app/not-found.tsx",
       "source_location": "L18",
       "id": "not_found_notfound",
-      "community": 16,
+      "community": 18,
       "norm_label": "notfound()"
     },
     {
@@ -135,7 +135,7 @@
       "source_file": "app/privacy/page.tsx",
       "source_location": "L1",
       "id": "app_privacy_page_tsx",
-      "community": 33,
+      "community": 35,
       "norm_label": "page.tsx"
     },
     {
@@ -144,7 +144,7 @@
       "source_file": "app/about/page.tsx",
       "source_location": "L1",
       "id": "app_about_page_tsx",
-      "community": 17,
+      "community": 19,
       "norm_label": "page.tsx"
     },
     {
@@ -153,7 +153,7 @@
       "source_file": "app/about/page.tsx",
       "source_location": "L19",
       "id": "page_about",
-      "community": 17,
+      "community": 19,
       "norm_label": "about()"
     },
     {
@@ -162,7 +162,7 @@
       "source_file": "app/how-we-teach/page.tsx",
       "source_location": "L1",
       "id": "app_how_we_teach_page_tsx",
-      "community": 18,
+      "community": 20,
       "norm_label": "page.tsx"
     },
     {
@@ -171,7 +171,7 @@
       "source_file": "app/how-we-teach/page.tsx",
       "source_location": "L23",
       "id": "page_howweteach",
-      "community": 18,
+      "community": 20,
       "norm_label": "howweteach()"
     },
     {
@@ -198,7 +198,7 @@
       "source_file": "app/enquire/page.tsx",
       "source_location": "L1",
       "id": "app_enquire_page_tsx",
-      "community": 34,
+      "community": 36,
       "norm_label": "page.tsx"
     },
     {
@@ -207,7 +207,7 @@
       "source_file": "tests/e2e/enquiry.spec.ts",
       "source_location": "L1",
       "id": "tests_e2e_enquiry_spec_ts",
-      "community": 35,
+      "community": 37,
       "norm_label": "enquiry.spec.ts"
     },
     {
@@ -216,7 +216,7 @@
       "source_file": "tests/e2e/site.spec.ts",
       "source_location": "L1",
       "id": "tests_e2e_site_spec_ts",
-      "community": 36,
+      "community": 38,
       "norm_label": "site.spec.ts"
     },
     {
@@ -225,7 +225,7 @@
       "source_file": "content/faq.ts",
       "source_location": "L1",
       "id": "content_faq_ts",
-      "community": 37,
+      "community": 39,
       "norm_label": "faq.ts"
     },
     {
@@ -234,7 +234,7 @@
       "source_file": "content/subjects.ts",
       "source_location": "L1",
       "id": "content_subjects_ts",
-      "community": 38,
+      "community": 40,
       "norm_label": "subjects.ts"
     },
     {
@@ -243,7 +243,7 @@
       "source_file": "content/site.ts",
       "source_location": "L1",
       "id": "content_site_ts",
-      "community": 39,
+      "community": 41,
       "norm_label": "site.ts"
     },
     {
@@ -252,7 +252,7 @@
       "source_file": "content/session.ts",
       "source_location": "L1",
       "id": "content_session_ts",
-      "community": 40,
+      "community": 42,
       "norm_label": "session.ts"
     },
     {
@@ -261,7 +261,7 @@
       "source_file": "content/units.ts",
       "source_location": "L1",
       "id": "content_units_ts",
-      "community": 41,
+      "community": 43,
       "norm_label": "units.ts"
     },
     {
@@ -270,7 +270,7 @@
       "source_file": "content/progression.ts",
       "source_location": "L1",
       "id": "content_progression_ts",
-      "community": 42,
+      "community": 44,
       "norm_label": "progression.ts"
     },
     {
@@ -279,7 +279,7 @@
       "source_file": "components/SessionTimeline.tsx",
       "source_location": "L1",
       "id": "components_sessiontimeline_tsx",
-      "community": 43,
+      "community": 45,
       "norm_label": "sessiontimeline.tsx"
     },
     {
@@ -288,7 +288,7 @@
       "source_file": "components/StagePath.tsx",
       "source_location": "L1",
       "id": "components_stagepath_tsx",
-      "community": 44,
+      "community": 46,
       "norm_label": "stagepath.tsx"
     },
     {
@@ -297,7 +297,7 @@
       "source_file": "components/JsonLd.tsx",
       "source_location": "L1",
       "id": "components_jsonld_tsx",
-      "community": 19,
+      "community": 21,
       "norm_label": "jsonld.tsx"
     },
     {
@@ -306,7 +306,7 @@
       "source_file": "components/JsonLd.tsx",
       "source_location": "L1",
       "id": "jsonld_jsonld",
-      "community": 19,
+      "community": 21,
       "norm_label": "jsonld()"
     },
     {
@@ -315,7 +315,7 @@
       "source_file": "components/EnquiryForm.tsx",
       "source_location": "L1",
       "id": "components_enquiryform_tsx",
-      "community": 11,
+      "community": 12,
       "norm_label": "enquiryform.tsx"
     },
     {
@@ -324,7 +324,7 @@
       "source_file": "components/EnquiryForm.tsx",
       "source_location": "L10",
       "id": "enquiryform_choice",
-      "community": 11,
+      "community": 12,
       "norm_label": "choice()"
     },
     {
@@ -333,7 +333,7 @@
       "source_file": "components/EnquiryForm.tsx",
       "source_location": "L23",
       "id": "enquiryform_err",
-      "community": 11,
+      "community": 12,
       "norm_label": "err()"
     },
     {
@@ -342,7 +342,7 @@
       "source_file": "components/CtaBand.tsx",
       "source_location": "L1",
       "id": "components_ctaband_tsx",
-      "community": 20,
+      "community": 22,
       "norm_label": "ctaband.tsx"
     },
     {
@@ -351,7 +351,7 @@
       "source_file": "components/CtaBand.tsx",
       "source_location": "L5",
       "id": "ctaband_ctaband",
-      "community": 20,
+      "community": 22,
       "norm_label": "ctaband()"
     },
     {
@@ -414,7 +414,7 @@
       "source_file": "components/Eyebrow.tsx",
       "source_location": "L1",
       "id": "components_eyebrow_tsx",
-      "community": 21,
+      "community": 23,
       "norm_label": "eyebrow.tsx"
     },
     {
@@ -423,7 +423,7 @@
       "source_file": "components/Eyebrow.tsx",
       "source_location": "L1",
       "id": "eyebrow_eyebrow",
-      "community": 21,
+      "community": 23,
       "norm_label": "eyebrow()"
     },
     {
@@ -432,7 +432,7 @@
       "source_file": "components/MobileNav.tsx",
       "source_location": "L1",
       "id": "components_mobilenav_tsx",
-      "community": 22,
+      "community": 24,
       "norm_label": "mobilenav.tsx"
     },
     {
@@ -441,7 +441,7 @@
       "source_file": "components/MobileNav.tsx",
       "source_location": "L17",
       "id": "mobilenav_onkey",
-      "community": 22,
+      "community": 24,
       "norm_label": "onkey()"
     },
     {
@@ -450,7 +450,7 @@
       "source_file": "components/Footer.tsx",
       "source_location": "L1",
       "id": "components_footer_tsx",
-      "community": 45,
+      "community": 47,
       "norm_label": "footer.tsx"
     },
     {
@@ -459,7 +459,7 @@
       "source_file": "components/LostTiles.tsx",
       "source_location": "L1",
       "id": "components_losttiles_tsx",
-      "community": 46,
+      "community": 48,
       "norm_label": "losttiles.tsx"
     },
     {
@@ -468,7 +468,7 @@
       "source_file": "components/ComingSoon.tsx",
       "source_location": "L1",
       "id": "components_comingsoon_tsx",
-      "community": 23,
+      "community": 25,
       "norm_label": "comingsoon.tsx"
     },
     {
@@ -477,7 +477,7 @@
       "source_file": "components/ComingSoon.tsx",
       "source_location": "L3",
       "id": "comingsoon_comingsoon",
-      "community": 23,
+      "community": 25,
       "norm_label": "comingsoon()"
     },
     {
@@ -486,7 +486,7 @@
       "source_file": "components/FoundingBand.tsx",
       "source_location": "L1",
       "id": "components_foundingband_tsx",
-      "community": 47,
+      "community": 49,
       "norm_label": "foundingband.tsx"
     },
     {
@@ -495,7 +495,7 @@
       "source_file": "components/SoundMoment.tsx",
       "source_location": "L1",
       "id": "components_soundmoment_tsx",
-      "community": 48,
+      "community": 50,
       "norm_label": "soundmoment.tsx"
     },
     {
@@ -504,7 +504,7 @@
       "source_file": "components/SubjectGrid.tsx",
       "source_location": "L1",
       "id": "components_subjectgrid_tsx",
-      "community": 49,
+      "community": 51,
       "norm_label": "subjectgrid.tsx"
     },
     {
@@ -513,7 +513,7 @@
       "source_file": "components/PricingTable.tsx",
       "source_location": "L1",
       "id": "components_pricingtable_tsx",
-      "community": 24,
+      "community": 26,
       "norm_label": "pricingtable.tsx"
     },
     {
@@ -522,7 +522,7 @@
       "source_file": "components/PricingTable.tsx",
       "source_location": "L5",
       "id": "pricingtable_gbp",
-      "community": 24,
+      "community": 26,
       "norm_label": "gbp()"
     },
     {
@@ -531,7 +531,7 @@
       "source_file": "components/Header.tsx",
       "source_location": "L1",
       "id": "components_header_tsx",
-      "community": 50,
+      "community": 52,
       "norm_label": "header.tsx"
     },
     {
@@ -540,7 +540,7 @@
       "source_file": "components/SafeHands.tsx",
       "source_location": "L1",
       "id": "components_safehands_tsx",
-      "community": 51,
+      "community": 53,
       "norm_label": "safehands.tsx"
     },
     {
@@ -549,7 +549,7 @@
       "source_file": "components/Button.tsx",
       "source_location": "L1",
       "id": "components_button_tsx",
-      "community": 25,
+      "community": 27,
       "norm_label": "button.tsx"
     },
     {
@@ -558,7 +558,7 @@
       "source_file": "components/Button.tsx",
       "source_location": "L10",
       "id": "button_buttonlink",
-      "community": 25,
+      "community": 27,
       "norm_label": "buttonlink()"
     },
     {
@@ -567,7 +567,7 @@
       "source_file": "components/Faq.tsx",
       "source_location": "L1",
       "id": "components_faq_tsx",
-      "community": 26,
+      "community": 28,
       "norm_label": "faq.tsx"
     },
     {
@@ -576,7 +576,7 @@
       "source_file": "components/Faq.tsx",
       "source_location": "L4",
       "id": "faq_faq",
-      "community": 26,
+      "community": 28,
       "norm_label": "faq()"
     },
     {
@@ -585,7 +585,7 @@
       "source_file": "components/SoundTiles.tsx",
       "source_location": "L1",
       "id": "components_soundtiles_tsx",
-      "community": 52,
+      "community": 54,
       "norm_label": "soundtiles.tsx"
     },
     {
@@ -594,7 +594,7 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L1",
       "id": "components_seedling_scene_ts",
-      "community": 1,
+      "community": 0,
       "norm_label": "scene.ts"
     },
     {
@@ -603,7 +603,7 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L21",
       "id": "scene_clamp",
-      "community": 1,
+      "community": 0,
       "norm_label": "clamp()"
     },
     {
@@ -612,7 +612,7 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L22",
       "id": "scene_easeoutback",
-      "community": 1,
+      "community": 0,
       "norm_label": "easeoutback()"
     },
     {
@@ -621,7 +621,7 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L27",
       "id": "scene_easeoutcubic",
-      "community": 1,
+      "community": 0,
       "norm_label": "easeoutcubic()"
     },
     {
@@ -630,7 +630,7 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L29",
       "id": "scene_makeleafgeometry",
-      "community": 1,
+      "community": 0,
       "norm_label": "makeleafgeometry()"
     },
     {
@@ -639,7 +639,7 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L45",
       "id": "scene_lettertexture",
-      "community": 1,
+      "community": 0,
       "norm_label": "lettertexture()"
     },
     {
@@ -648,7 +648,7 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L67",
       "id": "scene_shadowtexture",
-      "community": 1,
+      "community": 0,
       "norm_label": "shadowtexture()"
     },
     {
@@ -657,7 +657,7 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L81",
       "id": "scene_mountseedling",
-      "community": 1,
+      "community": 0,
       "norm_label": "mountseedling()"
     },
     {
@@ -666,7 +666,7 @@
       "source_file": "components/seedling/SeedlingScene.tsx",
       "source_location": "L1",
       "id": "components_seedling_seedlingscene_tsx",
-      "community": 12,
+      "community": 13,
       "norm_label": "seedlingscene.tsx"
     },
     {
@@ -675,7 +675,7 @@
       "source_file": "components/seedling/SeedlingScene.tsx",
       "source_location": "L15",
       "id": "seedlingscene_webglavailable",
-      "community": 12,
+      "community": 13,
       "norm_label": "webglavailable()"
     },
     {
@@ -684,7 +684,7 @@
       "source_file": "components/seedling/SeedlingScene.tsx",
       "source_location": "L24",
       "id": "seedlingscene_seedlingscene",
-      "community": 12,
+      "community": 13,
       "norm_label": "seedlingscene()"
     },
     {
@@ -693,7 +693,7 @@
       "source_file": "scripts/make-brand-assets.mjs",
       "source_location": "L1",
       "id": "scripts_make_brand_assets_mjs",
-      "community": 13,
+      "community": 14,
       "norm_label": "make-brand-assets.mjs"
     },
     {
@@ -702,7 +702,7 @@
       "source_file": "scripts/make-brand-assets.mjs",
       "source_location": "L5",
       "id": "make_brand_assets_trim",
-      "community": 13,
+      "community": 14,
       "norm_label": "trim()"
     },
     {
@@ -711,7 +711,7 @@
       "source_file": "scripts/make-brand-assets.mjs",
       "source_location": "L12",
       "id": "make_brand_assets_square",
-      "community": 13,
+      "community": 14,
       "norm_label": "square()"
     },
     {
@@ -720,7 +720,7 @@
       "source_file": "lib/founding-availability.ts",
       "source_location": "L1",
       "id": "lib_founding_availability_ts",
-      "community": 53,
+      "community": 55,
       "norm_label": "founding-availability.ts"
     },
     {
@@ -729,7 +729,7 @@
       "source_file": "lib/enquiry-schema.test.ts",
       "source_location": "L1",
       "id": "lib_enquiry_schema_test_ts",
-      "community": 54,
+      "community": 56,
       "norm_label": "enquiry-schema.test.ts"
     },
     {
@@ -801,7 +801,7 @@
       "source_file": "lib/pricing.test.ts",
       "source_location": "L1",
       "id": "lib_pricing_test_ts",
-      "community": 55,
+      "community": 57,
       "norm_label": "pricing.test.ts"
     },
     {
@@ -810,7 +810,7 @@
       "source_file": "lib/schema-org.ts",
       "source_location": "L1",
       "id": "lib_schema_org_ts",
-      "community": 2,
+      "community": 1,
       "norm_label": "schema-org.ts"
     },
     {
@@ -819,7 +819,7 @@
       "source_file": "lib/schema-org.ts",
       "source_location": "L4",
       "id": "schema_org_url",
-      "community": 2,
+      "community": 1,
       "norm_label": "url()"
     },
     {
@@ -828,7 +828,7 @@
       "source_file": "lib/schema-org.ts",
       "source_location": "L12",
       "id": "schema_org_organisationschema",
-      "community": 2,
+      "community": 1,
       "norm_label": "organisationschema()"
     },
     {
@@ -837,7 +837,7 @@
       "source_file": "lib/schema-org.ts",
       "source_location": "L50",
       "id": "schema_org_faqschema",
-      "community": 2,
+      "community": 1,
       "norm_label": "faqschema()"
     },
     {
@@ -846,7 +846,7 @@
       "source_file": "lib/schema-org.ts",
       "source_location": "L62",
       "id": "schema_org_breadcrumbschema",
-      "community": 2,
+      "community": 1,
       "norm_label": "breadcrumbschema()"
     },
     {
@@ -855,7 +855,7 @@
       "source_file": "lib/founding-availability.test.ts",
       "source_location": "L1",
       "id": "lib_founding_availability_test_ts",
-      "community": 56,
+      "community": 58,
       "norm_label": "founding-availability.test.ts"
     },
     {
@@ -865,7 +865,7 @@
       "source_location": "L1-L27",
       "status": "implemented",
       "scope": "Six PNG concept references with fictional data; no portal runtime implementation.",
-      "community": 0,
+      "community": 2,
       "norm_label": "portal-concepts: implemented design archive only",
       "id": "portal_concepts"
     },
@@ -876,7 +876,7 @@
       "source_location": "L34-L41",
       "status": "planned",
       "scope": "No application routes, authentication, family/staff permissions, messages or billing implementation.",
-      "community": 0,
+      "community": 2,
       "norm_label": "portal: planned staff and parent portal; no runtime",
       "id": "portal_planned"
     },
@@ -887,7 +887,7 @@
       "source_location": "L1-L97",
       "status": "implemented",
       "scope": "Design documentation only; includes screen IDs, prior review evidence and remaining validation.",
-      "community": 0,
+      "community": 2,
       "norm_label": "goldleaf portal concept brief and design references",
       "id": "portal_brief"
     },
@@ -897,7 +897,7 @@
       "source_file": "docs/portal-mockups/DESIGN-BRIEF.md",
       "source_location": "L9-L15",
       "scope": "Preserve checkout 26b96ba concepts as historical reference; use current session content and business facts for implementation.",
-      "community": 0,
+      "community": 2,
       "norm_label": "known limitation: archived 105-minute plan versus current 120-minute sessions",
       "id": "portal_historical_timing"
     },
@@ -908,7 +908,7 @@
       "source_location": "L85-L97",
       "status": "planned",
       "scope": "Parents access only their child\u2019s shared information. Private notes remain separate; sharing is explicit. Billing is conceptual. Permissions, delivery, payment flows and accessibility remain unimplemented or unverified.",
-      "community": 0,
+      "community": 2,
       "norm_label": "planned portal information boundaries and unverified behaviour",
       "id": "portal_information_boundaries"
     },
@@ -917,7 +917,7 @@
       "file_type": "document",
       "source_file": "docs/DESIGN.md",
       "source_location": "L1-L3",
-      "community": 0,
+      "community": 2,
       "norm_label": "public-site design document and portal archive reference",
       "id": "portal_referenced_brand_design"
     },
@@ -928,7 +928,7 @@
       "source_file": "docs/portal-mockups/parent-home-desktop.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 0,
+      "community": 7,
       "norm_label": "parent home desktop concept",
       "id": "portal_parent_home_desktop"
     },
@@ -939,7 +939,7 @@
       "source_file": "docs/portal-mockups/parent-home-desktop.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 0,
+      "community": 7,
       "norm_label": "parent desktop next-session card",
       "id": "portal_parent_home_desktop_session"
     },
@@ -950,7 +950,7 @@
       "source_file": "docs/portal-mockups/parent-home-desktop.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 0,
+      "community": 7,
       "norm_label": "parent desktop learning overview",
       "id": "portal_parent_home_desktop_learning"
     },
@@ -961,7 +961,7 @@
       "source_file": "docs/portal-mockups/parent-home-desktop.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 0,
+      "community": 7,
       "norm_label": "parent desktop tutor note and billing",
       "id": "portal_parent_home_desktop_updates"
     },
@@ -977,7 +977,7 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 6,
+      "community": 8,
       "norm_label": "parent learning desktop concept",
       "id": "portal_parent_learning_desktop"
     },
@@ -993,7 +993,7 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 6,
+      "community": 8,
       "norm_label": "early phonics curriculum journey",
       "id": "portal_parent_learning_curriculum"
     },
@@ -1009,7 +1009,7 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 6,
+      "community": 8,
       "norm_label": "shared tutor observations",
       "id": "portal_parent_learning_observations"
     },
@@ -1025,7 +1025,7 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 6,
+      "community": 8,
       "norm_label": "tactile sound exploration",
       "id": "portal_parent_learning_sound_tiles"
     },
@@ -1036,7 +1036,7 @@
       "source_file": "docs/portal-mockups/staff-today-desktop.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 7,
+      "community": 6,
       "norm_label": "staff today desktop concept",
       "id": "portal_staff_today_desktop"
     },
@@ -1047,7 +1047,7 @@
       "source_file": "docs/portal-mockups/staff-today-desktop.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 7,
+      "community": 6,
       "norm_label": "staff desktop daily schedule",
       "id": "portal_staff_today_desktop_schedule"
     },
@@ -1058,7 +1058,7 @@
       "source_file": "docs/portal-mockups/staff-today-desktop.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 7,
+      "community": 6,
       "norm_label": "staff desktop private staff note",
       "id": "portal_staff_today_desktop_private_note"
     },
@@ -1069,7 +1069,7 @@
       "source_file": "docs/portal-mockups/staff-today-desktop.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 7,
+      "community": 6,
       "norm_label": "staff desktop parent update draft",
       "id": "portal_staff_today_desktop_parent_draft"
     },
@@ -1085,7 +1085,7 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 8,
+      "community": 9,
       "norm_label": "staff session desktop concept",
       "id": "portal_staff_session_desktop"
     },
@@ -1101,7 +1101,7 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 8,
+      "community": 9,
       "norm_label": "historical 105-minute session timeline",
       "id": "portal_staff_session_timeline"
     },
@@ -1117,7 +1117,7 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 8,
+      "community": 9,
       "norm_label": "selected phonics activity and materials",
       "id": "portal_staff_session_activity"
     },
@@ -1133,7 +1133,7 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 8,
+      "community": 9,
       "norm_label": "attendance, private notes and parent update design",
       "id": "portal_staff_session_records"
     },
@@ -1144,7 +1144,7 @@
       "source_file": "docs/portal-mockups/parent-home-mobile.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 9,
+      "community": 10,
       "norm_label": "parent home mobile concept",
       "id": "portal_parent_home_mobile"
     },
@@ -1155,7 +1155,7 @@
       "source_file": "docs/portal-mockups/parent-home-mobile.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 9,
+      "community": 10,
       "norm_label": "parent mobile next-session card",
       "id": "portal_parent_home_mobile_session"
     },
@@ -1166,7 +1166,7 @@
       "source_file": "docs/portal-mockups/parent-home-mobile.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 9,
+      "community": 10,
       "norm_label": "parent mobile curriculum overview",
       "id": "portal_parent_home_mobile_learning"
     },
@@ -1177,7 +1177,7 @@
       "source_file": "docs/portal-mockups/parent-home-mobile.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 9,
+      "community": 10,
       "norm_label": "parent mobile observation and billing",
       "id": "portal_parent_home_mobile_updates"
     },
@@ -1193,7 +1193,7 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 10,
+      "community": 11,
       "norm_label": "staff today mobile concept",
       "id": "portal_staff_today_mobile"
     },
@@ -1209,7 +1209,7 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 10,
+      "community": 11,
       "norm_label": "mobile next-session and attendance affordances",
       "id": "portal_staff_today_mobile_next_session"
     },
@@ -1225,7 +1225,7 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 10,
+      "community": 11,
       "norm_label": "mobile three-session timeline",
       "id": "portal_staff_today_mobile_timeline"
     },
@@ -1241,45 +1241,54 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "community": 10,
+      "community": 11,
       "norm_label": "mobile attention queue design",
       "id": "portal_staff_today_mobile_attention"
     },
     {
-      "id": "founding_inventory",
       "label": "Founding inventory and aggregate view",
       "file_type": "document",
       "source_file": "db/migrations/0001_founding_availability.sql",
       "source_location": null,
-      "community": 0,
-      "norm_label": "founding inventory and aggregate view"
+      "community": 15,
+      "norm_label": "founding inventory and aggregate view",
+      "id": "founding_inventory"
     },
     {
-      "id": "founding_seed",
       "label": "Founding slot seed",
       "file_type": "document",
       "source_file": "db/migrations/0002_seed_founding_slots.sql",
       "source_location": null,
-      "community": 0,
-      "norm_label": "founding slot seed"
+      "community": 15,
+      "norm_label": "founding slot seed",
+      "id": "founding_seed"
     },
     {
-      "id": "founding_provision",
       "label": "Founding role provisioning",
       "file_type": "document",
       "source_file": "db/README.md",
       "source_location": null,
-      "community": 0,
-      "norm_label": "founding role provisioning"
+      "community": 15,
+      "norm_label": "founding role provisioning",
+      "id": "founding_provision"
     },
     {
-      "id": "portal_delivery_plan",
       "label": "Portal delivery plan (planned)",
       "file_type": "document",
       "source_file": "docs/superpowers/plans/2026-11-11-goldleaf-portal.md",
       "source_location": null,
+      "community": 2,
+      "norm_label": "portal delivery plan (planned)",
+      "id": "portal_delivery_plan"
+    },
+    {
+      "id": "launch_checklist",
+      "label": "Launch checklist",
+      "file_type": "document",
+      "source_file": "docs/launch-checklist.md",
+      "source_location": null,
       "community": 0,
-      "norm_label": "portal delivery plan (planned)"
+      "norm_label": "launch checklist"
     }
   ],
   "links": [
@@ -1890,8 +1899,8 @@
       "source_file": "docs/portal-mockups/parent-home-desktop.png",
       "source_location": "L13",
       "weight": 1.0,
-      "_src": "portal_parent_home_desktop",
-      "_tgt": "portal_concepts",
+      "_src": "portal_concepts",
+      "_tgt": "portal_parent_home_desktop",
       "source": "portal_concepts",
       "target": "portal_parent_home_desktop"
     },
@@ -1902,8 +1911,8 @@
       "source_file": "docs/portal-mockups/parent-learning-desktop.png",
       "source_location": null,
       "weight": 1.0,
-      "_src": "portal_parent_learning_desktop",
-      "_tgt": "portal_concepts",
+      "_src": "portal_concepts",
+      "_tgt": "portal_parent_learning_desktop",
       "source": "portal_concepts",
       "target": "portal_parent_learning_desktop"
     },
@@ -1914,8 +1923,8 @@
       "source_file": "docs/portal-mockups/staff-today-desktop.png",
       "source_location": "L19",
       "weight": 1.0,
-      "_src": "portal_staff_today_desktop",
-      "_tgt": "portal_concepts",
+      "_src": "portal_concepts",
+      "_tgt": "portal_staff_today_desktop",
       "source": "portal_concepts",
       "target": "portal_staff_today_desktop"
     },
@@ -1926,8 +1935,8 @@
       "source_file": "docs/portal-mockups/staff-session-desktop.png",
       "source_location": null,
       "weight": 1.0,
-      "_src": "portal_staff_session_desktop",
-      "_tgt": "portal_concepts",
+      "_src": "portal_concepts",
+      "_tgt": "portal_staff_session_desktop",
       "source": "portal_concepts",
       "target": "portal_staff_session_desktop"
     },
@@ -1938,8 +1947,8 @@
       "source_file": "docs/portal-mockups/parent-home-mobile.png",
       "source_location": "L13",
       "weight": 1.0,
-      "_src": "portal_parent_home_mobile",
-      "_tgt": "portal_concepts",
+      "_src": "portal_concepts",
+      "_tgt": "portal_parent_home_mobile",
       "source": "portal_concepts",
       "target": "portal_parent_home_mobile"
     },
@@ -1950,8 +1959,8 @@
       "source_file": "docs/portal-mockups/staff-today-mobile.png",
       "source_location": null,
       "weight": 1.0,
-      "_src": "portal_staff_today_mobile",
-      "_tgt": "portal_concepts",
+      "_src": "portal_concepts",
+      "_tgt": "portal_staff_today_mobile",
       "source": "portal_concepts",
       "target": "portal_staff_today_mobile"
     },
@@ -1962,8 +1971,8 @@
       "source_file": "FEATURE_TREE.md",
       "source_location": "L39",
       "weight": 1.0,
-      "_src": "portal_planned",
-      "_tgt": "portal_concepts",
+      "_src": "portal_concepts",
+      "_tgt": "portal_planned",
       "source": "portal_concepts",
       "target": "portal_planned"
     },
@@ -1974,8 +1983,8 @@
       "source_file": "docs/portal-mockups/README.md",
       "source_location": "L5",
       "weight": 1.0,
-      "_src": "portal_historical_timing",
-      "_tgt": "portal_concepts",
+      "_src": "portal_concepts",
+      "_tgt": "portal_historical_timing",
       "source": "portal_concepts",
       "target": "portal_historical_timing"
     },
@@ -1986,10 +1995,22 @@
       "source_file": "docs/DESIGN.md",
       "source_location": "L3",
       "weight": 1.0,
-      "_src": "portal_referenced_brand_design",
-      "_tgt": "portal_concepts",
+      "_src": "portal_concepts",
+      "_tgt": "portal_referenced_brand_design",
       "source": "portal_concepts",
       "target": "portal_referenced_brand_design"
+    },
+    {
+      "_src": "portal_delivery_plan",
+      "_tgt": "portal_concepts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-11-11-goldleaf-portal.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "portal_concepts",
+      "target": "portal_delivery_plan"
     },
     {
       "relation": "rationale_for",
@@ -1998,10 +2019,22 @@
       "source_file": "docs/portal-mockups/DESIGN-BRIEF.md",
       "source_location": "L85-L97",
       "weight": 1.0,
-      "_src": "portal_information_boundaries",
-      "_tgt": "portal_planned",
+      "_src": "portal_planned",
+      "_tgt": "portal_information_boundaries",
       "source": "portal_planned",
       "target": "portal_information_boundaries"
+    },
+    {
+      "_src": "portal_delivery_plan",
+      "_tgt": "portal_planned",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-11-11-goldleaf-portal.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "portal_planned",
+      "target": "portal_delivery_plan"
     },
     {
       "relation": "cites",
@@ -2226,8 +2259,6 @@
       "target": "portal_staff_today_mobile_attention"
     },
     {
-      "source": "founding_inventory",
-      "target": "founding_seed",
       "_src": "founding_inventory",
       "_tgt": "founding_seed",
       "relation": "references",
@@ -2235,11 +2266,11 @@
       "confidence_score": 1.0,
       "source_file": "db/migrations/0001_founding_availability.sql",
       "source_location": null,
-      "weight": 1.0
+      "weight": 1.0,
+      "source": "founding_inventory",
+      "target": "founding_seed"
     },
     {
-      "source": "founding_provision",
-      "target": "founding_inventory",
       "_src": "founding_provision",
       "_tgt": "founding_inventory",
       "relation": "references",
@@ -2247,7 +2278,9 @@
       "confidence_score": 1.0,
       "source_file": "db/README.md",
       "source_location": null,
-      "weight": 1.0
+      "weight": 1.0,
+      "source": "founding_inventory",
+      "target": "founding_provision"
     },
     {
       "source": "lib_founding_availability_ts",
@@ -2274,26 +2307,14 @@
       "weight": 1.0
     },
     {
-      "source": "portal_delivery_plan",
-      "target": "portal_planned",
-      "_src": "portal_delivery_plan",
-      "_tgt": "portal_planned",
+      "source": "launch_checklist",
+      "target": "founding_provision",
+      "_src": "launch_checklist",
+      "_tgt": "founding_provision",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/superpowers/plans/2026-11-11-goldleaf-portal.md",
-      "source_location": null,
-      "weight": 1.0
-    },
-    {
-      "source": "portal_delivery_plan",
-      "target": "portal_concepts",
-      "_src": "portal_delivery_plan",
-      "_tgt": "portal_concepts",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/superpowers/plans/2026-11-11-goldleaf-portal.md",
+      "source_file": "docs/launch-checklist.md",
       "source_location": null,
       "weight": 1.0
     }

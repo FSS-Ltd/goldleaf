@@ -1,11 +1,11 @@
 # Graph Report - goldleaf-graph-refresh  (2026-11-11)
 
 ## Corpus Check
-- 53 files · ~12,869 words
+- 53 files · ~12,931 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 125 nodes · 80 edges · 10 communities detected
+- 129 nodes · 84 edges · 12 communities detected
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -20,9 +20,11 @@
 - [[_COMMUNITY_Community 8|Community 8]]
 - [[_COMMUNITY_Community 9|Community 9]]
 - [[_COMMUNITY_Community 10|Community 10]]
+- [[_COMMUNITY_Community 11|Community 11]]
+- [[_COMMUNITY_Community 15|Community 15]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `PORTAL-CONCEPTS: implemented design archive only` - 10 edges
+1. `PORTAL-CONCEPTS: implemented design archive only` - 11 edges
 2. `Parent home desktop concept` - 4 edges
 3. `Parent learning desktop concept` - 4 edges
 4. `Staff today desktop concept` - 4 edges
@@ -42,22 +44,22 @@
   app/enquire/actions.ts → lib/enquiry-schema.ts
 - `sendEnquiry()` --calls--> `fieldErrors()`  [INFERRED]
   app/enquire/actions.ts → lib/enquiry-schema.ts
-- `Parent learning desktop concept` --illustrates--> `PORTAL-CONCEPTS: implemented design archive only`  [EXTRACTED]
-  docs/portal-mockups/parent-learning-desktop.png → docs/portal-mockups/README.md
+- `PORTAL-CONCEPTS: implemented design archive only` --illustrates--> `Parent home desktop concept`  [EXTRACTED]
+  docs/portal-mockups/README.md → docs/portal-mockups/parent-home-desktop.png
 
 ## Communities
 
 ### Community 0 - "Community 0"
-Cohesion: 0.24
-Nodes (10): Goldleaf portal concept brief and design references, PORTAL-CONCEPTS: implemented design archive only, Known limitation: archived 105-minute plan versus current 120-minute sessions, Planned portal information boundaries and unverified behaviour, Parent home desktop concept, Parent desktop learning overview, Parent desktop next-session card, Parent desktop tutor note and billing (+2 more)
-
-### Community 1 - "Community 1"
 Cohesion: 0.29
 Nodes (2): mountSeedling(), shadowTexture()
 
-### Community 2 - "Community 2"
+### Community 1 - "Community 1"
 Cohesion: 0.38
 Nodes (4): Home(), faqSchema(), organisationSchema(), url()
+
+### Community 2 - "Community 2"
+Cohesion: 0.43
+Nodes (7): Goldleaf portal concept brief and design references, PORTAL-CONCEPTS: implemented design archive only, Portal delivery plan (planned), Known limitation: archived 105-minute plan versus current 120-minute sessions, Planned portal information boundaries and unverified behaviour, PORTAL: planned staff and parent portal; no runtime, Public-site design document and portal archive reference
 
 ### Community 4 - "Community 4"
 Cohesion: 0.5
@@ -69,28 +71,36 @@ Nodes (2): roundTo5(), weekly()
 
 ### Community 6 - "Community 6"
 Cohesion: 0.5
-Nodes (4): Early phonics curriculum journey, Parent learning desktop concept, Shared tutor observations, Tactile sound exploration
+Nodes (4): Staff today desktop concept, Staff desktop parent update draft, Staff desktop private staff note, Staff desktop daily schedule
 
 ### Community 7 - "Community 7"
 Cohesion: 0.5
-Nodes (4): Staff today desktop concept, Staff desktop parent update draft, Staff desktop private staff note, Staff desktop daily schedule
+Nodes (4): Parent home desktop concept, Parent desktop learning overview, Parent desktop next-session card, Parent desktop tutor note and billing
 
 ### Community 8 - "Community 8"
 Cohesion: 0.5
-Nodes (4): Selected phonics activity and materials, Staff session desktop concept, Attendance, private notes and parent update design, Historical 105-minute session timeline
+Nodes (4): Early phonics curriculum journey, Parent learning desktop concept, Shared tutor observations, Tactile sound exploration
 
 ### Community 9 - "Community 9"
 Cohesion: 0.5
-Nodes (4): Parent home mobile concept, Parent mobile curriculum overview, Parent mobile next-session card, Parent mobile observation and billing
+Nodes (4): Selected phonics activity and materials, Staff session desktop concept, Attendance, private notes and parent update design, Historical 105-minute session timeline
 
 ### Community 10 - "Community 10"
 Cohesion: 0.5
+Nodes (4): Parent home mobile concept, Parent mobile curriculum overview, Parent mobile next-session card, Parent mobile observation and billing
+
+### Community 11 - "Community 11"
+Cohesion: 0.5
 Nodes (4): Staff today mobile concept, Mobile attention queue design, Mobile next-session and attendance affordances, Mobile three-session timeline
 
+### Community 15 - "Community 15"
+Cohesion: 0.67
+Nodes (3): Founding inventory and aggregate view, Founding role provisioning, Founding slot seed
+
 ## Knowledge Gaps
-- **19 isolated node(s):** `Known limitation: archived 105-minute plan versus current 120-minute sessions`, `Parent desktop next-session card`, `Parent desktop learning overview`, `Parent desktop tutor note and billing`, `Early phonics curriculum journey` (+14 more)
+- **21 isolated node(s):** `Known limitation: archived 105-minute plan versus current 120-minute sessions`, `Parent desktop next-session card`, `Parent desktop learning overview`, `Parent desktop tutor note and billing`, `Early phonics curriculum journey` (+16 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 1`** (8 nodes): `scene.ts`, `clamp()`, `easeOutBack()`, `easeOutCubic()`, `letterTexture()`, `makeLeafGeometry()`, `mountSeedling()`, `shadowTexture()`
+- **Thin community `Community 0`** (8 nodes): `scene.ts`, `clamp()`, `easeOutBack()`, `easeOutCubic()`, `letterTexture()`, `makeLeafGeometry()`, `mountSeedling()`, `shadowTexture()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 5`** (4 nodes): `pricing.ts`, `monthly()`, `roundTo5()`, `weekly()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -98,12 +108,14 @@ Nodes (4): Staff today mobile concept, Mobile attention queue design, Mobile nex
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `PORTAL-CONCEPTS: implemented design archive only` connect `Community 0` to `Community 6`, `Community 7`, `Community 8`, `Community 9`, `Community 10`?**
+- **Why does `PORTAL-CONCEPTS: implemented design archive only` connect `Community 2` to `Community 6`, `Community 7`, `Community 8`, `Community 9`, `Community 10`, `Community 11`?**
   _High betweenness centrality (0.048) - this node is a cross-community bridge._
-- **Why does `Parent learning desktop concept` connect `Community 6` to `Community 0`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+- **Why does `Parent home desktop concept` connect `Community 7` to `Community 2`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+- **Why does `Parent learning desktop concept` connect `Community 8` to `Community 2`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **What connects `Known limitation: archived 105-minute plan versus current 120-minute sessions`, `Parent desktop next-session card`, `Parent desktop learning overview` to the rest of the system?**
-  _19 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _21 weakly-connected nodes found - possible documentation gaps or missing edges._
 ## Coverage and incremental update
 
-Structural extraction used an allowlisted copy of tracked code plus the new founding files, excluding runtime data, dependencies, build output and graph artifacts. Existing document and image nodes were retained. Founding migration, seed, provisioning and portal plan references were added from source. Semantic coverage outside the portal archive and these references remains incomplete; unresolved AST edges may be omitted. The plan describes future work, not implemented portal features. After adding these source-backed references, the graph contains 129 nodes and 86 directed edges.
+Structural extraction used an allowlisted copy of tracked code, excluding runtime data, dependencies, build output and graph artifacts. Existing document and image nodes were retained. Founding migration, seed, provisioning, launch checklist and portal plan references are source-backed. Semantic coverage outside the portal archive and these references remains incomplete; unresolved AST edges may be omitted. The plan describes future work, not implemented portal features. After adding source-backed references, the graph contains 130 nodes and 87 directed edges.

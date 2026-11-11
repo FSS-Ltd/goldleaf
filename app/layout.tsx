@@ -48,9 +48,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         <Header />
-        <main id="main" className="flex-1">
-          <ViewTransition>{children}</ViewTransition>
-        </main>
+        <ViewTransition>
+          <main id="main" className="flex-1">{children}</main>
+        </ViewTransition>
         <Footer />
         <Analytics />
       </body>

@@ -56,10 +56,10 @@ test("navigation renders without transition errors", async ({ page }) => {
   await page.getByRole("link", { name: "See how we teach" }).click();
   await expect(page).toHaveURL(/\/how-we-teach$/);
   await expect(page.getByRole("heading", { level: 1, name: "Phonics for 2 to 4 year olds, one clear stage at a time" })).toBeVisible();
-  await expect(page.locator("main h1")).toHaveCount(1);
+  await expect(page.getByRole("main").getByRole("heading", { level: 1 })).toHaveCount(1);
   await page.getByRole("link", { name: "About", exact: true }).first().click();
   await expect(page).toHaveURL(/\/about$/);
   await expect(page.getByRole("heading", { level: 1, name: "Meet Deborah, your Goldleaf tutor" })).toBeVisible();
-  await expect(page.locator("main h1")).toHaveCount(1);
+  await expect(page.getByRole("main").getByRole("heading", { level: 1 })).toHaveCount(1);
   expect(errors).toEqual([]);
 });

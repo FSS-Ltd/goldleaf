@@ -30,6 +30,15 @@ Canonical inventory for this repo. Status values: implemented, partial, planned.
 | PRIVACY | UK GDPR notice (approved by client) | implemented | `/privacy` | `app/privacy/page.tsx` | CONTENT | ENQUIRY (linked) | e2e |
 | SEO | Metadata, canonical, sitemap, robots, JSON-LD, icons, OG image | implemented | `app/layout.tsx`, `app/sitemap.ts`, `app/robots.ts`, `app/*icon*`, `app/opengraph-image.png` | `lib/schema-org.ts`, `components/JsonLd.tsx` | CONTENT, FAQ | all pages | e2e (sitemap, robots), Lighthouse |
 | BRAND-ASSETS | Logo files and the script that trims them and makes icons | implemented | `scripts/make-brand-assets.mjs` | `public/brand/*` | sharp | SITE-LAYOUT, LANDING, SEO | none |
+| PORTAL-CONCEPTS | Dated staff and parent UI reference archive | implemented (design assets only) | `docs/portal-mockups/README.md` | `docs/portal-mockups/DESIGN-BRIEF.md`, six PNG previews | CONTENT, SITE-LAYOUT, STAGE-PATH, SESSION-TIMELINE as design references | PORTAL (planned) | Original-export byte comparison, PNG decoding, local-link checks; prior visual review |
+| PORTAL | Staff and parent portal | planned | No application routes yet; `docs/portal-mockups/README.md` | No runtime implementation | PORTAL-CONCEPTS; prospective reuse of CONTENT, SITE-LAYOUT, STAGE-PATH, SESSION-TIMELINE | none | None; mockups are not runtime evidence |
+
+## Portal design reference
+
+- Start with [the mockup gallery](docs/portal-mockups/README.md) for PORTAL-CONCEPTS. Graph nodes: `portal_concepts` and `portal_planned` in [graph.json](graphify-out/graph.json).
+- `PORTAL depends_on PORTAL-CONCEPTS`; the archive references the existing content, typography, stage path and session timeline rather than introducing a parallel implementation. These are design relationships, not runtime imports.
+- All identities and balances shown are fictional. The archive preserves the earlier 105-minute plan from checkout `26b96ba`; current `content/site.ts` and `content/session.ts` specify 120 minutes.
+- Authentication, family/staff permissions, messages and billing are planned boundaries, with no implementation or tests in this archive.
 
 ## Known gaps
 - `content/session.ts` now follows the manual's routine. The ages 3 to 4 column is carried over from the earlier plan, and the manual covers age 2 only. Discover and Snack are marked "Same" for older ages without a source.
@@ -38,4 +47,4 @@ Canonical inventory for this repo. Status values: implemented, partial, planned.
 - Tutor bio and photo are placeholders. Contact email is a placeholder (`hello@example.com`).
 - STAGE-PATH, SESSION-TIMELINE, FAQ, SAFE-HANDS and the error screens have no automated tests.
 - The 3D scene has not been measured on a real phone. Check frame rate before launch.
-- Graphify map is structural only (AST of 40 code files: 69 nodes, 35 edges, 38 communities). Cross-file imports are thinly captured, and docs and images were not semantically extracted. Treat the tables above as the source for feature connections.
+- Graphify covers structural extraction from 50 tracked code files plus the portal archive documentation and six screenshots (116 nodes, 88 directed edges, 50 communities). Other docs/images remain outside semantic coverage; 123 unresolved AST import/call edges are omitted. Use this tree for domain connections and [the graph report](graphify-out/GRAPH_REPORT.md) for coverage limits.

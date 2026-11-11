@@ -1,5 +1,7 @@
 # Design doc: Goldleaf Tutoring public site
 
+Portal design references: [staff and parent mockup archive](portal-mockups/README.md). These are dated concepts, not implemented public-site or portal features; their 105-minute example sessions predate the current two-hour session plan.
+
 Status: approved plan, build in progress. Branch: `feat/public-site`.
 
 ## Problem

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
+import { EnquiryPrice, EnquiryPriceText } from "@/components/FoundingContent";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { Eyebrow } from "@/components/Eyebrow";
 import { JsonLd } from "@/components/JsonLd";
-import { site, foundingOpen } from "@/content/site";
+import { site } from "@/content/site";
 import { breadcrumbSchema } from "@/lib/schema-org";
 
 export const metadata: Metadata = {
@@ -28,12 +30,7 @@ export default function Enquire() {
         <div>
           <Eyebrow left>Enquire</Eyebrow>
           <h1 className="mt-4 !text-[clamp(2.2rem,5vw,3.5rem)]">Ask about a place</h1>
-          <p className="prose-x mt-4 mb-10 text-ink-soft">
-            {foundingOpen
-              ? `Founding places are £${site.founding.rate} an hour until ${site.founding.endsLabel}. The standard rate is £${site.standardRate} an hour.`
-              : `The standard rate is £${site.standardRate} an hour.`}{" "}
-            This is not a booking. It starts a conversation.
-          </p>
+          <Suspense fallback={<EnquiryPriceText />}><EnquiryPrice /></Suspense>
           <EnquiryForm />
         </div>
         <aside aria-labelledby="next-title" className="h-fit rounded-card bg-paper-deep p-6 md:p-8">

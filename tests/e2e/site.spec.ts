@@ -20,8 +20,8 @@ test("pricing table shows the 2 hour prices", async ({ page }) => {
   const table = page.locator("#pricing table");
   await expect(table).toContainText("£270");
   await expect(table).toContainText("£1170");
-  await expect(table).toContainText("£250");
-  await expect(table).toContainText("£1083");
+  await expect(table).not.toContainText("£250");
+  await expect(page.getByText("Founding places are full")).toHaveCount(0);
 });
 
 test("unknown route shows the custom 404", async ({ page }) => {
@@ -44,4 +44,22 @@ test("mobile menu opens and lists the pages", async ({ page }) => {
   await page.goto("/");
   await page.getByRole("button", { name: "Open menu" }).click();
   await expect(page.locator("#mobile-menu").getByRole("link", { name: "How we teach" })).toBeVisible();
+});
+
+test("navigation renders without transition errors", async ({ page }) => {
+  const errors: string[] = [];
+  page.on("console", (message) => {
+    if (message.type() === "error" && !message.text().includes("_vercel")) errors.push(message.text());
+  });
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.goto("/");
+  await page.getByRole("link", { name: "See how we teach" }).click();
+  await expect(page).toHaveURL(/\/how-we-teach$/);
+  await expect(page.getByRole("heading", { level: 1, name: "Phonics for 2 to 4 year olds, one clear stage at a time" })).toBeVisible();
+  await expect(page.getByRole("main").getByRole("heading", { level: 1 })).toHaveCount(1);
+  await page.getByRole("link", { name: "About", exact: true }).first().click();
+  await expect(page).toHaveURL(/\/about$/);
+  await expect(page.getByRole("heading", { level: 1, name: "Meet Deborah, your Goldleaf tutor" })).toBeVisible();
+  await expect(page.getByRole("main").getByRole("heading", { level: 1 })).toHaveCount(1);
+  expect(errors).toEqual([]);
 });

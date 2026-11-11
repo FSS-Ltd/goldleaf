@@ -29,10 +29,12 @@ jobs:
       - run: pnpm build
       - run: pnpm typecheck
       - run: pnpm test:unit
+      - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm exec playwright test
         env:
           # The e2e dry run needs no key. Leave Resend unset so no real email is sent from CI.
           RESEND_API_KEY: ""
+          GOLDLEAF_OFFER_DATABASE_URL: ""
 
   deploy:
     needs: test

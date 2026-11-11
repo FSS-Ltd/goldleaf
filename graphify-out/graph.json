@@ -1,94 +1,178 @@
 {
-  "directed": true,
+  "directed": false,
   "multigraph": false,
-  "graph": {
-    "scope": "Tracked code structural refresh plus portal archive semantic extraction. Other documentation and images are not semantically mapped.",
-    "base_commit": "d0901c50a878a57f03d0a6bbc916298783a55435",
-    "omitted_unresolved_ast_edges": 123,
-    "token_accounting": "Semantic extraction estimates; not exact billed model usage.",
-    "source_sha256": {
-      "app/about/page.tsx": "bef15902dc5610c1556725b8844a530e6acb2071ae1d3cd7e0b98fd8faac3e35",
-      "app/enquire/actions.ts": "a378d0df10e187f3b8a297df8f7e1218719d650fa3322996c26585135d44ed38",
-      "app/enquire/page.tsx": "4ac73075ae42c2d6289906bc544c35c06f83bfe07eafefb393b6717f76086f32",
-      "app/error.tsx": "c30ef5ffd6baeb529e1d811a42ad18b6a61b31f8995d30a0f813516c7df093d2",
-      "app/global-error.tsx": "2f65a7dcb86b23564b96b88ec69b7a436dc106c5b94c11ba8d7863efe4987026",
-      "app/globals.css": "a6a6af77ae54bab50682addb8a42d73e2c847fe194999a3dd5c3a1fc9d060987",
-      "app/how-we-teach/page.tsx": "02efefdf8b412a22fdf4e3c452a91380710a868ae49c63c67a3d84d9bcb3daeb",
-      "app/layout.tsx": "7161d3725e83e704074bd4a321ac735eeb95c1f8efe72103abb2d104b339cb40",
-      "app/not-found.tsx": "0f20beb2d557df5f637eb83ccc55b3424631583ab6a9933e91aee0635e5ecf13",
-      "app/page.tsx": "8cace2e435c57d37539d8b16b4a94fcedeb2e884d28474ee3e2597aac81e986d",
-      "app/privacy/page.tsx": "2fa608bd0dd6ad000934630e7ccc9f935ea740dcf522e0f287976edb5c195750",
-      "app/robots.ts": "f81abc31eab5eabc48180b0b973173a2e02b5d35597ceddaa9f4e7f20c7fb712",
-      "app/sitemap.ts": "e437fff3e6b4ef77e0001f90728a23e61422edd626adbad610af35c2ce7c7655",
-      "components/Button.tsx": "1737496b5088bc88816ead1b556d20ff41e6604fb8e1c7e0f37a67452f111ad2",
-      "components/ComingSoon.tsx": "d099c7e2e8f3435ad74e984d1375f4dbba1d6b875ed10de120b9516095b4e5c5",
-      "components/CtaBand.tsx": "b1ca5f1514e3ba45172b20041a3b4bb6095dfabb45fd6766f94c940135ae918a",
-      "components/EnquiryForm.tsx": "1b6af316f794a543f031523f7c14fd2cdc85cb16d076b8dc4c3a7f8a68183a67",
-      "components/Eyebrow.tsx": "b2860b55ffcc50865220baa6f19c41dde7113269fe6c7a5568f59854e625b8be",
-      "components/Faq.tsx": "c29a42ff6369e280f6bf9f1f87043e3a26bc46d66e6f6fb7b51b099879bccba1",
-      "components/Footer.tsx": "d644eb098bd38fef54ee5e6ef105b4b628b8c2227200324c6ff6d84a562113d2",
-      "components/FoundingBand.tsx": "1b4e19bb630e46005d7bb92de8f4ad93a32a7e059a80b7d3b0b77c4ae756af24",
-      "components/Header.tsx": "22faf4e46b8ba41e473655a1f86516a431993971e8219cdda7704c9c27ae73d8",
-      "components/JsonLd.tsx": "d143e7ed59cb39a1b8e3ca1ce76c03fac65928789fcd99febcf66c2058adb508",
-      "components/LostTiles.tsx": "0c45b48746e1ecec33cea8fb36a1488b0f80e16e69c05ce8fae34d3cb2da80ab",
-      "components/MobileNav.tsx": "d73b431e983192c9b9a87e59e0ae49ef88f1a75c8224317243c132ca59501dfe",
-      "components/PricingTable.tsx": "21c054ccbee5bfffa6ce72b78467247935be176090327a7e04e4635f43c27789",
-      "components/SafeHands.tsx": "20d433dadb2c5216256df711761cf898e92377f67f7719f257cb2162f5eafa79",
-      "components/SessionTimeline.tsx": "6abf587c5ea12ad8c65e650c827af5247414a6042035cba3866c3a09b4eab342",
-      "components/SoundMoment.tsx": "a3aa6ea96bbe00cd3bb8d54a6e0e6b59196634497c244efba082d8b1bc36716b",
-      "components/SoundTiles.tsx": "e0ecc2ae55e20646a6837fa7251ad26974ffc1330a6519daf959dd745aaf6d41",
-      "components/StagePath.tsx": "0dce20e7ca8306bb32b3a609c5a88cc70d6efc6359d1258685d3af26da2d0d9f",
-      "components/SubjectGrid.tsx": "f0eff0d3e7ffc3969b0d826a432e7364baa8c11b6831e0d3faa73273927494c3",
-      "components/seedling/SeedlingScene.tsx": "e3bdba9a63d9dd4040233def95005c51c9c29455cc752f35f0cf43b266bdcc06",
-      "components/seedling/scene.ts": "744820db98647751e8d9761439c1d7f4e82ae65a0d41a5f223bc7c42f625dfa8",
-      "content/faq.ts": "e30a8611748cd68bf0f26d1d1fe4a54af208c775831ac699234d0b04ea78ed55",
-      "content/progression.ts": "93de4895a00db38bb3b6d6e414e79ce097bbd8ac1c193cd64f44e76c765d2dad",
-      "content/session.ts": "1329c37dbdec66b2399eb345669057bcbc06abfce2e08da1c44950ed4e97628c",
-      "content/site.ts": "8c5b6763bd25f12cd90ae84ae3dd324718f31269480cc0d783d6cd8d02362c09",
-      "content/subjects.ts": "6b59db40c4252081cbdfa77b4ef80ce8f48e39b2c5bc9624166a0de60573503d",
-      "content/units.ts": "185160cd0e5c61ca35c7da13b982336cc9f1d6ca5bdc4b534e5534603bc72817",
-      "docs/DESIGN.md": "71559057e1a5782818b15120081a7e184b57970bf7b0b840f5003b85cbcc41a9",
-      "docs/portal-mockups/DESIGN-BRIEF.md": "9e5b691b5a1304690c1a766fddcab7ce99610866703c49d2d0f9940923aa0341",
-      "docs/portal-mockups/README.md": "f923942d4bf3d7617238ff9bef6d3ba699d13a65b61a0ce6eca3118d068ab11e",
-      "docs/portal-mockups/parent-home-desktop.png": "2779d1835a59a20b56b8a38df2102d86d80d6d0e49ff9b60d186cd829c3c7745",
-      "docs/portal-mockups/parent-home-mobile.png": "8a05bfa6049cd1c6d23519c798c27efac056098448e23fb1f7e574f16fd5ffdc",
-      "docs/portal-mockups/parent-learning-desktop.png": "0d11e8a5c0bc7ce24008bac875e2f4fd4747a99c026188a3233ea1eb8ffd3d83",
-      "docs/portal-mockups/staff-session-desktop.png": "49bb4b63c614aec6ffb7461bb0df59e6aa6a71b558cf5269f81e514cc3a1244a",
-      "docs/portal-mockups/staff-today-desktop.png": "d4738c30aa0dc641c7177f827b09ff204d2445ca3379f476e00f694a85d3e68b",
-      "docs/portal-mockups/staff-today-mobile.png": "3ce2a6b18cbf5fbc8bfa176de3ab0d710c3ff185fb87cb056425b87a638dc639",
-      "eslint.config.mjs": "870f1adccecf3051cbcd9fd307cef51d7633cf510979c181a81f4b1797273493",
-      "lib/enquiry-schema.test.ts": "c0b705019c45cb7f19aff5ad7ed35d6d31d71229ea9f4d367979b1673a0b04a1",
-      "lib/enquiry-schema.ts": "2c150c39f2c0ccf5725140aa8e54ce92b9258303815666d5af62d2bdd1bc8f4c",
-      "lib/pricing.test.ts": "7516174d3e606c2058aea79e6385b4a537cb78f2cab68e8d8a11d702c8a98856",
-      "lib/pricing.ts": "bfd5012fb03f3bbca7160150a7c28febc7c92aacede8147081db42b3b135c193",
-      "lib/schema-org.ts": "75b536b20f4ccb18a4744cff22f43aa2f0cfe1be4bcd84e5e119efeb48dc4892",
-      "next.config.ts": "17145a9822ec351b92b8a5f8d3a709a531c8690ed92d397a4405ae084ea9acc7",
-      "playwright.config.ts": "72785932e2d8a9ff1b08c5754f923a6d9c94e68f49360771c1090d471d2404f4",
-      "scripts/make-brand-assets.mjs": "9d7df4822d680c963dcb9769d35919a171285cf1f8fb0159accd7ab2e0e19079",
-      "tests/e2e/enquiry.spec.ts": "8603b1fe4181d27aa5fdc3142e02dbaf39892463d507f48be6036c878c5786a8",
-      "tests/e2e/site.spec.ts": "e398557189e650c09d207bbea7667c6d7a075e024634a08c60cd346717b0b399"
-    },
-    "semantic_input_tokens_estimated": 18666,
-    "semantic_output_tokens_estimated": 7099
-  },
+  "graph": {},
   "nodes": [
+    {
+      "label": "playwright.config.ts",
+      "file_type": "code",
+      "source_file": "playwright.config.ts",
+      "source_location": "L1",
+      "id": "playwright_config_ts",
+      "community": 29,
+      "norm_label": "playwright.config.ts"
+    },
+    {
+      "label": "eslint.config.mjs",
+      "file_type": "code",
+      "source_file": "eslint.config.mjs",
+      "source_location": "L1",
+      "id": "eslint_config_mjs",
+      "community": 30,
+      "norm_label": "eslint.config.mjs"
+    },
+    {
+      "label": "next.config.ts",
+      "file_type": "code",
+      "source_file": "next.config.ts",
+      "source_location": "L1",
+      "id": "next_config_ts",
+      "community": 31,
+      "norm_label": "next.config.ts"
+    },
+    {
+      "label": "robots.ts",
+      "file_type": "code",
+      "source_file": "app/robots.ts",
+      "source_location": "L1",
+      "id": "app_robots_ts",
+      "community": 16,
+      "norm_label": "robots.ts"
+    },
+    {
+      "label": "robots()",
+      "file_type": "code",
+      "source_file": "app/robots.ts",
+      "source_location": "L4",
+      "id": "robots_robots",
+      "community": 16,
+      "norm_label": "robots()"
+    },
+    {
+      "label": "sitemap.ts",
+      "file_type": "code",
+      "source_file": "app/sitemap.ts",
+      "source_location": "L1",
+      "id": "app_sitemap_ts",
+      "community": 17,
+      "norm_label": "sitemap.ts"
+    },
+    {
+      "label": "sitemap()",
+      "file_type": "code",
+      "source_file": "app/sitemap.ts",
+      "source_location": "L4",
+      "id": "sitemap_sitemap",
+      "community": 17,
+      "norm_label": "sitemap()"
+    },
+    {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app/layout.tsx",
+      "source_location": "L1",
+      "id": "app_layout_tsx",
+      "community": 32,
+      "norm_label": "layout.tsx"
+    },
+    {
+      "label": "error.tsx",
+      "file_type": "code",
+      "source_file": "app/error.tsx",
+      "source_location": "L1",
+      "id": "app_error_tsx",
+      "community": 33,
+      "norm_label": "error.tsx"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L1",
+      "id": "app_page_tsx",
+      "community": 1,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "Home()",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L40",
+      "id": "page_home",
+      "community": 1,
+      "norm_label": "home()"
+    },
+    {
+      "label": "global-error.tsx",
+      "file_type": "code",
+      "source_file": "app/global-error.tsx",
+      "source_location": "L1",
+      "id": "app_global_error_tsx",
+      "community": 34,
+      "norm_label": "global-error.tsx"
+    },
+    {
+      "label": "not-found.tsx",
+      "file_type": "code",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L1",
+      "id": "app_not_found_tsx",
+      "community": 18,
+      "norm_label": "not-found.tsx"
+    },
+    {
+      "label": "NotFound()",
+      "file_type": "code",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L18",
+      "id": "not_found_notfound",
+      "community": 18,
+      "norm_label": "notfound()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/privacy/page.tsx",
+      "source_location": "L1",
+      "id": "app_privacy_page_tsx",
+      "community": 35,
+      "norm_label": "page.tsx"
+    },
     {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/about/page.tsx",
       "source_location": "L1",
       "id": "app_about_page_tsx",
-      "community": 12,
+      "community": 19,
       "norm_label": "page.tsx"
     },
     {
       "label": "About()",
       "file_type": "code",
       "source_file": "app/about/page.tsx",
-      "source_location": "L17",
+      "source_location": "L19",
       "id": "page_about",
-      "community": 12,
+      "community": 19,
       "norm_label": "about()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/how-we-teach/page.tsx",
+      "source_location": "L1",
+      "id": "app_how_we_teach_page_tsx",
+      "community": 20,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "HowWeTeach()",
+      "file_type": "code",
+      "source_file": "app/how-we-teach/page.tsx",
+      "source_location": "L23",
+      "id": "page_howweteach",
+      "community": 20,
+      "norm_label": "howweteach()"
     },
     {
       "label": "actions.ts",
@@ -114,188 +198,116 @@
       "source_file": "app/enquire/page.tsx",
       "source_location": "L1",
       "id": "app_enquire_page_tsx",
-      "community": 25,
+      "community": 36,
       "norm_label": "page.tsx"
     },
     {
-      "label": "error.tsx",
+      "label": "enquiry.spec.ts",
       "file_type": "code",
-      "source_file": "app/error.tsx",
+      "source_file": "tests/e2e/enquiry.spec.ts",
       "source_location": "L1",
-      "id": "app_error_tsx",
-      "community": 26,
-      "norm_label": "error.tsx"
+      "id": "tests_e2e_enquiry_spec_ts",
+      "community": 37,
+      "norm_label": "enquiry.spec.ts"
     },
     {
-      "label": "global-error.tsx",
+      "label": "site.spec.ts",
       "file_type": "code",
-      "source_file": "app/global-error.tsx",
+      "source_file": "tests/e2e/site.spec.ts",
       "source_location": "L1",
-      "id": "app_global_error_tsx",
-      "community": 27,
-      "norm_label": "global-error.tsx"
+      "id": "tests_e2e_site_spec_ts",
+      "community": 38,
+      "norm_label": "site.spec.ts"
     },
     {
-      "label": "page.tsx",
+      "label": "faq.ts",
       "file_type": "code",
-      "source_file": "app/how-we-teach/page.tsx",
+      "source_file": "content/faq.ts",
       "source_location": "L1",
-      "id": "app_how_we_teach_page_tsx",
-      "community": 13,
-      "norm_label": "page.tsx"
+      "id": "content_faq_ts",
+      "community": 39,
+      "norm_label": "faq.ts"
     },
     {
-      "label": "HowWeTeach()",
+      "label": "subjects.ts",
       "file_type": "code",
-      "source_file": "app/how-we-teach/page.tsx",
-      "source_location": "L21",
-      "id": "page_howweteach",
-      "community": 13,
-      "norm_label": "howweteach()"
-    },
-    {
-      "label": "layout.tsx",
-      "file_type": "code",
-      "source_file": "app/layout.tsx",
+      "source_file": "content/subjects.ts",
       "source_location": "L1",
-      "id": "app_layout_tsx",
-      "community": 28,
-      "norm_label": "layout.tsx"
+      "id": "content_subjects_ts",
+      "community": 40,
+      "norm_label": "subjects.ts"
     },
     {
-      "label": "not-found.tsx",
+      "label": "site.ts",
       "file_type": "code",
-      "source_file": "app/not-found.tsx",
+      "source_file": "content/site.ts",
       "source_location": "L1",
-      "id": "app_not_found_tsx",
-      "community": 14,
-      "norm_label": "not-found.tsx"
+      "id": "content_site_ts",
+      "community": 41,
+      "norm_label": "site.ts"
     },
     {
-      "label": "NotFound()",
+      "label": "session.ts",
       "file_type": "code",
-      "source_file": "app/not-found.tsx",
-      "source_location": "L18",
-      "id": "not_found_notfound",
-      "community": 14,
-      "norm_label": "notfound()"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/page.tsx",
+      "source_file": "content/session.ts",
       "source_location": "L1",
-      "id": "app_page_tsx",
-      "community": 3,
-      "norm_label": "page.tsx"
+      "id": "content_session_ts",
+      "community": 42,
+      "norm_label": "session.ts"
     },
     {
-      "label": "Home()",
+      "label": "units.ts",
       "file_type": "code",
-      "source_file": "app/page.tsx",
-      "source_location": "L39",
-      "id": "page_home",
-      "community": 3,
-      "norm_label": "home()"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/privacy/page.tsx",
+      "source_file": "content/units.ts",
       "source_location": "L1",
-      "id": "app_privacy_page_tsx",
-      "community": 29,
-      "norm_label": "page.tsx"
+      "id": "content_units_ts",
+      "community": 43,
+      "norm_label": "units.ts"
     },
     {
-      "label": "robots.ts",
+      "label": "progression.ts",
       "file_type": "code",
-      "source_file": "app/robots.ts",
+      "source_file": "content/progression.ts",
       "source_location": "L1",
-      "id": "app_robots_ts",
-      "community": 15,
-      "norm_label": "robots.ts"
+      "id": "content_progression_ts",
+      "community": 44,
+      "norm_label": "progression.ts"
     },
     {
-      "label": "robots()",
+      "label": "SessionTimeline.tsx",
       "file_type": "code",
-      "source_file": "app/robots.ts",
-      "source_location": "L4",
-      "id": "robots_robots",
-      "community": 15,
-      "norm_label": "robots()"
-    },
-    {
-      "label": "sitemap.ts",
-      "file_type": "code",
-      "source_file": "app/sitemap.ts",
+      "source_file": "components/SessionTimeline.tsx",
       "source_location": "L1",
-      "id": "app_sitemap_ts",
-      "community": 16,
-      "norm_label": "sitemap.ts"
+      "id": "components_sessiontimeline_tsx",
+      "community": 45,
+      "norm_label": "sessiontimeline.tsx"
     },
     {
-      "label": "sitemap()",
+      "label": "StagePath.tsx",
       "file_type": "code",
-      "source_file": "app/sitemap.ts",
-      "source_location": "L4",
-      "id": "sitemap_sitemap",
-      "community": 16,
-      "norm_label": "sitemap()"
-    },
-    {
-      "label": "Button.tsx",
-      "file_type": "code",
-      "source_file": "components/Button.tsx",
+      "source_file": "components/StagePath.tsx",
       "source_location": "L1",
-      "id": "components_button_tsx",
-      "community": 17,
-      "norm_label": "button.tsx"
+      "id": "components_stagepath_tsx",
+      "community": 46,
+      "norm_label": "stagepath.tsx"
     },
     {
-      "label": "ButtonLink()",
+      "label": "JsonLd.tsx",
       "file_type": "code",
-      "source_file": "components/Button.tsx",
-      "source_location": "L10",
-      "id": "button_buttonlink",
-      "community": 17,
-      "norm_label": "buttonlink()"
-    },
-    {
-      "label": "ComingSoon.tsx",
-      "file_type": "code",
-      "source_file": "components/ComingSoon.tsx",
+      "source_file": "components/JsonLd.tsx",
       "source_location": "L1",
-      "id": "components_comingsoon_tsx",
-      "community": 18,
-      "norm_label": "comingsoon.tsx"
+      "id": "components_jsonld_tsx",
+      "community": 21,
+      "norm_label": "jsonld.tsx"
     },
     {
-      "label": "ComingSoon()",
+      "label": "JsonLd()",
       "file_type": "code",
-      "source_file": "components/ComingSoon.tsx",
-      "source_location": "L3",
-      "id": "comingsoon_comingsoon",
-      "community": 18,
-      "norm_label": "comingsoon()"
-    },
-    {
-      "label": "CtaBand.tsx",
-      "file_type": "code",
-      "source_file": "components/CtaBand.tsx",
+      "source_file": "components/JsonLd.tsx",
       "source_location": "L1",
-      "id": "components_ctaband_tsx",
-      "community": 19,
-      "norm_label": "ctaband.tsx"
-    },
-    {
-      "label": "CtaBand()",
-      "file_type": "code",
-      "source_file": "components/CtaBand.tsx",
-      "source_location": "L4",
-      "id": "ctaband_ctaband",
-      "community": 19,
-      "norm_label": "ctaband()"
+      "id": "jsonld_jsonld",
+      "community": 21,
+      "norm_label": "jsonld()"
     },
     {
       "label": "EnquiryForm.tsx",
@@ -303,7 +315,7 @@
       "source_file": "components/EnquiryForm.tsx",
       "source_location": "L1",
       "id": "components_enquiryform_tsx",
-      "community": 9,
+      "community": 12,
       "norm_label": "enquiryform.tsx"
     },
     {
@@ -312,7 +324,7 @@
       "source_file": "components/EnquiryForm.tsx",
       "source_location": "L10",
       "id": "enquiryform_choice",
-      "community": 9,
+      "community": 12,
       "norm_label": "choice()"
     },
     {
@@ -321,8 +333,89 @@
       "source_file": "components/EnquiryForm.tsx",
       "source_location": "L23",
       "id": "enquiryform_err",
-      "community": 9,
+      "community": 12,
       "norm_label": "err()"
+    },
+    {
+      "label": "CtaBand.tsx",
+      "file_type": "code",
+      "source_file": "components/CtaBand.tsx",
+      "source_location": "L1",
+      "id": "components_ctaband_tsx",
+      "community": 22,
+      "norm_label": "ctaband.tsx"
+    },
+    {
+      "label": "CtaBand()",
+      "file_type": "code",
+      "source_file": "components/CtaBand.tsx",
+      "source_location": "L5",
+      "id": "ctaband_ctaband",
+      "community": 22,
+      "norm_label": "ctaband()"
+    },
+    {
+      "label": "FoundingContent.tsx",
+      "file_type": "code",
+      "source_file": "components/FoundingContent.tsx",
+      "source_location": "L1",
+      "id": "components_foundingcontent_tsx",
+      "community": 3,
+      "norm_label": "foundingcontent.tsx"
+    },
+    {
+      "label": "FoundingButton()",
+      "file_type": "code",
+      "source_file": "components/FoundingContent.tsx",
+      "source_location": "L8",
+      "id": "foundingcontent_foundingbutton",
+      "community": 3,
+      "norm_label": "foundingbutton()"
+    },
+    {
+      "label": "LiveFoundingBand()",
+      "file_type": "code",
+      "source_file": "components/FoundingContent.tsx",
+      "source_location": "L13",
+      "id": "foundingcontent_livefoundingband",
+      "community": 3,
+      "norm_label": "livefoundingband()"
+    },
+    {
+      "label": "LiveCtaBand()",
+      "file_type": "code",
+      "source_file": "components/FoundingContent.tsx",
+      "source_location": "L17",
+      "id": "foundingcontent_livectaband",
+      "community": 3,
+      "norm_label": "livectaband()"
+    },
+    {
+      "label": "LivePricing()",
+      "file_type": "code",
+      "source_file": "components/FoundingContent.tsx",
+      "source_location": "L21",
+      "id": "foundingcontent_livepricing",
+      "community": 3,
+      "norm_label": "livepricing()"
+    },
+    {
+      "label": "Pricing()",
+      "file_type": "code",
+      "source_file": "components/FoundingContent.tsx",
+      "source_location": "L26",
+      "id": "foundingcontent_pricing",
+      "community": 3,
+      "norm_label": "pricing()"
+    },
+    {
+      "label": "Eyebrow.tsx",
+      "file_type": "code",
+      "source_file": "components/Eyebrow.tsx",
+      "source_location": "L1",
+      "id": "components_eyebrow_tsx",
+      "community": 23,
+      "norm_label": "eyebrow.tsx"
     },
     {
       "label": "Eyebrow()",
@@ -334,75 +427,12 @@
       "norm_label": "eyebrow()"
     },
     {
-      "label": "Faq.tsx",
-      "file_type": "code",
-      "source_file": "components/Faq.tsx",
-      "source_location": "L1",
-      "id": "components_faq_tsx",
-      "community": 20,
-      "norm_label": "faq.tsx"
-    },
-    {
-      "label": "Faq()",
-      "file_type": "code",
-      "source_file": "components/Faq.tsx",
-      "source_location": "L4",
-      "id": "faq_faq",
-      "community": 20,
-      "norm_label": "faq()"
-    },
-    {
-      "label": "Footer.tsx",
-      "file_type": "code",
-      "source_file": "components/Footer.tsx",
-      "source_location": "L1",
-      "id": "components_footer_tsx",
-      "community": 30,
-      "norm_label": "footer.tsx"
-    },
-    {
-      "label": "FoundingBand.tsx",
-      "file_type": "code",
-      "source_file": "components/FoundingBand.tsx",
-      "source_location": "L1",
-      "id": "components_foundingband_tsx",
-      "community": 31,
-      "norm_label": "foundingband.tsx"
-    },
-    {
-      "label": "Header.tsx",
-      "file_type": "code",
-      "source_file": "components/Header.tsx",
-      "source_location": "L1",
-      "id": "components_header_tsx",
-      "community": 32,
-      "norm_label": "header.tsx"
-    },
-    {
-      "label": "JsonLd()",
-      "file_type": "code",
-      "source_file": "components/JsonLd.tsx",
-      "source_location": "L1",
-      "id": "jsonld_jsonld",
-      "community": 24,
-      "norm_label": "jsonld()"
-    },
-    {
-      "label": "LostTiles.tsx",
-      "file_type": "code",
-      "source_file": "components/LostTiles.tsx",
-      "source_location": "L1",
-      "id": "components_losttiles_tsx",
-      "community": 33,
-      "norm_label": "losttiles.tsx"
-    },
-    {
       "label": "MobileNav.tsx",
       "file_type": "code",
       "source_file": "components/MobileNav.tsx",
       "source_location": "L1",
       "id": "components_mobilenav_tsx",
-      "community": 21,
+      "community": 24,
       "norm_label": "mobilenav.tsx"
     },
     {
@@ -411,44 +441,53 @@
       "source_file": "components/MobileNav.tsx",
       "source_location": "L17",
       "id": "mobilenav_onkey",
-      "community": 21,
+      "community": 24,
       "norm_label": "onkey()"
     },
     {
-      "label": "PricingTable.tsx",
+      "label": "Footer.tsx",
       "file_type": "code",
-      "source_file": "components/PricingTable.tsx",
+      "source_file": "components/Footer.tsx",
       "source_location": "L1",
-      "id": "components_pricingtable_tsx",
-      "community": 22,
-      "norm_label": "pricingtable.tsx"
+      "id": "components_footer_tsx",
+      "community": 47,
+      "norm_label": "footer.tsx"
     },
     {
-      "label": "gbp()",
+      "label": "LostTiles.tsx",
       "file_type": "code",
-      "source_file": "components/PricingTable.tsx",
-      "source_location": "L4",
-      "id": "pricingtable_gbp",
-      "community": 22,
-      "norm_label": "gbp()"
+      "source_file": "components/LostTiles.tsx",
+      "source_location": "L1",
+      "id": "components_losttiles_tsx",
+      "community": 48,
+      "norm_label": "losttiles.tsx"
     },
     {
-      "label": "SafeHands.tsx",
+      "label": "ComingSoon.tsx",
       "file_type": "code",
-      "source_file": "components/SafeHands.tsx",
+      "source_file": "components/ComingSoon.tsx",
       "source_location": "L1",
-      "id": "components_safehands_tsx",
-      "community": 34,
-      "norm_label": "safehands.tsx"
+      "id": "components_comingsoon_tsx",
+      "community": 25,
+      "norm_label": "comingsoon.tsx"
     },
     {
-      "label": "SessionTimeline.tsx",
+      "label": "ComingSoon()",
       "file_type": "code",
-      "source_file": "components/SessionTimeline.tsx",
+      "source_file": "components/ComingSoon.tsx",
+      "source_location": "L3",
+      "id": "comingsoon_comingsoon",
+      "community": 25,
+      "norm_label": "comingsoon()"
+    },
+    {
+      "label": "FoundingBand.tsx",
+      "file_type": "code",
+      "source_file": "components/FoundingBand.tsx",
       "source_location": "L1",
-      "id": "components_sessiontimeline_tsx",
-      "community": 35,
-      "norm_label": "sessiontimeline.tsx"
+      "id": "components_foundingband_tsx",
+      "community": 49,
+      "norm_label": "foundingband.tsx"
     },
     {
       "label": "SoundMoment.tsx",
@@ -456,26 +495,8 @@
       "source_file": "components/SoundMoment.tsx",
       "source_location": "L1",
       "id": "components_soundmoment_tsx",
-      "community": 36,
+      "community": 50,
       "norm_label": "soundmoment.tsx"
-    },
-    {
-      "label": "SoundTiles.tsx",
-      "file_type": "code",
-      "source_file": "components/SoundTiles.tsx",
-      "source_location": "L1",
-      "id": "components_soundtiles_tsx",
-      "community": 37,
-      "norm_label": "soundtiles.tsx"
-    },
-    {
-      "label": "StagePath.tsx",
-      "file_type": "code",
-      "source_file": "components/StagePath.tsx",
-      "source_location": "L1",
-      "id": "components_stagepath_tsx",
-      "community": 38,
-      "norm_label": "stagepath.tsx"
     },
     {
       "label": "SubjectGrid.tsx",
@@ -483,35 +504,89 @@
       "source_file": "components/SubjectGrid.tsx",
       "source_location": "L1",
       "id": "components_subjectgrid_tsx",
-      "community": 39,
+      "community": 51,
       "norm_label": "subjectgrid.tsx"
     },
     {
-      "label": "SeedlingScene.tsx",
+      "label": "PricingTable.tsx",
       "file_type": "code",
-      "source_file": "components/seedling/SeedlingScene.tsx",
+      "source_file": "components/PricingTable.tsx",
       "source_location": "L1",
-      "id": "components_seedling_seedlingscene_tsx",
-      "community": 10,
-      "norm_label": "seedlingscene.tsx"
+      "id": "components_pricingtable_tsx",
+      "community": 26,
+      "norm_label": "pricingtable.tsx"
     },
     {
-      "label": "webglAvailable()",
+      "label": "gbp()",
       "file_type": "code",
-      "source_file": "components/seedling/SeedlingScene.tsx",
-      "source_location": "L15",
-      "id": "seedlingscene_webglavailable",
-      "community": 10,
-      "norm_label": "webglavailable()"
+      "source_file": "components/PricingTable.tsx",
+      "source_location": "L5",
+      "id": "pricingtable_gbp",
+      "community": 26,
+      "norm_label": "gbp()"
     },
     {
-      "label": "SeedlingScene()",
+      "label": "Header.tsx",
       "file_type": "code",
-      "source_file": "components/seedling/SeedlingScene.tsx",
-      "source_location": "L24",
-      "id": "seedlingscene_seedlingscene",
-      "community": 10,
-      "norm_label": "seedlingscene()"
+      "source_file": "components/Header.tsx",
+      "source_location": "L1",
+      "id": "components_header_tsx",
+      "community": 52,
+      "norm_label": "header.tsx"
+    },
+    {
+      "label": "SafeHands.tsx",
+      "file_type": "code",
+      "source_file": "components/SafeHands.tsx",
+      "source_location": "L1",
+      "id": "components_safehands_tsx",
+      "community": 53,
+      "norm_label": "safehands.tsx"
+    },
+    {
+      "label": "Button.tsx",
+      "file_type": "code",
+      "source_file": "components/Button.tsx",
+      "source_location": "L1",
+      "id": "components_button_tsx",
+      "community": 27,
+      "norm_label": "button.tsx"
+    },
+    {
+      "label": "ButtonLink()",
+      "file_type": "code",
+      "source_file": "components/Button.tsx",
+      "source_location": "L10",
+      "id": "button_buttonlink",
+      "community": 27,
+      "norm_label": "buttonlink()"
+    },
+    {
+      "label": "Faq.tsx",
+      "file_type": "code",
+      "source_file": "components/Faq.tsx",
+      "source_location": "L1",
+      "id": "components_faq_tsx",
+      "community": 28,
+      "norm_label": "faq.tsx"
+    },
+    {
+      "label": "Faq()",
+      "file_type": "code",
+      "source_file": "components/Faq.tsx",
+      "source_location": "L4",
+      "id": "faq_faq",
+      "community": 28,
+      "norm_label": "faq()"
+    },
+    {
+      "label": "SoundTiles.tsx",
+      "file_type": "code",
+      "source_file": "components/SoundTiles.tsx",
+      "source_location": "L1",
+      "id": "components_soundtiles_tsx",
+      "community": 54,
+      "norm_label": "soundtiles.tsx"
     },
     {
       "label": "scene.ts",
@@ -519,7 +594,7 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L1",
       "id": "components_seedling_scene_ts",
-      "community": 2,
+      "community": 0,
       "norm_label": "scene.ts"
     },
     {
@@ -528,7 +603,7 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L21",
       "id": "scene_clamp",
-      "community": 2,
+      "community": 0,
       "norm_label": "clamp()"
     },
     {
@@ -537,7 +612,7 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L22",
       "id": "scene_easeoutback",
-      "community": 2,
+      "community": 0,
       "norm_label": "easeoutback()"
     },
     {
@@ -546,7 +621,7 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L27",
       "id": "scene_easeoutcubic",
-      "community": 2,
+      "community": 0,
       "norm_label": "easeoutcubic()"
     },
     {
@@ -555,7 +630,7 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L29",
       "id": "scene_makeleafgeometry",
-      "community": 2,
+      "community": 0,
       "norm_label": "makeleafgeometry()"
     },
     {
@@ -564,7 +639,7 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L45",
       "id": "scene_lettertexture",
-      "community": 2,
+      "community": 0,
       "norm_label": "lettertexture()"
     },
     {
@@ -573,7 +648,7 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L67",
       "id": "scene_shadowtexture",
-      "community": 2,
+      "community": 0,
       "norm_label": "shadowtexture()"
     },
     {
@@ -582,71 +657,71 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L81",
       "id": "scene_mountseedling",
-      "community": 2,
+      "community": 0,
       "norm_label": "mountseedling()"
     },
     {
-      "label": "faq.ts",
+      "label": "SeedlingScene.tsx",
       "file_type": "code",
-      "source_file": "content/faq.ts",
+      "source_file": "components/seedling/SeedlingScene.tsx",
       "source_location": "L1",
-      "id": "content_faq_ts",
-      "community": 40,
-      "norm_label": "faq.ts"
+      "id": "components_seedling_seedlingscene_tsx",
+      "community": 13,
+      "norm_label": "seedlingscene.tsx"
     },
     {
-      "label": "progression.ts",
+      "label": "webglAvailable()",
       "file_type": "code",
-      "source_file": "content/progression.ts",
-      "source_location": "L1",
-      "id": "content_progression_ts",
-      "community": 1,
-      "norm_label": "progression.ts"
+      "source_file": "components/seedling/SeedlingScene.tsx",
+      "source_location": "L15",
+      "id": "seedlingscene_webglavailable",
+      "community": 13,
+      "norm_label": "webglavailable()"
     },
     {
-      "label": "session.ts",
+      "label": "SeedlingScene()",
       "file_type": "code",
-      "source_file": "content/session.ts",
-      "source_location": "L1",
-      "id": "content_session_ts",
-      "community": 1,
-      "norm_label": "session.ts"
+      "source_file": "components/seedling/SeedlingScene.tsx",
+      "source_location": "L24",
+      "id": "seedlingscene_seedlingscene",
+      "community": 13,
+      "norm_label": "seedlingscene()"
     },
     {
-      "label": "site.ts",
+      "label": "make-brand-assets.mjs",
       "file_type": "code",
-      "source_file": "content/site.ts",
+      "source_file": "scripts/make-brand-assets.mjs",
       "source_location": "L1",
-      "id": "content_site_ts",
-      "community": 1,
-      "norm_label": "site.ts"
+      "id": "scripts_make_brand_assets_mjs",
+      "community": 14,
+      "norm_label": "make-brand-assets.mjs"
     },
     {
-      "label": "subjects.ts",
+      "label": "trim()",
       "file_type": "code",
-      "source_file": "content/subjects.ts",
-      "source_location": "L1",
-      "id": "content_subjects_ts",
-      "community": 41,
-      "norm_label": "subjects.ts"
+      "source_file": "scripts/make-brand-assets.mjs",
+      "source_location": "L5",
+      "id": "make_brand_assets_trim",
+      "community": 14,
+      "norm_label": "trim()"
     },
     {
-      "label": "units.ts",
+      "label": "square()",
       "file_type": "code",
-      "source_file": "content/units.ts",
-      "source_location": "L1",
-      "id": "content_units_ts",
-      "community": 42,
-      "norm_label": "units.ts"
+      "source_file": "scripts/make-brand-assets.mjs",
+      "source_location": "L12",
+      "id": "make_brand_assets_square",
+      "community": 14,
+      "norm_label": "square()"
     },
     {
-      "label": "eslint.config.mjs",
+      "label": "founding-availability.ts",
       "file_type": "code",
-      "source_file": "eslint.config.mjs",
+      "source_file": "lib/founding-availability.ts",
       "source_location": "L1",
-      "id": "eslint_config_mjs",
-      "community": 43,
-      "norm_label": "eslint.config.mjs"
+      "id": "lib_founding_availability_ts",
+      "community": 55,
+      "norm_label": "founding-availability.ts"
     },
     {
       "label": "enquiry-schema.test.ts",
@@ -654,8 +729,44 @@
       "source_file": "lib/enquiry-schema.test.ts",
       "source_location": "L1",
       "id": "lib_enquiry_schema_test_ts",
-      "community": 44,
+      "community": 56,
       "norm_label": "enquiry-schema.test.ts"
+    },
+    {
+      "label": "pricing.ts",
+      "file_type": "code",
+      "source_file": "lib/pricing.ts",
+      "source_location": "L1",
+      "id": "lib_pricing_ts",
+      "community": 5,
+      "norm_label": "pricing.ts"
+    },
+    {
+      "label": "roundTo5()",
+      "file_type": "code",
+      "source_file": "lib/pricing.ts",
+      "source_location": "L7",
+      "id": "pricing_roundto5",
+      "community": 5,
+      "norm_label": "roundto5()"
+    },
+    {
+      "label": "weekly()",
+      "file_type": "code",
+      "source_file": "lib/pricing.ts",
+      "source_location": "L10",
+      "id": "pricing_weekly",
+      "community": 5,
+      "norm_label": "weekly()"
+    },
+    {
+      "label": "monthly()",
+      "file_type": "code",
+      "source_file": "lib/pricing.ts",
+      "source_location": "L15",
+      "id": "pricing_monthly",
+      "community": 5,
+      "norm_label": "monthly()"
     },
     {
       "label": "enquiry-schema.ts",
@@ -690,44 +801,8 @@
       "source_file": "lib/pricing.test.ts",
       "source_location": "L1",
       "id": "lib_pricing_test_ts",
-      "community": 45,
+      "community": 57,
       "norm_label": "pricing.test.ts"
-    },
-    {
-      "label": "pricing.ts",
-      "file_type": "code",
-      "source_file": "lib/pricing.ts",
-      "source_location": "L1",
-      "id": "lib_pricing_ts",
-      "community": 1,
-      "norm_label": "pricing.ts"
-    },
-    {
-      "label": "roundTo5()",
-      "file_type": "code",
-      "source_file": "lib/pricing.ts",
-      "source_location": "L7",
-      "id": "pricing_roundto5",
-      "community": 1,
-      "norm_label": "roundto5()"
-    },
-    {
-      "label": "weekly()",
-      "file_type": "code",
-      "source_file": "lib/pricing.ts",
-      "source_location": "L10",
-      "id": "pricing_weekly",
-      "community": 1,
-      "norm_label": "weekly()"
-    },
-    {
-      "label": "monthly()",
-      "file_type": "code",
-      "source_file": "lib/pricing.ts",
-      "source_location": "L15",
-      "id": "pricing_monthly",
-      "community": 1,
-      "norm_label": "monthly()"
     },
     {
       "label": "schema-org.ts",
@@ -735,7 +810,7 @@
       "source_file": "lib/schema-org.ts",
       "source_location": "L1",
       "id": "lib_schema_org_ts",
-      "community": 3,
+      "community": 1,
       "norm_label": "schema-org.ts"
     },
     {
@@ -744,7 +819,7 @@
       "source_file": "lib/schema-org.ts",
       "source_location": "L4",
       "id": "schema_org_url",
-      "community": 3,
+      "community": 1,
       "norm_label": "url()"
     },
     {
@@ -753,7 +828,7 @@
       "source_file": "lib/schema-org.ts",
       "source_location": "L12",
       "id": "schema_org_organisationschema",
-      "community": 3,
+      "community": 1,
       "norm_label": "organisationschema()"
     },
     {
@@ -762,7 +837,7 @@
       "source_file": "lib/schema-org.ts",
       "source_location": "L50",
       "id": "schema_org_faqschema",
-      "community": 3,
+      "community": 1,
       "norm_label": "faqschema()"
     },
     {
@@ -771,71 +846,17 @@
       "source_file": "lib/schema-org.ts",
       "source_location": "L62",
       "id": "schema_org_breadcrumbschema",
-      "community": 3,
+      "community": 1,
       "norm_label": "breadcrumbschema()"
     },
     {
-      "label": "next.config.ts",
+      "label": "founding-availability.test.ts",
       "file_type": "code",
-      "source_file": "next.config.ts",
+      "source_file": "lib/founding-availability.test.ts",
       "source_location": "L1",
-      "id": "next_config_ts",
-      "community": 46,
-      "norm_label": "next.config.ts"
-    },
-    {
-      "label": "playwright.config.ts",
-      "file_type": "code",
-      "source_file": "playwright.config.ts",
-      "source_location": "L1",
-      "id": "playwright_config_ts",
-      "community": 47,
-      "norm_label": "playwright.config.ts"
-    },
-    {
-      "label": "make-brand-assets.mjs",
-      "file_type": "code",
-      "source_file": "scripts/make-brand-assets.mjs",
-      "source_location": "L1",
-      "id": "scripts_make_brand_assets_mjs",
-      "community": 11,
-      "norm_label": "make-brand-assets.mjs"
-    },
-    {
-      "label": "trim()",
-      "file_type": "code",
-      "source_file": "scripts/make-brand-assets.mjs",
-      "source_location": "L5",
-      "id": "make_brand_assets_trim",
-      "community": 11,
-      "norm_label": "trim()"
-    },
-    {
-      "label": "square()",
-      "file_type": "code",
-      "source_file": "scripts/make-brand-assets.mjs",
-      "source_location": "L12",
-      "id": "make_brand_assets_square",
-      "community": 11,
-      "norm_label": "square()"
-    },
-    {
-      "label": "enquiry.spec.ts",
-      "file_type": "code",
-      "source_file": "tests/e2e/enquiry.spec.ts",
-      "source_location": "L1",
-      "id": "tests_e2e_enquiry_spec_ts",
-      "community": 48,
-      "norm_label": "enquiry.spec.ts"
-    },
-    {
-      "label": "site.spec.ts",
-      "file_type": "code",
-      "source_file": "tests/e2e/site.spec.ts",
-      "source_location": "L1",
-      "id": "tests_e2e_site_spec_ts",
-      "community": 49,
-      "norm_label": "site.spec.ts"
+      "id": "lib_founding_availability_test_ts",
+      "community": 58,
+      "norm_label": "founding-availability.test.ts"
     },
     {
       "label": "PORTAL-CONCEPTS: implemented design archive only",
@@ -844,9 +865,9 @@
       "source_location": "L1-L27",
       "status": "implemented",
       "scope": "Six PNG concept references with fictional data; no portal runtime implementation.",
-      "id": "portal_concepts",
-      "community": 0,
-      "norm_label": "portal-concepts: implemented design archive only"
+      "community": 2,
+      "norm_label": "portal-concepts: implemented design archive only",
+      "id": "portal_concepts"
     },
     {
       "label": "PORTAL: planned staff and parent portal; no runtime",
@@ -855,9 +876,9 @@
       "source_location": "L34-L41",
       "status": "planned",
       "scope": "No application routes, authentication, family/staff permissions, messages or billing implementation.",
-      "id": "portal_planned",
-      "community": 0,
-      "norm_label": "portal: planned staff and parent portal; no runtime"
+      "community": 2,
+      "norm_label": "portal: planned staff and parent portal; no runtime",
+      "id": "portal_planned"
     },
     {
       "label": "Goldleaf portal concept brief and design references",
@@ -866,9 +887,9 @@
       "source_location": "L1-L97",
       "status": "implemented",
       "scope": "Design documentation only; includes screen IDs, prior review evidence and remaining validation.",
-      "id": "portal_brief",
-      "community": 1,
-      "norm_label": "goldleaf portal concept brief and design references"
+      "community": 2,
+      "norm_label": "goldleaf portal concept brief and design references",
+      "id": "portal_brief"
     },
     {
       "label": "Known limitation: archived 105-minute plan versus current 120-minute sessions",
@@ -876,9 +897,9 @@
       "source_file": "docs/portal-mockups/DESIGN-BRIEF.md",
       "source_location": "L9-L15",
       "scope": "Preserve checkout 26b96ba concepts as historical reference; use current session content and business facts for implementation.",
-      "id": "portal_historical_timing",
-      "community": 1,
-      "norm_label": "known limitation: archived 105-minute plan versus current 120-minute sessions"
+      "community": 2,
+      "norm_label": "known limitation: archived 105-minute plan versus current 120-minute sessions",
+      "id": "portal_historical_timing"
     },
     {
       "label": "Planned portal information boundaries and unverified behaviour",
@@ -887,27 +908,18 @@
       "source_location": "L85-L97",
       "status": "planned",
       "scope": "Parents access only their child\u2019s shared information. Private notes remain separate; sharing is explicit. Billing is conceptual. Permissions, delivery, payment flows and accessibility remain unimplemented or unverified.",
-      "id": "portal_information_boundaries",
-      "community": 0,
-      "norm_label": "planned portal information boundaries and unverified behaviour"
+      "community": 2,
+      "norm_label": "planned portal information boundaries and unverified behaviour",
+      "id": "portal_information_boundaries"
     },
     {
       "label": "Public-site design document and portal archive reference",
       "file_type": "document",
       "source_file": "docs/DESIGN.md",
       "source_location": "L1-L3",
-      "id": "portal_referenced_brand_design",
-      "community": 0,
-      "norm_label": "public-site design document and portal archive reference"
-    },
-    {
-      "label": "Existing global styles cited by portal brief",
-      "file_type": "code",
-      "source_file": "app/globals.css",
-      "source_location": null,
-      "id": "portal_referenced_design_tokens",
-      "community": 1,
-      "norm_label": "existing global styles cited by portal brief"
+      "community": 2,
+      "norm_label": "public-site design document and portal archive reference",
+      "id": "portal_referenced_brand_design"
     },
     {
       "label": "Parent home desktop concept",
@@ -916,9 +928,9 @@
       "source_file": "docs/portal-mockups/parent-home-desktop.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_parent_home_desktop",
-      "community": 5,
-      "norm_label": "parent home desktop concept"
+      "community": 7,
+      "norm_label": "parent home desktop concept",
+      "id": "portal_parent_home_desktop"
     },
     {
       "label": "Parent desktop next-session card",
@@ -927,9 +939,9 @@
       "source_file": "docs/portal-mockups/parent-home-desktop.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_parent_home_desktop_session",
-      "community": 5,
-      "norm_label": "parent desktop next-session card"
+      "community": 7,
+      "norm_label": "parent desktop next-session card",
+      "id": "portal_parent_home_desktop_session"
     },
     {
       "label": "Parent desktop learning overview",
@@ -938,9 +950,9 @@
       "source_file": "docs/portal-mockups/parent-home-desktop.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_parent_home_desktop_learning",
-      "community": 5,
-      "norm_label": "parent desktop learning overview"
+      "community": 7,
+      "norm_label": "parent desktop learning overview",
+      "id": "portal_parent_home_desktop_learning"
     },
     {
       "label": "Parent desktop tutor note and billing",
@@ -949,9 +961,9 @@
       "source_file": "docs/portal-mockups/parent-home-desktop.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_parent_home_desktop_updates",
-      "community": 5,
-      "norm_label": "parent desktop tutor note and billing"
+      "community": 7,
+      "norm_label": "parent desktop tutor note and billing",
+      "id": "portal_parent_home_desktop_updates"
     },
     {
       "label": "Parent learning desktop concept",
@@ -965,9 +977,9 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_parent_learning_desktop",
-      "community": 6,
-      "norm_label": "parent learning desktop concept"
+      "community": 8,
+      "norm_label": "parent learning desktop concept",
+      "id": "portal_parent_learning_desktop"
     },
     {
       "label": "Early phonics curriculum journey",
@@ -981,9 +993,9 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_parent_learning_curriculum",
-      "community": 6,
-      "norm_label": "early phonics curriculum journey"
+      "community": 8,
+      "norm_label": "early phonics curriculum journey",
+      "id": "portal_parent_learning_curriculum"
     },
     {
       "label": "Shared tutor observations",
@@ -997,9 +1009,9 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_parent_learning_observations",
-      "community": 6,
-      "norm_label": "shared tutor observations"
+      "community": 8,
+      "norm_label": "shared tutor observations",
+      "id": "portal_parent_learning_observations"
     },
     {
       "label": "Tactile sound exploration",
@@ -1013,9 +1025,9 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_parent_learning_sound_tiles",
-      "community": 6,
-      "norm_label": "tactile sound exploration"
+      "community": 8,
+      "norm_label": "tactile sound exploration",
+      "id": "portal_parent_learning_sound_tiles"
     },
     {
       "label": "Staff today desktop concept",
@@ -1024,9 +1036,9 @@
       "source_file": "docs/portal-mockups/staff-today-desktop.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_staff_today_desktop",
-      "community": 7,
-      "norm_label": "staff today desktop concept"
+      "community": 6,
+      "norm_label": "staff today desktop concept",
+      "id": "portal_staff_today_desktop"
     },
     {
       "label": "Staff desktop daily schedule",
@@ -1035,9 +1047,9 @@
       "source_file": "docs/portal-mockups/staff-today-desktop.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_staff_today_desktop_schedule",
-      "community": 7,
-      "norm_label": "staff desktop daily schedule"
+      "community": 6,
+      "norm_label": "staff desktop daily schedule",
+      "id": "portal_staff_today_desktop_schedule"
     },
     {
       "label": "Staff desktop private staff note",
@@ -1046,9 +1058,9 @@
       "source_file": "docs/portal-mockups/staff-today-desktop.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_staff_today_desktop_private_note",
-      "community": 7,
-      "norm_label": "staff desktop private staff note"
+      "community": 6,
+      "norm_label": "staff desktop private staff note",
+      "id": "portal_staff_today_desktop_private_note"
     },
     {
       "label": "Staff desktop parent update draft",
@@ -1057,9 +1069,9 @@
       "source_file": "docs/portal-mockups/staff-today-desktop.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_staff_today_desktop_parent_draft",
-      "community": 7,
-      "norm_label": "staff desktop parent update draft"
+      "community": 6,
+      "norm_label": "staff desktop parent update draft",
+      "id": "portal_staff_today_desktop_parent_draft"
     },
     {
       "label": "Staff session desktop concept",
@@ -1073,9 +1085,9 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_staff_session_desktop",
-      "community": 0,
-      "norm_label": "staff session desktop concept"
+      "community": 9,
+      "norm_label": "staff session desktop concept",
+      "id": "portal_staff_session_desktop"
     },
     {
       "label": "Historical 105-minute session timeline",
@@ -1089,9 +1101,9 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_staff_session_timeline",
-      "community": 0,
-      "norm_label": "historical 105-minute session timeline"
+      "community": 9,
+      "norm_label": "historical 105-minute session timeline",
+      "id": "portal_staff_session_timeline"
     },
     {
       "label": "Selected phonics activity and materials",
@@ -1105,9 +1117,9 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_staff_session_activity",
-      "community": 0,
-      "norm_label": "selected phonics activity and materials"
+      "community": 9,
+      "norm_label": "selected phonics activity and materials",
+      "id": "portal_staff_session_activity"
     },
     {
       "label": "Attendance, private notes and parent update design",
@@ -1121,9 +1133,9 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_staff_session_records",
-      "community": 0,
-      "norm_label": "attendance, private notes and parent update design"
+      "community": 9,
+      "norm_label": "attendance, private notes and parent update design",
+      "id": "portal_staff_session_records"
     },
     {
       "label": "Parent home mobile concept",
@@ -1132,9 +1144,9 @@
       "source_file": "docs/portal-mockups/parent-home-mobile.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_parent_home_mobile",
-      "community": 0,
-      "norm_label": "parent home mobile concept"
+      "community": 10,
+      "norm_label": "parent home mobile concept",
+      "id": "portal_parent_home_mobile"
     },
     {
       "label": "Parent mobile next-session card",
@@ -1143,9 +1155,9 @@
       "source_file": "docs/portal-mockups/parent-home-mobile.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_parent_home_mobile_session",
-      "community": 0,
-      "norm_label": "parent mobile next-session card"
+      "community": 10,
+      "norm_label": "parent mobile next-session card",
+      "id": "portal_parent_home_mobile_session"
     },
     {
       "label": "Parent mobile curriculum overview",
@@ -1154,9 +1166,9 @@
       "source_file": "docs/portal-mockups/parent-home-mobile.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_parent_home_mobile_learning",
-      "community": 0,
-      "norm_label": "parent mobile curriculum overview"
+      "community": 10,
+      "norm_label": "parent mobile curriculum overview",
+      "id": "portal_parent_home_mobile_learning"
     },
     {
       "label": "Parent mobile observation and billing",
@@ -1165,9 +1177,9 @@
       "source_file": "docs/portal-mockups/parent-home-mobile.png",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_parent_home_mobile_updates",
-      "community": 0,
-      "norm_label": "parent mobile observation and billing"
+      "community": 10,
+      "norm_label": "parent mobile observation and billing",
+      "id": "portal_parent_home_mobile_updates"
     },
     {
       "label": "Staff today mobile concept",
@@ -1181,9 +1193,9 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_staff_today_mobile",
-      "community": 8,
-      "norm_label": "staff today mobile concept"
+      "community": 11,
+      "norm_label": "staff today mobile concept",
+      "id": "portal_staff_today_mobile"
     },
     {
       "label": "Mobile next-session and attendance affordances",
@@ -1197,9 +1209,9 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_staff_today_mobile_next_session",
-      "community": 8,
-      "norm_label": "mobile next-session and attendance affordances"
+      "community": 11,
+      "norm_label": "mobile next-session and attendance affordances",
+      "id": "portal_staff_today_mobile_next_session"
     },
     {
       "label": "Mobile three-session timeline",
@@ -1213,9 +1225,9 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_staff_today_mobile_timeline",
-      "community": 8,
-      "norm_label": "mobile three-session timeline"
+      "community": 11,
+      "norm_label": "mobile three-session timeline",
+      "id": "portal_staff_today_mobile_timeline"
     },
     {
       "label": "Mobile attention queue design",
@@ -1229,131 +1241,68 @@
       "contributor": null,
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "id": "portal_staff_today_mobile_attention",
-      "community": 8,
-      "norm_label": "mobile attention queue design"
+      "community": 11,
+      "norm_label": "mobile attention queue design",
+      "id": "portal_staff_today_mobile_attention"
+    },
+    {
+      "label": "Founding inventory and aggregate view",
+      "file_type": "document",
+      "source_file": "db/migrations/0001_founding_availability.sql",
+      "source_location": null,
+      "community": 15,
+      "norm_label": "founding inventory and aggregate view",
+      "id": "founding_inventory"
+    },
+    {
+      "label": "Founding slot seed",
+      "file_type": "document",
+      "source_file": "db/migrations/0002_seed_founding_slots.sql",
+      "source_location": null,
+      "community": 15,
+      "norm_label": "founding slot seed",
+      "id": "founding_seed"
+    },
+    {
+      "label": "Founding role provisioning",
+      "file_type": "document",
+      "source_file": "db/README.md",
+      "source_location": null,
+      "community": 15,
+      "norm_label": "founding role provisioning",
+      "id": "founding_provision"
+    },
+    {
+      "label": "Portal delivery plan (planned)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-11-11-goldleaf-portal.md",
+      "source_location": null,
+      "community": 2,
+      "norm_label": "portal delivery plan (planned)",
+      "id": "portal_delivery_plan"
+    },
+    {
+      "id": "launch_checklist",
+      "label": "Launch checklist",
+      "file_type": "document",
+      "source_file": "docs/launch-checklist.md",
+      "source_location": null,
+      "community": 0,
+      "norm_label": "launch checklist"
     }
   ],
   "links": [
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/about/page.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "app_about_page_tsx",
-      "_tgt": "page_about",
-      "source": "app_about_page_tsx",
-      "target": "page_about"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/enquire/actions.ts",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "app_enquire_actions_ts",
-      "_tgt": "actions_sendenquiry",
-      "source": "app_enquire_actions_ts",
-      "target": "actions_sendenquiry"
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "app/enquire/actions.ts",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_src": "actions_sendenquiry",
-      "_tgt": "enquiry_schema_formdatatoobject",
-      "source": "actions_sendenquiry",
-      "target": "enquiry_schema_formdatatoobject"
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "app/enquire/actions.ts",
-      "source_location": "L24",
-      "weight": 1.0,
-      "_src": "actions_sendenquiry",
-      "_tgt": "enquiry_schema_fielderrors",
-      "source": "actions_sendenquiry",
-      "target": "enquiry_schema_fielderrors"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/how-we-teach/page.tsx",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "app_how_we_teach_page_tsx",
-      "_tgt": "page_howweteach",
-      "source": "app_how_we_teach_page_tsx",
-      "target": "page_howweteach"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/not-found.tsx",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "app_not_found_tsx",
-      "_tgt": "not_found_notfound",
-      "source": "app_not_found_tsx",
-      "target": "not_found_notfound"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/page.tsx",
-      "source_location": "L39",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "app_page_tsx",
-      "_tgt": "page_home",
-      "source": "app_page_tsx",
-      "target": "page_home"
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "app/page.tsx",
-      "source_location": "L42",
-      "weight": 1.0,
-      "_src": "page_home",
-      "_tgt": "schema_org_organisationschema",
-      "source": "page_home",
-      "target": "schema_org_organisationschema"
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "app/page.tsx",
-      "source_location": "L42",
-      "weight": 1.0,
-      "_src": "page_home",
-      "_tgt": "schema_org_faqschema",
-      "source": "page_home",
-      "target": "schema_org_faqschema"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "app/robots.ts",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "_src": "app_robots_ts",
       "_tgt": "robots_robots",
       "source": "app_robots_ts",
-      "target": "robots_robots"
+      "target": "robots_robots",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1361,95 +1310,119 @@
       "source_file": "app/sitemap.ts",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "_src": "app_sitemap_ts",
       "_tgt": "sitemap_sitemap",
       "source": "app_sitemap_ts",
-      "target": "sitemap_sitemap"
+      "target": "sitemap_sitemap",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "components/Button.tsx",
-      "source_location": "L10",
+      "source_file": "app/page.tsx",
+      "source_location": "L40",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "components_button_tsx",
-      "_tgt": "button_buttonlink",
-      "source": "components_button_tsx",
-      "target": "button_buttonlink"
+      "_src": "app_page_tsx",
+      "_tgt": "page_home",
+      "source": "app_page_tsx",
+      "target": "page_home",
+      "confidence_score": 1.0
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/ComingSoon.tsx",
-      "source_location": "L3",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/page.tsx",
+      "source_location": "L42",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "components_comingsoon_tsx",
-      "_tgt": "comingsoon_comingsoon",
-      "source": "components_comingsoon_tsx",
-      "target": "comingsoon_comingsoon"
+      "_src": "page_home",
+      "_tgt": "schema_org_organisationschema",
+      "source": "page_home",
+      "target": "schema_org_organisationschema"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/CtaBand.tsx",
-      "source_location": "L4",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/page.tsx",
+      "source_location": "L42",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "components_ctaband_tsx",
-      "_tgt": "ctaband_ctaband",
-      "source": "components_ctaband_tsx",
-      "target": "ctaband_ctaband"
+      "_src": "page_home",
+      "_tgt": "schema_org_faqschema",
+      "source": "page_home",
+      "target": "schema_org_faqschema"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "components/EnquiryForm.tsx",
-      "source_location": "L10",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L18",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "components_enquiryform_tsx",
-      "_tgt": "enquiryform_choice",
-      "source": "components_enquiryform_tsx",
-      "target": "enquiryform_choice"
+      "_src": "app_not_found_tsx",
+      "_tgt": "not_found_notfound",
+      "source": "app_not_found_tsx",
+      "target": "not_found_notfound",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "components/EnquiryForm.tsx",
+      "source_file": "app/about/page.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "app_about_page_tsx",
+      "_tgt": "page_about",
+      "source": "app_about_page_tsx",
+      "target": "page_about",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/how-we-teach/page.tsx",
       "source_location": "L23",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "components_enquiryform_tsx",
-      "_tgt": "enquiryform_err",
-      "source": "components_enquiryform_tsx",
-      "target": "enquiryform_err"
+      "_src": "app_how_we_teach_page_tsx",
+      "_tgt": "page_howweteach",
+      "source": "app_how_we_teach_page_tsx",
+      "target": "page_howweteach",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "components/Eyebrow.tsx",
-      "source_location": "L1",
+      "source_file": "app/enquire/actions.ts",
+      "source_location": "L14",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "eyebrow_eyebrow",
-      "_tgt": "eyebrow_eyebrow",
-      "source": "eyebrow_eyebrow",
-      "target": "eyebrow_eyebrow"
+      "_src": "app_enquire_actions_ts",
+      "_tgt": "actions_sendenquiry",
+      "source": "app_enquire_actions_ts",
+      "target": "actions_sendenquiry",
+      "confidence_score": 1.0
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/Faq.tsx",
-      "source_location": "L4",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/enquire/actions.ts",
+      "source_location": "L15",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "components_faq_tsx",
-      "_tgt": "faq_faq",
-      "source": "components_faq_tsx",
-      "target": "faq_faq"
+      "_src": "actions_sendenquiry",
+      "_tgt": "enquiry_schema_formdatatoobject",
+      "source": "actions_sendenquiry",
+      "target": "enquiry_schema_formdatatoobject"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/enquire/actions.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "actions_sendenquiry",
+      "_tgt": "enquiry_schema_fielderrors",
+      "source": "actions_sendenquiry",
+      "target": "enquiry_schema_fielderrors"
     },
     {
       "relation": "contains",
@@ -1457,11 +1430,119 @@
       "source_file": "components/JsonLd.tsx",
       "source_location": "L1",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "jsonld_jsonld",
+      "_src": "components_jsonld_tsx",
       "_tgt": "jsonld_jsonld",
-      "source": "jsonld_jsonld",
-      "target": "jsonld_jsonld"
+      "source": "components_jsonld_tsx",
+      "target": "jsonld_jsonld",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/EnquiryForm.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "components_enquiryform_tsx",
+      "_tgt": "enquiryform_choice",
+      "source": "components_enquiryform_tsx",
+      "target": "enquiryform_choice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/EnquiryForm.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_src": "components_enquiryform_tsx",
+      "_tgt": "enquiryform_err",
+      "source": "components_enquiryform_tsx",
+      "target": "enquiryform_err",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/CtaBand.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "components_ctaband_tsx",
+      "_tgt": "ctaband_ctaband",
+      "source": "components_ctaband_tsx",
+      "target": "ctaband_ctaband",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/FoundingContent.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "components_foundingcontent_tsx",
+      "_tgt": "foundingcontent_foundingbutton",
+      "source": "components_foundingcontent_tsx",
+      "target": "foundingcontent_foundingbutton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/FoundingContent.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "components_foundingcontent_tsx",
+      "_tgt": "foundingcontent_livefoundingband",
+      "source": "components_foundingcontent_tsx",
+      "target": "foundingcontent_livefoundingband",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/FoundingContent.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "components_foundingcontent_tsx",
+      "_tgt": "foundingcontent_livectaband",
+      "source": "components_foundingcontent_tsx",
+      "target": "foundingcontent_livectaband",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/FoundingContent.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "components_foundingcontent_tsx",
+      "_tgt": "foundingcontent_livepricing",
+      "source": "components_foundingcontent_tsx",
+      "target": "foundingcontent_livepricing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/FoundingContent.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "components_foundingcontent_tsx",
+      "_tgt": "foundingcontent_pricing",
+      "source": "components_foundingcontent_tsx",
+      "target": "foundingcontent_pricing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Eyebrow.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "components_eyebrow_tsx",
+      "_tgt": "eyebrow_eyebrow",
+      "source": "components_eyebrow_tsx",
+      "target": "eyebrow_eyebrow",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1469,47 +1550,59 @@
       "source_file": "components/MobileNav.tsx",
       "source_location": "L17",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "_src": "components_mobilenav_tsx",
       "_tgt": "mobilenav_onkey",
       "source": "components_mobilenav_tsx",
-      "target": "mobilenav_onkey"
+      "target": "mobilenav_onkey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ComingSoon.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "components_comingsoon_tsx",
+      "_tgt": "comingsoon_comingsoon",
+      "source": "components_comingsoon_tsx",
+      "target": "comingsoon_comingsoon",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PricingTable.tsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "_src": "components_pricingtable_tsx",
       "_tgt": "pricingtable_gbp",
       "source": "components_pricingtable_tsx",
-      "target": "pricingtable_gbp"
+      "target": "pricingtable_gbp",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "components/seedling/SeedlingScene.tsx",
-      "source_location": "L15",
+      "source_file": "components/Button.tsx",
+      "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "components_seedling_seedlingscene_tsx",
-      "_tgt": "seedlingscene_webglavailable",
-      "source": "components_seedling_seedlingscene_tsx",
-      "target": "seedlingscene_webglavailable"
+      "_src": "components_button_tsx",
+      "_tgt": "button_buttonlink",
+      "source": "components_button_tsx",
+      "target": "button_buttonlink",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "components/seedling/SeedlingScene.tsx",
-      "source_location": "L24",
+      "source_file": "components/Faq.tsx",
+      "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "components_seedling_seedlingscene_tsx",
-      "_tgt": "seedlingscene_seedlingscene",
-      "source": "components_seedling_seedlingscene_tsx",
-      "target": "seedlingscene_seedlingscene"
+      "_src": "components_faq_tsx",
+      "_tgt": "faq_faq",
+      "source": "components_faq_tsx",
+      "target": "faq_faq",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1517,11 +1610,11 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L21",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "_src": "components_seedling_scene_ts",
       "_tgt": "scene_clamp",
       "source": "components_seedling_scene_ts",
-      "target": "scene_clamp"
+      "target": "scene_clamp",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1529,11 +1622,11 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L22",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "_src": "components_seedling_scene_ts",
       "_tgt": "scene_easeoutback",
       "source": "components_seedling_scene_ts",
-      "target": "scene_easeoutback"
+      "target": "scene_easeoutback",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1541,11 +1634,11 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L27",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "_src": "components_seedling_scene_ts",
       "_tgt": "scene_easeoutcubic",
       "source": "components_seedling_scene_ts",
-      "target": "scene_easeoutcubic"
+      "target": "scene_easeoutcubic",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1553,11 +1646,11 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L29",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "_src": "components_seedling_scene_ts",
       "_tgt": "scene_makeleafgeometry",
       "source": "components_seedling_scene_ts",
-      "target": "scene_makeleafgeometry"
+      "target": "scene_makeleafgeometry",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1565,11 +1658,11 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L45",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "_src": "components_seedling_scene_ts",
       "_tgt": "scene_lettertexture",
       "source": "components_seedling_scene_ts",
-      "target": "scene_lettertexture"
+      "target": "scene_lettertexture",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1577,11 +1670,11 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L67",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "_src": "components_seedling_scene_ts",
       "_tgt": "scene_shadowtexture",
       "source": "components_seedling_scene_ts",
-      "target": "scene_shadowtexture"
+      "target": "scene_shadowtexture",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1589,11 +1682,11 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L81",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "_src": "components_seedling_scene_ts",
       "_tgt": "scene_mountseedling",
       "source": "components_seedling_scene_ts",
-      "target": "scene_mountseedling"
+      "target": "scene_mountseedling",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1601,143 +1694,35 @@
       "source_file": "components/seedling/scene.ts",
       "source_location": "L128",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "_src": "scene_mountseedling",
       "_tgt": "scene_shadowtexture",
-      "source": "scene_mountseedling",
-      "target": "scene_shadowtexture"
+      "source": "scene_shadowtexture",
+      "target": "scene_mountseedling",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "lib/enquiry-schema.ts",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "lib_enquiry_schema_ts",
-      "_tgt": "enquiry_schema_formdatatoobject",
-      "source": "lib_enquiry_schema_ts",
-      "target": "enquiry_schema_formdatatoobject"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/enquiry-schema.ts",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "lib_enquiry_schema_ts",
-      "_tgt": "enquiry_schema_fielderrors",
-      "source": "lib_enquiry_schema_ts",
-      "target": "enquiry_schema_fielderrors"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/pricing.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "lib_pricing_ts",
-      "_tgt": "pricing_roundto5",
-      "source": "lib_pricing_ts",
-      "target": "pricing_roundto5"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/pricing.ts",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "lib_pricing_ts",
-      "_tgt": "pricing_weekly",
-      "source": "lib_pricing_ts",
-      "target": "pricing_weekly"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/pricing.ts",
+      "source_file": "components/seedling/SeedlingScene.tsx",
       "source_location": "L15",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "lib_pricing_ts",
-      "_tgt": "pricing_monthly",
-      "source": "lib_pricing_ts",
-      "target": "pricing_monthly"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/pricing.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "pricing_weekly",
-      "_tgt": "pricing_roundto5",
-      "source": "pricing_weekly",
-      "target": "pricing_roundto5"
+      "_src": "components_seedling_seedlingscene_tsx",
+      "_tgt": "seedlingscene_webglavailable",
+      "source": "components_seedling_seedlingscene_tsx",
+      "target": "seedlingscene_webglavailable",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "lib/schema-org.ts",
-      "source_location": "L4",
+      "source_file": "components/seedling/SeedlingScene.tsx",
+      "source_location": "L24",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "lib_schema_org_ts",
-      "_tgt": "schema_org_url",
-      "source": "lib_schema_org_ts",
-      "target": "schema_org_url"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/schema-org.ts",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "lib_schema_org_ts",
-      "_tgt": "schema_org_organisationschema",
-      "source": "lib_schema_org_ts",
-      "target": "schema_org_organisationschema"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/schema-org.ts",
-      "source_location": "L50",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "lib_schema_org_ts",
-      "_tgt": "schema_org_faqschema",
-      "source": "lib_schema_org_ts",
-      "target": "schema_org_faqschema"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/schema-org.ts",
-      "source_location": "L62",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "lib_schema_org_ts",
-      "_tgt": "schema_org_breadcrumbschema",
-      "source": "lib_schema_org_ts",
-      "target": "schema_org_breadcrumbschema"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/schema-org.ts",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "_src": "schema_org_organisationschema",
-      "_tgt": "schema_org_url",
-      "source": "schema_org_organisationschema",
-      "target": "schema_org_url"
+      "_src": "components_seedling_seedlingscene_tsx",
+      "_tgt": "seedlingscene_seedlingscene",
+      "source": "components_seedling_seedlingscene_tsx",
+      "target": "seedlingscene_seedlingscene",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1745,11 +1730,11 @@
       "source_file": "scripts/make-brand-assets.mjs",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "_src": "scripts_make_brand_assets_mjs",
       "_tgt": "make_brand_assets_trim",
       "source": "scripts_make_brand_assets_mjs",
-      "target": "make_brand_assets_trim"
+      "target": "make_brand_assets_trim",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1757,11 +1742,143 @@
       "source_file": "scripts/make-brand-assets.mjs",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "_src": "scripts_make_brand_assets_mjs",
       "_tgt": "make_brand_assets_square",
       "source": "scripts_make_brand_assets_mjs",
-      "target": "make_brand_assets_square"
+      "target": "make_brand_assets_square",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/pricing.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "lib_pricing_ts",
+      "_tgt": "pricing_roundto5",
+      "source": "lib_pricing_ts",
+      "target": "pricing_roundto5",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/pricing.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "lib_pricing_ts",
+      "_tgt": "pricing_weekly",
+      "source": "lib_pricing_ts",
+      "target": "pricing_weekly",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/pricing.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "lib_pricing_ts",
+      "_tgt": "pricing_monthly",
+      "source": "lib_pricing_ts",
+      "target": "pricing_monthly",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/pricing.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "pricing_weekly",
+      "_tgt": "pricing_roundto5",
+      "source": "pricing_roundto5",
+      "target": "pricing_weekly",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/enquiry-schema.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "lib_enquiry_schema_ts",
+      "_tgt": "enquiry_schema_formdatatoobject",
+      "source": "lib_enquiry_schema_ts",
+      "target": "enquiry_schema_formdatatoobject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/enquiry-schema.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "lib_enquiry_schema_ts",
+      "_tgt": "enquiry_schema_fielderrors",
+      "source": "lib_enquiry_schema_ts",
+      "target": "enquiry_schema_fielderrors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/schema-org.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "lib_schema_org_ts",
+      "_tgt": "schema_org_url",
+      "source": "lib_schema_org_ts",
+      "target": "schema_org_url",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/schema-org.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "lib_schema_org_ts",
+      "_tgt": "schema_org_organisationschema",
+      "source": "lib_schema_org_ts",
+      "target": "schema_org_organisationschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/schema-org.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_src": "lib_schema_org_ts",
+      "_tgt": "schema_org_faqschema",
+      "source": "lib_schema_org_ts",
+      "target": "schema_org_faqschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/schema-org.ts",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_src": "lib_schema_org_ts",
+      "_tgt": "schema_org_breadcrumbschema",
+      "source": "lib_schema_org_ts",
+      "target": "schema_org_breadcrumbschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/schema-org.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "schema_org_organisationschema",
+      "_tgt": "schema_org_url",
+      "source": "schema_org_url",
+      "target": "schema_org_organisationschema",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -1776,10 +1893,10 @@
       "target": "portal_brief"
     },
     {
-      "relation": "references",
+      "relation": "illustrates",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/README.md",
+      "source_file": "docs/portal-mockups/parent-home-desktop.png",
       "source_location": "L13",
       "weight": 1.0,
       "_src": "portal_concepts",
@@ -1788,11 +1905,11 @@
       "target": "portal_parent_home_desktop"
     },
     {
-      "relation": "references",
+      "relation": "illustrates",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/README.md",
-      "source_location": "L13",
+      "source_file": "docs/portal-mockups/parent-learning-desktop.png",
+      "source_location": null,
       "weight": 1.0,
       "_src": "portal_concepts",
       "_tgt": "portal_parent_learning_desktop",
@@ -1800,10 +1917,10 @@
       "target": "portal_parent_learning_desktop"
     },
     {
-      "relation": "references",
+      "relation": "illustrates",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/README.md",
+      "source_file": "docs/portal-mockups/staff-today-desktop.png",
       "source_location": "L19",
       "weight": 1.0,
       "_src": "portal_concepts",
@@ -1812,11 +1929,11 @@
       "target": "portal_staff_today_desktop"
     },
     {
-      "relation": "references",
+      "relation": "illustrates",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/README.md",
-      "source_location": "L19",
+      "source_file": "docs/portal-mockups/staff-session-desktop.png",
+      "source_location": null,
       "weight": 1.0,
       "_src": "portal_concepts",
       "_tgt": "portal_staff_session_desktop",
@@ -1824,10 +1941,10 @@
       "target": "portal_staff_session_desktop"
     },
     {
-      "relation": "references",
+      "relation": "illustrates",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/README.md",
+      "source_file": "docs/portal-mockups/parent-home-mobile.png",
       "source_location": "L13",
       "weight": 1.0,
       "_src": "portal_concepts",
@@ -1836,11 +1953,11 @@
       "target": "portal_parent_home_mobile"
     },
     {
-      "relation": "references",
+      "relation": "illustrates",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/README.md",
-      "source_location": "L19",
+      "source_file": "docs/portal-mockups/staff-today-mobile.png",
+      "source_location": null,
       "weight": 1.0,
       "_src": "portal_concepts",
       "_tgt": "portal_staff_today_mobile",
@@ -1854,58 +1971,70 @@
       "source_file": "FEATURE_TREE.md",
       "source_location": "L39",
       "weight": 1.0,
-      "_src": "portal_planned",
+      "_src": "portal_concepts",
+      "_tgt": "portal_planned",
+      "source": "portal_concepts",
+      "target": "portal_planned"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/portal-mockups/README.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "portal_concepts",
+      "_tgt": "portal_historical_timing",
+      "source": "portal_concepts",
+      "target": "portal_historical_timing"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/DESIGN.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "portal_concepts",
+      "_tgt": "portal_referenced_brand_design",
+      "source": "portal_concepts",
+      "target": "portal_referenced_brand_design"
+    },
+    {
+      "_src": "portal_delivery_plan",
       "_tgt": "portal_concepts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-11-11-goldleaf-portal.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "portal_concepts",
+      "target": "portal_delivery_plan"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/portal-mockups/DESIGN-BRIEF.md",
+      "source_location": "L85-L97",
+      "weight": 1.0,
+      "_src": "portal_planned",
+      "_tgt": "portal_information_boundaries",
       "source": "portal_planned",
-      "target": "portal_concepts"
+      "target": "portal_information_boundaries"
     },
     {
-      "relation": "cites",
+      "_src": "portal_delivery_plan",
+      "_tgt": "portal_planned",
+      "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/DESIGN-BRIEF.md",
-      "source_location": "L9",
+      "source_file": "docs/superpowers/plans/2026-11-11-goldleaf-portal.md",
+      "source_location": null,
       "weight": 1.0,
-      "_src": "portal_brief",
-      "_tgt": "content_site_ts",
-      "source": "portal_brief",
-      "target": "content_site_ts"
-    },
-    {
-      "relation": "cites",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/DESIGN-BRIEF.md",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_src": "portal_brief",
-      "_tgt": "content_session_ts",
-      "source": "portal_brief",
-      "target": "content_session_ts"
-    },
-    {
-      "relation": "cites",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/DESIGN-BRIEF.md",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_src": "portal_brief",
-      "_tgt": "lib_pricing_ts",
-      "source": "portal_brief",
-      "target": "lib_pricing_ts"
-    },
-    {
-      "relation": "cites",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/DESIGN-BRIEF.md",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_src": "portal_brief",
-      "_tgt": "content_progression_ts",
-      "source": "portal_brief",
-      "target": "content_progression_ts"
+      "source": "portal_planned",
+      "target": "portal_delivery_plan"
     },
     {
       "relation": "cites",
@@ -1920,18 +2049,6 @@
       "target": "portal_referenced_brand_design"
     },
     {
-      "relation": "cites",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/DESIGN-BRIEF.md",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_src": "portal_brief",
-      "_tgt": "portal_referenced_design_tokens",
-      "source": "portal_brief",
-      "target": "portal_referenced_design_tokens"
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -1942,76 +2059,6 @@
       "_tgt": "portal_information_boundaries",
       "source": "portal_brief",
       "target": "portal_information_boundaries"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/README.md",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_src": "portal_historical_timing",
-      "_tgt": "portal_concepts",
-      "source": "portal_historical_timing",
-      "target": "portal_concepts"
-    },
-    {
-      "relation": "cites",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/README.md",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_src": "portal_historical_timing",
-      "_tgt": "content_site_ts",
-      "source": "portal_historical_timing",
-      "target": "content_site_ts"
-    },
-    {
-      "relation": "cites",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/README.md",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_src": "portal_historical_timing",
-      "_tgt": "content_session_ts",
-      "source": "portal_historical_timing",
-      "target": "content_session_ts"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/DESIGN-BRIEF.md",
-      "source_location": "L85-L97",
-      "weight": 1.0,
-      "_src": "portal_information_boundaries",
-      "_tgt": "portal_planned",
-      "source": "portal_information_boundaries",
-      "target": "portal_planned"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/DESIGN.md",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_src": "portal_referenced_brand_design",
-      "_tgt": "portal_concepts",
-      "source": "portal_referenced_brand_design",
-      "target": "portal_concepts"
-    },
-    {
-      "relation": "illustrates",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/parent-home-desktop.png",
-      "_src": "portal_parent_home_desktop",
-      "_tgt": "portal_concepts",
-      "source": "portal_parent_home_desktop",
-      "target": "portal_concepts"
     },
     {
       "relation": "contains",
@@ -2042,18 +2089,6 @@
       "_tgt": "portal_parent_home_desktop_updates",
       "source": "portal_parent_home_desktop",
       "target": "portal_parent_home_desktop_updates"
-    },
-    {
-      "relation": "illustrates",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/parent-learning-desktop.png",
-      "source_location": null,
-      "weight": 1.0,
-      "_src": "portal_parent_learning_desktop",
-      "_tgt": "portal_concepts",
-      "source": "portal_parent_learning_desktop",
-      "target": "portal_concepts"
     },
     {
       "relation": "contains",
@@ -2092,16 +2127,6 @@
       "target": "portal_parent_learning_sound_tiles"
     },
     {
-      "relation": "illustrates",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/staff-today-desktop.png",
-      "_src": "portal_staff_today_desktop",
-      "_tgt": "portal_concepts",
-      "source": "portal_staff_today_desktop",
-      "target": "portal_concepts"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -2130,18 +2155,6 @@
       "_tgt": "portal_staff_today_desktop_parent_draft",
       "source": "portal_staff_today_desktop",
       "target": "portal_staff_today_desktop_parent_draft"
-    },
-    {
-      "relation": "illustrates",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/staff-session-desktop.png",
-      "source_location": null,
-      "weight": 1.0,
-      "_src": "portal_staff_session_desktop",
-      "_tgt": "portal_concepts",
-      "source": "portal_staff_session_desktop",
-      "target": "portal_concepts"
     },
     {
       "relation": "contains",
@@ -2180,16 +2193,6 @@
       "target": "portal_staff_session_records"
     },
     {
-      "relation": "illustrates",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/parent-home-mobile.png",
-      "_src": "portal_parent_home_mobile",
-      "_tgt": "portal_concepts",
-      "source": "portal_parent_home_mobile",
-      "target": "portal_concepts"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -2218,18 +2221,6 @@
       "_tgt": "portal_parent_home_mobile_updates",
       "source": "portal_parent_home_mobile",
       "target": "portal_parent_home_mobile_updates"
-    },
-    {
-      "relation": "illustrates",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/portal-mockups/staff-today-mobile.png",
-      "source_location": null,
-      "weight": 1.0,
-      "_src": "portal_staff_today_mobile",
-      "_tgt": "portal_concepts",
-      "source": "portal_staff_today_mobile",
-      "target": "portal_concepts"
     },
     {
       "relation": "contains",
@@ -2266,6 +2257,66 @@
       "_tgt": "portal_staff_today_mobile_attention",
       "source": "portal_staff_today_mobile",
       "target": "portal_staff_today_mobile_attention"
+    },
+    {
+      "_src": "founding_inventory",
+      "_tgt": "founding_seed",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "db/migrations/0001_founding_availability.sql",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "founding_inventory",
+      "target": "founding_seed"
+    },
+    {
+      "_src": "founding_provision",
+      "_tgt": "founding_inventory",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "db/README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "founding_inventory",
+      "target": "founding_provision"
+    },
+    {
+      "source": "lib_founding_availability_ts",
+      "target": "founding_inventory",
+      "_src": "lib_founding_availability_ts",
+      "_tgt": "founding_inventory",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/founding-availability.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "components_foundingcontent_tsx",
+      "target": "lib_founding_availability_ts",
+      "_src": "components_foundingcontent_tsx",
+      "_tgt": "lib_founding_availability_ts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/FoundingContent.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "launch_checklist",
+      "target": "founding_provision",
+      "_src": "launch_checklist",
+      "_tgt": "founding_provision",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/launch-checklist.md",
+      "source_location": null,
+      "weight": 1.0
     }
   ],
   "hyperedges": []

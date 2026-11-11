@@ -1,4 +1,5 @@
-import { site, foundingOpen } from "@/content/site";
+import { site } from "@/content/site";
+import type { FoundingAvailability } from "@/lib/founding-availability";
 import { DAYS, DISCOUNT, monthly, weekly } from "@/lib/pricing";
 
 const gbp = (n: number) => `£${n}`;
@@ -15,7 +16,8 @@ function Price({ rate, days, strong = false, discounted = true }: { rate: number
   );
 }
 
-export function PricingTable() {
+export function PricingTable({ availability }: { availability: FoundingAvailability }) {
+  const foundingOpen = availability !== null && availability.remaining > 0;
   const f = site.founding;
   const std = site.standardRate;
   return (
@@ -52,7 +54,7 @@ export function PricingTable() {
         </table>
       </div>
       <p className="mt-4 max-w-[65ch] text-sm text-ink-soft">
-        Sessions are 2 hours, including arrival, review and handover. Standard rate only: 5% off at 4 days and 10% off at 5, rounded to the nearest £5. The founding rate is already discounted, so no further discounts apply.
+        Sessions are 2 hours, including arrival, review and handover. Standard rate only: 5% off at 4 days and 10% off at 5, rounded to the nearest £5.{foundingOpen && " The founding rate is already discounted, so no further discounts apply."}
         Monthly price is weekly &times; 52 &divide; 12.
         {foundingOpen && ` Founding prices run until ${f.endsLabel}, then founding families pay £${f.rateAfter} an hour.`}
       </p>

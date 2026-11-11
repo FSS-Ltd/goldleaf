@@ -1,7 +1,9 @@
 import { ButtonLink } from "./Button";
-import { foundingOpen, site } from "@/content/site";
+import { site } from "@/content/site";
+import type { FoundingAvailability } from "@/lib/founding-availability";
 
-export function CtaBand({ title = "Ready to ask about a place?" }: { title?: string }) {
+export function CtaBand({ title = "Ready to ask about a place?", availability }: { title?: string; availability: FoundingAvailability }) {
+  const foundingOpen = availability !== null && availability.remaining > 0;
   return (
     <section className="on-ink bg-ink text-paper" aria-label="Enquire">
       <div className="wrap section text-center">

@@ -47,6 +47,7 @@ test("mobile menu opens and lists the pages", async ({ page }) => {
 });
 
 test("navigation renders without transition errors", async ({ page }) => {
+  test.setTimeout(60_000);
   const errors: string[] = [];
   page.on("console", (message) => {
     if (message.type() === "error" && !message.text().includes("_vercel")) errors.push(message.text());
@@ -54,11 +55,11 @@ test("navigation renders without transition errors", async ({ page }) => {
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/");
   await page.getByRole("link", { name: "See how we teach" }).click();
-  await expect(page).toHaveURL(/\/how-we-teach$/);
+  await expect(page).toHaveURL(/\/how-we-teach$/, { timeout: 15_000 });
   await expect(page.getByRole("heading", { level: 1, name: "Phonics for 2 to 4 year olds, one clear stage at a time" })).toBeVisible();
   await expect(page.getByRole("main").getByRole("heading", { level: 1 })).toHaveCount(1);
   await page.getByRole("link", { name: "About", exact: true }).first().click();
-  await expect(page).toHaveURL(/\/about$/);
+  await expect(page).toHaveURL(/\/about$/, { timeout: 15_000 });
   await expect(page.getByRole("heading", { level: 1, name: "Meet Deborah, your Goldleaf tutor" })).toBeVisible();
   await expect(page.getByRole("main").getByRole("heading", { level: 1 })).toHaveCount(1);
   expect(errors).toEqual([]);

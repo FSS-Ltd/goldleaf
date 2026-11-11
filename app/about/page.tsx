@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+import { LiveCtaBand } from "@/components/FoundingContent";
 import type { Metadata } from "next";
 import { CtaBand } from "@/components/CtaBand";
 import { Eyebrow } from "@/components/Eyebrow";
@@ -64,7 +66,7 @@ export default function About() {
         </div>
       </section>
 
-      <CtaBand />
+      <Suspense fallback={<CtaBand availability={null} />}><LiveCtaBand /></Suspense>
     </>
   );
 }

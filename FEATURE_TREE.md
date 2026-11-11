@@ -8,8 +8,9 @@ Canonical inventory for this repo. Status values: implemented, partial, planned.
 | PRICING | Rate maths (weekly, monthly, discounts) | implemented | n/a | `lib/pricing.ts` | none | PRICING-TABLE | `lib/pricing.test.ts`, `tests/e2e/site.spec.ts` |
 | SITE-LAYOUT | Root layout, fonts, header, footer, skip link, analytics | implemented | `app/layout.tsx` | `components/Header.tsx`, `Footer.tsx`, `app/globals.css` | CONTENT | all pages | `tests/e2e/site.spec.ts` |
 | LANDING | Home page (hero, session, path, who for, pricing, safe hands, tutor, coming soon, FAQ, CTA) | implemented | `/` | `app/page.tsx` | CONTENT, FOUNDING-OFFER, SESSION-TIMELINE, SUBJECTS, STAGE-PATH, PRICING-TABLE, SAFE-HANDS, FAQ, COMING-SOON, CTA-BAND, SEO | none | e2e, Lighthouse |
-| FOUNDING-OFFER | Founding band, switches to "full" when places run out | implemented | `components/FoundingBand.tsx` | `content/site.ts` (`founding`, `foundingOpen`) | CONTENT | LANDING, PRICING-TABLE, ENQUIRY | none |
-| PRICING-TABLE | Days-by-days table, founding column hidden when full | implemented | `components/PricingTable.tsx` | PRICING | PRICING, CONTENT | LANDING | e2e |
+| FOUNDING-OFFER | Live aggregate founding availability with open, full and unknown states | implemented | `components/FoundingBand.tsx`, `components/FoundingContent.tsx` | `lib/founding-availability.ts` (`getFoundingAvailability`), `db/migrations/0001_founding_availability.sql`, `db/migrations/0002_seed_founding_slots.sql` | CONTENT, FOUNDING-INVENTORY | LANDING, PRICING-TABLE, ENQUIRY, CTA-BAND | `lib/founding-availability.test.ts`; development database constraint and access checks |
+| FOUNDING-INVENTORY | Five bounded slots and private family IDs, exposing only aggregate counts | implemented | `public_offer.founding_availability` | `db/migrations/0001_founding_availability.sql`, `db/migrations/0002_seed_founding_slots.sql`, `db/README.md` | Neon PostgreSQL; provisioned read-only role | FOUNDING-OFFER | Development migration, constraint, rollback and restricted-role checks; production provisioning pending |
+| PRICING-TABLE | Days-by-days table, founding column shown only when availability is known and open | implemented | `components/PricingTable.tsx` | PRICING | PRICING, CONTENT | LANDING | e2e |
 | STAGE-PATH | Signature scroll-drawn vine through Stages 0 to 4 | implemented | `components/StagePath.tsx` | CSS `.vine` in `globals.css` | `content/progression.ts` | LANDING, HOW-WE-TEACH | visual check only |
 | SUBJECTS | Nine early-learning subjects with age goals (from the two-year-old teacher's manual) | implemented | `components/SubjectGrid.tsx` | `content/subjects.ts` | CONTENT | LANDING, HOW-WE-TEACH | e2e (page loads) |
 | SESSION-TIMELINE | Session blocks (list and table) | implemented | `components/SessionTimeline.tsx` | `content/session.ts` | CONTENT | LANDING, HOW-WE-TEACH | none |
@@ -31,14 +32,14 @@ Canonical inventory for this repo. Status values: implemented, partial, planned.
 | SEO | Metadata, canonical, sitemap, robots, JSON-LD, icons, OG image | implemented | `app/layout.tsx`, `app/sitemap.ts`, `app/robots.ts`, `app/*icon*`, `app/opengraph-image.png` | `lib/schema-org.ts`, `components/JsonLd.tsx` | CONTENT, FAQ | all pages | e2e (sitemap, robots), Lighthouse |
 | BRAND-ASSETS | Logo files and the script that trims them and makes icons | implemented | `scripts/make-brand-assets.mjs` | `public/brand/*` | sharp | SITE-LAYOUT, LANDING, SEO | none |
 | PORTAL-CONCEPTS | Dated staff and parent UI reference archive | implemented (design assets only) | `docs/portal-mockups/README.md` | `docs/portal-mockups/DESIGN-BRIEF.md`, six PNG previews | CONTENT, SITE-LAYOUT, STAGE-PATH, SESSION-TIMELINE as design references | PORTAL (planned) | Original-export byte comparison, PNG decoding, local-link checks; prior visual review |
-| PORTAL | Staff and parent portal | planned | No application routes yet; `docs/portal-mockups/README.md` | No runtime implementation | PORTAL-CONCEPTS; prospective reuse of CONTENT, SITE-LAYOUT, STAGE-PATH, SESSION-TIMELINE | none | None; mockups are not runtime evidence |
+| PORTAL | Staff and parent portal | planned | No application routes yet; `docs/superpowers/plans/2026-11-11-goldleaf-portal.md`, `docs/portal-mockups/README.md` | No runtime implementation | PORTAL-CONCEPTS; prospective reuse of CONTENT, SITE-LAYOUT, STAGE-PATH, SESSION-TIMELINE | none | None; mockups are not runtime evidence |
 
 ## Portal design reference
 
 - Start with [the mockup gallery](docs/portal-mockups/README.md) for PORTAL-CONCEPTS. Graph nodes: `portal_concepts` and `portal_planned` in [graph.json](graphify-out/graph.json).
 - `PORTAL depends_on PORTAL-CONCEPTS`; the archive references the existing content, typography, stage path and session timeline rather than introducing a parallel implementation. These are design relationships, not runtime imports.
 - All identities and balances shown are fictional. The archive preserves the earlier 105-minute plan from checkout `26b96ba`; current `content/site.ts` and `content/session.ts` specify 120 minutes.
-- Authentication, family/staff permissions, messages and billing are planned boundaries, with no implementation or tests in this archive.
+- Authentication, family/staff permissions, messages and billing are planned boundaries, with no implementation or tests in this archive. The [portal delivery plan](docs/superpowers/plans/2026-11-11-goldleaf-portal.md) remains planned work. The founding inventory is a separate minimal runtime foundation.
 
 ## Known gaps
 - `content/session.ts` now follows the manual's routine. The ages 3 to 4 column is carried over from the earlier plan, and the manual covers age 2 only. Discover and Snack are marked "Same" for older ages without a source.
@@ -47,4 +48,4 @@ Canonical inventory for this repo. Status values: implemented, partial, planned.
 - Tutor bio and photo are placeholders. Contact email is a placeholder (`hello@example.com`).
 - STAGE-PATH, SESSION-TIMELINE, FAQ, SAFE-HANDS and the error screens have no automated tests.
 - The 3D scene has not been measured on a real phone. Check frame rate before launch.
-- Graphify covers structural extraction from 50 tracked code files plus the portal archive documentation and six screenshots (116 nodes, 88 directed edges, 50 communities). Other docs/images remain outside semantic coverage; 123 unresolved AST import/call edges are omitted. Use this tree for domain connections and [the graph report](graphify-out/GRAPH_REPORT.md) for coverage limits.
+- Graphify covers an allowlisted structural refresh of tracked code plus the portal archive, six screenshots, founding database references and the portal plan (129 nodes, 86 directed edges). Other docs/images remain outside semantic coverage; unresolved AST import/call edges are omitted. Use this tree for domain connections and [the graph report](graphify-out/GRAPH_REPORT.md) for coverage limits.

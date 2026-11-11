@@ -11,8 +11,8 @@ Source of truth for business facts: the client's "Goldleaf Learning Business Pla
 
 ## Architecture
 - Next.js 16 App Router, React 19, TypeScript strict, Tailwind v4 (`@theme` tokens in `app/globals.css`).
-- Every page is statically rendered. The only client component is `EnquiryForm`.
-- All business facts live in typed files in `content/` and `lib/pricing.ts`. No CMS and no database.
+- Public pages use a static shell; live founding availability streams at request time.
+- Rates and business facts live in `content/` and `lib/pricing.ts`; founding availability comes from a restricted database view. No CMS.
 - Enquiries: a server action validates with zod, then sends a plain-text email through Resend.
 - Hosting: Vercel. Analytics: `@vercel/analytics` (cookieless, no banner).
 
@@ -24,7 +24,7 @@ Key decisions
 - Body font Lexend (designed for reading fluency, on-message for a reading tutor). Display font Fraunces.
 
 ## Data model
-No database. Typed content: `site`, `progression`, `session`, `faq`. Enquiry payload (never stored): parent name, email, optional phone, child age (2, 3, 4), days wanted (1 to 5), location (home, church, unsure), area, optional message, consent. The child's name is not collected.
+Founding inventory and family IDs are stored in Neon; the public site reads only aggregate availability. Typed content: `site`, `progression`, `session`, `faq`. Enquiry payload (never stored): parent name, email, optional phone, child age (2, 3, 4), days wanted (1 to 5), location (home, church, unsure), area, optional message, consent. The child's name is not collected.
 
 ## Failure modes
 - Resend down or key missing in production: the form shows an error with the contact email as a fallback. The message is not lost silently.

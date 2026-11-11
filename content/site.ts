@@ -16,8 +16,6 @@ export const site = {
   standardRate: 30,
   sessionMinutes: 120,
   founding: {
-    total: 5,
-    taken: 0, // update as places fill
     rate: 25,
     rateAfter: 28,
     endsLabel: "Easter 2027",
@@ -30,6 +28,4 @@ export const site = {
   },
 } as const;
 
-export const foundingPlacesLeft = Math.max(0, site.founding.total - site.founding.taken);
-export const foundingOpen = foundingPlacesLeft > 0;
 export const areaLabel = `${site.area.town}, ${site.area.county}`;

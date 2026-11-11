@@ -1,8 +1,10 @@
-import { site, foundingOpen, foundingPlacesLeft } from "@/content/site";
+import { site } from "@/content/site";
+import type { FoundingAvailability } from "@/lib/founding-availability";
 import { Eyebrow } from "./Eyebrow";
 import { ButtonLink } from "./Button";
 
-export function FoundingBand() {
+export function FoundingBand({ availability }: { availability: FoundingAvailability }) {
+  const foundingOpen = availability !== null && availability.remaining > 0;
   const f = site.founding;
   return (
     <section aria-labelledby="founding-title" className="on-ink bg-ink text-paper">
@@ -12,7 +14,7 @@ export function FoundingBand() {
           {foundingOpen ? (
             <>
               <h2 id="founding-title" className="mt-3 !text-[clamp(1.6rem,3.4vw,2.4rem)]">
-                {foundingPlacesLeft} of {f.total} founding places left
+                {availability?.remaining} of {availability?.total} founding places left
               </h2>
               <p className="mt-3 max-w-2xl text-paper/90">
                 <span className="mr-2 inline-block size-2.5 rounded-full bg-clay align-middle" aria-hidden="true" />
@@ -20,12 +22,17 @@ export function FoundingBand() {
                 The standard rate is £{site.standardRate} an hour.
               </p>
             </>
-          ) : (
+          ) : availability ? (
             <>
               <h2 id="founding-title" className="mt-3 !text-[clamp(1.6rem,3.4vw,2.4rem)]">
                 Founding places are full
               </h2>
               <p className="mt-3 max-w-2xl text-paper/90">New families pay the standard rate of £{site.standardRate} an hour.</p>
+            </>
+          ) : (
+            <>
+              <h2 id="founding-title" className="mt-3 !text-[clamp(1.6rem,3.4vw,2.4rem)]">Ask about a place</h2>
+              <p className="mt-3 max-w-2xl text-paper/90">The standard rate is £{site.standardRate} an hour.</p>
             </>
           )}
         </div>

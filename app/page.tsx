@@ -1,28 +1,29 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Clock, House, Sprout, UserRound } from "lucide-react";
 import { ButtonLink } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
+import { FoundingButton, LiveCtaBand, LiveFoundingBand, LivePricing, Pricing } from "@/components/FoundingContent";
 import { ComingSoon } from "@/components/ComingSoon";
 import { Eyebrow } from "@/components/Eyebrow";
 import { Faq } from "@/components/Faq";
 import { FoundingBand } from "@/components/FoundingBand";
 import { JsonLd } from "@/components/JsonLd";
-import { PricingTable } from "@/components/PricingTable";
 import { SafeHands } from "@/components/SafeHands";
 import { SessionTimeline } from "@/components/SessionTimeline";
 import { SubjectGrid } from "@/components/SubjectGrid";
 import { SeedlingScene } from "@/components/seedling/SeedlingScene";
 import { SoundMoment } from "@/components/SoundMoment";
 import { StagePath } from "@/components/StagePath";
-import { site, foundingOpen } from "@/content/site";
+import { site } from "@/content/site";
 import { faqSchema, organisationSchema } from "@/lib/schema-org";
 
 export const metadata: Metadata = {
   title: { absolute: "Phonics & Early Years Tutor in Ashford, Kent | Goldleaf" },
   description:
-    "One-to-one, play-based early learning for 2 to 4 year olds in Ashford, Kent: phonics, stories, maths, science, art and music. In your home or at a local church. Founding places open.",
+    "One-to-one, play-based early learning for 2 to 4 year olds in Ashford, Kent: phonics, stories, maths, science, art and music. In your home or at a local church.",
   alternates: { canonical: "/" },
   openGraph: { title: "Phonics & Early Years Tutor in Ashford, Kent | Goldleaf", url: "/", images: ["/opengraph-image.png"] },
 };
@@ -52,7 +53,7 @@ export default function Home() {
               church, with one clear reading path from first sounds to first books.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/enquire">{foundingOpen ? "Ask about a founding place" : "Make an enquiry"}</ButtonLink>
+              <Suspense fallback={<ButtonLink href="/enquire">Make an enquiry</ButtonLink>}><FoundingButton /></Suspense>
               <ButtonLink href="/how-we-teach" variant="ghost">See how we teach</ButtonLink>
             </div>
           </div>
@@ -77,7 +78,7 @@ export default function Home() {
         </div>
       </section>
 
-      <FoundingBand />
+      <Suspense fallback={<FoundingBand availability={null} />}><LiveFoundingBand /></Suspense>
 
       {/* Subjects */}
       <section className="section" aria-labelledby="subjects-title">
@@ -104,7 +105,7 @@ export default function Home() {
             <Eyebrow left>A session</Eyebrow>
             <h2 id="session-title" className="mt-3">What a session looks like</h2>
             <p className="prose-x mt-4 text-ink-soft">
-              One hour 45 minutes of short, varied, play-based activities. Songs, movement, a story, counting games,
+              Two hours of short, varied, play-based activities. Songs, movement, a story, counting games,
               discovery and making, with phonics woven through it.
             </p>
             <p className="mt-4 font-semibold">You get a short handover note at the end of every session.</p>
@@ -157,13 +158,8 @@ export default function Home() {
           <div className="max-w-2xl">
             <Eyebrow left>Pricing</Eyebrow>
             <h2 id="pricing-title" className="mt-3">Clear prices, per child</h2>
-            <p className="mt-4 text-ink-soft">
-              {foundingOpen
-                ? `Standard rate £${site.standardRate} an hour. Founding families pay £${site.founding.rate} an hour until ${site.founding.endsLabel}, then £${site.founding.rateAfter} an hour for as long as they stay.`
-                : `The standard rate is £${site.standardRate} an hour.`}
-            </p>
           </div>
-          <div className="mt-8"><PricingTable /></div>
+          <Suspense fallback={<Pricing availability={null} />}><LivePricing /></Suspense>
           <div className="mt-8"><ButtonLink href="/enquire">Ask about a place</ButtonLink></div>
         </div>
       </section>
@@ -208,7 +204,7 @@ export default function Home() {
         </div>
       </section>
 
-      <CtaBand />
+      <Suspense fallback={<CtaBand availability={null} />}><LiveCtaBand /></Suspense>
     </>
   );
 }

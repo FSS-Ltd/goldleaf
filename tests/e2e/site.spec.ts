@@ -20,8 +20,8 @@ test("pricing table shows the 2 hour prices", async ({ page }) => {
   const table = page.locator("#pricing table");
   await expect(table).toContainText("£270");
   await expect(table).toContainText("£1170");
-  await expect(table).toContainText("£250");
-  await expect(table).toContainText("£1083");
+  await expect(table).not.toContainText("£250");
+  await expect(page.getByText("Founding places are full")).toHaveCount(0);
 });
 
 test("unknown route shows the custom 404", async ({ page }) => {

@@ -866,7 +866,7 @@
       "source_file": "FEATURE_TREE.md",
       "source_location": "L35",
       "status": "partial",
-      "scope": "Custom authentication, role-scoped parent/admin/staff, billing, learning and messaging UI and event transport are present; migrations 0017/0018 are verified in development and production, while populated workflow validation and production portal activation remain pending.",
+      "scope": "Custom authentication, role-scoped parent/admin/staff, billing, learning and messaging UI and event transport are present. Selected populated workflows were verified in isolated QA; production portal and Google sign-in are active. Separate-user isolation, signup, assistive technology and performance verification remain incomplete.",
       "community": 2,
       "norm_label": "portal partial authenticated family staff billing learning messaging ui",
       "id": "portal_planned"

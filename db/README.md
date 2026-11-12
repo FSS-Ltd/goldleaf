@@ -4,7 +4,7 @@ Apply `migrations/0001_founding_availability.sql` and then `migrations/0002_seed
 
 ## Assignment boundary
 
-The portal UI assignment flow is planned. The `set_founding` database function provides conditional assignment; any alternative writer must preserve the same constraint:
+The portal UI supports founding assignment. The `set_founding` database function provides conditional assignment; any alternative writer must preserve the same constraint:
 
 ```sql
 UPDATE portal.founding_slots
@@ -197,9 +197,9 @@ GRANT EXECUTE ON FUNCTION
 TO goldleaf_portal_runtime;
 ```
 
-Only a trusted server may supply the Clerk-verified subject. `lib/portal/staff.ts` uses the existing invitation and assignment functions, issues seven-day tokens stored only as digests, and returns a raw token once to the server caller. Reissuing for the same email revokes the old pending invitation. Staff acceptance remains `acceptInvitation` through `portal.accept_verified_invitation`. Pending invites are not accepted staff identities. `listStaff` returns an accepted membership ID and Clerk subject; future UI must use a canonical server-side Clerk batch profile lookup to label the selected accepted staff member directly above the family checklist, never infer identity from an invite email. Assignment is explicit after acceptance; the SQL checks active staff on mutation. Staff reads return only assigned family IDs and names. This adds no delivery, UI, provider configuration, or deployed grants.
+Only a trusted server may supply the Clerk-verified subject. `lib/portal/staff.ts` uses the existing invitation and assignment functions, issues seven-day tokens stored only as digests, and returns a raw token once to the server caller. Reissuing for the same email revokes the old pending invitation. Staff acceptance remains `acceptInvitation` through `portal.accept_verified_invitation`. Pending invites are not accepted staff identities. `listStaff` returns an accepted membership ID and Clerk subject; the UI uses a canonical server-side Clerk batch profile lookup to label the selected accepted staff member directly above the family checklist, never infer identity from an invite email. Assignment is explicit after acceptance; the SQL checks active staff on mutation. Staff reads return only assigned family IDs and names. Migration 0009 itself adds no delivery or UI; see the 0010 section below for the current implementation and grant change.
 
-On disposable PostgreSQL, run `db/tests/staff-access.sql` after migrations 0001 through 0009. This verifies restricted role, cross-role access, replay and revocation; real Clerk and Neon transports remain untested.
+On disposable PostgreSQL, run `db/tests/staff-access.sql` after migrations 0001 through 0009. This verifies restricted role, cross-role access, replay and revocation; the development runtime has also been checked with Neon HTTP and verified Clerk sessions.
 
 ## Invoice workflow data access (local verification only)
 
@@ -208,3 +208,25 @@ Apply `0008_invoice_runtime.sql` after `0007`. The server DAL uses `invoice_draf
 The checked draft and issue functions lock the affected family, settings and invoice, then compare the full previously read context. A change returns SQLSTATE `40001` and the DAL raises `InvoiceContextChangedError`; refresh and requote rather than retrying stale data. Draft retries must reuse the same operation UUID and identical request. Issued retries return the existing invoice number. Payment retries reuse the operation UUID and identical details. VAT is calculated in integer pence per line. Issue and due dates use Europe/London regardless of the caller session time zone; history timestamps in the checked context use UTC. Existing issued snapshots are never recalculated after later settings or founding changes.
 
 Only verified Clerk server identity may supply subjects. The database role may be granted individual EXECUTE privileges on `read_billing_settings`, `save_billing_settings`, `read_admin_invoice`, `read_family_invoices`, `record_invoice_payment`, `invoice_draft_context`, `invoice_issue_context`, `read_invoice_draft_operation`, `create_invoice_draft_checked`, and `issue_invoice_checked`. Never grant table access, `invoice_pricing_context`, `create_invoice_draft`, `issue_invoice`, or other internal helpers. No role, provider, production database, UI, email or payment processor is configured by this migration. Neon HTTP and Clerk signed-in integration remain untested locally. CI exercises synthetic PostgreSQL 17 database calls and concurrency; run `db/tests/invoice-runtime.sql` and `db/tests/invoice-runtime-concurrency.sh` only on a disposable database after the migrations.
+
+## Staff invitation delivery and assignment editor
+
+Apply `0010_staff_delivery.sql` after 0009. It adds only delivery state and replay IDs to staff invitations, plus an atomic replacement of one accepted staff member's family assignments. It does not persist invitation tokens or mail-provider responses. Grant only these additional entry points to the existing restricted portal runtime:
+
+```sql
+GRANT EXECUTE ON FUNCTION
+  portal.issue_staff_delivery(text, text, bytea, timestamptz, uuid),
+  portal.list_staff_deliveries(text),
+  portal.staff_delivery_recipient(text, uuid, bytea),
+  portal.mark_staff_delivery(text, uuid, text),
+  portal.set_staff_assignments(text, uuid, uuid[])
+TO goldleaf_portal_runtime;
+
+-- The delivery wrapper replaces the direct issuance grant from 0009.
+REVOKE EXECUTE ON FUNCTION portal.issue_staff_invitation(text, text, bytea, timestamptz)
+FROM goldleaf_portal_runtime;
+```
+
+Verify the runtime cannot execute the lower-level issuer after applying these grants. The server supplies the verified subject; SQL rechecks active admin membership. A stable request UUID makes a replay fail without issuing another invitation. A resend creates a new token and invalidates earlier invitations for the same email. Delivery commits before an explicit send attempt: `sent` means provider acceptance, not receipt, and `pending` can mean delivery is unconfirmed. If the response is lost, inspect the list before explicitly resending. Assignment updates lock the selected active staff membership and apply all selected family changes in one transaction. Staff can read only their assigned families. No role, table or sequence grants are added by this migration.
+
+Run `db/tests/staff-delivery.sql` and `db/tests/staff-delivery-concurrency.sh` on disposable PostgreSQL after migrations 0001–0010. They use synthetic records. No development or production application of 0010, real mail or live write verification is implied by the migration.

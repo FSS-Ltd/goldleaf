@@ -73,6 +73,8 @@ Draft onboarding UI uses companion Stitch frames `ee9f8cc112ad420d8ba1e65b7137dd
 
 **Owns** `app/(portal)/admin/staff/`, `app/(portal)/staff/page.tsx`, `lib/portal/staff.ts` and staff assignment migrations. Consume Sprint 2's invitation and access contracts. Server access exposes accepted membership IDs and Clerk subjects; resolve selected accepted staff profiles through a server-side Clerk batch lookup and display the selected identity directly above the family checklist. Invite email is not an accepted identity. The companion staff invitation design reference is `1bf98347d63f4da19f1511d51be74e7f`; original staff desktop and mobile references remain unchanged.
 
+The staff UI slice adds migration `0010_staff_delivery.sql`, reuses the existing invitation fragment capture and role checks, and saves each selected staff member's family assignments atomically. The Today view shows assigned families and marks sessions and attention updates unavailable until those features exist. Development application of 0010, real mail, and signed-in staff workflows remain separate verification gates.
+
 - [ ] Issue staff invitations with a separate purpose. Admin assigns authorised families or children explicitly. Staff sees only assigned records and cannot invite admins, change family pricing or access unrelated billing. Revocation takes effect on the next protected read or mutation.
 - [ ] Render Staff Today on desktop and mobile using the two Stitch frames. Use actual assigned sessions or the designed empty state. Keep unfinished actions out of the navigation until they have a working destination.
 - [ ] Test parent/staff/admin role crossing, guessed identifiers, expired staff invitation, removal during an active session and keyboard access to the mobile attention list.
@@ -112,3 +114,5 @@ The server DAL and migration `0008_invoice_runtime.sql` provide configured setti
 - A parent changes a family, child, session or invoice identifier. Each DAL query verifies record scope and every server action independently verifies authority. Sprints 2–6 test foreign identifiers.
 - A payment or invitation delivery fails after its database commit. The durable record is preserved and an explicit retry uses the same identifiers. Sprints 2 and 4 test the failure and replay.
 - A private note, contact detail or expired discount is carried into a parent view or invoice. Separate DTOs, authorised joins and issued snapshots control what each reader sees. Sprints 4 and 5 exercise the transition.
+
+Multi-role account navigation adapts the existing profile-menu design (Stitch e7145a748fce40be80e9c2223e6adb83): show deduplicated active portal roles, mark the current role and recheck authority on each destination. Jury approved this focused adaptation; live keyboard and narrow-screen verification remains pending.

@@ -10,12 +10,12 @@ import { listFamilyInvitations } from "@/lib/portal/invitation-delivery";
 import { requireRole } from "@/lib/portal/require-role";
 
 async function FamilyDetail({ params }: { params: Promise<{ familyId: string }> }) {
-  const { identity } = await requireRole("admin");
+  const { identity, memberships } = await requireRole("admin");
   const parsed = z.string().uuid().safeParse((await params).familyId);
   if (!parsed.success) notFound();
   const [family, invitations, availability] = await Promise.all([readFamily(parsed.data), listFamilyInvitations(parsed.data), getFoundingAvailability()]);
   if (!family) notFound();
-  return <PortalShell role="admin" userId={identity.userId}>
+  return <PortalShell role="admin" userId={identity.userId} memberships={memberships}>
     <a href="/admin" className="text-sm text-[#35594a] underline">Back to families</a>
     <h1 className="mt-5 !text-[clamp(2rem,4vw,2.6rem)]">{family.display_name ?? "Unnamed family"}</h1>
     <div className="mt-8 grid gap-6 lg:grid-cols-3">

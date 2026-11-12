@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { types } from "@neondatabase/serverless";
-import { staffInvitationSchema, staffAssignmentSchema, pendingStaffInvitationSchema } from "./portal/staff-schemas";
+import { staffInvitationSchema, staffAssignmentSchema, staffAssignmentsSchema, pendingStaffInvitationSchema } from "./portal/staff-schemas";
 
 test("staff operations reject extra authority and malformed identifiers", () => {
   const staffId = "10000000-0000-4000-8000-000000000001";
@@ -12,6 +12,10 @@ test("staff operations reject extra authority and malformed identifiers", () => 
   assert.equal(staffAssignmentSchema.safeParse({ staffId, familyId, enabled: true }).success, true);
   assert.equal(staffAssignmentSchema.safeParse({ staffId, familyId: "bad", enabled: true }).success, false);
   assert.equal(staffAssignmentSchema.safeParse({ staffId, familyId, enabled: true, subject: "other" }).success, false);
+  assert.equal(staffAssignmentsSchema.safeParse({ staffId, familyIds: [familyId] }).success, true);
+  assert.equal(staffAssignmentsSchema.safeParse({ staffId, familyIds: ["bad"] }).success, false);
+  assert.equal(staffAssignmentsSchema.safeParse({ staffId, familyIds: Array(501).fill(familyId) }).success, false);
+  assert.equal(staffAssignmentsSchema.safeParse({ staffId, familyIds: [], subject: "other" }).success, false);
 });
 
 test("pending invitation rows normalize Neon timestamptz values", () => {

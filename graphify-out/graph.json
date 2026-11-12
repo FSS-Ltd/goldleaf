@@ -870,14 +870,14 @@
       "id": "portal_concepts"
     },
     {
-      "label": "PORTAL: planned staff and parent portal; no runtime",
+      "label": "PORTAL: partial database foundation; UI planned",
       "file_type": "document",
       "source_file": "FEATURE_TREE.md",
       "source_location": "L34-L41",
-      "status": "planned",
-      "scope": "No application routes, authentication, family/staff permissions, messages or billing implementation.",
+      "status": "partial",
+      "scope": "Private onboarding database foundation exists; application routes, integrated authentication, messages and billing remain planned.",
       "community": 2,
-      "norm_label": "portal: planned staff and parent portal; no runtime",
+      "norm_label": "portal partial database foundation ui planned",
       "id": "portal_planned"
     },
     {
@@ -1298,6 +1298,15 @@
       "id": "lib_sound_chips_test_ts",
       "community": 56,
       "norm_label": "sound-chips.test.ts"
+    },
+    {
+      "id": "portal_onboarding_db",
+      "label": "Portal onboarding database foundation",
+      "file_type": "code",
+      "source_file": "db/migrations/0003_portal_onboarding.sql",
+      "source_location": "L1",
+      "community": 15,
+      "norm_label": "portal onboarding database foundation"
     }
   ],
   "links": [
@@ -2361,6 +2370,42 @@
       "confidence_score": 1.0,
       "source_file": "lib/sound-chips.test.ts",
       "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "portal_onboarding_db",
+      "target": "founding_inventory",
+      "_src": "portal_onboarding_db",
+      "_tgt": "founding_inventory",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "db/migrations/0003_portal_onboarding.sql",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "portal_onboarding_db",
+      "target": "founding_provision",
+      "_src": "portal_onboarding_db",
+      "_tgt": "founding_provision",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "db/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "portal_planned",
+      "target": "portal_onboarding_db",
+      "_src": "portal_planned",
+      "_tgt": "portal_onboarding_db",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "FEATURE_TREE.md",
+      "source_location": "L35-L36",
       "weight": 1.0
     }
   ],

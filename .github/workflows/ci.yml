@@ -36,8 +36,37 @@ jobs:
           RESEND_API_KEY: ""
           GOLDLEAF_OFFER_DATABASE_URL: ""
 
+  database:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: local-test-only
+          POSTGRES_DB: goldleaf_test
+        ports:
+          - 55439:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d goldleaf_test"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify onboarding database
+        env:
+          PGPASSWORD: local-test-only
+          PGUSER: postgres
+        run: |
+          psql -X -h 127.0.0.1 -p 55439 -d goldleaf_test -v ON_ERROR_STOP=1 \
+            -f db/tests/onboarding-upgrade.sql -f db/tests/onboarding.sql
+          # A fresh backend ensures the temporary-type attack tests initial function compilation.
+          psql -X -h 127.0.0.1 -p 55439 -d goldleaf_test -v ON_ERROR_STOP=1 \
+            -f db/tests/onboarding-grants.sql
+          sh db/tests/onboarding-concurrency.sh 127.0.0.1 goldleaf_test
+
   deploy:
-    needs: test
+    needs: [test, database]
     runs-on: ubuntu-latest
     permissions:
       contents: read

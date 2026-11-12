@@ -116,3 +116,7 @@ The server DAL and migration `0008_invoice_runtime.sql` provide configured setti
 - A private note, contact detail or expired discount is carried into a parent view or invoice. Separate DTOs, authorised joins and issued snapshots control what each reader sees. Sprints 4 and 5 exercise the transition.
 
 Multi-role account navigation adapts the existing profile-menu design (Stitch e7145a748fce40be80e9c2223e6adb83): show deduplicated active portal roles, mark the current role and recheck authority on each destination. Jury approved this focused adaptation; live keyboard and narrow-screen verification remains pending.
+
+### Learning foundation (backend, pending review)
+
+Migrations 0012 and 0013 add family-scoped children and sessions, explicit attendance, private staff notes and draft/preview/publication data. Staff writes recheck active assignment; parents read only family publications. Session duration and teaching references reuse `site.sessionMinutes`, `sessionBlocks` and `stages`. Location is optional and admin-entered. Explicitly recorded explored sounds default to an empty list and are never evidence of mastery. Publication preview compares a family/child/draft fingerprint, including those sounds, under lock, with operation UUID replay; it does not freeze a recipient list. PostgreSQL emits ID-only post-commit notifications; authenticated subscription transport, reconnect handling and learning UI remain planned. Local synthetic database tests are the current verification; no development or production deployment is implied.

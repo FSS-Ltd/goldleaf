@@ -279,3 +279,5 @@ Staff Today scoped update: `staff_today_selectprioritysession` is source-linked 
 Staff Today presentation components were added through scoped TypeScript AST extraction; the route-to-component render edges are source-verified.
 
 Staff Today mobile emphasis now moves the primary action into the priority card; the header action remains desktop-only. Structural graph relationships are unchanged.
+
+Parent-home scoped extraction was reconciled with the merged staff Today graph; the route, cards, shell and selection/rendering tests were re-extracted. Existing SQL and broader semantic coverage gaps remain.

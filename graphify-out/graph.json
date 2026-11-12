@@ -1723,24 +1723,6 @@
       "norm_label": "familydetail()"
     },
     {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/parent/page.tsx",
-      "source_location": "L1",
-      "id": "app_portal_provider_parent_page_tsx",
-      "community": 2,
-      "norm_label": "page.tsx"
-    },
-    {
-      "label": "ParentHome()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/parent/page.tsx",
-      "source_location": "L13",
-      "id": "page_parenthome",
-      "community": 2,
-      "norm_label": "parenthome()"
-    },
-    {
       "label": "layout.tsx",
       "file_type": "code",
       "source_file": "app/(public)/layout.tsx",
@@ -5194,13 +5176,6 @@
       "source_location": "L6"
     },
     {
-      "id": "components_portal_portalshell_tsx",
-      "label": "PortalShell.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "components_portal_auth_accountmenu_tsx",
       "label": "AccountMenu.tsx",
       "file_type": "code",
@@ -5767,6 +5742,69 @@
       "file_type": "code",
       "source_file": "components/portal/staff-today/StaffTodayHeader.tsx",
       "source_location": "L4"
+    },
+    {
+      "id": "app_portal_provider_parent_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_portalshell_tsx",
+      "label": "PortalShell.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_parent_home_learningcards_tsx",
+      "label": "LearningCards.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/parent-home/LearningCards.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_parent_home_overviewcards_tsx",
+      "label": "OverviewCards.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/parent-home/OverviewCards.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_parent_home_learning_card_test_ts",
+      "label": "parent-home-learning-card.test.ts",
+      "file_type": "code",
+      "source_file": "lib/parent-home-learning-card.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_parent_home_selection_test_ts",
+      "label": "parent-home-selection.test.ts",
+      "file_type": "code",
+      "source_file": "lib/parent-home-selection.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_parent_home_session_card_test_ts",
+      "label": "parent-home-session-card.test.ts",
+      "file_type": "code",
+      "source_file": "lib/parent-home-session-card.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_portal_parent_home_selection_ts",
+      "label": "parent-home-selection.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/parent-home-selection.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "parent_home_selection_selectparenthomedata",
+      "label": "selectParentHomeData()",
+      "file_type": "code",
+      "source_file": "lib/portal/parent-home-selection.ts",
+      "source_location": "L11"
     }
   ],
   "links": [
@@ -12464,18 +12502,6 @@
       "_tgt": "learning_listpublishedlearning"
     },
     {
-      "source": "app_portal_provider_parent_page_tsx",
-      "target": "page_parenthome",
-      "_src": "app_portal_provider_parent_page_tsx",
-      "_tgt": "page_parenthome",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/(portal)/(provider)/parent/page.tsx",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
       "source": "app_portal_provider_staff_page_tsx",
       "target": "page_stafftoday",
       "_src": "app_portal_provider_staff_page_tsx",
@@ -12485,18 +12511,6 @@
       "confidence_score": 1.0,
       "source_file": "app/(portal)/(provider)/staff/page.tsx",
       "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "page_parenthome",
-      "target": "parent_children_parentchildren",
-      "_src": "page_parenthome",
-      "_tgt": "parent_children_parentchildren",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/parent/page.tsx",
-      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -13822,6 +13836,69 @@
       "confidence_score": 1.0,
       "source_file": "app/(portal)/(provider)/staff/page.tsx",
       "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_parent_home_selection_ts",
+      "target": "parent_home_selection_selectparenthomedata",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/parent-home-selection.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_page_tsx",
+      "target": "components_portal_parent_home_learningcards_tsx",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_page_tsx",
+      "target": "components_portal_parent_home_overviewcards_tsx",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_page_tsx",
+      "target": "lib_portal_parent_home_selection_ts",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_page_tsx",
+      "target": "lib_portal_sessions_ts",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_page_tsx",
+      "target": "lib_portal_learning_ts",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_page_tsx",
+      "target": "lib_portal_invoices_ts",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/page.tsx",
+      "source_location": "L1",
       "weight": 1.0
     }
   ],

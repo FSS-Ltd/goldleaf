@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { CalendarDays, CircleAlert } from "lucide-react";
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { PortalShell } from "@/components/portal/PortalShell";
 import { StaffSessionCard } from "@/components/portal/staff-today/StaffSessionCard";
 import { StaffTodayHeader } from "@/components/portal/staff-today/StaffTodayHeader";
@@ -105,11 +106,7 @@ async function AdminToday() {
 export default function AdminTodayPage() {
   return (
     <Suspense
-      fallback={
-        <main className="section wrap">
-          <p>Opening your portal…</p>
-        </main>
-      }
+      fallback={<PortalLoading label="Opening your portal…" variant="dashboard" />}
     >
       <AdminToday />
     </Suspense>

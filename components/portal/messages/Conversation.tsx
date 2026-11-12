@@ -6,6 +6,10 @@ import {
   markParentMessages,
   markStaffMessages,
 } from "@/app/(portal)/(provider)/admin/messages/actions";
+import {
+  acknowledgeMessage,
+  observeWhileVisible,
+} from "@/lib/portal/message-read-ack";
 import { sameSession } from "@/lib/portal/session-binding";
 import type { ActionActor } from "@/lib/portal/action-actor-state";
 import type { DisplayMessage } from "@/lib/portal/message-display";
@@ -36,6 +40,7 @@ export function Conversation({
     let active = true;
     const observer = new IntersectionObserver(
       (entries) => {
+        if (document.visibilityState !== "visible") return;
         const visible = entries
           .filter((entry) => entry.isIntersecting)
           .map((entry) => entry.target.getAttribute("data-sequence"))
@@ -61,20 +66,17 @@ export function Conversation({
           )
         )
           return;
-        pending.current.add(sequence);
-        void {
-          parent: markParentMessages,
-          staff: markStaffMessages,
-          admin: markAdminMessages,
-        }
-          [role](actor, {
-            familyId,
-            through: sequence,
-          })
-          .then((ok) => {
-            pending.current.delete(sequence);
+        void acknowledgeMessage(
+          pending.current,
+          sequence,
+          () =>
+            ({
+              parent: markParentMessages,
+              staff: markStaffMessages,
+              admin: markAdminMessages,
+            })[role](actor, { familyId, through: sequence }),
+          () => {
             if (
-              ok &&
               active &&
               sameSession(
                 { userId: actor.userId, sessionId: actor.authSessionId },
@@ -84,16 +86,23 @@ export function Conversation({
               BigInt(sequence) > BigInt(marked.current)
             )
               marked.current = sequence;
-          });
+          },
+        );
       },
       { threshold: 0.5 },
     );
-    root
-      .querySelectorAll("[data-sequence]")
-      .forEach((item) => observer.observe(item));
+    const stop = observeWhileVisible(
+      document,
+      () => {
+        root
+          .querySelectorAll("[data-sequence]")
+          .forEach((item) => observer.observe(item));
+      },
+      () => observer.disconnect(),
+    );
     return () => {
       active = false;
-      observer.disconnect();
+      stop();
     };
   }, [actor, role, familyId, messages, clerk]);
   return (

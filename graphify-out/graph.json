@@ -5201,13 +5201,6 @@
       "source_location": "L1"
     },
     {
-      "id": "portalshell_portalshell",
-      "label": "PortalShell()",
-      "file_type": "code",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L29"
-    },
-    {
       "id": "components_portal_auth_accountmenu_tsx",
       "label": "AccountMenu.tsx",
       "file_type": "code",
@@ -5275,7 +5268,7 @@
       "label": "Conversation()",
       "file_type": "code",
       "source_file": "components/portal/messages/Conversation.tsx",
-      "source_location": "L14"
+      "source_location": "L18"
     },
     {
       "id": "components_portal_messages_draftboundary_tsx",
@@ -5324,14 +5317,28 @@
       "label": "current()",
       "file_type": "code",
       "source_file": "components/portal/messages/MessageComposer.tsx",
-      "source_location": "L43"
+      "source_location": "L45"
     },
     {
       "id": "messagecomposer_send",
       "label": "send()",
       "file_type": "code",
       "source_file": "components/portal/messages/MessageComposer.tsx",
-      "source_location": "L49"
+      "source_location": "L51"
+    },
+    {
+      "id": "components_portal_messages_messagedraftlayout_tsx",
+      "label": "MessageDraftLayout.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/MessageDraftLayout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "messagedraftlayout_messagedraftlayout",
+      "label": "MessageDraftLayout()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/MessageDraftLayout.tsx",
+      "source_location": "L4"
     },
     {
       "id": "components_portal_messages_messageerror_tsx",
@@ -5362,13 +5369,6 @@
       "source_location": "L1"
     },
     {
-      "id": "parentrequests_formatuksession",
-      "label": "formatUkSession()",
-      "file_type": "code",
-      "source_file": "components/portal/messages/ParentRequests.tsx",
-      "source_location": "L110"
-    },
-    {
       "id": "lib_events_stream_test_ts",
       "label": "events-stream.test.ts",
       "file_type": "code",
@@ -5395,6 +5395,20 @@
       "file_type": "code",
       "source_file": "lib/message-draft-state.test.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "lib_message_read_ack_test_ts",
+      "label": "message-read-ack.test.ts",
+      "file_type": "code",
+      "source_file": "lib/message-read-ack.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "message_read_ack_test_notify",
+      "label": "notify()",
+      "file_type": "code",
+      "source_file": "lib/message-read-ack.test.ts",
+      "source_location": "L58"
     },
     {
       "id": "lib_portal_events_server_ts",
@@ -5458,6 +5472,27 @@
       "file_type": "code",
       "source_file": "lib/portal/message-draft-state.ts",
       "source_location": "L26"
+    },
+    {
+      "id": "lib_portal_message_read_ack_ts",
+      "label": "message-read-ack.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/message-read-ack.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "message_read_ack_acknowledgemessage",
+      "label": "acknowledgeMessage()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-read-ack.ts",
+      "source_location": "L2"
+    },
+    {
+      "id": "message_read_ack_observewhilevisible",
+      "label": "observeWhileVisible()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-read-ack.ts",
+      "source_location": "L24"
     },
     {
       "id": "lib_portal_message_views_ts",
@@ -12621,15 +12656,6 @@
       "weight": 1.0
     },
     {
-      "source": "components_portal_portalshell_tsx",
-      "target": "portalshell_portalshell",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L29",
-      "weight": 1.0
-    },
-    {
       "source": "components_portal_events_portalliveupdates_tsx",
       "target": "portalliveupdates_portalliveupdates",
       "relation": "contains",
@@ -12680,7 +12706,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/portal/messages/Conversation.tsx",
-      "source_location": "L14",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -12716,7 +12742,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/portal/messages/MessageComposer.tsx",
-      "source_location": "L43",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -12725,7 +12751,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/portal/messages/MessageComposer.tsx",
-      "source_location": "L49",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -12734,7 +12760,16 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "components/portal/messages/MessageComposer.tsx",
-      "source_location": "L50",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_messagedraftlayout_tsx",
+      "target": "messagedraftlayout_messagedraftlayout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/MessageDraftLayout.tsx",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -12747,21 +12782,21 @@
       "weight": 1.0
     },
     {
-      "source": "components_portal_messages_parentrequests_tsx",
-      "target": "parentrequests_formatuksession",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/messages/ParentRequests.tsx",
-      "source_location": "L110",
-      "weight": 1.0
-    },
-    {
       "source": "lib_events_stream_test_ts",
       "target": "events_stream_test_fakeclient",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/events-stream.test.ts",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_message_read_ack_test_ts",
+      "target": "message_read_ack_test_notify",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/message-read-ack.test.ts",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -12807,6 +12842,24 @@
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/message-draft-state.ts",
       "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_read_ack_ts",
+      "target": "message_read_ack_acknowledgemessage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-read-ack.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_read_ack_ts",
+      "target": "message_read_ack_observewhilevisible",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-read-ack.ts",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -12965,7 +13018,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "components/portal/messages/MessageComposer.tsx",
-      "source_location": "L67",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -12976,6 +13029,16 @@
       "confidence_score": 0.8,
       "source_file": "lib/portal/events-server.ts",
       "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "message_read_ack_acknowledgemessage",
+      "target": "messagecomposer_send",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "lib/portal/message-read-ack.ts",
+      "source_location": "L11",
       "weight": 1.0
     },
     {

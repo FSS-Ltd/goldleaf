@@ -96,7 +96,7 @@ function ResolveForm({
   }
   return (
     <div className="mt-4 border-t border-[#e3d7c3] pt-4">
-      <fieldset disabled={pending || uncertain}>
+      <fieldset disabled={pending}>
         <legend className="text-sm font-semibold">Resolution</legend>
         <div className="mt-2 flex flex-wrap gap-4 text-sm">
           <label className="flex min-h-12 items-center gap-2">
@@ -104,6 +104,7 @@ function ResolveForm({
               type="radio"
               name={`mode-${request.id}`}
               checked={value.mode === "keep"}
+              disabled={uncertain}
               onChange={() => setValue({ ...value, mode: "keep" })}
             />{" "}
             Keep session time
@@ -113,7 +114,7 @@ function ResolveForm({
               type="radio"
               name={`mode-${request.id}`}
               checked={value.mode === "reschedule"}
-              disabled={request.session_status !== "scheduled"}
+              disabled={uncertain || request.session_status !== "scheduled"}
               onChange={() => setValue({ ...value, mode: "reschedule" })}
             />{" "}
             Reschedule session
@@ -125,6 +126,7 @@ function ResolveForm({
               UK date
               <input
                 type="date"
+                disabled={uncertain}
                 className={`${field} min-h-12`}
                 value={value.date}
                 onChange={(event) =>
@@ -136,6 +138,7 @@ function ResolveForm({
               UK time
               <input
                 type="time"
+                disabled={uncertain}
                 className={`${field} min-h-12`}
                 value={value.time}
                 onChange={(event) =>
@@ -151,6 +154,7 @@ function ResolveForm({
             className={`${field} min-h-12`}
             maxLength={4000}
             required
+            readOnly={uncertain}
             value={value.resolution}
             onChange={(event) =>
               setValue({ ...value, resolution: event.target.value })
@@ -225,9 +229,17 @@ export function AdminRequests({
                 </h3>
                 <p className="mt-1 text-sm">
                   {request.resolved_at ? "Resolved" : "Open"} ·{" "}
-                  {request.parent_name} · {when.day} · {when.time} ·{" "}
-                  {request.duration_minutes} minutes
+                  {request.parent_name} · Current session time: {when.day} ·{" "}
+                  {when.time} · {request.duration_minutes} minutes
                   {request.location_label ? ` · ${request.location_label}` : ""}
+                </p>
+                <p className="mt-2 text-xs text-[#35594a]">
+                  Requested on{" "}
+                  {new Intl.DateTimeFormat("en-GB", {
+                    dateStyle: "medium",
+                    timeStyle: "short",
+                    timeZone: "Europe/London",
+                  }).format(new Date(request.created_at))}
                 </p>
                 <p className="mt-3 whitespace-pre-wrap break-words text-sm">
                   {request.body}

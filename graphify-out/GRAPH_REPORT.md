@@ -256,3 +256,7 @@ Post-rebase actor-fence and publication review refresh: 616 nodes, 602 edges acr
 Migration-overlap review adds source-linked publication binding trigger and concurrency test nodes: 618 nodes and 604 edges. SQL is manually linked; earlier unresolved extractor and corpus gaps remain.
 
 Messaging UI and role-fenced transport: scoped TypeScript AST extraction refreshed the changed route, shared shell, stream and message components. `portal_message_views_sql` and `portal_invalidation_sql` are manually source-linked because SQL extraction is unsupported. Earlier cluster counts are historical; event coverage and projection ACLs are backed by local tests. Migrations 0017/0018 and populated signed-in UI verification remain pending.
+
+Review fixes re-extracted the server-side provider guard, message read acknowledgement helper and mobile shell navigation. Failed read acknowledgements do not advance the cursor and remain retryable. SQL links remain manually maintained.
+
+Jury review updated request expansion, focus, read-only uncertain text and visible-only read acknowledgements. The visibility observer reattaches on return without polling; the SQL graph coverage limitations remain unchanged.

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { DraftBoundary } from "@/components/portal/messages/DraftBoundary";
+import { MessageDraftLayout } from "@/components/portal/messages/MessageDraftLayout";
 export default function Layout({ children }: { children: ReactNode }) {
-  return <DraftBoundary role="admin">{children}</DraftBoundary>;
+  return <MessageDraftLayout role="admin">{children}</MessageDraftLayout>;
 }

@@ -200,18 +200,26 @@ export function PortalShell({
         className="fixed inset-x-0 bottom-0 z-20 border-t border-[#e3d7c3] bg-[#f8f3ee] px-2 py-2 md:hidden"
       >
         <div className="flex gap-1 overflow-x-auto">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              prefetch={false}
-              aria-current={section === link.section ? "page" : undefined}
-              className={`flex min-h-12 min-w-12 flex-1 flex-col items-center justify-center gap-1 rounded-lg px-1 py-1 text-xs font-medium text-[#1b3022] ${section === link.section ? "bg-[#ecd081]" : ""}`}
-            >
-              <link.icon size={19} className="shrink-0" aria-hidden="true" />
-              {link.label}
-            </Link>
-          ))}
+          {links
+            .filter((link) => link.section !== "settings")
+            .map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                prefetch={false}
+                aria-current={
+                  section === link.section
+                    ? "page"
+                    : section === "settings" && link.section === "invoices"
+                      ? "location"
+                      : undefined
+                }
+                className={`flex min-h-12 min-w-12 flex-1 flex-col items-center justify-center gap-1 rounded-lg px-1 py-1 text-xs font-medium text-[#1b3022] ${section === link.section || (section === "settings" && link.section === "invoices") ? "bg-[#ecd081]" : ""}`}
+              >
+                <link.icon size={19} className="shrink-0" aria-hidden="true" />
+                {link.label}
+              </Link>
+            ))}
         </div>
       </nav>
     </div>

@@ -18,7 +18,6 @@ export function ParentRequests({
   requests: RequestContext[];
 }) {
   const [selected, setSelected] = useState<string | null>(null);
-  const session = sessions.find((item) => item.id === selected);
   return (
     <section
       className="rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-5"
@@ -50,7 +49,15 @@ export function ParentRequests({
                   {request.child_name}
                 </p>
                 <p className="mt-1 text-sm">
-                  {when.day} · {when.time}
+                  Current session time: {when.day} · {when.time}
+                </p>
+                <p className="mt-2 text-xs text-[#35594a]">
+                  Requested on{" "}
+                  {new Intl.DateTimeFormat("en-GB", {
+                    dateStyle: "medium",
+                    timeStyle: "short",
+                    timeZone: "Europe/London",
+                  }).format(new Date(request.created_at))}
                 </p>
                 <p className="mt-2 whitespace-pre-wrap break-words text-sm">
                   {request.body}
@@ -90,39 +97,53 @@ export function ParentRequests({
                 </p>
                 <button
                   type="button"
+                  id={`request-button-${item.id}`}
+                  aria-expanded={selected === item.id}
+                  aria-controls={selected === item.id ? `request-form-${item.id}` : undefined}
                   className="mt-2 min-h-12 text-sm underline"
                   onClick={() => setSelected(item.id)}
                 >
                   Request change
                 </button>
+                {selected === item.id && (
+                  <div
+                    id={`request-form-${item.id}`}
+                    className="mt-4 rounded-xl border border-[#e3d7c3] bg-[#fef8f3]"
+                  >
+                    <div className="p-5">
+                      <h3 className="!text-lg">
+                        Request change for {item.child_name}
+                      </h3>
+                      <p className="mt-1 text-sm">
+                        Current session time: {when.day} · {when.time}
+                      </p>
+                      <button
+                        type="button"
+                        className="mt-2 min-h-12 text-sm underline"
+                        onClick={() => {
+                          setSelected(null);
+                          document
+                            .getElementById(`request-button-${item.id}`)
+                            ?.focus();
+                        }}
+                      >
+                        Close request form
+                      </button>
+                    </div>
+                    <MessageComposer
+                      key={item.id}
+                      actor={actor}
+                      role="parent"
+                      targetId={item.id}
+                      kind="request"
+                      autoFocus
+                    />
+                  </div>
+                )}
               </li>
             );
           })}
         </ul>
-      )}
-      {session && (
-        <div className="mt-4 rounded-xl border border-[#e3d7c3] bg-[#fef8f3]">
-          <div className="p-5">
-            <h3 className="!text-lg">
-              Request change for {session.child_name}
-            </h3>
-            <p className="mt-1 text-sm">
-              {formatUkSession(session.starts_at, session.duration_minutes).day}{" "}
-              ·{" "}
-              {
-                formatUkSession(session.starts_at, session.duration_minutes)
-                  .time
-              }
-            </p>
-          </div>
-          <MessageComposer
-            key={session.id}
-            actor={actor}
-            role="parent"
-            targetId={session.id}
-            kind="request"
-          />
-        </div>
       )}
     </section>
   );

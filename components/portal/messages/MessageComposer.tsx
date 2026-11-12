@@ -19,11 +19,13 @@ export function MessageComposer({
   role,
   targetId,
   kind = "message",
+  autoFocus = false,
 }: {
   actor: ActionActor;
   role: "admin" | "parent" | "staff";
   targetId: string;
   kind?: "message" | "request";
+  autoFocus?: boolean;
 }) {
   const clerk = useClerk();
   const router = useRouter();
@@ -94,7 +96,9 @@ export function MessageComposer({
           className={`${field} min-h-28`}
           maxLength={4000}
           value={draft.body}
-          disabled={draft.pending || draft.uncertain}
+          disabled={draft.pending}
+          readOnly={draft.uncertain}
+          autoFocus={autoFocus}
           onChange={(event) => {
             setSuccess("");
             dispatch({

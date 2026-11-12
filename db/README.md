@@ -163,6 +163,25 @@ All functions are revoked from PUBLIC and no runtime role is provisioned. Only a
 
 On a disposable PostgreSQL 17 database, run `db/tests/onboarding-upgrade.sql`, `db/migrations/0004_staff_onboarding.sql`, `db/migrations/0005_invoice_billing.sql`, and `db/tests/invoice-billing.sql` in order. Run `PGPORT=55439 sh db/tests/invoice-concurrency.sh <host> <database>` against the same disposable database. Tests create synthetic records; never point them at live data. Disable callers and revoke grants to roll back application use; preserve records and use a forward migration for corrections.
 
+## Staff server access (local verification only)
+
+Apply `0009_staff_access.sql` after the prior migrations. The existing portal runtime requires the following additional individually granted functions; retain the earlier grants and do not grant tables or lower-level invitation acceptance functions:
+
+```sql
+GRANT EXECUTE ON FUNCTION
+  portal.issue_staff_invitation(text, text, bytea, timestamptz),
+  portal.revoke_staff_invitation(text, uuid),
+  portal.set_staff_family_access(text, uuid, uuid, boolean),
+  portal.list_pending_staff_invitations(text),
+  portal.list_staff_family_assignments(text, uuid),
+  portal.list_assigned_staff_families(text)
+TO goldleaf_portal_runtime;
+```
+
+Only a trusted server may supply the Clerk-verified subject. `lib/portal/staff.ts` uses the existing invitation and assignment functions, issues seven-day tokens stored only as digests, and returns a raw token once to the server caller. Reissuing for the same email revokes the old pending invitation. Staff acceptance remains `acceptInvitation` through `portal.accept_verified_invitation`. Pending invites are not accepted staff identities. `listStaff` returns an accepted membership ID and Clerk subject; future UI must use a canonical server-side Clerk batch profile lookup to label the selected accepted staff member directly above the family checklist, never infer identity from an invite email. Assignment is explicit after acceptance; the SQL checks active staff on mutation. Staff reads return only assigned family IDs and names. This adds no delivery, UI, provider configuration, or deployed grants.
+
+On disposable PostgreSQL, run `db/tests/staff-access.sql` after migrations 0001 through 0006, 0008 and 0009 (0007 remains reserved). This verifies restricted role, cross-role access, replay and revocation; real Clerk and Neon transports remain untested.
+
 ## Invoice workflow data access (local verification only)
 
 Apply `0008_invoice_runtime.sql` after `0006` (migration `0007` is reserved for another delivery). The server DAL uses `invoice_draft_context` and `invoice_issue_context` to derive prices from `quoteInvoice`. For each date-only service date, founding eligibility is the latest tag change by history ID recorded before the next midnight in `Europe/London`; the last change on the same local date applies to that whole date. A normal family with no history and no assigned slot is standard. A legacy assignment lacking sufficient history returns unknown and requires reconciliation to its actual date before quoting; no date is invented.

@@ -1838,6 +1838,96 @@
       "source_location": "L1",
       "community": 1,
       "norm_label": "invoice-quote.test.ts"
+    },
+    {
+      "label": "staff.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L1",
+      "id": "staff_ts",
+      "community": 1,
+      "norm_label": "staff.ts"
+    },
+    {
+      "label": "issueStaffInvitation()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L9",
+      "id": "staff_issuestaffinvitation",
+      "community": 1,
+      "norm_label": "issuestaffinvitation()"
+    },
+    {
+      "label": "revokeStaffInvitation()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L20",
+      "id": "staff_revokestaffinvitation",
+      "community": 1,
+      "norm_label": "revokestaffinvitation()"
+    },
+    {
+      "label": "setStaffFamilyAccess()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L27",
+      "id": "staff_setstafffamilyaccess",
+      "community": 1,
+      "norm_label": "setstafffamilyaccess()"
+    },
+    {
+      "label": "listPendingStaffInvitations()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L34",
+      "id": "staff_listpendingstaffinvitations",
+      "community": 1,
+      "norm_label": "listpendingstaffinvitations()"
+    },
+    {
+      "label": "listStaffFamilyAssignments()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L40",
+      "id": "staff_liststafffamilyassignments",
+      "community": 1,
+      "norm_label": "liststafffamilyassignments()"
+    },
+    {
+      "label": "listAssignedStaffFamilies()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L47",
+      "id": "staff_listassignedstafffamilies",
+      "community": 1,
+      "norm_label": "listassignedstafffamilies()"
+    },
+    {
+      "label": "staff-schemas.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/staff-schemas.ts",
+      "source_location": "L1",
+      "id": "staff_schemas_ts",
+      "community": 7,
+      "norm_label": "staff-schemas.ts"
+    },
+    {
+      "id": "portal_staff_access",
+      "label": "Staff scoped access SQL",
+      "file_type": "code",
+      "source_file": "db/migrations/0009_staff_access.sql",
+      "source_location": "L1",
+      "community": 15,
+      "norm_label": "staff scoped access sql"
+    },
+    {
+      "id": "staff_access_test",
+      "label": "Staff access boundary tests",
+      "file_type": "code",
+      "source_file": "lib/staff-access.test.ts",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "staff access boundary tests"
     }
   ],
   "links": [
@@ -3981,6 +4071,124 @@
       "confidence_score": 1.0,
       "source_file": "lib/portal/invoices.ts",
       "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "staff_ts",
+      "_tgt": "staff_issuestaffinvitation",
+      "source": "staff_ts",
+      "target": "staff_issuestaffinvitation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "staff_ts",
+      "_tgt": "staff_revokestaffinvitation",
+      "source": "staff_ts",
+      "target": "staff_revokestaffinvitation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "staff_ts",
+      "_tgt": "staff_setstafffamilyaccess",
+      "source": "staff_ts",
+      "target": "staff_setstafffamilyaccess",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "staff_ts",
+      "_tgt": "staff_listpendingstaffinvitations",
+      "source": "staff_ts",
+      "target": "staff_listpendingstaffinvitations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_src": "staff_ts",
+      "_tgt": "staff_liststafffamilyassignments",
+      "source": "staff_ts",
+      "target": "staff_liststafffamilyassignments",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_src": "staff_ts",
+      "_tgt": "staff_listassignedstafffamilies",
+      "source": "staff_ts",
+      "target": "staff_listassignedstafffamilies",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "portal_staff_access",
+      "target": "portal_staff_onboarding",
+      "_src": "portal_staff_access",
+      "_tgt": "portal_staff_onboarding",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "db/migrations/0009_staff_access.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "staff_ts",
+      "target": "portal_staff_access",
+      "_src": "staff_ts",
+      "_tgt": "portal_staff_access",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "staff_ts",
+      "target": "portal_access_sql",
+      "_src": "staff_ts",
+      "_tgt": "portal_access_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "staff_access_test",
+      "target": "staff_schemas_ts",
+      "relation": "tests",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/staff-access.test.ts",
+      "source_location": "L1",
       "weight": 1.0
     }
   ],

@@ -235,3 +235,12 @@ Messaging foundation: migration 0015 is manually source-linked to the existing s
 Scoped event transport adds `portal_events_sql` manually source-linked to messaging, session and learning SQL because Graphify does not extract SQL. The API route, generic stream protocol, auth-filtered stream and unmounted client were extracted; cross-scope AST relationships remain incomplete. No production transport or remote migration is claimed.
 
 Stream-reader cleanup was re-extracted. The source-verified call edge runs from `route_get` to `events_server_openportaleventstream` (`app/api/portal/events/route.ts:16`); consumers release and cancel each response reader before reconnecting.
+Session and learning UI re-extracted 27 allowlisted source files and added the source-linked 0014 migration node: 554 nodes, 546 edges; 134 unresolved extractor edges omitted. SQL extraction and earlier corpus coverage gaps remain. Development deployment of 0014 and live UI verification are pending.
+
+Final session UI, actor-fence and UK-time changes re-extracted 27 allowlisted source files: 554 nodes and 548 edges; 136 unresolved extractor edges omitted. SQL remains manually source-linked; UI verification and development 0014 deployment are pending.
+
+Final scope refresh after scheduling and display review re-extracted 27 allowlisted files: 554 nodes, 548 edges; 136 unresolved extractor edges omitted. Historical corpus and SQL extraction limits remain.
+
+Focused editor split and session-key safeguards re-extracted 29 allowlisted files: 557 nodes, 549 edges; 139 unresolved extractor edges omitted. Existing SQL and historical corpus limitations remain.
+
+UK session end-date display re-extracted two allowlisted files: 557 nodes, 549 edges; 3 unresolved extractor edges omitted.

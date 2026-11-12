@@ -861,14 +861,14 @@
       "id": "portal_concepts"
     },
     {
-      "label": "PORTAL: partial authenticated routes, billing and learning foundation",
+      "label": "PORTAL: partial authenticated family, staff, billing and learning UI",
       "file_type": "document",
       "source_file": "FEATURE_TREE.md",
       "source_location": "L35",
       "status": "partial",
-      "scope": "Authenticated parent, staff and admin routes, invoice UI and learning data foundation are present; session and learning UI, messages and production deployment remain pending.",
+      "scope": "Custom authentication, parent/admin/staff routes, billing and child/session/learning UI are present; authenticated event transport, messages and production deployment remain pending.",
       "community": 2,
-      "norm_label": "portal partial authenticated routes billing learning foundation",
+      "norm_label": "portal partial authenticated family staff billing learning ui",
       "id": "portal_planned"
     },
     {
@@ -4493,6 +4493,377 @@
       "source_file": "db/migrations/0011_invoice_ui.sql",
       "source_location": "L1",
       "norm_label": "invoice ui persistence and restricted operations"
+    },
+    {
+      "id": "app_portal_provider_admin_children_actions_ts",
+      "label": "actions.ts",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "actions_registerchild",
+      "label": "registerChild()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "actions_createsession",
+      "label": "createSession()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L42"
+    },
+    {
+      "id": "app_portal_provider_admin_children_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/children/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_portal_provider_parent_learning_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/learning/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_portal_provider_parent_sessions_id_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/sessions/[id]/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_sessiondetail",
+      "label": "SessionDetail()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/sessions/[id]/page.tsx",
+      "source_location": "L14"
+    },
+    {
+      "id": "app_portal_provider_parent_sessions_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_parentsessions",
+      "label": "ParentSessions()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
+      "source_location": "L13"
+    },
+    {
+      "id": "page_sessionspage",
+      "label": "SessionsPage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
+      "source_location": "L81"
+    },
+    {
+      "id": "page_formatuksession",
+      "label": "formatUkSession()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L58"
+    },
+    {
+      "id": "app_portal_provider_staff_sessions_id_actions_ts",
+      "label": "actions.ts",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "actions_message",
+      "label": "message()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "actions_refresh",
+      "label": "refresh()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L21"
+    },
+    {
+      "id": "actions_updatesessionaction",
+      "label": "updateSessionAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L28"
+    },
+    {
+      "id": "actions_savenoteaction",
+      "label": "saveNoteAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L46"
+    },
+    {
+      "id": "actions_savedraftaction",
+      "label": "saveDraftAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L55"
+    },
+    {
+      "id": "actions_previewdraftaction",
+      "label": "previewDraftAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L64"
+    },
+    {
+      "id": "actions_publishdraftaction",
+      "label": "publishDraftAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L73"
+    },
+    {
+      "id": "app_portal_provider_staff_sessions_id_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_portal_provider_staff_sessions_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/sessions/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_learning_adminlearningforms_tsx",
+      "label": "AdminLearningForms.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/learning/AdminLearningForms.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "adminlearningforms_feedback",
+      "label": "Feedback()",
+      "file_type": "code",
+      "source_file": "components/portal/learning/AdminLearningForms.tsx",
+      "source_location": "L19"
+    },
+    {
+      "id": "adminlearningforms_registerchildform",
+      "label": "RegisterChildForm()",
+      "file_type": "code",
+      "source_file": "components/portal/learning/AdminLearningForms.tsx",
+      "source_location": "L27"
+    },
+    {
+      "id": "adminlearningforms_schedulesessionform",
+      "label": "ScheduleSessionForm()",
+      "file_type": "code",
+      "source_file": "components/portal/learning/AdminLearningForms.tsx",
+      "source_location": "L61"
+    },
+    {
+      "id": "components_portal_learning_childselector_tsx",
+      "label": "ChildSelector.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/learning/ChildSelector.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_learning_privatenoteeditor_tsx",
+      "label": "PrivateNoteEditor.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/learning/PrivateNoteEditor.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "privatenoteeditor_save",
+      "label": "save()",
+      "file_type": "code",
+      "source_file": "components/portal/learning/PrivateNoteEditor.tsx",
+      "source_location": "L23"
+    },
+    {
+      "id": "components_portal_learning_sessioncontrols_tsx",
+      "label": "SessionControls.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/learning/SessionControls.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "sessioncontrols_update",
+      "label": "update()",
+      "file_type": "code",
+      "source_file": "components/portal/learning/SessionControls.tsx",
+      "source_location": "L16"
+    },
+    {
+      "id": "components_portal_learning_workspaceeditor_tsx",
+      "label": "WorkspaceEditor.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/learning/WorkspaceEditor.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "workspaceeditor_textvalue",
+      "label": "textValue()",
+      "file_type": "code",
+      "source_file": "components/portal/learning/WorkspaceEditor.tsx",
+      "source_location": "L19"
+    },
+    {
+      "id": "workspaceeditor_workspaceeditor",
+      "label": "WorkspaceEditor()",
+      "file_type": "code",
+      "source_file": "components/portal/learning/WorkspaceEditor.tsx",
+      "source_location": "L21"
+    },
+    {
+      "id": "lib_action_actor_test_ts",
+      "label": "action-actor.test.ts",
+      "file_type": "code",
+      "source_file": "lib/action-actor.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_portal_action_actor_state_ts",
+      "label": "action-actor-state.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/action-actor-state.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "action_actor_state_matchesactionactor",
+      "label": "matchesActionActor()",
+      "file_type": "code",
+      "source_file": "lib/portal/action-actor-state.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "lib_portal_action_actor_ts",
+      "label": "action-actor.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/action-actor.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "action_actor_requireactionactor",
+      "label": "requireActionActor()",
+      "file_type": "code",
+      "source_file": "lib/portal/action-actor.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "lib_portal_parent_children_ts",
+      "label": "parent-children.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/parent-children.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "parent_children_parentchildren",
+      "label": "parentChildren()",
+      "file_type": "code",
+      "source_file": "lib/portal/parent-children.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "sessions_readscopedsession",
+      "label": "readScopedSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L49"
+    },
+    {
+      "id": "sessions_liststaffsessions",
+      "label": "listStaffSessions()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L57"
+    },
+    {
+      "id": "lib_portal_uk_time_ts",
+      "label": "uk-time.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "uk_time_partsat",
+      "label": "partsAt()",
+      "file_type": "code",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "uk_time_uklocaltoiso",
+      "label": "ukLocalToIso()",
+      "file_type": "code",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L21"
+    },
+    {
+      "id": "uk_time_formatuksession",
+      "label": "formatUkSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L47"
+    },
+    {
+      "id": "uk_time_currentuktime",
+      "label": "currentUkTime()",
+      "file_type": "code",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L71"
+    },
+    {
+      "id": "lib_recorded_sounds_test_ts",
+      "label": "recorded-sounds.test.ts",
+      "file_type": "code",
+      "source_file": "lib/recorded-sounds.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_uk_time_test_ts",
+      "label": "uk-time.test.ts",
+      "file_type": "code",
+      "source_file": "lib/uk-time.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_session_ui_sql",
+      "label": "Scoped session UI reads and safe publication replay",
+      "source_file": "db/migrations/0014_session_ui_access.sql",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "components_portal_learning_parentupdatefields_tsx",
+      "label": "ParentUpdateFields.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/learning/ParentUpdateFields.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "parentupdatefields_parentupdatefields",
+      "label": "ParentUpdateFields()",
+      "file_type": "code",
+      "source_file": "components/portal/learning/ParentUpdateFields.tsx",
+      "source_location": "L13"
+    },
+    {
+      "id": "components_portal_learning_parentupdatepreview_tsx",
+      "label": "ParentUpdatePreview.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/learning/ParentUpdatePreview.tsx",
+      "source_location": "L1"
     }
   ],
   "links": [
@@ -6169,18 +6540,6 @@
       "_tgt": "invitation_delivery_listfamilyinvitations",
       "source": "page_familydetail",
       "target": "invitation_delivery_listfamilyinvitations"
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "app/(portal)/(provider)/parent/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "page_parenthome",
-      "_tgt": "require_role_requirerole",
-      "source": "page_parenthome",
-      "target": "require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -8883,30 +9242,6 @@
       "confidence_score": 1.0
     },
     {
-      "source": "app_portal_provider_parent_page_tsx",
-      "target": "page_parenthome",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/parent/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_src": "app_portal_provider_parent_page_tsx",
-      "_tgt": "page_parenthome",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "app_portal_provider_staff_page_tsx",
-      "target": "page_stafftoday",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "app_portal_provider_staff_page_tsx",
-      "_tgt": "page_stafftoday",
-      "confidence_score": 1.0
-    },
-    {
       "source": "actions_acceptportalinvitation",
       "target": "invitation_cookie_invitationdestination",
       "relation": "calls",
@@ -9096,66 +9431,6 @@
       "weight": 1.0,
       "_src": "lib_portal_children_ts",
       "_tgt": "children_renamechild",
-      "confidence_score": 1
-    },
-    {
-      "source": "lib_portal_sessions_ts",
-      "target": "sessions_schedulesession",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "sessions_schedulesession",
-      "confidence_score": 1
-    },
-    {
-      "source": "lib_portal_sessions_ts",
-      "target": "sessions_listsessions",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L16",
-      "weight": 1.0,
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "sessions_listsessions",
-      "confidence_score": 1
-    },
-    {
-      "source": "lib_portal_sessions_ts",
-      "target": "sessions_changesession",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L22",
-      "weight": 1.0,
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "sessions_changesession",
-      "confidence_score": 1
-    },
-    {
-      "source": "lib_portal_sessions_ts",
-      "target": "sessions_reschedulesession",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L29",
-      "weight": 1.0,
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "sessions_reschedulesession",
-      "confidence_score": 1
-    },
-    {
-      "source": "lib_portal_sessions_ts",
-      "target": "sessions_setsessionlocation",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L36",
-      "weight": 1.0,
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "sessions_setsessionlocation",
       "confidence_score": 1
     },
     {
@@ -10071,15 +10346,6 @@
       "weight": 1.0
     },
     {
-      "source": "components_portal_portalshell_tsx",
-      "target": "portalshell_portalshell",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L9",
-      "weight": 1.0
-    },
-    {
       "source": "components_portal_invoices_billingsettingsform_tsx",
       "target": "billingsettingsform_billingsettingsform",
       "relation": "contains",
@@ -10332,6 +10598,798 @@
       "source_file": "db/migrations/0011_invoice_ui.sql",
       "source_location": "L1",
       "weight": 1.0
+    },
+    {
+      "source": "portal_session_ui_sql",
+      "target": "portal_children_sessions_sql",
+      "_src": "portal_session_ui_sql",
+      "_tgt": "portal_children_sessions_sql",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "db/migrations/0014_session_ui_access.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_session_ui_sql",
+      "target": "portal_learning_updates_sql",
+      "_src": "portal_session_ui_sql",
+      "_tgt": "portal_learning_updates_sql",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "db/migrations/0014_session_ui_access.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "portal_session_ui_sql",
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "portal_session_ui_sql",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_children_actions_ts",
+      "target": "actions_registerchild",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_children_actions_ts",
+      "_tgt": "actions_registerchild",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_children_actions_ts",
+      "target": "actions_createsession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_children_actions_ts",
+      "_tgt": "actions_createsession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_sessions_id_page_tsx",
+      "target": "page_sessiondetail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/sessions/[id]/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "app_portal_provider_parent_sessions_id_page_tsx",
+      "_tgt": "page_sessiondetail",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_sessions_page_tsx",
+      "target": "page_parentsessions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "app_portal_provider_parent_sessions_page_tsx",
+      "_tgt": "page_parentsessions",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_sessions_page_tsx",
+      "target": "page_sessionspage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
+      "source_location": "L81",
+      "weight": 1.0,
+      "_src": "app_portal_provider_parent_sessions_page_tsx",
+      "_tgt": "page_sessionspage",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_page_tsx",
+      "target": "page_formatuksession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_src": "app_portal_provider_staff_page_tsx",
+      "_tgt": "page_formatuksession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_sessions_id_actions_ts",
+      "target": "actions_message",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "app_portal_provider_staff_sessions_id_actions_ts",
+      "_tgt": "actions_message",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_sessions_id_actions_ts",
+      "target": "actions_refresh",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "app_portal_provider_staff_sessions_id_actions_ts",
+      "_tgt": "actions_refresh",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_sessions_id_actions_ts",
+      "target": "actions_updatesessionaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "app_portal_provider_staff_sessions_id_actions_ts",
+      "_tgt": "actions_updatesessionaction",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_sessions_id_actions_ts",
+      "target": "actions_savenoteaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_src": "app_portal_provider_staff_sessions_id_actions_ts",
+      "_tgt": "actions_savenoteaction",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_sessions_id_actions_ts",
+      "target": "actions_savedraftaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "app_portal_provider_staff_sessions_id_actions_ts",
+      "_tgt": "actions_savedraftaction",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_sessions_id_actions_ts",
+      "target": "actions_previewdraftaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_src": "app_portal_provider_staff_sessions_id_actions_ts",
+      "_tgt": "actions_previewdraftaction",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_sessions_id_actions_ts",
+      "target": "actions_publishdraftaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L73",
+      "weight": 1.0,
+      "_src": "app_portal_provider_staff_sessions_id_actions_ts",
+      "_tgt": "actions_publishdraftaction",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "actions_updatesessionaction",
+      "target": "actions_refresh",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_src": "actions_updatesessionaction",
+      "_tgt": "actions_refresh",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "actions_updatesessionaction",
+      "target": "actions_message",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_src": "actions_updatesessionaction",
+      "_tgt": "actions_message",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "actions_savenoteaction",
+      "target": "actions_message",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_src": "actions_savenoteaction",
+      "_tgt": "actions_message",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "actions_savedraftaction",
+      "target": "actions_message",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_src": "actions_savedraftaction",
+      "_tgt": "actions_message",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "actions_previewdraftaction",
+      "target": "actions_message",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_src": "actions_previewdraftaction",
+      "_tgt": "actions_message",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "actions_publishdraftaction",
+      "target": "actions_refresh",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L92",
+      "weight": 1.0,
+      "_src": "actions_publishdraftaction",
+      "_tgt": "actions_refresh",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "actions_publishdraftaction",
+      "target": "actions_message",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_src": "actions_publishdraftaction",
+      "_tgt": "actions_message",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_portalshell_tsx",
+      "target": "portalshell_portalshell",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "components_portal_portalshell_tsx",
+      "_tgt": "portalshell_portalshell",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_learning_adminlearningforms_tsx",
+      "target": "adminlearningforms_feedback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/AdminLearningForms.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "components_portal_learning_adminlearningforms_tsx",
+      "_tgt": "adminlearningforms_feedback",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_learning_adminlearningforms_tsx",
+      "target": "adminlearningforms_registerchildform",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/AdminLearningForms.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "components_portal_learning_adminlearningforms_tsx",
+      "_tgt": "adminlearningforms_registerchildform",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_learning_adminlearningforms_tsx",
+      "target": "adminlearningforms_schedulesessionform",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/AdminLearningForms.tsx",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_src": "components_portal_learning_adminlearningforms_tsx",
+      "_tgt": "adminlearningforms_schedulesessionform",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_learning_parentupdatefields_tsx",
+      "target": "parentupdatefields_parentupdatefields",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/ParentUpdateFields.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "components_portal_learning_parentupdatefields_tsx",
+      "_tgt": "parentupdatefields_parentupdatefields",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_learning_privatenoteeditor_tsx",
+      "target": "privatenoteeditor_save",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/PrivateNoteEditor.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_src": "components_portal_learning_privatenoteeditor_tsx",
+      "_tgt": "privatenoteeditor_save",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_learning_sessioncontrols_tsx",
+      "target": "sessioncontrols_update",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/SessionControls.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "components_portal_learning_sessioncontrols_tsx",
+      "_tgt": "sessioncontrols_update",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_learning_workspaceeditor_tsx",
+      "target": "workspaceeditor_textvalue",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/WorkspaceEditor.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "components_portal_learning_workspaceeditor_tsx",
+      "_tgt": "workspaceeditor_textvalue",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_learning_workspaceeditor_tsx",
+      "target": "workspaceeditor_workspaceeditor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/WorkspaceEditor.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "components_portal_learning_workspaceeditor_tsx",
+      "_tgt": "workspaceeditor_workspaceeditor",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "workspaceeditor_workspaceeditor",
+      "target": "workspaceeditor_textvalue",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/WorkspaceEditor.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "workspaceeditor_workspaceeditor",
+      "_tgt": "workspaceeditor_textvalue",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_action_actor_state_ts",
+      "target": "action_actor_state_matchesactionactor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/action-actor-state.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "lib_portal_action_actor_state_ts",
+      "_tgt": "action_actor_state_matchesactionactor",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_action_actor_ts",
+      "target": "action_actor_requireactionactor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/action-actor.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "lib_portal_action_actor_ts",
+      "_tgt": "action_actor_requireactionactor",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_parent_children_ts",
+      "target": "parent_children_parentchildren",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/parent-children.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "lib_portal_parent_children_ts",
+      "_tgt": "parent_children_parentchildren",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_schedulesession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_schedulesession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_listsessions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_listsessions",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_changesession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_changesession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_reschedulesession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_reschedulesession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_setsessionlocation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_setsessionlocation",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_readscopedsession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_readscopedsession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_liststaffsessions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_liststaffsessions",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "actions_registerchild",
+      "target": "action_actor_requireactionactor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "actions_registerchild",
+      "_tgt": "action_actor_requireactionactor"
+    },
+    {
+      "source": "actions_createsession",
+      "target": "action_actor_requireactionactor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_src": "actions_createsession",
+      "_tgt": "action_actor_requireactionactor"
+    },
+    {
+      "source": "actions_createsession",
+      "target": "uk_time_uklocaltoiso",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_src": "actions_createsession",
+      "_tgt": "uk_time_uklocaltoiso"
+    },
+    {
+      "source": "actions_createsession",
+      "target": "sessions_schedulesession",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_src": "actions_createsession",
+      "_tgt": "sessions_schedulesession"
+    },
+    {
+      "source": "page_sessiondetail",
+      "target": "sessions_readscopedsession",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/parent/sessions/[id]/page.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "page_sessiondetail",
+      "_tgt": "sessions_readscopedsession"
+    },
+    {
+      "source": "page_sessiondetail",
+      "target": "uk_time_formatuksession",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/parent/sessions/[id]/page.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_src": "page_sessiondetail",
+      "_tgt": "uk_time_formatuksession"
+    },
+    {
+      "source": "page_parentsessions",
+      "target": "parent_children_parentchildren",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "page_parentsessions",
+      "_tgt": "parent_children_parentchildren"
+    },
+    {
+      "source": "page_parentsessions",
+      "target": "sessions_listsessions",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "page_parentsessions",
+      "_tgt": "sessions_listsessions"
+    },
+    {
+      "source": "actions_updatesessionaction",
+      "target": "action_actor_requireactionactor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_src": "actions_updatesessionaction",
+      "_tgt": "action_actor_requireactionactor"
+    },
+    {
+      "source": "actions_updatesessionaction",
+      "target": "sessions_changesession",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "actions_updatesessionaction",
+      "_tgt": "sessions_changesession"
+    },
+    {
+      "source": "actions_savenoteaction",
+      "target": "action_actor_requireactionactor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_src": "actions_savenoteaction",
+      "_tgt": "action_actor_requireactionactor"
+    },
+    {
+      "source": "actions_savedraftaction",
+      "target": "action_actor_requireactionactor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_src": "actions_savedraftaction",
+      "_tgt": "action_actor_requireactionactor"
+    },
+    {
+      "source": "actions_previewdraftaction",
+      "target": "action_actor_requireactionactor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L66",
+      "weight": 1.0,
+      "_src": "actions_previewdraftaction",
+      "_tgt": "action_actor_requireactionactor"
+    },
+    {
+      "source": "actions_publishdraftaction",
+      "target": "action_actor_requireactionactor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_src": "actions_publishdraftaction",
+      "_tgt": "action_actor_requireactionactor"
+    },
+    {
+      "source": "actions_publishdraftaction",
+      "target": "sessions_readscopedsession",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_src": "actions_publishdraftaction",
+      "_tgt": "sessions_readscopedsession"
+    },
+    {
+      "source": "adminlearningforms_schedulesessionform",
+      "target": "uk_time_formatuksession",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/learning/AdminLearningForms.tsx",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_src": "adminlearningforms_schedulesessionform",
+      "_tgt": "uk_time_formatuksession"
+    },
+    {
+      "source": "adminlearningforms_schedulesessionform",
+      "target": "uk_time_uklocaltoiso",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/learning/AdminLearningForms.tsx",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_src": "adminlearningforms_schedulesessionform",
+      "_tgt": "uk_time_uklocaltoiso"
+    },
+    {
+      "source": "action_actor_requireactionactor",
+      "target": "action_actor_state_matchesactionactor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "lib/portal/action-actor.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_src": "action_actor_requireactionactor",
+      "_tgt": "action_actor_state_matchesactionactor"
+    },
+    {
+      "source": "lib_portal_uk_time_ts",
+      "target": "uk_time_partsat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "lib_portal_uk_time_ts",
+      "_tgt": "uk_time_partsat",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_uk_time_ts",
+      "target": "uk_time_uklocaltoiso",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "lib_portal_uk_time_ts",
+      "_tgt": "uk_time_uklocaltoiso",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_uk_time_ts",
+      "target": "uk_time_formatuksession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_src": "lib_portal_uk_time_ts",
+      "_tgt": "uk_time_formatuksession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_uk_time_ts",
+      "target": "uk_time_currentuktime",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_src": "lib_portal_uk_time_ts",
+      "_tgt": "uk_time_currentuktime",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "uk_time_uklocaltoiso",
+      "target": "uk_time_partsat",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "uk_time_uklocaltoiso",
+      "_tgt": "uk_time_partsat",
+      "confidence_score": 1.0
     }
   ],
   "hyperedges": []

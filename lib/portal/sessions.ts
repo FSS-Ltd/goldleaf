@@ -46,11 +46,11 @@ const scopedSessionRow = sessionRow.extend({
 });
 export type ScopedSession = z.infer<typeof scopedSessionRow>;
 
-export async function readScopedSession(sessionId: unknown): Promise<ScopedSession | null> {
+export async function readScopedSession(sessionId: unknown, role: "parent" | "staff"): Promise<ScopedSession | null> {
   const session = uuid.parse(sessionId);
   const { userId } = await requirePortalIdentity();
   const sql = portalDatabase();
-  const rows = z.array(scopedSessionRow).max(1).parse(await sql`SELECT * FROM portal.read_scoped_session(${userId},${session})`);
+  const rows = z.array(scopedSessionRow).max(1).parse(await sql`SELECT * FROM portal.read_scoped_session(${userId},${session},${role})`);
   return rows[0] ?? null;
 }
 

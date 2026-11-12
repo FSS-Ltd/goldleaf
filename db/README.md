@@ -303,8 +303,8 @@ The Node route uses `GOLDLEAF_PORTAL_EVENT_DATABASE_URL` with a direct, unpooled
 After review, apply `0014_session_ui_access.sql` and grant only its two entry points to the restricted runtime:
 
 ```sql
-GRANT EXECUTE ON FUNCTION portal.read_scoped_session(text, uuid), portal.list_staff_sessions(text)
+GRANT EXECUTE ON FUNCTION portal.read_scoped_session(text, uuid, text), portal.list_staff_sessions(text)
 TO goldleaf_portal_runtime;
 ```
 
-The single-session reader checks current family scope; the batched staff reader joins current assignments and active staff membership. Neither grants table access. Run `db/tests/session-ui-access.sql` on disposable PostgreSQL. No development or production deployment is implied.
+Migration 0014 preserves any existing duplicate publication history. New runtime publications serialize on the session row; a retry of an already published draft version returns the earliest matching publication after verifying its preview fingerprint, even with a new operation UUID. Direct table writes remain prohibited for the runtime. The single-session reader checks current family scope for the trusted route’s fixed parent or staff role; the batched staff reader joins current assignments and active staff membership. Neither grants table access. Run `db/tests/session-ui-access.sql` on disposable PostgreSQL. No development or production deployment is implied.

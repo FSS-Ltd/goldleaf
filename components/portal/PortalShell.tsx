@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AccountMenu } from "./auth/AccountMenu";
-import { Home, ReceiptText, Settings, Users, UserRound } from "lucide-react";
+import { Home, ReceiptText, Settings, Users, UserRound, CalendarDays, BookOpen, Baby } from "lucide-react";
 import type { ReactNode } from "react";
 import { PortalSessionGuard } from "./PortalSessionGuard";
 
-type Section = "home" | "staff" | "invoices" | "settings" | "billing";
+type Section = "home" | "staff" | "invoices" | "settings" | "billing" | "children" | "sessions" | "learning";
 export function PortalShell({
   role,
   userId,
@@ -38,6 +38,12 @@ export function PortalShell({
     ...(admin
       ? [
           {
+            href: "/admin/children",
+            label: "Children",
+            section: "children" as const,
+            icon: Baby,
+          },
+          {
             href: "/admin/staff",
             label: "Team",
             section: "staff" as const,
@@ -57,8 +63,10 @@ export function PortalShell({
           },
         ]
       : staff
-        ? []
+        ? [{ href: "/staff/sessions", label: "Sessions", section: "sessions" as const, icon: CalendarDays }]
         : [
+            { href: "/parent/sessions", label: "Sessions", section: "sessions" as const, icon: CalendarDays },
+            { href: "/parent/learning", label: "Learning", section: "learning" as const, icon: BookOpen },
             {
               href: "/parent/billing",
               label: "Billing",

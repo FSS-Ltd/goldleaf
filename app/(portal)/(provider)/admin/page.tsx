@@ -7,9 +7,9 @@ import { requireRole } from "@/lib/portal/require-role";
 import { getFoundingAvailability } from "@/lib/founding-availability";
 
 async function AdminHome() {
-  const { identity } = await requireRole("admin");
+  const { identity, memberships } = await requireRole("admin");
   const [families, availability] = await Promise.all([listFamilies(), getFoundingAvailability()]);
-  return <PortalShell role="admin" userId={identity.userId}>
+  return <PortalShell role="admin" userId={identity.userId} memberships={memberships}>
     <div className="grid gap-8 lg:grid-cols-3">
       <div className="lg:col-span-2">
         <h1 className="!text-[clamp(2rem,4vw,2.6rem)]">Families</h1>

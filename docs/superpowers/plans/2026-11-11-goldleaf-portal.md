@@ -114,3 +114,5 @@ The server DAL and migration `0008_invoice_runtime.sql` provide configured setti
 - A parent changes a family, child, session or invoice identifier. Each DAL query verifies record scope and every server action independently verifies authority. Sprints 2–6 test foreign identifiers.
 - A payment or invitation delivery fails after its database commit. The durable record is preserved and an explicit retry uses the same identifiers. Sprints 2 and 4 test the failure and replay.
 - A private note, contact detail or expired discount is carried into a parent view or invoice. Separate DTOs, authorised joins and issued snapshots control what each reader sees. Sprints 4 and 5 exercise the transition.
+
+Multi-role account navigation adapts the existing profile-menu design (Stitch e7145a748fce40be80e9c2223e6adb83): show deduplicated active portal roles, mark the current role and recheck authority on each destination. Jury approved this focused adaptation; live keyboard and narrow-screen verification remains pending.

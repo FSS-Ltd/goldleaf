@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { acceptInvitation } from "@/lib/portal/invitations";
 import { invitationInputSchema } from "@/lib/portal/schemas";
-import { encodeInvitationCookie, parseInvitationCookie } from "@/lib/portal/invitation-cookie";
+import { encodeInvitationCookie, parseInvitationCookie, invitationDestination } from "@/lib/portal/invitation-cookie";
 
 const cookieName = "goldleaf_invite";
 const cookieOptions = { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "lax" as const, path: "/invite" };
@@ -29,5 +29,6 @@ export async function acceptPortalInvitation(): Promise<{ error: string }> {
     return { error: "This invitation could not be accepted. Please check the link or ask for a new one." };
   }
   store.set(cookieName, "", { ...cookieOptions, maxAge: 0 });
-  redirect("/portal");
+  if (!invitation) throw new Error("Invalid invitation");
+  redirect(invitationDestination(invitation.purpose));
 }

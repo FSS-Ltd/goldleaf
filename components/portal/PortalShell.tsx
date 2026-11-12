@@ -4,7 +4,7 @@ import { Home, Users, UserRound } from "lucide-react";
 import type { ReactNode } from "react";
 import { PortalSessionGuard } from "./PortalSessionGuard";
 
-export function PortalShell({ role, userId, children, section = "home" }: { role: "admin" | "parent" | "staff"; userId: string; children: ReactNode; section?: "home" | "staff" }) {
+export function PortalShell({ role, userId, memberships, children, section = "home" }: { role: "admin" | "parent" | "staff"; userId: string; memberships: { role: "admin" | "parent" | "staff" }[]; children: ReactNode; section?: "home" | "staff" }) {
   const admin = role === "admin";
   const staff = role === "staff";
   const home = admin ? "/admin" : staff ? "/staff" : "/parent";
@@ -26,7 +26,7 @@ export function PortalShell({ role, userId, children, section = "home" }: { role
     </aside>
     <header className="flex h-16 items-center justify-between border-b border-[#e3d7c3] px-5 md:px-10">
       <a href={home} className="font-display text-xl md:text-sm">{section === "staff" ? "Team" : title}</a>
-      <AccountMenu />
+      <AccountMenu roles={memberships.map((membership) => membership.role)} currentRole={role} />
     </header>
     <main id="main" className="mx-auto max-w-7xl px-5 py-9 pb-28 md:px-10 md:pb-10">{children}</main>
     <nav aria-label="Portal" className="fixed inset-x-0 bottom-0 z-20 border-t border-[#e3d7c3] bg-[#f8f3ee] px-5 py-2 md:hidden">

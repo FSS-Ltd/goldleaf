@@ -14,3 +14,7 @@ export function parseInvitationCookie(value: string | undefined): Invitation | n
   const parsed = invitationInputSchema.safeParse({ purpose: parts[0], token: parts[1] });
   return parsed.success ? parsed.data : null;
 }
+
+export function invitationDestination(purpose: Invitation["purpose"]): "/parent" | "/staff" {
+  return purpose === "staff" ? "/staff" : "/parent";
+}

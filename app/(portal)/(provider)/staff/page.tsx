@@ -5,9 +5,9 @@ import { requireRole } from "@/lib/portal/require-role";
 import { listAssignedStaffFamilies } from "@/lib/portal/staff";
 
 async function StaffToday() {
-  const { identity } = await requireRole("staff");
+  const { identity, memberships } = await requireRole("staff");
   const families = await listAssignedStaffFamilies();
-  return <PortalShell role="staff" userId={identity.userId}>
+  return <PortalShell role="staff" userId={identity.userId} memberships={memberships}>
     <h1 className="!text-[clamp(2rem,4vw,2.6rem)]">Today</h1>
     <p className="mt-3 text-sm text-[#35594a]">Your staff portal</p>
     <div className="mt-8 grid gap-6 lg:grid-cols-3">

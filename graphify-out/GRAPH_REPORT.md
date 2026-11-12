@@ -197,3 +197,5 @@ The provider-derived account summary and responsive signup name fields re-extrac
 The account-summary wrapping correction re-extracted two affected files; the graph remains at 346 nodes and 348 edges, with six unresolved extractor edges omitted.
 
 Staff onboarding re-extracted 18 allowlisted TypeScript files and added source-linked migration `portal_staff_delivery_sql` with its staff onboarding/access dependencies. The graph now has 367 nodes and 367 edges; 59 extractor edges with unresolved endpoints were omitted. SQL extraction and older unrelated edge-direction coverage remain limited.
+
+Role navigation and staff UI review re-extracted 12 allowlisted files: 375 nodes and 373 edges; 55 unresolved extractor edges omitted. Existing semantic nodes retained.

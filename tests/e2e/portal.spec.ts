@@ -8,6 +8,11 @@ for (const path of ["/admin", "/admin/staff", "/parent", "/staff", "/account", "
   });
 }
 
+test("portal event stream requires authentication", async ({ request }) => {
+  const response = await request.get("/api/portal/events");
+  expect(response.status()).toBe(401);
+});
+
 test("account security is unavailable without the identity provider", async ({ page }) => {
   await page.goto("/session-task/reset-password");
   await expect(page.getByRole("heading", { name: "Account security unavailable" })).toBeVisible();

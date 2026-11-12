@@ -229,3 +229,9 @@ The combined checkout reconciles the learning graph with the invoice graph: 500 
 Invoice page metadata and the conditional VAT settings form were re-extracted after UI review. SQL and unresolved cross-scope extraction limits above remain.
 
 The Jury UI fixes refreshed invoice and navigation AST nodes, including billing save-state handling and the empty-family link.
+
+Messaging foundation: migration 0015 is manually source-linked to the existing session foundation; SQL extraction remains unsupported. Runtime notification transport and UI are pending. TypeScript nodes are refreshed using the scoped AST workflow; unresolved cross-scope relationships remain a coverage gap.
+
+Scoped event transport adds `portal_events_sql` manually source-linked to messaging, session and learning SQL because Graphify does not extract SQL. The API route, generic stream protocol, auth-filtered stream and unmounted client were extracted; cross-scope AST relationships remain incomplete. No production transport or remote migration is claimed.
+
+Stream-reader cleanup was re-extracted. The source-verified call edge runs from `route_get` to `events_server_openportaleventstream` (`app/api/portal/events/route.ts:16`); consumers release and cancel each response reader before reconnecting.

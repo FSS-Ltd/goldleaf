@@ -270,3 +270,5 @@ Controlled field components and their consumers were source-verified after the i
 Operation ID stability review reconciled changed source locations and the shared attempt field: 637 nodes and 644 edges. Existing extractor and corpus limitations remain.
 
 Post-merge reconciliation retains 712 nodes and 709 edges for messaging and onboarding together; development migrations 0017/0018 are verified, while production 0017/0018 remain pending. Earlier deployment statements above are historical.
+
+Current verification (12 November 2026): migrations 0001–0018 and 82 scoped runtime grants are verified in development and production; earlier deployment statements are historical. A development admin received a committed own-membership invalidation on an existing authenticated stream; populated workflows and actual revocation remain unverified. The empty-admin Jury approved only the inspected scope; full-app 8/10 is not established. See FEATURE_TREE.md and the portal plan for runtime limitations.

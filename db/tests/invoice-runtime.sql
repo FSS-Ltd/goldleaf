@@ -84,4 +84,29 @@ DO $$ BEGIN
  IF EXISTS (SELECT 1 FROM portal.read_family_invoices('billing-parent','80000000-0000-0000-0000-000000000001')) THEN RAISE EXCEPTION 'revoked parent retained access'; END IF;
 END $$;
 RESET ROLE;
+DO $$
+DECLARE zone text; inv uuid; ctx jsonb; baseline jsonb; snap jsonb; expected date := (current_timestamp AT TIME ZONE 'Europe/London')::date;
+BEGIN
+ IF ('2027-03-28 22:59:59+00'::timestamptz AT TIME ZONE 'Europe/London')::date <> DATE '2027-03-28'
+    OR ('2027-03-28 23:00:00+00'::timestamptz AT TIME ZONE 'Europe/London')::date <> DATE '2027-03-29'
+    OR ('2027-10-31 23:59:59+00'::timestamptz AT TIME ZONE 'Europe/London')::date <> DATE '2027-10-31'
+    OR ('2027-11-01 00:00:00+00'::timestamptz AT TIME ZONE 'Europe/London')::date <> DATE '2027-11-01' THEN
+   RAISE EXCEPTION 'London DST date boundaries incorrect';
+ END IF;
+ FOREACH zone IN ARRAY ARRAY['Pacific/Kiritimati','Etc/GMT+12'] LOOP
+  PERFORM set_config('TimeZone', zone, true);
+  ctx := portal.invoice_draft_context('billing-admin','80000000-0000-0000-0000-000000000001','["2020-01-01"]');
+  IF baseline IS NULL THEN baseline := ctx;
+  ELSIF baseline IS DISTINCT FROM ctx THEN RAISE EXCEPTION 'context depends on caller timezone'; END IF;
+  inv := portal.create_invoice_draft('billing-admin','80000000-0000-0000-0000-000000000001','Parent','Address',
+    '[{"description":"Tuition","quantity":1,"unit_amount_pence":6000,"service_date":"2020-01-01","rate_tier":"standard","hourly_rate_pence":3000,"days":1,"cadence":"weekly","session_minutes":120,"discount_percent":0}]');
+  ctx := portal.invoice_issue_context('billing-admin',inv);
+  PERFORM portal.issue_invoice_checked('billing-admin',inv,ctx);
+  IF current_setting('TimeZone') <> zone THEN RAISE EXCEPTION 'caller timezone changed'; END IF;
+  SELECT snapshot INTO snap FROM portal.invoices WHERE id=inv;
+  IF (snap->>'issue_date')::date <> expected OR (snap->>'due_date')::date <> expected + 16 THEN
+    RAISE EXCEPTION 'incorrect London issue or due date for caller timezone %', zone;
+  END IF;
+ END LOOP;
+END $$;
 ROLLBACK;

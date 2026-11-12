@@ -2,7 +2,7 @@
 
 ## Scoped invoice workflow update (2026-11-12)
 
-Scoped Graphify AST extraction covers the invoice and settings DAL, DTOs and tests. SQL extraction remains unsupported; the runtime migration and source-verified connections were linked manually. Prior clustering and semantic coverage were not recomputed.
+Scoped Graphify AST extraction covers the invoice and settings DAL, DTOs and tests. SQL extraction remains unsupported; the runtime migration and source-verified connections were linked manually. Issue dates use a function-local London time zone, and history context timestamps are normalised to UTC. Prior clustering and semantic coverage were not recomputed.
 
 ## Scoped invoice data update (2026-11-12)
 

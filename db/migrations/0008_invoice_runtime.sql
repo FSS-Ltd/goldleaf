@@ -9,7 +9,7 @@ REVOKE ALL ON portal.invoice_draft_operations FROM PUBLIC;
 
 -- Caller holds authorisation. Every tag event is included so checked mutations detect changes.
 CREATE FUNCTION portal.invoice_pricing_context(p_family uuid, p_dates jsonb) RETURNS jsonb
-LANGUAGE plpgsql STABLE SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
+LANGUAGE plpgsql STABLE SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp SET TimeZone = 'UTC' AS $$
 DECLARE result jsonb;
 BEGIN
   IF jsonb_typeof(p_dates) IS DISTINCT FROM 'array' OR jsonb_array_length(p_dates) NOT BETWEEN 1 AND 100 THEN
@@ -90,7 +90,7 @@ BEGIN
   RETURN result;
 END $$;
 CREATE FUNCTION portal.issue_invoice_checked(p_subject text, p_invoice uuid, p_expected jsonb) RETURNS bigint
-LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp SET TimeZone = 'Europe/London' AS $$
 DECLARE inv portal.invoices%ROWTYPE; actual jsonb;
 BEGIN
   PERFORM portal.require_admin(p_subject);

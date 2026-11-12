@@ -30,14 +30,14 @@ first=$!
 exec 3>"$tmp_dir/input"
 printf '%s\n' 'BEGIN;' "SELECT portal.publish_learning_draft('learning-race-admin','53000000-0000-4000-8000-000000000001',1,'54000000-0000-4000-8000-000000000001','$fingerprint');" '\echo first_locked' >&3
 wait_for grep -q first_locked "$tmp_dir/first"
-PGAPPNAME=learning-competitor psql_test -c "SELECT portal.publish_learning_draft('learning-race-admin','53000000-0000-4000-8000-000000000001',1,'54000000-0000-4000-8000-000000000001','$fingerprint');" >"$tmp_dir/second" 2>&1 &
+PGAPPNAME=learning-competitor psql_test -c "SELECT portal.publish_learning_draft('learning-race-admin','53000000-0000-4000-8000-000000000001',1,'54000000-0000-4000-8000-000000000002','$fingerprint');" >"$tmp_dir/second" 2>&1 &
 second=$!
 wait_for is_waiting
 printf '%s\n' 'COMMIT;' '\q' >&3
 exec 3>&-
 wait "$first"
 wait "$second"
-[ "$(psql_test -c "SELECT count(*) FROM portal.published_learning_updates WHERE operation_id='54000000-0000-4000-8000-000000000001'")" = 1 ]
+[ "$(psql_test -c "SELECT count(*) FROM portal.published_learning_updates WHERE session_id='53000000-0000-4000-8000-000000000001' AND draft_version=1")" = 1 ]
 first_id=$(head -1 "$tmp_dir/first")
 second_id=$(head -1 "$tmp_dir/second")
 [ "$first_id" = "$second_id" ]

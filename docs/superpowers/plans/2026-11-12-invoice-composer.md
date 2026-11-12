@@ -4,7 +4,7 @@
 
 **Architecture:** Keep server-derived canonical pricing and checked operations. A validated optional request version selects children; absent means legacy periods. Migration 0019 records basis and preserves existing snapshots and operation payloads.
 
-**Constraints:** No applied migration edits, new dependencies, remote writes, or changes to authorization, review, lock ordering, and retry guarantees. Apply migration 0019 before deploying the new application; earlier SQL ignores the child basis.
+**Constraints:** No applied migration edits, new dependencies, remote writes, or changes to authorization, review, lock ordering, and retry guarantees. Child writes use a dedicated 0019 entry point and fail closed on older databases; grant it only to the restricted runtime after review.
 
 ## Tasks
 

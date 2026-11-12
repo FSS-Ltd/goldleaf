@@ -11,10 +11,10 @@ BEGIN
  child_lines := jsonb_set(old.lines,'{0,quantity_basis}','"children"');
  ctx := portal.invoice_draft_context('quantity-admin','d1000000-0000-4000-8000-000000000001','["2027-04-05"]');
  BEGIN
-   PERFORM portal.create_invoice_draft_checked('quantity-admin','d1000000-0000-4000-8000-000000000003',child_req,ctx,old.lines);
+   PERFORM portal.create_invoice_children_draft_checked('quantity-admin','d1000000-0000-4000-8000-000000000003',child_req,ctx,old.lines);
    RAISE EXCEPTION 'mismatched basis accepted';
  EXCEPTION WHEN invalid_parameter_value THEN NULL; END;
- child := portal.create_invoice_draft_checked('quantity-admin','d1000000-0000-4000-8000-000000000003',child_req,ctx,child_lines);
+ child := portal.create_invoice_children_draft_checked('quantity-admin','d1000000-0000-4000-8000-000000000003',child_req,ctx,child_lines);
  IF portal.read_invoice_draft_operation('quantity-admin','d1000000-0000-4000-8000-000000000003',child_req) <> child THEN RAISE EXCEPTION 'child replay failed'; END IF;
  ctx := portal.invoice_issue_context('quantity-admin',child);
  IF ctx->'lines'->0->>'quantity_basis' <> 'children' THEN RAISE EXCEPTION 'child basis missing from issue context'; END IF;
@@ -24,5 +24,30 @@ BEGIN
  PERFORM portal.issue_invoice_checked('quantity-admin',child,ctx);
  SELECT snapshot INTO snap FROM portal.invoices WHERE id=child;
  IF snap->'lines'->0->>'quantity_basis' <> 'children' OR (snap->>'total_pence')::integer <> 12000 THEN RAISE EXCEPTION 'child snapshot incorrect'; END IF;
- IF has_function_privilege('public','portal.create_invoice_draft_checked(text,uuid,jsonb,jsonb,jsonb)','EXECUTE') OR has_table_privilege('public','portal.invoice_lines','SELECT') THEN RAISE EXCEPTION 'public access'; END IF;
+ IF has_function_privilege('public','portal.create_invoice_children_draft_checked(text,uuid,jsonb,jsonb,jsonb)','EXECUTE') OR has_function_privilege('public','portal.create_invoice_draft_checked(text,uuid,jsonb,jsonb,jsonb)','EXECUTE') OR has_table_privilege('public','portal.invoice_lines','SELECT') THEN RAISE EXCEPTION 'public access'; END IF;
 END $$;
+
+CREATE ROLE invoice_quantity_runtime_test NOLOGIN;
+GRANT USAGE ON SCHEMA portal TO invoice_quantity_runtime_test;
+GRANT EXECUTE ON FUNCTION portal.create_invoice_children_draft_checked(text,uuid,jsonb,jsonb,jsonb) TO invoice_quantity_runtime_test;
+DO $$ BEGIN
+ IF NOT has_function_privilege('invoice_quantity_runtime_test','portal.create_invoice_children_draft_checked(text,uuid,jsonb,jsonb,jsonb)','EXECUTE')
+    OR has_table_privilege('invoice_quantity_runtime_test','portal.invoice_lines','SELECT')
+    OR has_function_privilege('invoice_quantity_runtime_test','portal.create_invoice_draft(text,uuid,text,text,jsonb)','EXECUTE') THEN
+  RAISE EXCEPTION 'child draft runtime grants incorrect';
+ END IF;
+END $$;
+SET ROLE invoice_quantity_runtime_test;
+DO $$
+DECLARE req jsonb := '{"operationId":"d1000000-0000-4000-8000-000000000003","quantityIntent":"children-v1","familyId":"d1000000-0000-4000-8000-000000000001","recipientName":"Parent","recipientAddress":"Address","lines":[{"description":"Tuition","quantity":2,"days":1,"cadence":"weekly","serviceDate":"2027-04-05"}]}';
+BEGIN
+ IF portal.create_invoice_children_draft_checked('quantity-admin','d1000000-0000-4000-8000-000000000003',req,'{}','[]') IS NULL THEN RAISE EXCEPTION 'restricted runtime replay failed'; END IF;
+ BEGIN
+  PERFORM portal.create_invoice_children_draft_checked('not-an-admin',gen_random_uuid(),req,'{}','[]');
+  RAISE EXCEPTION 'unauthorised child draft accepted';
+ EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+END $$;
+RESET ROLE;
+REVOKE EXECUTE ON FUNCTION portal.create_invoice_children_draft_checked(text,uuid,jsonb,jsonb,jsonb) FROM invoice_quantity_runtime_test;
+REVOKE USAGE ON SCHEMA portal FROM invoice_quantity_runtime_test;
+DROP ROLE invoice_quantity_runtime_test;

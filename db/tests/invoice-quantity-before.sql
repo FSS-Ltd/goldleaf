@@ -15,3 +15,18 @@ SELECT portal.create_invoice_draft('quantity-admin','d1000000-0000-4000-8000-000
 SELECT portal.issue_invoice('quantity-admin',id) FROM public.invoice_quantity_snapshot;
 ALTER TABLE public.invoice_quantity_snapshot ADD COLUMN snapshot jsonb;
 UPDATE public.invoice_quantity_snapshot t SET snapshot=i.snapshot FROM portal.invoices i WHERE i.id=t.id;
+
+DO $$
+DECLARE before_invoices bigint; before_operations bigint;
+BEGIN
+ SELECT count(*) INTO before_invoices FROM portal.invoices;
+ SELECT count(*) INTO before_operations FROM portal.invoice_draft_operations;
+ BEGIN
+  EXECUTE 'SELECT portal.create_invoice_children_draft_checked($1,$2,$3,$4,$5)'
+    USING 'quantity-admin', gen_random_uuid(), '{}'::jsonb, '{}'::jsonb, '[]'::jsonb;
+  RAISE EXCEPTION 'old database accepted child draft entry point';
+ EXCEPTION WHEN undefined_function THEN NULL; END;
+ IF (SELECT count(*) FROM portal.invoices) <> before_invoices OR (SELECT count(*) FROM portal.invoice_draft_operations) <> before_operations THEN
+  RAISE EXCEPTION 'unsupported child draft wrote data';
+ END IF;
+END $$;

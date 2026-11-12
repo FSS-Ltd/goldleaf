@@ -61,4 +61,14 @@ BEGIN
   UPDATE portal.invoice_draft_operations SET invoice_id=result WHERE operation_id=p_operation;
   RETURN result;
 END $$;
+-- The distinct entry point makes child writes fail closed against older schemas.
+CREATE FUNCTION portal.create_invoice_children_draft_checked(p_subject text, p_operation uuid, p_request jsonb, p_expected jsonb, p_lines jsonb) RETURNS uuid
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
+BEGIN
+  IF p_request->>'quantityIntent' IS DISTINCT FROM 'children-v1' THEN
+    RAISE EXCEPTION 'invalid quantity intent' USING ERRCODE='22023';
+  END IF;
+  RETURN portal.create_invoice_draft_checked(p_subject, p_operation, p_request, p_expected, p_lines);
+END $$;
+REVOKE ALL ON FUNCTION portal.create_invoice_children_draft_checked(text,uuid,jsonb,jsonb,jsonb) FROM PUBLIC;
 COMMIT;

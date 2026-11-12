@@ -2493,8 +2493,6 @@
       "file_type": "code",
       "source_file": "lib/portal/invoices.ts",
       "source_location": "L1",
-      "community": 1,
-      "norm_label": "invoices.ts",
       "id": "lib_portal_invoices_ts"
     },
     {
@@ -2502,8 +2500,6 @@
       "file_type": "code",
       "source_file": "lib/portal/invoices.ts",
       "source_location": "L21",
-      "community": 1,
-      "norm_label": "listfamilyinvoices()",
       "id": "invoices_listfamilyinvoices"
     },
     {
@@ -2511,8 +2507,6 @@
       "file_type": "code",
       "source_file": "lib/portal/invoices.ts",
       "source_location": "L27",
-      "community": 1,
-      "norm_label": "readfamilyinvoice()",
       "id": "invoices_readfamilyinvoice"
     },
     {
@@ -2520,8 +2514,6 @@
       "file_type": "code",
       "source_file": "lib/portal/invoices.ts",
       "source_location": "L40",
-      "community": 1,
-      "norm_label": "readadmininvoice()",
       "id": "invoices_readadmininvoice"
     },
     {
@@ -2529,8 +2521,6 @@
       "file_type": "code",
       "source_file": "lib/portal/invoices.ts",
       "source_location": "L47",
-      "community": 1,
-      "norm_label": "previewinvoice()",
       "id": "invoices_previewinvoice"
     },
     {
@@ -2538,17 +2528,13 @@
       "file_type": "code",
       "source_file": "lib/portal/invoices.ts",
       "source_location": "L57",
-      "community": 1,
-      "norm_label": "createinvoicedraft()",
       "id": "invoices_createinvoicedraft"
     },
     {
       "label": "issueInvoice()",
       "file_type": "code",
       "source_file": "lib/portal/invoices.ts",
-      "source_location": "L90",
-      "community": 1,
-      "norm_label": "issueinvoice()",
+      "source_location": "L92",
       "id": "invoices_issueinvoice"
     },
     {
@@ -3916,42 +3902,42 @@
       "label": "previewSavedInvoice()",
       "file_type": "code",
       "source_file": "lib/portal/invoices.ts",
-      "source_location": "L77",
+      "source_location": "L79",
       "id": "invoices_previewsavedinvoice"
     },
     {
       "label": "prepareInvoicePayment()",
       "file_type": "code",
       "source_file": "lib/portal/invoices.ts",
-      "source_location": "L108",
+      "source_location": "L110",
       "id": "invoices_prepareinvoicepayment"
     },
     {
       "label": "completeInvoicePayment()",
       "file_type": "code",
       "source_file": "lib/portal/invoices.ts",
-      "source_location": "L115",
+      "source_location": "L117",
       "id": "invoices_completeinvoicepayment"
     },
     {
       "label": "listInvoicePaymentIntents()",
       "file_type": "code",
       "source_file": "lib/portal/invoices.ts",
-      "source_location": "L121",
+      "source_location": "L123",
       "id": "invoices_listinvoicepaymentintents"
     },
     {
       "label": "readPaymentOperation()",
       "file_type": "code",
       "source_file": "lib/portal/invoices.ts",
-      "source_location": "L126",
+      "source_location": "L128",
       "id": "invoices_readpaymentoperation"
     },
     {
       "label": "listInvoicePayments()",
       "file_type": "code",
       "source_file": "lib/portal/invoices.ts",
-      "source_location": "L135",
+      "source_location": "L137",
       "id": "invoices_listinvoicepayments"
     },
     {
@@ -5882,6 +5868,14 @@
       "source_file": "lib/invoice-layout.test.ts",
       "source_location": "L1",
       "id": "lib_invoice_layout_test_ts"
+    },
+    {
+      "id": "portal_invoice_children_draft_checked_sql",
+      "label": "create_invoice_children_draft_checked",
+      "file_type": "code",
+      "source_file": "db/migrations/0019_invoice_quantity_basis.sql",
+      "source_location": "L65",
+      "norm_label": "create_invoice_children_draft_checked"
     }
   ],
   "links": [
@@ -14278,169 +14272,6 @@
       "target": "invoices_issueinvoice"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L16",
-      "weight": 1.0,
-      "_src": "lib_portal_invoices_ts",
-      "_tgt": "invoices_listparentinvoices",
-      "source": "lib_portal_invoices_ts",
-      "target": "invoices_listparentinvoices"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L21",
-      "weight": 1.0,
-      "_src": "lib_portal_invoices_ts",
-      "_tgt": "invoices_listfamilyinvoices",
-      "source": "lib_portal_invoices_ts",
-      "target": "invoices_listfamilyinvoices"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L27",
-      "weight": 1.0,
-      "_src": "lib_portal_invoices_ts",
-      "_tgt": "invoices_readfamilyinvoice",
-      "source": "lib_portal_invoices_ts",
-      "target": "invoices_readfamilyinvoice"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L35",
-      "weight": 1.0,
-      "_src": "lib_portal_invoices_ts",
-      "_tgt": "invoices_listadmininvoices",
-      "source": "lib_portal_invoices_ts",
-      "target": "invoices_listadmininvoices"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L40",
-      "weight": 1.0,
-      "_src": "lib_portal_invoices_ts",
-      "_tgt": "invoices_readadmininvoice",
-      "source": "lib_portal_invoices_ts",
-      "target": "invoices_readadmininvoice"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L47",
-      "weight": 1.0,
-      "_src": "lib_portal_invoices_ts",
-      "_tgt": "invoices_previewinvoice",
-      "source": "lib_portal_invoices_ts",
-      "target": "invoices_previewinvoice"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L57",
-      "weight": 1.0,
-      "_src": "lib_portal_invoices_ts",
-      "_tgt": "invoices_createinvoicedraft",
-      "source": "lib_portal_invoices_ts",
-      "target": "invoices_createinvoicedraft"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L77",
-      "weight": 1.0,
-      "_src": "lib_portal_invoices_ts",
-      "_tgt": "invoices_previewsavedinvoice",
-      "source": "lib_portal_invoices_ts",
-      "target": "invoices_previewsavedinvoice"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L90",
-      "weight": 1.0,
-      "_src": "lib_portal_invoices_ts",
-      "_tgt": "invoices_issueinvoice",
-      "source": "lib_portal_invoices_ts",
-      "target": "invoices_issueinvoice"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L108",
-      "weight": 1.0,
-      "_src": "lib_portal_invoices_ts",
-      "_tgt": "invoices_prepareinvoicepayment",
-      "source": "lib_portal_invoices_ts",
-      "target": "invoices_prepareinvoicepayment"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L115",
-      "weight": 1.0,
-      "_src": "lib_portal_invoices_ts",
-      "_tgt": "invoices_completeinvoicepayment",
-      "source": "lib_portal_invoices_ts",
-      "target": "invoices_completeinvoicepayment"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L121",
-      "weight": 1.0,
-      "_src": "lib_portal_invoices_ts",
-      "_tgt": "invoices_listinvoicepaymentintents",
-      "source": "lib_portal_invoices_ts",
-      "target": "invoices_listinvoicepaymentintents"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L126",
-      "weight": 1.0,
-      "_src": "lib_portal_invoices_ts",
-      "_tgt": "invoices_readpaymentoperation",
-      "source": "lib_portal_invoices_ts",
-      "target": "invoices_readpaymentoperation"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L135",
-      "weight": 1.0,
-      "_src": "lib_portal_invoices_ts",
-      "_tgt": "invoices_listinvoicepayments",
-      "source": "lib_portal_invoices_ts",
-      "target": "invoices_listinvoicepayments"
-    },
-    {
-      "relation": "uses",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L54",
-      "weight": 1.0,
-      "source": "lib_portal_invoices_ts",
-      "target": "portal_invoice_quantity_basis_sql"
-    },
-    {
       "relation": "calls",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
@@ -14639,6 +14470,178 @@
       "_tgt": "invoicedocument_invoicedate",
       "source": "components_portal_invoices_invoicedocument_tsx",
       "target": "invoicedocument_invoicedate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_listparentinvoices",
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_listparentinvoices"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_listfamilyinvoices",
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_listfamilyinvoices"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_readfamilyinvoice",
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_readfamilyinvoice"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_listadmininvoices",
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_listadmininvoices"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_readadmininvoice",
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_readadmininvoice"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_previewinvoice",
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_previewinvoice"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_createinvoicedraft",
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_createinvoicedraft"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_previewsavedinvoice",
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_previewsavedinvoice"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L92",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_issueinvoice",
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_issueinvoice"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L110",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_prepareinvoicepayment",
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_prepareinvoicepayment"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L117",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_completeinvoicepayment",
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_completeinvoicepayment"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L123",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_listinvoicepaymentintents",
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_listinvoicepaymentintents"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L128",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_readpaymentoperation",
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_readpaymentoperation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L137",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_listinvoicepayments",
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_listinvoicepayments"
+    },
+    {
+      "source": "portal_invoice_quantity_basis_sql",
+      "target": "portal_invoice_children_draft_checked_sql",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrations/0019_invoice_quantity_basis.sql",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "invoices_createinvoicedraft",
+      "target": "portal_invoice_children_draft_checked_sql",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L74",
+      "weight": 1.0
     }
   ],
   "hyperedges": []

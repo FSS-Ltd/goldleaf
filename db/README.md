@@ -230,3 +230,32 @@ FROM goldleaf_portal_runtime;
 Verify the runtime cannot execute the lower-level issuer after applying these grants. The server supplies the verified subject; SQL rechecks active admin membership. A stable request UUID makes a replay fail without issuing another invitation. A resend creates a new token and invalidates earlier invitations for the same email. Delivery commits before an explicit send attempt: `sent` means provider acceptance, not receipt, and `pending` can mean delivery is unconfirmed. If the response is lost, inspect the list before explicitly resending. Assignment updates lock the selected active staff membership and apply all selected family changes in one transaction. Staff can read only their assigned families. No role, table or sequence grants are added by this migration.
 
 Run `db/tests/staff-delivery.sql` and `db/tests/staff-delivery-concurrency.sh` on disposable PostgreSQL after migrations 0001–0010. They use synthetic records. No development or production application of 0010, real mail or live write verification is implied by the migration.
+
+## Children, sessions and learning foundation
+
+Apply forward-only migrations `0012_children_sessions.sql` and `0013_learning_updates.sql` after preceding migrations, including 0011 when present. They create child identities and scheduled sessions, separate private staff notes from parent drafts, and store published family updates as snapshots. No runtime table or sequence access is required. After review, grant only the following to the existing restricted portal runtime:
+
+```sql
+GRANT EXECUTE ON FUNCTION
+  portal.create_child(text, uuid, text, uuid),
+  portal.rename_child(text, uuid, text),
+  portal.list_children(text, uuid),
+  portal.schedule_child_session(text, uuid, timestamptz, integer, uuid, text),
+  portal.set_session_location(text, uuid, text),
+  portal.reschedule_child_session(text, uuid, timestamptz),
+  portal.list_child_sessions(text, uuid),
+  portal.update_session(text, uuid, text, text),
+  portal.learning_workspace(text, uuid),
+  portal.save_private_note(text, uuid, text, integer),
+  portal.save_learning_draft(text, uuid, text, smallint, text, text, integer),
+  portal.preview_learning_draft(text, uuid, integer),
+  portal.publish_learning_draft(text, uuid, integer, uuid, text),
+  portal.list_published_learning(text, uuid, uuid)
+TO goldleaf_portal_runtime;
+```
+
+Do not grant the internal `require_family_worker` or `learning_fingerprint` helper. Subjects come only from verified server identity; SQL rechecks membership and locks staff assignment for writes. A session begins with attendance unrecorded, independently of its lifecycle. The optional location is an actual admin-entered label, visible only to authorised family members and assigned staff. The server schedules using `site.sessionMinutes` and the existing `sessionBlocks`; no duration is inferred from archived mockups.
+
+A preview returns a SHA-256 fingerprint over the exact draft, version, session, child and family. Publishing locks and rechecks that context and the current authority. The fingerprint is a consistency check, not an authorization capability. Reuse the same operation UUID, version and fingerprint on retry; a successful replay returns the original publication. Publications are shared in the child's family archive, not addressed to a frozen list of individuals. Parents read only published snapshots, never the workspace or draft. Stale note and draft edits report a conflict and must be refreshed. PostgreSQL notifications carry only changed record IDs and are delivered on commit; consumers must re-read durable, authorised state on notification and reconnect. This migration does not provide a subscription transport or live UI, and has not been applied to development or production.
+
+Run `db/tests/learning-foundation.sql` and `db/tests/learning-concurrency.sh` only on a disposable PostgreSQL database. The tests use synthetic records and cover scoped access, privacy, preview consistency, replay, conflicting edits and assignment removal.

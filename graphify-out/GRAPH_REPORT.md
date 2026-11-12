@@ -203,3 +203,11 @@ Role navigation and staff UI review re-extracted 12 allowlisted files: 375 nodes
 The invitation-action call edges were reconciled against current source: duplicate edges at lines 19 and 25 were removed, and inferred call scores reflect their inferred status. A source-verified account-menu call was added at line 17. The graph has 375 nodes and 372 edges; the previously reported 55 unresolved extractor edges and historical coverage limits remain.
 
 Team header route correction changes no symbols or graph relationships; the existing PortalShell node and callers remain current.
+
+Learning foundation: six allowlisted TypeScript files and two manually source-linked SQL nodes added; 399 nodes, 400 edges. 25 unresolved extractor edges omitted. SQL extraction and earlier historical coverage gaps remain.
+
+The session-location contract re-extracted three allowlisted files: 400 nodes and 401 edges; 12 unresolved extractor edges omitted.
+
+Learning schema readability update re-extracted its source: 400 nodes, 401 edges, 1 unresolved edges omitted.
+
+Typed learning DAL update re-extracted four allowlisted files: 400 nodes and 397 edges; 20 unresolved extractor edges omitted.

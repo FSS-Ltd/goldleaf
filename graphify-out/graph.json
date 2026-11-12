@@ -3352,6 +3352,181 @@
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/staff/page.tsx",
       "source_location": "L7"
+    },
+    {
+      "id": "lib_portal_children_ts",
+      "label": "children.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/children.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "children_createchild",
+      "label": "createChild()",
+      "file_type": "code",
+      "source_file": "lib/portal/children.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "children_listchildren",
+      "label": "listChildren()",
+      "file_type": "code",
+      "source_file": "lib/portal/children.ts",
+      "source_location": "L13"
+    },
+    {
+      "id": "children_renamechild",
+      "label": "renameChild()",
+      "file_type": "code",
+      "source_file": "lib/portal/children.ts",
+      "source_location": "L20"
+    },
+    {
+      "id": "lib_portal_sessions_ts",
+      "label": "sessions.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "sessions_schedulesession",
+      "label": "scheduleSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "sessions_listsessions",
+      "label": "listSessions()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "sessions_changesession",
+      "label": "changeSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L22"
+    },
+    {
+      "id": "sessions_reschedulesession",
+      "label": "rescheduleSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L29"
+    },
+    {
+      "id": "lib_portal_learning_ts",
+      "label": "learning.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "learning_readlearningworkspace",
+      "label": "readLearningWorkspace()",
+      "file_type": "code",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "learning_saveprivatenote",
+      "label": "savePrivateNote()",
+      "file_type": "code",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "learning_savelearningdraft",
+      "label": "saveLearningDraft()",
+      "file_type": "code",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L26"
+    },
+    {
+      "id": "learning_previewlearningdraft",
+      "label": "previewLearningDraft()",
+      "file_type": "code",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L36"
+    },
+    {
+      "id": "learning_publishlearningdraft",
+      "label": "publishLearningDraft()",
+      "file_type": "code",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L46"
+    },
+    {
+      "id": "learning_listpublishedlearning",
+      "label": "listPublishedLearning()",
+      "file_type": "code",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L56"
+    },
+    {
+      "id": "lib_portal_learning_schemas_ts",
+      "label": "learning-schemas.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/learning-schemas.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_portal_learning_errors_ts",
+      "label": "learning-errors.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/learning-errors.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "learning_errors_learningconflicterror",
+      "label": "LearningConflictError",
+      "file_type": "code",
+      "source_file": "lib/portal/learning-errors.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "learning_errors_learningconflicterror_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "lib/portal/learning-errors.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "learning_errors_translatelearningerror",
+      "label": "translateLearningError()",
+      "file_type": "code",
+      "source_file": "lib/portal/learning-errors.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "lib_learning_schemas_test_ts",
+      "label": "learning-schemas.test.ts",
+      "file_type": "code",
+      "source_file": "lib/learning-schemas.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_children_sessions_sql",
+      "label": "Child and session database foundation",
+      "source_file": "db/migrations/0012_children_sessions.sql",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "portal_learning_updates_sql",
+      "label": "Private and published learning database foundation",
+      "source_file": "db/migrations/0013_learning_updates.sql",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "sessions_setsessionlocation",
+      "label": "setSessionLocation()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L36"
     }
   ],
   "links": [
@@ -7800,6 +7975,306 @@
       "source": "accountmenu_accountmenu",
       "target": "role_links_portalrolelinks",
       "confidence_score": 0.5
+    },
+    {
+      "source": "lib_portal_learning_errors_ts",
+      "target": "learning_errors_learningconflicterror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning-errors.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_errors_ts",
+      "_tgt": "learning_errors_learningconflicterror",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "learning_errors_learningconflicterror",
+      "target": "learning_errors_learningconflicterror_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning-errors.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "learning_errors_learningconflicterror",
+      "_tgt": "learning_errors_learningconflicterror_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_learning_errors_ts",
+      "target": "learning_errors_translatelearningerror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning-errors.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_errors_ts",
+      "_tgt": "learning_errors_translatelearningerror",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "portal_children_sessions_sql",
+      "target": "portal_access_sql",
+      "_src": "portal_children_sessions_sql",
+      "_tgt": "portal_access_sql",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "db/migrations/0012_children_sessions.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_children_sessions_sql",
+      "target": "portal_staff_access",
+      "_src": "portal_children_sessions_sql",
+      "_tgt": "portal_staff_access",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "db/migrations/0012_children_sessions.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_learning_updates_sql",
+      "target": "portal_children_sessions_sql",
+      "_src": "portal_learning_updates_sql",
+      "_tgt": "portal_children_sessions_sql",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "db/migrations/0013_learning_updates.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_children_ts",
+      "target": "portal_children_sessions_sql",
+      "_src": "lib_portal_children_ts",
+      "_tgt": "portal_children_sessions_sql",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "lib/portal/children.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "portal_children_sessions_sql",
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "portal_children_sessions_sql",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "portal_learning_updates_sql",
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "portal_learning_updates_sql",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "content_session_ts",
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "content_session_ts",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "content_progression_ts",
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "content_progression_ts",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_children_ts",
+      "target": "children_createchild",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/children.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "lib_portal_children_ts",
+      "_tgt": "children_createchild",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_children_ts",
+      "target": "children_listchildren",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/children.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "lib_portal_children_ts",
+      "_tgt": "children_listchildren",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_children_ts",
+      "target": "children_renamechild",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/children.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "lib_portal_children_ts",
+      "_tgt": "children_renamechild",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_schedulesession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_schedulesession",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_listsessions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_listsessions",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_changesession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_changesession",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_reschedulesession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_reschedulesession",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_setsessionlocation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_setsessionlocation",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_readlearningworkspace",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_readlearningworkspace",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_saveprivatenote",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_saveprivatenote",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_savelearningdraft",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_savelearningdraft",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_previewlearningdraft",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_previewlearningdraft",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_publishlearningdraft",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_publishlearningdraft",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_listpublishedlearning",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_listpublishedlearning",
+      "confidence_score": 1
     }
   ],
   "hyperedges": []

@@ -14,7 +14,7 @@ export function AdminDraftInvoice({
   preview: Preview;
 }) {
   return (
-    <section className={card}>
+    <section className={`${card} min-w-0 [overflow-wrap:anywhere]`}>
       <h2 className="!text-xl">Saved draft</h2>
       <p className="mt-2 text-sm">
         {invoice.recipient_name} · {invoice.recipient_address}
@@ -30,10 +30,10 @@ export function AdminDraftInvoice({
             {preview.lines.map((line, index) => (
               <li key={index} className="py-3 text-sm">
                 <div className="flex justify-between gap-3">
-                  <span>
+                  <span className="min-w-0 flex-1">
                     {line.description} · {line.service_date}
                   </span>
-                  <span>{pounds(line.quantity * line.unit_amount_pence)}</span>
+                  <span className="shrink-0 whitespace-nowrap">{pounds(line.quantity * line.unit_amount_pence)}</span>
                 </div>
                 <p className="mt-1 text-xs text-[#5a6a5e]">
                   {quantityLabel(line.quantity, line.cadence, line.quantity_basis)} · {line.days} days per week ·{" "}

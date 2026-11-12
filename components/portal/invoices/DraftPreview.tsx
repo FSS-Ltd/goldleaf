@@ -15,7 +15,7 @@ export function DraftPreview({
   recipientAddress: string;
 }) {
   return (
-    <div className={subcard} aria-live="polite">
+    <div className={`${subcard} min-w-0 [overflow-wrap:anywhere]`} aria-live="polite">
       <h3 className="!font-sans !text-xs font-semibold uppercase tracking-wide">
         Invoice preview
       </h3>
@@ -46,8 +46,8 @@ export function DraftPreview({
               {quote.lines.map((line, index) => (
                 <li key={index} className="py-3 text-sm">
                   <div className="flex justify-between gap-3">
-                    <span className="font-medium">{line.description}</span>
-                    <span>
+                    <span className="min-w-0 flex-1 font-medium">{line.description}</span>
+                    <span className="shrink-0 whitespace-nowrap">
                       {pounds(line.unit_amount_pence * line.quantity)}
                     </span>
                   </div>

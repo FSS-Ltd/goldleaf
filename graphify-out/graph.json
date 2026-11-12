@@ -5868,6 +5868,20 @@
       "source_location": "L1",
       "norm_label": "invoice quantity basis migration",
       "id": "portal_invoice_quantity_basis_sql"
+    },
+    {
+      "label": "DraftPreview()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/DraftPreview.tsx",
+      "source_location": "L6",
+      "id": "draftpreview_draftpreview"
+    },
+    {
+      "label": "invoice-layout.test.ts",
+      "file_type": "code",
+      "source_file": "lib/invoice-layout.test.ts",
+      "source_location": "L1",
+      "id": "lib_invoice_layout_test_ts"
     }
   ],
   "links": [
@@ -14427,39 +14441,6 @@
       "target": "portal_invoice_quantity_basis_sql"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/invoices/AdminDraftInvoice.tsx",
-      "source_location": "L84",
-      "weight": 1.0,
-      "_src": "components_portal_invoices_admindraftinvoice_tsx",
-      "_tgt": "admindraftinvoice_quantitylabel",
-      "source": "components_portal_invoices_admindraftinvoice_tsx",
-      "target": "admindraftinvoice_quantitylabel"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/invoices/DraftPreview.tsx",
-      "source_location": "L58",
-      "weight": 1.0,
-      "_src": "components_portal_invoices_draftpreview_tsx",
-      "_tgt": "draftpreview_tierlabel",
-      "source": "components_portal_invoices_draftpreview_tsx",
-      "target": "draftpreview_tierlabel"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/invoices/InvoiceDocument.tsx",
-      "source_location": "L60",
-      "weight": 1.0,
-      "_src": "components_portal_invoices_invoicedocument_tsx",
-      "_tgt": "invoicedocument_invoicedate",
-      "source": "components_portal_invoices_invoicedocument_tsx",
-      "target": "invoicedocument_invoicedate"
-    },
-    {
       "relation": "calls",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
@@ -14602,6 +14583,62 @@
       "_tgt": "draftcomposer_changed",
       "source": "draftcomposer_changed",
       "target": "draftcomposer_updateline"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/DraftPreview.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "components_portal_invoices_draftpreview_tsx",
+      "_tgt": "draftpreview_draftpreview",
+      "source": "components_portal_invoices_draftpreview_tsx",
+      "target": "draftpreview_draftpreview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/DraftPreview.tsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_src": "components_portal_invoices_draftpreview_tsx",
+      "_tgt": "draftpreview_tierlabel",
+      "source": "components_portal_invoices_draftpreview_tsx",
+      "target": "draftpreview_tierlabel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/AdminDraftInvoice.tsx",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_src": "components_portal_invoices_admindraftinvoice_tsx",
+      "_tgt": "admindraftinvoice_quantitylabel",
+      "source": "components_portal_invoices_admindraftinvoice_tsx",
+      "target": "admindraftinvoice_quantitylabel"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "components/portal/invoices/InvoiceDocument.tsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_src": "invoicedocument_invoicedate",
+      "_tgt": "admindraftinvoice_quantitylabel",
+      "source": "admindraftinvoice_quantitylabel",
+      "target": "invoicedocument_invoicedate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/InvoiceDocument.tsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_src": "components_portal_invoices_invoicedocument_tsx",
+      "_tgt": "invoicedocument_invoicedate",
+      "source": "components_portal_invoices_invoicedocument_tsx",
+      "target": "invoicedocument_invoicedate"
     }
   ],
   "hyperedges": []

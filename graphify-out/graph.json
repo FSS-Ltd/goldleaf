@@ -1588,33 +1588,6 @@
       "norm_label": "portalerror()"
     },
     {
-      "label": "actions.ts",
-      "file_type": "code",
-      "source_file": "app/(portal)/invite/actions.ts",
-      "source_location": "L1",
-      "id": "app_portal_invite_actions_ts",
-      "community": 13,
-      "norm_label": "actions.ts"
-    },
-    {
-      "label": "exchangeInvitation()",
-      "file_type": "code",
-      "source_file": "app/(portal)/invite/actions.ts",
-      "source_location": "L11",
-      "id": "actions_exchangeinvitation",
-      "community": 13,
-      "norm_label": "exchangeinvitation()"
-    },
-    {
-      "label": "acceptParentInvitation()",
-      "file_type": "code",
-      "source_file": "app/(portal)/invite/actions.ts",
-      "source_location": "L22",
-      "id": "actions_acceptparentinvitation",
-      "community": 13,
-      "norm_label": "acceptparentinvitation()"
-    },
-    {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/invite/page.tsx",
@@ -1804,24 +1777,6 @@
       "norm_label": "portalsessionguard()"
     },
     {
-      "label": "InviteAcceptForm.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/InviteAcceptForm.tsx",
-      "source_location": "L1",
-      "id": "components_portal_inviteacceptform_tsx",
-      "community": 39,
-      "norm_label": "inviteacceptform.tsx"
-    },
-    {
-      "label": "InviteAcceptForm()",
-      "file_type": "code",
-      "source_file": "components/portal/InviteAcceptForm.tsx",
-      "source_location": "L6",
-      "id": "inviteacceptform_inviteacceptform",
-      "community": 39,
-      "norm_label": "inviteacceptform()"
-    },
-    {
       "label": "AdminForms.tsx",
       "file_type": "code",
       "source_file": "components/portal/AdminForms.tsx",
@@ -1829,15 +1784,6 @@
       "id": "components_portal_adminforms_tsx",
       "community": 70,
       "norm_label": "adminforms.tsx"
-    },
-    {
-      "label": "invitation-mail.test.ts",
-      "file_type": "code",
-      "source_file": "lib/invitation-mail.test.ts",
-      "source_location": "L1",
-      "id": "lib_invitation_mail_test_ts",
-      "community": 79,
-      "norm_label": "invitation-mail.test.ts"
     },
     {
       "label": "require-role.ts",
@@ -1856,24 +1802,6 @@
       "id": "require_role_requirerole",
       "community": 2,
       "norm_label": "requirerole()"
-    },
-    {
-      "label": "invitation-mail.ts",
-      "file_type": "code",
-      "source_file": "lib/portal/invitation-mail.ts",
-      "source_location": "L1",
-      "id": "lib_portal_invitation_mail_ts",
-      "community": 0,
-      "norm_label": "invitation-mail.ts"
-    },
-    {
-      "label": "sendInvitationMail()",
-      "file_type": "code",
-      "source_file": "lib/portal/invitation-mail.ts",
-      "source_location": "L3",
-      "id": "invitation_mail_sendinvitationmail",
-      "community": 0,
-      "norm_label": "sendinvitationmail()"
     },
     {
       "label": "invitation-delivery.ts",
@@ -2394,30 +2322,6 @@
       "norm_label": "signuppage()"
     },
     {
-      "id": "app_portal_provider_staff_page_tsx",
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L1",
-      "norm_label": "page.tsx"
-    },
-    {
-      "id": "page_staffunavailable",
-      "label": "StaffUnavailable()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L6",
-      "norm_label": "staffunavailable()"
-    },
-    {
-      "id": "page_staffpage",
-      "label": "StaffPage()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L10",
-      "norm_label": "staffpage()"
-    },
-    {
       "id": "app_portal_invite_accept_layout_tsx",
       "label": "layout.tsx",
       "file_type": "code",
@@ -2432,22 +2336,6 @@
       "source_file": "app/(portal)/invite/accept/layout.tsx",
       "source_location": "L4",
       "norm_label": "inviteprovider()"
-    },
-    {
-      "id": "components_portal_portalshell_tsx",
-      "label": "PortalShell.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L1",
-      "norm_label": "portalshell.tsx"
-    },
-    {
-      "id": "portalshell_portalshell",
-      "label": "PortalShell()",
-      "file_type": "code",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L7",
-      "norm_label": "portalshell()"
     },
     {
       "id": "lib_portal_proxy_test_ts",
@@ -2743,60 +2631,6 @@
       "norm_label": "staff.ts"
     },
     {
-      "label": "issueStaffInvitation()",
-      "file_type": "code",
-      "source_file": "lib/portal/staff.ts",
-      "source_location": "L9",
-      "id": "staff_issuestaffinvitation",
-      "community": 1,
-      "norm_label": "issuestaffinvitation()"
-    },
-    {
-      "label": "revokeStaffInvitation()",
-      "file_type": "code",
-      "source_file": "lib/portal/staff.ts",
-      "source_location": "L20",
-      "id": "staff_revokestaffinvitation",
-      "community": 1,
-      "norm_label": "revokestaffinvitation()"
-    },
-    {
-      "label": "setStaffFamilyAccess()",
-      "file_type": "code",
-      "source_file": "lib/portal/staff.ts",
-      "source_location": "L27",
-      "id": "staff_setstafffamilyaccess",
-      "community": 1,
-      "norm_label": "setstafffamilyaccess()"
-    },
-    {
-      "label": "listPendingStaffInvitations()",
-      "file_type": "code",
-      "source_file": "lib/portal/staff.ts",
-      "source_location": "L34",
-      "id": "staff_listpendingstaffinvitations",
-      "community": 1,
-      "norm_label": "listpendingstaffinvitations()"
-    },
-    {
-      "label": "listStaffFamilyAssignments()",
-      "file_type": "code",
-      "source_file": "lib/portal/staff.ts",
-      "source_location": "L40",
-      "id": "staff_liststafffamilyassignments",
-      "community": 1,
-      "norm_label": "liststafffamilyassignments()"
-    },
-    {
-      "label": "listAssignedStaffFamilies()",
-      "file_type": "code",
-      "source_file": "lib/portal/staff.ts",
-      "source_location": "L47",
-      "id": "staff_listassignedstafffamilies",
-      "community": 1,
-      "norm_label": "listassignedstafffamilies()"
-    },
-    {
       "label": "staff-schemas.ts",
       "file_type": "code",
       "source_file": "lib/portal/staff-schemas.ts",
@@ -3056,14 +2890,6 @@
       "norm_label": "complete()"
     },
     {
-      "id": "tests_e2e_portal_spec_ts",
-      "label": "portal.spec.ts",
-      "file_type": "code",
-      "source_file": "tests/e2e/portal.spec.ts",
-      "source_location": "L1",
-      "norm_label": "portal.spec.ts"
-    },
-    {
       "id": "components_portal_auth_accountprofile_tsx",
       "label": "AccountProfile.tsx",
       "file_type": "code",
@@ -3142,6 +2968,334 @@
       "source_file": "lib/account-identity-summary.test.ts",
       "source_location": "L1",
       "norm_label": "account-identity-summary.test.ts"
+    },
+    {
+      "id": "app_portal_provider_admin_staff_actions_ts",
+      "label": "actions.ts",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L1",
+      "norm_label": "actions.ts"
+    },
+    {
+      "id": "actions_sendstaffinvite",
+      "label": "sendStaffInvite()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L8",
+      "norm_label": "sendstaffinvite()"
+    },
+    {
+      "id": "actions_revokestaffinvite",
+      "label": "revokeStaffInvite()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L25",
+      "norm_label": "revokestaffinvite()"
+    },
+    {
+      "id": "actions_savestaffassignments",
+      "label": "saveStaffAssignments()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L32",
+      "norm_label": "savestaffassignments()"
+    },
+    {
+      "id": "app_portal_provider_admin_staff_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L1",
+      "norm_label": "page.tsx"
+    },
+    {
+      "id": "page_staffadmin",
+      "label": "StaffAdmin()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L13",
+      "norm_label": "staffadmin()"
+    },
+    {
+      "id": "components_portal_staffforms_tsx",
+      "label": "StaffForms.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/StaffForms.tsx",
+      "source_location": "L1",
+      "norm_label": "staffforms.tsx"
+    },
+    {
+      "id": "lib_invitation_cookie_test_ts",
+      "label": "invitation-cookie.test.ts",
+      "file_type": "code",
+      "source_file": "lib/invitation-cookie.test.ts",
+      "source_location": "L1",
+      "norm_label": "invitation-cookie.test.ts"
+    },
+    {
+      "id": "lib_portal_invitation_cookie_ts",
+      "label": "invitation-cookie.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/invitation-cookie.ts",
+      "source_location": "L1",
+      "norm_label": "invitation-cookie.ts"
+    },
+    {
+      "id": "invitation_cookie_encodeinvitationcookie",
+      "label": "encodeInvitationCookie()",
+      "file_type": "code",
+      "source_file": "lib/portal/invitation-cookie.ts",
+      "source_location": "L5",
+      "norm_label": "encodeinvitationcookie()"
+    },
+    {
+      "id": "invitation_cookie_parseinvitationcookie",
+      "label": "parseInvitationCookie()",
+      "file_type": "code",
+      "source_file": "lib/portal/invitation-cookie.ts",
+      "source_location": "L10",
+      "norm_label": "parseinvitationcookie()"
+    },
+    {
+      "id": "lib_portal_staff_profile_ts",
+      "label": "staff-profile.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/staff-profile.ts",
+      "source_location": "L1",
+      "norm_label": "staff-profile.ts"
+    },
+    {
+      "id": "staff_profile_staffprofile",
+      "label": "staffProfile()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff-profile.ts",
+      "source_location": "L10",
+      "norm_label": "staffprofile()"
+    },
+    {
+      "id": "lib_portal_staff_profiles_ts",
+      "label": "staff-profiles.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/staff-profiles.ts",
+      "source_location": "L1",
+      "norm_label": "staff-profiles.ts"
+    },
+    {
+      "id": "staff_profiles_liststaffprofiles",
+      "label": "listStaffProfiles()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff-profiles.ts",
+      "source_location": "L6",
+      "norm_label": "liststaffprofiles()"
+    },
+    {
+      "id": "lib_staff_profile_test_ts",
+      "label": "staff-profile.test.ts",
+      "file_type": "code",
+      "source_file": "lib/staff-profile.test.ts",
+      "source_location": "L1",
+      "norm_label": "staff-profile.test.ts"
+    },
+    {
+      "id": "app_portal_provider_staff_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L1",
+      "norm_label": "page.tsx"
+    },
+    {
+      "id": "app_portal_invite_actions_ts",
+      "label": "actions.ts",
+      "file_type": "code",
+      "source_file": "app/(portal)/invite/actions.ts",
+      "source_location": "L1",
+      "norm_label": "actions.ts"
+    },
+    {
+      "id": "actions_exchangeinvitation",
+      "label": "exchangeInvitation()",
+      "file_type": "code",
+      "source_file": "app/(portal)/invite/actions.ts",
+      "source_location": "L12",
+      "norm_label": "exchangeinvitation()"
+    },
+    {
+      "id": "actions_acceptportalinvitation",
+      "label": "acceptPortalInvitation()",
+      "file_type": "code",
+      "source_file": "app/(portal)/invite/actions.ts",
+      "source_location": "L23",
+      "norm_label": "acceptportalinvitation()"
+    },
+    {
+      "id": "components_portal_inviteacceptform_tsx",
+      "label": "InviteAcceptForm.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/InviteAcceptForm.tsx",
+      "source_location": "L1",
+      "norm_label": "inviteacceptform.tsx"
+    },
+    {
+      "id": "inviteacceptform_inviteacceptform",
+      "label": "InviteAcceptForm()",
+      "file_type": "code",
+      "source_file": "components/portal/InviteAcceptForm.tsx",
+      "source_location": "L6",
+      "norm_label": "inviteacceptform()"
+    },
+    {
+      "id": "components_portal_portalshell_tsx",
+      "label": "PortalShell.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L1",
+      "norm_label": "portalshell.tsx"
+    },
+    {
+      "id": "portalshell_portalshell",
+      "label": "PortalShell()",
+      "file_type": "code",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L7",
+      "norm_label": "portalshell()"
+    },
+    {
+      "id": "lib_invitation_mail_test_ts",
+      "label": "invitation-mail.test.ts",
+      "file_type": "code",
+      "source_file": "lib/invitation-mail.test.ts",
+      "source_location": "L1",
+      "norm_label": "invitation-mail.test.ts"
+    },
+    {
+      "id": "lib_portal_invitation_mail_ts",
+      "label": "invitation-mail.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/invitation-mail.ts",
+      "source_location": "L1",
+      "norm_label": "invitation-mail.ts"
+    },
+    {
+      "id": "invitation_mail_sendinvitationmail",
+      "label": "sendInvitationMail()",
+      "file_type": "code",
+      "source_file": "lib/portal/invitation-mail.ts",
+      "source_location": "L3",
+      "norm_label": "sendinvitationmail()"
+    },
+    {
+      "id": "lib_portal_staff_schemas_ts",
+      "label": "staff-schemas.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/staff-schemas.ts",
+      "source_location": "L1",
+      "norm_label": "staff-schemas.ts"
+    },
+    {
+      "id": "lib_portal_staff_ts",
+      "label": "staff.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L1",
+      "norm_label": "staff.ts"
+    },
+    {
+      "id": "staff_issuestaffinvitation",
+      "label": "issueStaffInvitation()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L11",
+      "norm_label": "issuestaffinvitation()"
+    },
+    {
+      "id": "staff_liststaffdeliveries",
+      "label": "listStaffDeliveries()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L23",
+      "norm_label": "liststaffdeliveries()"
+    },
+    {
+      "id": "staff_deliverstaffinvitation",
+      "label": "deliverStaffInvitation()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L29",
+      "norm_label": "deliverstaffinvitation()"
+    },
+    {
+      "id": "staff_setstaffassignments",
+      "label": "setStaffAssignments()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L48",
+      "norm_label": "setstaffassignments()"
+    },
+    {
+      "id": "staff_revokestaffinvitation",
+      "label": "revokeStaffInvitation()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L55",
+      "norm_label": "revokestaffinvitation()"
+    },
+    {
+      "id": "staff_setstafffamilyaccess",
+      "label": "setStaffFamilyAccess()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L62",
+      "norm_label": "setstafffamilyaccess()"
+    },
+    {
+      "id": "staff_listpendingstaffinvitations",
+      "label": "listPendingStaffInvitations()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L69",
+      "norm_label": "listpendingstaffinvitations()"
+    },
+    {
+      "id": "staff_liststafffamilyassignments",
+      "label": "listStaffFamilyAssignments()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L75",
+      "norm_label": "liststafffamilyassignments()"
+    },
+    {
+      "id": "staff_listassignedstafffamilies",
+      "label": "listAssignedStaffFamilies()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L82",
+      "norm_label": "listassignedstafffamilies()"
+    },
+    {
+      "id": "lib_staff_access_test_ts",
+      "label": "staff-access.test.ts",
+      "file_type": "code",
+      "source_file": "lib/staff-access.test.ts",
+      "source_location": "L1",
+      "norm_label": "staff-access.test.ts"
+    },
+    {
+      "id": "tests_e2e_portal_spec_ts",
+      "label": "portal.spec.ts",
+      "file_type": "code",
+      "source_file": "tests/e2e/portal.spec.ts",
+      "source_location": "L1",
+      "norm_label": "portal.spec.ts"
+    },
+    {
+      "id": "portal_staff_delivery_sql",
+      "label": "Staff delivery and atomic assignment SQL",
+      "file_type": "document",
+      "source_file": "db/migrations/0010_staff_delivery.sql",
+      "source_location": "L1",
+      "norm_label": "staff delivery and atomic assignment sql"
     }
   ],
   "links": [
@@ -4868,18 +5022,6 @@
       "target": "require_role_requirerole"
     },
     {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "page_staffunavailable",
-      "_tgt": "require_role_requirerole",
-      "source": "page_staffunavailable",
-      "target": "require_role_requirerole"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(public)/page.tsx",
@@ -5009,18 +5151,6 @@
       "_tgt": "portalsessionguard_portalsessionguard",
       "source": "components_portal_portalsessionguard_tsx",
       "target": "portalsessionguard_portalsessionguard",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/InviteAcceptForm.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_src": "components_portal_inviteacceptform_tsx",
-      "_tgt": "inviteacceptform_inviteacceptform",
-      "source": "components_portal_inviteacceptform_tsx",
-      "target": "inviteacceptform_inviteacceptform",
       "confidence_score": 1.0
     },
     {
@@ -5204,30 +5334,6 @@
       "confidence_score": 1.0
     },
     {
-      "source": "app_portal_invite_actions_ts",
-      "target": "actions_exchangeinvitation",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/invite/actions.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_src": "app_portal_invite_actions_ts",
-      "_tgt": "actions_exchangeinvitation",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "app_portal_invite_actions_ts",
-      "target": "actions_acceptparentinvitation",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/invite/actions.ts",
-      "source_location": "L22",
-      "weight": 1.0,
-      "_src": "app_portal_invite_actions_ts",
-      "_tgt": "actions_acceptparentinvitation",
-      "confidence_score": 1.0
-    },
-    {
       "source": "lib_portal_invitation_delivery_ts",
       "target": "invitation_delivery_listfamilyinvitations",
       "relation": "contains",
@@ -5273,18 +5379,6 @@
       "weight": 1.0,
       "_src": "lib_portal_invitation_delivery_ts",
       "_tgt": "invitation_delivery_deliverparentinvitation",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "lib_portal_invitation_mail_ts",
-      "target": "invitation_mail_sendinvitationmail",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invitation-mail.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_src": "lib_portal_invitation_mail_ts",
-      "_tgt": "invitation_mail_sendinvitationmail",
       "confidence_score": 1.0
     },
     {
@@ -5358,18 +5452,6 @@
       "weight": 1.0,
       "_src": "actions_revokeinvitation",
       "_tgt": "invitation_delivery_revokeparentinvitation"
-    },
-    {
-      "source": "actions_acceptparentinvitation",
-      "target": "invitations_acceptinvitation",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "app/(portal)/invite/actions.ts",
-      "source_location": "L26",
-      "weight": 1.0,
-      "_src": "actions_acceptparentinvitation",
-      "_tgt": "invitations_acceptinvitation"
     },
     {
       "source": "invitation_delivery_listfamilyinvitations",
@@ -6080,30 +6162,6 @@
       "confidence_score": 1.0
     },
     {
-      "source": "app_portal_provider_staff_page_tsx",
-      "target": "page_staffunavailable",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_src": "app_portal_provider_staff_page_tsx",
-      "_tgt": "page_staffunavailable",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "app_portal_provider_staff_page_tsx",
-      "target": "page_staffpage",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_src": "app_portal_provider_staff_page_tsx",
-      "_tgt": "page_staffpage",
-      "confidence_score": 1.0
-    },
-    {
       "source": "app_portal_invite_accept_layout_tsx",
       "target": "layout_inviteprovider",
       "relation": "contains",
@@ -6113,18 +6171,6 @@
       "weight": 1.0,
       "_src": "app_portal_invite_accept_layout_tsx",
       "_tgt": "layout_inviteprovider",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "components_portal_portalshell_tsx",
-      "target": "portalshell_portalshell",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "components_portal_portalshell_tsx",
-      "_tgt": "portalshell_portalshell",
       "confidence_score": 1.0
     },
     {
@@ -6716,78 +6762,6 @@
       "weight": 1.0
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/staff.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_src": "staff_ts",
-      "_tgt": "staff_issuestaffinvitation",
-      "source": "staff_ts",
-      "target": "staff_issuestaffinvitation",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/staff.ts",
-      "source_location": "L20",
-      "weight": 1.0,
-      "_src": "staff_ts",
-      "_tgt": "staff_revokestaffinvitation",
-      "source": "staff_ts",
-      "target": "staff_revokestaffinvitation",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/staff.ts",
-      "source_location": "L27",
-      "weight": 1.0,
-      "_src": "staff_ts",
-      "_tgt": "staff_setstafffamilyaccess",
-      "source": "staff_ts",
-      "target": "staff_setstafffamilyaccess",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/staff.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "_src": "staff_ts",
-      "_tgt": "staff_listpendingstaffinvitations",
-      "source": "staff_ts",
-      "target": "staff_listpendingstaffinvitations",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/staff.ts",
-      "source_location": "L40",
-      "weight": 1.0,
-      "_src": "staff_ts",
-      "_tgt": "staff_liststafffamilyassignments",
-      "source": "staff_ts",
-      "target": "staff_liststafffamilyassignments",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/staff.ts",
-      "source_location": "L47",
-      "weight": 1.0,
-      "_src": "staff_ts",
-      "_tgt": "staff_listassignedstafffamilies",
-      "source": "staff_ts",
-      "target": "staff_listassignedstafffamilies",
-      "confidence_score": 1.0
-    },
-    {
       "source": "portal_staff_access",
       "target": "portal_staff_onboarding",
       "_src": "portal_staff_access",
@@ -6796,40 +6770,6 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "db/migrations/0009_staff_access.sql",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "staff_ts",
-      "target": "portal_staff_access",
-      "_src": "staff_ts",
-      "_tgt": "portal_staff_access",
-      "relation": "uses",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/portal/staff.ts",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "staff_ts",
-      "target": "portal_access_sql",
-      "_src": "staff_ts",
-      "_tgt": "portal_access_sql",
-      "relation": "uses",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/portal/staff.ts",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "staff_access_test",
-      "target": "staff_schemas_ts",
-      "relation": "tests",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/staff-access.test.ts",
       "source_location": "L1",
       "weight": 1.0
     },
@@ -7300,6 +7240,450 @@
       "_src": "components_portal_auth_accountidentitysummary_tsx",
       "_tgt": "accountidentitysummary_accountidentitysummary",
       "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_staff_actions_ts",
+      "target": "actions_sendstaffinvite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_staff_actions_ts",
+      "_tgt": "actions_sendstaffinvite",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_staff_actions_ts",
+      "target": "actions_revokestaffinvite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_staff_actions_ts",
+      "_tgt": "actions_revokestaffinvite",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_staff_actions_ts",
+      "target": "actions_savestaffassignments",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_staff_actions_ts",
+      "_tgt": "actions_savestaffassignments",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_staff_page_tsx",
+      "target": "page_staffadmin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_staff_page_tsx",
+      "_tgt": "page_staffadmin",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_invitation_cookie_ts",
+      "target": "invitation_cookie_encodeinvitationcookie",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invitation-cookie.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "lib_portal_invitation_cookie_ts",
+      "_tgt": "invitation_cookie_encodeinvitationcookie",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_invitation_cookie_ts",
+      "target": "invitation_cookie_parseinvitationcookie",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invitation-cookie.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "lib_portal_invitation_cookie_ts",
+      "_tgt": "invitation_cookie_parseinvitationcookie",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_staff_profile_ts",
+      "target": "staff_profile_staffprofile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff-profile.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "lib_portal_staff_profile_ts",
+      "_tgt": "staff_profile_staffprofile",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_staff_profiles_ts",
+      "target": "staff_profiles_liststaffprofiles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff-profiles.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "lib_portal_staff_profiles_ts",
+      "_tgt": "staff_profiles_liststaffprofiles",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_invite_actions_ts",
+      "target": "actions_exchangeinvitation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/invite/actions.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "app_portal_invite_actions_ts",
+      "_tgt": "actions_exchangeinvitation",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_invite_actions_ts",
+      "target": "actions_acceptportalinvitation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/invite/actions.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_src": "app_portal_invite_actions_ts",
+      "_tgt": "actions_acceptportalinvitation",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_inviteacceptform_tsx",
+      "target": "inviteacceptform_inviteacceptform",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/InviteAcceptForm.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "components_portal_inviteacceptform_tsx",
+      "_tgt": "inviteacceptform_inviteacceptform",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_portalshell_tsx",
+      "target": "portalshell_portalshell",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "components_portal_portalshell_tsx",
+      "_tgt": "portalshell_portalshell",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_invitation_mail_ts",
+      "target": "invitation_mail_sendinvitationmail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invitation-mail.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "lib_portal_invitation_mail_ts",
+      "_tgt": "invitation_mail_sendinvitationmail",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_staff_ts",
+      "target": "staff_issuestaffinvitation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "lib_portal_staff_ts",
+      "_tgt": "staff_issuestaffinvitation",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_staff_ts",
+      "target": "staff_liststaffdeliveries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_src": "lib_portal_staff_ts",
+      "_tgt": "staff_liststaffdeliveries",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_staff_ts",
+      "target": "staff_deliverstaffinvitation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_src": "lib_portal_staff_ts",
+      "_tgt": "staff_deliverstaffinvitation",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_staff_ts",
+      "target": "staff_setstaffassignments",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_src": "lib_portal_staff_ts",
+      "_tgt": "staff_setstaffassignments",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_staff_ts",
+      "target": "staff_revokestaffinvitation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "lib_portal_staff_ts",
+      "_tgt": "staff_revokestaffinvitation",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_staff_ts",
+      "target": "staff_setstafffamilyaccess",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_src": "lib_portal_staff_ts",
+      "_tgt": "staff_setstafffamilyaccess",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_staff_ts",
+      "target": "staff_listpendingstaffinvitations",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_src": "lib_portal_staff_ts",
+      "_tgt": "staff_listpendingstaffinvitations",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_staff_ts",
+      "target": "staff_liststafffamilyassignments",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_src": "lib_portal_staff_ts",
+      "_tgt": "staff_liststafffamilyassignments",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_staff_ts",
+      "target": "staff_listassignedstafffamilies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_src": "lib_portal_staff_ts",
+      "_tgt": "staff_listassignedstafffamilies",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "actions_sendstaffinvite",
+      "target": "staff_issuestaffinvitation",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "actions_sendstaffinvite",
+      "_tgt": "staff_issuestaffinvitation"
+    },
+    {
+      "source": "actions_sendstaffinvite",
+      "target": "staff_deliverstaffinvitation",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "actions_sendstaffinvite",
+      "_tgt": "staff_deliverstaffinvitation"
+    },
+    {
+      "source": "actions_revokestaffinvite",
+      "target": "staff_revokestaffinvitation",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "actions_revokestaffinvite",
+      "_tgt": "staff_revokestaffinvitation"
+    },
+    {
+      "source": "actions_savestaffassignments",
+      "target": "staff_setstaffassignments",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_src": "actions_savestaffassignments",
+      "_tgt": "staff_setstaffassignments"
+    },
+    {
+      "source": "page_staffadmin",
+      "target": "staff_liststaffdeliveries",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "page_staffadmin",
+      "_tgt": "staff_liststaffdeliveries"
+    },
+    {
+      "source": "page_staffadmin",
+      "target": "staff_profiles_liststaffprofiles",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "page_staffadmin",
+      "_tgt": "staff_profiles_liststaffprofiles"
+    },
+    {
+      "source": "page_staffadmin",
+      "target": "staff_liststafffamilyassignments",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "page_staffadmin",
+      "_tgt": "staff_liststafffamilyassignments"
+    },
+    {
+      "source": "actions_exchangeinvitation",
+      "target": "invitation_cookie_encodeinvitationcookie",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/invite/actions.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "actions_exchangeinvitation",
+      "_tgt": "invitation_cookie_encodeinvitationcookie"
+    },
+    {
+      "source": "actions_acceptportalinvitation",
+      "target": "invitation_cookie_parseinvitationcookie",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/invite/actions.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "actions_acceptportalinvitation",
+      "_tgt": "invitation_cookie_parseinvitationcookie"
+    },
+    {
+      "source": "staff_deliverstaffinvitation",
+      "target": "invitation_mail_sendinvitationmail",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_src": "staff_deliverstaffinvitation",
+      "_tgt": "invitation_mail_sendinvitationmail"
+    },
+    {
+      "source": "portal_staff_delivery_sql",
+      "target": "portal_staff_onboarding",
+      "_src": "portal_staff_delivery_sql",
+      "_tgt": "portal_staff_onboarding",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "db/migrations/0010_staff_delivery.sql",
+      "source_location": "L1"
+    },
+    {
+      "source": "portal_staff_delivery_sql",
+      "target": "portal_staff_access",
+      "_src": "portal_staff_delivery_sql",
+      "_tgt": "portal_staff_access",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "db/migrations/0010_staff_delivery.sql",
+      "source_location": "L1"
+    },
+    {
+      "source": "staff_ts",
+      "target": "portal_staff_delivery_sql",
+      "_src": "staff_ts",
+      "_tgt": "portal_staff_delivery_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L1"
+    },
+    {
+      "source": "staff_ts",
+      "target": "portal_staff_access",
+      "_src": "staff_ts",
+      "_tgt": "portal_staff_access",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L1"
+    },
+    {
+      "source": "staff_ts",
+      "target": "portal_access_sql",
+      "_src": "staff_ts",
+      "_tgt": "portal_access_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "lib/portal/staff.ts",
+      "source_location": "L1"
     }
   ],
   "hyperedges": []

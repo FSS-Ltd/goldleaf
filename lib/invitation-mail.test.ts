@@ -28,3 +28,16 @@ test("invitation mail reports provider failure and rejects insecure production o
   assert.equal(await sendInvitationMail(async () => { called = true; return { error: null, data: { id: "message_123" } }; }, { ...input, origin: "http://example.com" }), "failed");
   assert.equal(called, false);
 });
+
+test("staff invitations retain their purpose in the protected link fragment", async () => {
+  let captured: InvitationMessage | undefined;
+  const token = "b".repeat(43);
+  const result = await sendInvitationMail(async (message) => { captured = message; return { error: null, data: { id: "message_123" } }; }, {
+    from: "sender@example.com", to: "staff@example.com", origin: "https://example.com", token, requireHttps: true, purpose: "staff",
+  });
+  assert.equal(result, "sent");
+  assert.ok(captured);
+  const link = captured.text.match(/https:\/\/\S+/);
+  assert.ok(link);
+  assert.equal(new URLSearchParams(new URL(link[0]).hash.slice(1)).get("purpose"), "staff");
+});

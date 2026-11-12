@@ -66,12 +66,14 @@ jobs:
             -f db/migrations/0006_portal_access.sql -f db/tests/portal-access.sql \
             -f db/migrations/0007_invitation_delivery.sql -f db/tests/invitation-delivery.sql \
             -f db/migrations/0008_invoice_runtime.sql -f db/tests/invoice-runtime.sql \
-            -f db/migrations/0009_staff_access.sql -f db/tests/staff-access.sql
+            -f db/migrations/0009_staff_access.sql -f db/tests/staff-access.sql \
+            -f db/migrations/0010_staff_delivery.sql -f db/tests/staff-delivery.sql
           # A fresh backend ensures the temporary-type attack tests initial function compilation.
           psql -X -h 127.0.0.1 -p 55439 -d goldleaf_test -v ON_ERROR_STOP=1 \
             -f db/tests/onboarding-grants.sql
           sh db/tests/onboarding-concurrency.sh 127.0.0.1 goldleaf_test
           sh db/tests/invitation-delivery-concurrency.sh 127.0.0.1 goldleaf_test
+          sh db/tests/staff-delivery-concurrency.sh 127.0.0.1 goldleaf_test
           sh db/tests/invoice-concurrency.sh 127.0.0.1 goldleaf_test
           sh db/tests/invoice-runtime-concurrency.sh 127.0.0.1 goldleaf_test
           createdb -h 127.0.0.1 -p 55439 goldleaf_migration_race

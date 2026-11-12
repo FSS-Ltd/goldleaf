@@ -195,3 +195,5 @@ The account actor-binding and invitation-capture fixes re-extracted nine affecte
 The provider-derived account summary and responsive signup name fields re-extracted four affected files. The graph now has 346 nodes and 348 edges; 18 unresolved extractor edges were omitted.
 
 The account-summary wrapping correction re-extracted two affected files; the graph remains at 346 nodes and 348 edges, with six unresolved extractor edges omitted.
+
+Staff onboarding re-extracted 18 allowlisted TypeScript files and added source-linked migration `portal_staff_delivery_sql` with its staff onboarding/access dependencies. The graph now has 367 nodes and 367 edges; 59 extractor edges with unresolved endpoints were omitted. SQL extraction and older unrelated edge-direction coverage remain limited.

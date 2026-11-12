@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-for (const path of ["/admin", "/parent", "/staff", "/account"]) {
+for (const path of ["/admin", "/admin/staff", "/parent", "/staff", "/account"]) {
   test(`${path} requires sign-in`, async ({ page }) => {
     await page.goto(path);
     await expect(page).toHaveURL(/\/sign-in/, { timeout: 15_000 });
@@ -25,6 +25,17 @@ test("invitation capture clears the fragment before entering the auth route", as
   expect(cookie?.path).toBe("/invite");
   await page.getByRole("link", { name: "Sign in" }).click();
   await expect(page).toHaveURL(/\/sign-in\?redirect_url=%2Finvite%2Faccept/, { timeout: 15_000 });
+});
+
+test("staff invitation capture preserves its purpose without exposing the fragment", async ({ page, context }) => {
+  const token = "b".repeat(43);
+  await page.goto(`/invite#token=${token}&purpose=staff`);
+  await expect(page).toHaveURL(/\/invite\/accept$/, { timeout: 15_000 });
+  await expect(page.getByRole("heading", { name: "You’re invited to Goldleaf" })).toBeVisible();
+  const cookie = (await context.cookies()).find((entry) => entry.name === "goldleaf_invite");
+  expect(cookie?.httpOnly).toBe(true);
+  expect(cookie?.path).toBe("/invite");
+  expect(decodeURIComponent(cookie?.value ?? "")).toBe(`staff:${token}`);
 });
 
 test("invalid invitation fragments clear the URL and any stale invitation", async ({ page, context }) => {

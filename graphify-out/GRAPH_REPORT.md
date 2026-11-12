@@ -161,3 +161,7 @@ Corrected 4 portal edge directions where serialized source/target contradicted t
 The invoice database node and source-backed edges were retained alongside the access-layer graph. This merged graph contains 162 nodes and 141 edges; older structural summaries above describe earlier scopes.
 
 Founding DTO update: scoped extraction adds the `setFamilyFounding` wrapper. The current merged graph contains 163 nodes and 144 edges; SQL is source-linked manually.
+
+## Staff server access update
+
+`graphify update lib/portal` extracted the staff wrapper and validation nodes into a scoped graph; the affected nodes and internal edges were merged into this persistent graph. SQL extraction remains unsupported, so `portal_staff_access` and its source-backed connections were added manually. Prior semantic nodes remain. PostgreSQL and application tests are recorded in the feature tree.

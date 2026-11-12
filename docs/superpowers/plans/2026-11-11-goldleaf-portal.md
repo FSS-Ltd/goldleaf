@@ -63,7 +63,7 @@ The earlier isolated development Neon Auth probe established provider behavior b
 
 ## Sprint 3 · Staff onboarding and assignment
 
-**Owns** `app/(portal)/admin/staff/`, `app/(portal)/staff/page.tsx`, `lib/portal/staff.ts` and staff assignment migrations. Consume Sprint 2's invitation and access contracts.
+**Owns** `app/(portal)/admin/staff/`, `app/(portal)/staff/page.tsx`, `lib/portal/staff.ts` and staff assignment migrations. Consume Sprint 2's invitation and access contracts. Server access exposes accepted membership IDs and Clerk subjects; resolve selected accepted staff profiles through a server-side Clerk batch lookup and display the selected identity directly above the family checklist. Invite email is not an accepted identity. The companion staff invitation design reference is `1bf98347d63f4da19f1511d51be74e7f`; original staff desktop and mobile references remain unchanged.
 
 - [ ] Issue staff invitations with a separate purpose. Admin assigns authorised families or children explicitly. Staff sees only assigned records and cannot invite admins, change family pricing or access unrelated billing. Revocation takes effect on the next protected read or mutation.
 - [ ] Render Staff Today on desktop and mobile using the two Stitch frames. Use actual assigned sessions or the designed empty state. Keep unfinished actions out of the navigation until they have a working destination.

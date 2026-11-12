@@ -1,5 +1,9 @@
 # Graph Report - goldleaf-graph-refresh  (2026-11-11)
 
+## Scoped invoice workflow update (2026-11-12)
+
+Scoped Graphify AST extraction covers the invoice and settings DAL, DTOs and tests. SQL extraction remains unsupported; the runtime migration and source-verified connections were linked manually. Prior clustering and semantic coverage were not recomputed.
+
 ## Scoped invoice data update (2026-11-12)
 
 SQL extraction is unsupported. The invoice billing migration node and links to onboarding, pricing and the planned portal were added manually from source and runbook references. Prior clustering and semantic coverage are unchanged.

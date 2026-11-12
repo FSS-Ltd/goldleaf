@@ -73,6 +73,9 @@ The earlier isolated development Neon Auth probe established provider behavior b
 
 **Owns** `app/(portal)/admin/invoices/`, `app/(portal)/parent/billing/`, `lib/portal/invoices.ts`, `lib/portal/invoice-pricing.ts` and invoice migrations. Consume family authorisation and founding eligibility history from Sprint 2. Use GBP integer pence and canonical pricing logic. Keep invoice policy explicit and configurable.
 
+The server DAL and migration `0008_invoice_runtime.sql` provide configured settings, scoped invoice reads, canonical quotes and checked draft/issue/payment operations. Application UI, provider integration and notification remain planned. Founding eligibility uses the last tag change by the end of each service date in Europe/London; legacy records without sufficient history require reconciliation.
+
+
 - [ ] Let admin create, preview and issue a draft with line items and service dates. On issue, allocate a unique invoice number in the transaction and snapshot supplier and recipient details, service dates, quantities, rate, discount, any applicable tax, due date and totals. Retries reuse the same issue result. Published invoices retain issued data when profile, prices or tags change.
 - [ ] Provide parents a family-scoped invoice list and printable invoice. Use configured payment instructions and explicit admin recording of external payment. A recorded settlement has a date, reference and amount. Deliver a minimal Resend notification linking to the protected invoice. Email contains no child data. No online payment or recurring collection is required for this pilot.
 - [ ] Test concurrent issue, money rounding, standard/founding/post-intro rates, effective-date boundary, access across two families, failed email, retry and historical invoice integrity. Use the existing pricing test as the published rate comparison.

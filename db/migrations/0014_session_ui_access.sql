@@ -1,9 +1,12 @@
 -- Forward-only. Identity comes only from the verified server boundary.
 BEGIN;
+-- Block in-flight INSERT statements before backfilling, then install the trigger
+-- before releasing the lock. Older invocations that have not inserted yet use it too.
+LOCK TABLE portal.published_learning_updates IN SHARE ROW EXCLUSIVE MODE;
 -- Bind every acknowledged request, including aliases of an existing publication.
 CREATE TABLE portal.learning_publication_operations (
   operation_id uuid PRIMARY KEY,
-  publication_id uuid NOT NULL REFERENCES portal.published_learning_updates(id),
+  publication_id uuid NOT NULL REFERENCES portal.published_learning_updates(id) DEFERRABLE INITIALLY DEFERRED,
   session_id uuid NOT NULL REFERENCES portal.sessions(id),
   draft_version integer NOT NULL CHECK (draft_version > 0),
   preview_fingerprint text NOT NULL CHECK (preview_fingerprint ~ '^[0-9a-f]{64}$'),
@@ -12,6 +15,19 @@ CREATE TABLE portal.learning_publication_operations (
 INSERT INTO portal.learning_publication_operations(operation_id,publication_id,session_id,draft_version,preview_fingerprint,actor_id)
 SELECT operation_id,id,session_id,draft_version,preview_fingerprint,published_by FROM portal.published_learning_updates;
 REVOKE ALL ON portal.learning_publication_operations FROM PUBLIC;
+CREATE FUNCTION portal.bind_learning_publication_operation() RETURNS trigger
+LANGUAGE plpgsql SECURITY DEFINER SET search_path=pg_catalog,portal,pg_temp AS $$
+BEGIN
+  INSERT INTO portal.learning_publication_operations(operation_id,publication_id,session_id,draft_version,preview_fingerprint,actor_id)
+    VALUES(NEW.operation_id,NEW.id,NEW.session_id,NEW.draft_version,NEW.preview_fingerprint,NEW.published_by)
+    ON CONFLICT(operation_id) DO NOTHING;
+  IF NOT FOUND THEN RAISE EXCEPTION 'operation already used' USING ERRCODE='23505'; END IF;
+  RETURN NEW;
+END $$;
+CREATE TRIGGER learning_publication_operation_binding BEFORE INSERT ON portal.published_learning_updates
+  FOR EACH ROW EXECUTE FUNCTION portal.bind_learning_publication_operation();
+REVOKE ALL ON FUNCTION portal.bind_learning_publication_operation() FROM PUBLIC;
+
 
 -- Existing duplicate versions remain readable; all runtime writes serialize on the session row.
 CREATE OR REPLACE FUNCTION portal.publish_learning_draft(p_subject text,p_session uuid,p_expected integer,p_operation uuid,p_fingerprint text) RETURNS uuid
@@ -46,8 +62,6 @@ BEGIN
   IF p_fingerprint<>portal.learning_fingerprint(session_row.id,session_row.child_id,session_row.family_id,draft_row.version,draft_row.body,draft_row.stage,draft_row.focus,draft_row.practice,draft_row.explored_sounds) THEN RAISE EXCEPTION 'draft changed' USING ERRCODE='40001'; END IF;
   INSERT INTO portal.published_learning_updates(operation_id,session_id,child_id,family_id,draft_version,preview_fingerprint,body,stage,focus,practice,explored_sounds,published_by)
     VALUES(p_operation,p_session,session_row.child_id,session_row.family_id,draft_row.version,p_fingerprint,draft_row.body,draft_row.stage,draft_row.focus,draft_row.practice,draft_row.explored_sounds,actor) RETURNING id INTO result;
-  INSERT INTO portal.learning_publication_operations(operation_id,publication_id,session_id,draft_version,preview_fingerprint,actor_id)
-    VALUES(p_operation,result,p_session,p_expected,p_fingerprint,actor);
   PERFORM pg_notify('portal_changes',json_build_object('kind','learning','id',result)::text);
   RETURN result;
 END $$;

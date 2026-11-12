@@ -252,3 +252,5 @@ Final review scope re-extracted 40 allowlisted files using a fresh cache: 582 no
 Rebased review scope reconciles messaging/event nodes with session UI: 616 nodes, 602 edges after fresh extraction of 40 allowlisted files; five admin/staff action ID collisions were disambiguated and 178 unresolved or ambiguous edges omitted. SQL nodes are manually source-linked; historical corpus gaps remain.
 
 Post-rebase actor-fence and publication review refresh: 616 nodes, 602 edges across the project index; 40 allowlisted files re-extracted, 5 admin/staff symbol collisions disambiguated, 178 unresolved or ambiguous edges omitted. Messaging/event nodes remain present; SQL and historical corpus limits remain.
+
+Migration-overlap review adds source-linked publication binding trigger and concurrency test nodes: 618 nodes and 604 edges. SQL is manually linked; earlier unresolved extractor and corpus gaps remain.

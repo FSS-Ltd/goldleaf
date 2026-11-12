@@ -95,6 +95,8 @@ jobs:
             -f db/tests/invoice-ui-upgrade-before.sql \
             -f db/migrations/0011_invoice_ui.sql -f db/tests/invoice-ui.sql
           sh db/tests/invoice-ui-concurrency.sh 127.0.0.1 goldleaf_invoice_ui
+          createdb -h 127.0.0.1 -p 55439 goldleaf_session_ui_migration
+          sh db/tests/session-ui-migration-concurrency.sh 127.0.0.1 goldleaf_session_ui_migration
           createdb -h 127.0.0.1 -p 55439 goldleaf_migration_race
           sh db/tests/staff-migration-concurrency.sh 127.0.0.1 goldleaf_migration_race
 

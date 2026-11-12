@@ -12,6 +12,9 @@ SELECT portal.create_child('ui-admin','71000000-0000-4000-8000-000000000001','Ch
 SELECT portal.create_child('ui-admin','71000000-0000-4000-8000-000000000002','Child two','72000000-0000-4000-8000-000000000002');
 SELECT portal.schedule_child_session('ui-admin','72000000-0000-4000-8000-000000000001','2026-12-01 10:00+00',120,'73000000-0000-4000-8000-000000000001','Venue');
 SELECT portal.schedule_child_session('ui-admin','72000000-0000-4000-8000-000000000002','2026-12-01 11:00+00',120,'73000000-0000-4000-8000-000000000002',NULL);
+DO $$ BEGIN
+ IF has_function_privilege('session_ui_runtime_test','portal.bind_learning_publication_operation()','EXECUTE') THEN RAISE EXCEPTION 'runtime trigger helper granted'; END IF;
+END $$;
 SET LOCAL ROLE session_ui_runtime_test;
 DO $$ BEGIN
  IF (SELECT count(*) FROM portal.list_staff_sessions('ui-staff'))<>1 THEN RAISE EXCEPTION 'staff schedule scope'; END IF;

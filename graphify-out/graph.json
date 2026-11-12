@@ -5039,6 +5039,20 @@
       "file_type": "code",
       "source_file": "lib/session-status.test.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "portal_learning_bind_trigger",
+      "label": "Publication operation binding trigger",
+      "source_file": "db/migrations/0014_session_ui_access.sql",
+      "source_location": "L18",
+      "file_type": "sql"
+    },
+    {
+      "id": "portal_learning_migration_overlap_test",
+      "label": "Legacy publication migration overlap regression",
+      "source_file": "db/tests/session-ui-migration-concurrency.sh",
+      "source_location": "L1",
+      "file_type": "code"
     }
   ],
   "links": [
@@ -11912,6 +11926,30 @@
       "confidence_score": 0.9,
       "source_file": "app/(portal)/(provider)/staff/page.tsx",
       "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_session_ui_sql",
+      "target": "portal_learning_bind_trigger",
+      "_src": "portal_session_ui_sql",
+      "_tgt": "portal_learning_bind_trigger",
+      "relation": "contains",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "db/migrations/0014_session_ui_access.sql",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_learning_migration_overlap_test",
+      "target": "portal_session_ui_sql",
+      "_src": "portal_learning_migration_overlap_test",
+      "_tgt": "portal_session_ui_sql",
+      "relation": "tests",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "db/tests/session-ui-migration-concurrency.sh",
+      "source_location": "L1",
       "weight": 1.0
     }
   ],

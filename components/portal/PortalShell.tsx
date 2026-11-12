@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { UserButton } from "@clerk/nextjs";
+import { AccountMenu } from "./auth/AccountMenu";
 import { Home, Users } from "lucide-react";
 import type { ReactNode } from "react";
 import { PortalSessionGuard } from "./PortalSessionGuard";
@@ -22,7 +22,7 @@ export function PortalShell({ role, userId, children }: { role: "admin" | "paren
     </aside>
     <header className="flex h-16 items-center justify-between border-b border-[#e3d7c3] px-5 md:px-10">
       <a href={admin ? "/admin" : "/parent"} className="font-display text-xl md:text-sm">{admin ? "Families" : "Your family portal"}</a>
-      <UserButton />
+      <AccountMenu />
     </header>
     <main id="main" className="mx-auto max-w-7xl px-5 py-9 pb-28 md:px-10 md:pb-10">{children}</main>
     <nav aria-label="Portal" className="fixed inset-x-0 bottom-0 z-20 border-t border-[#e3d7c3] bg-[#f8f3ee] px-5 py-2 md:hidden">

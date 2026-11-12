@@ -22,15 +22,6 @@
       "norm_label": "eslint.config.mjs"
     },
     {
-      "label": "next.config.ts",
-      "file_type": "code",
-      "source_file": "next.config.ts",
-      "source_location": "L1",
-      "id": "next_config_ts",
-      "community": 31,
-      "norm_label": "next.config.ts"
-    },
-    {
       "label": "robots.ts",
       "file_type": "code",
       "source_file": "app/robots.ts",
@@ -1363,15 +1354,6 @@
       "norm_label": "portallayout()"
     },
     {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/sign-in/[[...sign-in]]/page.tsx",
-      "source_location": "L1",
-      "id": "app_portal_provider_sign_in_sign_in_page_tsx",
-      "community": 1,
-      "norm_label": "page.tsx"
-    },
-    {
       "label": "identity.ts",
       "file_type": "code",
       "source_file": "lib/portal/identity.ts",
@@ -1406,15 +1388,6 @@
       "id": "verified_identity_verifiedidentity",
       "community": 1,
       "norm_label": "verifiedidentity()"
-    },
-    {
-      "label": "portal-proxy.test.ts",
-      "file_type": "code",
-      "source_file": "lib/portal-proxy.test.ts",
-      "source_location": "L1",
-      "id": "portal_proxy_test_ts",
-      "community": 8,
-      "norm_label": "portal-proxy.test.ts"
     },
     {
       "label": "invitations.ts",
@@ -1588,24 +1561,6 @@
       "norm_label": "setfamilyfounding()"
     },
     {
-      "label": "proxy.ts",
-      "file_type": "code",
-      "source_file": "proxy.ts",
-      "source_location": "L1",
-      "id": "proxy_ts",
-      "community": 17,
-      "norm_label": "proxy.ts"
-    },
-    {
-      "label": "proxy()",
-      "file_type": "code",
-      "source_file": "proxy.ts",
-      "source_location": "L6",
-      "id": "proxy_proxy",
-      "community": 17,
-      "norm_label": "proxy()"
-    },
-    {
       "label": "layout.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/layout.tsx",
@@ -1678,24 +1633,6 @@
       "norm_label": "invitepage()"
     },
     {
-      "label": "layout.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/invite/accept/layout.tsx",
-      "source_location": "L1",
-      "id": "app_portal_invite_accept_layout_tsx",
-      "community": 23,
-      "norm_label": "layout.tsx"
-    },
-    {
-      "label": "InviteProvider()",
-      "file_type": "code",
-      "source_file": "app/(portal)/invite/accept/layout.tsx",
-      "source_location": "L4",
-      "id": "layout_inviteprovider",
-      "community": 23,
-      "norm_label": "inviteprovider()"
-    },
-    {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/invite/accept/page.tsx",
@@ -1703,42 +1640,6 @@
       "id": "app_portal_invite_accept_page_tsx",
       "community": 48,
       "norm_label": "page.tsx"
-    },
-    {
-      "label": "layout.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/layout.tsx",
-      "source_location": "L1",
-      "id": "app_portal_provider_layout_tsx",
-      "community": 24,
-      "norm_label": "layout.tsx"
-    },
-    {
-      "label": "ProviderLayout()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/layout.tsx",
-      "source_location": "L4",
-      "id": "layout_providerlayout",
-      "community": 24,
-      "norm_label": "providerlayout()"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/sign-up/[[...sign-up]]/page.tsx",
-      "source_location": "L1",
-      "id": "app_portal_provider_sign_up_sign_up_page_tsx",
-      "community": 25,
-      "norm_label": "page.tsx"
-    },
-    {
-      "label": "SignUpPage()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/sign-up/[[...sign-up]]/page.tsx",
-      "source_location": "L7",
-      "id": "page_signuppage",
-      "community": 25,
-      "norm_label": "signuppage()"
     },
     {
       "label": "page.tsx",
@@ -1867,33 +1768,6 @@
       "norm_label": "parenthome()"
     },
     {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L1",
-      "id": "app_portal_provider_staff_page_tsx",
-      "community": 2,
-      "norm_label": "page.tsx"
-    },
-    {
-      "label": "StaffUnavailable()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L6",
-      "id": "page_staffunavailable",
-      "community": 2,
-      "norm_label": "staffunavailable()"
-    },
-    {
-      "label": "StaffPage()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L10",
-      "id": "page_staffpage",
-      "community": 2,
-      "norm_label": "staffpage()"
-    },
-    {
       "label": "layout.tsx",
       "file_type": "code",
       "source_file": "app/(public)/layout.tsx",
@@ -1910,15 +1784,6 @@
       "id": "layout_publiclayout",
       "community": 26,
       "norm_label": "publiclayout()"
-    },
-    {
-      "label": "portal.spec.ts",
-      "file_type": "code",
-      "source_file": "tests/e2e/portal.spec.ts",
-      "source_location": "L1",
-      "id": "tests_e2e_portal_spec_ts",
-      "community": 52,
-      "norm_label": "portal.spec.ts"
     },
     {
       "label": "PortalSessionGuard.tsx",
@@ -2000,33 +1865,6 @@
       "id": "components_portal_adminforms_tsx",
       "community": 70,
       "norm_label": "adminforms.tsx"
-    },
-    {
-      "label": "PortalShell.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L1",
-      "id": "components_portal_portalshell_tsx",
-      "community": 40,
-      "norm_label": "portalshell.tsx"
-    },
-    {
-      "label": "PortalShell()",
-      "file_type": "code",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L7",
-      "id": "portalshell_portalshell",
-      "community": 40,
-      "norm_label": "portalshell()"
-    },
-    {
-      "label": "portal-proxy.test.ts",
-      "file_type": "code",
-      "source_file": "lib/portal-proxy.test.ts",
-      "source_location": "L1",
-      "id": "lib_portal_proxy_test_ts",
-      "community": 75,
-      "norm_label": "portal-proxy.test.ts"
     },
     {
       "label": "invitation-mail.test.ts",
@@ -2218,24 +2056,6 @@
       "norm_label": "publicshell()"
     },
     {
-      "id": "components_portal_verifyemailnotice_tsx",
-      "label": "VerifyEmailNotice.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/VerifyEmailNotice.tsx",
-      "source_location": "L1",
-      "community": 0,
-      "norm_label": "verifyemailnotice.tsx"
-    },
-    {
-      "id": "verifyemailnotice_verifyemailnotice",
-      "label": "VerifyEmailNotice()",
-      "file_type": "code",
-      "source_file": "components/portal/VerifyEmailNotice.tsx",
-      "source_location": "L3",
-      "community": 0,
-      "norm_label": "verifyemailnotice()"
-    },
-    {
       "id": "lib_public_shell_test_ts",
       "label": "public-shell.test.ts",
       "file_type": "code",
@@ -2243,15 +2063,6 @@
       "source_location": "L1",
       "community": 0,
       "norm_label": "public-shell.test.ts"
-    },
-    {
-      "id": "page_signinpage",
-      "label": "SignInPage()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/sign-in/[[...sign-in]]/page.tsx",
-      "source_location": "L34",
-      "community": 0,
-      "norm_label": "signinpage()"
     },
     {
       "id": "lib_portal_identity_test_ts",
@@ -2297,6 +2108,622 @@
       "source_location": "L21",
       "community": 0,
       "norm_label": "portalsessionstate()"
+    },
+    {
+      "id": "app_portal_provider_account_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/account/page.tsx",
+      "source_location": "L1",
+      "norm_label": "page.tsx"
+    },
+    {
+      "id": "page_accountcontent",
+      "label": "AccountContent()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/account/page.tsx",
+      "source_location": "L9",
+      "norm_label": "accountcontent()"
+    },
+    {
+      "id": "app_portal_provider_session_task_reset_password_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/session-task/reset-password/page.tsx",
+      "source_location": "L1",
+      "norm_label": "page.tsx"
+    },
+    {
+      "id": "page_taskcontent",
+      "label": "TaskContent()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/session-task/reset-password/page.tsx",
+      "source_location": "L8",
+      "norm_label": "taskcontent()"
+    },
+    {
+      "id": "page_resettaskpage",
+      "label": "ResetTaskPage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/session-task/reset-password/page.tsx",
+      "source_location": "L13",
+      "norm_label": "resettaskpage()"
+    },
+    {
+      "id": "app_portal_provider_sso_callback_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/sso-callback/page.tsx",
+      "source_location": "L1",
+      "norm_label": "page.tsx"
+    },
+    {
+      "id": "page_callbackcontent",
+      "label": "CallbackContent()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/sso-callback/page.tsx",
+      "source_location": "L8",
+      "norm_label": "callbackcontent()"
+    },
+    {
+      "id": "page_ssocallbackpage",
+      "label": "SsoCallbackPage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/sso-callback/page.tsx",
+      "source_location": "L13",
+      "norm_label": "ssocallbackpage()"
+    },
+    {
+      "id": "components_portal_auth_accountmenu_tsx",
+      "label": "AccountMenu.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountMenu.tsx",
+      "source_location": "L1",
+      "norm_label": "accountmenu.tsx"
+    },
+    {
+      "id": "accountmenu_accountmenu",
+      "label": "AccountMenu()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountMenu.tsx",
+      "source_location": "L6",
+      "norm_label": "accountmenu()"
+    },
+    {
+      "id": "components_portal_auth_accountprofile_tsx",
+      "label": "AccountProfile.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L1",
+      "norm_label": "accountprofile.tsx"
+    },
+    {
+      "id": "accountprofile_values",
+      "label": "values()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L12",
+      "norm_label": "values()"
+    },
+    {
+      "id": "accountprofile_field",
+      "label": "field()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L13",
+      "norm_label": "field()"
+    },
+    {
+      "id": "accountprofile_accountprofile",
+      "label": "AccountProfile()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L15",
+      "norm_label": "accountprofile()"
+    },
+    {
+      "id": "components_portal_auth_accountverificationpanel_tsx",
+      "label": "AccountVerificationPanel.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountVerificationPanel.tsx",
+      "source_location": "L1",
+      "norm_label": "accountverificationpanel.tsx"
+    },
+    {
+      "id": "accountverificationpanel_accountverificationpanel",
+      "label": "AccountVerificationPanel()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountVerificationPanel.tsx",
+      "source_location": "L6",
+      "norm_label": "accountverificationpanel()"
+    },
+    {
+      "id": "components_portal_auth_googlebutton_tsx",
+      "label": "GoogleButton.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/GoogleButton.tsx",
+      "source_location": "L1",
+      "norm_label": "googlebutton.tsx"
+    },
+    {
+      "id": "googlebutton_googlebutton",
+      "label": "GoogleButton()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/GoogleButton.tsx",
+      "source_location": "L3",
+      "norm_label": "googlebutton()"
+    },
+    {
+      "id": "components_portal_auth_protectgate_tsx",
+      "label": "ProtectGate.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/ProtectGate.tsx",
+      "source_location": "L1",
+      "norm_label": "protectgate.tsx"
+    },
+    {
+      "id": "protectgate_protectgate",
+      "label": "ProtectGate()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/ProtectGate.tsx",
+      "source_location": "L5",
+      "norm_label": "protectgate()"
+    },
+    {
+      "id": "components_portal_auth_resetpasswordtask_tsx",
+      "label": "ResetPasswordTask.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/ResetPasswordTask.tsx",
+      "source_location": "L1",
+      "norm_label": "resetpasswordtask.tsx"
+    },
+    {
+      "id": "resetpasswordtask_resetpasswordtask",
+      "label": "ResetPasswordTask()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/ResetPasswordTask.tsx",
+      "source_location": "L10",
+      "norm_label": "resetpasswordtask()"
+    },
+    {
+      "id": "components_portal_auth_signinform_tsx",
+      "label": "SignInForm.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/SignInForm.tsx",
+      "source_location": "L1",
+      "norm_label": "signinform.tsx"
+    },
+    {
+      "id": "signinform_signinform",
+      "label": "SignInForm()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/SignInForm.tsx",
+      "source_location": "L15",
+      "norm_label": "signinform()"
+    },
+    {
+      "id": "components_portal_auth_signupform_tsx",
+      "label": "SignUpForm.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/SignUpForm.tsx",
+      "source_location": "L1",
+      "norm_label": "signupform.tsx"
+    },
+    {
+      "id": "signupform_signupform",
+      "label": "SignUpForm()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/SignUpForm.tsx",
+      "source_location": "L13",
+      "norm_label": "signupform()"
+    },
+    {
+      "id": "components_portal_auth_ssocallback_tsx",
+      "label": "SsoCallback.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/SsoCallback.tsx",
+      "source_location": "L1",
+      "norm_label": "ssocallback.tsx"
+    },
+    {
+      "id": "ssocallback_ssocallback",
+      "label": "SsoCallback()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/SsoCallback.tsx",
+      "source_location": "L9",
+      "norm_label": "ssocallback()"
+    },
+    {
+      "id": "components_portal_auth_useaccountprofile_ts",
+      "label": "useAccountProfile.ts",
+      "file_type": "code",
+      "source_file": "components/portal/auth/useAccountProfile.ts",
+      "source_location": "L1",
+      "norm_label": "useaccountprofile.ts"
+    },
+    {
+      "id": "useaccountprofile_useaccountprofile",
+      "label": "useAccountProfile()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/useAccountProfile.ts",
+      "source_location": "L7",
+      "norm_label": "useaccountprofile()"
+    },
+    {
+      "id": "components_portal_auth_useaccountverification_ts",
+      "label": "useAccountVerification.ts",
+      "file_type": "code",
+      "source_file": "components/portal/auth/useAccountVerification.ts",
+      "source_location": "L1",
+      "norm_label": "useaccountverification.ts"
+    },
+    {
+      "id": "useaccountverification_useaccountverification",
+      "label": "useAccountVerification()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/useAccountVerification.ts",
+      "source_location": "L12",
+      "norm_label": "useaccountverification()"
+    },
+    {
+      "id": "components_portal_auth_useprotectgate_ts",
+      "label": "useProtectGate.ts",
+      "file_type": "code",
+      "source_file": "components/portal/auth/useProtectGate.ts",
+      "source_location": "L1",
+      "norm_label": "useprotectgate.ts"
+    },
+    {
+      "id": "useprotectgate_useprotectgate",
+      "label": "useProtectGate()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/useProtectGate.ts",
+      "source_location": "L12",
+      "norm_label": "useprotectgate()"
+    },
+    {
+      "id": "components_portal_auth_usesigninflow_ts",
+      "label": "useSignInFlow.ts",
+      "file_type": "code",
+      "source_file": "components/portal/auth/useSignInFlow.ts",
+      "source_location": "L1",
+      "norm_label": "usesigninflow.ts"
+    },
+    {
+      "id": "usesigninflow_usesigninflow",
+      "label": "useSignInFlow()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/useSignInFlow.ts",
+      "source_location": "L11",
+      "norm_label": "usesigninflow()"
+    },
+    {
+      "id": "components_portal_auth_usesignupflow_ts",
+      "label": "useSignUpFlow.ts",
+      "file_type": "code",
+      "source_file": "components/portal/auth/useSignUpFlow.ts",
+      "source_location": "L1",
+      "norm_label": "usesignupflow.ts"
+    },
+    {
+      "id": "usesignupflow_usesignupflow",
+      "label": "useSignUpFlow()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/useSignUpFlow.ts",
+      "source_location": "L9",
+      "norm_label": "usesignupflow()"
+    },
+    {
+      "id": "lib_portal_auth_destination_test_ts",
+      "label": "portal-auth-destination.test.ts",
+      "file_type": "code",
+      "source_file": "lib/portal-auth-destination.test.ts",
+      "source_location": "L1",
+      "norm_label": "portal-auth-destination.test.ts"
+    },
+    {
+      "id": "lib_portal_auth_factor_test_ts",
+      "label": "portal-auth-factor.test.ts",
+      "file_type": "code",
+      "source_file": "lib/portal-auth-factor.test.ts",
+      "source_location": "L1",
+      "norm_label": "portal-auth-factor.test.ts"
+    },
+    {
+      "id": "lib_portal_protect_check_test_ts",
+      "label": "portal-protect-check.test.ts",
+      "file_type": "code",
+      "source_file": "lib/portal-protect-check.test.ts",
+      "source_location": "L1",
+      "norm_label": "portal-protect-check.test.ts"
+    },
+    {
+      "id": "lib_portal_session_binding_test_ts",
+      "label": "portal-session-binding.test.ts",
+      "file_type": "code",
+      "source_file": "lib/portal-session-binding.test.ts",
+      "source_location": "L1",
+      "norm_label": "portal-session-binding.test.ts"
+    },
+    {
+      "id": "lib_portal_signup_step_test_ts",
+      "label": "portal-signup-step.test.ts",
+      "file_type": "code",
+      "source_file": "lib/portal-signup-step.test.ts",
+      "source_location": "L1",
+      "norm_label": "portal-signup-step.test.ts"
+    },
+    {
+      "id": "lib_portal_auth_destination_ts",
+      "label": "auth-destination.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/auth-destination.ts",
+      "source_location": "L1",
+      "norm_label": "auth-destination.ts"
+    },
+    {
+      "id": "auth_destination_authdestination",
+      "label": "authDestination()",
+      "file_type": "code",
+      "source_file": "lib/portal/auth-destination.ts",
+      "source_location": "L1",
+      "norm_label": "authdestination()"
+    },
+    {
+      "id": "lib_portal_auth_factor_ts",
+      "label": "auth-factor.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/auth-factor.ts",
+      "source_location": "L1",
+      "norm_label": "auth-factor.ts"
+    },
+    {
+      "id": "auth_factor_supportedauthfactors",
+      "label": "supportedAuthFactors()",
+      "file_type": "code",
+      "source_file": "lib/portal/auth-factor.ts",
+      "source_location": "L3",
+      "norm_label": "supportedauthfactors()"
+    },
+    {
+      "id": "lib_portal_protect_check_ts",
+      "label": "protect-check.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/protect-check.ts",
+      "source_location": "L1",
+      "norm_label": "protect-check.ts"
+    },
+    {
+      "id": "protect_check_resolveprotectchecks",
+      "label": "resolveProtectChecks()",
+      "file_type": "code",
+      "source_file": "lib/portal/protect-check.ts",
+      "source_location": "L7",
+      "norm_label": "resolveprotectchecks()"
+    },
+    {
+      "id": "lib_portal_protect_widget_ts",
+      "label": "protect-widget.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/protect-widget.ts",
+      "source_location": "L1",
+      "norm_label": "protect-widget.ts"
+    },
+    {
+      "id": "protect_widget_protectsdkurl",
+      "label": "protectSdkUrl()",
+      "file_type": "code",
+      "source_file": "lib/portal/protect-widget.ts",
+      "source_location": "L3",
+      "norm_label": "protectsdkurl()"
+    },
+    {
+      "id": "protect_widget_runprotectwidget",
+      "label": "runProtectWidget()",
+      "file_type": "code",
+      "source_file": "lib/portal/protect-widget.ts",
+      "source_location": "L9",
+      "norm_label": "runprotectwidget()"
+    },
+    {
+      "id": "lib_portal_session_binding_ts",
+      "label": "session-binding.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/session-binding.ts",
+      "source_location": "L1",
+      "norm_label": "session-binding.ts"
+    },
+    {
+      "id": "session_binding_samesession",
+      "label": "sameSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/session-binding.ts",
+      "source_location": "L3",
+      "norm_label": "samesession()"
+    },
+    {
+      "id": "lib_portal_signup_step_ts",
+      "label": "signup-step.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/signup-step.ts",
+      "source_location": "L1",
+      "norm_label": "signup-step.ts"
+    },
+    {
+      "id": "signup_step_signupstep",
+      "label": "signupStep()",
+      "file_type": "code",
+      "source_file": "lib/portal/signup-step.ts",
+      "source_location": "L1",
+      "norm_label": "signupstep()"
+    },
+    {
+      "id": "app_portal_provider_layout_tsx",
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/layout.tsx",
+      "source_location": "L1",
+      "norm_label": "layout.tsx"
+    },
+    {
+      "id": "layout_providerlayout",
+      "label": "ProviderLayout()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/layout.tsx",
+      "source_location": "L4",
+      "norm_label": "providerlayout()"
+    },
+    {
+      "id": "app_portal_provider_sign_in_sign_in_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/sign-in/[[...sign-in]]/page.tsx",
+      "source_location": "L1",
+      "norm_label": "page.tsx"
+    },
+    {
+      "id": "page_signincontent",
+      "label": "SignInContent()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/sign-in/[[...sign-in]]/page.tsx",
+      "source_location": "L11",
+      "norm_label": "signincontent()"
+    },
+    {
+      "id": "page_signinpage",
+      "label": "SignInPage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/sign-in/[[...sign-in]]/page.tsx",
+      "source_location": "L20",
+      "norm_label": "signinpage()"
+    },
+    {
+      "id": "app_portal_provider_sign_up_sign_up_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/sign-up/[[...sign-up]]/page.tsx",
+      "source_location": "L1",
+      "norm_label": "page.tsx"
+    },
+    {
+      "id": "page_signuppage",
+      "label": "SignUpPage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/sign-up/[[...sign-up]]/page.tsx",
+      "source_location": "L7",
+      "norm_label": "signuppage()"
+    },
+    {
+      "id": "app_portal_provider_staff_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L1",
+      "norm_label": "page.tsx"
+    },
+    {
+      "id": "page_staffunavailable",
+      "label": "StaffUnavailable()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L6",
+      "norm_label": "staffunavailable()"
+    },
+    {
+      "id": "page_staffpage",
+      "label": "StaffPage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L10",
+      "norm_label": "staffpage()"
+    },
+    {
+      "id": "app_portal_invite_accept_layout_tsx",
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/invite/accept/layout.tsx",
+      "source_location": "L1",
+      "norm_label": "layout.tsx"
+    },
+    {
+      "id": "layout_inviteprovider",
+      "label": "InviteProvider()",
+      "file_type": "code",
+      "source_file": "app/(portal)/invite/accept/layout.tsx",
+      "source_location": "L4",
+      "norm_label": "inviteprovider()"
+    },
+    {
+      "id": "components_portal_portalshell_tsx",
+      "label": "PortalShell.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L1",
+      "norm_label": "portalshell.tsx"
+    },
+    {
+      "id": "portalshell_portalshell",
+      "label": "PortalShell()",
+      "file_type": "code",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L7",
+      "norm_label": "portalshell()"
+    },
+    {
+      "id": "components_portal_verifyemailnotice_tsx",
+      "label": "VerifyEmailNotice.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/VerifyEmailNotice.tsx",
+      "source_location": "L1",
+      "norm_label": "verifyemailnotice.tsx"
+    },
+    {
+      "id": "verifyemailnotice_verifyemailnotice",
+      "label": "VerifyEmailNotice()",
+      "file_type": "code",
+      "source_file": "components/portal/VerifyEmailNotice.tsx",
+      "source_location": "L3",
+      "norm_label": "verifyemailnotice()"
+    },
+    {
+      "id": "lib_portal_proxy_test_ts",
+      "label": "portal-proxy.test.ts",
+      "file_type": "code",
+      "source_file": "lib/portal-proxy.test.ts",
+      "source_location": "L1",
+      "norm_label": "portal-proxy.test.ts"
+    },
+    {
+      "id": "next_config_ts",
+      "label": "next.config.ts",
+      "file_type": "code",
+      "source_file": "next.config.ts",
+      "source_location": "L1",
+      "norm_label": "next.config.ts"
+    },
+    {
+      "id": "proxy_ts",
+      "label": "proxy.ts",
+      "file_type": "code",
+      "source_file": "proxy.ts",
+      "source_location": "L1",
+      "norm_label": "proxy.ts"
+    },
+    {
+      "id": "proxy_proxy",
+      "label": "proxy()",
+      "file_type": "code",
+      "source_file": "proxy.ts",
+      "source_location": "L6",
+      "norm_label": "proxy()"
+    },
+    {
+      "id": "tests_e2e_portal_spec_ts",
+      "label": "portal.spec.ts",
+      "file_type": "code",
+      "source_file": "tests/e2e/portal.spec.ts",
+      "source_location": "L1",
+      "norm_label": "portal.spec.ts"
     }
   ],
   "links": [
@@ -3819,18 +4246,6 @@
       "target": "database_portaldatabase"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "proxy.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_src": "proxy_ts",
-      "_tgt": "proxy_proxy",
-      "source": "proxy_ts",
-      "target": "proxy_proxy",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "calls",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
@@ -3876,42 +4291,6 @@
       "_tgt": "page_invitepage",
       "source": "app_portal_invite_page_tsx",
       "target": "page_invitepage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/invite/accept/layout.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_src": "app_portal_invite_accept_layout_tsx",
-      "_tgt": "layout_inviteprovider",
-      "source": "app_portal_invite_accept_layout_tsx",
-      "target": "layout_inviteprovider",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/layout.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_src": "app_portal_provider_layout_tsx",
-      "_tgt": "layout_providerlayout",
-      "source": "app_portal_provider_layout_tsx",
-      "target": "layout_providerlayout",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/sign-up/[[...sign-up]]/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "app_portal_provider_sign_up_sign_up_page_tsx",
-      "_tgt": "page_signuppage",
-      "source": "app_portal_provider_sign_up_sign_up_page_tsx",
-      "target": "page_signuppage",
       "confidence_score": 1.0
     },
     {
@@ -4069,30 +4448,6 @@
       "_tgt": "require_role_requirerole",
       "source": "page_parenthome",
       "target": "require_role_requirerole"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_src": "app_portal_provider_staff_page_tsx",
-      "_tgt": "page_staffunavailable",
-      "source": "app_portal_provider_staff_page_tsx",
-      "target": "page_staffunavailable",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_src": "app_portal_provider_staff_page_tsx",
-      "_tgt": "page_staffpage",
-      "source": "app_portal_provider_staff_page_tsx",
-      "target": "page_staffpage",
-      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -4260,18 +4615,6 @@
       "_tgt": "inviteacceptform_inviteacceptform",
       "source": "components_portal_inviteacceptform_tsx",
       "target": "inviteacceptform_inviteacceptform",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "components_portal_portalshell_tsx",
-      "_tgt": "portalshell_portalshell",
-      "source": "components_portal_portalshell_tsx",
-      "target": "portalshell_portalshell",
       "confidence_score": 1.0
     },
     {
@@ -4791,30 +5134,6 @@
       "confidence_score": 1.0
     },
     {
-      "source": "components_portal_verifyemailnotice_tsx",
-      "target": "verifyemailnotice_verifyemailnotice",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/VerifyEmailNotice.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_src": "components_portal_verifyemailnotice_tsx",
-      "_tgt": "verifyemailnotice_verifyemailnotice",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "app_portal_provider_sign_in_sign_in_page_tsx",
-      "target": "page_signinpage",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/sign-in/[[...sign-in]]/page.tsx",
-      "source_location": "L34",
-      "weight": 1.0,
-      "_src": "app_portal_provider_sign_in_sign_in_page_tsx",
-      "_tgt": "page_signinpage",
-      "confidence_score": 1.0
-    },
-    {
       "source": "app_public_layout_tsx",
       "target": "layout_publiclayout",
       "relation": "contains",
@@ -5005,6 +5324,822 @@
       "source_file": "lib/portal/identity.ts",
       "source_location": null,
       "weight": 1.0
+    },
+    {
+      "source": "accountprofile_accountprofile",
+      "target": "useaccountprofile_useaccountprofile",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "accountprofile_accountprofile",
+      "_tgt": "useaccountprofile_useaccountprofile"
+    },
+    {
+      "source": "signinform_signinform",
+      "target": "usesigninflow_usesigninflow",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/auth/SignInForm.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "signinform_signinform",
+      "_tgt": "usesigninflow_usesigninflow"
+    },
+    {
+      "source": "signupform_signupform",
+      "target": "usesignupflow_usesignupflow",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/auth/SignUpForm.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "signupform_signupform",
+      "_tgt": "usesignupflow_usesignupflow"
+    },
+    {
+      "source": "signupform_signupform",
+      "target": "usesigninflow_usesigninflow",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/auth/SignUpForm.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "signupform_signupform",
+      "_tgt": "usesigninflow_usesigninflow"
+    },
+    {
+      "source": "ssocallback_ssocallback",
+      "target": "useprotectgate_useprotectgate",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/auth/SsoCallback.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "ssocallback_ssocallback",
+      "_tgt": "useprotectgate_useprotectgate"
+    },
+    {
+      "source": "useaccountprofile_useaccountprofile",
+      "target": "useaccountverification_useaccountverification",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/auth/useAccountProfile.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "useaccountprofile_useaccountprofile",
+      "_tgt": "useaccountverification_useaccountverification"
+    },
+    {
+      "source": "usesigninflow_usesigninflow",
+      "target": "useprotectgate_useprotectgate",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/auth/useSignInFlow.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "usesigninflow_usesigninflow",
+      "_tgt": "useprotectgate_useprotectgate"
+    },
+    {
+      "source": "usesigninflow_usesigninflow",
+      "target": "auth_factor_supportedauthfactors",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/auth/useSignInFlow.ts",
+      "source_location": "L112",
+      "weight": 1.0,
+      "_src": "usesigninflow_usesigninflow",
+      "_tgt": "auth_factor_supportedauthfactors"
+    },
+    {
+      "source": "usesignupflow_usesignupflow",
+      "target": "useprotectgate_useprotectgate",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/auth/useSignUpFlow.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "usesignupflow_usesignupflow",
+      "_tgt": "useprotectgate_useprotectgate"
+    },
+    {
+      "source": "page_signincontent",
+      "target": "auth_destination_authdestination",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/sign-in/[[...sign-in]]/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "page_signincontent",
+      "_tgt": "auth_destination_authdestination"
+    },
+    {
+      "source": "app_portal_provider_account_page_tsx",
+      "target": "page_accountcontent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/account/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "app_portal_provider_account_page_tsx",
+      "_tgt": "page_accountcontent",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_session_task_reset_password_page_tsx",
+      "target": "page_taskcontent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/session-task/reset-password/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "app_portal_provider_session_task_reset_password_page_tsx",
+      "_tgt": "page_taskcontent",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_session_task_reset_password_page_tsx",
+      "target": "page_resettaskpage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/session-task/reset-password/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "app_portal_provider_session_task_reset_password_page_tsx",
+      "_tgt": "page_resettaskpage",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_sso_callback_page_tsx",
+      "target": "page_callbackcontent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/sso-callback/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "app_portal_provider_sso_callback_page_tsx",
+      "_tgt": "page_callbackcontent",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_sso_callback_page_tsx",
+      "target": "page_ssocallbackpage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/sso-callback/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "app_portal_provider_sso_callback_page_tsx",
+      "_tgt": "page_ssocallbackpage",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_accountmenu_tsx",
+      "target": "accountmenu_accountmenu",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountMenu.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountmenu_tsx",
+      "_tgt": "accountmenu_accountmenu",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "accountprofile_values",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "accountprofile_values",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "accountprofile_field",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "accountprofile_field",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "accountprofile_accountprofile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "accountprofile_accountprofile",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_accountverificationpanel_tsx",
+      "target": "accountverificationpanel_accountverificationpanel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountVerificationPanel.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountverificationpanel_tsx",
+      "_tgt": "accountverificationpanel_accountverificationpanel",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_googlebutton_tsx",
+      "target": "googlebutton_googlebutton",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/GoogleButton.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "components_portal_auth_googlebutton_tsx",
+      "_tgt": "googlebutton_googlebutton",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_protectgate_tsx",
+      "target": "protectgate_protectgate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/ProtectGate.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "components_portal_auth_protectgate_tsx",
+      "_tgt": "protectgate_protectgate",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_resetpasswordtask_tsx",
+      "target": "resetpasswordtask_resetpasswordtask",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/ResetPasswordTask.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "components_portal_auth_resetpasswordtask_tsx",
+      "_tgt": "resetpasswordtask_resetpasswordtask",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_signinform_tsx",
+      "target": "signinform_signinform",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/SignInForm.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "components_portal_auth_signinform_tsx",
+      "_tgt": "signinform_signinform",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_signupform_tsx",
+      "target": "signupform_signupform",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/SignUpForm.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "components_portal_auth_signupform_tsx",
+      "_tgt": "signupform_signupform",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_ssocallback_tsx",
+      "target": "ssocallback_ssocallback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/SsoCallback.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "components_portal_auth_ssocallback_tsx",
+      "_tgt": "ssocallback_ssocallback",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_useaccountprofile_ts",
+      "target": "useaccountprofile_useaccountprofile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/useAccountProfile.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "components_portal_auth_useaccountprofile_ts",
+      "_tgt": "useaccountprofile_useaccountprofile",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_useaccountverification_ts",
+      "target": "useaccountverification_useaccountverification",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/useAccountVerification.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "components_portal_auth_useaccountverification_ts",
+      "_tgt": "useaccountverification_useaccountverification",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_useprotectgate_ts",
+      "target": "useprotectgate_useprotectgate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/useProtectGate.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "components_portal_auth_useprotectgate_ts",
+      "_tgt": "useprotectgate_useprotectgate",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_usesigninflow_ts",
+      "target": "usesigninflow_usesigninflow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/useSignInFlow.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "components_portal_auth_usesigninflow_ts",
+      "_tgt": "usesigninflow_usesigninflow",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_usesignupflow_ts",
+      "target": "usesignupflow_usesignupflow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/useSignUpFlow.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "components_portal_auth_usesignupflow_ts",
+      "_tgt": "usesignupflow_usesignupflow",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_auth_destination_ts",
+      "target": "auth_destination_authdestination",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/auth-destination.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "lib_portal_auth_destination_ts",
+      "_tgt": "auth_destination_authdestination",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_auth_factor_ts",
+      "target": "auth_factor_supportedauthfactors",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/auth-factor.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "lib_portal_auth_factor_ts",
+      "_tgt": "auth_factor_supportedauthfactors",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_protect_check_ts",
+      "target": "protect_check_resolveprotectchecks",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/protect-check.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "lib_portal_protect_check_ts",
+      "_tgt": "protect_check_resolveprotectchecks",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_protect_widget_ts",
+      "target": "protect_widget_protectsdkurl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/protect-widget.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "lib_portal_protect_widget_ts",
+      "_tgt": "protect_widget_protectsdkurl",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_protect_widget_ts",
+      "target": "protect_widget_runprotectwidget",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/protect-widget.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "lib_portal_protect_widget_ts",
+      "_tgt": "protect_widget_runprotectwidget",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "protect_widget_runprotectwidget",
+      "target": "protect_widget_protectsdkurl",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/protect-widget.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "protect_widget_runprotectwidget",
+      "_tgt": "protect_widget_protectsdkurl",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_session_binding_ts",
+      "target": "session_binding_samesession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/session-binding.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "lib_portal_session_binding_ts",
+      "_tgt": "session_binding_samesession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_signup_step_ts",
+      "target": "signup_step_signupstep",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/signup-step.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "lib_portal_signup_step_ts",
+      "_tgt": "signup_step_signupstep",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_layout_tsx",
+      "target": "layout_providerlayout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "app_portal_provider_layout_tsx",
+      "_tgt": "layout_providerlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_sign_in_sign_in_page_tsx",
+      "target": "page_signincontent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/sign-in/[[...sign-in]]/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "app_portal_provider_sign_in_sign_in_page_tsx",
+      "_tgt": "page_signincontent",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_sign_in_sign_in_page_tsx",
+      "target": "page_signinpage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/sign-in/[[...sign-in]]/page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "app_portal_provider_sign_in_sign_in_page_tsx",
+      "_tgt": "page_signinpage",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_sign_up_sign_up_page_tsx",
+      "target": "page_signuppage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/sign-up/[[...sign-up]]/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "app_portal_provider_sign_up_sign_up_page_tsx",
+      "_tgt": "page_signuppage",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_page_tsx",
+      "target": "page_staffunavailable",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "app_portal_provider_staff_page_tsx",
+      "_tgt": "page_staffunavailable",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_page_tsx",
+      "target": "page_staffpage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "app_portal_provider_staff_page_tsx",
+      "_tgt": "page_staffpage",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_invite_accept_layout_tsx",
+      "target": "layout_inviteprovider",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/invite/accept/layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "app_portal_invite_accept_layout_tsx",
+      "_tgt": "layout_inviteprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_portalshell_tsx",
+      "target": "portalshell_portalshell",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "components_portal_portalshell_tsx",
+      "_tgt": "portalshell_portalshell",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_verifyemailnotice_tsx",
+      "target": "verifyemailnotice_verifyemailnotice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/VerifyEmailNotice.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "components_portal_verifyemailnotice_tsx",
+      "_tgt": "verifyemailnotice_verifyemailnotice",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "proxy_ts",
+      "target": "proxy_proxy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "proxy.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "proxy_ts",
+      "_tgt": "proxy_proxy",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "resetpasswordtask_resetpasswordtask",
+      "target": "useaccountverification_useaccountverification",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/auth/ResetPasswordTask.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "resetpasswordtask_resetpasswordtask",
+      "_tgt": "useaccountverification_useaccountverification"
+    },
+    {
+      "source": "signinform_signinform",
+      "target": "usesigninflow_usesigninflow",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/auth/SignInForm.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "signinform_signinform",
+      "_tgt": "usesigninflow_usesigninflow"
+    },
+    {
+      "source": "signupform_signupform",
+      "target": "usesignupflow_usesignupflow",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/auth/SignUpForm.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "signupform_signupform",
+      "_tgt": "usesignupflow_usesignupflow"
+    },
+    {
+      "source": "signupform_signupform",
+      "target": "usesigninflow_usesigninflow",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/auth/SignUpForm.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "signupform_signupform",
+      "_tgt": "usesigninflow_usesigninflow"
+    },
+    {
+      "source": "usesigninflow_usesigninflow",
+      "target": "useprotectgate_useprotectgate",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/auth/useSignInFlow.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "usesigninflow_usesigninflow",
+      "_tgt": "useprotectgate_useprotectgate"
+    },
+    {
+      "source": "usesigninflow_usesigninflow",
+      "target": "auth_factor_supportedauthfactors",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/auth/useSignInFlow.ts",
+      "source_location": "L121",
+      "weight": 1.0,
+      "_src": "usesigninflow_usesigninflow",
+      "_tgt": "auth_factor_supportedauthfactors"
+    },
+    {
+      "source": "usesignupflow_usesignupflow",
+      "target": "useprotectgate_useprotectgate",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/auth/useSignUpFlow.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "usesignupflow_usesignupflow",
+      "_tgt": "useprotectgate_useprotectgate"
+    },
+    {
+      "source": "signinform_signinform",
+      "target": "usesigninflow_usesigninflow",
+      "_src": "signinform_signinform",
+      "_tgt": "usesigninflow_usesigninflow",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/SignInForm.tsx",
+      "source_location": "L16"
+    },
+    {
+      "source": "signupform_signupform",
+      "target": "usesignupflow_usesignupflow",
+      "_src": "signupform_signupform",
+      "_tgt": "usesignupflow_usesignupflow",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/SignUpForm.tsx",
+      "source_location": "L14"
+    },
+    {
+      "source": "signupform_signupform",
+      "target": "usesigninflow_usesigninflow",
+      "_src": "signupform_signupform",
+      "_tgt": "usesigninflow_usesigninflow",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/SignUpForm.tsx",
+      "source_location": "L15"
+    },
+    {
+      "source": "usesigninflow_usesigninflow",
+      "target": "useprotectgate_useprotectgate",
+      "_src": "usesigninflow_usesigninflow",
+      "_tgt": "useprotectgate_useprotectgate",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/useSignInFlow.ts",
+      "source_location": "L14"
+    },
+    {
+      "source": "usesignupflow_usesignupflow",
+      "target": "useprotectgate_useprotectgate",
+      "_src": "usesignupflow_usesignupflow",
+      "_tgt": "useprotectgate_useprotectgate",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/useSignUpFlow.ts",
+      "source_location": "L12"
+    },
+    {
+      "source": "ssocallback_ssocallback",
+      "target": "useprotectgate_useprotectgate",
+      "_src": "ssocallback_ssocallback",
+      "_tgt": "useprotectgate_useprotectgate",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/SsoCallback.tsx",
+      "source_location": "L14"
+    },
+    {
+      "source": "useprotectgate_useprotectgate",
+      "target": "protect_check_resolveprotectchecks",
+      "_src": "useprotectgate_useprotectgate",
+      "_tgt": "protect_check_resolveprotectchecks",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/useProtectGate.ts",
+      "source_location": "L26"
+    },
+    {
+      "source": "useprotectgate_useprotectgate",
+      "target": "protect_widget_runprotectwidget",
+      "_src": "useprotectgate_useprotectgate",
+      "_tgt": "protect_widget_runprotectwidget",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/useProtectGate.ts",
+      "source_location": "L26"
+    },
+    {
+      "source": "accountprofile_accountprofile",
+      "target": "useaccountprofile_useaccountprofile",
+      "_src": "accountprofile_accountprofile",
+      "_tgt": "useaccountprofile_useaccountprofile",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L16"
+    },
+    {
+      "source": "useaccountprofile_useaccountprofile",
+      "target": "useaccountverification_useaccountverification",
+      "_src": "useaccountprofile_useaccountprofile",
+      "_tgt": "useaccountverification_useaccountverification",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/useAccountProfile.ts",
+      "source_location": "L9"
+    },
+    {
+      "source": "resetpasswordtask_resetpasswordtask",
+      "target": "session_binding_samesession",
+      "_src": "resetpasswordtask_resetpasswordtask",
+      "_tgt": "session_binding_samesession",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/ResetPasswordTask.tsx",
+      "source_location": "L17"
+    },
+    {
+      "source": "usesignupflow_usesignupflow",
+      "target": "signup_step_signupstep",
+      "_src": "usesignupflow_usesignupflow",
+      "_tgt": "signup_step_signupstep",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/useSignUpFlow.ts",
+      "source_location": "L32"
     }
   ],
   "hyperedges": []

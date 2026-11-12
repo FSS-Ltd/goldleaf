@@ -25,6 +25,12 @@ The six final Stitch screen exports set composition, visual order, component pro
 
 Create companion Stitch frames for missing flows before implementing their visible UI. Sprint 2 needs sign-in, invite acceptance and the admin family form. Sprint 3 needs staff invitations and assignments. Sprint 4 needs parent invoice list and detail, plus admin draft, issue and record-payment states. Sprints 5 and 6 need mobile detail, session list, messages and settings. Archive each selected frame ID, device, expected controls, and empty, pending, error and success states. Preserve the six baseline frames. Put an independent Jury recommendation and supporting screenshots in the PR for any design deviation.
 
+The custom authentication reference boards are desktop Stitch screens `d7f0b9ce50b642b88a0e3313b1b5902c` (sign-in and recovery), `a9c844086aea416bafa24f934cb7722a` (signup and verification), and `e7145a748fce40be80e9c2223e6adb83` (account and profile). They show conditional states, not simultaneous forms. Omit synthetic identities, invented password rules and expiry times, and unavailable controls. The invitation email is entered by the user; only the authenticated acceptance operation checks it against the invitation. Use current provider-derived identity and verified status. Preserve the user's requirement for custom visible authentication and account controls while keeping provider security checks.
+
+The Google sign-in image is the light Android/Web button from [Google's official sign-in asset bundle](https://developers.google.com/static/identity/images/signin-assets.zip); the action itself uses the existing provider SDK.
+
+Custom identity work handles a required username only when the provider reports it missing, plus the provider's pending compromised-password task using the same bound session. The selected development and production instances currently do not require organization selection or MFA setup; any other pending task remains blocked with an account-support message. Verify real provider task, challenge, signup, recovery and authorization paths before production use; local state tests alone are not evidence that those paths ran.
+
 The desktop admin family form has a companion Stitch draft, `ee9f8cc112ad420d8ba1e65b7137dd06`. Its inspected screenshot and HTML include the family name, parent email, founding checkbox, synthetic capacity, and create-and-invite action. The active navigation uses the original Staff Today gold treatment. Verify interaction and responsive states on the implemented form.
 
 ## Delivery and verification

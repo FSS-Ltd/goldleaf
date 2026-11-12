@@ -1,12 +1,17 @@
 import { expect, test } from "@playwright/test";
 
-for (const path of ["/admin", "/parent", "/staff"]) {
+for (const path of ["/admin", "/parent", "/staff", "/account"]) {
   test(`${path} requires sign-in`, async ({ page }) => {
     await page.goto(path);
     await expect(page).toHaveURL(/\/sign-in/, { timeout: 15_000 });
     await expect(page.getByRole("heading", { name: "Sign in unavailable" })).toBeVisible();
   });
 }
+
+test("account security is unavailable without the identity provider", async ({ page }) => {
+  await page.goto("/session-task/reset-password");
+  await expect(page.getByRole("heading", { name: "Account security unavailable" })).toBeVisible();
+});
 
 test("invitation capture clears the fragment before entering the auth route", async ({ page, context }) => {
   const token = "a".repeat(43);

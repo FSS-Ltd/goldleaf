@@ -171,3 +171,5 @@ Final targeted AST reconciliation updated changed invitation and action symbols 
 Scoped proxy refresh: `/portal` and nested paths now receive Clerk middleware; `/invite` capture remains excluded. Source-backed matcher regression is `lib/portal-proxy.test.ts`. No structural nodes or edges changed.
 
 Scoped public-shell and portal-session AST reconciliation added source-backed error, 404 and verified-email decision nodes while preserving prior SQL and semantic nodes. Current graph: 242 nodes, 227 directed edges; unrelated historical coverage remains unaudited.
+
+Scoped custom-auth refresh extracted 39 explicitly selected changed TypeScript files and retained the earlier semantic and SQL nodes. Twelve source-verified auth dependencies were added directly. The graph now has 298 nodes and 286 directed edges; 115 extractor edges with unresolved endpoints were omitted, chiefly external or out-of-scope references. Historical coverage remains unaudited. The Protect challenge adapter uses a provider-supplied HTTPS SDK URL; the provider does not publish a fixed host allowlist, and actual challenged-provider execution remains unverified.

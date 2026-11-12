@@ -260,3 +260,15 @@ Messaging UI and role-fenced transport: scoped TypeScript AST extraction refresh
 Review fixes re-extracted the server-side provider guard, message read acknowledgement helper and mobile shell navigation. Failed read acknowledgements do not advance the cursor and remain retryable. SQL links remain manually maintained.
 
 Jury review updated request expansion, focus, read-only uncertain text and visible-only read acknowledgements. The visibility observer reattaches on return without polling; the SQL graph coverage limitations remain unchanged.
+
+Onboarding reliability re-extracted 10 allowlisted files with a fresh cache: 631 nodes and 606 edges; one colliding actor-helper identifier was disambiguated by path, and 64 unresolved or ambiguous edges were omitted. Existing SQL and historical corpus limits remain.
+
+Source-verified admin page, actor-fence and DAL call relationships were reconciled after scoped extraction: 631 nodes and 633 edges. Existing unresolved cross-scope and SQL limitations remain.
+
+Controlled field components and their consumers were source-verified after the inventory-change guard: 636 nodes and 641 edges. Existing extractor and corpus limitations remain.
+
+Operation ID stability review reconciled changed source locations and the shared attempt field: 637 nodes and 644 edges. Existing extractor and corpus limitations remain.
+
+Post-merge reconciliation retains 712 nodes and 709 edges for messaging and onboarding together; development migrations 0017/0018 are verified, while production 0017/0018 remain pending. Earlier deployment statements above are historical.
+
+Current verification (12 November 2026): migrations 0001–0018 and 82 scoped runtime grants are verified in development and production; earlier deployment statements are historical. A development admin received a committed own-membership invalidation on an existing authenticated stream; populated workflows and actual revocation remain unverified. The empty-admin Jury approved only the inspected scope; full-app 8/10 is not established. See FEATURE_TREE.md and the portal plan for runtime limitations.

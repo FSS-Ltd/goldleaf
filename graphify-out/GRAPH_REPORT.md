@@ -277,3 +277,5 @@ Current verification (12 November 2026): migrations 0001–0018 and 82 scoped ru
 Staff Today scoped update: `staff_today_selectprioritysession` is source-linked to the staff Today route and selection test. Graphify code update was attempted, but refused to overwrite the existing graph because its extraction had fewer nodes; scoped TypeScript AST extraction and source-verified edges were merged into the retained graph. Existing coverage gaps remain.
 
 Staff Today presentation components were added through scoped TypeScript AST extraction; the route-to-component render edges are source-verified.
+
+Staff Today mobile emphasis now moves the primary action into the priority card; the header action remains desktop-only. Structural graph relationships are unchanged.

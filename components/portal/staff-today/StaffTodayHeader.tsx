@@ -16,18 +16,25 @@ export function StaffTodayHeader({
         <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#526c5c]">
           Staff portal · {date}
         </p>
-        <h1 className="mt-3 !text-[clamp(2rem,4vw,2.6rem)]">Today</h1>
+        <h1 className="sr-only mt-3 !text-[clamp(2rem,4vw,2.6rem)] md:not-sr-only">
+          Today
+        </h1>
         <p className="mt-2 text-sm text-[#35594a]">
           {sessionCount} {sessionCount === 1 ? "session" : "sessions"} scheduled
           today
         </p>
       </div>
       {priority && (
-        <a className="btn btn-primary" href={`/staff/sessions/${priority.id}`}>
-          Open session{" "}
-          <span className="font-normal">· {priority.child_name}</span>
-          <ArrowRight size={18} aria-hidden="true" />
-        </a>
+        <div className="hidden md:block">
+          <a
+            className="btn btn-primary"
+            href={`/staff/sessions/${priority.id}`}
+          >
+            Open session{" "}
+            <span className="font-normal">· {priority.child_name}</span>
+            <ArrowRight size={18} aria-hidden="true" />
+          </a>
+        </div>
       )}
     </div>
   );

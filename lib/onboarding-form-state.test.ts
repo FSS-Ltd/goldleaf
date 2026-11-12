@@ -5,6 +5,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import {
   AssignmentFields,
   FamilyFields,
+  OnboardingAttemptId,
   StaffEmailField,
 } from "./portal/onboarding-form-controls";
 import {
@@ -116,4 +117,15 @@ test("failed assignments retain attempted selection and actor/target changes res
     matchesActionActor(actor, "admin", "admin", "session-two"),
     false,
   );
+});
+
+test("attempt IDs are rendered as hidden operation identifiers", () => {
+  for (const name of ["familyId", "requestId"]) {
+    const html = renderToStaticMarkup(
+      createElement(OnboardingAttemptId, { name, initialId: "attempt-one" }),
+    );
+    assert.match(html, /type="hidden"/);
+    assert.match(html, new RegExp(`name="${name}"`));
+    assert.match(html, /value="attempt-one"/);
+  }
 });

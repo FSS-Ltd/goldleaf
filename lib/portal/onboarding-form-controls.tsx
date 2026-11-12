@@ -13,6 +13,17 @@ export function OnboardingActorFields({ actor }: { actor: ActionActor }) {
     </>
   );
 }
+/** Keep the issued operation ID across server refreshes until this field is remounted. */
+export function OnboardingAttemptId({
+  name,
+  initialId,
+}: {
+  name: string;
+  initialId: string;
+}) {
+  const [id] = useState(initialId);
+  return <input type="hidden" name={name} value={id} />;
+}
 export function FamilyFields({
   defaults,
   full,

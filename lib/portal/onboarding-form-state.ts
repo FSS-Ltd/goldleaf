@@ -8,6 +8,8 @@ export type OnboardingActionState = {
   status: "idle" | "success" | "error";
   message: string;
   revision?: number;
+  nextRequestId?: string;
+  attemptId?: string;
   committed?: boolean;
   values?: OnboardingValues;
 };

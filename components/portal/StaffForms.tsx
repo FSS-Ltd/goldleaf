@@ -4,6 +4,7 @@ import { useActionState } from "react";
 import type { ActionActor } from "@/lib/portal/action-actor";
 import {
   AssignmentFields,
+  OnboardingAttemptId,
   OnboardingActorFields,
   StaffEmailField,
 } from "@/lib/portal/onboarding-form-controls";
@@ -48,7 +49,11 @@ export function StaffInviteForm({
   return (
     <form action={action} className="space-y-4">
       <OnboardingActorFields actor={actor} />
-      <input type="hidden" name="requestId" value={requestId} />
+      <OnboardingAttemptId
+        key={state.revision ?? 0}
+        name="requestId"
+        initialId={state.attemptId ?? state.nextRequestId ?? requestId}
+      />
       {email ? (
         <input type="hidden" name="email" value={email} />
       ) : (

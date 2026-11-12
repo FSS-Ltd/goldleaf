@@ -1,5 +1,6 @@
 "use server";
 
+import { randomUUID } from "node:crypto";
 import { revalidatePath } from "next/cache";
 import { requireActionActor } from "@/lib/portal/action-actor";
 import {
@@ -37,6 +38,7 @@ export async function sendStaffInvite(
   } catch {
     return {
       status: "error",
+      attemptId: String(form.get("requestId") ?? ""),
       message:
         "The invitation could not be created. Check the staff list before trying again.",
       revision: previous.revision,
@@ -55,9 +57,11 @@ export async function sendStaffInvite(
           status: "success",
           message: "Invitation sent.",
           revision: nextOnboardingRevision(previous),
+          nextRequestId: randomUUID(),
         }
       : {
           status: "error",
+          attemptId: String(form.get("requestId") ?? ""),
           message:
             "The invitation was created but email failed. Resend it from the staff list.",
           revision: previous.revision,
@@ -66,6 +70,7 @@ export async function sendStaffInvite(
   } catch {
     return {
       status: "error",
+      attemptId: String(form.get("requestId") ?? ""),
       message:
         "The invitation was created, but delivery could not be confirmed. Check its status before resending.",
       revision: previous.revision,

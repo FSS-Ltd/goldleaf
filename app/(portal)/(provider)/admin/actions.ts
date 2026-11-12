@@ -1,5 +1,6 @@
 "use server";
 
+import { randomUUID } from "node:crypto";
 import { revalidatePath } from "next/cache";
 import { requireActionActor } from "@/lib/portal/action-actor";
 import {
@@ -51,6 +52,7 @@ export async function createFamily(
       status: "error",
       message:
         "We could not create the family. Check the details and the family list before trying again.",
+      attemptId: String(form.get("familyId") ?? ""),
       revision: previous.revision,
       values: submitted,
     };
@@ -76,6 +78,7 @@ export async function createFamily(
           message:
             "Family created, but the invitation could not be sent. Please resend it from the family list.",
           committed: true,
+          attemptId: String(form.get("familyId") ?? ""),
           revision: previous.revision,
           values: submitted,
         };
@@ -85,6 +88,7 @@ export async function createFamily(
       message:
         "Family created. The invitation delivery status could not be confirmed; check it before resending.",
       committed: true,
+      attemptId: String(form.get("familyId") ?? ""),
       revision: previous.revision,
       values: submitted,
     };
@@ -118,7 +122,7 @@ export async function changeFounding(
 }
 
 export async function resendInvitation(
-  _previous: AdminActionState,
+  previous: AdminActionState,
   form: FormData,
 ): Promise<AdminActionState> {
   try {
@@ -138,11 +142,14 @@ export async function resendInvitation(
     return delivery === "sent"
       ? {
           status: "success",
+          revision: nextOnboardingRevision(previous),
+          nextRequestId: randomUUID(),
           message:
             "New invitation sent. Earlier invitations for this email no longer work.",
         }
       : {
           status: "error",
+          attemptId: String(form.get("requestId") ?? ""),
           message:
             "The new invitation could not be sent. Please try resending it.",
         };
@@ -151,6 +158,7 @@ export async function resendInvitation(
     revalidatePath("/admin/families/[familyId]", "page");
     return {
       status: "error",
+      attemptId: String(form.get("requestId") ?? ""),
       message:
         "The invitation could not be sent or its status confirmed. Check the family list before trying again.",
     };

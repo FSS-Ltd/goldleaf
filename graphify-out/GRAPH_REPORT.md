@@ -266,3 +266,5 @@ Onboarding reliability re-extracted 10 allowlisted files with a fresh cache: 631
 Source-verified admin page, actor-fence and DAL call relationships were reconciled after scoped extraction: 631 nodes and 633 edges. Existing unresolved cross-scope and SQL limitations remain.
 
 Controlled field components and their consumers were source-verified after the inventory-change guard: 636 nodes and 641 edges. Existing extractor and corpus limitations remain.
+
+Operation ID stability review reconciled changed source locations and the shared attempt field: 637 nodes and 644 edges. Existing extractor and corpus limitations remain.

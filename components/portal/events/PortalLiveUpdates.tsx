@@ -3,7 +3,10 @@
 import { useAuth, useClerk } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { parsePortalEvent } from "@/lib/portal/events-protocol";
+import {
+  cancelUnconsumedStream,
+  consumePortalEvents,
+} from "@/lib/portal/events-reader";
 import { getBoundEventToken } from "@/lib/portal/events-session";
 import { sameSession } from "@/lib/portal/session-binding";
 
@@ -47,45 +50,39 @@ export function PortalLiveUpdates() {
           cache: "no-store",
           signal: abort.signal,
         });
-        if (!sameActor()) return;
+        if (!sameActor()) {
+          await cancelUnconsumedStream(response.body);
+          return;
+        }
         if (
           [401, 403].includes(response.status) ||
           response.headers.get("X-Portal-Events-Configuration") === "missing"
         ) {
+          await cancelUnconsumedStream(response.body);
           setUnavailable(true);
           paused = true;
           hardStop = true;
           return;
         }
-        if (!response.ok || !response.body)
+        if (!response.ok || !response.body) {
+          await cancelUnconsumedStream(response.body);
           throw new Error("Stream unavailable");
-        const connectedAt = Date.now();
-        const reader = response.body.getReader();
-        const decoder = new TextDecoder();
-        let buffer = "";
-        while (sameActor()) {
-          const chunk = await reader.read();
-          if (chunk.done) break;
-          buffer += decoder.decode(chunk.value, { stream: true });
-          if (buffer.length > 4096) throw new Error("Invalid stream");
-          const frames = buffer.split("\n\n");
-          buffer = frames.pop() ?? "";
-          for (const frame of frames) {
-            const type = parsePortalEvent(frame);
-            if (!sameActor()) return;
-            if (type === "ready") {
-              setUnavailable(false);
-              router.refresh();
-            } else if (type === "change" || type === "access_changed")
-              router.refresh();
-            else if (type === "unavailable") {
-              setUnavailable(true);
-              paused = true;
-              hardStop = true;
-              return;
-            }
-          }
         }
+        const connectedAt = Date.now();
+        await consumePortalEvents(response.body, sameActor, (type) => {
+          if (type === "ready") {
+            setUnavailable(false);
+            router.refresh();
+          } else if (type === "change" || type === "access_changed") {
+            router.refresh();
+          } else if (type === "unavailable") {
+            setUnavailable(true);
+            paused = true;
+            hardStop = true;
+            return false;
+          }
+          return true;
+        });
         if (Date.now() - connectedAt >= 10_000) attempts = 0;
       } catch {
         if (!sameActor()) return;

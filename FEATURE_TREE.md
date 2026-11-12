@@ -88,4 +88,4 @@ INVOICING graph references: `lib_portal_invoices_ts`, `portal_invoice_runtime_db
 
 - PORTAL-MESSAGING reuses `portal.require_admin` and `portal.reschedule_child_session`; the scoped message access helper locks the active membership and assignment. Message cursors serialize with sends on the family row; UI, real delivery and remote deployment are not yet verified.
 
-- `PORTAL-MESSAGING` uses `app/api/portal/events/route.ts`, `lib/portal/events-stream.ts`, and migration 0016 for scoped invalidation; `components/portal/events/PortalLiveUpdates.tsx` is not yet mounted. Event delivery uses fresh membership checks, opaque IDs inside PostgreSQL and generic browser signals. Dev migration/grants and live integration remain pending.
+- `PORTAL-MESSAGING` uses `app/api/portal/events/route.ts`, `lib/portal/events-stream.ts`, and migration 0016 for scoped invalidation; `components/portal/events/PortalLiveUpdates.tsx` is not yet mounted. Event delivery uses fresh membership checks, opaque IDs inside PostgreSQL and generic browser signals; `lib/portal/events-reader.ts` cancels and releases each reader on exit. Dev migration/grants and live integration remain pending.

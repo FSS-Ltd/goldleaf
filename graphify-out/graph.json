@@ -4270,20 +4270,6 @@
       "source_location": "L5"
     },
     {
-      "id": "components_portal_events_portalliveupdates_tsx",
-      "label": "PortalLiveUpdates.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "portalliveupdates_portalliveupdates",
-      "label": "PortalLiveUpdates()",
-      "file_type": "code",
-      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
-      "source_location": "L11"
-    },
-    {
       "id": "lib_events_protocol_test_ts",
       "label": "events-protocol.test.ts",
       "file_type": "code",
@@ -4450,6 +4436,55 @@
       "file_type": "code",
       "source_file": "tests/e2e/portal.spec.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "components_portal_events_portalliveupdates_tsx",
+      "label": "PortalLiveUpdates.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "portalliveupdates_portalliveupdates",
+      "label": "PortalLiveUpdates()",
+      "file_type": "code",
+      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
+      "source_location": "L14"
+    },
+    {
+      "id": "lib_events_reader_test_ts",
+      "label": "events-reader.test.ts",
+      "file_type": "code",
+      "source_file": "lib/events-reader.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "events_reader_test_source",
+      "label": "source()",
+      "file_type": "code",
+      "source_file": "lib/events-reader.test.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "lib_portal_events_reader_ts",
+      "label": "events-reader.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/events-reader.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "events_reader_cancelunconsumedstream",
+      "label": "cancelUnconsumedStream()",
+      "file_type": "code",
+      "source_file": "lib/portal/events-reader.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "events_reader_consumeportalevents",
+      "label": "consumePortalEvents()",
+      "file_type": "code",
+      "source_file": "lib/portal/events-reader.ts",
+      "source_location": "L15"
     },
     {
       "id": "portal_invoice_ui_db",
@@ -10108,15 +10143,6 @@
       "weight": 1.0
     },
     {
-      "source": "components_portal_events_portalliveupdates_tsx",
-      "target": "portalliveupdates_portalliveupdates",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
       "source": "lib_events_session_test_ts",
       "target": "events_session_test_release",
       "relation": "contains",
@@ -10237,8 +10263,8 @@
       "source": "route_get",
       "target": "events_server_openportaleventstream",
       "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "app/api/portal/events/route.ts",
       "source_location": "L16",
       "weight": 1.0
@@ -10251,6 +10277,42 @@
       "confidence_score": 0.8,
       "source_file": "lib/portal/events-server.ts",
       "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_events_portalliveupdates_tsx",
+      "target": "portalliveupdates_portalliveupdates",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_events_reader_test_ts",
+      "target": "events_reader_test_source",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/events-reader.test.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_events_reader_ts",
+      "target": "events_reader_cancelunconsumedstream",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/events-reader.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_events_reader_ts",
+      "target": "events_reader_consumeportalevents",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/events-reader.ts",
+      "source_location": "L15",
       "weight": 1.0
     },
     {

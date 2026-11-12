@@ -190,3 +190,184 @@ details > summary::-webkit-details-marker { display: none; }
 }
 @keyframes drift-l { from { transform: translateX(8vw); } to { transform: translateX(-22vw); } }
 @keyframes drift-r { from { transform: translateX(-26vw); } to { transform: translateX(4vw); } }
+
+/* Static loading surfaces never render private navigation or account data. */
+.portal-loading {
+  min-height: 100vh;
+  background: #fef8f3;
+  color: #1b3022;
+}
+.portal-loading--content {
+  min-height: 0;
+  width: 100%;
+}
+.portal-loading__masthead {
+  height: 5rem;
+  border-bottom: 1px solid #e3d7c3;
+  display: flex;
+  align-items: center;
+  padding: 0 1.25rem;
+}
+.portal-loading__sidebar {
+  display: none;
+}
+.portal-loading__body {
+  max-width: 72rem;
+  margin: auto;
+  padding: 3rem 1.25rem;
+}
+.portal-loading__bar {
+  border-radius: 999px;
+  background: #e7dfd1;
+}
+.portal-loading__brand {
+  width: 9rem;
+  height: 1.5rem;
+}
+.portal-loading__nav {
+  width: 75%;
+  height: .85rem;
+  margin-top: 2.25rem;
+}
+.portal-loading__eyebrow {
+  width: 5rem;
+  height: .65rem;
+}
+.portal-loading__title {
+  width: min(19rem, 80%);
+  height: 2.4rem;
+  margin-top: 1rem;
+}
+.portal-loading__subtitle {
+  width: min(25rem, 90%);
+  height: .8rem;
+  margin-top: 1rem;
+}
+.portal-loading__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.portal-loading__card {
+  min-height: 10rem;
+  border: 1px solid #e3d7c3;
+  border-radius: 14px;
+  background: #f6eee2;
+  padding: 1.5rem;
+}
+.portal-loading__primary {
+  grid-row: span 2;
+  min-height: 22rem;
+}
+.portal-loading__card-title {
+  width: 55%;
+  height: 1.2rem;
+}
+.portal-loading__line {
+  width: 90%;
+  height: .7rem;
+  margin-top: 1.25rem;
+}
+.portal-loading__line--short {
+  width: 65%;
+  margin-top: .75rem;
+}
+.portal-loading__rows {
+  padding: 0 1.5rem;
+}
+.portal-loading__row {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #e3d7c3;
+}
+.portal-loading__row:last-child {
+  border-bottom: 0;
+}
+.portal-loading__row .portal-loading__line {
+  margin-top: .7rem;
+}
+.portal-loading--messages .portal-loading__grid {
+  grid-template-columns: 1fr 2fr;
+}
+.portal-loading--messages .portal-loading__primary {
+  min-height: 30rem;
+  display: flex;
+  flex-direction: column;
+}
+.portal-loading__composer {
+  height: 3rem;
+  border-radius: .5rem;
+  margin-top: auto;
+}
+.portal-loading--detail .portal-loading__primary {
+  min-height: 30rem;
+}
+.portal-loading--account, .portal-loading--profile {
+  min-height: 0;
+  width: min(100%, 28rem);
+  border: 1px solid #e3d7c3;
+  border-radius: 14px;
+  background: #f6eee2;
+}
+.portal-loading--account .portal-loading__body, .portal-loading--profile .portal-loading__body {
+  padding: 1.75rem;
+  width: 100%;
+}
+.portal-loading--account .portal-loading__grid, .portal-loading--profile .portal-loading__grid {
+  grid-template-columns: 1fr;
+}
+.portal-loading--account .portal-loading__card, .portal-loading--profile .portal-loading__card {
+  min-height: 4rem;
+  background: #fef8f3;
+}
+.portal-loading--account .portal-loading__primary {
+  grid-row: auto;
+}
+.portal-loading--profile {
+  width: min(100%, 48rem);
+}
+.portal-loading--profile .portal-loading__primary {
+  grid-row: auto;
+  min-height: 8rem;
+}
+@media (min-width: 900px) {
+  .portal-loading:not(.portal-loading--content) .portal-loading__masthead {
+    display: none;
+  }
+  .portal-loading__sidebar {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 15rem;
+    min-height: 100vh;
+    padding: 2rem;
+    border-right: 1px solid #e3d7c3;
+    background: #f6eee2;
+  }
+  .portal-loading:not(.portal-loading--content) .portal-loading__body {
+    margin-left: 15rem;
+    padding: 3rem;
+  }
+}
+@media (max-width: 700px) {
+  .portal-loading__grid, .portal-loading--messages .portal-loading__grid {
+    grid-template-columns: 1fr;
+  }
+  .portal-loading__primary {
+    grid-row: auto;
+  }
+  .portal-loading--messages .portal-loading__primary {
+    min-height: 20rem;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .portal-loading__bar {
+    animation: portal-loading-pulse 1.8s ease-in-out infinite alternate;
+  }
+  @keyframes portal-loading-pulse {
+    to {
+      opacity: .55;
+    }
+  }
+}

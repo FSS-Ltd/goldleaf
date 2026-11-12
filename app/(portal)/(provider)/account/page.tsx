@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { AuthShell } from "@/components/portal/AuthShell";
@@ -14,5 +15,5 @@ async function AccountContent({ searchParams }: { searchParams: Promise<{ return
 }
 
 export default function AccountPage({ searchParams }: { searchParams: Promise<{ return_to?: string }> }) {
-  return <AuthShell><Suspense fallback={<p>Loading your account…</p>}><AccountContent searchParams={searchParams} /></Suspense></AuthShell>;
+  return <AuthShell><Suspense fallback={<PortalLoading label="Loading your account…" variant="profile" contentOnly />}><AccountContent searchParams={searchParams} /></Suspense></AuthShell>;
 }

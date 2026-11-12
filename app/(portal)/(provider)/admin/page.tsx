@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { onboardingScopeKey } from "@/lib/portal/onboarding-form-state";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
@@ -33,4 +34,4 @@ async function AdminHome() {
     </div>
   </PortalShell>;
 }
-export default function AdminPage() { return <Suspense fallback={<main className="section wrap"><p>Opening families…</p></main>}><AdminHome /></Suspense>; }
+export default function AdminPage() { return <Suspense fallback={<PortalLoading label="Opening families…" variant="list" />}><AdminHome /></Suspense>; }

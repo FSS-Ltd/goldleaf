@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { Suspense } from "react";
 import { PortalShell } from "@/components/portal/PortalShell";
 import {
@@ -81,9 +82,7 @@ export default function ParentPage() {
   return (
     <Suspense
       fallback={
-        <main className="section wrap">
-          <p>Opening your family portal…</p>
-        </main>
+        <PortalLoading label="Opening your family portal…" variant="dashboard" />
       }
     >
       <ParentHome />

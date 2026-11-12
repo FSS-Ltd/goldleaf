@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { Suspense } from "react";
 import { PortalShell } from "@/components/portal/PortalShell";
 import { listStaffSessions } from "@/lib/portal/sessions";
@@ -54,7 +55,7 @@ async function StaffSessions() {
 export default function Page() {
   return (
     <Suspense
-      fallback={<main className="section wrap">Opening sessions…</main>}
+      fallback={<PortalLoading label="Opening sessions…" variant="list" />}
     >
       <StaffSessions />
     </Suspense>

@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 import { getPortalSession } from "@/lib/portal/identity";
@@ -21,5 +22,5 @@ export default function SignInPage({ searchParams }: { searchParams: Promise<{ r
   if (!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || !process.env.CLERK_SECRET_KEY) {
     return <AuthShell><div><h1>Sign in unavailable</h1><p>Please try again later.</p></div></AuthShell>;
   }
-  return <AuthShell><Suspense><SignInContent searchParams={searchParams} /></Suspense></AuthShell>;
+  return <AuthShell><Suspense fallback={<PortalLoading label="Loading sign in…" variant="account" contentOnly />}><SignInContent searchParams={searchParams} /></Suspense></AuthShell>;
 }

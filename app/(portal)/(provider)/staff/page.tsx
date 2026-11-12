@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { Suspense } from "react";
 import { CalendarDays, CircleAlert } from "lucide-react";
 import { PortalShell } from "@/components/portal/PortalShell";
@@ -131,9 +132,7 @@ export default function StaffPage() {
   return (
     <Suspense
       fallback={
-        <main className="section wrap">
-          <p>Opening your portal…</p>
-        </main>
+        <PortalLoading label="Opening your portal…" variant="dashboard" />
       }
     >
       <StaffToday />

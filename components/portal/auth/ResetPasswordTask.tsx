@@ -1,4 +1,5 @@
 "use client";
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 
 import { useClerk, useReverification } from "@clerk/nextjs";
 import { useRef, useState, type FormEvent } from "react";
@@ -51,7 +52,7 @@ export function ResetPasswordTask({ destination }: { destination: "/portal" | "/
     }
   }
 
-  if (!clerk.loaded) return <p>Loading your account…</p>;
+  if (!clerk.loaded) return <PortalLoading label="Loading your account…" variant="account" contentOnly />;
   if (!clerk.session || !clerk.user) return <p>Your session is unavailable. Please <Link href="/sign-in" className="underline">sign in</Link> again.</p>;
   if (clerk.session.currentTask?.key !== "reset-password") {
     const ready = !clerk.session.currentTask && clerk.session.status === "active";

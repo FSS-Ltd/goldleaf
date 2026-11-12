@@ -1,4 +1,5 @@
 "use client";
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 
 import { HandleSSOCallback, useClerk, useSignIn, useSignUp } from "@clerk/nextjs";
 import { useState } from "react";
@@ -25,7 +26,7 @@ export function SsoCallback({ destination }: { destination: "/portal" | "/invite
     }
   }
 
-  if (!clerk.loaded) return <p>Completing sign in…</p>;
+  if (!clerk.loaded) return <PortalLoading label="Completing sign in…" variant="account" contentOnly />;
   return <section className="w-full max-w-md rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-7 text-[#1b3022]">
     <h1 className="font-display !text-2xl text-[#06451d]">Completing sign in</h1>
     {message && <p role="alert" className="mt-4 text-sm">{message}</p>}

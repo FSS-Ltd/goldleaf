@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { Suspense } from "react";
 import { MessageWorkspace } from "@/components/portal/messages/MessageWorkspace";
 export const metadata = { title: "Messages" };
@@ -12,9 +13,7 @@ export default function Page(props: Props) {
   return (
     <Suspense
       fallback={
-        <main className="section wrap">
-          <p>Opening messages…</p>
-        </main>
+        <PortalLoading label="Opening messages…" variant="messages" />
       }
     >
       <Data {...props} />

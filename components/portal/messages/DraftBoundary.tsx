@@ -1,4 +1,5 @@
 "use client";
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { useAuth } from "@clerk/nextjs";
 import type { ReactNode } from "react";
 import { DraftProvider } from "./DraftProvider";
@@ -13,7 +14,7 @@ export function DraftBoundary({
 }) {
   const { isLoaded, userId, sessionId } = useAuth();
   if (!isLoaded || !userId || !sessionId)
-    return <p role="status">Opening messages…</p>;
+    return <PortalLoading label="Opening messages…" variant="messages" />;
   return (
     <DraftProvider key={`${userId}:${sessionId}:${role}`}>
       {children}

@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { Suspense } from "react";
 import { AuthShell } from "@/components/portal/AuthShell";
 import { SignUpForm } from "@/components/portal/auth/SignUpForm";
@@ -9,6 +10,6 @@ export default function SignUpPage() {
     return <AuthShell><div><h1>Account creation unavailable</h1><p>Please try again later.</p></div></AuthShell>;
   }
   return <AuthShell>
-    <Suspense><SignUpForm /></Suspense>
+    <Suspense fallback={<PortalLoading label="Loading account creation…" variant="account" contentOnly />}><SignUpForm /></Suspense>
   </AuthShell>;
 }

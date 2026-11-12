@@ -1609,7 +1609,7 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/invite/accept/page.tsx",
-      "source_location": "L1",
+      "source_location": "L2",
       "id": "app_portal_invite_accept_page_tsx",
       "community": 48,
       "norm_label": "page.tsx"
@@ -1618,7 +1618,7 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/portal/page.tsx",
-      "source_location": "L1",
+      "source_location": "L2",
       "id": "app_portal_provider_portal_page_tsx",
       "community": 5,
       "norm_label": "page.tsx"
@@ -1627,7 +1627,7 @@
       "label": "PortalLanding()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/portal/page.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "id": "page_portallanding",
       "community": 5,
       "norm_label": "portallanding()"
@@ -1636,7 +1636,7 @@
       "label": "PortalPage()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/portal/page.tsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "id": "page_portalpage",
       "community": 5,
       "norm_label": "portalpage()"
@@ -1690,7 +1690,7 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/page.tsx",
-      "source_location": "L1",
+      "source_location": "L2",
       "id": "app_portal_provider_admin_page_tsx",
       "community": 2,
       "norm_label": "page.tsx"
@@ -1699,7 +1699,7 @@
       "label": "AdminHome()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/page.tsx",
-      "source_location": "L12",
+      "source_location": "L13",
       "id": "page_adminhome",
       "community": 2,
       "norm_label": "adminhome()"
@@ -1708,7 +1708,7 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
-      "source_location": "L1",
+      "source_location": "L2",
       "id": "app_portal_provider_admin_families_familyid_page_tsx",
       "community": 2,
       "norm_label": "page.tsx"
@@ -1717,7 +1717,7 @@
       "label": "FamilyDetail()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "id": "page_familydetail",
       "community": 2,
       "norm_label": "familydetail()"
@@ -1988,7 +1988,7 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/session-task/reset-password/page.tsx",
-      "source_location": "L1",
+      "source_location": "L2",
       "norm_label": "page.tsx"
     },
     {
@@ -1996,7 +1996,7 @@
       "label": "TaskContent()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/session-task/reset-password/page.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "norm_label": "taskcontent()"
     },
     {
@@ -2004,7 +2004,7 @@
       "label": "ResetTaskPage()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/session-task/reset-password/page.tsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "norm_label": "resettaskpage()"
     },
     {
@@ -2012,7 +2012,7 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/sso-callback/page.tsx",
-      "source_location": "L1",
+      "source_location": "L2",
       "norm_label": "page.tsx"
     },
     {
@@ -2020,7 +2020,7 @@
       "label": "CallbackContent()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/sso-callback/page.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "norm_label": "callbackcontent()"
     },
     {
@@ -2028,7 +2028,7 @@
       "label": "SsoCallbackPage()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/sso-callback/page.tsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "norm_label": "ssocallbackpage()"
     },
     {
@@ -2252,7 +2252,7 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/sign-in/[[...sign-in]]/page.tsx",
-      "source_location": "L1",
+      "source_location": "L2",
       "norm_label": "page.tsx"
     },
     {
@@ -2260,7 +2260,7 @@
       "label": "SignInContent()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/sign-in/[[...sign-in]]/page.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "norm_label": "signincontent()"
     },
     {
@@ -2268,7 +2268,7 @@
       "label": "SignInPage()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/sign-in/[[...sign-in]]/page.tsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "norm_label": "signinpage()"
     },
     {
@@ -2276,7 +2276,7 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/sign-up/[[...sign-up]]/page.tsx",
-      "source_location": "L1",
+      "source_location": "L2",
       "norm_label": "page.tsx"
     },
     {
@@ -2284,7 +2284,7 @@
       "label": "SignUpPage()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/sign-up/[[...sign-up]]/page.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "norm_label": "signuppage()"
     },
     {
@@ -2644,7 +2644,7 @@
       "label": "SsoCallback.tsx",
       "file_type": "code",
       "source_file": "components/portal/auth/SsoCallback.tsx",
-      "source_location": "L1",
+      "source_location": "L2",
       "norm_label": "ssocallback.tsx"
     },
     {
@@ -2652,7 +2652,7 @@
       "label": "SsoCallback()",
       "file_type": "code",
       "source_file": "components/portal/auth/SsoCallback.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "norm_label": "ssocallback()"
     },
     {
@@ -2692,7 +2692,7 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/account/page.tsx",
-      "source_location": "L1",
+      "source_location": "L2",
       "norm_label": "page.tsx"
     },
     {
@@ -2700,7 +2700,7 @@
       "label": "AccountContent()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/account/page.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "norm_label": "accountcontent()"
     },
     {
@@ -2708,7 +2708,7 @@
       "label": "InviteFragment.tsx",
       "file_type": "code",
       "source_file": "components/portal/InviteFragment.tsx",
-      "source_location": "L1",
+      "source_location": "L2",
       "norm_label": "invitefragment.tsx"
     },
     {
@@ -2716,7 +2716,7 @@
       "label": "InviteFragment()",
       "file_type": "code",
       "source_file": "components/portal/InviteFragment.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "norm_label": "invitefragment()"
     },
     {
@@ -2772,7 +2772,7 @@
       "label": "ResetPasswordTask.tsx",
       "file_type": "code",
       "source_file": "components/portal/auth/ResetPasswordTask.tsx",
-      "source_location": "L1",
+      "source_location": "L2",
       "norm_label": "resetpasswordtask.tsx"
     },
     {
@@ -2780,7 +2780,7 @@
       "label": "ResetPasswordTask()",
       "file_type": "code",
       "source_file": "components/portal/auth/ResetPasswordTask.tsx",
-      "source_location": "L10",
+      "source_location": "L11",
       "norm_label": "resetpasswordtask()"
     },
     {
@@ -2860,7 +2860,7 @@
       "label": "AccountProfile.tsx",
       "file_type": "code",
       "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L1",
+      "source_location": "L2",
       "norm_label": "accountprofile.tsx"
     },
     {
@@ -2868,7 +2868,7 @@
       "label": "values()",
       "file_type": "code",
       "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "norm_label": "values()"
     },
     {
@@ -2876,7 +2876,7 @@
       "label": "field()",
       "file_type": "code",
       "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "norm_label": "field()"
     },
     {
@@ -2884,7 +2884,7 @@
       "label": "AccountProfile()",
       "file_type": "code",
       "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L16",
+      "source_location": "L17",
       "norm_label": "accountprofile()"
     },
     {
@@ -2892,7 +2892,7 @@
       "label": "AccountProfileContent()",
       "file_type": "code",
       "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "norm_label": "accountprofilecontent()"
     },
     {
@@ -2972,7 +2972,7 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L1",
+      "source_location": "L2",
       "norm_label": "page.tsx"
     },
     {
@@ -2980,7 +2980,7 @@
       "label": "StaffAdmin()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L22",
+      "source_location": "L23",
       "norm_label": "staffadmin()"
     },
     {
@@ -3068,7 +3068,7 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L1",
+      "source_location": "L2",
       "norm_label": "page.tsx"
     },
     {
@@ -3279,21 +3279,21 @@
       "label": "deliveryLabel()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L16"
+      "source_location": "L17"
     },
     {
       "id": "page_randomuuid",
       "label": "randomUUID()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L89"
+      "source_location": "L90"
     },
     {
       "id": "page_stafftoday",
       "label": "StaffToday()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L10"
+      "source_location": "L11"
     },
     {
       "id": "lib_portal_children_ts",
@@ -4063,98 +4063,98 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "page_settings",
       "label": "Settings()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
-      "source_location": "L7"
+      "source_location": "L8"
     },
     {
       "id": "page_page_8d3a3fa94a",
       "label": "Page()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
-      "source_location": "L27"
+      "source_location": "L28"
     },
     {
       "id": "app_portal_provider_admin_invoices_invoiceid_page_tsx",
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/invoices/[invoiceId]/page.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "app_portal_provider_admin_invoices_new_page_tsx",
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/invoices/new/page.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "app_portal_provider_admin_invoices_page_tsx",
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/invoices/page.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "page_invoicedate",
       "label": "invoiceDate()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/invoices/page.tsx",
-      "source_location": "L99"
+      "source_location": "L100"
     },
     {
       "id": "app_portal_provider_parent_billing_invoiceid_page_tsx",
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/page.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "page_page_0ec02c21ee",
       "label": "Page()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/page.tsx",
-      "source_location": "L15"
+      "source_location": "L16"
     },
     {
       "id": "app_portal_provider_parent_billing_invoiceid_print_page_tsx",
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "page_print",
       "label": "Print()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
-      "source_location": "L8"
+      "source_location": "L9"
     },
     {
       "id": "page_page_50e3a447c6",
       "label": "Page()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
-      "source_location": "L39"
+      "source_location": "L40"
     },
     {
       "id": "app_portal_provider_parent_billing_page_tsx",
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/billing/page.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "page_page_7f11ccbe59",
       "label": "Page()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/billing/page.tsx",
-      "source_location": "L5"
+      "source_location": "L6"
     },
     {
       "id": "components_portal_invoices_billingsettingsform_tsx",
@@ -4387,56 +4387,56 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/children/page.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "app_portal_provider_parent_learning_page_tsx",
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/learning/page.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "app_portal_provider_parent_sessions_id_page_tsx",
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/sessions/[id]/page.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "page_sessiondetail",
       "label": "SessionDetail()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/sessions/[id]/page.tsx",
-      "source_location": "L14"
+      "source_location": "L15"
     },
     {
       "id": "app_portal_provider_parent_sessions_page_tsx",
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "page_parentsessions",
       "label": "ParentSessions()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
-      "source_location": "L14"
+      "source_location": "L15"
     },
     {
       "id": "page_sessionspage",
       "label": "SessionsPage()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
-      "source_location": "L84"
+      "source_location": "L85"
     },
     {
       "id": "page_formatuksession",
       "label": "formatUkSession()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L59"
+      "source_location": "L60"
     },
     {
       "id": "app_portal_provider_staff_sessions_id_actions_ts",
@@ -4450,14 +4450,14 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/staff/sessions/[id]/page.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "app_portal_provider_staff_sessions_page_tsx",
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/staff/sessions/page.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "components_portal_learning_adminlearningforms_tsx",
@@ -4737,7 +4737,7 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/sessions/[id]/page.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "staff_actions_updatesessionaction",
@@ -5047,21 +5047,21 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/messages/page.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "page_data_f8e971b5b3",
       "label": "Data()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/messages/page.tsx",
-      "source_location": "L5"
+      "source_location": "L6"
     },
     {
       "id": "page_page_f8e971b5b3",
       "label": "Page()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/messages/page.tsx",
-      "source_location": "L11"
+      "source_location": "L12"
     },
     {
       "id": "app_portal_provider_parent_messages_error_tsx",
@@ -5096,21 +5096,21 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/messages/page.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "page_data_ff9bbc860b",
       "label": "Data()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/messages/page.tsx",
-      "source_location": "L5"
+      "source_location": "L6"
     },
     {
       "id": "page_page_ff9bbc860b",
       "label": "Page()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/messages/page.tsx",
-      "source_location": "L11"
+      "source_location": "L12"
     },
     {
       "id": "app_portal_provider_staff_messages_error_tsx",
@@ -5145,21 +5145,21 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/staff/messages/page.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "page_data_77f7a60717",
       "label": "Data()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/staff/messages/page.tsx",
-      "source_location": "L5"
+      "source_location": "L6"
     },
     {
       "id": "page_page_77f7a60717",
       "label": "Page()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/staff/messages/page.tsx",
-      "source_location": "L11"
+      "source_location": "L12"
     },
     {
       "id": "app_api_portal_events_route_ts",
@@ -5201,14 +5201,14 @@
       "label": "ActorScope.tsx",
       "file_type": "code",
       "source_file": "components/portal/messages/ActorScope.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "actorscope_actorscope",
       "label": "ActorScope()",
       "file_type": "code",
       "source_file": "components/portal/messages/ActorScope.tsx",
-      "source_location": "L6"
+      "source_location": "L7"
     },
     {
       "id": "components_portal_messages_adminrequests_tsx",
@@ -5250,14 +5250,14 @@
       "label": "DraftBoundary.tsx",
       "file_type": "code",
       "source_file": "components/portal/messages/DraftBoundary.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "draftboundary_draftboundary",
       "label": "DraftBoundary()",
       "file_type": "code",
       "source_file": "components/portal/messages/DraftBoundary.tsx",
-      "source_location": "L7"
+      "source_location": "L8"
     },
     {
       "id": "components_portal_messages_draftprovider_tsx",
@@ -5580,7 +5580,7 @@
       "label": "onboardingScopeKey()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L89"
+      "source_location": "L90"
     },
     {
       "id": "adminforms_feedback",
@@ -5748,7 +5748,7 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/page.tsx",
-      "source_location": "L1"
+      "source_location": "L2"
     },
     {
       "id": "components_portal_portalshell_tsx",
@@ -5805,6 +5805,60 @@
       "file_type": "code",
       "source_file": "lib/portal/parent-home-selection.ts",
       "source_location": "L11"
+    },
+    {
+      "id": "lib_portal_loading_test_ts",
+      "label": "portal-loading.test.ts",
+      "file_type": "code",
+      "source_file": "lib/portal-loading.test.ts",
+      "source_location": "L1",
+      "community": -1,
+      "norm_label": "portal-loading.test.ts"
+    },
+    {
+      "id": "components_portal_loading_portalloading_tsx",
+      "label": "PortalLoading.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/loading/PortalLoading.tsx",
+      "source_location": "L1",
+      "community": -1,
+      "norm_label": "portalloading.tsx"
+    },
+    {
+      "id": "portalloading_lines",
+      "label": "Lines()",
+      "file_type": "code",
+      "source_file": "components/portal/loading/PortalLoading.tsx",
+      "source_location": "L3",
+      "community": -1,
+      "norm_label": "lines()"
+    },
+    {
+      "id": "portalloading_rows",
+      "label": "Rows()",
+      "file_type": "code",
+      "source_file": "components/portal/loading/PortalLoading.tsx",
+      "source_location": "L11",
+      "community": -1,
+      "norm_label": "rows()"
+    },
+    {
+      "id": "portalloading_loadingcards",
+      "label": "LoadingCards()",
+      "file_type": "code",
+      "source_file": "components/portal/loading/PortalLoading.tsx",
+      "source_location": "L19",
+      "community": -1,
+      "norm_label": "loadingcards()"
+    },
+    {
+      "id": "portalloading_portalloading",
+      "label": "PortalLoading()",
+      "file_type": "code",
+      "source_file": "components/portal/loading/PortalLoading.tsx",
+      "source_location": "L38",
+      "community": -1,
+      "norm_label": "portalloading()"
     }
   ],
   "links": [
@@ -7486,8 +7540,8 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "app/page.tsx",
-      "source_location": "L42",
+      "source_file": "app/(public)/page.tsx",
+      "source_location": "L43",
       "weight": 1.0,
       "_src": "page_home",
       "_tgt": "schema_org_organisationschema",
@@ -7498,8 +7552,8 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "app/page.tsx",
-      "source_location": "L42",
+      "source_file": "app/(public)/page.tsx",
+      "source_location": "L43",
       "weight": 1.0,
       "_src": "page_home",
       "_tgt": "schema_org_faqschema",
@@ -7546,7 +7600,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "app/enquire/actions.ts",
+      "source_file": "app/(public)/enquire/actions.ts",
       "source_location": "L15",
       "weight": 1.0,
       "_src": "actions_sendenquiry",
@@ -7558,7 +7612,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "app/enquire/actions.ts",
+      "source_file": "app/(public)/enquire/actions.ts",
       "source_location": "L24",
       "weight": 1.0,
       "_src": "actions_sendenquiry",
@@ -13899,6 +13953,474 @@
       "confidence": "EXTRACTED",
       "source_file": "app/(portal)/(provider)/parent/page.tsx",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_invite_accept_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_invite_accept_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/invite/accept/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_portal_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_portal_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/portal/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_admin_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_families_familyid_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_admin_families_familyid_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_session_task_reset_password_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_session_task_reset_password_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/session-task/reset-password/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_sso_callback_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_sso_callback_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/sso-callback/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_sign_in_sign_in_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_sign_in_sign_in_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/sign-in/[[...sign-in]]/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_sign_up_sign_up_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_sign_up_sign_up_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/sign-up/[[...sign-up]]/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_auth_ssocallback_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "components_portal_auth_ssocallback_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/portal/auth/SsoCallback.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_account_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_account_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/account/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_auth_resetpasswordtask_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "components_portal_auth_resetpasswordtask_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/portal/auth/ResetPasswordTask.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_staff_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_admin_staff_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_staff_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_billing_settings_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_admin_billing_settings_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_invoices_invoiceid_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_admin_invoices_invoiceid_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/invoices/[invoiceId]/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_invoices_new_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_admin_invoices_new_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/invoices/new/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_invoices_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_admin_invoices_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/invoices/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_billing_invoiceid_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_parent_billing_invoiceid_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_billing_invoiceid_print_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_parent_billing_invoiceid_print_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_billing_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_parent_billing_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/parent/billing/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_children_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_admin_children_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/children/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_learning_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_parent_learning_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/parent/learning/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_sessions_id_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_parent_sessions_id_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/parent/sessions/[id]/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_sessions_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_parent_sessions_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_sessions_id_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_staff_sessions_id_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_sessions_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_staff_sessions_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/staff/sessions/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_sessions_id_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_admin_sessions_id_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/sessions/[id]/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_admin_messages_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/messages/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_messages_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_parent_messages_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/parent/messages/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_messages_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_staff_messages_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/staff/messages/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_actorscope_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "components_portal_messages_actorscope_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/portal/messages/ActorScope.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_draftboundary_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "components_portal_messages_draftboundary_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/portal/messages/DraftBoundary.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_parent_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/parent/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_loading_portalloading_tsx",
+      "target": "portalloading_lines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/loading/PortalLoading.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "components_portal_loading_portalloading_tsx",
+      "_tgt": "portalloading_lines",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_loading_portalloading_tsx",
+      "target": "portalloading_rows",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/loading/PortalLoading.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "components_portal_loading_portalloading_tsx",
+      "_tgt": "portalloading_rows",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_loading_portalloading_tsx",
+      "target": "portalloading_loadingcards",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/loading/PortalLoading.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "components_portal_loading_portalloading_tsx",
+      "_tgt": "portalloading_loadingcards",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_loading_portalloading_tsx",
+      "target": "portalloading_portalloading",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/loading/PortalLoading.tsx",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_src": "components_portal_loading_portalloading_tsx",
+      "_tgt": "portalloading_portalloading",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_invitefragment_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "components_portal_invitefragment_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/portal/InviteFragment.tsx",
+      "source_location": "L2",
       "weight": 1.0
     }
   ],

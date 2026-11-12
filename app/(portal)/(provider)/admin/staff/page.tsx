@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { onboardingScopeKey } from "@/lib/portal/onboarding-form-state";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
@@ -102,7 +103,7 @@ async function StaffAdmin({ searchParams }: { searchParams: Promise<{ staff?: st
 
 export default function AdminStaffPage({ searchParams }: { searchParams: Promise<{ staff?: string }> }) {
   return (
-    <Suspense fallback={<main className="section wrap"><p>Opening team…</p></main>}>
+    <Suspense fallback={<PortalLoading label="Opening team…" variant="list" />}>
       <StaffAdmin searchParams={searchParams} />
     </Suspense>
   );

@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import Link from "next/link";
 import { Suspense } from "react";
 import { PortalShell } from "@/components/portal/PortalShell";
@@ -129,9 +130,7 @@ export default function Page() {
   return (
     <Suspense
       fallback={
-        <main className="section wrap">
-          <p>Opening invoices…</p>
-        </main>
+        <PortalLoading label="Opening invoices…" variant="list" />
       }
     >
       <AdminInvoices />

@@ -1,4 +1,5 @@
 "use client";
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 
 import { useEffect, useRef, useState } from "react";
 import { exchangeInvitation } from "@/app/(portal)/invite/actions";
@@ -23,7 +24,7 @@ export function InviteFragment() {
     }).catch(() => { if (active) setStatus("unavailable"); });
     return () => { active = false; };
   }, []);
-  if (status === "checking") return <p role="status">Checking your invitation…</p>;
+  if (status === "checking") return <PortalLoading label="Checking your invitation…" variant="account" contentOnly />;
   if (status === "unavailable") return <><h1>This invitation isn’t available</h1><p className="mt-4 text-[#35594a]">Ask Deborah for a new invitation.</p></>;
   return null;
 }

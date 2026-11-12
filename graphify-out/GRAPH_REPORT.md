@@ -281,3 +281,7 @@ Staff Today presentation components were added through scoped TypeScript AST ext
 Staff Today mobile emphasis now moves the primary action into the priority card; the header action remains desktop-only. Structural graph relationships are unchanged.
 
 Parent-home scoped extraction was reconciled with the merged staff Today graph; the route, cards, shell and selection/rendering tests were re-extracted. Existing SQL and broader semantic coverage gaps remain.
+
+## Portal loading scoped update (2026-11-12)
+
+AST extraction refreshed changed TS/TSX files and added the static PortalLoading component and rendering test. Existing graph nodes and source-valid relationships were retained; unresolved cross-file imports are not inferred. The baseline SQL and semantic extraction gaps remain unchanged. Extraction used zero model tokens. See FEATURE_TREE.md PORTAL-LOADING for entry points, boundaries and verification.

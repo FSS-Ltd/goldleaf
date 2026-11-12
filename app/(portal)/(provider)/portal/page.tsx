@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { getPortalIdentity } from "@/lib/portal/identity";
@@ -11,4 +12,4 @@ async function PortalLanding() {
   if (memberships.some((item) => item.role === "staff")) redirect("/staff");
   return <main id="main" className="section wrap"><h1>Portal access unavailable</h1><p className="mt-4">Please ask Deborah about your invitation.</p></main>;
 }
-export default function PortalPage() { return <Suspense fallback={<main className="section wrap"><p>Opening your portal…</p></main>}><PortalLanding /></Suspense>; }
+export default function PortalPage() { return <Suspense fallback={<PortalLoading label="Opening your portal…" variant="dashboard" />}><PortalLanding /></Suspense>; }

@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import Link from "next/link";
 import { randomUUID } from "node:crypto";
 import { Suspense } from "react";
@@ -47,9 +48,7 @@ export default function Page() {
   return (
     <Suspense
       fallback={
-        <main className="section wrap">
-          <p>Opening invoice form…</p>
-        </main>
+        <PortalLoading label="Opening invoice form…" variant="detail" />
       }
     >
       <CreateInvoice />

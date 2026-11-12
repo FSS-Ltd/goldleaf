@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { Suspense } from "react";
 import { AuthShell } from "@/components/portal/AuthShell";
 import { ResetPasswordTask } from "@/components/portal/auth/ResetPasswordTask";
@@ -14,5 +15,5 @@ export default function ResetTaskPage({ searchParams }: { searchParams: Promise<
   if (!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || !process.env.CLERK_SECRET_KEY) {
     return <AuthShell><div><h1>Account security unavailable</h1><p>Please try again later.</p></div></AuthShell>;
   }
-  return <AuthShell><Suspense fallback={<p>Loading your account…</p>}><TaskContent searchParams={searchParams} /></Suspense></AuthShell>;
+  return <AuthShell><Suspense fallback={<PortalLoading label="Loading your account…" variant="account" contentOnly />}><TaskContent searchParams={searchParams} /></Suspense></AuthShell>;
 }

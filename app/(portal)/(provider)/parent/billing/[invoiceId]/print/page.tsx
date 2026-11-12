@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { z } from "zod";
@@ -43,9 +44,7 @@ export default function Page(props: {
   return (
     <Suspense
       fallback={
-        <main className="section wrap">
-          <p>Opening invoice…</p>
-        </main>
+        <PortalLoading label="Opening invoice…" variant="detail" />
       }
     >
       <Print {...props} />

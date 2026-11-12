@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { Suspense } from "react";
 import { cookies } from "next/headers";
 import Image from "next/image";
@@ -30,7 +31,7 @@ export default function AcceptPage() {
   return <main id="main" className="mx-auto flex w-full max-w-xl flex-1 flex-col px-5 py-12">
     <Link href="/" className="mb-10 block w-40"><Image src="/brand/goldleaf-wordmark-trim.webp" alt="Goldleaf" width={1482} height={435} /></Link>
     <section className="rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6 md:p-8">
-      <Suspense fallback={<p role="status">Checking your invitation…</p>}><Invitation /></Suspense>
+      <Suspense fallback={<PortalLoading label="Checking your invitation…" variant="account" contentOnly />}><Invitation /></Suspense>
     </section>
   </main>;
 }

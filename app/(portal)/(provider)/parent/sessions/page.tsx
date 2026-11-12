@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { PortalShell } from "@/components/portal/PortalShell";
@@ -88,7 +89,7 @@ export default function SessionsPage({
 }) {
   return (
     <Suspense
-      fallback={<main className="section wrap">Opening sessions…</main>}
+      fallback={<PortalLoading label="Opening sessions…" variant="list" />}
     >
       <ParentSessions searchParams={searchParams} />
     </Suspense>

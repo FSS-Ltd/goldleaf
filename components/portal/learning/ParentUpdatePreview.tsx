@@ -4,6 +4,7 @@ import type { LearningPreview } from "@/lib/portal/learning-schemas";
 export function ParentUpdatePreview({
   preview,
   childName,
+  sessionWhen,
   familyName,
   pending,
   sharing,
@@ -11,6 +12,7 @@ export function ParentUpdatePreview({
 }: {
   preview: LearningPreview;
   childName: string;
+  sessionWhen: string;
   familyName: string;
   pending: boolean;
   sharing: boolean;
@@ -18,14 +20,27 @@ export function ParentUpdatePreview({
 }) {
   return (
     <div className="mt-6 rounded-lg border border-[#d6c8b5] bg-white p-4">
-      <h3 className="font-medium">Preview for {familyName}</h3>
+      <h3 className="!font-sans !text-base font-medium">
+        Preview for {familyName}
+      </h3>
       <p className="mt-2 text-sm">
-        {childName} · Authorised parents can view this in the family record.
+        {childName} · {sessionWhen} · Authorised parents can view this in the
+        family record.
       </p>
-      <p className="mt-4 whitespace-pre-wrap">{preview.body}</p>
+      <p className="mt-4 whitespace-pre-wrap [overflow-wrap:anywhere]">
+        {preview.body}
+      </p>
       {preview.stage !== null && <p className="mt-3">Stage {preview.stage}</p>}
-      {preview.focus && <p className="mt-3">{preview.focus}</p>}
-      {preview.practice && <p className="mt-3">{preview.practice}</p>}
+      {preview.focus && (
+        <p className="mt-3 [overflow-wrap:anywhere]">
+          <strong>Focus:</strong> {preview.focus}
+        </p>
+      )}
+      {preview.practice && (
+        <p className="mt-3 [overflow-wrap:anywhere]">
+          <strong>Practice:</strong> {preview.practice}
+        </p>
+      )}
       {preview.explored_sounds.length > 0 && (
         <div className="mt-3">
           <p>Sounds explored</p>

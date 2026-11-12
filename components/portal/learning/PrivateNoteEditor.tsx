@@ -2,16 +2,18 @@
 
 import { useState, useTransition } from "react";
 import type { ActionActor } from "@/lib/portal/action-actor";
-import { saveNoteAction } from "@/app/(portal)/(provider)/staff/sessions/[id]/actions";
+import type { WorkspaceActions } from "@/lib/portal/workspace-action-types";
 
 export function PrivateNoteEditor({
   sessionId,
   actor,
+  actions,
   note,
   version,
 }: {
   sessionId: string;
   actor: ActionActor;
+  actions: WorkspaceActions;
   note: string | null;
   version: number;
 }) {
@@ -24,7 +26,7 @@ export function PrivateNoteEditor({
     setError("");
     start(async () => {
       try {
-        const result = await saveNoteAction(actor, {
+        const result = await actions.saveNoteAction(actor, {
           sessionId,
           body,
           expectedVersion: savedVersion,

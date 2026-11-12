@@ -2,11 +2,7 @@
 
 import { useState, useTransition } from "react";
 import type { ActionActor } from "@/lib/portal/action-actor";
-import {
-  previewDraftAction,
-  publishDraftAction,
-  saveDraftAction,
-} from "@/app/(portal)/(provider)/staff/sessions/[id]/actions";
+import type { WorkspaceActions } from "@/lib/portal/workspace-action-types";
 import type {
   LearningPreview,
   LearningWorkspace,
@@ -21,6 +17,8 @@ const textValue = (value: string | null) => value ?? "";
 export function WorkspaceEditor({
   sessionId,
   actor,
+  actions,
+  sessionWhen,
   childName,
   familyName,
   initial,
@@ -28,6 +26,8 @@ export function WorkspaceEditor({
 }: {
   sessionId: string;
   actor: ActionActor;
+  actions: WorkspaceActions;
+  sessionWhen: string;
   childName: string;
   familyName: string;
   initial: LearningWorkspace;
@@ -88,7 +88,7 @@ export function WorkspaceEditor({
       ),
     ].join("\n");
     run("save", async () => {
-      const result = await saveDraftAction(actor, {
+      const result = await actions.saveDraftAction(actor, {
         sessionId,
         body: normalBody,
         stage: stage === "" ? null : Number(stage),
@@ -111,7 +111,7 @@ export function WorkspaceEditor({
   function previewDraft() {
     setDraftMessage("");
     run("preview", async () => {
-      const result = await previewDraftAction(actor, {
+      const result = await actions.previewDraftAction(actor, {
         sessionId,
         expectedVersion: version,
       });
@@ -124,7 +124,7 @@ export function WorkspaceEditor({
     if (!preview) return;
     setDraftMessage("");
     run("share", async () => {
-      const result = await publishDraftAction(actor, {
+      const result = await actions.publishDraftAction(actor, {
         sessionId,
         expectedVersion: preview.version,
         fingerprint: preview.fingerprint,
@@ -143,6 +143,9 @@ export function WorkspaceEditor({
         className="rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6"
       >
         <h2 className="!text-xl">Parent update</h2>
+        <p className="mt-2 text-sm font-medium">
+          Draft · visible to authorised staff until shared
+        </p>
         <p className="mt-2 text-sm">
           Authorised parents can view the family record for {childName}.
         </p>
@@ -192,6 +195,7 @@ export function WorkspaceEditor({
         {preview && (
           <ParentUpdatePreview
             preview={preview}
+            sessionWhen={sessionWhen}
             childName={childName}
             familyName={familyName}
             pending={pending}

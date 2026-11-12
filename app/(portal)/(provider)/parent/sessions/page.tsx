@@ -4,6 +4,7 @@ import { PortalShell } from "@/components/portal/PortalShell";
 import { ChildSelector } from "@/components/portal/learning/ChildSelector";
 import { parentChildren } from "@/lib/portal/parent-children";
 import { listSessions } from "@/lib/portal/sessions";
+import { sessionStatusLabel } from "@/lib/portal/session-status";
 import { formatUkSession } from "@/lib/portal/uk-time";
 
 export const metadata = {
@@ -60,11 +61,13 @@ async function ParentSessions({
               return (
                 <li key={session.id}>
                   <a
-                    className="block rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-5"
+                    className="block rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-5 [overflow-wrap:anywhere]"
                     href={`/parent/sessions/${session.id}`}
                   >
                     <span className="font-medium">{when.day}</span>
-                    <span className="mt-1 block text-sm">{when.time}</span>
+                    <span className="mt-1 block text-sm">
+                      {when.time} · {sessionStatusLabel(session.status)}
+                    </span>
                   </a>
                 </li>
               );

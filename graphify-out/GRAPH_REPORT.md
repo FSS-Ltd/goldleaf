@@ -244,3 +244,7 @@ Final scope refresh after scheduling and display review re-extracted 27 allowlis
 Focused editor split and session-key safeguards re-extracted 29 allowlisted files: 557 nodes, 549 edges; 139 unresolved extractor edges omitted. Existing SQL and historical corpus limitations remain.
 
 UK session end-date display re-extracted two allowlisted files: 557 nodes, 549 edges; 3 unresolved extractor edges omitted.
+
+Review fixes refreshed 40 allowlisted files with a fresh temporary extraction cache. Five colliding admin/staff action symbols were disambiguated by path; stale moved helper nodes were removed. The graph has 582 nodes and 574 edges; 178 unresolved or ambiguous edges were omitted. Existing SQL extraction and corpus limits remain.
+
+Final review scope re-extracted 40 allowlisted files using a fresh cache: 582 nodes, 574 edges. Five colliding admin/staff action symbols were disambiguated; 178 unresolved or ambiguous edges were omitted. SQL remains manually source-linked and historical corpus gaps remain.

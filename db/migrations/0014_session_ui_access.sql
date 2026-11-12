@@ -1,9 +1,22 @@
 -- Forward-only. Identity comes only from the verified server boundary.
 BEGIN;
+-- Bind every acknowledged request, including aliases of an existing publication.
+CREATE TABLE portal.learning_publication_operations (
+  operation_id uuid PRIMARY KEY,
+  publication_id uuid NOT NULL REFERENCES portal.published_learning_updates(id),
+  session_id uuid NOT NULL REFERENCES portal.sessions(id),
+  draft_version integer NOT NULL CHECK (draft_version > 0),
+  preview_fingerprint text NOT NULL CHECK (preview_fingerprint ~ '^[0-9a-f]{64}$'),
+  actor_id uuid NOT NULL REFERENCES portal.memberships(id)
+);
+INSERT INTO portal.learning_publication_operations(operation_id,publication_id,session_id,draft_version,preview_fingerprint,actor_id)
+SELECT operation_id,id,session_id,draft_version,preview_fingerprint,published_by FROM portal.published_learning_updates;
+REVOKE ALL ON portal.learning_publication_operations FROM PUBLIC;
+
 -- Existing duplicate versions remain readable; all runtime writes serialize on the session row.
 CREATE OR REPLACE FUNCTION portal.publish_learning_draft(p_subject text,p_session uuid,p_expected integer,p_operation uuid,p_fingerprint text) RETURNS uuid
 LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
-DECLARE session_row portal.sessions%ROWTYPE; draft_row portal.learning_drafts%ROWTYPE; existing portal.published_learning_updates%ROWTYPE; actor uuid; result uuid;
+DECLARE session_row portal.sessions%ROWTYPE; draft_row portal.learning_drafts%ROWTYPE; existing portal.published_learning_updates%ROWTYPE; operation_row portal.learning_publication_operations%ROWTYPE; actor uuid; result uuid;
 BEGIN
   SELECT * INTO session_row FROM portal.sessions WHERE id=p_session;
   IF NOT FOUND THEN RAISE EXCEPTION 'not authorised' USING ERRCODE='42501'; END IF;
@@ -11,16 +24,20 @@ BEGIN
   IF p_operation IS NULL OR p_expected IS NULL OR p_expected<1 OR p_fingerprint IS NULL OR p_fingerprint !~ '^[0-9a-f]{64}$' THEN RAISE EXCEPTION 'invalid publication' USING ERRCODE='22023'; END IF;
   -- Serialize operation IDs across different sessions as well as a session's drafts.
   PERFORM pg_advisory_xact_lock(hashtextextended(p_operation::text,0));
-  SELECT * INTO existing FROM portal.published_learning_updates WHERE operation_id=p_operation;
+  SELECT * INTO operation_row FROM portal.learning_publication_operations WHERE operation_id=p_operation;
   IF FOUND THEN
-    IF existing.session_id<>p_session OR existing.draft_version<>p_expected OR existing.published_by<>actor OR existing.preview_fingerprint<>p_fingerprint THEN RAISE EXCEPTION 'operation already used' USING ERRCODE='23505'; END IF;
-    RETURN existing.id;
+    IF operation_row.session_id<>p_session OR operation_row.draft_version<>p_expected OR operation_row.actor_id<>actor OR operation_row.preview_fingerprint<>p_fingerprint THEN RAISE EXCEPTION 'operation already used' USING ERRCODE='23505'; END IF;
+    RETURN operation_row.publication_id;
   END IF;
   PERFORM 1 FROM portal.sessions WHERE id=p_session FOR UPDATE;
   SELECT * INTO existing FROM portal.published_learning_updates
     WHERE session_id=p_session AND draft_version=p_expected AND preview_fingerprint=p_fingerprint
     ORDER BY published_at,id LIMIT 1;
-  IF FOUND THEN RETURN existing.id; END IF;
+  IF FOUND THEN
+    INSERT INTO portal.learning_publication_operations(operation_id,publication_id,session_id,draft_version,preview_fingerprint,actor_id)
+      VALUES(p_operation,existing.id,p_session,p_expected,p_fingerprint,actor);
+    RETURN existing.id;
+  END IF;
   IF EXISTS (SELECT 1 FROM portal.published_learning_updates WHERE session_id=p_session AND draft_version=p_expected) THEN
     RAISE EXCEPTION 'draft changed' USING ERRCODE='40001';
   END IF;
@@ -29,6 +46,8 @@ BEGIN
   IF p_fingerprint<>portal.learning_fingerprint(session_row.id,session_row.child_id,session_row.family_id,draft_row.version,draft_row.body,draft_row.stage,draft_row.focus,draft_row.practice,draft_row.explored_sounds) THEN RAISE EXCEPTION 'draft changed' USING ERRCODE='40001'; END IF;
   INSERT INTO portal.published_learning_updates(operation_id,session_id,child_id,family_id,draft_version,preview_fingerprint,body,stage,focus,practice,explored_sounds,published_by)
     VALUES(p_operation,p_session,session_row.child_id,session_row.family_id,draft_row.version,p_fingerprint,draft_row.body,draft_row.stage,draft_row.focus,draft_row.practice,draft_row.explored_sounds,actor) RETURNING id INTO result;
+  INSERT INTO portal.learning_publication_operations(operation_id,publication_id,session_id,draft_version,preview_fingerprint,actor_id)
+    VALUES(p_operation,result,p_session,p_expected,p_fingerprint,actor);
   PERFORM pg_notify('portal_changes',json_build_object('kind','learning','id',result)::text);
   RETURN result;
 END $$;
@@ -43,6 +62,7 @@ LANGUAGE sql SECURITY DEFINER SET search_path=pg_catalog,portal,pg_temp AS $$
   WHERE s.id=p_session AND EXISTS (
     SELECT 1 FROM portal.memberships m
     WHERE m.subject=p_subject AND m.role=p_role AND m.revoked_at IS NULL AND (
+      (p_role='admin' AND m.family_id IS NULL) OR
       (p_role='parent' AND m.family_id=s.family_id) OR
       (p_role='staff' AND EXISTS (SELECT 1 FROM portal.staff_family_assignments a WHERE a.staff_id=m.id AND a.family_id=s.family_id))
     )
@@ -62,5 +82,15 @@ BEGIN
   WHERE m.subject=p_subject AND m.role='staff' AND m.revoked_at IS NULL
   ORDER BY s.starts_at,s.id;
 END $$;
-REVOKE ALL ON FUNCTION portal.read_scoped_session(text,uuid,text),portal.list_staff_sessions(text) FROM PUBLIC;
+CREATE FUNCTION portal.list_parent_latest_learning(p_subject text)
+RETURNS TABLE(id uuid,session_id uuid,child_id uuid,family_id uuid,body text,stage smallint,focus text,practice text,explored_sounds text[],published_at timestamptz,published_by uuid)
+LANGUAGE plpgsql SECURITY DEFINER SET search_path=pg_catalog,portal,pg_temp AS $$
+BEGIN
+  IF NOT EXISTS (SELECT 1 FROM portal.memberships m WHERE m.subject=p_subject AND m.role='parent' AND m.revoked_at IS NULL) THEN RAISE EXCEPTION 'not authorised' USING ERRCODE='42501'; END IF;
+  RETURN QUERY SELECT DISTINCT ON (u.child_id) u.id,u.session_id,u.child_id,u.family_id,u.body,u.stage,u.focus,u.practice,u.explored_sounds,u.published_at,u.published_by
+    FROM portal.published_learning_updates u
+    WHERE EXISTS (SELECT 1 FROM portal.memberships m WHERE m.subject=p_subject AND m.role='parent' AND m.revoked_at IS NULL AND m.family_id=u.family_id)
+    ORDER BY u.child_id,u.published_at DESC,u.id DESC;
+END $$;
+REVOKE ALL ON FUNCTION portal.read_scoped_session(text,uuid,text),portal.list_staff_sessions(text),portal.list_parent_latest_learning(text) FROM PUBLIC;
 COMMIT;

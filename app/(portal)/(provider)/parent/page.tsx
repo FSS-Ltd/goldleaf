@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { Suspense } from "react";
+import { RecordedSoundChips } from "@/components/SoundTiles";
 import { PortalShell } from "@/components/portal/PortalShell";
 import { parentChildren } from "@/lib/portal/parent-children";
 import { listSessions } from "@/lib/portal/sessions";
-import { listPublishedLearning } from "@/lib/portal/learning";
+import { listParentLatestLearning } from "@/lib/portal/learning";
 import { listParentInvoices } from "@/lib/portal/invoices";
 import { invoicePaymentStatus } from "@/lib/portal/invoice-status";
+import { sessionStatusLabel } from "@/lib/portal/session-status";
 import { currentUkTime, formatUkSession } from "@/lib/portal/uk-time";
 
 async function ParentHome() {
@@ -13,12 +15,7 @@ async function ParentHome() {
   const children = families.flatMap((item) => item.children);
   const [familySessions, childUpdates, invoices] = await Promise.all([
     Promise.all(families.map((item) => listSessions(item.family!.id))),
-    Promise.all(
-      children.map(async (child) => ({
-        child,
-        updates: await listPublishedLearning(child.family_id, child.id),
-      })),
-    ),
+    listParentLatestLearning(),
     listParentInvoices(),
   ]);
   const now = currentUkTime();
@@ -30,14 +27,16 @@ async function ParentHome() {
         Date.parse(session.starts_at) + session.duration_minutes * 60000 >= now,
     )
     .sort((a, b) => Date.parse(a.starts_at) - Date.parse(b.starts_at))[0];
-  const latest = childUpdates
-    .flatMap(({ child, updates }) =>
-      updates.map((update) => ({ child, update })),
-    )
-    .sort(
-      (a, b) =>
-        Date.parse(b.update.published_at) - Date.parse(a.update.published_at),
-    )[0];
+  const latestUpdate = childUpdates.sort(
+    (a, b) => Date.parse(b.published_at) - Date.parse(a.published_at),
+  )[0];
+  const latestChild =
+    latestUpdate &&
+    children.find((child) => child.id === latestUpdate.child_id);
+  const latest =
+    latestUpdate && latestChild
+      ? { update: latestUpdate, child: latestChild }
+      : undefined;
   const invoice = invoices[0];
   const payment = invoice
     ? invoicePaymentStatus(invoice.snapshot.total_pence, invoice.paid_pence)
@@ -64,7 +63,7 @@ async function ParentHome() {
             <p className="mt-5">
               {children.find((child) => child.id === next.child_id)
                 ?.display_name ?? "Child"}{" "}
-              · {when.day} · {when.time}
+              · {when.day} · {when.time} · {sessionStatusLabel(next.status)}
             </p>
           ) : (
             <p className="mt-5 text-sm">No upcoming sessions scheduled.</p>
@@ -112,7 +111,9 @@ async function ParentHome() {
                   timeZone: "Europe/London",
                 }).format(new Date(latest.update.published_at))}
               </p>
-              <p className="mt-3 whitespace-pre-wrap">{latest.update.body}</p>
+              <p className="mt-3 whitespace-pre-wrap [overflow-wrap:anywhere]">
+                {latest.update.body}
+              </p>
             </>
           ) : (
             <p className="mt-5 text-sm">No learning updates shared yet.</p>
@@ -128,10 +129,20 @@ async function ParentHome() {
           <h2 className="!font-sans !text-base font-medium">
             Latest shared focus
           </h2>
+          {latest && latest.update.explored_sounds.length > 0 && (
+            <div className="mt-4">
+              <p className="text-sm font-medium">
+                Sounds explored · {latest.child.display_name}
+              </p>
+              <RecordedSoundChips sounds={latest.update.explored_sounds} />
+            </div>
+          )}
           {latest?.update.focus ? (
-            <p className="mt-5">{latest.update.focus}</p>
+            <p className="mt-5 [overflow-wrap:anywhere]">
+              {latest.child.display_name} · {latest.update.focus}
+            </p>
           ) : (
-            <p className="mt-5 text-sm">No focus has been shared yet.</p>
+            <p className="mt-5 text-sm">No focus in the latest update.</p>
           )}
         </section>
       </div>

@@ -1,15 +1,17 @@
 "use client";
 import { useState, useTransition } from "react";
-import { updateSessionAction } from "@/app/(portal)/(provider)/staff/sessions/[id]/actions";
+import type { WorkspaceActions } from "@/lib/portal/workspace-action-types";
 import type { ActionActor } from "@/lib/portal/action-actor";
 import type { ScopedSession } from "@/lib/portal/sessions";
 
 export function SessionControls({
   session,
   actor,
+  actions,
 }: {
   session: ScopedSession;
   actor: ActionActor;
+  actions: WorkspaceActions;
 }) {
   const [pending, start] = useTransition();
   const [error, setError] = useState("");
@@ -20,7 +22,7 @@ export function SessionControls({
     setError("");
     start(async () => {
       try {
-        const result = await updateSessionAction(actor, {
+        const result = await actions.updateSessionAction(actor, {
           sessionId: session.id,
           status,
           attendance,

@@ -3,6 +3,7 @@ import { CalendarDays, CircleAlert } from "lucide-react";
 import { PortalShell } from "@/components/portal/PortalShell";
 import { requireRole } from "@/lib/portal/require-role";
 import { listStaffSessions } from "@/lib/portal/sessions";
+import { sessionStatusLabel } from "@/lib/portal/session-status";
 import { formatUkSession } from "@/lib/portal/uk-time";
 import { listAssignedStaffFamilies } from "@/lib/portal/staff";
 
@@ -49,7 +50,7 @@ async function StaffToday() {
               {todaysSessions.map((session) => (
                 <li key={session.id}>
                   <a
-                    className="block py-4"
+                    className="block py-4 [overflow-wrap:anywhere]"
                     href={`/staff/sessions/${session.id}`}
                   >
                     <span className="font-medium">{session.child_name}</span>
@@ -60,7 +61,8 @@ async function StaffToday() {
                           session.duration_minutes,
                         ).time
                       }{" "}
-                      · {session.family_name ?? "Family"}
+                      · {session.family_name ?? "Family"} ·{" "}
+                      {sessionStatusLabel(session.status)}
                     </span>
                   </a>
                 </li>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { randomUUID } from "node:crypto";
@@ -12,6 +13,7 @@ import { listFamilies } from "@/lib/portal/families";
 import { listChildren } from "@/lib/portal/children";
 import { listSessions } from "@/lib/portal/sessions";
 import { requireRole } from "@/lib/portal/require-role";
+import { sessionStatusLabel } from "@/lib/portal/session-status";
 import { formatUkSession } from "@/lib/portal/uk-time";
 
 export const metadata = {
@@ -45,27 +47,37 @@ async function AdminChildren({
       <h1 className="!text-[clamp(2rem,4vw,2.6rem)]">
         Children &amp; sessions
       </h1>
-      <form method="get" className="mt-6 max-w-xl">
-        <label className="block text-sm font-medium">
-          Family
-          <select
-            className="mt-2 w-full rounded-lg border border-[#d6c8b5] bg-white px-4 py-3"
-            name="family"
-            defaultValue={selected?.id ?? ""}
-          >
-            <option value="">Select a family</option>
-            {families.map((family) => (
-              <option key={family.id} value={family.id}>
-                {family.display_name ?? "Unnamed family"}
-              </option>
-            ))}
-          </select>
-        </label>
-        <button className="mt-3 min-h-12 rounded-lg border border-[#06451d] px-5 text-sm">
-          Show family
-        </button>
-      </form>
-      {selected ? (
+      {families.length > 0 && (
+        <form method="get" className="mt-6 max-w-xl">
+          <label className="block text-sm font-medium">
+            Family
+            <select
+              className="mt-2 w-full rounded-lg border border-[#d6c8b5] bg-white px-4 py-3"
+              name="family"
+              defaultValue={selected?.id ?? ""}
+            >
+              <option value="">Select a family</option>
+              {families.map((family) => (
+                <option key={family.id} value={family.id}>
+                  {family.display_name ?? "Unnamed family"}
+                </option>
+              ))}
+            </select>
+          </label>
+          <button className="mt-3 min-h-12 rounded-lg border border-[#06451d] px-5 text-sm">
+            Show family
+          </button>
+        </form>
+      )}
+      {families.length === 0 ? (
+        <p className="mt-6 text-sm">
+          No families have been added yet.{" "}
+          <Link href="/admin" prefetch={false} className="underline">
+            Create a family
+          </Link>{" "}
+          first.
+        </p>
+      ) : selected ? (
         <div className="mt-8 grid gap-6 lg:grid-cols-2">
           <section className="rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6">
             <h2 className="!text-xl">Register a child</h2>
@@ -89,7 +101,7 @@ async function AdminChildren({
             />
           </section>
           <section className="rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6 lg:col-span-2">
-            <h2 className="!text-xl">Scheduled sessions</h2>
+            <h2 className="!text-xl">Sessions</h2>
             {sessions.length ? (
               <ul className="mt-4 divide-y divide-[#e3d7c3]">
                 {sessions.map((session) => {
@@ -99,9 +111,15 @@ async function AdminChildren({
                   );
                   return (
                     <li key={session.id} className="py-3 text-sm">
-                      {children.find((child) => child.id === session.child_id)
-                        ?.display_name ?? "Child"}{" "}
-                      · {when.day} · {when.time}
+                      <a
+                        className="underline"
+                        href={`/admin/sessions/${session.id}`}
+                      >
+                        {children.find((child) => child.id === session.child_id)
+                          ?.display_name ?? "Child"}{" "}
+                        · {when.day} · {when.time} ·{" "}
+                        {sessionStatusLabel(session.status)}
+                      </a>
                     </li>
                   );
                 })}

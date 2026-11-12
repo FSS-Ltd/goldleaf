@@ -6,13 +6,15 @@ import { scheduleSession } from "@/lib/portal/sessions";
 import { ukLocalToIso } from "@/lib/portal/uk-time";
 import { requireActionActor } from "@/lib/portal/action-actor";
 
-export type AdminActionState = {
-  status: "idle" | "success" | "error";
-  message: string;
-};
+import type { AdminActionState } from "@/lib/portal/admin-form-state";
+
+function text(form: FormData, key: string): string {
+  const value = form.get(key);
+  return typeof value === "string" ? value : "";
+}
 
 export async function registerChild(
-  _: AdminActionState,
+  previous: AdminActionState,
   form: FormData,
 ): Promise<AdminActionState> {
   try {
@@ -33,14 +35,20 @@ export async function registerChild(
       status: "error",
       message:
         "Could not register this child. Check the details and refresh before trying again.",
+      revision: previous.revision,
+      values: { name: text(form, "name") },
     };
   }
   revalidatePath("/admin/children");
-  return { status: "success", message: "Child registered." };
+  return {
+    status: "success",
+    message: "Child registered.",
+    revision: previous.revision + 1,
+  };
 }
 
 export async function createSession(
-  _: AdminActionState,
+  previous: AdminActionState,
   form: FormData,
 ): Promise<AdminActionState> {
   try {
@@ -69,10 +77,21 @@ export async function createSession(
       status: "error",
       message:
         "Could not schedule the session. Check the details; UK clock-change times may be missing or occur twice.",
+      revision: previous.revision,
+      values: {
+        childId: text(form, "childId"),
+        date: text(form, "date"),
+        time: text(form, "time"),
+        location: text(form, "location"),
+      },
     };
   }
   revalidatePath("/admin/children");
   revalidatePath("/staff");
   revalidatePath("/parent/sessions");
-  return { status: "success", message: "Session scheduled." };
+  return {
+    status: "success",
+    message: "Session scheduled.",
+    revision: previous.revision + 1,
+  };
 }

@@ -47,7 +47,7 @@ async function SessionDetail({ params }: { params: Promise<{ id: string }> }) {
       >
         Back to sessions
       </Link>
-      <h1 className="mt-5 !text-[clamp(2rem,4vw,2.6rem)]">
+      <h1 className="mt-5 !text-[clamp(2rem,4vw,2.6rem)] [overflow-wrap:anywhere]">
         Session for {session.child_name}
       </h1>
       <section className="mt-7 rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6">

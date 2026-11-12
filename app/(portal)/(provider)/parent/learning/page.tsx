@@ -87,16 +87,24 @@ async function ParentLearning({
                   ))}
                 </ol>
               )}
-              {latest.focus && <p className="mt-3">{latest.focus}</p>}
+              {latest.focus && (
+                <p className="mt-3 [overflow-wrap:anywhere]">{latest.focus}</p>
+              )}
               {latest.explored_sounds.length > 0 && (
                 <div className="mt-5">
-                  <h3 className="font-medium">Sounds explored</h3>
+                  <h3 className="!font-sans !text-base font-medium">
+                    Sounds explored
+                  </h3>
                   <div className="mt-3">
                     <RecordedSoundChips sounds={latest.explored_sounds} />
                   </div>
                 </div>
               )}
-              {latest.practice && <p className="mt-5">{latest.practice}</p>}
+              {latest.practice && (
+                <p className="mt-5 [overflow-wrap:anywhere]">
+                  {latest.practice}
+                </p>
+              )}
             </section>
             <section className="rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6">
               <h2 className="!text-xl">Shared tutor observations</h2>
@@ -109,7 +117,9 @@ async function ParentLearning({
                         timeZone: "Europe/London",
                       }).format(new Date(update.published_at))}
                     </p>
-                    <p className="mt-2 whitespace-pre-wrap">{update.body}</p>
+                    <p className="mt-2 whitespace-pre-wrap [overflow-wrap:anywhere]">
+                      {update.body}
+                    </p>
                   </li>
                 ))}
               </ul>

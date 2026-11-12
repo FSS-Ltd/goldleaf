@@ -11,6 +11,6 @@ test("recorded sound labels remain intact, accessible and ordered", () => {
     }),
   );
   assert.match(html, /oo \(book\).*oo \(moon\).*sh/);
-  assert.equal((html.match(/class="chip"/g) ?? []).length, 3);
+  assert.equal((html.match(/class="chip /g) ?? []).length, 3);
   assert.doesNotMatch(html, /aria-hidden/);
 });

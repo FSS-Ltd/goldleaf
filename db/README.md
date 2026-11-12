@@ -282,7 +282,7 @@ GRANT EXECUTE ON FUNCTION
 TO goldleaf_portal_runtime;
 ```
 
-Do not grant the internal `require_family_worker`, `normalise_explored_sounds` or `learning_fingerprint` helpers. Subjects come only from verified server identity; SQL rechecks membership and locks staff assignment for writes. A session begins with attendance unrecorded, independently of its lifecycle. The optional location is an actual admin-entered label, visible only to authorised family members and assigned staff. The server schedules using `site.sessionMinutes` and the existing `sessionBlocks`; no duration is inferred from archived mockups.
+Do not grant table access to `learning_publication_operations` or the internal `require_family_worker`, `normalise_explored_sounds` or `learning_fingerprint` helpers. Subjects come only from verified server identity; SQL rechecks membership and locks staff assignment for writes. A session begins with attendance unrecorded, independently of its lifecycle. The optional location is an actual admin-entered label, visible only to authorised family members and assigned staff. The server schedules using `site.sessionMinutes` and the existing `sessionBlocks`; no duration is inferred from archived mockups.
 
 A preview returns a SHA-256 fingerprint over the exact draft, explicitly explored sounds, version, session, child and family. Publishing locks and rechecks that context and the current authority. The fingerprint is a consistency check, not an authorization capability. Reuse the same operation UUID, version and fingerprint on retry; a successful replay returns the original publication. Publications are shared in the child's family archive, not addressed to a frozen list of individuals. Parents read only published snapshots, never the workspace or draft. Stale note and draft edits report a conflict and must be refreshed. PostgreSQL notifications carry only changed record IDs and are delivered on commit; consumers must re-read durable, authorised state on notification and reconnect. This migration does not provide a subscription transport or live UI, and has not been applied to development or production.
 
@@ -300,11 +300,11 @@ The Node route uses `GOLDLEAF_PORTAL_EVENT_DATABASE_URL` with a direct, unpooled
 
 ## Session UI scoped reads
 
-After review, apply `0014_session_ui_access.sql` and grant only its two entry points to the restricted runtime:
+After review, apply `0014_session_ui_access.sql` and grant only its three entry points to the restricted runtime:
 
 ```sql
-GRANT EXECUTE ON FUNCTION portal.read_scoped_session(text, uuid, text), portal.list_staff_sessions(text)
+GRANT EXECUTE ON FUNCTION portal.read_scoped_session(text, uuid, text), portal.list_staff_sessions(text), portal.list_parent_latest_learning(text)
 TO goldleaf_portal_runtime;
 ```
 
-Migration 0014 preserves any existing duplicate publication history. New runtime publications serialize on the session row; a retry of an already published draft version returns the earliest matching publication after verifying its preview fingerprint, even with a new operation UUID. Direct table writes remain prohibited for the runtime. The single-session reader checks current family scope for the trusted route’s fixed parent or staff role; the batched staff reader joins current assignments and active staff membership. Neither grants table access. Run `db/tests/session-ui-access.sql` on disposable PostgreSQL. No development or production deployment is implied.
+Migration 0014 preserves any existing duplicate publication history. Every acknowledged operation is durably bound to its actor, session, version and fingerprint; legacy operation IDs are seeded from existing publications. New runtime publications serialize on the session row; a retry of an already published draft version returns the earliest matching publication after verifying its preview fingerprint, even with a new operation UUID. Direct table writes remain prohibited for the runtime. The single-session reader checks current family scope for the trusted route’s fixed admin, parent or staff role; the batched staff reader joins current assignments and active staff membership; the parent dashboard reads only the latest published update per child across active parent families. Neither grants table access. Run `db/tests/session-ui-access.sql` on disposable PostgreSQL. No development or production deployment is implied.

@@ -71,7 +71,7 @@ Draft onboarding UI uses companion Stitch frames `ee9f8cc112ad420d8ba1e65b7137dd
 
 ## Sprint 3 · Staff onboarding and assignment
 
-**Owns** `app/(portal)/admin/staff/`, `app/(portal)/staff/page.tsx`, `lib/portal/staff.ts` and staff assignment migrations. Consume Sprint 2's invitation and access contracts.
+**Owns** `app/(portal)/admin/staff/`, `app/(portal)/staff/page.tsx`, `lib/portal/staff.ts` and staff assignment migrations. Consume Sprint 2's invitation and access contracts. Server access exposes accepted membership IDs and Clerk subjects; resolve selected accepted staff profiles through a server-side Clerk batch lookup and display the selected identity directly above the family checklist. Invite email is not an accepted identity. The companion staff invitation design reference is `1bf98347d63f4da19f1511d51be74e7f`; original staff desktop and mobile references remain unchanged.
 
 - [ ] Issue staff invitations with a separate purpose. Admin assigns authorised families or children explicitly. Staff sees only assigned records and cannot invite admins, change family pricing or access unrelated billing. Revocation takes effect on the next protected read or mutation.
 - [ ] Render Staff Today on desktop and mobile using the two Stitch frames. Use actual assigned sessions or the designed empty state. Keep unfinished actions out of the navigation until they have a working destination.
@@ -80,6 +80,9 @@ Draft onboarding UI uses companion Stitch frames `ee9f8cc112ad420d8ba1e65b7137dd
 ## Sprint 4 · Invoicing
 
 **Owns** `app/(portal)/admin/invoices/`, `app/(portal)/parent/billing/`, `lib/portal/invoices.ts`, `lib/portal/invoice-pricing.ts` and invoice migrations. Consume family authorisation and founding eligibility history from Sprint 2. Use GBP integer pence and canonical pricing logic. Keep invoice policy explicit and configurable.
+
+The server DAL and migration `0008_invoice_runtime.sql` provide configured settings, scoped invoice reads, canonical quotes and checked draft/issue/payment operations. Application UI, provider integration and notification remain planned. Founding eligibility uses the last tag change by the end of each service date in Europe/London; legacy records without sufficient history require reconciliation.
+
 
 - [ ] Let admin create, preview and issue a draft with line items and service dates. On issue, allocate a unique invoice number in the transaction and snapshot supplier and recipient details, service dates, quantities, rate, discount, any applicable tax, due date and totals. Retries reuse the same issue result. Published invoices retain issued data when profile, prices or tags change.
 - [ ] Provide parents a family-scoped invoice list and printable invoice. Use configured payment instructions and explicit admin recording of external payment. A recorded settlement has a date, reference and amount. Deliver a minimal Resend notification linking to the protected invoice. Email contains no child data. No online payment or recurring collection is required for this pilot.

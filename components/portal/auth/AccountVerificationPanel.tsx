@@ -11,7 +11,7 @@ export function AccountVerificationPanel({ flow }: { flow: ReturnType<typeof use
     if (typeof code === "string") void flow.verify(code);
   }
   return <section aria-labelledby="account-verify-title" className="mt-5 rounded-[14px] border border-[#e3d7c3] bg-[#fef8f3] p-5">
-    <h2 id="account-verify-title" className="font-display text-xl">Verify your identity</h2>
+    <h2 id="account-verify-title" className="font-display !text-lg">Verify your identity</h2>
     <p className="mt-2 text-sm">Confirm your identity before changing your account.</p>
     {flow.message && <p role="status" className="mt-3 text-sm">{flow.message}</p>}
     {flow.codeSent ? <form onSubmit={submit} className="mt-4 space-y-3">

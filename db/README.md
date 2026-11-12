@@ -159,7 +159,7 @@ Apply `0005_invoice_billing.sql` after `0004` as owner. It seeds only the suppli
 
 All functions are revoked from PUBLIC and no runtime role is provisioned. Only a server that verifies the Clerk subject may supply the subject argument. Grant selected functions individually, never the tables, triggers, counter or `require_admin`. Admin writes lock active membership. Parent reads check current family membership in the query; staff have no invoice access. Issue locks the draft, validates configured policy, allocates the number transactionally and stores issuer, recipient, lines, terms, dates, VAT and totals as a snapshot. Repeated issue returns the same number. Issued rows and lines cannot be changed through normal SQL. External payment recording uses a caller-generated stable operation UUID; a replay with different details fails, and payments cannot exceed the snapshot total. No payment is collected.
 
-**Do not grant or enable invoice issuance yet.** The future trusted DAL must derive every line from `quoteInvoice`, resolve the family's eligibility history for the service date, apply the post-intro rounding policy, and verify recipient and supplier data. SQL validates arithmetic and transition consistency but does not independently validate supplied prices or founding eligibility. Existing founding slot assignments predate eligibility history and need reconciliation. No provider, deployment, email or invoice UI is included here.
+`lib/portal/invoices.ts` derives each line from `quoteInvoice` and service-date eligibility and uses checked database operations; SQL alone does not independently validate supplied prices or founding eligibility. Legacy founding assignments without sufficient history require reconciliation. Runtime role deployment, email and invoice UI remain pending.
 
 On a disposable PostgreSQL 17 database, run `db/tests/onboarding-upgrade.sql`, `db/migrations/0004_staff_onboarding.sql`, `db/migrations/0005_invoice_billing.sql`, and `db/tests/invoice-billing.sql` in order. Run `PGPORT=55439 sh db/tests/invoice-concurrency.sh <host> <database>` against the same disposable database. Tests create synthetic records; never point them at live data. Disable callers and revoke grants to roll back application use; preserve records and use a forward migration for corrections.
 
@@ -181,3 +181,30 @@ TO goldleaf_portal_runtime;
 Set `PORTAL_INVITE_FROM_EMAIL` to a verified sender, `RESEND_API_KEY` and `NEXT_PUBLIC_SITE_URL` for the relevant environment. Production invitation origins must use HTTPS. Links place the bearer in a fragment; the unauthenticated `/invite` capture route is excluded from the Clerk middleware and provider and the public analytics component. It clears the fragment, exchanges the token for a short-lived HttpOnly cookie scoped to `/invite`, then navigates to `/invite/accept` for authentication and explicit acceptance. The acceptance page exposes no family details before a verified-email match. Local tests stub mail delivery and must never send real invitations.
 
 The portal uses full document navigation between protected screens, reloads pages restored from the browser back-forward cache and redirects if the Clerk user changes. Each server query and mutation checks current membership. There is no live revocation push to an already open view; a future authenticated event subscription is required for that behaviour.
+
+## Staff server access (local verification only)
+
+Apply `0009_staff_access.sql` after the prior migrations. The existing portal runtime requires the following additional individually granted functions; retain the earlier grants and do not grant tables or lower-level invitation acceptance functions:
+
+```sql
+GRANT EXECUTE ON FUNCTION
+  portal.issue_staff_invitation(text, text, bytea, timestamptz),
+  portal.revoke_staff_invitation(text, uuid),
+  portal.set_staff_family_access(text, uuid, uuid, boolean),
+  portal.list_pending_staff_invitations(text),
+  portal.list_staff_family_assignments(text, uuid),
+  portal.list_assigned_staff_families(text)
+TO goldleaf_portal_runtime;
+```
+
+Only a trusted server may supply the Clerk-verified subject. `lib/portal/staff.ts` uses the existing invitation and assignment functions, issues seven-day tokens stored only as digests, and returns a raw token once to the server caller. Reissuing for the same email revokes the old pending invitation. Staff acceptance remains `acceptInvitation` through `portal.accept_verified_invitation`. Pending invites are not accepted staff identities. `listStaff` returns an accepted membership ID and Clerk subject; future UI must use a canonical server-side Clerk batch profile lookup to label the selected accepted staff member directly above the family checklist, never infer identity from an invite email. Assignment is explicit after acceptance; the SQL checks active staff on mutation. Staff reads return only assigned family IDs and names. This adds no delivery, UI, provider configuration, or deployed grants.
+
+On disposable PostgreSQL, run `db/tests/staff-access.sql` after migrations 0001 through 0009. This verifies restricted role, cross-role access, replay and revocation; real Clerk and Neon transports remain untested.
+
+## Invoice workflow data access (local verification only)
+
+Apply `0008_invoice_runtime.sql` after `0007`. The server DAL uses `invoice_draft_context` and `invoice_issue_context` to derive prices from `quoteInvoice`. For each date-only service date, founding eligibility is the latest tag change by history ID recorded before the next midnight in `Europe/London`; the last change on the same local date applies to that whole date. A normal family with no history and no assigned slot is standard. A legacy assignment lacking sufficient history returns unknown and requires reconciliation to its actual date before quoting; no date is invented.
+
+The checked draft and issue functions lock the affected family, settings and invoice, then compare the full previously read context. A change returns SQLSTATE `40001` and the DAL raises `InvoiceContextChangedError`; refresh and requote rather than retrying stale data. Draft retries must reuse the same operation UUID and identical request. Issued retries return the existing invoice number. Payment retries reuse the operation UUID and identical details. VAT is calculated in integer pence per line. Issue and due dates use Europe/London regardless of the caller session time zone; history timestamps in the checked context use UTC. Existing issued snapshots are never recalculated after later settings or founding changes.
+
+Only verified Clerk server identity may supply subjects. The database role may be granted individual EXECUTE privileges on `read_billing_settings`, `save_billing_settings`, `read_admin_invoice`, `read_family_invoices`, `record_invoice_payment`, `invoice_draft_context`, `invoice_issue_context`, `read_invoice_draft_operation`, `create_invoice_draft_checked`, and `issue_invoice_checked`. Never grant table access, `invoice_pricing_context`, `create_invoice_draft`, `issue_invoice`, or other internal helpers. No role, provider, production database, UI, email or payment processor is configured by this migration. Neon HTTP and Clerk signed-in integration remain untested locally. CI exercises synthetic PostgreSQL 17 database calls and concurrency; run `db/tests/invoice-runtime.sql` and `db/tests/invoice-runtime-concurrency.sh` only on a disposable database after the migrations.

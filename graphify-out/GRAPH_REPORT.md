@@ -1,5 +1,9 @@
 # Graph Report - goldleaf-graph-refresh  (2026-11-11)
 
+## Scoped invoice workflow update (2026-11-12)
+
+Scoped Graphify AST extraction covers the invoice and settings DAL, DTOs and tests. SQL extraction remains unsupported; the runtime migration and source-verified connections were linked manually. Issue dates use a function-local London time zone, and history context timestamps are normalised to UTC. Prior clustering and semantic coverage were not recomputed.
+
 ## Scoped invoice data update (2026-11-12)
 
 SQL extraction is unsupported. The invoice billing migration node and links to onboarding, pricing and the planned portal were added manually from source and runbook references. Prior clustering and semantic coverage are unchanged.
@@ -162,6 +166,14 @@ The invoice database node and source-backed edges were retained alongside the ac
 
 Founding DTO update: scoped extraction adds the `setFamilyFounding` wrapper. The current merged graph contains 163 nodes and 144 edges; SQL is source-linked manually.
 
+## Staff server access update
+
+`graphify update lib/portal` extracted the staff wrapper and validation nodes into a scoped graph; the affected nodes and internal edges were merged into this persistent graph. SQL extraction remains unsupported, so `portal_staff_access` and its source-backed connections were added manually. Prior semantic nodes remain. PostgreSQL and application tests are recorded in the feature tree.
+
+The staff and invoice runtime maps were reconciled after merging main: the combined graph contains 200 nodes and 189 edges. Existing nodes from both branches are retained; SQL remains source-linked rather than extracted.
+
+Staff access schema was re-extracted after normalizing Neon timestamp values; `staff_access_test` now links the regression test to the shared schema. SQL and cross-scope semantic coverage remain limited.
+
 ## Parent and admin onboarding update
 
 An allowlisted structural refresh reconciled public route-group moves, the Clerk-free invitation capture, provider-backed acceptance, scoped portal UI and tests. SQL migration and test references were added manually because SQL extraction is unsupported. Existing semantic nodes are retained where their source paths and endpoints resolve. The graph contains 226 nodes and 213 directed edges, including the source-linked resend concurrency test. Other semantic coverage and older unrelated edge directions remain unaudited.
@@ -173,3 +185,7 @@ Scoped proxy refresh: `/portal` and nested paths now receive Clerk middleware; `
 Scoped public-shell and portal-session AST reconciliation added source-backed error, 404 and verified-email decision nodes while preserving prior SQL and semantic nodes. Current graph: 242 nodes, 227 directed edges; unrelated historical coverage remains unaudited.
 
 Scoped custom-auth refresh extracted 39 explicitly selected changed TypeScript files and retained the earlier semantic and SQL nodes. Twelve source-verified auth dependencies were added directly. The graph now has 298 nodes and 286 directed edges; 115 extractor edges with unresolved endpoints were omitted, chiefly external or out-of-scope references. Historical coverage remains unaudited. The Protect challenge adapter uses a provider-supplied HTTPS SDK URL; the provider does not publish a fixed host allowlist, and actual challenged-provider execution remains unverified.
+
+After merging invoice and staff access, the combined graph retains both branches' source-linked nodes and edges: 336 nodes and 332 edges. Removed pre-route-group paths remain removed. Four older, unrelated edges still have `source`/`target` directions that disagree with `_src`/`_tgt`; they remain unaudited. Unresolved historical coverage and SQL extraction limits still apply.
+
+The scoped auth/profile typography and account-return update re-extracted eight affected files; the graph remains at 336 nodes and 332 edges. Thirty-seven unresolved extractor edges were omitted.

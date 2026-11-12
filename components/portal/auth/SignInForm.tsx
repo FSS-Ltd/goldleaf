@@ -19,10 +19,10 @@ export function SignInForm({ destination }: { destination: "/portal" | "/invite/
   function values(event: FormEvent<HTMLFormElement>) { event.preventDefault(); return new FormData(event.currentTarget); }
   function field(data: FormData, key: string) { const value = data.get(key); return typeof value === "string" ? value : ""; }
 
-  if (clerk.session?.currentTask?.key === "reset-password") return <section className="w-full max-w-md rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-7 text-[#1b3022]"><h1 className="font-display text-3xl text-[#06451d]">Account security</h1><p className="mt-3 text-sm">Please update your password before continuing.</p><Link href={`/session-task/reset-password?destination=${encodeURIComponent(destination)}`} className="mt-5 inline-block rounded-lg bg-[#06451d] px-5 py-3 font-medium text-white">Continue</Link></section>;
+  if (clerk.session?.currentTask?.key === "reset-password") return <section className="w-full max-w-md rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-7 text-[#1b3022]"><h1 className="font-display !text-2xl text-[#06451d]">Account security</h1><p className="mt-3 text-sm">Please update your password before continuing.</p><Link href={`/session-task/reset-password?destination=${encodeURIComponent(destination)}`} className="mt-5 inline-block rounded-lg bg-[#06451d] px-5 py-3 font-medium text-white">Continue</Link></section>;
 
   return <section className="w-full max-w-md rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-7 text-[#1b3022] shadow-sm">
-    <h1 className="font-display text-3xl text-[#06451d]">{flow.stage === "password" ? "Sign in to Goldleaf" : flow.stage === "factor" ? "Verify your sign in" : "Reset your password"}</h1>
+    <h1 className="font-display !text-2xl text-[#06451d]">{flow.stage === "password" ? "Sign in to Goldleaf" : flow.stage === "factor" ? "Verify your sign in" : "Reset your password"}</h1>
     <p className="mt-3 text-sm leading-relaxed text-[#35594a]">{flow.stage === "password" ? "Sign in to access your Goldleaf portal." : flow.stage === "factor" ? "Choose a verification method for your account." : "Use your email address to recover your account."}</p>
     {flow.message && <p role="status" className="mt-5 rounded-lg border border-[#e3d7c3] bg-[#fef8f3] p-3 text-sm">{flow.message}</p>}
     <ProtectGate container={flow.gate.container} active={flow.gate.active} cancel={flow.gate.cancel} />

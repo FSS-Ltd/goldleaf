@@ -53,10 +53,10 @@ export function ResetPasswordTask({ destination }: { destination: "/portal" | "/
   if (!clerk.session || !clerk.user) return <p>Your session is unavailable. Please <Link href="/sign-in" className="underline">sign in</Link> again.</p>;
   if (clerk.session.currentTask?.key !== "reset-password") {
     const ready = !clerk.session.currentTask && clerk.session.status === "active";
-    return <div><h1>Account security</h1><p className="mt-3">{ready ? "Your account is ready." : "Your account needs another security step. Please contact Goldleaf for help."}</p>{ready && <a href={destination} className="mt-4 inline-block underline">Continue</a>}</div>;
+    return <div><h1 className="font-display !text-2xl">Account security</h1><p className="mt-3">{ready ? "Your account is ready." : "Your account needs another security step. Please contact Goldleaf for help."}</p>{ready && <a href={destination} className="mt-4 inline-block underline">Continue</a>}</div>;
   }
   return <section className="w-full max-w-md rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-7 text-[#1b3022]">
-    <h1 className="font-display text-3xl text-[#06451d]">Choose a new password</h1>
+    <h1 className="font-display !text-2xl text-[#06451d]">Choose a new password</h1>
     <p className="mt-3 text-sm text-[#35594a]">For your account security, please update your password before continuing.</p>
     {message && <p role="status" className="mt-4 text-sm">{message}</p>}
     <AccountVerificationPanel flow={verification} />

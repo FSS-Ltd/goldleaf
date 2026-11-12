@@ -21,13 +21,13 @@ export function AccountProfile() {
   const user = flow.user;
   const google = user.externalAccounts.find((account) => account.provider === "google");
   return <div className="w-full max-w-3xl text-[#1b3022]">
-    <h1 className="font-display text-3xl text-[#06451d]">Account &amp; profile</h1>
+    <h1 className="font-display !text-3xl text-[#06451d]">Account &amp; profile</h1>
     <p className="mt-3 text-[#35594a]">Manage your personal details and sign-in methods.</p>
     {flow.message && <p role="status" className="mt-5 rounded-lg border border-[#e3d7c3] bg-[#fef8f3] p-3 text-sm">{flow.message}</p>}
     <AccountVerificationPanel flow={flow.verification} />
     <div className="mt-6 space-y-5">
       <section className={card}>
-        <h2 className="font-display text-2xl text-[#06451d]">Personal details</h2>
+        <h2 className="font-display !text-lg text-[#06451d]">Personal details</h2>
         <form className="mt-4 space-y-4" onSubmit={(event) => { const data = values(event); void flow.saveName(field(data, "first"), field(data, "last")); }}>
           <label className="block text-sm font-medium">First name<input name="first" autoComplete="given-name" defaultValue={user.firstName ?? ""} className={input} /></label>
           <label className="block text-sm font-medium">Last name<input name="last" autoComplete="family-name" defaultValue={user.lastName ?? ""} className={input} /></label>
@@ -35,7 +35,7 @@ export function AccountProfile() {
         </form>
       </section>
       <section className={card}>
-        <h2 className="font-display text-2xl text-[#06451d]">Email addresses</h2>
+        <h2 className="font-display !text-lg text-[#06451d]">Email addresses</h2>
         <ul className="mt-4 space-y-4">{user.emailAddresses.map((email) => <li key={email.id} className="rounded-lg bg-[#fef8f3] p-4 text-sm">
           <p className="break-all font-medium">{email.emailAddress}</p><p className="mt-1 text-[#35594a]">{email.verification?.status === "verified" ? "Verified" : "Not verified"}{user.primaryEmailAddressId === email.id ? " · Primary" : ""}</p>
           {email.verification?.status !== "verified" && <button type="button" disabled={flow.pending} onClick={() => void flow.sendEmailCode(email.id)} className="mt-2 underline">Verify email</button>}
@@ -45,7 +45,7 @@ export function AccountProfile() {
         <form className="mt-5 space-y-3" onSubmit={(event) => { const data = values(event); void flow.addEmail(field(data, "email")); }}><label className="block text-sm font-medium">Add email address<input name="email" type="email" autoComplete="email" required className={input} /></label><button className={button} disabled={flow.pending}>Add email</button></form>
       </section>
       <section className={card}>
-        <h2 className="font-display text-2xl text-[#06451d]">Password</h2>
+        <h2 className="font-display !text-lg text-[#06451d]">Password</h2>
         <form className="mt-4 space-y-4" onSubmit={(event) => { const data = values(event); void flow.savePassword(field(data, "current"), field(data, "next")); event.currentTarget.reset(); }}>
           {user.passwordEnabled && <label className="block text-sm font-medium">Current password<input name="current" type="password" autoComplete="current-password" required className={input} /></label>}
           <label className="block text-sm font-medium">New password<input name="next" type="password" autoComplete="new-password" required className={input} /></label>
@@ -53,7 +53,7 @@ export function AccountProfile() {
         </form>
       </section>
       <section className={card}>
-        <h2 className="font-display text-2xl text-[#06451d]">Connected accounts</h2>
+        <h2 className="font-display !text-lg text-[#06451d]">Connected accounts</h2>
         <p className="mt-3 text-sm">Google: {google ? `${google.verification?.status === "verified" ? "Connected" : "Verification pending"}${google.emailAddress ? ` · ${google.emailAddress}` : ""}` : "Not connected"}</p>
         {!google && <button type="button" disabled={flow.pending} onClick={() => void flow.connectGoogle()} className={`${button} mt-4`}>Connect Google</button>}
       </section>

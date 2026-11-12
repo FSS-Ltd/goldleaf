@@ -27,7 +27,7 @@ export function SsoCallback({ destination }: { destination: "/portal" | "/invite
 
   if (!clerk.loaded) return <p>Completing sign in…</p>;
   return <section className="w-full max-w-md rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-7 text-[#1b3022]">
-    <h1 className="font-display text-3xl text-[#06451d]">Completing sign in</h1>
+    <h1 className="font-display !text-2xl text-[#06451d]">Completing sign in</h1>
     {message && <p role="alert" className="mt-4 text-sm">{message}</p>}
     <ProtectGate container={gate.container} active={gate.active} cancel={gate.cancel} />
     {hasCheck ? <button disabled={gate.active} onClick={() => void continueChecks()} className="mt-5 rounded-lg bg-[#06451d] px-5 py-3 font-medium text-white disabled:opacity-60">Continue security check</button> : <>

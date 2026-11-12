@@ -17,7 +17,7 @@ export function SignUpForm() {
   function field(data: FormData, key: string) { const value = data.get(key); return typeof value === "string" ? value : ""; }
   const pending = flow.pending || google.pending;
   return <section className="w-full max-w-md rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-7 text-[#1b3022] shadow-sm">
-    <h1 className="font-display text-3xl text-[#06451d]">{flow.stage === "details" ? "Create your account" : flow.stage === "username" ? "Choose a username" : "Verify your email"}</h1>
+    <h1 className="font-display !text-2xl text-[#06451d]">{flow.stage === "details" ? "Create your account" : flow.stage === "username" ? "Choose a username" : "Verify your email"}</h1>
     <p className="mt-3 text-sm leading-relaxed text-[#35594a]">{flow.stage === "details" ? "Use the email address your invitation was sent to." : flow.stage === "username" ? "Choose a username to finish setting up your account." : "Enter the code sent to your email, or request one below."}</p>
     {(flow.message || google.message) && <p role="status" className="mt-5 rounded-lg border border-[#e3d7c3] bg-[#fef8f3] p-3 text-sm">{flow.message || google.message}</p>}
     <ProtectGate container={flow.gate.container} active={flow.gate.active} cancel={flow.gate.cancel} /><ProtectGate container={google.gate.container} active={google.gate.active} cancel={google.gate.cancel} />

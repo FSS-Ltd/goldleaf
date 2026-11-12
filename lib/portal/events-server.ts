@@ -4,6 +4,7 @@ import { openEventStream, type EventClient } from "./events-stream";
 
 export async function openPortalEventStream(
   subject: string,
+  role: "admin" | "parent" | "staff",
   expiry: number,
   signal: AbortSignal,
 ): Promise<Response> {
@@ -38,5 +39,5 @@ export async function openPortalEventStream(
     },
     end: () => client.end(),
   };
-  return openEventStream(adapter, subject, expiry, signal);
+  return openEventStream(adapter, subject, role, expiry, signal);
 }

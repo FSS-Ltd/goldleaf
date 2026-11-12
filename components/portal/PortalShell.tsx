@@ -1,11 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AccountMenu } from "./auth/AccountMenu";
-import { Home, ReceiptText, Settings, Users, UserRound, CalendarDays, BookOpen, Baby } from "lucide-react";
+import {
+  Home,
+  ReceiptText,
+  Settings,
+  Users,
+  UserRound,
+  CalendarDays,
+  BookOpen,
+  Baby,
+  MessageSquare,
+} from "lucide-react";
 import type { ReactNode } from "react";
 import { PortalSessionGuard } from "./PortalSessionGuard";
+import { PortalLiveUpdates } from "./events/PortalLiveUpdates";
 
-type Section = "home" | "staff" | "invoices" | "settings" | "billing" | "children" | "sessions" | "learning";
+type Section =
+  | "home"
+  | "staff"
+  | "invoices"
+  | "settings"
+  | "billing"
+  | "children"
+  | "sessions"
+  | "learning"
+  | "messages";
 export function PortalShell({
   role,
   userId,
@@ -50,6 +70,12 @@ export function PortalShell({
             icon: UserRound,
           },
           {
+            href: "/admin/messages",
+            label: "Messages",
+            section: "messages" as const,
+            icon: MessageSquare,
+          },
+          {
             href: "/admin/invoices",
             label: "Invoices",
             section: "invoices" as const,
@@ -63,10 +89,39 @@ export function PortalShell({
           },
         ]
       : staff
-        ? [{ href: "/staff/sessions", label: "Sessions", section: "sessions" as const, icon: CalendarDays }]
+        ? [
+            {
+              href: "/staff/sessions",
+              label: "Sessions",
+              section: "sessions" as const,
+              icon: CalendarDays,
+            },
+            {
+              href: "/staff/messages",
+              label: "Messages",
+              section: "messages" as const,
+              icon: MessageSquare,
+            },
+          ]
         : [
-            { href: "/parent/sessions", label: "Sessions", section: "sessions" as const, icon: CalendarDays },
-            { href: "/parent/learning", label: "Learning", section: "learning" as const, icon: BookOpen },
+            {
+              href: "/parent/sessions",
+              label: "Sessions",
+              section: "sessions" as const,
+              icon: CalendarDays,
+            },
+            {
+              href: "/parent/learning",
+              label: "Learning",
+              section: "learning" as const,
+              icon: BookOpen,
+            },
+            {
+              href: "/parent/messages",
+              label: "Messages",
+              section: "messages" as const,
+              icon: MessageSquare,
+            },
             {
               href: "/parent/billing",
               label: "Billing",
@@ -79,6 +134,7 @@ export function PortalShell({
   return (
     <div className="min-h-screen bg-[#fef8f3] text-[#06451d] md:pl-[232px]">
       <PortalSessionGuard userId={userId} />
+      <PortalLiveUpdates role={role} />
       <a
         href="#main"
         className="fixed left-4 top-4 z-50 -translate-y-24 rounded-lg bg-[#06451d] px-4 py-3 text-white focus:translate-y-0"
@@ -121,10 +177,10 @@ export function PortalShell({
           ))}
         </nav>
       </aside>
-      <header className="flex h-16 items-center justify-between border-b border-[#e3d7c3] px-5 md:px-10">
+      <header className="flex h-16 items-center justify-between gap-3 border-b border-[#e3d7c3] px-5 md:px-10">
         <a
           href={current?.href ?? home}
-          className="font-display text-xl md:text-sm"
+          className="min-w-0 truncate font-display text-xl md:text-sm"
         >
           {section === "home" ? title : (current?.label ?? title)}
         </a>
@@ -144,18 +200,26 @@ export function PortalShell({
         className="fixed inset-x-0 bottom-0 z-20 border-t border-[#e3d7c3] bg-[#f8f3ee] px-2 py-2 md:hidden"
       >
         <div className="flex gap-1 overflow-x-auto">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              prefetch={false}
-              aria-current={section === link.section ? "page" : undefined}
-              className={`flex min-h-12 min-w-0 flex-1 flex-col items-center justify-center gap-1 rounded-lg px-1 py-1 text-xs font-medium text-[#1b3022] ${section === link.section ? "bg-[#ecd081]" : ""}`}
-            >
-              <link.icon size={19} className="shrink-0" aria-hidden="true" />
-              {link.label}
-            </Link>
-          ))}
+          {links
+            .filter((link) => link.section !== "settings")
+            .map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                prefetch={false}
+                aria-current={
+                  section === link.section
+                    ? "page"
+                    : section === "settings" && link.section === "invoices"
+                      ? "location"
+                      : undefined
+                }
+                className={`flex min-h-12 min-w-12 flex-1 flex-col items-center justify-center gap-1 rounded-lg px-1 py-1 text-xs font-medium text-[#1b3022] ${section === link.section || (section === "settings" && link.section === "invoices") ? "bg-[#ecd081]" : ""}`}
+              >
+                <link.icon size={19} className="shrink-0" aria-hidden="true" />
+                {link.label}
+              </Link>
+            ))}
         </div>
       </nav>
     </div>

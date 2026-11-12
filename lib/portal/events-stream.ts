@@ -4,6 +4,11 @@ const notice = z
   .object({
     kind: z.enum([
       "access",
+      "admin_change",
+      "family_profile",
+      "founding_profile",
+      "invoice_family",
+      "read_cursor",
       "message",
       "request",
       "session",
@@ -32,6 +37,7 @@ export type EventClient = {
 export async function openEventStream(
   client: EventClient,
   subject: string,
+  role: "admin" | "parent" | "staff",
   expiry: number,
   signal: AbortSignal,
 ): Promise<Response> {
@@ -74,8 +80,8 @@ export async function openEventStream(
       .then(async () => {
         if (closed) return;
         const result = await client.query(
-          "SELECT portal.resolve_portal_event($1,$2,$3::uuid) AS event, portal.portal_event_active($1) AS active",
-          [subject, parsed.data.kind, parsed.data.id],
+          "SELECT portal.resolve_portal_event($1,$2,$3::uuid,$4) AS event, portal.portal_event_active($1,$4) AS active",
+          [subject, parsed.data.kind, parsed.data.id, role],
         );
         if (closed) return;
         const row = result.rows[0];
@@ -94,8 +100,8 @@ export async function openEventStream(
     }
     await client.query("LISTEN portal_changes");
     const result = await client.query(
-      "SELECT portal.portal_event_active($1) AS active",
-      [subject],
+      "SELECT portal.portal_event_active($1,$2) AS active",
+      [subject, role],
     );
     if (!result.rows[0]?.active || closed || signal.aborted) {
       close();

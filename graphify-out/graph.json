@@ -861,14 +861,14 @@
       "id": "portal_concepts"
     },
     {
-      "label": "PORTAL: partial authenticated family, staff, billing and learning UI",
+      "label": "PORTAL: partial authenticated family, staff, billing, learning and messaging UI",
       "file_type": "document",
       "source_file": "FEATURE_TREE.md",
       "source_location": "L35",
       "status": "partial",
-      "scope": "Custom authentication, parent/admin/staff routes, billing and child/session/learning UI are present; family messaging and event transport foundations exist but UI integration and production portal activation remain pending.",
+      "scope": "Custom authentication, role-scoped parent/admin/staff, billing, learning and messaging UI and event transport are present; 0017/0018 deployment, populated workflow validation and production portal activation remain pending.",
       "community": 2,
-      "norm_label": "portal partial authenticated family staff billing learning ui",
+      "norm_label": "portal partial authenticated family staff billing learning messaging ui",
       "id": "portal_planned"
     },
     {
@@ -2048,22 +2048,6 @@
       "source_file": "app/(portal)/(provider)/sso-callback/page.tsx",
       "source_location": "L13",
       "norm_label": "ssocallbackpage()"
-    },
-    {
-      "id": "components_portal_auth_accountmenu_tsx",
-      "label": "AccountMenu.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountMenu.tsx",
-      "source_location": "L1",
-      "norm_label": "accountmenu.tsx"
-    },
-    {
-      "id": "accountmenu_accountmenu",
-      "label": "AccountMenu()",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountMenu.tsx",
-      "source_location": "L7",
-      "norm_label": "accountmenu()"
     },
     {
       "id": "components_portal_auth_googlebutton_tsx",
@@ -4191,20 +4175,6 @@
       "source_location": "L5"
     },
     {
-      "id": "components_portal_portalshell_tsx",
-      "label": "PortalShell.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "portalshell_portalshell",
-      "label": "PortalShell()",
-      "file_type": "code",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L9"
-    },
-    {
       "id": "components_portal_invoices_billingsettingsform_tsx",
       "label": "BillingSettingsForm.tsx",
       "file_type": "code",
@@ -4256,20 +4226,6 @@
       "norm_label": "portal scoped event notifications"
     },
     {
-      "id": "app_api_portal_events_route_ts",
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/portal/events/route.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "route_get",
-      "label": "GET()",
-      "file_type": "code",
-      "source_file": "app/api/portal/events/route.ts",
-      "source_location": "L5"
-    },
-    {
       "id": "lib_events_protocol_test_ts",
       "label": "events-protocol.test.ts",
       "file_type": "code",
@@ -4289,20 +4245,6 @@
       "file_type": "code",
       "source_file": "lib/events-session.test.ts",
       "source_location": "L7"
-    },
-    {
-      "id": "lib_events_stream_test_ts",
-      "label": "events-stream.test.ts",
-      "file_type": "code",
-      "source_file": "lib/events-stream.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "events_stream_test_fakeclient",
-      "label": "fakeClient()",
-      "file_type": "code",
-      "source_file": "lib/events-stream.test.ts",
-      "source_location": "L5"
     },
     {
       "id": "lib_messages_schemas_test_ts",
@@ -4326,20 +4268,6 @@
       "source_location": "L8"
     },
     {
-      "id": "lib_portal_events_server_ts",
-      "label": "events-server.ts",
-      "file_type": "code",
-      "source_file": "lib/portal/events-server.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "events_server_openportaleventstream",
-      "label": "openPortalEventStream()",
-      "file_type": "code",
-      "source_file": "lib/portal/events-server.ts",
-      "source_location": "L5"
-    },
-    {
       "id": "lib_portal_events_session_ts",
       "label": "events-session.ts",
       "file_type": "code",
@@ -4352,20 +4280,6 @@
       "file_type": "code",
       "source_file": "lib/portal/events-session.ts",
       "source_location": "L7"
-    },
-    {
-      "id": "lib_portal_events_stream_ts",
-      "label": "events-stream.ts",
-      "file_type": "code",
-      "source_file": "lib/portal/events-stream.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "events_stream_openeventstream",
-      "label": "openEventStream()",
-      "file_type": "code",
-      "source_file": "lib/portal/events-stream.ts",
-      "source_location": "L32"
     },
     {
       "id": "lib_portal_messages_schemas_ts",
@@ -4431,27 +4345,6 @@
       "source_location": "L83"
     },
     {
-      "id": "tests_e2e_portal_spec_ts",
-      "label": "portal.spec.ts",
-      "file_type": "code",
-      "source_file": "tests/e2e/portal.spec.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "components_portal_events_portalliveupdates_tsx",
-      "label": "PortalLiveUpdates.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "portalliveupdates_portalliveupdates",
-      "label": "PortalLiveUpdates()",
-      "file_type": "code",
-      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
-      "source_location": "L14"
-    },
-    {
       "id": "lib_events_reader_test_ts",
       "label": "events-reader.test.ts",
       "file_type": "code",
@@ -4485,14 +4378,6 @@
       "file_type": "code",
       "source_file": "lib/portal/events-reader.ts",
       "source_location": "L15"
-    },
-    {
-      "id": "portal_invoice_ui_db",
-      "label": "Invoice UI persistence and restricted operations",
-      "file_type": "sql",
-      "source_file": "db/migrations/0011_invoice_ui.sql",
-      "source_location": "L1",
-      "norm_label": "invoice ui persistence and restricted operations"
     },
     {
       "id": "app_portal_provider_admin_children_actions_ts",
@@ -5053,6 +4938,646 @@
       "source_file": "db/tests/session-ui-migration-concurrency.sh",
       "source_location": "L1",
       "file_type": "code"
+    },
+    {
+      "id": "portal_message_views_sql",
+      "label": "Role-scoped messaging views",
+      "file_type": "sql",
+      "source_file": "db/migrations/0017_message_views.sql",
+      "source_location": "L1",
+      "norm_label": "role-scoped messaging views"
+    },
+    {
+      "id": "portal_invalidation_sql",
+      "label": "Role-fenced portal invalidation",
+      "file_type": "sql",
+      "source_file": "db/migrations/0018_portal_invalidation.sql",
+      "source_location": "L1",
+      "norm_label": "role-fenced portal invalidation"
+    },
+    {
+      "id": "app_portal_provider_admin_messages_actions_ts",
+      "label": "actions.ts",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "actions_sendforrole",
+      "label": "sendForRole()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "actions_markforrole",
+      "label": "markForRole()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L27"
+    },
+    {
+      "id": "actions_sendparentmessage",
+      "label": "sendParentMessage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L40"
+    },
+    {
+      "id": "actions_sendstaffmessage",
+      "label": "sendStaffMessage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L43"
+    },
+    {
+      "id": "actions_sendadminmessage",
+      "label": "sendAdminMessage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L46"
+    },
+    {
+      "id": "actions_markparentmessages",
+      "label": "markParentMessages()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L49"
+    },
+    {
+      "id": "actions_markstaffmessages",
+      "label": "markStaffMessages()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L52"
+    },
+    {
+      "id": "actions_markadminmessages",
+      "label": "markAdminMessages()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L55"
+    },
+    {
+      "id": "actions_requestchangeaction",
+      "label": "requestChangeAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L58"
+    },
+    {
+      "id": "actions_resolverequestaction",
+      "label": "resolveRequestAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L86"
+    },
+    {
+      "id": "app_portal_provider_admin_messages_error_tsx",
+      "label": "error.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/error.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "error_errorpage_6c00e81c94",
+      "label": "ErrorPage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/error.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "app_portal_provider_admin_messages_layout_tsx",
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/layout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "layout_layout_4d09a44101",
+      "label": "Layout()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/layout.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "app_portal_provider_admin_messages_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_data_f8e971b5b3",
+      "label": "Data()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/page.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "page_page_f8e971b5b3",
+      "label": "Page()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/page.tsx",
+      "source_location": "L11"
+    },
+    {
+      "id": "app_portal_provider_parent_messages_error_tsx",
+      "label": "error.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/messages/error.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "error_errorpage_db786e0b61",
+      "label": "ErrorPage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/messages/error.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "app_portal_provider_parent_messages_layout_tsx",
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/messages/layout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "layout_layout_84e1c36fd5",
+      "label": "Layout()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/messages/layout.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "app_portal_provider_parent_messages_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/messages/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_data_ff9bbc860b",
+      "label": "Data()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/messages/page.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "page_page_ff9bbc860b",
+      "label": "Page()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/messages/page.tsx",
+      "source_location": "L11"
+    },
+    {
+      "id": "app_portal_provider_staff_messages_error_tsx",
+      "label": "error.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/messages/error.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "error_errorpage_e06bfd0ab3",
+      "label": "ErrorPage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/messages/error.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "app_portal_provider_staff_messages_layout_tsx",
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/messages/layout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "layout_layout_7ef5cb81d6",
+      "label": "Layout()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/messages/layout.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "app_portal_provider_staff_messages_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/messages/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_data_77f7a60717",
+      "label": "Data()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/messages/page.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "page_page_77f7a60717",
+      "label": "Page()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/messages/page.tsx",
+      "source_location": "L11"
+    },
+    {
+      "id": "app_api_portal_events_route_ts",
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/portal/events/route.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "route_get",
+      "label": "GET()",
+      "file_type": "code",
+      "source_file": "app/api/portal/events/route.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "components_portal_portalshell_tsx",
+      "label": "PortalShell.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_auth_accountmenu_tsx",
+      "label": "AccountMenu.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountMenu.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_events_portalliveupdates_tsx",
+      "label": "PortalLiveUpdates.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "portalliveupdates_portalliveupdates",
+      "label": "PortalLiveUpdates()",
+      "file_type": "code",
+      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
+      "source_location": "L14"
+    },
+    {
+      "id": "components_portal_messages_actorscope_tsx",
+      "label": "ActorScope.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/ActorScope.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "actorscope_actorscope",
+      "label": "ActorScope()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/ActorScope.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "components_portal_messages_adminrequests_tsx",
+      "label": "AdminRequests.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/AdminRequests.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "adminrequests_current",
+      "label": "current()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/AdminRequests.tsx",
+      "source_location": "L43"
+    },
+    {
+      "id": "adminrequests_submit",
+      "label": "submit()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/AdminRequests.tsx",
+      "source_location": "L49"
+    },
+    {
+      "id": "components_portal_messages_conversation_tsx",
+      "label": "Conversation.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/Conversation.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "conversation_conversation",
+      "label": "Conversation()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/Conversation.tsx",
+      "source_location": "L18"
+    },
+    {
+      "id": "components_portal_messages_draftboundary_tsx",
+      "label": "DraftBoundary.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/DraftBoundary.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "draftboundary_draftboundary",
+      "label": "DraftBoundary()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/DraftBoundary.tsx",
+      "source_location": "L7"
+    },
+    {
+      "id": "components_portal_messages_draftprovider_tsx",
+      "label": "DraftProvider.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/DraftProvider.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "draftprovider_draftprovider",
+      "label": "DraftProvider()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/DraftProvider.tsx",
+      "source_location": "L12"
+    },
+    {
+      "id": "draftprovider_usemessagedrafts",
+      "label": "useMessageDrafts()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/DraftProvider.tsx",
+      "source_location": "L20"
+    },
+    {
+      "id": "components_portal_messages_messagecomposer_tsx",
+      "label": "MessageComposer.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/MessageComposer.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "messagecomposer_current",
+      "label": "current()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/MessageComposer.tsx",
+      "source_location": "L45"
+    },
+    {
+      "id": "messagecomposer_send",
+      "label": "send()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/MessageComposer.tsx",
+      "source_location": "L51"
+    },
+    {
+      "id": "components_portal_messages_messagedraftlayout_tsx",
+      "label": "MessageDraftLayout.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/MessageDraftLayout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "messagedraftlayout_messagedraftlayout",
+      "label": "MessageDraftLayout()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/MessageDraftLayout.tsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "components_portal_messages_messageerror_tsx",
+      "label": "MessageError.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/MessageError.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "messageerror_messageerror",
+      "label": "MessageError()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/MessageError.tsx",
+      "source_location": "L2"
+    },
+    {
+      "id": "components_portal_messages_messageworkspace_tsx",
+      "label": "MessageWorkspace.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/MessageWorkspace.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_messages_parentrequests_tsx",
+      "label": "ParentRequests.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/ParentRequests.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_events_stream_test_ts",
+      "label": "events-stream.test.ts",
+      "file_type": "code",
+      "source_file": "lib/events-stream.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "events_stream_test_fakeclient",
+      "label": "fakeClient()",
+      "file_type": "code",
+      "source_file": "lib/events-stream.test.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "lib_message_display_test_ts",
+      "label": "message-display.test.ts",
+      "file_type": "code",
+      "source_file": "lib/message-display.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_message_draft_state_test_ts",
+      "label": "message-draft-state.test.ts",
+      "file_type": "code",
+      "source_file": "lib/message-draft-state.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_message_read_ack_test_ts",
+      "label": "message-read-ack.test.ts",
+      "file_type": "code",
+      "source_file": "lib/message-read-ack.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "message_read_ack_test_notify",
+      "label": "notify()",
+      "file_type": "code",
+      "source_file": "lib/message-read-ack.test.ts",
+      "source_location": "L58"
+    },
+    {
+      "id": "lib_portal_events_server_ts",
+      "label": "events-server.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/events-server.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "events_server_openportaleventstream",
+      "label": "openPortalEventStream()",
+      "file_type": "code",
+      "source_file": "lib/portal/events-server.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "lib_portal_events_stream_ts",
+      "label": "events-stream.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/events-stream.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "events_stream_openeventstream",
+      "label": "openEventStream()",
+      "file_type": "code",
+      "source_file": "lib/portal/events-stream.ts",
+      "source_location": "L37"
+    },
+    {
+      "id": "lib_portal_message_display_ts",
+      "label": "message-display.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/message-display.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "message_display_displaymessages",
+      "label": "displayMessages()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-display.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "lib_portal_message_draft_state_ts",
+      "label": "message-draft-state.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/message-draft-state.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "message_draft_state_messagedraftreducer",
+      "label": "messageDraftReducer()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-draft-state.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "message_draft_state_messagedraftkey",
+      "label": "messageDraftKey()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-draft-state.ts",
+      "source_location": "L26"
+    },
+    {
+      "id": "lib_portal_message_read_ack_ts",
+      "label": "message-read-ack.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/message-read-ack.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "message_read_ack_acknowledgemessage",
+      "label": "acknowledgeMessage()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-read-ack.ts",
+      "source_location": "L2"
+    },
+    {
+      "id": "message_read_ack_observewhilevisible",
+      "label": "observeWhileVisible()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-read-ack.ts",
+      "source_location": "L24"
+    },
+    {
+      "id": "lib_portal_message_views_ts",
+      "label": "message-views.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "message_views_lookupnames",
+      "label": "lookupNames()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L63"
+    },
+    {
+      "id": "message_views_listmessagefamilies",
+      "label": "listMessageFamilies()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L88"
+    },
+    {
+      "id": "message_views_listmessagesessions",
+      "label": "listMessageSessions()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L99"
+    },
+    {
+      "id": "message_views_listmessagerequestcontexts",
+      "label": "listMessageRequestContexts()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L112"
+    },
+    {
+      "id": "message_views_listmessageauthors",
+      "label": "listMessageAuthors()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L132"
+    },
+    {
+      "id": "message_views_readmessagethread",
+      "label": "readMessageThread()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L154"
+    },
+    {
+      "id": "message_views_sendmessageasrole",
+      "label": "sendMessageAsRole()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L167"
+    },
+    {
+      "id": "message_views_markmessagesasrole",
+      "label": "markMessagesAsRole()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L181"
+    },
+    {
+      "id": "message_views_resolverequestchecked",
+      "label": "resolveRequestChecked()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L191"
+    },
+    {
+      "id": "tests_e2e_portal_spec_ts",
+      "label": "portal.spec.ts",
+      "file_type": "code",
+      "source_file": "tests/e2e/portal.spec.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_invoice_ui_db",
+      "label": "Invoice UI persistence and restricted operations",
+      "file_type": "sql",
+      "source_file": "db/migrations/0011_invoice_ui.sql",
+      "source_location": "L1",
+      "norm_label": "invoice ui persistence and restricted operations"
     }
   ],
   "links": [
@@ -9359,18 +9884,6 @@
       "confidence_score": 1.0
     },
     {
-      "source": "components_portal_auth_accountmenu_tsx",
-      "target": "accountmenu_accountmenu",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/auth/AccountMenu.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "components_portal_auth_accountmenu_tsx",
-      "_tgt": "accountmenu_accountmenu",
-      "confidence_score": 1.0
-    },
-    {
       "source": "components_portal_staffforms_tsx",
       "target": "staffforms_feedback",
       "relation": "contains",
@@ -9441,18 +9954,6 @@
       "weight": 1.0,
       "_src": "actions_acceptportalinvitation",
       "_tgt": "invitation_cookie_invitationdestination"
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "components/portal/auth/AccountMenu.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "_src": "accountmenu_accountmenu",
-      "_tgt": "role_links_portalrolelinks",
-      "source": "accountmenu_accountmenu",
-      "target": "role_links_portalrolelinks",
-      "confidence_score": 0.5
     },
     {
       "source": "lib_portal_learning_errors_ts",
@@ -10517,30 +11018,12 @@
       "weight": 1.0
     },
     {
-      "source": "app_api_portal_events_route_ts",
-      "target": "route_get",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/portal/events/route.ts",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
       "source": "lib_events_session_test_ts",
       "target": "events_session_test_release",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/events-session.test.ts",
       "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "lib_events_stream_test_ts",
-      "target": "events_stream_test_fakeclient",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/events-stream.test.ts",
-      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -10553,30 +11036,12 @@
       "weight": 1.0
     },
     {
-      "source": "lib_portal_events_server_ts",
-      "target": "events_server_openportaleventstream",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/events-server.ts",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
       "source": "lib_portal_events_session_ts",
       "target": "events_session_getboundeventtoken",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/events-session.ts",
       "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "lib_portal_events_stream_ts",
-      "target": "events_stream_openeventstream",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/events-stream.ts",
-      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -10643,35 +11108,6 @@
       "weight": 1.0
     },
     {
-      "source": "route_get",
-      "target": "events_server_openportaleventstream",
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/api/portal/events/route.ts",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "events_server_openportaleventstream",
-      "target": "events_stream_openeventstream",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "lib/portal/events-server.ts",
-      "source_location": "L41",
-      "weight": 1.0
-    },
-    {
-      "source": "components_portal_events_portalliveupdates_tsx",
-      "target": "portalliveupdates_portalliveupdates",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
       "source": "lib_events_reader_test_ts",
       "target": "events_reader_test_source",
       "relation": "contains",
@@ -10696,24 +11132,6 @@
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/events-reader.ts",
       "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "portal_invoice_ui_db",
-      "target": "portal_invoice_runtime_db",
-      "relation": "uses",
-      "confidence": "EXTRACTED",
-      "source_file": "db/migrations/0011_invoice_ui.sql",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "portal_invoice_ui_db",
-      "target": "lib_portal_invoices_ts",
-      "relation": "uses",
-      "confidence": "EXTRACTED",
-      "source_file": "db/migrations/0011_invoice_ui.sql",
-      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -10978,18 +11396,6 @@
       "weight": 1.0,
       "_src": "app_portal_provider_staff_sessions_id_actions_ts",
       "_tgt": "staff_actions_publishdraftaction",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "components_portal_portalshell_tsx",
-      "target": "portalshell_portalshell",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_src": "components_portal_portalshell_tsx",
-      "_tgt": "portalshell_portalshell",
       "confidence_score": 1.0
     },
     {
@@ -11949,6 +12355,707 @@
       "confidence": "INFERRED",
       "confidence_score": 0.9,
       "source_file": "db/tests/session-ui-migration-concurrency.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_message_views_sql",
+      "target": "portal_messages_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrations/0017_message_views.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_message_views_sql",
+      "target": "portal_events_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrations/0017_message_views.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_invalidation_sql",
+      "target": "portal_messages_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrations/0018_portal_invalidation.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_invalidation_sql",
+      "target": "portal_events_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrations/0018_portal_invalidation.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_sendforrole",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_markforrole",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_sendparentmessage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_sendstaffmessage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_sendadminmessage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_markparentmessages",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_markstaffmessages",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_markadminmessages",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_requestchangeaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_resolverequestaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_sendparentmessage",
+      "target": "actions_sendforrole",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_sendstaffmessage",
+      "target": "actions_sendforrole",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_sendadminmessage",
+      "target": "actions_sendforrole",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_markparentmessages",
+      "target": "actions_markforrole",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_markstaffmessages",
+      "target": "actions_markforrole",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_markadminmessages",
+      "target": "actions_markforrole",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_error_tsx",
+      "target": "error_errorpage_6c00e81c94",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/error.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_layout_tsx",
+      "target": "layout_layout_4d09a44101",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_page_tsx",
+      "target": "page_data_f8e971b5b3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_page_tsx",
+      "target": "page_page_f8e971b5b3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_messages_error_tsx",
+      "target": "error_errorpage_db786e0b61",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/messages/error.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_messages_layout_tsx",
+      "target": "layout_layout_84e1c36fd5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/messages/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_messages_page_tsx",
+      "target": "page_data_ff9bbc860b",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/messages/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_messages_page_tsx",
+      "target": "page_page_ff9bbc860b",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/messages/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_messages_error_tsx",
+      "target": "error_errorpage_e06bfd0ab3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/messages/error.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_messages_layout_tsx",
+      "target": "layout_layout_7ef5cb81d6",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/messages/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_messages_page_tsx",
+      "target": "page_data_77f7a60717",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/messages/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_messages_page_tsx",
+      "target": "page_page_77f7a60717",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/messages/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "app_api_portal_events_route_ts",
+      "target": "route_get",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/portal/events/route.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_events_portalliveupdates_tsx",
+      "target": "portalliveupdates_portalliveupdates",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_actorscope_tsx",
+      "target": "actorscope_actorscope",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/ActorScope.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_adminrequests_tsx",
+      "target": "adminrequests_current",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/AdminRequests.tsx",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_adminrequests_tsx",
+      "target": "adminrequests_submit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/AdminRequests.tsx",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "adminrequests_submit",
+      "target": "adminrequests_current",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/AdminRequests.tsx",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_conversation_tsx",
+      "target": "conversation_conversation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/Conversation.tsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_draftboundary_tsx",
+      "target": "draftboundary_draftboundary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/DraftBoundary.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_draftprovider_tsx",
+      "target": "draftprovider_draftprovider",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/DraftProvider.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_draftprovider_tsx",
+      "target": "draftprovider_usemessagedrafts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/DraftProvider.tsx",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_messagecomposer_tsx",
+      "target": "messagecomposer_current",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/MessageComposer.tsx",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_messagecomposer_tsx",
+      "target": "messagecomposer_send",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/MessageComposer.tsx",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "messagecomposer_send",
+      "target": "messagecomposer_current",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/MessageComposer.tsx",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_messagedraftlayout_tsx",
+      "target": "messagedraftlayout_messagedraftlayout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/MessageDraftLayout.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_messageerror_tsx",
+      "target": "messageerror_messageerror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/MessageError.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_events_stream_test_ts",
+      "target": "events_stream_test_fakeclient",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/events-stream.test.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_message_read_ack_test_ts",
+      "target": "message_read_ack_test_notify",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/message-read-ack.test.ts",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_events_server_ts",
+      "target": "events_server_openportaleventstream",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/events-server.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_events_stream_ts",
+      "target": "events_stream_openeventstream",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/events-stream.ts",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_display_ts",
+      "target": "message_display_displaymessages",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-display.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_draft_state_ts",
+      "target": "message_draft_state_messagedraftreducer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-draft-state.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_draft_state_ts",
+      "target": "message_draft_state_messagedraftkey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-draft-state.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_read_ack_ts",
+      "target": "message_read_ack_acknowledgemessage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-read-ack.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_read_ack_ts",
+      "target": "message_read_ack_observewhilevisible",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-read-ack.ts",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_views_ts",
+      "target": "message_views_lookupnames",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_views_ts",
+      "target": "message_views_listmessagefamilies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_views_ts",
+      "target": "message_views_listmessagesessions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_views_ts",
+      "target": "message_views_listmessagerequestcontexts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_views_ts",
+      "target": "message_views_listmessageauthors",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L132",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_views_ts",
+      "target": "message_views_readmessagethread",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L154",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_views_ts",
+      "target": "message_views_sendmessageasrole",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L167",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_views_ts",
+      "target": "message_views_markmessagesasrole",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L181",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_views_ts",
+      "target": "message_views_resolverequestchecked",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L191",
+      "weight": 1.0
+    },
+    {
+      "source": "message_views_listmessagerequestcontexts",
+      "target": "message_views_lookupnames",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "message_views_listmessageauthors",
+      "target": "message_views_lookupnames",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_sendforrole",
+      "target": "message_views_sendmessageasrole",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_markforrole",
+      "target": "message_views_markmessagesasrole",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_resolverequestaction",
+      "target": "message_views_resolverequestchecked",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "route_get",
+      "target": "events_server_openportaleventstream",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/api/portal/events/route.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "adminrequests_submit",
+      "target": "actions_resolverequestaction",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "components/portal/messages/AdminRequests.tsx",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "messagecomposer_send",
+      "target": "actions_requestchangeaction",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "components/portal/messages/MessageComposer.tsx",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "events_server_openportaleventstream",
+      "target": "events_stream_openeventstream",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "lib/portal/events-server.ts",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "message_read_ack_acknowledgemessage",
+      "target": "messagecomposer_send",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "lib/portal/message-read-ack.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_invoice_ui_db",
+      "target": "portal_invoice_runtime_db",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrations/0011_invoice_ui.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_invoice_ui_db",
+      "target": "lib_portal_invoices_ts",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrations/0011_invoice_ui.sql",
       "source_location": "L1",
       "weight": 1.0
     }

@@ -24,7 +24,7 @@ export function AccountMenu({
   return (
     <details className="relative">
       <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-full border border-[#e3d7c3] bg-[#f6eee2] px-4 text-sm font-medium text-[#06451d]">
-        {name}
+        <span className="block max-w-24 truncate sm:max-w-48">{name}</span>
         <span aria-hidden="true">⌄</span>
       </summary>
       <div className="absolute right-0 z-40 mt-2 w-64 rounded-[14px] border border-[#e3d7c3] bg-[#fef8f3] p-4 text-[#1b3022] shadow-lg">
@@ -55,7 +55,10 @@ export function AccountMenu({
         <button
           type="button"
           onClick={() =>
-            void signOutAndClearPaymentStorage(() => signOut(), () => sessionStorage)
+            void signOutAndClearPaymentStorage(
+              () => signOut(),
+              () => sessionStorage,
+            )
               .then(() => {
                 router.push("/sign-in");
                 router.refresh();

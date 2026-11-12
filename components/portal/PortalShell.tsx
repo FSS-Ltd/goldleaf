@@ -25,7 +25,7 @@ export function PortalShell({ role, userId, memberships, children, section = "ho
       </nav>
     </aside>
     <header className="flex h-16 items-center justify-between border-b border-[#e3d7c3] px-5 md:px-10">
-      <a href={home} className="font-display text-xl md:text-sm">{section === "staff" ? "Team" : title}</a>
+      <a href={section === "staff" ? "/admin/staff" : home} className="font-display text-xl md:text-sm">{section === "staff" ? "Team" : title}</a>
       <AccountMenu roles={memberships.map((membership) => membership.role)} currentRole={role} />
     </header>
     <main id="main" className="mx-auto max-w-7xl px-5 py-9 pb-28 md:px-10 md:pb-10">{children}</main>

@@ -201,3 +201,5 @@ Staff onboarding re-extracted 18 allowlisted TypeScript files and added source-l
 Role navigation and staff UI review re-extracted 12 allowlisted files: 375 nodes and 373 edges; 55 unresolved extractor edges omitted. Existing semantic nodes retained.
 
 The invitation-action call edges were reconciled against current source: duplicate edges at lines 19 and 25 were removed, and inferred call scores reflect their inferred status. A source-verified account-menu call was added at line 17. The graph has 375 nodes and 372 edges; the previously reported 55 unresolved extractor edges and historical coverage limits remain.
+
+Team header route correction changes no symbols or graph relationships; the existing PortalShell node and callers remain current.

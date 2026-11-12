@@ -1,5 +1,9 @@
 # Graph Report - goldleaf-graph-refresh  (2026-11-11)
 
+## Scoped admin Today update (2026-11-12)
+
+Scoped AST extraction refreshed the changed Today, navigation, selector, DAL and test files while retaining the existing graph. SQL extraction is unsupported; migration 0020 is represented by a source-linked node. Earlier clustering and semantic coverage were not recomputed; browser and separate-user verification remain open.
+
 ## Scoped invoice workflow update (2026-11-12)
 
 Scoped Graphify AST extraction covers the invoice and settings DAL, DTOs and tests. SQL extraction remains unsupported; the runtime migration and source-verified connections were linked manually. Issue dates use a function-local London time zone, and history context timestamps are normalised to UTC. Prior clustering and semantic coverage were not recomputed.

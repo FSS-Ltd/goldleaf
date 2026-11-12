@@ -6,7 +6,7 @@ import { StaffSessionCard } from "@/components/portal/staff-today/StaffSessionCa
 import { StaffTodayHeader } from "@/components/portal/staff-today/StaffTodayHeader";
 import { requireRole } from "@/lib/portal/require-role";
 import { listStaffSessions } from "@/lib/portal/sessions";
-import { selectPrioritySession } from "@/lib/portal/staff-today";
+import { selectPrioritySession, selectTodaySessions } from "@/lib/portal/staff-today";
 import { listAssignedStaffFamilies } from "@/lib/portal/staff";
 
 async function StaffToday() {
@@ -16,18 +16,7 @@ async function StaffToday() {
     listStaffSessions(),
   ]);
   const now = new Date();
-  const dayKey = new Intl.DateTimeFormat("en-CA", {
-    timeZone: "Europe/London",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  });
-  const todaysSessions = sessions
-    .filter(
-      (session) =>
-        dayKey.format(new Date(session.starts_at)) === dayKey.format(now),
-    )
-    .sort((a, b) => Date.parse(a.starts_at) - Date.parse(b.starts_at));
+  const todaysSessions = selectTodaySessions(sessions, now);
   const priority = selectPrioritySession(todaysSessions, now);
   const attention = todaysSessions.filter(
     (session) =>

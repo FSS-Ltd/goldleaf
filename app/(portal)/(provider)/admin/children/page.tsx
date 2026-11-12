@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { randomUUID } from "node:crypto";
 import { Suspense } from "react";
 import { z } from "zod";
+import { FamilySelector } from "@/components/portal/admin/FamilySelector";
 import { PortalShell } from "@/components/portal/PortalShell";
 import {
   RegisterChildForm,
@@ -49,26 +50,7 @@ async function AdminChildren({
         Children &amp; sessions
       </h1>
       {families.length > 0 && (
-        <form method="get" className="mt-6 max-w-xl">
-          <label className="block text-sm font-medium">
-            Family
-            <select
-              className="mt-2 w-full rounded-lg border border-[#d6c8b5] bg-white px-4 py-3"
-              name="family"
-              defaultValue={selected?.id ?? ""}
-            >
-              <option value="">Select a family</option>
-              {families.map((family) => (
-                <option key={family.id} value={family.id}>
-                  {family.display_name ?? "Unnamed family"}
-                </option>
-              ))}
-            </select>
-          </label>
-          <button className="mt-3 min-h-12 rounded-lg border border-[#06451d] px-5 text-sm">
-            Show family
-          </button>
-        </form>
+        <FamilySelector families={families} selectedId={selected?.id ?? ""} />
       )}
       {families.length === 0 ? (
         <p className="mt-6 text-sm">

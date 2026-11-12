@@ -59,3 +59,9 @@ export async function listStaffSessions(): Promise<ScopedSession[]> {
   const sql = portalDatabase();
   return z.array(scopedSessionRow).parse(await sql`SELECT * FROM portal.list_staff_sessions(${userId})`);
 }
+
+export async function listAdminSessions(day: string): Promise<ScopedSession[]> {
+  const { userId } = await requirePortalIdentity();
+  const sql = portalDatabase();
+  return z.array(scopedSessionRow).parse(await sql`SELECT * FROM portal.list_admin_sessions(${userId},${day}::date)`);
+}

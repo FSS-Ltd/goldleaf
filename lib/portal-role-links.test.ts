@@ -5,8 +5,8 @@ import { invitationDestination, parseInvitationCookie } from "./portal/invitatio
 
 test("multi-role memberships expose each authorised portal once", () => {
   assert.deepEqual(portalRoleLinks(["parent", "staff", "parent"]).map((link) => link.href), ["/parent", "/staff"]);
-  assert.deepEqual(portalRoleLinks(["admin", "staff"]).map((link) => link.href), ["/admin", "/staff"]);
-  assert.deepEqual(portalRoleLinks(["staff", "parent", "admin"]).map((link) => link.href), ["/admin", "/parent", "/staff"]);
+  assert.deepEqual(portalRoleLinks(["admin", "staff"]).map((link) => link.href), ["/admin/today", "/staff"]);
+  assert.deepEqual(portalRoleLinks(["staff", "parent", "admin"]).map((link) => link.href), ["/admin/today", "/parent", "/staff"]);
   assert.deepEqual(portalRoleLinks(["parent"]), []);
   assert.deepEqual(portalRoleLinks([]), []);
 });

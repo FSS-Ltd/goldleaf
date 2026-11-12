@@ -1,17 +1,19 @@
 -- Forward-only. Subjects come exclusively from the trusted authenticated server.
 BEGIN;
 CREATE FUNCTION portal.list_families(p_subject text)
-RETURNS TABLE (id uuid, display_name text)
+RETURNS TABLE (id uuid, display_name text, is_founding boolean)
 LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
 BEGIN
   PERFORM portal.require_admin(p_subject);
-  RETURN QUERY SELECT f.id, f.display_name FROM portal.families AS f ORDER BY f.created_at, f.id;
+  RETURN QUERY SELECT f.id, f.display_name, EXISTS (SELECT 1 FROM portal.founding_slots AS slot WHERE slot.family_id = f.id)
+    FROM portal.families AS f ORDER BY f.created_at, f.id;
 END $$;
 
 CREATE FUNCTION portal.read_family(p_subject text, p_family uuid)
-RETURNS TABLE (id uuid, display_name text)
+RETURNS TABLE (id uuid, display_name text, is_founding boolean)
 LANGUAGE sql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
-  SELECT f.id, f.display_name FROM portal.families AS f
+  SELECT f.id, f.display_name, EXISTS (SELECT 1 FROM portal.founding_slots AS slot WHERE slot.family_id = f.id)
+  FROM portal.families AS f
   WHERE f.id = p_family AND EXISTS (
     SELECT 1 FROM portal.memberships AS m
     WHERE m.subject = p_subject AND m.revoked_at IS NULL AND (

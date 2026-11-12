@@ -159,3 +159,5 @@ Corrected 4 portal edge directions where serialized source/target contradicted t
 ## Invoice and portal access merge
 
 The invoice database node and source-backed edges were retained alongside the access-layer graph. This merged graph contains 162 nodes and 141 edges; older structural summaries above describe earlier scopes.
+
+Founding DTO update: scoped extraction adds the `setFamilyFounding` wrapper. The current merged graph contains 163 nodes and 144 edges; SQL is source-linked manually.

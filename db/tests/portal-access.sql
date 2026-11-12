@@ -1,9 +1,11 @@
 \set ON_ERROR_STOP on
 BEGIN;
+UPDATE portal.founding_slots SET family_id = NULL;
 CREATE ROLE goldleaf_access_test NOLOGIN;
 GRANT USAGE ON SCHEMA portal TO goldleaf_access_test;
 GRANT EXECUTE ON FUNCTION portal.active_memberships(text), portal.create_family(text, text, uuid), portal.issue_invitation(text, uuid, text, bytea, timestamptz), portal.set_founding(text, uuid, boolean), portal.family_memberships(text, uuid), portal.list_families(text), portal.read_family(text, uuid), portal.list_staff(text), portal.accept_verified_invitation(text, text[], bytea, text) TO goldleaf_access_test;
 INSERT INTO portal.memberships (subject, role) VALUES ('test-admin', 'admin');
+INSERT INTO portal.memberships (subject, role, revoked_at) VALUES ('revoked-admin', 'admin', now());
 SELECT portal.create_family('test-admin', 'Family A', '10000000-0000-0000-0000-000000000001');
 SELECT portal.create_family('test-admin', 'Family B', '10000000-0000-0000-0000-000000000002');
 SELECT portal.issue_invitation('test-admin', '10000000-0000-0000-0000-000000000001', 'verified@example.com', decode(repeat('11', 32), 'hex'), now() + interval '7 days');
@@ -15,6 +17,12 @@ DO $$ BEGIN
   BEGIN PERFORM portal.accept_verified_invitation('parent', ARRAY['unverified@example.com'], decode(repeat('11', 32), 'hex'), 'parent'); RAISE EXCEPTION 'wrong email accepted'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
   PERFORM portal.accept_verified_invitation('parent', ARRAY['primary@example.com', 'verified@example.com'], decode(repeat('11', 32), 'hex'), 'parent');
   IF NOT EXISTS (SELECT 1 FROM portal.read_family('parent', '10000000-0000-0000-0000-000000000001')) OR EXISTS (SELECT 1 FROM portal.read_family('parent', '10000000-0000-0000-0000-000000000002')) THEN RAISE EXCEPTION 'parent family scope failed'; END IF;
+  PERFORM portal.set_founding('test-admin', '10000000-0000-0000-0000-000000000001', true);
+  IF NOT EXISTS (SELECT 1 FROM portal.read_family('parent', '10000000-0000-0000-0000-000000000001') WHERE is_founding) OR NOT EXISTS (SELECT 1 FROM portal.list_families('test-admin') WHERE id = '10000000-0000-0000-0000-000000000001' AND is_founding) THEN RAISE EXCEPTION 'founding flag missing'; END IF;
+  BEGIN PERFORM portal.set_founding('parent', '10000000-0000-0000-0000-000000000001', false); RAISE EXCEPTION 'parent changed founding'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+  BEGIN PERFORM portal.set_founding('revoked-admin', '10000000-0000-0000-0000-000000000001', false); RAISE EXCEPTION 'revoked admin changed founding'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+  PERFORM portal.set_founding('test-admin', '10000000-0000-0000-0000-000000000001', false);
+  IF EXISTS (SELECT 1 FROM portal.read_family('parent', '10000000-0000-0000-0000-000000000001') WHERE is_founding) THEN RAISE EXCEPTION 'founding flag not cleared'; END IF;
   BEGIN PERFORM portal.list_families('parent'); RAISE EXCEPTION 'parent listed families'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
   BEGIN PERFORM portal.list_staff('parent'); RAISE EXCEPTION 'parent listed staff'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
   BEGIN PERFORM portal.family_memberships('parent', '10000000-0000-0000-0000-000000000001'); RAISE EXCEPTION 'parent listed memberships'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;

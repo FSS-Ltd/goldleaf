@@ -4,7 +4,7 @@ import { z } from "zod";
 import { requirePortalIdentity } from "./access";
 import { portalDatabase } from "./database";
 
-import { familySchema, familyMemberSchema, staffSchema, familyInputSchema, idResultSchema } from "./schemas";
+import { familySchema, familyMemberSchema, staffSchema, familyInputSchema, familyFoundingInputSchema, idResultSchema } from "./schemas";
 
 export async function listFamilies() {
   const { userId } = await requirePortalIdentity();
@@ -50,4 +50,12 @@ export async function createFamilyWithInvitation(input: unknown) {
   const invitation = idResultSchema.parse(result[1])[0];
   z.array(z.object({ enabled: z.literal(true) })).length(1).parse(result[2]);
   return { familyId, invitationId: invitation.id, token, expiresAt: expires };
+}
+
+export async function setFamilyFounding(input: unknown) {
+  const { familyId, founding } = familyFoundingInputSchema.parse(input);
+  const { userId } = await requirePortalIdentity();
+  const sql = portalDatabase();
+  const rows = await sql`SELECT portal.set_founding(${userId}, ${familyId}, ${founding}) AS success`;
+  return z.array(z.object({ success: z.literal(true) })).length(1).parse(rows)[0].success;
 }

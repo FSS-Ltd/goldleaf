@@ -1,11 +1,11 @@
 import { Suspense } from "react";
-import { ArrowRight, CalendarDays, CircleAlert, Clock } from "lucide-react";
+import { CalendarDays, CircleAlert } from "lucide-react";
 import { PortalShell } from "@/components/portal/PortalShell";
+import { StaffSessionCard } from "@/components/portal/staff-today/StaffSessionCard";
+import { StaffTodayHeader } from "@/components/portal/staff-today/StaffTodayHeader";
 import { requireRole } from "@/lib/portal/require-role";
 import { listStaffSessions } from "@/lib/portal/sessions";
-import { sessionStatusLabel } from "@/lib/portal/session-status";
 import { selectPrioritySession } from "@/lib/portal/staff-today";
-import { formatUkSession } from "@/lib/portal/uk-time";
 import { listAssignedStaffFamilies } from "@/lib/portal/staff";
 
 async function StaffToday() {
@@ -47,29 +47,11 @@ async function StaffToday() {
       userId={identity.userId}
       memberships={memberships}
     >
-      <div className="flex flex-wrap items-end justify-between gap-5 border-b border-[#e3d7c3] pb-7">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#526c5c]">
-            Staff portal · {date}
-          </p>
-          <h1 className="mt-3 !text-[clamp(2rem,4vw,2.6rem)]">Today</h1>
-          <p className="mt-2 text-sm text-[#35594a]">
-            {todaysSessions.length}{" "}
-            {todaysSessions.length === 1 ? "session" : "sessions"} scheduled
-            today
-          </p>
-        </div>
-        {priority && (
-          <a
-            className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#06451d] px-6 py-3 text-sm font-semibold text-white hover:bg-[#123a20] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#06451d]"
-            href={`/staff/sessions/${priority.id}`}
-          >
-            Open session{" "}
-            <span className="font-normal">· {priority.child_name}</span>
-            <ArrowRight size={18} aria-hidden="true" />
-          </a>
-        )}
-      </div>
+      <StaffTodayHeader
+        date={date}
+        sessionCount={todaysSessions.length}
+        priority={priority}
+      />
       <div className="mt-8 grid items-start gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
         <section aria-labelledby="staff-schedule">
           <h2 id="staff-schedule" className="flex items-center gap-3 !text-xl">
@@ -79,50 +61,11 @@ async function StaffToday() {
           {todaysSessions.length ? (
             <ul className="mt-4 space-y-4">
               {todaysSessions.map((session) => (
-                <li
+                <StaffSessionCard
                   key={session.id}
-                  className={`rounded-[14px] border bg-[#f6eee2] p-5 ${session.id === priority?.id ? "border-2 border-[#06451d]" : "border-[#e3d7c3]"}`}
-                >
-                  <div className="flex flex-wrap items-start justify-between gap-3">
-                    <div className="min-w-0 [overflow-wrap:anywhere]">
-                      <h3 className="!text-lg">{session.child_name}</h3>
-                      <p className="mt-2 flex items-center gap-2 text-sm text-[#35594a]">
-                        <Clock size={16} aria-hidden="true" />
-                        {
-                          formatUkSession(
-                            session.starts_at,
-                            session.duration_minutes,
-                          ).time
-                        }
-                      </p>
-                      <p className="mt-1 text-sm text-[#35594a]">
-                        {session.family_name ?? "Family"}
-                        {session.location_label
-                          ? ` · ${session.location_label}`
-                          : ""}
-                      </p>
-                    </div>
-                    <span className="rounded-full bg-[#e5e9dc] px-3 py-1 text-xs font-semibold text-[#16462a]">
-                      {sessionStatusLabel(session.status)}
-                    </span>
-                  </div>
-                  <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-[#e3d7c3] pt-4">
-                    <span className="text-sm text-[#35594a]">
-                      Attendance:{" "}
-                      {session.attendance === "not_recorded"
-                        ? "Not recorded"
-                        : session.attendance === "present"
-                          ? "Present"
-                          : "Absent"}
-                    </span>
-                    <a
-                      className="inline-flex min-h-10 items-center gap-2 font-semibold text-[#06451d] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2"
-                      href={`/staff/sessions/${session.id}`}
-                    >
-                      Open session <ArrowRight size={17} aria-hidden="true" />
-                    </a>
-                  </div>
-                </li>
+                  session={session}
+                  priority={session.id === priority?.id}
+                />
               ))}
             </ul>
           ) : (

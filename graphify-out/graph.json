@@ -5739,6 +5739,34 @@
       "file_type": "code",
       "source_file": "lib/staff-today.test.ts",
       "source_location": "L6"
+    },
+    {
+      "id": "components_portal_staff_today_staffsessioncard_tsx",
+      "label": "StaffSessionCard.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/staff-today/StaffSessionCard.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "staffsessioncard_staffsessioncard",
+      "label": "StaffSessionCard()",
+      "file_type": "code",
+      "source_file": "components/portal/staff-today/StaffSessionCard.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "components_portal_staff_today_stafftodayheader_tsx",
+      "label": "StaffTodayHeader.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/staff-today/StaffTodayHeader.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "stafftodayheader_stafftodayheader",
+      "label": "StaffTodayHeader()",
+      "file_type": "code",
+      "source_file": "components/portal/staff-today/StaffTodayHeader.tsx",
+      "source_location": "L4"
     }
   ],
   "links": [
@@ -13746,6 +13774,54 @@
       "confidence_score": 1.0,
       "source_file": "lib/staff-today.test.ts",
       "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_staff_today_staffsessioncard_tsx",
+      "target": "staffsessioncard_staffsessioncard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/staff-today/StaffSessionCard.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "components_portal_staff_today_staffsessioncard_tsx",
+      "_tgt": "staffsessioncard_staffsessioncard",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "page_stafftoday",
+      "target": "staffsessioncard_staffsessioncard",
+      "_src": "page_stafftoday",
+      "_tgt": "staffsessioncard_staffsessioncard",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_staff_today_stafftodayheader_tsx",
+      "target": "stafftodayheader_stafftodayheader",
+      "_src": "components_portal_staff_today_stafftodayheader_tsx",
+      "_tgt": "stafftodayheader_stafftodayheader",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/portal/staff-today/StaffTodayHeader.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "page_stafftoday",
+      "target": "stafftodayheader_stafftodayheader",
+      "_src": "page_stafftoday",
+      "_tgt": "stafftodayheader_stafftodayheader",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L50",
       "weight": 1.0
     }
   ],

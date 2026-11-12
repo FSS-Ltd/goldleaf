@@ -1307,6 +1307,33 @@
       "source_location": "L1",
       "community": 15,
       "norm_label": "portal onboarding database foundation"
+    },
+    {
+      "id": "lib_portal_invoice_pricing_ts",
+      "label": "invoice-pricing.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-pricing.ts",
+      "source_location": "L1",
+      "community": 5,
+      "norm_label": "invoice-pricing.ts"
+    },
+    {
+      "id": "invoice_pricing_quoteinvoice",
+      "label": "quoteInvoice()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-pricing.ts",
+      "source_location": "L29",
+      "community": 5,
+      "norm_label": "quoteinvoice()"
+    },
+    {
+      "id": "lib_invoice_pricing_test_ts",
+      "label": "invoice-pricing.test.ts",
+      "file_type": "code",
+      "source_file": "lib/invoice-pricing.test.ts",
+      "source_location": "L1",
+      "community": 5,
+      "norm_label": "invoice-pricing.test.ts"
     }
   ],
   "links": [
@@ -2406,6 +2433,66 @@
       "confidence_score": 1.0,
       "source_file": "FEATURE_TREE.md",
       "source_location": "L35-L36",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoice_pricing_ts",
+      "target": "invoice_pricing_quoteinvoice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-pricing.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_src": "lib_portal_invoice_pricing_ts",
+      "_tgt": "invoice_pricing_quoteinvoice",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "invoice_pricing_quoteinvoice",
+      "target": "pricing_weekly",
+      "_src": "invoice_pricing_quoteinvoice",
+      "_tgt": "pricing_weekly",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/invoice-pricing.ts",
+      "source_location": "L34-L43",
+      "weight": 1.0
+    },
+    {
+      "source": "invoice_pricing_quoteinvoice",
+      "target": "pricing_monthly",
+      "_src": "invoice_pricing_quoteinvoice",
+      "_tgt": "pricing_monthly",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/invoice-pricing.ts",
+      "source_location": "L34-L43",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_invoice_pricing_test_ts",
+      "target": "invoice_pricing_quoteinvoice",
+      "_src": "lib_invoice_pricing_test_ts",
+      "_tgt": "invoice_pricing_quoteinvoice",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/invoice-pricing.test.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoice_pricing_ts",
+      "target": "content_site_ts",
+      "_src": "lib_portal_invoice_pricing_ts",
+      "_tgt": "content_site_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/invoice-pricing.ts",
+      "source_location": "L2",
       "weight": 1.0
     }
   ],

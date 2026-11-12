@@ -28,7 +28,7 @@ const pricedLineSchema = z.object({
 });
 const invoiceSnapshotSchema = z.object({
   number: z.number().int().positive().safe(), issuer_name: z.string().min(1), issuer_address: z.string().min(1),
-  recipient_name: z.string().min(1), recipient_address: z.string().min(1), issue_date: z.iso.date(), due_date: z.iso.date(),
+  issuer_contact: z.string().min(1).optional(), recipient_name: z.string().min(1), recipient_address: z.string().min(1), issue_date: z.iso.date(), due_date: z.iso.date(),
   payment_terms_days: z.number().int().nonnegative(), payment_method: z.string().min(1), billing_cadence: cadence,
   founding_transition_date: z.iso.date().nullable(), vat_enabled: z.boolean(), vat_rate_basis_points: z.number().int().nullable(),
   vat_registration: z.string().nullable(), currency: z.literal("GBP"),
@@ -36,6 +36,8 @@ const invoiceSnapshotSchema = z.object({
   net_pence: money, vat_pence: money, total_pence: money,
 });
 export const issuedInvoiceRowSchema = z.object({ id, snapshot: invoiceSnapshotSchema, paid_pence: money });
+export const parentInvoiceListRowSchema = issuedInvoiceRowSchema.extend({ family_id: id, family_name: z.string().nullable() });
+export type IssuedInvoice = z.infer<typeof issuedInvoiceRowSchema>;
 export const adminInvoiceRowSchema = z.object({
   id, family_id: id, recipient_name: z.string().min(1), recipient_address: z.string().min(1),
   invoice_number: z.string().regex(/^[1-9]\d*$/).nullable(), snapshot: invoiceSnapshotSchema.nullable(),
@@ -51,3 +53,9 @@ export const issueContextSchema = z.looseObject({
   invoice_id: id, invoice_number: z.string().regex(/^[1-9]\d*$/).nullable(), recipient_name: z.string().min(1), recipient_address: z.string().min(1),
   pricing: pricingContextSchema, lines: z.array(pricedLineSchema.loose()).min(1).max(100),
 });
+
+const listCommon = { id, family_id: id, family_name: z.string().nullable(), recipient_name: z.string().min(1), paid_pence: money };
+export const adminInvoiceListRowSchema = z.discriminatedUnion("is_issued", [
+  z.object({ ...listCommon, is_issued: z.literal(false), invoice_number: z.null(), issue_date: z.null(), due_date: z.null(), total_pence: z.null() }),
+  z.object({ ...listCommon, is_issued: z.literal(true), invoice_number: z.string().regex(/^[1-9]\d*$/), issue_date: z.iso.date(), due_date: z.iso.date(), total_pence: money }),
+]);

@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-for (const path of ["/admin", "/admin/staff", "/parent", "/staff", "/account"]) {
+for (const path of ["/admin", "/admin/staff", "/parent", "/staff", "/account", "/admin/invoices", "/admin/invoices/new", "/admin/billing-settings", "/parent/billing", "/parent/billing/10000000-0000-4000-8000-000000000001?family=10000000-0000-4000-8000-000000000002", "/parent/billing/10000000-0000-4000-8000-000000000001/print?family=10000000-0000-4000-8000-000000000002"]) {
   test(`${path} requires sign-in`, async ({ page }) => {
     await page.goto(path);
     await expect(page).toHaveURL(/\/sign-in/, { timeout: 15_000 });

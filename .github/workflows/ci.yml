@@ -76,6 +76,15 @@ jobs:
           sh db/tests/staff-delivery-concurrency.sh 127.0.0.1 goldleaf_test
           sh db/tests/invoice-concurrency.sh 127.0.0.1 goldleaf_test
           sh db/tests/invoice-runtime-concurrency.sh 127.0.0.1 goldleaf_test
+          createdb -h 127.0.0.1 -p 55439 goldleaf_invoice_ui
+          psql -X -h 127.0.0.1 -p 55439 -d goldleaf_invoice_ui -v ON_ERROR_STOP=1 \
+            -f db/tests/onboarding-upgrade.sql -f db/migrations/0004_staff_onboarding.sql \
+            -f db/migrations/0005_invoice_billing.sql -f db/migrations/0006_portal_access.sql \
+            -f db/migrations/0007_invitation_delivery.sql -f db/migrations/0008_invoice_runtime.sql \
+            -f db/migrations/0009_staff_access.sql -f db/migrations/0010_staff_delivery.sql \
+            -f db/tests/invoice-ui-upgrade-before.sql \
+            -f db/migrations/0011_invoice_ui.sql -f db/tests/invoice-ui.sql
+          sh db/tests/invoice-ui-concurrency.sh 127.0.0.1 goldleaf_invoice_ui
           createdb -h 127.0.0.1 -p 55439 goldleaf_migration_race
           sh db/tests/staff-migration-concurrency.sh 127.0.0.1 goldleaf_migration_race
 

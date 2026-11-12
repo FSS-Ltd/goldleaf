@@ -203,3 +203,7 @@ Role navigation and staff UI review re-extracted 12 allowlisted files: 375 nodes
 The invitation-action call edges were reconciled against current source: duplicate edges at lines 19 and 25 were removed, and inferred call scores reflect their inferred status. A source-verified account-menu call was added at line 17. The graph has 375 nodes and 372 edges; the previously reported 55 unresolved extractor edges and historical coverage limits remain.
 
 Team header route correction changes no symbols or graph relationships; the existing PortalShell node and callers remain current.
+
+## Invoice UI scope (2026-11-12)
+
+Incremental AST extraction refreshed the changed TypeScript and TSX files for invoice routes, shared portal navigation, reviewed quotes, notifications, and payment recovery. File-qualified IDs disambiguate repeated route component names. SQL is not supported by the extractor: `portal_invoice_ui_db` and its links to the existing invoice runtime and server DAL are manually source-linked to migration 0011. Semantic extraction and cross-scope edges remain incomplete; consult `FEATURE_TREE.md` and source for authority. Migration 0011 and provider delivery remain undeployed and signed-in UI verification is pending.

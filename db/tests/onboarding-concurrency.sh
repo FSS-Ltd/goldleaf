@@ -167,6 +167,7 @@ run_staff_overlap() {
 run_staff_overlap issue-first e1 \
   "SELECT portal.issue_staff_invitation('staff-race-admin','staff-race@example.com',decode(repeat('e1',32),'hex'),now()+interval '1 day');" \
   "SELECT portal.revoke_membership('staff-race-admin',(SELECT id FROM portal.memberships WHERE subject='staff-race'));"
+psql_test -c "SELECT portal.issue_staff_invitation('staff-race-admin','staff-race@example.com',decode(repeat('e4',32),'hex'),now()+interval '1 day'); SELECT portal.accept_staff_invitation('staff-race','staff-race@example.com',decode(repeat('e4',32),'hex'));" >/dev/null
 run_staff_overlap revoke-first e2 \
   "SELECT portal.revoke_membership('staff-race-admin',(SELECT id FROM portal.memberships WHERE subject='staff-race'));" \
   "SELECT portal.issue_staff_invitation('staff-race-admin','staff-race@example.com',decode(repeat('e2',32),'hex'),now()+interval '1 day');"

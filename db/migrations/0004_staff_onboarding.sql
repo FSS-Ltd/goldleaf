@@ -36,6 +36,7 @@ REVOKE ALL ON portal.staff_invitation_order, portal.staff_invitations, portal.st
 REVOKE ALL ON SEQUENCE portal.staff_assignment_history_id_seq FROM PUBLIC;
 
 -- Keep one unique registry across both invitation purposes, including concurrent issuers.
+LOCK TABLE portal.invitations IN SHARE ROW EXCLUSIVE MODE;
 CREATE TABLE portal.invitation_digests (digest bytea PRIMARY KEY CHECK (octet_length(digest) = 32));
 INSERT INTO portal.invitation_digests(digest) SELECT token_digest FROM portal.invitations;
 REVOKE ALL ON portal.invitation_digests FROM PUBLIC;

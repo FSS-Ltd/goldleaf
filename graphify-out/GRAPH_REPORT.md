@@ -135,3 +135,5 @@ The portal node is partial, reflecting its existing onboarding database foundati
 ## Staff onboarding update
 
 `portal_staff_onboarding` links `db/migrations/0004_staff_onboarding.sql` to `portal_onboarding_db`. Graphify does not extract SQL: scoped `graphify update db/migrations` found no supported code files, so this source-backed node and edge were added manually. The structural summary above describes the previous extraction.
+
+Staff migration holds a parent invitation writer lock across digest backfill and trigger installation; `db/tests/staff-migration-concurrency.sh` exercises the upgrade race on PostgreSQL 17.

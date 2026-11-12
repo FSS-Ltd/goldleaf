@@ -23,3 +23,5 @@ Check landmark nesting, role fencing, mobile layout, motion preference, route fa
 
 ## Ledger
 The new rendering test failed first because PortalLoading did not exist, then passed after implementation. Production-build visual review and real assistive technology remain separate checks. Graph extraction is scoped; prior SQL and semantic gaps remain.
+
+Review correction: `ActorScope` wraps `PortalShell`, so its actor-mismatch fallback owns a full-page landmark. A caller-context regression test failed before the correction and passed afterward.

@@ -13,6 +13,6 @@ export function ActorScope({
 }) {
   const { isLoaded, userId, sessionId } = useAuth();
   if (!isLoaded || userId !== actor.userId || sessionId !== actor.authSessionId)
-    return <PortalLoading label="Opening messages…" variant="messages" contentOnly />;
+    return <PortalLoading label="Opening messages…" variant="messages" />;
   return children;
 }

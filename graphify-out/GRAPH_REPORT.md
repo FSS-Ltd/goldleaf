@@ -285,3 +285,5 @@ Parent-home scoped extraction was reconciled with the merged staff Today graph; 
 ## Portal loading scoped update (2026-11-12)
 
 AST extraction refreshed changed TS/TSX files and added the static PortalLoading component and rendering test. Existing graph nodes and source-valid relationships were retained; unresolved cross-file imports are not inferred. The baseline SQL and semantic extraction gaps remain unchanged. Extraction used zero model tokens. See FEATURE_TREE.md PORTAL-LOADING for entry points, boundaries and verification.
+
+ActorScope review correction: scoped AST extraction refreshed the actor fence and its regression test; the fallback now owns a full-page landmark before PortalShell mounts. Existing SQL and semantic coverage limitations remain.

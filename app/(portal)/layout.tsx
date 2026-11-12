@@ -1,9 +1,7 @@
-import { ClerkProvider } from "@clerk/nextjs";
 import type { ReactNode } from "react";
 
+export const metadata = { robots: { index: false, follow: false } };
+
 export default function PortalLayout({ children }: { children: ReactNode }) {
-  if (!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || !process.env.CLERK_SECRET_KEY) {
-    return children;
-  }
-  return <ClerkProvider>{children}</ClerkProvider>;
+  return children;
 }

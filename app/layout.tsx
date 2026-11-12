@@ -1,9 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { ViewTransition } from "react";
 import { Fraunces, Lexend } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { site, areaLabel } from "@/content/site";
 import "./globals.css";
 
@@ -41,18 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en-GB" className={`${fraunces.variable} ${lexend.variable}`}>
       <body className="flex min-h-screen flex-col">
-        <a
-          href="#main"
-          className="fixed left-4 top-4 z-50 -translate-y-24 rounded-full bg-ink px-5 py-3 text-paper transition-transform focus:translate-y-0"
-        >
-          Skip to content
-        </a>
-        <Header />
-        <ViewTransition>
-          <main id="main" className="flex-1">{children}</main>
-        </ViewTransition>
-        <Footer />
-        <Analytics />
+        {children}
       </body>
     </html>
   );

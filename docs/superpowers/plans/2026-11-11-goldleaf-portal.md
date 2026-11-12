@@ -47,7 +47,7 @@ The desktop admin family form has a companion Stitch draft, `ee9f8cc112ad420d8ba
 
 ## Sprint 2 · Parent and admin onboarding with founding pricing
 
-**Owns** `app/(portal)/sign-in/`, `app/(portal)/invite/`, `app/(portal)/parent/`, `app/(portal)/admin/families/`, `lib/portal/access.ts`, `lib/portal/invitations.ts`, `lib/portal/families.ts`, and identity, family and assignment-history migrations. Keep the public enquiry form as an enquiry. Admin starts onboarding a family after accepting them.
+**Owns** `app/(portal)/(provider)/sign-in/`, `app/(portal)/invite/`, `app/(portal)/(provider)/parent/`, `app/(portal)/(provider)/admin/`, `lib/portal/access.ts`, `lib/portal/invitations.ts`, `lib/portal/families.ts`, and identity, family and assignment-history migrations. Keep the public enquiry form as an enquiry. Admin starts onboarding a family after accepting them.
 
 Ship the private database foundation first. Verify invitation acceptance, revocation, family isolation, and founding-slot races against Postgres before connecting request identity. The access-layer slice connects verified identity to scoped database operations. The following slice connects these operations to the Stitch-led forms and parent home. Release stays gated on the synthetic end-to-end workflow.
 
@@ -60,6 +60,8 @@ The earlier isolated development Neon Auth probe established provider behavior b
 - [ ] Show the parent home using both Stitch frames with genuine empty states until sessions and invoices exist. Select children only from authorised family membership. Deny forged child or family IDs, including action calls, and recheck access after revocation. Disable portal indexing and private response caching.
 - [ ] Add a labelled admin Founding family selection. Atomically claim or release a slot and record actor, time and previous state. Competing claims cannot exceed five. Keep pricing eligibility history so removing a tag cannot rewrite an issued invoice. Announce success/failure accessibly and reread committed availability. Public count reflects the slot change on the next navigation or refresh.
 - [ ] Run a synthetic admin-to-parent acceptance walkthrough on desktop and mobile. Keep production onboarding disabled until identities, invite delivery, notice and account scope pass review.
+
+Draft onboarding UI uses companion Stitch frames `ee9f8cc112ad420d8ba1e65b7137dd06` (admin), `548ddd2e897b4ddba79a919953b1a5af` (invitation states), and `7c4c7f2e5f8d411a91a15d0e7a1777a9` (parent empty state). The invitation frame’s unlabelled read-only email input is presented as labelled, verified-account text; the parent frame’s unsupported pastoral/help placeholders are omitted. Unimplemented sessions, learning, notes and billing show unavailable states rather than unverified empty claims. Delivery is explicit, hash-only and records pending/sent/failed; provider acceptance is not proof of receipt. Real signed-in and provider delivery workflows remain release gates.
 
 ## Sprint 3 · Staff onboarding and assignment
 

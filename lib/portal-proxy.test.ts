@@ -7,5 +7,10 @@ test("Clerk frontend proxy requests reach the middleware", () => {
   for (const url of ["/__clerk", "/__clerk/v1/client"]) {
     assert.equal(unstable_doesMiddlewareMatch({ config, nextConfig: {}, url }), true);
   }
-  assert.equal(unstable_doesMiddlewareMatch({ config, nextConfig: {}, url: "/about" }), false);
+  for (const url of ["/invite/accept", "/sign-up", "/sign-up/verify-email-address"]) {
+    assert.equal(unstable_doesMiddlewareMatch({ config, nextConfig: {}, url }), true);
+  }
+  for (const url of ["/about", "/invite"]) {
+    assert.equal(unstable_doesMiddlewareMatch({ config, nextConfig: {}, url }), false);
+  }
 });

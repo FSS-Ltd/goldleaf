@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { ButtonLink } from "@/components/Button";
 import { Eyebrow } from "@/components/Eyebrow";
 import { LostTiles } from "@/components/LostTiles";
@@ -17,7 +19,9 @@ const links = [
 
 export default function NotFound() {
   return (
-    <section className="section">
+    <>
+    <Header />
+    <main id="main" className="flex-1"><section className="section">
       <div className="wrap grid items-center gap-10 md:grid-cols-[1.1fr_0.9fr] md:gap-14">
         <div>
           <Eyebrow left>Error 404</Eyebrow>
@@ -45,6 +49,8 @@ export default function NotFound() {
           poster={<LostTiles />}
         />
       </div>
-    </section>
+    </section></main>
+    <Footer />
+    </>
   );
 }

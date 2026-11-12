@@ -161,3 +161,9 @@ Corrected 4 portal edge directions where serialized source/target contradicted t
 The invoice database node and source-backed edges were retained alongside the access-layer graph. This merged graph contains 162 nodes and 141 edges; older structural summaries above describe earlier scopes.
 
 Founding DTO update: scoped extraction adds the `setFamilyFounding` wrapper. The current merged graph contains 163 nodes and 144 edges; SQL is source-linked manually.
+
+## Parent and admin onboarding update
+
+An allowlisted structural refresh reconciled public route-group moves, the Clerk-free invitation capture, provider-backed acceptance, scoped portal UI and tests. SQL migration and test references were added manually because SQL extraction is unsupported. Existing semantic nodes are retained where their source paths and endpoints resolve. The graph contains 226 nodes and 213 directed edges, including the source-linked resend concurrency test. Other semantic coverage and older unrelated edge directions remain unaudited.
+
+Final targeted AST reconciliation updated changed invitation and action symbols and removed an extractor artefact named `if()`. The full scoped graph update refused to overwrite the larger mixed graph, so its existing semantic and SQL nodes were retained. The final graph has 225 nodes and 211 directed edges. Historical unrelated coverage remains unaudited.

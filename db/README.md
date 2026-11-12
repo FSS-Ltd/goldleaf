@@ -162,3 +162,22 @@ All functions are revoked from PUBLIC and no runtime role is provisioned. Only a
 **Do not grant or enable invoice issuance yet.** The future trusted DAL must derive every line from `quoteInvoice`, resolve the family's eligibility history for the service date, apply the post-intro rounding policy, and verify recipient and supplier data. SQL validates arithmetic and transition consistency but does not independently validate supplied prices or founding eligibility. Existing founding slot assignments predate eligibility history and need reconciliation. No provider, deployment, email or invoice UI is included here.
 
 On a disposable PostgreSQL 17 database, run `db/tests/onboarding-upgrade.sql`, `db/migrations/0004_staff_onboarding.sql`, `db/migrations/0005_invoice_billing.sql`, and `db/tests/invoice-billing.sql` in order. Run `PGPORT=55439 sh db/tests/invoice-concurrency.sh <host> <database>` against the same disposable database. Tests create synthetic records; never point them at live data. Disable callers and revoke grants to roll back application use; preserve records and use a forward migration for corrections.
+
+## Parent invitation delivery
+
+Apply `0007_invitation_delivery.sql` after 0006. Grant the separate portal runtime only the additional server functions:
+
+```sql
+GRANT EXECUTE ON FUNCTION portal.revoke_invitation(text, uuid),
+  portal.issue_parent_delivery(text, uuid, text, bytea, timestamptz, uuid),
+  portal.list_family_invitations(text, uuid),
+  portal.invitation_delivery_recipient(text, uuid, bytea),
+  portal.mark_invitation_delivery(text, uuid, text)
+TO goldleaf_portal_runtime;
+```
+
+`sent` records acceptance by the email provider, not confirmed receipt. The initial invitation and `pending` delivery state commit before an explicit admin action attempts mail. The recipient lookup rechecks admin access, token digest, expiry and pending status; the database stores only `pending`, `sent` or `failed`, never the token, link or provider response. A server-generated request UUID prevents duplicate resends when the same form submission is replayed. A failed or unconfirmed delivery requires an explicit new invitation, which invalidates earlier invitations for the same family and address. A provider may accept an email just before a status write fails; in that case treat delivery as unknown and inspect before resending. No automatic retry or persistent plaintext token is provided.
+
+Set `PORTAL_INVITE_FROM_EMAIL` to a verified sender, `RESEND_API_KEY` and `NEXT_PUBLIC_SITE_URL` for the relevant environment. Production invitation origins must use HTTPS. Links place the bearer in a fragment; the unauthenticated `/invite` capture route is excluded from the Clerk middleware and provider and the public analytics component. It clears the fragment, exchanges the token for a short-lived HttpOnly cookie scoped to `/invite`, then navigates to `/invite/accept` for authentication and explicit acceptance. The acceptance page exposes no family details before a verified-email match. Local tests stub mail delivery and must never send real invitations.
+
+The portal uses full document navigation between protected screens, reloads pages restored from the browser back-forward cache and redirects if the Clerk user changes. Each server query and mutation checks current membership. There is no live revocation push to an already open view; a future authenticated event subscription is required for that behaviour.

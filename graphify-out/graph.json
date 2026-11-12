@@ -1642,6 +1642,87 @@
       "norm_label": "portalpage()"
     },
     {
+      "label": "actions.ts",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/actions.ts",
+      "source_location": "L1",
+      "id": "app_portal_provider_admin_actions_ts",
+      "community": 0,
+      "norm_label": "actions.ts"
+    },
+    {
+      "label": "createFamily()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/actions.ts",
+      "source_location": "L36",
+      "id": "actions_createfamily",
+      "community": 0,
+      "norm_label": "createfamily()"
+    },
+    {
+      "label": "changeFounding()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/actions.ts",
+      "source_location": "L98",
+      "id": "actions_changefounding",
+      "community": 0,
+      "norm_label": "changefounding()"
+    },
+    {
+      "label": "resendInvitation()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/actions.ts",
+      "source_location": "L124",
+      "id": "actions_resendinvitation",
+      "community": 0,
+      "norm_label": "resendinvitation()"
+    },
+    {
+      "label": "revokeInvitation()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/actions.ts",
+      "source_location": "L168",
+      "id": "actions_revokeinvitation",
+      "community": 0,
+      "norm_label": "revokeinvitation()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/page.tsx",
+      "source_location": "L1",
+      "id": "app_portal_provider_admin_page_tsx",
+      "community": 2,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "AdminHome()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/page.tsx",
+      "source_location": "L12",
+      "id": "page_adminhome",
+      "community": 2,
+      "norm_label": "adminhome()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L1",
+      "id": "app_portal_provider_admin_families_familyid_page_tsx",
+      "community": 2,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "FamilyDetail()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L15",
+      "id": "page_familydetail",
+      "community": 2,
+      "norm_label": "familydetail()"
+    },
+    {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/page.tsx",
@@ -1694,6 +1775,15 @@
       "id": "portalsessionguard_portalsessionguard",
       "community": 37,
       "norm_label": "portalsessionguard()"
+    },
+    {
+      "label": "AdminForms.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/AdminForms.tsx",
+      "source_location": "L1",
+      "id": "components_portal_adminforms_tsx",
+      "community": 70,
+      "norm_label": "adminforms.tsx"
     },
     {
       "label": "require-role.ts",
@@ -2864,6 +2954,62 @@
       "norm_label": "account-identity-summary.test.ts"
     },
     {
+      "id": "app_portal_provider_admin_staff_actions_ts",
+      "label": "actions.ts",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L1",
+      "norm_label": "actions.ts"
+    },
+    {
+      "id": "actions_sendstaffinvite",
+      "label": "sendStaffInvite()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L26",
+      "norm_label": "sendstaffinvite()"
+    },
+    {
+      "id": "actions_revokestaffinvite",
+      "label": "revokeStaffInvite()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L82",
+      "norm_label": "revokestaffinvite()"
+    },
+    {
+      "id": "actions_savestaffassignments",
+      "label": "saveStaffAssignments()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L96",
+      "norm_label": "savestaffassignments()"
+    },
+    {
+      "id": "app_portal_provider_admin_staff_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L1",
+      "norm_label": "page.tsx"
+    },
+    {
+      "id": "page_staffadmin",
+      "label": "StaffAdmin()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L22",
+      "norm_label": "staffadmin()"
+    },
+    {
+      "id": "components_portal_staffforms_tsx",
+      "label": "StaffForms.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/StaffForms.tsx",
+      "source_location": "L1",
+      "norm_label": "staffforms.tsx"
+    },
+    {
       "id": "lib_invitation_cookie_test_ts",
       "label": "invitation-cookie.test.ts",
       "file_type": "code",
@@ -3138,6 +3284,27 @@
       "file_type": "code",
       "source_file": "lib/portal/invitation-cookie.ts",
       "source_location": "L18"
+    },
+    {
+      "id": "staffforms_feedback",
+      "label": "Feedback()",
+      "file_type": "code",
+      "source_file": "components/portal/StaffForms.tsx",
+      "source_location": "L26"
+    },
+    {
+      "id": "page_deliverylabel",
+      "label": "deliveryLabel()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L16"
+    },
+    {
+      "id": "page_randomuuid",
+      "label": "randomUUID()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L89"
     },
     {
       "id": "page_stafftoday",
@@ -5413,173 +5580,6 @@
       "norm_label": "invoice ui persistence and restricted operations"
     },
     {
-      "label": "actions.ts",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/actions.ts",
-      "source_location": "L1",
-      "id": "app_portal_provider_admin_actions_ts",
-      "community": 0,
-      "norm_label": "actions.ts"
-    },
-    {
-      "label": "createFamily()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/actions.ts",
-      "source_location": "L36",
-      "id": "actions_createfamily",
-      "community": 0,
-      "norm_label": "createfamily()"
-    },
-    {
-      "label": "changeFounding()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/actions.ts",
-      "source_location": "L98",
-      "id": "actions_changefounding",
-      "community": 0,
-      "norm_label": "changefounding()"
-    },
-    {
-      "label": "resendInvitation()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/actions.ts",
-      "source_location": "L124",
-      "id": "actions_resendinvitation",
-      "community": 0,
-      "norm_label": "resendinvitation()"
-    },
-    {
-      "label": "revokeInvitation()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/actions.ts",
-      "source_location": "L168",
-      "id": "actions_revokeinvitation",
-      "community": 0,
-      "norm_label": "revokeinvitation()"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/page.tsx",
-      "source_location": "L1",
-      "id": "app_portal_provider_admin_page_tsx",
-      "community": 2,
-      "norm_label": "page.tsx"
-    },
-    {
-      "label": "AdminHome()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/page.tsx",
-      "source_location": "L12",
-      "id": "page_adminhome",
-      "community": 2,
-      "norm_label": "adminhome()"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
-      "source_location": "L1",
-      "id": "app_portal_provider_admin_families_familyid_page_tsx",
-      "community": 2,
-      "norm_label": "page.tsx"
-    },
-    {
-      "label": "FamilyDetail()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
-      "source_location": "L15",
-      "id": "page_familydetail",
-      "community": 2,
-      "norm_label": "familydetail()"
-    },
-    {
-      "label": "AdminForms.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/AdminForms.tsx",
-      "source_location": "L1",
-      "id": "components_portal_adminforms_tsx",
-      "community": 70,
-      "norm_label": "adminforms.tsx"
-    },
-    {
-      "id": "app_portal_provider_admin_staff_actions_ts",
-      "label": "actions.ts",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
-      "source_location": "L1",
-      "norm_label": "actions.ts"
-    },
-    {
-      "id": "actions_sendstaffinvite",
-      "label": "sendStaffInvite()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
-      "source_location": "L26",
-      "norm_label": "sendstaffinvite()"
-    },
-    {
-      "id": "actions_revokestaffinvite",
-      "label": "revokeStaffInvite()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
-      "source_location": "L82",
-      "norm_label": "revokestaffinvite()"
-    },
-    {
-      "id": "actions_savestaffassignments",
-      "label": "saveStaffAssignments()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
-      "source_location": "L96",
-      "norm_label": "savestaffassignments()"
-    },
-    {
-      "id": "app_portal_provider_admin_staff_page_tsx",
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L1",
-      "norm_label": "page.tsx"
-    },
-    {
-      "id": "page_staffadmin",
-      "label": "StaffAdmin()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L22",
-      "norm_label": "staffadmin()"
-    },
-    {
-      "id": "components_portal_staffforms_tsx",
-      "label": "StaffForms.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/StaffForms.tsx",
-      "source_location": "L1",
-      "norm_label": "staffforms.tsx"
-    },
-    {
-      "id": "staffforms_feedback",
-      "label": "Feedback()",
-      "file_type": "code",
-      "source_file": "components/portal/StaffForms.tsx",
-      "source_location": "L26"
-    },
-    {
-      "id": "page_deliverylabel",
-      "label": "deliveryLabel()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L16"
-    },
-    {
-      "id": "page_randomuuid",
-      "label": "randomUUID()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L89"
-    },
-    {
       "id": "admin_actions_actor",
       "label": "actor()",
       "file_type": "code",
@@ -7317,6 +7317,66 @@
       "target": "access_getactivememberships"
     },
     {
+      "source": "page_adminhome",
+      "target": "require_role_requirerole",
+      "_src": "page_adminhome",
+      "_tgt": "require_role_requirerole",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/admin/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "page_adminhome",
+      "target": "families_listfamilies",
+      "_src": "page_adminhome",
+      "_tgt": "families_listfamilies",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/admin/page.tsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "page_familydetail",
+      "target": "require_role_requirerole",
+      "_src": "page_familydetail",
+      "_tgt": "require_role_requirerole",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "page_familydetail",
+      "target": "families_readfamily",
+      "_src": "page_familydetail",
+      "_tgt": "families_readfamily",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "page_familydetail",
+      "target": "invitation_delivery_listfamilyinvitations",
+      "_src": "page_familydetail",
+      "_tgt": "invitation_delivery_listfamilyinvitations",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(public)/page.tsx",
@@ -7533,6 +7593,18 @@
       "weight": 1.0
     },
     {
+      "source": "app_portal_provider_admin_actions_ts",
+      "target": "lib_portal_invitation_delivery_ts",
+      "_src": "app_portal_provider_admin_actions_ts",
+      "_tgt": "lib_portal_invitation_delivery_ts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/actions.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
       "source": "portal_delivery_concurrency",
       "target": "portal_delivery_sql",
       "_src": "portal_delivery_concurrency",
@@ -7543,6 +7615,54 @@
       "source_file": "db/tests/invitation-delivery-concurrency.sh",
       "source_location": null,
       "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_actions_ts",
+      "target": "actions_createfamily",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/actions.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_actions_ts",
+      "_tgt": "actions_createfamily",
+      "confidence_score": 1
+    },
+    {
+      "source": "app_portal_provider_admin_actions_ts",
+      "target": "actions_changefounding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/actions.ts",
+      "source_location": "L98",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_actions_ts",
+      "_tgt": "actions_changefounding",
+      "confidence_score": 1
+    },
+    {
+      "source": "app_portal_provider_admin_actions_ts",
+      "target": "actions_resendinvitation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/actions.ts",
+      "source_location": "L124",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_actions_ts",
+      "_tgt": "actions_resendinvitation",
+      "confidence_score": 1
+    },
+    {
+      "source": "app_portal_provider_admin_actions_ts",
+      "target": "actions_revokeinvitation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/actions.ts",
+      "source_location": "L168",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_actions_ts",
+      "_tgt": "actions_revokeinvitation",
+      "confidence_score": 1
     },
     {
       "source": "lib_portal_invitation_delivery_ts",
@@ -7591,6 +7711,78 @@
       "_src": "lib_portal_invitation_delivery_ts",
       "_tgt": "invitation_delivery_deliverparentinvitation",
       "confidence_score": 1.0
+    },
+    {
+      "source": "actions_createfamily",
+      "target": "families_createfamilywithinvitation",
+      "_src": "actions_createfamily",
+      "_tgt": "families_createfamilywithinvitation",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/admin/actions.ts",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_createfamily",
+      "target": "invitation_delivery_deliverparentinvitation",
+      "_src": "actions_createfamily",
+      "_tgt": "invitation_delivery_deliverparentinvitation",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/admin/actions.ts",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_changefounding",
+      "target": "families_setfamilyfounding",
+      "_src": "actions_changefounding",
+      "_tgt": "families_setfamilyfounding",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/admin/actions.ts",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_resendinvitation",
+      "target": "invitation_delivery_issueparentinvitation",
+      "_src": "actions_resendinvitation",
+      "_tgt": "invitation_delivery_issueparentinvitation",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/admin/actions.ts",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_resendinvitation",
+      "target": "invitation_delivery_deliverparentinvitation",
+      "_src": "actions_resendinvitation",
+      "_tgt": "invitation_delivery_deliverparentinvitation",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/admin/actions.ts",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_revokeinvitation",
+      "target": "invitation_delivery_revokeparentinvitation",
+      "_src": "actions_revokeinvitation",
+      "_tgt": "invitation_delivery_revokeparentinvitation",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/admin/actions.ts",
+      "source_location": "L174",
+      "weight": 1.0
     },
     {
       "source": "invitation_delivery_listfamilyinvitations",
@@ -9369,6 +9561,42 @@
       "confidence_score": 1.0
     },
     {
+      "source": "app_portal_provider_admin_staff_actions_ts",
+      "target": "actions_sendstaffinvite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_staff_actions_ts",
+      "_tgt": "actions_sendstaffinvite",
+      "confidence_score": 1
+    },
+    {
+      "source": "app_portal_provider_admin_staff_actions_ts",
+      "target": "actions_revokestaffinvite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_staff_actions_ts",
+      "_tgt": "actions_revokestaffinvite",
+      "confidence_score": 1
+    },
+    {
+      "source": "app_portal_provider_admin_staff_actions_ts",
+      "target": "actions_savestaffassignments",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L96",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_staff_actions_ts",
+      "_tgt": "actions_savestaffassignments",
+      "confidence_score": 1
+    },
+    {
       "source": "lib_portal_staff_profile_ts",
       "target": "staff_profile_staffprofile",
       "relation": "contains",
@@ -9523,6 +9751,90 @@
       "_src": "lib_portal_staff_ts",
       "_tgt": "staff_listassignedstafffamilies",
       "confidence_score": 1.0
+    },
+    {
+      "source": "actions_sendstaffinvite",
+      "target": "staff_issuestaffinvitation",
+      "_src": "actions_sendstaffinvite",
+      "_tgt": "staff_issuestaffinvitation",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_sendstaffinvite",
+      "target": "staff_deliverstaffinvitation",
+      "_src": "actions_sendstaffinvite",
+      "_tgt": "staff_deliverstaffinvitation",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_revokestaffinvite",
+      "target": "staff_revokestaffinvitation",
+      "_src": "actions_revokestaffinvite",
+      "_tgt": "staff_revokestaffinvitation",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_savestaffassignments",
+      "target": "staff_setstaffassignments",
+      "_src": "actions_savestaffassignments",
+      "_tgt": "staff_setstaffassignments",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "page_staffadmin",
+      "target": "staff_liststaffdeliveries",
+      "_src": "page_staffadmin",
+      "_tgt": "staff_liststaffdeliveries",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "page_staffadmin",
+      "target": "staff_profiles_liststaffprofiles",
+      "_src": "page_staffadmin",
+      "_tgt": "staff_profiles_liststaffprofiles",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "page_staffadmin",
+      "target": "staff_liststafffamilyassignments",
+      "_src": "page_staffadmin",
+      "_tgt": "staff_liststafffamilyassignments",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L33",
+      "weight": 1.0
     },
     {
       "source": "actions_exchangeinvitation",
@@ -9691,6 +10003,66 @@
       "_src": "app_portal_invite_actions_ts",
       "_tgt": "actions_acceptportalinvitation",
       "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_staffforms_tsx",
+      "target": "staffforms_feedback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/StaffForms.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "components_portal_staffforms_tsx",
+      "_tgt": "staffforms_feedback",
+      "confidence_score": 1
+    },
+    {
+      "source": "app_portal_provider_admin_staff_page_tsx",
+      "target": "page_deliverylabel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_staff_page_tsx",
+      "_tgt": "page_deliverylabel",
+      "confidence_score": 1
+    },
+    {
+      "source": "app_portal_provider_admin_staff_page_tsx",
+      "target": "page_randomuuid",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L89",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_staff_page_tsx",
+      "_tgt": "page_randomuuid",
+      "confidence_score": 1
+    },
+    {
+      "source": "app_portal_provider_admin_page_tsx",
+      "target": "page_adminhome",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_page_tsx",
+      "_tgt": "page_adminhome",
+      "confidence_score": 1
+    },
+    {
+      "source": "app_portal_provider_admin_families_familyid_page_tsx",
+      "target": "page_familydetail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_families_familyid_page_tsx",
+      "_tgt": "page_familydetail",
+      "confidence_score": 1
     },
     {
       "source": "actions_acceptportalinvitation",
@@ -12810,18 +13182,6 @@
     },
     {
       "source": "app_portal_provider_admin_actions_ts",
-      "target": "lib_portal_invitation_delivery_ts",
-      "_src": "app_portal_provider_admin_actions_ts",
-      "_tgt": "lib_portal_invitation_delivery_ts",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/(portal)/(provider)/admin/actions.ts",
-      "source_location": null,
-      "weight": 1.0
-    },
-    {
-      "source": "app_portal_provider_admin_actions_ts",
       "target": "admin_actions_actor",
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -12842,54 +13202,6 @@
       "weight": 1.0,
       "_src": "app_portal_provider_admin_actions_ts",
       "_tgt": "actions_values",
-      "confidence_score": 1
-    },
-    {
-      "source": "app_portal_provider_admin_actions_ts",
-      "target": "actions_createfamily",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/admin/actions.ts",
-      "source_location": "L36",
-      "weight": 1.0,
-      "_src": "app_portal_provider_admin_actions_ts",
-      "_tgt": "actions_createfamily",
-      "confidence_score": 1
-    },
-    {
-      "source": "app_portal_provider_admin_actions_ts",
-      "target": "actions_changefounding",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/admin/actions.ts",
-      "source_location": "L98",
-      "weight": 1.0,
-      "_src": "app_portal_provider_admin_actions_ts",
-      "_tgt": "actions_changefounding",
-      "confidence_score": 1
-    },
-    {
-      "source": "app_portal_provider_admin_actions_ts",
-      "target": "actions_resendinvitation",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/admin/actions.ts",
-      "source_location": "L124",
-      "weight": 1.0,
-      "_src": "app_portal_provider_admin_actions_ts",
-      "_tgt": "actions_resendinvitation",
-      "confidence_score": 1
-    },
-    {
-      "source": "app_portal_provider_admin_actions_ts",
-      "target": "actions_revokeinvitation",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/admin/actions.ts",
-      "source_location": "L168",
-      "weight": 1.0,
-      "_src": "app_portal_provider_admin_actions_ts",
-      "_tgt": "actions_revokeinvitation",
       "confidence_score": 1
     },
     {
@@ -12953,30 +13265,6 @@
       "confidence_score": 1
     },
     {
-      "source": "app_portal_provider_admin_families_familyid_page_tsx",
-      "target": "page_familydetail",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_src": "app_portal_provider_admin_families_familyid_page_tsx",
-      "_tgt": "page_familydetail",
-      "confidence_score": 1
-    },
-    {
-      "source": "app_portal_provider_admin_page_tsx",
-      "target": "page_adminhome",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/admin/page.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_src": "app_portal_provider_admin_page_tsx",
-      "_tgt": "page_adminhome",
-      "confidence_score": 1
-    },
-    {
       "source": "app_portal_provider_admin_staff_actions_ts",
       "target": "admin_staff_actions_actor",
       "relation": "contains",
@@ -12986,42 +13274,6 @@
       "weight": 1.0,
       "_src": "app_portal_provider_admin_staff_actions_ts",
       "_tgt": "admin_staff_actions_actor",
-      "confidence_score": 1
-    },
-    {
-      "source": "app_portal_provider_admin_staff_actions_ts",
-      "target": "actions_sendstaffinvite",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
-      "source_location": "L26",
-      "weight": 1.0,
-      "_src": "app_portal_provider_admin_staff_actions_ts",
-      "_tgt": "actions_sendstaffinvite",
-      "confidence_score": 1
-    },
-    {
-      "source": "app_portal_provider_admin_staff_actions_ts",
-      "target": "actions_revokestaffinvite",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
-      "source_location": "L82",
-      "weight": 1.0,
-      "_src": "app_portal_provider_admin_staff_actions_ts",
-      "_tgt": "actions_revokestaffinvite",
-      "confidence_score": 1
-    },
-    {
-      "source": "app_portal_provider_admin_staff_actions_ts",
-      "target": "actions_savestaffassignments",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
-      "source_location": "L96",
-      "weight": 1.0,
-      "_src": "app_portal_provider_admin_staff_actions_ts",
-      "_tgt": "actions_savestaffassignments",
       "confidence_score": 1
     },
     {
@@ -13062,18 +13314,6 @@
     },
     {
       "source": "app_portal_provider_admin_staff_page_tsx",
-      "target": "page_deliverylabel",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "_src": "app_portal_provider_admin_staff_page_tsx",
-      "_tgt": "page_deliverylabel",
-      "confidence_score": 1
-    },
-    {
-      "source": "app_portal_provider_admin_staff_page_tsx",
       "target": "page_onboardingscopekey",
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -13082,18 +13322,6 @@
       "weight": 1.0,
       "_src": "app_portal_provider_admin_staff_page_tsx",
       "_tgt": "page_onboardingscopekey",
-      "confidence_score": 1
-    },
-    {
-      "source": "app_portal_provider_admin_staff_page_tsx",
-      "target": "page_randomuuid",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L89",
-      "weight": 1.0,
-      "_src": "app_portal_provider_admin_staff_page_tsx",
-      "_tgt": "page_randomuuid",
       "confidence_score": 1
     },
     {
@@ -13118,18 +13346,6 @@
       "weight": 1.0,
       "_src": "components_portal_adminforms_tsx",
       "_tgt": "adminforms_createfamilyform",
-      "confidence_score": 1
-    },
-    {
-      "source": "components_portal_staffforms_tsx",
-      "target": "staffforms_feedback",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/StaffForms.tsx",
-      "source_location": "L26",
-      "weight": 1.0,
-      "_src": "components_portal_staffforms_tsx",
-      "_tgt": "staffforms_feedback",
       "confidence_score": 1
     },
     {
@@ -13229,66 +13445,6 @@
       "weight": 1.0
     },
     {
-      "source": "page_adminhome",
-      "target": "require_role_requirerole",
-      "_src": "page_adminhome",
-      "_tgt": "require_role_requirerole",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/admin/page.tsx",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "page_adminhome",
-      "target": "families_listfamilies",
-      "_src": "page_adminhome",
-      "_tgt": "families_listfamilies",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/admin/page.tsx",
-      "source_location": "L18",
-      "weight": 1.0
-    },
-    {
-      "source": "page_familydetail",
-      "target": "require_role_requirerole",
-      "_src": "page_familydetail",
-      "_tgt": "require_role_requirerole",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "page_familydetail",
-      "target": "families_readfamily",
-      "_src": "page_familydetail",
-      "_tgt": "families_readfamily",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
-      "source_location": "L22",
-      "weight": 1.0
-    },
-    {
-      "source": "page_familydetail",
-      "target": "invitation_delivery_listfamilyinvitations",
-      "_src": "page_familydetail",
-      "_tgt": "invitation_delivery_listfamilyinvitations",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
-      "source_location": "L22",
-      "weight": 1.0
-    },
-    {
       "source": "page_staffadmin",
       "target": "require_role_requirerole",
       "_src": "page_staffadmin",
@@ -13298,162 +13454,6 @@
       "confidence_score": 0.9,
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
       "source_location": "L23",
-      "weight": 1.0
-    },
-    {
-      "source": "page_staffadmin",
-      "target": "staff_liststaffdeliveries",
-      "_src": "page_staffadmin",
-      "_tgt": "staff_liststaffdeliveries",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L29",
-      "weight": 1.0
-    },
-    {
-      "source": "page_staffadmin",
-      "target": "staff_profiles_liststaffprofiles",
-      "_src": "page_staffadmin",
-      "_tgt": "staff_profiles_liststaffprofiles",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L29",
-      "weight": 1.0
-    },
-    {
-      "source": "page_staffadmin",
-      "target": "staff_liststafffamilyassignments",
-      "_src": "page_staffadmin",
-      "_tgt": "staff_liststafffamilyassignments",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L33",
-      "weight": 1.0
-    },
-    {
-      "source": "actions_createfamily",
-      "target": "families_createfamilywithinvitation",
-      "_src": "actions_createfamily",
-      "_tgt": "families_createfamilywithinvitation",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/admin/actions.ts",
-      "source_location": "L44",
-      "weight": 1.0
-    },
-    {
-      "source": "actions_createfamily",
-      "target": "invitation_delivery_deliverparentinvitation",
-      "_src": "actions_createfamily",
-      "_tgt": "invitation_delivery_deliverparentinvitation",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/admin/actions.ts",
-      "source_location": "L64",
-      "weight": 1.0
-    },
-    {
-      "source": "actions_changefounding",
-      "target": "families_setfamilyfounding",
-      "_src": "actions_changefounding",
-      "_tgt": "families_setfamilyfounding",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/admin/actions.ts",
-      "source_location": "L107",
-      "weight": 1.0
-    },
-    {
-      "source": "actions_resendinvitation",
-      "target": "invitation_delivery_issueparentinvitation",
-      "_src": "actions_resendinvitation",
-      "_tgt": "invitation_delivery_issueparentinvitation",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/admin/actions.ts",
-      "source_location": "L130",
-      "weight": 1.0
-    },
-    {
-      "source": "actions_resendinvitation",
-      "target": "invitation_delivery_deliverparentinvitation",
-      "_src": "actions_resendinvitation",
-      "_tgt": "invitation_delivery_deliverparentinvitation",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/admin/actions.ts",
-      "source_location": "L137",
-      "weight": 1.0
-    },
-    {
-      "source": "actions_revokeinvitation",
-      "target": "invitation_delivery_revokeparentinvitation",
-      "_src": "actions_revokeinvitation",
-      "_tgt": "invitation_delivery_revokeparentinvitation",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/admin/actions.ts",
-      "source_location": "L174",
-      "weight": 1.0
-    },
-    {
-      "source": "actions_sendstaffinvite",
-      "target": "staff_issuestaffinvitation",
-      "_src": "actions_sendstaffinvite",
-      "_tgt": "staff_issuestaffinvitation",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
-      "source_location": "L34",
-      "weight": 1.0
-    },
-    {
-      "source": "actions_sendstaffinvite",
-      "target": "staff_deliverstaffinvitation",
-      "_src": "actions_sendstaffinvite",
-      "_tgt": "staff_deliverstaffinvitation",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
-      "source_location": "L50",
-      "weight": 1.0
-    },
-    {
-      "source": "actions_revokestaffinvite",
-      "target": "staff_revokestaffinvitation",
-      "_src": "actions_revokestaffinvite",
-      "_tgt": "staff_revokestaffinvitation",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
-      "source_location": "L88",
-      "weight": 1.0
-    },
-    {
-      "source": "actions_savestaffassignments",
-      "target": "staff_setstaffassignments",
-      "_src": "actions_savestaffassignments",
-      "_tgt": "staff_setstaffassignments",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/admin/staff/actions.ts",
-      "source_location": "L102",
       "weight": 1.0
     },
     {

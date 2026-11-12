@@ -268,3 +268,5 @@ Source-verified admin page, actor-fence and DAL call relationships were reconcil
 Controlled field components and their consumers were source-verified after the inventory-change guard: 636 nodes and 641 edges. Existing extractor and corpus limitations remain.
 
 Operation ID stability review reconciled changed source locations and the shared attempt field: 637 nodes and 644 edges. Existing extractor and corpus limitations remain.
+
+Post-merge reconciliation retains 712 nodes and 709 edges for messaging and onboarding together; development migrations 0017/0018 are verified, while production 0017/0018 remain pending. Earlier deployment statements above are historical.

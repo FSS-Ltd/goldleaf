@@ -21,6 +21,9 @@ function message(error: unknown) {
 function refresh(sessionId: string) {
   revalidatePath(`/staff/sessions/${sessionId}`);
   revalidatePath(`/admin/sessions/${sessionId}`);
+  revalidatePath(`/parent/sessions/${sessionId}`);
+  revalidatePath("/admin/children");
+  revalidatePath("/staff/sessions");
   revalidatePath("/staff");
   revalidatePath("/parent");
   revalidatePath("/parent/sessions");

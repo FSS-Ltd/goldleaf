@@ -2,14 +2,18 @@ import "server-only";
 import { auth } from "@clerk/nextjs/server";
 import { z } from "zod";
 import { requireRole } from "./require-role";
-import { matchesActionActor, type ActionActor } from "./action-actor-state";
+import {
+  matchesActionActor,
+  type ActionActor,
+  type ActionRole,
+} from "./action-actor-state";
 
 export type { ActionActor };
 
 /** Client values fence an old form; they never grant authority. */
 export async function requireActionActor(
   input: unknown,
-  role: "admin" | "staff",
+  role: ActionRole,
 ): Promise<void> {
   const expected = z
     .object({ userId: z.string().min(1), authSessionId: z.string().min(1) })

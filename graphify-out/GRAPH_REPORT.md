@@ -248,3 +248,7 @@ UK session end-date display re-extracted two allowlisted files: 557 nodes, 549 e
 Review fixes refreshed 40 allowlisted files with a fresh temporary extraction cache. Five colliding admin/staff action symbols were disambiguated by path; stale moved helper nodes were removed. The graph has 582 nodes and 574 edges; 178 unresolved or ambiguous edges were omitted. Existing SQL extraction and corpus limits remain.
 
 Final review scope re-extracted 40 allowlisted files using a fresh cache: 582 nodes, 574 edges. Five colliding admin/staff action symbols were disambiguated; 178 unresolved or ambiguous edges were omitted. SQL remains manually source-linked and historical corpus gaps remain.
+
+Rebased review scope reconciles messaging/event nodes with session UI: 616 nodes, 602 edges after fresh extraction of 40 allowlisted files; five admin/staff action ID collisions were disambiguated and 178 unresolved or ambiguous edges omitted. SQL nodes are manually source-linked; historical corpus gaps remain.
+
+Post-rebase actor-fence and publication review refresh: 616 nodes, 602 edges across the project index; 40 allowlisted files re-extracted, 5 admin/staff symbol collisions disambiguated, 178 unresolved or ambiguous edges omitted. Messaging/event nodes remain present; SQL and historical corpus limits remain.

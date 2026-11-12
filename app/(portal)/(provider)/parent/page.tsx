@@ -14,7 +14,11 @@ async function ParentHome() {
   const { identity, memberships, families } = await parentChildren();
   const children = families.flatMap((item) => item.children);
   const [familySessions, childUpdates, invoices] = await Promise.all([
-    Promise.all(families.map((item) => listSessions(item.family!.id))),
+    Promise.all(
+      families.map((item) =>
+        item.family ? listSessions(item.family.id) : Promise.resolve([]),
+      ),
+    ),
     listParentLatestLearning(),
     listParentInvoices(),
   ]);

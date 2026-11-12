@@ -866,7 +866,7 @@
       "source_file": "FEATURE_TREE.md",
       "source_location": "L35",
       "status": "partial",
-      "scope": "Custom authentication, parent/admin/staff routes, billing and child/session/learning UI are present; authenticated event transport, messages and production deployment remain pending.",
+      "scope": "Custom authentication, parent/admin/staff routes, billing and child/session/learning UI are present; family messaging and event transport foundations exist but UI integration and production portal activation remain pending.",
       "community": 2,
       "norm_label": "portal partial authenticated family staff billing learning ui",
       "id": "portal_planned"
@@ -4695,7 +4695,7 @@
       "label": "matchesActionActor()",
       "file_type": "code",
       "source_file": "lib/portal/action-actor-state.ts",
-      "source_location": "L3"
+      "source_location": "L4"
     },
     {
       "id": "lib_portal_action_actor_ts",
@@ -4709,7 +4709,7 @@
       "label": "requireActionActor()",
       "file_type": "code",
       "source_file": "lib/portal/action-actor.ts",
-      "source_location": "L10"
+      "source_location": "L14"
     },
     {
       "id": "lib_portal_parent_children_ts",
@@ -5003,35 +5003,35 @@
       "label": "updateSessionFor()",
       "file_type": "code",
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L29"
+      "source_location": "L32"
     },
     {
       "id": "workspace_actions_savenotefor",
       "label": "saveNoteFor()",
       "file_type": "code",
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L51"
+      "source_location": "L54"
     },
     {
       "id": "workspace_actions_savedraftfor",
       "label": "saveDraftFor()",
       "file_type": "code",
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L64"
+      "source_location": "L67"
     },
     {
       "id": "workspace_actions_previewdraftfor",
       "label": "previewDraftFor()",
       "file_type": "code",
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L77"
+      "source_location": "L80"
     },
     {
       "id": "workspace_actions_publishdraftfor",
       "label": "publishDraftFor()",
       "file_type": "code",
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L90"
+      "source_location": "L93"
     },
     {
       "id": "lib_session_status_test_ts",
@@ -11104,7 +11104,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/action-actor-state.ts",
-      "source_location": "L3",
+      "source_location": "L4",
       "weight": 1.0,
       "_src": "lib_portal_action_actor_state_ts",
       "_tgt": "action_actor_state_matchesactionactor",
@@ -11116,7 +11116,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/action-actor.ts",
-      "source_location": "L10",
+      "source_location": "L14",
       "weight": 1.0,
       "_src": "lib_portal_action_actor_ts",
       "_tgt": "action_actor_requireactionactor",
@@ -11416,7 +11416,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L29",
+      "source_location": "L32",
       "weight": 1.0,
       "_src": "lib_portal_workspace_actions_ts",
       "_tgt": "workspace_actions_updatesessionfor",
@@ -11428,7 +11428,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L51",
+      "source_location": "L54",
       "weight": 1.0,
       "_src": "lib_portal_workspace_actions_ts",
       "_tgt": "workspace_actions_savenotefor",
@@ -11440,7 +11440,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L64",
+      "source_location": "L67",
       "weight": 1.0,
       "_src": "lib_portal_workspace_actions_ts",
       "_tgt": "workspace_actions_savedraftfor",
@@ -11452,7 +11452,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L77",
+      "source_location": "L80",
       "weight": 1.0,
       "_src": "lib_portal_workspace_actions_ts",
       "_tgt": "workspace_actions_previewdraftfor",
@@ -11464,7 +11464,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L90",
+      "source_location": "L93",
       "weight": 1.0,
       "_src": "lib_portal_workspace_actions_ts",
       "_tgt": "workspace_actions_publishdraftfor",
@@ -11476,7 +11476,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L45",
+      "source_location": "L48",
       "weight": 1.0,
       "_src": "workspace_actions_updatesessionfor",
       "_tgt": "workspace_actions_refresh",
@@ -11488,7 +11488,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L48",
+      "source_location": "L51",
       "weight": 1.0,
       "_src": "workspace_actions_updatesessionfor",
       "_tgt": "workspace_actions_message",
@@ -11500,7 +11500,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L61",
+      "source_location": "L64",
       "weight": 1.0,
       "_src": "workspace_actions_savenotefor",
       "_tgt": "workspace_actions_message",
@@ -11512,7 +11512,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L74",
+      "source_location": "L77",
       "weight": 1.0,
       "_src": "workspace_actions_savedraftfor",
       "_tgt": "workspace_actions_message",
@@ -11524,7 +11524,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L87",
+      "source_location": "L90",
       "weight": 1.0,
       "_src": "workspace_actions_previewdraftfor",
       "_tgt": "workspace_actions_message",
@@ -11536,7 +11536,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L113",
+      "source_location": "L116",
       "weight": 1.0,
       "_src": "workspace_actions_publishdraftfor",
       "_tgt": "workspace_actions_refresh",
@@ -11548,7 +11548,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L116",
+      "source_location": "L119",
       "weight": 1.0,
       "_src": "workspace_actions_publishdraftfor",
       "_tgt": "workspace_actions_message",
@@ -11717,7 +11717,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.5,
       "source_file": "lib/portal/action-actor.ts",
-      "source_location": "L23",
+      "source_location": "L27",
       "weight": 1.0,
       "_src": "action_actor_requireactionactor",
       "_tgt": "action_actor_state_matchesactionactor"
@@ -11729,7 +11729,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.5,
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L35",
+      "source_location": "L38",
       "weight": 1.0,
       "_src": "workspace_actions_updatesessionfor",
       "_tgt": "action_actor_requireactionactor"
@@ -11741,7 +11741,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.5,
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L44",
+      "source_location": "L47",
       "weight": 1.0,
       "_src": "workspace_actions_updatesessionfor",
       "_tgt": "sessions_changesession"
@@ -11753,7 +11753,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.5,
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L57",
+      "source_location": "L60",
       "weight": 1.0,
       "_src": "workspace_actions_savenotefor",
       "_tgt": "action_actor_requireactionactor"
@@ -11765,7 +11765,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.5,
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L58",
+      "source_location": "L61",
       "weight": 1.0,
       "_src": "workspace_actions_savenotefor",
       "_tgt": "learning_saveprivatenote"
@@ -11777,7 +11777,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.5,
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L70",
+      "source_location": "L73",
       "weight": 1.0,
       "_src": "workspace_actions_savedraftfor",
       "_tgt": "action_actor_requireactionactor"
@@ -11789,7 +11789,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.5,
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L71",
+      "source_location": "L74",
       "weight": 1.0,
       "_src": "workspace_actions_savedraftfor",
       "_tgt": "learning_savelearningdraft"
@@ -11801,7 +11801,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.5,
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L83",
+      "source_location": "L86",
       "weight": 1.0,
       "_src": "workspace_actions_previewdraftfor",
       "_tgt": "action_actor_requireactionactor"
@@ -11813,7 +11813,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.5,
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L84",
+      "source_location": "L87",
       "weight": 1.0,
       "_src": "workspace_actions_previewdraftfor",
       "_tgt": "learning_previewlearningdraft"
@@ -11825,7 +11825,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.5,
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L96",
+      "source_location": "L99",
       "weight": 1.0,
       "_src": "workspace_actions_publishdraftfor",
       "_tgt": "action_actor_requireactionactor"
@@ -11837,7 +11837,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.5,
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L106",
+      "source_location": "L109",
       "weight": 1.0,
       "_src": "workspace_actions_publishdraftfor",
       "_tgt": "sessions_readscopedsession"
@@ -11849,7 +11849,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.5,
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L108",
+      "source_location": "L111",
       "weight": 1.0,
       "_src": "workspace_actions_publishdraftfor",
       "_tgt": "learning_publishlearningdraft"
@@ -11861,10 +11861,58 @@
       "confidence": "INFERRED",
       "confidence_score": 0.5,
       "source_file": "lib/portal/workspace-actions.ts",
-      "source_location": "L110",
+      "source_location": "L113",
       "weight": 1.0,
       "_src": "workspace_actions_publishdraftfor",
       "_tgt": "learning_listpublishedlearning"
+    },
+    {
+      "source": "app_portal_provider_parent_page_tsx",
+      "target": "page_parenthome",
+      "_src": "app_portal_provider_parent_page_tsx",
+      "_tgt": "page_parenthome",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/parent/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_page_tsx",
+      "target": "page_stafftoday",
+      "_src": "app_portal_provider_staff_page_tsx",
+      "_tgt": "page_stafftoday",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "page_parenthome",
+      "target": "parent_children_parentchildren",
+      "_src": "page_parenthome",
+      "_tgt": "parent_children_parentchildren",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/parent/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "page_stafftoday",
+      "target": "require_role_requirerole",
+      "_src": "page_stafftoday",
+      "_tgt": "require_role_requirerole",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0
     }
   ],
   "hyperedges": []

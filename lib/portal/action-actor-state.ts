@@ -1,3 +1,4 @@
+export type ActionRole = "admin" | "staff" | "parent";
 export type ActionActor = { userId: string; authSessionId: string };
 
 export function matchesActionActor(

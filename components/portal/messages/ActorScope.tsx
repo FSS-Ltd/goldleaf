@@ -1,4 +1,5 @@
 "use client";
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { useAuth } from "@clerk/nextjs";
 import type { ReactNode } from "react";
 import type { ActionActor } from "@/lib/portal/action-actor-state";
@@ -12,6 +13,6 @@ export function ActorScope({
 }) {
   const { isLoaded, userId, sessionId } = useAuth();
   if (!isLoaded || userId !== actor.userId || sessionId !== actor.authSessionId)
-    return <p role="status">Opening messages…</p>;
+    return <PortalLoading label="Opening messages…" variant="messages" />;
   return children;
 }

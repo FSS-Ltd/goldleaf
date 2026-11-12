@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import Link from "next/link";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
@@ -65,7 +66,7 @@ async function SessionDetail({ params }: { params: Promise<{ id: string }> }) {
 }
 export default function Page({ params }: { params: Promise<{ id: string }> }) {
   return (
-    <Suspense fallback={<main className="section wrap">Opening session…</main>}>
+    <Suspense fallback={<PortalLoading label="Opening session…" variant="detail" />}>
       <SessionDetail params={params} />
     </Suspense>
   );

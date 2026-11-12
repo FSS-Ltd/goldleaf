@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { PortalShell } from "@/components/portal/PortalShell";
@@ -140,7 +141,7 @@ export default function LearningPage({
 }) {
   return (
     <Suspense
-      fallback={<main className="section wrap">Opening learning…</main>}
+      fallback={<PortalLoading label="Opening learning…" variant="list" />}
     >
       <ParentLearning searchParams={searchParams} />
     </Suspense>

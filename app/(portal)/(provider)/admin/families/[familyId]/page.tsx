@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { onboardingScopeKey } from "@/lib/portal/onboarding-form-state";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
@@ -38,4 +39,4 @@ async function FamilyDetail({ params }: { params: Promise<{ familyId: string }> 
     </div>
   </PortalShell>;
 }
-export default function FamilyPage({ params }: { params: Promise<{ familyId: string }> }) { return <Suspense fallback={<main className="section wrap"><p>Opening family…</p></main>}><FamilyDetail params={params} /></Suspense>; }
+export default function FamilyPage({ params }: { params: Promise<{ familyId: string }> }) { return <Suspense fallback={<PortalLoading label="Opening family…" variant="detail" />}><FamilyDetail params={params} /></Suspense>; }

@@ -1,4 +1,5 @@
 "use client";
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 
 import { useClerk, useSession, useUser } from "@clerk/nextjs";
 import Link from "next/link";
@@ -26,7 +27,7 @@ export function AccountProfile() {
       // Browser storage may be unavailable.
     }
   }, [isLoaded, sessionLoaded, user, session]);
-  if (!isLoaded || !sessionLoaded) return <p>Loading your account…</p>;
+  if (!isLoaded || !sessionLoaded) return <PortalLoading label="Loading your account…" variant="profile" contentOnly />;
   if (!user || !session) return <p>Please <Link className="underline" href="/sign-in">sign in</Link> to view your account.</p>;
   return <AccountProfileContent key={`${session.id}:${user.id}`} />;
 }
@@ -36,7 +37,7 @@ function AccountProfileContent() {
   const { signOut } = useClerk();
   const router = useRouter();
   const [signOutError, setSignOutError] = useState("");
-  if (!flow.isLoaded) return <p>Loading your account…</p>;
+  if (!flow.isLoaded) return <PortalLoading label="Loading your account…" variant="profile" contentOnly />;
   if (!flow.user) return <p>Please <Link className="underline" href="/sign-in">sign in</Link> to view your account.</p>;
   const user = flow.user;
   return <div className="w-full max-w-3xl text-[#1b3022]">

@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import Link from "next/link";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
@@ -147,7 +148,7 @@ export default function AdminChildrenPage({
   return (
     <Suspense
       fallback={
-        <main className="section wrap">Opening children and sessions…</main>
+        <PortalLoading label="Opening children and sessions…" variant="list" />
       }
     >
       <AdminChildren searchParams={searchParams} />

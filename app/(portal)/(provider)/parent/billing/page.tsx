@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { Suspense } from "react";
 import { ParentBilling } from "@/components/portal/invoices/ParentBilling";
 export const metadata = { title: "Invoices" };
@@ -6,9 +7,7 @@ export default function Page() {
   return (
     <Suspense
       fallback={
-        <main className="section wrap">
-          <p>Opening invoices…</p>
-        </main>
+        <PortalLoading label="Opening invoices…" variant="list" />
       }
     >
       <ParentBilling />

@@ -1,3 +1,4 @@
+import { PortalLoading } from "@/components/portal/loading/PortalLoading";
 import { Suspense } from "react";
 import { ParentBilling } from "@/components/portal/invoices/ParentBilling";
 async function Selected({
@@ -19,9 +20,7 @@ export default function Page(props: {
   return (
     <Suspense
       fallback={
-        <main className="section wrap">
-          <p>Opening invoice…</p>
-        </main>
+        <PortalLoading label="Opening invoice…" variant="detail" />
       }
     >
       <Selected {...props} />

@@ -225,3 +225,7 @@ Four historical edge directions were checked against source and corrected: seedl
 The PORTAL semantic node now reflects the current custom authentication, parent/admin/staff screens and learning data foundation. Invoice UI is present; session/learning UI and messages remain planned. Node and edge counts are unchanged.
 
 The combined checkout reconciles the learning graph with the invoice graph: 500 nodes and 492 source-backed edges. The four corrected historical edge directions from the learning branch are retained. SQL links remain manually source-linked and unresolved cross-scope extraction remains a known gap. Invoice UI and learning data foundations are present; learning/session UI and messages remain planned.
+
+Invoice page metadata and the conditional VAT settings form were re-extracted after UI review. SQL and unresolved cross-scope extraction limits above remain.
+
+The Jury UI fixes refreshed invoice and navigation AST nodes, including billing save-state handling and the empty-family link.

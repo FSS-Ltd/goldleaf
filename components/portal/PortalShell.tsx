@@ -142,9 +142,9 @@ export function PortalShell({
               href={link.href}
               prefetch={false}
               aria-current={section === link.section ? "page" : undefined}
-              className={`flex min-h-12 min-w-0 flex-1 items-center justify-center gap-1 whitespace-nowrap rounded-lg px-2 text-xs font-medium text-[#1b3022] ${section === link.section ? "bg-[#ecd081]" : ""}`}
+              className={`flex min-h-12 min-w-0 flex-1 flex-col items-center justify-center gap-1 rounded-lg px-1 py-1 text-xs font-medium text-[#1b3022] ${section === link.section ? "bg-[#ecd081]" : ""}`}
             >
-              <link.icon size={17} aria-hidden="true" />
+              <link.icon size={19} className="shrink-0" aria-hidden="true" />
               {link.label}
             </Link>
           ))}

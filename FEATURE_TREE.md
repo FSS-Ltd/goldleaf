@@ -82,3 +82,5 @@ INVOICING graph references: `lib_portal_invoices_ts`, `portal_invoice_runtime_db
 - PORTAL role-menu graph anchor: `role_links_portalrolelinks` in [graph.json](graphify-out/graph.json); active memberships supplied by each guarded page feed the shared account menu.
 
 - PORTAL-CHILD-SESSIONS and PORTAL-LEARNING graph anchors: `portal_children_sessions_sql`, `portal_learning_updates_sql`, `lib_portal_children_ts`, `lib_portal_sessions_ts` and `lib_portal_learning_ts` in [graph.json](graphify-out/graph.json). No learning UI, subscription transport or development deployment is claimed.
+
+- Invoice and billing-settings routes provide descriptive page titles; VAT fields appear only when VAT is enabled. The invoice overview links its compact setup status to the standalone `BillingSettingsForm`; `lib/portal/billing-settings-status.ts` describes pending, unsaved and saved states. The empty composer links to family creation.

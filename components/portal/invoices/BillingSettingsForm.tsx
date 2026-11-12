@@ -8,14 +8,35 @@ import {
 import type { z } from "zod";
 import type { billingSettingsRowSchema } from "@/lib/portal/billing-settings-schema";
 import { button, card, field, subcard } from "./format";
+import { billingSettingsStatus } from "@/lib/portal/billing-settings-status";
 
 type Settings = z.infer<typeof billingSettingsRowSchema>;
 const initial: ActionState = { status: "idle", message: "" };
-export function BillingSettingsForm({ settings }: { settings: Settings }) {
+export function BillingSettingsForm({
+  settings,
+  showHeading = true,
+}: {
+  settings: Settings;
+  showHeading?: boolean;
+}) {
+  const [dirty, setDirty] = useState(false);
   const [state, action, pending] = useActionState(
-    updateBillingSettings,
+    async (previous: ActionState, form: FormData) => {
+      const result = await updateBillingSettings(previous, form);
+      if (result.status === "success") setDirty(false);
+      return result;
+    },
     initial,
   );
+  const [fields, setFields] = useState({
+    issuerName: settings.issuer_name,
+    issuerAddress: settings.issuer_address,
+    issuerContact: settings.issuer_contact,
+    paymentTermsDays: String(settings.payment_terms_days ?? ""),
+    billingCadence: settings.billing_cadence ?? "",
+    paymentMethod: settings.payment_method ?? "",
+    foundingTransitionDate: settings.founding_transition_date ?? "",
+  });
   const [vat, setVat] = useState(settings.vat_enabled);
   const [rate, setRate] = useState(
     settings.vat_rate_basis_points === null
@@ -25,41 +46,43 @@ export function BillingSettingsForm({ settings }: { settings: Settings }) {
   const [registration, setRegistration] = useState(
     settings.vat_registration ?? "",
   );
-  const [dirty, setDirty] = useState(false);
+  const GroupHeading = showHeading ? "h3" : "h2";
   return (
-    <section className={card} aria-labelledby="settings-title">
+    <section
+      className={card}
+      aria-label={showHeading ? undefined : "Billing settings form"}
+      aria-labelledby={showHeading ? "settings-title" : undefined}
+    >
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#e3d7c3] pb-4">
-        <h2 id="settings-title" className="!text-2xl">
-          Billing settings
-        </h2>
+        {showHeading && (
+          <h2 id="settings-title" className="!text-2xl">
+            Billing settings
+          </h2>
+        )}
         <span className="text-xs text-[#35594a]">
-          {dirty || state.status === "error"
-            ? "Unsaved changes"
-            : "Saved settings"}
+          {billingSettingsStatus(pending, dirty, state.status === "error")}
         </span>
       </div>
-      <form
-        action={action}
-        onChange={() => setDirty(true)}
-        onSubmit={() => setDirty(false)}
-        className="mt-6"
-      >
+      <form action={action} onChange={() => setDirty(true)} className="mt-6">
         <fieldset
           disabled={pending}
           className="grid gap-5 lg:grid-cols-[1.2fr_1fr]"
         >
           <div className="space-y-5">
             <div className={subcard}>
-              <h3 className="!font-sans !text-xs font-semibold uppercase tracking-wide">
+              <GroupHeading className="!font-sans !text-xs font-semibold uppercase tracking-wide">
                 Issuer details
-              </h3>
+              </GroupHeading>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <label className="text-sm">
                   Legal name
                   <input
                     className={field}
                     name="issuerName"
-                    defaultValue={settings.issuer_name}
+                    value={fields.issuerName}
+                    onChange={(event) =>
+                      setFields({ ...fields, issuerName: event.target.value })
+                    }
                     maxLength={200}
                     required
                   />
@@ -69,7 +92,13 @@ export function BillingSettingsForm({ settings }: { settings: Settings }) {
                   <input
                     className={field}
                     name="issuerAddress"
-                    defaultValue={settings.issuer_address}
+                    value={fields.issuerAddress}
+                    onChange={(event) =>
+                      setFields({
+                        ...fields,
+                        issuerAddress: event.target.value,
+                      })
+                    }
                     maxLength={1000}
                     required
                   />
@@ -80,7 +109,10 @@ export function BillingSettingsForm({ settings }: { settings: Settings }) {
                 <input
                   className={field}
                   name="issuerContact"
-                  defaultValue={settings.issuer_contact}
+                  value={fields.issuerContact}
+                  onChange={(event) =>
+                    setFields({ ...fields, issuerContact: event.target.value })
+                  }
                   maxLength={1000}
                   required
                 />
@@ -89,9 +121,9 @@ export function BillingSettingsForm({ settings }: { settings: Settings }) {
             <div className={subcard}>
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
-                  <h3 className="!font-sans !text-xs font-semibold uppercase tracking-wide">
+                  <GroupHeading className="!font-sans !text-xs font-semibold uppercase tracking-wide">
                     VAT
-                  </h3>
+                  </GroupHeading>
                   <p className="mt-1 text-sm text-[#35594a]">
                     Configure VAT when it applies.
                   </p>
@@ -106,32 +138,32 @@ export function BillingSettingsForm({ settings }: { settings: Settings }) {
                   VAT enabled
                 </label>
               </div>
-              <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                <label className="text-sm">
-                  VAT rate (%)
-                  <input
-                    className={field}
-                    name="vatRate"
-                    inputMode="decimal"
-                    value={rate}
-                    onChange={(event) => setRate(event.target.value)}
-                    disabled={!vat}
-                    required={vat}
-                  />
-                </label>
-                <label className="text-sm">
-                  VAT registration number
-                  <input
-                    className={field}
-                    name="vatRegistration"
-                    value={registration}
-                    onChange={(event) => setRegistration(event.target.value)}
-                    disabled={!vat}
-                    required={vat}
-                    maxLength={100}
-                  />
-                </label>
-              </div>
+              {vat && (
+                <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                  <label className="text-sm">
+                    VAT rate (%)
+                    <input
+                      className={field}
+                      name="vatRate"
+                      inputMode="decimal"
+                      value={rate}
+                      onChange={(event) => setRate(event.target.value)}
+                      required
+                    />
+                  </label>
+                  <label className="text-sm">
+                    VAT registration number
+                    <input
+                      className={field}
+                      name="vatRegistration"
+                      value={registration}
+                      onChange={(event) => setRegistration(event.target.value)}
+                      required
+                      maxLength={100}
+                    />
+                  </label>
+                </div>
+              )}
               {!vat && (
                 <>
                   <input type="hidden" name="vatRate" value={rate} />
@@ -145,9 +177,9 @@ export function BillingSettingsForm({ settings }: { settings: Settings }) {
             </div>
           </div>
           <div className={subcard}>
-            <h3 className="!font-sans !text-xs font-semibold uppercase tracking-wide">
+            <GroupHeading className="!font-sans !text-xs font-semibold uppercase tracking-wide">
               Payment and billing
-            </h3>
+            </GroupHeading>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <label className="text-sm">
                 Payment due after (days)
@@ -157,7 +189,13 @@ export function BillingSettingsForm({ settings }: { settings: Settings }) {
                   type="number"
                   min="0"
                   max="3650"
-                  defaultValue={settings.payment_terms_days ?? ""}
+                  value={fields.paymentTermsDays}
+                  onChange={(event) =>
+                    setFields({
+                      ...fields,
+                      paymentTermsDays: event.target.value,
+                    })
+                  }
                 />
               </label>
               <label className="text-sm">
@@ -165,7 +203,10 @@ export function BillingSettingsForm({ settings }: { settings: Settings }) {
                 <select
                   className={field}
                   name="billingCadence"
-                  defaultValue={settings.billing_cadence ?? ""}
+                  value={fields.billingCadence}
+                  onChange={(event) =>
+                    setFields({ ...fields, billingCadence: event.target.value })
+                  }
                 >
                   <option value="">Not set</option>
                   <option value="weekly">Weekly</option>
@@ -180,7 +221,10 @@ export function BillingSettingsForm({ settings }: { settings: Settings }) {
                 name="paymentMethod"
                 rows={4}
                 maxLength={1000}
-                defaultValue={settings.payment_method ?? ""}
+                value={fields.paymentMethod}
+                onChange={(event) =>
+                  setFields({ ...fields, paymentMethod: event.target.value })
+                }
               />
             </label>
             <label className="mt-4 block text-sm">
@@ -189,7 +233,13 @@ export function BillingSettingsForm({ settings }: { settings: Settings }) {
                 className={field}
                 name="foundingTransitionDate"
                 type="date"
-                defaultValue={settings.founding_transition_date ?? ""}
+                value={fields.foundingTransitionDate}
+                onChange={(event) =>
+                  setFields({
+                    ...fields,
+                    foundingTransitionDate: event.target.value,
+                  })
+                }
               />
             </label>
             <p className="mt-2 text-xs text-[#5a6a5e]">

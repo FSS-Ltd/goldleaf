@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import { PortalShell } from "@/components/portal/PortalShell";
-import { BillingSettingsForm } from "@/components/portal/invoices/BillingSettingsForm";
 import {
   button,
   card,
@@ -40,7 +39,29 @@ async function AdminInvoices() {
             Create invoice
           </Link>
         </div>
-        <BillingSettingsForm settings={settings} />
+        <section className={card} aria-labelledby="billing-setup">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <h2 id="billing-setup" className="!text-lg">
+                Billing setup
+              </h2>
+              <p className="mt-1 text-sm text-[#35594a]">
+                Cadence: {settings.billing_cadence ?? "Not set"} · VAT{" "}
+                {settings.vat_enabled ? "enabled" : "disabled"} · Payment
+                details{" "}
+                {settings.payment_terms_days !== null && settings.payment_method
+                  ? "configured"
+                  : "not set"}
+              </p>
+            </div>
+            <Link
+              href="/admin/billing-settings"
+              className="text-sm font-medium underline"
+            >
+              Billing settings
+            </Link>
+          </div>
+        </section>
         <section className={card} aria-labelledby="invoice-list">
           <h2 id="invoice-list" className="!text-2xl">
             Invoices
@@ -102,6 +123,8 @@ async function AdminInvoices() {
     </PortalShell>
   );
 }
+export const metadata = { title: "Invoices" };
+
 export default function Page() {
   return (
     <Suspense

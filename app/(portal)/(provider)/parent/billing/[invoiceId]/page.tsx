@@ -10,6 +10,8 @@ async function Selected({
   const [p, query] = await Promise.all([params, searchParams]);
   return <ParentBilling selected={p.invoiceId} family={query.family} />;
 }
+export const metadata = { title: "Invoice" };
+
 export default function Page(props: {
   params: Promise<{ invoiceId: string }>;
   searchParams: Promise<{ family?: string }>;

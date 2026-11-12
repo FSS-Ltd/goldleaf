@@ -3146,22 +3146,6 @@
       "norm_label": "inviteacceptform()"
     },
     {
-      "id": "components_portal_portalshell_tsx",
-      "label": "PortalShell.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L1",
-      "norm_label": "portalshell.tsx"
-    },
-    {
-      "id": "portalshell_portalshell",
-      "label": "PortalShell()",
-      "file_type": "code",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L7",
-      "norm_label": "portalshell()"
-    },
-    {
       "id": "lib_invitation_mail_test_ts",
       "label": "invitation-mail.test.ts",
       "file_type": "code",
@@ -3543,34 +3527,6 @@
       "source_location": "L3"
     },
     {
-      "id": "app_portal_provider_admin_billing_settings_page_tsx",
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "page_settings",
-      "label": "Settings()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
-      "source_location": "L7"
-    },
-    {
-      "id": "page_page_8d3a3fa94a",
-      "label": "Page()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
-      "source_location": "L25"
-    },
-    {
-      "id": "app_portal_provider_admin_invoices_invoiceid_page_tsx",
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/invoices/[invoiceId]/page.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "app_portal_provider_admin_invoices_actions_ts",
       "label": "actions.ts",
       "file_type": "code",
@@ -3676,62 +3632,6 @@
       "source_location": "L3"
     },
     {
-      "id": "app_portal_provider_admin_invoices_new_page_tsx",
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/invoices/new/page.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "app_portal_provider_admin_invoices_page_tsx",
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/invoices/page.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "page_invoicedate",
-      "label": "invoiceDate()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/invoices/page.tsx",
-      "source_location": "L78"
-    },
-    {
-      "id": "app_portal_provider_parent_billing_invoiceid_page_tsx",
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/page.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "page_page_0ec02c21ee",
-      "label": "Page()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/page.tsx",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_portal_provider_parent_billing_invoiceid_print_page_tsx",
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "page_print",
-      "label": "Print()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
-      "source_location": "L8"
-    },
-    {
-      "id": "page_page_50e3a447c6",
-      "label": "Page()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
-      "source_location": "L37"
-    },
-    {
       "id": "app_portal_provider_parent_billing_error_tsx",
       "label": "error.tsx",
       "file_type": "code",
@@ -3743,20 +3643,6 @@
       "label": "ErrorPage()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/billing/error.tsx",
-      "source_location": "L3"
-    },
-    {
-      "id": "app_portal_provider_parent_billing_page_tsx",
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/parent/billing/page.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "page_page_7f11ccbe59",
-      "label": "Page()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/parent/billing/page.tsx",
       "source_location": "L3"
     },
     {
@@ -3779,13 +3665,6 @@
       "file_type": "code",
       "source_file": "components/portal/invoices/AdminIssuedInvoice.tsx",
       "source_location": "L64"
-    },
-    {
-      "id": "components_portal_invoices_billingsettingsform_tsx",
-      "label": "BillingSettingsForm.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/invoices/BillingSettingsForm.tsx",
-      "source_location": "L1"
     },
     {
       "id": "components_portal_invoices_draftcomposer_tsx",
@@ -4220,6 +4099,153 @@
       "file_type": "code",
       "source_file": "lib/portal/payment-storage.ts",
       "source_location": "L19"
+    },
+    {
+      "id": "app_portal_provider_admin_billing_settings_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_settings",
+      "label": "Settings()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
+      "source_location": "L7"
+    },
+    {
+      "id": "page_page_8d3a3fa94a",
+      "label": "Page()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
+      "source_location": "L27"
+    },
+    {
+      "id": "app_portal_provider_admin_invoices_invoiceid_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/[invoiceId]/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_portal_provider_admin_invoices_new_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/new/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_portal_provider_admin_invoices_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_invoicedate",
+      "label": "invoiceDate()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/page.tsx",
+      "source_location": "L99"
+    },
+    {
+      "id": "app_portal_provider_parent_billing_invoiceid_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_page_0ec02c21ee",
+      "label": "Page()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/page.tsx",
+      "source_location": "L15"
+    },
+    {
+      "id": "app_portal_provider_parent_billing_invoiceid_print_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_print",
+      "label": "Print()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
+      "source_location": "L8"
+    },
+    {
+      "id": "page_page_50e3a447c6",
+      "label": "Page()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
+      "source_location": "L39"
+    },
+    {
+      "id": "app_portal_provider_parent_billing_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/billing/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_page_7f11ccbe59",
+      "label": "Page()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/billing/page.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "components_portal_portalshell_tsx",
+      "label": "PortalShell.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "portalshell_portalshell",
+      "label": "PortalShell()",
+      "file_type": "code",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "components_portal_invoices_billingsettingsform_tsx",
+      "label": "BillingSettingsForm.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/BillingSettingsForm.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "billingsettingsform_billingsettingsform",
+      "label": "BillingSettingsForm()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/BillingSettingsForm.tsx",
+      "source_location": "L15"
+    },
+    {
+      "id": "lib_billing_settings_status_test_ts",
+      "label": "billing-settings-status.test.ts",
+      "file_type": "code",
+      "source_file": "lib/billing-settings-status.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_portal_billing_settings_status_ts",
+      "label": "billing-settings-status.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/billing-settings-status.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "billing_settings_status_billingsettingsstatus",
+      "label": "billingSettingsStatus()",
+      "file_type": "code",
+      "source_file": "lib/portal/billing-settings-status.ts",
+      "source_location": "L1"
     },
     {
       "id": "portal_invoice_ui_db",
@@ -8558,18 +8584,6 @@
       "confidence_score": 1.0
     },
     {
-      "source": "components_portal_portalshell_tsx",
-      "target": "portalshell_portalshell",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "components_portal_portalshell_tsx",
-      "_tgt": "portalshell_portalshell",
-      "confidence_score": 1.0
-    },
-    {
       "source": "components_portal_staffforms_tsx",
       "target": "staffforms_feedback",
       "relation": "contains",
@@ -8987,24 +9001,6 @@
       "weight": 1.0
     },
     {
-      "source": "app_portal_provider_admin_billing_settings_page_tsx",
-      "target": "page_settings",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "app_portal_provider_admin_billing_settings_page_tsx",
-      "target": "page_page_8d3a3fa94a",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
-      "source_location": "L25",
-      "weight": 1.0
-    },
-    {
       "source": "app_portal_provider_admin_invoices_actions_ts",
       "target": "actions_optional",
       "relation": "contains",
@@ -9167,56 +9163,11 @@
       "weight": 1.0
     },
     {
-      "source": "app_portal_provider_admin_invoices_page_tsx",
-      "target": "page_invoicedate",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/admin/invoices/page.tsx",
-      "source_location": "L78",
-      "weight": 1.0
-    },
-    {
-      "source": "app_portal_provider_parent_billing_invoiceid_page_tsx",
-      "target": "page_page_0ec02c21ee",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/page.tsx",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "app_portal_provider_parent_billing_invoiceid_print_page_tsx",
-      "target": "page_print",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
-      "source_location": "L8",
-      "weight": 1.0
-    },
-    {
-      "source": "app_portal_provider_parent_billing_invoiceid_print_page_tsx",
-      "target": "page_page_50e3a447c6",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
-      "source_location": "L37",
-      "weight": 1.0
-    },
-    {
       "source": "app_portal_provider_parent_billing_error_tsx",
       "target": "error_errorpage_374a21bb0c",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(portal)/(provider)/parent/billing/error.tsx",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "app_portal_provider_parent_billing_page_tsx",
-      "target": "page_page_7f11ccbe59",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/parent/billing/page.tsx",
       "source_location": "L3",
       "weight": 1.0
     },
@@ -9545,16 +9496,6 @@
       "weight": 1.0
     },
     {
-      "source": "page_settings",
-      "target": "billing_settings_readbillingsettings",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
-      "source_location": "L9",
-      "weight": 1.0
-    },
-    {
       "source": "actions_updatebillingsettings",
       "target": "billing_settings_savebillingsettings",
       "relation": "calls",
@@ -9705,16 +9646,6 @@
       "weight": 1.0
     },
     {
-      "source": "page_print",
-      "target": "invoices_readfamilyinvoice",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
       "source": "paymentform_paymentform",
       "target": "usepaymentrecovery_usepaymentrecovery",
       "relation": "calls",
@@ -9835,6 +9766,96 @@
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/payment-storage.ts",
       "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_billing_settings_page_tsx",
+      "target": "page_settings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_billing_settings_page_tsx",
+      "target": "page_page_8d3a3fa94a",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_invoices_page_tsx",
+      "target": "page_invoicedate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/page.tsx",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_billing_invoiceid_page_tsx",
+      "target": "page_page_0ec02c21ee",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_billing_invoiceid_print_page_tsx",
+      "target": "page_print",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_billing_invoiceid_print_page_tsx",
+      "target": "page_page_50e3a447c6",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_billing_page_tsx",
+      "target": "page_page_7f11ccbe59",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/billing/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_portalshell_tsx",
+      "target": "portalshell_portalshell",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_billingsettingsform_tsx",
+      "target": "billingsettingsform_billingsettingsform",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/BillingSettingsForm.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_billing_settings_status_ts",
+      "target": "billing_settings_status_billingsettingsstatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/billing-settings-status.ts",
+      "source_location": "L1",
       "weight": 1.0
     },
     {

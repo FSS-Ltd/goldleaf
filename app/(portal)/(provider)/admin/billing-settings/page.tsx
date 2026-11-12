@@ -18,10 +18,12 @@ async function Settings() {
         Back to invoices
       </Link>
       <h1 className="my-6 !text-[clamp(2rem,4vw,2.6rem)]">Billing settings</h1>
-      <BillingSettingsForm settings={settings} />
+      <BillingSettingsForm settings={settings} showHeading={false} />
     </PortalShell>
   );
 }
+export const metadata = { title: "Billing settings" };
+
 export default function Page() {
   return (
     <Suspense

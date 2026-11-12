@@ -77,6 +77,8 @@ async function Detail({ params }: { params: Promise<{ invoiceId: string }> }) {
     </PortalShell>
   );
 }
+export const metadata = { title: "Invoice" };
+
 export default function Page({
   params,
 }: {

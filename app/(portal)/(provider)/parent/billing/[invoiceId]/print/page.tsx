@@ -34,6 +34,8 @@ async function Print({
     </main>
   );
 }
+export const metadata = { title: "Printable invoice" };
+
 export default function Page(props: {
   params: Promise<{ invoiceId: string }>;
   searchParams: Promise<{ family?: string }>;

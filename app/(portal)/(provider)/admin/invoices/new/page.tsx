@@ -31,12 +31,18 @@ async function CreateInvoice() {
         />
       ) : (
         <p>
-          No families are available. Create a family before starting an invoice.
+          No families are available.{" "}
+          <Link href="/admin" className="underline">
+            Create a family
+          </Link>{" "}
+          before starting an invoice.
         </p>
       )}
     </PortalShell>
   );
 }
+export const metadata = { title: "New invoice" };
+
 export default function Page() {
   return (
     <Suspense

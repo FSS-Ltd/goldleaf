@@ -1,0 +1,86 @@
+\set ON_ERROR_STOP on
+BEGIN;
+DO $$ DECLARE old_invoice uuid; new_invoice uuid; snap jsonb; old_snap jsonb; ctx jsonb; BEGIN
+ SELECT id, snapshot INTO old_invoice, old_snap FROM portal.invoices WHERE family_id='82000000-0000-4000-8000-000000000001' AND issued_at IS NOT NULL;
+ IF old_snap ? 'issuer_contact' THEN RAISE EXCEPTION 'legacy snapshot changed'; END IF;
+ IF (SELECT issuer_contact FROM portal.billing_settings) <> 'admin@goldleaf.education' THEN RAISE EXCEPTION 'contact seed incorrect'; END IF;
+ PERFORM portal.save_billing_settings_with_contact('ui-invoice-admin','Goldleaf Learning Ltd','51 Hurst rd','billing@example.com',false,NULL,NULL,14,'Bank','weekly','2027-04-01');
+ new_invoice := portal.create_invoice_draft('ui-invoice-admin','82000000-0000-4000-8000-000000000001','Parent','Address','[{"description":"Tuition","quantity":1,"unit_amount_pence":6000,"service_date":"2020-01-01","rate_tier":"standard","hourly_rate_pence":3000,"days":1,"cadence":"weekly","session_minutes":120,"discount_percent":0}]');
+ ctx := portal.invoice_issue_context('ui-invoice-admin',new_invoice);
+ PERFORM portal.save_billing_settings_with_contact('ui-invoice-admin','Goldleaf Learning Ltd','51 Hurst rd','changed@example.com',false,NULL,NULL,14,'Bank','weekly','2027-04-01');
+ BEGIN PERFORM portal.issue_invoice_checked('ui-invoice-admin',new_invoice,ctx); RAISE EXCEPTION 'stale issuer contact issued'; EXCEPTION WHEN serialization_failure THEN NULL; END;
+ PERFORM portal.save_billing_settings_with_contact('ui-invoice-admin','Goldleaf Learning Ltd','51 Hurst rd','billing@example.com',false,NULL,NULL,14,'Bank','weekly','2027-04-01');
+ ctx := portal.invoice_issue_context('ui-invoice-admin',new_invoice);
+ PERFORM portal.issue_invoice_checked('ui-invoice-admin',new_invoice,ctx);
+ SELECT snapshot INTO snap FROM portal.invoices WHERE id=new_invoice;
+ IF snap->>'issuer_contact' <> 'billing@example.com' THEN RAISE EXCEPTION 'contact snapshot missing'; END IF;
+ PERFORM portal.prepare_invoice_payment('ui-invoice-admin',new_invoice,'83000000-0000-4000-8000-000000000010',2500,'2027-01-01','partial');
+ IF NOT EXISTS (SELECT 1 FROM portal.list_invoice_payment_intents('ui-invoice-admin',new_invoice) WHERE status='pending' AND amount_pence=2500) THEN RAISE EXCEPTION 'pending payment missing'; END IF;
+ BEGIN PERFORM portal.prepare_invoice_payment('ui-invoice-admin',new_invoice,gen_random_uuid(),100,'2027-01-01','other'); RAISE EXCEPTION 'second pending payment accepted'; EXCEPTION WHEN unique_violation THEN NULL; END;
+ BEGIN PERFORM portal.prepare_invoice_payment('ui-invoice-admin',new_invoice,'83000000-0000-4000-8000-000000000010',2600,'2027-01-01','partial'); RAISE EXCEPTION 'operation conflict accepted'; EXCEPTION WHEN invalid_parameter_value THEN NULL; END;
+ IF portal.complete_invoice_payment('ui-invoice-admin-two',new_invoice,'83000000-0000-4000-8000-000000000010') <> 'recorded' OR portal.complete_invoice_payment('ui-invoice-admin',new_invoice,'83000000-0000-4000-8000-000000000010') <> 'recorded' THEN RAISE EXCEPTION 'payment completion replay failed'; END IF;
+ IF (SELECT paid_pence FROM portal.read_family_invoices('ui-invoice-parent','82000000-0000-4000-8000-000000000001') WHERE id=new_invoice) <> 2500 THEN RAISE EXCEPTION 'partial payment or replay incorrect'; END IF;
+ IF NOT EXISTS (SELECT 1 FROM portal.read_invoice_payment_operation('ui-invoice-admin',new_invoice,'83000000-0000-4000-8000-000000000010') WHERE amount_pence=2500 AND paid_on='2027-01-01' AND reference='partial') THEN RAISE EXCEPTION 'payment lookup failed'; END IF;
+ IF NOT EXISTS (SELECT 1 FROM portal.list_invoice_payments('ui-invoice-admin',new_invoice) WHERE amount_pence=2500 AND paid_on='2027-01-01' AND reference='partial') THEN RAISE EXCEPTION 'payment history unavailable'; END IF;
+ BEGIN PERFORM portal.list_invoice_payments('ui-invoice-parent',new_invoice); RAISE EXCEPTION 'parent accessed payment history'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+ BEGIN PERFORM portal.read_invoice_payment_operation('ui-invoice-parent',new_invoice,'83000000-0000-4000-8000-000000000010'); RAISE EXCEPTION 'parent accessed payment operation'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+ BEGIN PERFORM portal.record_invoice_payment('ui-invoice-admin',new_invoice,gen_random_uuid(),3501,'2027-01-01','over'); RAISE EXCEPTION 'overpayment accepted'; EXCEPTION WHEN invalid_parameter_value THEN NULL; END;
+ -- A payment recorded before intents existed reconciles to recorded without duplication.
+ PERFORM portal.record_invoice_payment('ui-invoice-admin',new_invoice,'83000000-0000-4000-8000-000000000011',500,'2027-01-02','legacy');
+ IF portal.prepare_invoice_payment('ui-invoice-admin',new_invoice,'83000000-0000-4000-8000-000000000011',500,'2027-01-02','legacy') <> 'recorded' THEN RAISE EXCEPTION 'legacy payment not reconciled'; END IF;
+ IF (SELECT count(*) FROM portal.invoice_payments WHERE operation_id='83000000-0000-4000-8000-000000000011') <> 1 THEN RAISE EXCEPTION 'legacy payment duplicated'; END IF;
+ -- A concurrent legacy payment can invalidate a pending intent; rejection frees the slot.
+ PERFORM portal.prepare_invoice_payment('ui-invoice-admin',new_invoice,'83000000-0000-4000-8000-000000000012',2500,'2027-01-03','pending');
+ PERFORM portal.record_invoice_payment('ui-invoice-admin',new_invoice,'83000000-0000-4000-8000-000000000013',1000,'2027-01-03','other');
+ IF portal.complete_invoice_payment('ui-invoice-admin',new_invoice,'83000000-0000-4000-8000-000000000012') <> 'rejected' THEN RAISE EXCEPTION 'invalidated intent not rejected'; END IF;
+ IF portal.prepare_invoice_payment('ui-invoice-admin',new_invoice,'83000000-0000-4000-8000-000000000014',2000,'2027-01-04','remainder') <> 'pending' OR portal.complete_invoice_payment('ui-invoice-admin',new_invoice,'83000000-0000-4000-8000-000000000014') <> 'recorded' THEN RAISE EXCEPTION 'rejected intent stranded invoice'; END IF;
+ IF (SELECT paid_pence FROM portal.read_family_invoices('ui-invoice-parent','82000000-0000-4000-8000-000000000001') WHERE id=new_invoice) <> 6000 THEN RAISE EXCEPTION 'final payment balance incorrect'; END IF;
+ PERFORM portal.save_billing_settings_with_contact('ui-invoice-admin','Goldleaf Learning Ltd','51 Hurst rd','another@example.com',false,NULL,NULL,14,'Bank','weekly','2027-04-01');
+ IF snap IS DISTINCT FROM (SELECT snapshot FROM portal.invoices WHERE id=new_invoice) OR old_snap IS DISTINCT FROM (SELECT snapshot FROM portal.invoices WHERE id=old_invoice) THEN RAISE EXCEPTION 'issued snapshot mutated'; END IF;
+ IF (SELECT count(*) FROM portal.list_admin_invoices('ui-invoice-admin') WHERE id IN (old_invoice,new_invoice)) <> 2 THEN RAISE EXCEPTION 'admin list incomplete'; END IF;
+ IF (SELECT count(*) FROM portal.list_parent_invoices('ui-invoice-parent')) <> 2 OR EXISTS (SELECT 1 FROM portal.list_parent_invoices('unknown-parent')) OR EXISTS (SELECT 1 FROM portal.list_parent_invoices('ui-invoice-staff')) THEN RAISE EXCEPTION 'parent list scope failed'; END IF;
+ IF (SELECT count(*) FROM portal.invoice_notifications WHERE invoice_id=new_invoice AND status='pending') <> 1 THEN RAISE EXCEPTION 'missing durable notification'; END IF;
+ BEGIN PERFORM portal.list_admin_invoices('ui-invoice-parent'); RAISE EXCEPTION 'parent read admin list'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+ BEGIN PERFORM portal.list_admin_invoices('ui-invoice-staff'); RAISE EXCEPTION 'staff read admin list'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+ BEGIN PERFORM portal.save_billing_settings_with_contact('ui-invoice-parent','X','X','X',false,NULL,NULL,14,'Bank','weekly',NULL); RAISE EXCEPTION 'parent changed settings'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+END $$;
+DO $$
+DECLARE inv uuid; notice uuid; first_attempt uuid; retry_attempt uuid; stale_claim uuid; claimed record;
+BEGIN
+ SELECT id INTO inv FROM portal.invoices WHERE family_id='82000000-0000-4000-8000-000000000001' AND issued_at IS NOT NULL ORDER BY invoice_number DESC LIMIT 1;
+ SELECT id INTO notice FROM portal.prepare_invoice_notifications('ui-invoice-admin',inv);
+ SELECT * INTO claimed FROM portal.claim_invoice_notification('ui-invoice-admin', notice, '83000000-0000-4000-8000-000000000001', 'parent@example.com', 'Goldleaf <billing@example.com>', 'https://goldleaf.example', false);
+ first_attempt := claimed.attempt_id;
+ stale_claim := claimed.claim_id;
+ UPDATE portal.invoice_notifications SET lease_until=clock_timestamp()-interval '1 second' WHERE id=notice;
+ SELECT * INTO claimed FROM portal.claim_invoice_notification('ui-invoice-admin', notice, '83000000-0000-4000-8000-000000000002', 'parent@example.com', 'Goldleaf <billing@example.com>', 'https://goldleaf.example', false);
+ retry_attempt := claimed.attempt_id;
+ IF retry_attempt <> first_attempt OR claimed.claim_id = stale_claim THEN RAISE EXCEPTION 'retry key or claim fencing incorrect'; END IF;
+ BEGIN PERFORM portal.finish_invoice_notification('ui-invoice-admin',notice,stale_claim,'failed'); RAISE EXCEPTION 'stale claim completed'; EXCEPTION WHEN invalid_parameter_value THEN NULL; END;
+ IF (SELECT status FROM portal.invoice_notifications WHERE id=notice) <> 'sending' THEN RAISE EXCEPTION 'stale claim changed active claim'; END IF;
+ PERFORM portal.finish_invoice_notification('ui-invoice-admin',notice,claimed.claim_id,'sent');
+ BEGIN PERFORM portal.finish_invoice_notification('ui-invoice-admin',notice,stale_claim,'uncertain'); RAISE EXCEPTION 'stale claim overwrote sent'; EXCEPTION WHEN invalid_parameter_value THEN NULL; END;
+ IF (SELECT status FROM portal.invoice_notifications WHERE id=notice) <> 'sent' THEN RAISE EXCEPTION 'stale claim changed sent state'; END IF;
+ UPDATE portal.invoice_notifications SET status='uncertain' WHERE id=notice;
+ UPDATE portal.invoice_notifications SET attempt_started_at=clock_timestamp()-interval '25 hours' WHERE id=notice;
+ BEGIN PERFORM portal.claim_invoice_notification('ui-invoice-admin', notice, '83000000-0000-4000-8000-000000000003', 'parent@example.com', 'Goldleaf <billing@example.com>', 'https://goldleaf.example', false); RAISE EXCEPTION 'ambiguous expiry retried without acknowledgement'; EXCEPTION WHEN invalid_parameter_value THEN NULL; END;
+ SELECT * INTO claimed FROM portal.claim_invoice_notification('ui-invoice-admin', notice, '83000000-0000-4000-8000-000000000003', 'parent@example.com', 'Goldleaf <billing@example.com>', 'https://goldleaf.example', true);
+ IF claimed.attempt_id = first_attempt THEN RAISE EXCEPTION 'expired key reused'; END IF;
+ PERFORM portal.finish_invoice_notification('ui-invoice-admin',notice,claimed.claim_id,'sent');
+ IF (SELECT status FROM portal.invoice_notifications WHERE id=notice) <> 'sent' THEN RAISE EXCEPTION 'notification state missing'; END IF;
+ BEGIN PERFORM portal.claim_invoice_notification('ui-invoice-parent', notice, gen_random_uuid(), 'x', 'x', 'x', true); RAISE EXCEPTION 'parent sent notification'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+END $$;
+CREATE ROLE goldleaf_invoice_ui_test NOLOGIN;
+GRANT USAGE ON SCHEMA portal TO goldleaf_invoice_ui_test;
+GRANT EXECUTE ON FUNCTION portal.save_billing_settings_with_contact(text,text,text,text,boolean,integer,text,integer,text,text,date), portal.list_admin_invoices(text), portal.list_parent_invoices(text), portal.read_invoice_payment_operation(text,uuid,uuid), portal.list_invoice_payments(text,uuid), portal.prepare_invoice_payment(text,uuid,uuid,integer,date,text), portal.complete_invoice_payment(text,uuid,uuid), portal.list_invoice_payment_intents(text,uuid), portal.prepare_invoice_notifications(text,uuid), portal.list_invoice_notifications(text,uuid), portal.fail_invoice_notification(text,uuid), portal.claim_invoice_notification(text,uuid,uuid,text,text,text,boolean), portal.finish_invoice_notification(text,uuid,uuid,text) TO goldleaf_invoice_ui_test;
+SET LOCAL ROLE goldleaf_invoice_ui_test;
+DO $$ BEGIN
+ IF NOT EXISTS (SELECT 1 FROM portal.list_admin_invoices('ui-invoice-admin')) OR NOT EXISTS (SELECT 1 FROM portal.list_parent_invoices('ui-invoice-parent')) THEN RAISE EXCEPTION 'runtime reads unavailable'; END IF;
+ BEGIN PERFORM portal.list_admin_invoices('ui-invoice-parent'); RAISE EXCEPTION 'parent read admin invoices'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+ BEGIN PERFORM portal.snapshot_invoice_contact(); RAISE EXCEPTION 'trigger callable'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+ BEGIN PERFORM portal.record_invoice_payment('ui-invoice-admin',gen_random_uuid(),gen_random_uuid(),1,'2027-01-01','test'); RAISE EXCEPTION 'direct payment writer granted'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+ IF has_table_privilege(current_user,'portal.invoice_payment_intents','SELECT,INSERT,UPDATE,DELETE') THEN RAISE EXCEPTION 'payment intent table granted'; END IF;
+ IF has_table_privilege(current_user,'portal.invoice_notifications','SELECT,INSERT,UPDATE,DELETE') THEN RAISE EXCEPTION 'notification table granted'; END IF;
+END $$;
+RESET ROLE;
+ROLLBACK;

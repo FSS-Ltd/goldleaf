@@ -6,7 +6,7 @@ Scoped Graphify AST extraction covers the invoice and settings DAL, DTOs and tes
 
 ## Scoped invoice data update (2026-11-12)
 
-SQL extraction is unsupported. The invoice billing migration node and links to onboarding, pricing and the planned portal were added manually from source and runbook references. Prior clustering and semantic coverage are unchanged.
+SQL extraction is unsupported. The invoice billing migration node and links to onboarding, pricing and the partial portal were added manually from source and runbook references. Prior clustering and semantic coverage are unchanged.
 
 ## Scoped invoice-pricing update (2026-11-12)
 
@@ -71,7 +71,7 @@ Nodes (4): Home(), faqSchema(), organisationSchema(), url()
 
 ### Community 2 - "Community 2"
 Cohesion: 0.43
-Nodes (7): Goldleaf portal concept brief and design references, PORTAL-CONCEPTS: implemented design archive only, Portal delivery plan (planned), Known limitation: archived 105-minute plan versus current 120-minute sessions, Planned portal information boundaries and unverified behaviour, PORTAL: planned staff and parent portal; no runtime, Public-site design document and portal archive reference
+Nodes (7): Goldleaf portal concept brief and design references, PORTAL-CONCEPTS: implemented design archive only, Portal delivery plan (planned), Known limitation: archived 105-minute plan versus current 120-minute sessions, Planned portal information boundaries and unverified behaviour, PORTAL: partial authenticated routes and billing, Public-site design document and portal archive reference
 
 ### Community 4 - "Community 4"
 Cohesion: 0.5
@@ -204,6 +204,12 @@ The invitation-action call edges were reconciled against current source: duplica
 
 Team header route correction changes no symbols or graph relationships; the existing PortalShell node and callers remain current.
 
+## Invoice UI scope (2026-11-12)
+
+Incremental AST extraction refreshed the changed TypeScript and TSX files for invoice routes, shared portal navigation, reviewed quotes, notifications, and payment recovery. File-qualified IDs disambiguate repeated route component names. SQL is not supported by the extractor: `portal_invoice_ui_db` and its links to the existing invoice runtime and server DAL are manually source-linked to migration 0011. Semantic extraction and cross-scope edges remain incomplete; consult `FEATURE_TREE.md` and source for authority. Migration 0011 is applied to development; provider delivery remains undeployed and signed-in UI verification is pending.
+
+Lease fencing and account sign-out cleanup were refreshed in the affected invoice and auth nodes. Earlier cluster summaries are historical; the graph JSON and feature tree describe current source.
+
 Learning foundation: six allowlisted TypeScript files and two manually source-linked SQL nodes added; 399 nodes, 400 edges. 25 unresolved extractor edges omitted. SQL extraction and earlier historical coverage gaps remain.
 
 The session-location contract re-extracted three allowlisted files: 400 nodes and 401 edges; 12 unresolved extractor edges omitted.
@@ -216,4 +222,10 @@ Explicit explored-sounds update re-extracted three allowlisted files: 400 nodes 
 
 Four historical edge directions were checked against source and corrected: seedling mount calls shadowTexture (scene.ts:128), weekly calls roundTo5 (pricing.ts:11), organisationSchema calls url (schema-org.ts:17), and the provisioning runbook references the founding inventory migrations (db/README.md:3). No remaining source/target versus _src/_tgt mismatches were found. Other SQL extraction, unresolved-edge and historical corpus coverage limits remain.
 
-The PORTAL semantic node now reflects the current custom authentication, parent/admin/staff screens and learning data foundation. Billing UI, session/learning UI and messages remain planned in this checkout; invoice work on another branch must reconcile this label after merging. Node and edge counts are unchanged.
+The PORTAL semantic node now reflects the current custom authentication, parent/admin/staff screens and learning data foundation. Invoice UI is present; session/learning UI and messages remain planned. Node and edge counts are unchanged.
+
+The combined checkout reconciles the learning graph with the invoice graph: 500 nodes and 492 source-backed edges. The four corrected historical edge directions from the learning branch are retained. SQL links remain manually source-linked and unresolved cross-scope extraction remains a known gap. Invoice UI and learning data foundations are present; learning/session UI and messages remain planned.
+
+Invoice page metadata and the conditional VAT settings form were re-extracted after UI review. SQL and unresolved cross-scope extraction limits above remain.
+
+The Jury UI fixes refreshed invoice and navigation AST nodes, including billing save-state handling and the empty-family link.

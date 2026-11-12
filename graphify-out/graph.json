@@ -861,14 +861,14 @@
       "id": "portal_concepts"
     },
     {
-      "label": "PORTAL: partial auth and family/staff UI; learning foundation",
+      "label": "PORTAL: partial authenticated routes, billing and learning foundation",
       "file_type": "document",
       "source_file": "FEATURE_TREE.md",
       "source_location": "L35",
       "status": "partial",
-      "scope": "Custom authentication, invitations, parent and admin family screens, and staff onboarding and assigned-family screens exist; child/session and learning data foundations are present. Billing UI, session/learning UI and messages remain planned in this checkout.",
+      "scope": "Authenticated parent, staff and admin routes, invoice UI and learning data foundation are present; session and learning UI, messages and production deployment remain pending.",
       "community": 2,
-      "norm_label": "portal partial auth and family staff ui learning foundation",
+      "norm_label": "portal partial authenticated routes billing learning foundation",
       "id": "portal_planned"
     },
     {
@@ -3146,22 +3146,6 @@
       "norm_label": "inviteacceptform()"
     },
     {
-      "id": "components_portal_portalshell_tsx",
-      "label": "PortalShell.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L1",
-      "norm_label": "portalshell.tsx"
-    },
-    {
-      "id": "portalshell_portalshell",
-      "label": "PortalShell()",
-      "file_type": "code",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L7",
-      "norm_label": "portalshell()"
-    },
-    {
       "id": "lib_invitation_mail_test_ts",
       "label": "invitation-mail.test.ts",
       "file_type": "code",
@@ -3527,6 +3511,749 @@
       "file_type": "code",
       "source_file": "lib/portal/sessions.ts",
       "source_location": "L36"
+    },
+    {
+      "id": "app_portal_provider_admin_billing_settings_error_tsx",
+      "label": "error.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/billing-settings/error.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "error_errorpage_c313e7da6c",
+      "label": "ErrorPage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/billing-settings/error.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "app_portal_provider_admin_invoices_actions_ts",
+      "label": "actions.ts",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "actions_optional",
+      "label": "optional()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "actions_required",
+      "label": "required()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L35"
+    },
+    {
+      "id": "actions_invoiceerror",
+      "label": "invoiceError()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L37"
+    },
+    {
+      "id": "actions_updatebillingsettings",
+      "label": "updateBillingSettings()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L48"
+    },
+    {
+      "id": "actions_previewdraft",
+      "label": "previewDraft()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L82"
+    },
+    {
+      "id": "actions_savedraft",
+      "label": "saveDraft()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L90"
+    },
+    {
+      "id": "actions_issuesavedinvoice",
+      "label": "issueSavedInvoice()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L100"
+    },
+    {
+      "id": "actions_saveexternalpayment",
+      "label": "saveExternalPayment()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L120"
+    },
+    {
+      "id": "actions_checkpayment",
+      "label": "checkPayment()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L196"
+    },
+    {
+      "id": "actions_resumepayment",
+      "label": "resumePayment()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L246"
+    },
+    {
+      "id": "actions_notifyparent",
+      "label": "notifyParent()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L269"
+    },
+    {
+      "id": "actions_preparenotifications",
+      "label": "prepareNotifications()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L307"
+    },
+    {
+      "id": "app_portal_provider_admin_invoices_error_tsx",
+      "label": "error.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/error.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "error_errorpage_0284c22efc",
+      "label": "ErrorPage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/error.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "app_portal_provider_parent_billing_error_tsx",
+      "label": "error.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/billing/error.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "error_errorpage_374a21bb0c",
+      "label": "ErrorPage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/billing/error.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "components_portal_invoices_admindraftinvoice_tsx",
+      "label": "AdminDraftInvoice.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/AdminDraftInvoice.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_invoices_adminissuedinvoice_tsx",
+      "label": "AdminIssuedInvoice.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/AdminIssuedInvoice.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "adminissuedinvoice_invoicedate",
+      "label": "invoiceDate()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/AdminIssuedInvoice.tsx",
+      "source_location": "L64"
+    },
+    {
+      "id": "components_portal_invoices_draftcomposer_tsx",
+      "label": "DraftComposer.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/DraftComposer.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "draftcomposer_changed",
+      "label": "changed()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/DraftComposer.tsx",
+      "source_location": "L49"
+    },
+    {
+      "id": "draftcomposer_updateline",
+      "label": "updateLine()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/DraftComposer.tsx",
+      "source_location": "L54"
+    },
+    {
+      "id": "draftcomposer_input",
+      "label": "input()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/DraftComposer.tsx",
+      "source_location": "L66"
+    },
+    {
+      "id": "draftcomposer_preview",
+      "label": "preview()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/DraftComposer.tsx",
+      "source_location": "L84"
+    },
+    {
+      "id": "draftcomposer_save",
+      "label": "save()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/DraftComposer.tsx",
+      "source_location": "L109"
+    },
+    {
+      "id": "components_portal_invoices_draftlineeditor_tsx",
+      "label": "DraftLineEditor.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/DraftLineEditor.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_invoices_draftpreview_tsx",
+      "label": "DraftPreview.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/DraftPreview.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "draftpreview_pounds",
+      "label": "pounds()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/DraftPreview.tsx",
+      "source_location": "L60"
+    },
+    {
+      "id": "components_portal_invoices_invoiceactions_tsx",
+      "label": "InvoiceActions.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/InvoiceActions.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_invoices_invoicedocument_tsx",
+      "label": "InvoiceDocument.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/InvoiceDocument.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "invoicedocument_invoicedate",
+      "label": "invoiceDate()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/InvoiceDocument.tsx",
+      "source_location": "L60"
+    },
+    {
+      "id": "invoicedocument_pounds",
+      "label": "pounds()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/InvoiceDocument.tsx",
+      "source_location": "L66"
+    },
+    {
+      "id": "components_portal_invoices_invoiceerror_tsx",
+      "label": "InvoiceError.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/InvoiceError.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "invoiceerror_invoiceerror",
+      "label": "InvoiceError()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/InvoiceError.tsx",
+      "source_location": "L2"
+    },
+    {
+      "id": "components_portal_invoices_parentbilling_tsx",
+      "label": "ParentBilling.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/ParentBilling.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "parentbilling_invoicedate",
+      "label": "invoiceDate()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/ParentBilling.tsx",
+      "source_location": "L90"
+    },
+    {
+      "id": "components_portal_invoices_paymentform_tsx",
+      "label": "PaymentForm.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/PaymentForm.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "paymentform_paymentform",
+      "label": "PaymentForm()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/PaymentForm.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "components_portal_invoices_printbutton_tsx",
+      "label": "PrintButton.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/PrintButton.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "printbutton_printbutton",
+      "label": "PrintButton()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/PrintButton.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "components_portal_invoices_format_ts",
+      "label": "format.ts",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/format.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "format_pounds",
+      "label": "pounds()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/format.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "format_invoicedate",
+      "label": "invoiceDate()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/format.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "components_portal_invoices_usepaymentrecovery_ts",
+      "label": "usePaymentRecovery.ts",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/usePaymentRecovery.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "usepaymentrecovery_serversnapshot",
+      "label": "serverSnapshot()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/usePaymentRecovery.ts",
+      "source_location": "L29"
+    },
+    {
+      "id": "usepaymentrecovery_subscribe",
+      "label": "subscribe()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/usePaymentRecovery.ts",
+      "source_location": "L30"
+    },
+    {
+      "id": "usepaymentrecovery_decode",
+      "label": "decode()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/usePaymentRecovery.ts",
+      "source_location": "L38"
+    },
+    {
+      "id": "usepaymentrecovery_usepaymentrecovery",
+      "label": "usePaymentRecovery()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/usePaymentRecovery.ts",
+      "source_location": "L54"
+    },
+    {
+      "id": "lib_decimal_input_test_ts",
+      "label": "decimal-input.test.ts",
+      "file_type": "code",
+      "source_file": "lib/decimal-input.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_invoice_fingerprint_test_ts",
+      "label": "invoice-fingerprint.test.ts",
+      "file_type": "code",
+      "source_file": "lib/invoice-fingerprint.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_invoice_mail_test_ts",
+      "label": "invoice-mail.test.ts",
+      "file_type": "code",
+      "source_file": "lib/invoice-mail.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_invoice_status_test_ts",
+      "label": "invoice-status.test.ts",
+      "file_type": "code",
+      "source_file": "lib/invoice-status.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_payment_retry_test_ts",
+      "label": "payment-retry.test.ts",
+      "file_type": "code",
+      "source_file": "lib/payment-retry.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_portal_decimal_input_ts",
+      "label": "decimal-input.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/decimal-input.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "decimal_input_parsedecimalminorunits",
+      "label": "parseDecimalMinorUnits()",
+      "file_type": "code",
+      "source_file": "lib/portal/decimal-input.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_portal_invoice_fingerprint_ts",
+      "label": "invoice-fingerprint.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-fingerprint.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "invoice_fingerprint_invoicefingerprint",
+      "label": "invoiceFingerprint()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-fingerprint.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "invoice_fingerprint_assertinvoicefingerprint",
+      "label": "assertInvoiceFingerprint()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-fingerprint.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "lib_portal_invoice_mail_ts",
+      "label": "invoice-mail.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-mail.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "invoice_mail_sendinvoicemail",
+      "label": "sendInvoiceMail()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-mail.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "lib_portal_invoice_status_ts",
+      "label": "invoice-status.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-status.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "invoice_status_invoicepaymentstatus",
+      "label": "invoicePaymentStatus()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-status.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "invoices_listparentinvoices",
+      "label": "listParentInvoices()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "invoices_listadmininvoices",
+      "label": "listAdminInvoices()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L35"
+    },
+    {
+      "id": "invoices_previewsavedinvoice",
+      "label": "previewSavedInvoice()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L77"
+    },
+    {
+      "id": "invoices_prepareinvoicepayment",
+      "label": "prepareInvoicePayment()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L108"
+    },
+    {
+      "id": "invoices_completeinvoicepayment",
+      "label": "completeInvoicePayment()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L115"
+    },
+    {
+      "id": "invoices_listinvoicepaymentintents",
+      "label": "listInvoicePaymentIntents()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L121"
+    },
+    {
+      "id": "invoices_readpaymentoperation",
+      "label": "readPaymentOperation()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L126"
+    },
+    {
+      "id": "invoices_listinvoicepayments",
+      "label": "listInvoicePayments()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L135"
+    },
+    {
+      "id": "lib_portal_payment_retry_ts",
+      "label": "payment-retry.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/payment-retry.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "payment_retry_paymentmatches",
+      "label": "paymentMatches()",
+      "file_type": "code",
+      "source_file": "lib/portal/payment-retry.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_payment_storage_test_ts",
+      "label": "payment-storage.test.ts",
+      "file_type": "code",
+      "source_file": "lib/payment-storage.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "payment_storage_test_storage",
+      "label": "storage()",
+      "file_type": "code",
+      "source_file": "lib/payment-storage.test.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "lib_portal_invoice_notifications_ts",
+      "label": "invoice-notifications.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-notifications.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "invoice_notifications_listinvoicenotifications",
+      "label": "listInvoiceNotifications()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-notifications.ts",
+      "source_location": "L15"
+    },
+    {
+      "id": "invoice_notifications_prepareinvoicenotifications",
+      "label": "prepareInvoiceNotifications()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-notifications.ts",
+      "source_location": "L22"
+    },
+    {
+      "id": "invoice_notifications_deliverinvoicenotification",
+      "label": "deliverInvoiceNotification()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-notifications.ts",
+      "source_location": "L29"
+    },
+    {
+      "id": "lib_portal_payment_storage_ts",
+      "label": "payment-storage.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/payment-storage.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "payment_storage_clearpaymentstorage",
+      "label": "clearPaymentStorage()",
+      "file_type": "code",
+      "source_file": "lib/portal/payment-storage.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "payment_storage_signoutandclearpaymentstorage",
+      "label": "signOutAndClearPaymentStorage()",
+      "file_type": "code",
+      "source_file": "lib/portal/payment-storage.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "app_portal_provider_admin_billing_settings_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_settings",
+      "label": "Settings()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
+      "source_location": "L7"
+    },
+    {
+      "id": "page_page_8d3a3fa94a",
+      "label": "Page()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
+      "source_location": "L27"
+    },
+    {
+      "id": "app_portal_provider_admin_invoices_invoiceid_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/[invoiceId]/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_portal_provider_admin_invoices_new_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/new/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_portal_provider_admin_invoices_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_invoicedate",
+      "label": "invoiceDate()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/invoices/page.tsx",
+      "source_location": "L99"
+    },
+    {
+      "id": "app_portal_provider_parent_billing_invoiceid_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_page_0ec02c21ee",
+      "label": "Page()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/page.tsx",
+      "source_location": "L15"
+    },
+    {
+      "id": "app_portal_provider_parent_billing_invoiceid_print_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_print",
+      "label": "Print()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
+      "source_location": "L8"
+    },
+    {
+      "id": "page_page_50e3a447c6",
+      "label": "Page()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
+      "source_location": "L39"
+    },
+    {
+      "id": "app_portal_provider_parent_billing_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/billing/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_page_7f11ccbe59",
+      "label": "Page()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/billing/page.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "components_portal_portalshell_tsx",
+      "label": "PortalShell.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "portalshell_portalshell",
+      "label": "PortalShell()",
+      "file_type": "code",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "components_portal_invoices_billingsettingsform_tsx",
+      "label": "BillingSettingsForm.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/BillingSettingsForm.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "billingsettingsform_billingsettingsform",
+      "label": "BillingSettingsForm()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/BillingSettingsForm.tsx",
+      "source_location": "L15"
+    },
+    {
+      "id": "lib_billing_settings_status_test_ts",
+      "label": "billing-settings-status.test.ts",
+      "file_type": "code",
+      "source_file": "lib/billing-settings-status.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_portal_billing_settings_status_ts",
+      "label": "billing-settings-status.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/billing-settings-status.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "billing_settings_status_billingsettingsstatus",
+      "label": "billingSettingsStatus()",
+      "file_type": "code",
+      "source_file": "lib/portal/billing-settings-status.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_invoice_ui_db",
+      "label": "Invoice UI persistence and restricted operations",
+      "file_type": "sql",
+      "source_file": "db/migrations/0011_invoice_ui.sql",
+      "source_location": "L1",
+      "norm_label": "invoice ui persistence and restricted operations"
     }
   ],
   "links": [
@@ -7857,18 +8584,6 @@
       "confidence_score": 1.0
     },
     {
-      "source": "components_portal_portalshell_tsx",
-      "target": "portalshell_portalshell",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "components_portal_portalshell_tsx",
-      "_tgt": "portalshell_portalshell",
-      "confidence_score": 1.0
-    },
-    {
       "source": "components_portal_staffforms_tsx",
       "target": "staffforms_feedback",
       "relation": "contains",
@@ -8275,6 +8990,891 @@
       "_src": "lib_portal_learning_ts",
       "_tgt": "learning_listpublishedlearning",
       "confidence_score": 1
+    },
+    {
+      "source": "app_portal_provider_admin_billing_settings_error_tsx",
+      "target": "error_errorpage_c313e7da6c",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/billing-settings/error.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_invoices_actions_ts",
+      "target": "actions_optional",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_invoices_actions_ts",
+      "target": "actions_required",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_invoices_actions_ts",
+      "target": "actions_invoiceerror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_invoices_actions_ts",
+      "target": "actions_updatebillingsettings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_invoices_actions_ts",
+      "target": "actions_previewdraft",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_invoices_actions_ts",
+      "target": "actions_savedraft",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_invoices_actions_ts",
+      "target": "actions_issuesavedinvoice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_invoices_actions_ts",
+      "target": "actions_saveexternalpayment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_invoices_actions_ts",
+      "target": "actions_checkpayment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L196",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_invoices_actions_ts",
+      "target": "actions_resumepayment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L246",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_invoices_actions_ts",
+      "target": "actions_notifyparent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L269",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_invoices_actions_ts",
+      "target": "actions_preparenotifications",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L307",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_updatebillingsettings",
+      "target": "actions_optional",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_updatebillingsettings",
+      "target": "actions_required",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_previewdraft",
+      "target": "actions_invoiceerror",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_savedraft",
+      "target": "actions_invoiceerror",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_issuesavedinvoice",
+      "target": "actions_invoiceerror",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_invoices_error_tsx",
+      "target": "error_errorpage_0284c22efc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/error.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_billing_error_tsx",
+      "target": "error_errorpage_374a21bb0c",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/billing/error.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_adminissuedinvoice_tsx",
+      "target": "adminissuedinvoice_invoicedate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/AdminIssuedInvoice.tsx",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_draftcomposer_tsx",
+      "target": "draftcomposer_changed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/DraftComposer.tsx",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_draftcomposer_tsx",
+      "target": "draftcomposer_updateline",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/DraftComposer.tsx",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_draftcomposer_tsx",
+      "target": "draftcomposer_input",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/DraftComposer.tsx",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_draftcomposer_tsx",
+      "target": "draftcomposer_preview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/DraftComposer.tsx",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_draftcomposer_tsx",
+      "target": "draftcomposer_save",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/DraftComposer.tsx",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "draftcomposer_updateline",
+      "target": "draftcomposer_changed",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/DraftComposer.tsx",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_draftpreview_tsx",
+      "target": "draftpreview_pounds",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/DraftPreview.tsx",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_invoicedocument_tsx",
+      "target": "invoicedocument_invoicedate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/InvoiceDocument.tsx",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_invoicedocument_tsx",
+      "target": "invoicedocument_pounds",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/InvoiceDocument.tsx",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_invoiceerror_tsx",
+      "target": "invoiceerror_invoiceerror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/InvoiceError.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_parentbilling_tsx",
+      "target": "parentbilling_invoicedate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/ParentBilling.tsx",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_paymentform_tsx",
+      "target": "paymentform_paymentform",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/PaymentForm.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_printbutton_tsx",
+      "target": "printbutton_printbutton",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/PrintButton.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_format_ts",
+      "target": "format_pounds",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/format.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_format_ts",
+      "target": "format_invoicedate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/format.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_usepaymentrecovery_ts",
+      "target": "usepaymentrecovery_serversnapshot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/usePaymentRecovery.ts",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_usepaymentrecovery_ts",
+      "target": "usepaymentrecovery_subscribe",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/usePaymentRecovery.ts",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_usepaymentrecovery_ts",
+      "target": "usepaymentrecovery_decode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/usePaymentRecovery.ts",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_usepaymentrecovery_ts",
+      "target": "usepaymentrecovery_usepaymentrecovery",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/usePaymentRecovery.ts",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "usepaymentrecovery_usepaymentrecovery",
+      "target": "usepaymentrecovery_decode",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/usePaymentRecovery.ts",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_decimal_input_ts",
+      "target": "decimal_input_parsedecimalminorunits",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/decimal-input.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoice_fingerprint_ts",
+      "target": "invoice_fingerprint_invoicefingerprint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-fingerprint.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoice_fingerprint_ts",
+      "target": "invoice_fingerprint_assertinvoicefingerprint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-fingerprint.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "invoice_fingerprint_assertinvoicefingerprint",
+      "target": "invoice_fingerprint_invoicefingerprint",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-fingerprint.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoice_mail_ts",
+      "target": "invoice_mail_sendinvoicemail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-mail.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoice_status_ts",
+      "target": "invoice_status_invoicepaymentstatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-status.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_listparentinvoices",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_listadmininvoices",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_previewsavedinvoice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_prepareinvoicepayment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_completeinvoicepayment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_listinvoicepaymentintents",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_readpaymentoperation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_listinvoicepayments",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_payment_retry_ts",
+      "target": "payment_retry_paymentmatches",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/payment-retry.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_updatebillingsettings",
+      "target": "billing_settings_savebillingsettings",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_updatebillingsettings",
+      "target": "decimal_input_parsedecimalminorunits",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_previewdraft",
+      "target": "invoices_previewinvoice",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_savedraft",
+      "target": "invoices_createinvoicedraft",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_issuesavedinvoice",
+      "target": "invoices_issueinvoice",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_saveexternalpayment",
+      "target": "invoices_prepareinvoicepayment",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_saveexternalpayment",
+      "target": "invoices_completeinvoicepayment",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_saveexternalpayment",
+      "target": "invoices_readpaymentoperation",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L173",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_saveexternalpayment",
+      "target": "payment_retry_paymentmatches",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L177",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_checkpayment",
+      "target": "invoices_listinvoicepaymentintents",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L205",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_checkpayment",
+      "target": "payment_retry_paymentmatches",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_checkpayment",
+      "target": "invoices_readpaymentoperation",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L215",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_resumepayment",
+      "target": "invoices_completeinvoicepayment",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L251",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_notifyparent",
+      "target": "invoice_notifications_deliverinvoicenotification",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L277",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_preparenotifications",
+      "target": "invoice_notifications_prepareinvoicenotifications",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/invoices/actions.ts",
+      "source_location": "L314",
+      "weight": 1.0
+    },
+    {
+      "source": "paymentform_paymentform",
+      "target": "usepaymentrecovery_usepaymentrecovery",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "components/portal/invoices/PaymentForm.tsx",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "usepaymentrecovery_usepaymentrecovery",
+      "target": "decimal_input_parsedecimalminorunits",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "components/portal/invoices/usePaymentRecovery.ts",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "invoices_previewinvoice",
+      "target": "invoice_fingerprint_invoicefingerprint",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "invoices_createinvoicedraft",
+      "target": "invoice_fingerprint_assertinvoicefingerprint",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "invoices_previewsavedinvoice",
+      "target": "invoice_fingerprint_invoicefingerprint",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "invoices_issueinvoice",
+      "target": "invoice_fingerprint_assertinvoicefingerprint",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_payment_storage_test_ts",
+      "target": "payment_storage_test_storage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/payment-storage.test.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoice_notifications_ts",
+      "target": "invoice_notifications_listinvoicenotifications",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-notifications.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoice_notifications_ts",
+      "target": "invoice_notifications_prepareinvoicenotifications",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-notifications.ts",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoice_notifications_ts",
+      "target": "invoice_notifications_deliverinvoicenotification",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-notifications.ts",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_payment_storage_ts",
+      "target": "payment_storage_clearpaymentstorage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/payment-storage.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_payment_storage_ts",
+      "target": "payment_storage_signoutandclearpaymentstorage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/payment-storage.ts",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "payment_storage_signoutandclearpaymentstorage",
+      "target": "payment_storage_clearpaymentstorage",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/payment-storage.ts",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_billing_settings_page_tsx",
+      "target": "page_settings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_billing_settings_page_tsx",
+      "target": "page_page_8d3a3fa94a",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/billing-settings/page.tsx",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_invoices_page_tsx",
+      "target": "page_invoicedate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/invoices/page.tsx",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_billing_invoiceid_page_tsx",
+      "target": "page_page_0ec02c21ee",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_billing_invoiceid_print_page_tsx",
+      "target": "page_print",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_billing_invoiceid_print_page_tsx",
+      "target": "page_page_50e3a447c6",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/billing/[invoiceId]/print/page.tsx",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_billing_page_tsx",
+      "target": "page_page_7f11ccbe59",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/billing/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_portalshell_tsx",
+      "target": "portalshell_portalshell",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_billingsettingsform_tsx",
+      "target": "billingsettingsform_billingsettingsform",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/BillingSettingsForm.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_billing_settings_status_ts",
+      "target": "billing_settings_status_billingsettingsstatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/billing-settings-status.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_invoice_ui_db",
+      "target": "portal_invoice_runtime_db",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrations/0011_invoice_ui.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_invoice_ui_db",
+      "target": "lib_portal_invoices_ts",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrations/0011_invoice_ui.sql",
+      "source_location": "L1",
+      "weight": 1.0
     }
   ],
   "hyperedges": []

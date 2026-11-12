@@ -207,7 +207,7 @@ Apply `0008_invoice_runtime.sql` after `0007`. The server DAL uses `invoice_draf
 
 The checked draft and issue functions lock the affected family, settings and invoice, then compare the full previously read context. A change returns SQLSTATE `40001` and the DAL raises `InvoiceContextChangedError`; refresh and requote rather than retrying stale data. Draft retries must reuse the same operation UUID and identical request. Issued retries return the existing invoice number. Payment retries reuse the operation UUID and identical details. VAT is calculated in integer pence per line. Issue and due dates use Europe/London regardless of the caller session time zone; history timestamps in the checked context use UTC. Existing issued snapshots are never recalculated after later settings or founding changes.
 
-Only verified Clerk server identity may supply subjects. The database role may be granted individual EXECUTE privileges on `read_billing_settings`, `save_billing_settings`, `read_admin_invoice`, `read_family_invoices`, `record_invoice_payment`, `invoice_draft_context`, `invoice_issue_context`, `read_invoice_draft_operation`, `create_invoice_draft_checked`, and `issue_invoice_checked`. Never grant table access, `invoice_pricing_context`, `create_invoice_draft`, `issue_invoice`, or other internal helpers. No role, provider, production database, UI, email or payment processor is configured by this migration. Neon HTTP and Clerk signed-in integration remain untested locally. CI exercises synthetic PostgreSQL 17 database calls and concurrency; run `db/tests/invoice-runtime.sql` and `db/tests/invoice-runtime-concurrency.sh` only on a disposable database after the migrations.
+Only verified Clerk server identity may supply subjects. Prior to 0011 the database role could be granted individual EXECUTE privileges on `read_billing_settings`, `save_billing_settings`, `read_admin_invoice`, `read_family_invoices`, `record_invoice_payment`, `invoice_draft_context`, `invoice_issue_context`, `read_invoice_draft_operation`, `create_invoice_draft_checked`, and `issue_invoice_checked`. Never grant table access, `invoice_pricing_context`, `create_invoice_draft`, `issue_invoice`, or other internal helpers. No role, provider, production database, UI, email or payment processor is configured by this migration. Neon HTTP and Clerk signed-in integration remain untested locally. CI exercises synthetic PostgreSQL 17 database calls and concurrency; run `db/tests/invoice-runtime.sql` and `db/tests/invoice-runtime-concurrency.sh` only on a disposable database after the migrations.
 
 ## Staff invitation delivery and assignment editor
 
@@ -230,6 +230,34 @@ FROM goldleaf_portal_runtime;
 Verify the runtime cannot execute the lower-level issuer after applying these grants. The server supplies the verified subject; SQL rechecks active admin membership. A stable request UUID makes a replay fail without issuing another invitation. A resend creates a new token and invalidates earlier invitations for the same email. Delivery commits before an explicit send attempt: `sent` means provider acceptance, not receipt, and `pending` can mean delivery is unconfirmed. If the response is lost, inspect the list before explicitly resending. Assignment updates lock the selected active staff membership and apply all selected family changes in one transaction. Staff can read only their assigned families. No role, table or sequence grants are added by this migration.
 
 Run `db/tests/staff-delivery.sql` and `db/tests/staff-delivery-concurrency.sh` on disposable PostgreSQL after migrations 0001–0010. They use synthetic records. No development or production application of 0010, real mail or live write verification is implied by the migration.
+## Invoice UI foundation
+
+Apply `0011_invoice_ui.sql` after `0010` as the owner. This adds a configurable issuer contact seeded to the public `admin@goldleaf.education` fallback and includes it only in new issued snapshots. Existing issued snapshots are not rewritten and may lack that field. If `NEXT_PUBLIC_CONTACT_EMAIL` differs, update billing settings explicitly. It adds admin and parent invoice lists, payment-operation reconciliation, and per-parent notification state; no tables are granted to the runtime role. The server checks a reviewed quote fingerprint, recomputes prices and uses the 0008 locked context check before saving or issuing. Fingerprints are version checks, not authorisation credentials.
+
+Grant the trusted portal role only these additional functions, retaining existing scoped grants:
+
+```sql
+GRANT EXECUTE ON FUNCTION
+  portal.save_billing_settings_with_contact(text,text,text,text,boolean,integer,text,integer,text,text,date),
+  portal.list_admin_invoices(text), portal.list_parent_invoices(text),
+  portal.read_invoice_payment_operation(text,uuid,uuid), portal.list_invoice_payments(text,uuid),
+  portal.prepare_invoice_payment(text,uuid,uuid,integer,date,text),
+  portal.complete_invoice_payment(text,uuid,uuid), portal.list_invoice_payment_intents(text,uuid),
+  portal.prepare_invoice_notifications(text,uuid), portal.list_invoice_notifications(text,uuid),
+  portal.fail_invoice_notification(text,uuid),
+  portal.claim_invoice_notification(text,uuid,uuid,text,text,text,boolean),
+  portal.finish_invoice_notification(text,uuid,uuid,text)
+TO goldleaf_portal_runtime;
+-- After all callers use the intent workflow, remove the old direct writer.
+REVOKE EXECUTE ON FUNCTION portal.record_invoice_payment(text,uuid,uuid,integer,date,text) FROM goldleaf_portal_runtime;
+```
+
+Revoking the old writer can interrupt an older running application version, so coordinate it with the application rollout. The intent completion function calls the existing writer as its owner; the runtime role does not need direct access.
+
+Issued invoices create pending notification records for active parent memberships. Sending and retrying are explicit admin actions. The server resolves a verified Clerk address and rechecks the active membership before sending a protected link, with no child data. `PORTAL_INVOICE_FROM_EMAIL`, `RESEND_API_KEY` and `NEXT_PUBLIC_SITE_URL` must be configured for delivery. The email provider retains idempotency keys for 24 hours; this implementation stops reusing an uncertain attempt after 23 hours 55 minutes and requires an explicit duplicate warning before a new attempt. Each claim has a separate fencing ID; a late completion cannot overwrite a newer claim while the provider idempotency key remains stable. An uncertain result or a stale sending lease may already have sent; provider acceptance is not proof of delivery. There is no polling, scheduled worker or automatic resend. Membership can change after the final check while a message is in flight; the linked page rechecks authority on access. Never store raw provider secrets in notification rows.
+
+A payment operation first commits a durable intent with the validated invoice, amount, date, reference and admin actor. Completion records the existing idempotent payment and marks the intent in one transaction. Only one intent per invoice can remain pending; any authorised admin can resume that exact operation after a session change. A balance change can reject an uncompleted intent and free the pending slot. While the browser response is unconfirmed, tab-scoped retry data is bound to the Clerk session and cleared after confirmation or session change; absence alone does not authorise a new attempt. Test `db/tests/invoice-ui-upgrade-before.sql`, migration 0011, `db/tests/invoice-ui.sql` and the concurrency script only against a disposable database. Signed-in browser, Clerk lookup, Neon HTTP and real email delivery remain unverified locally.
+
 
 ## Children, sessions and learning foundation
 

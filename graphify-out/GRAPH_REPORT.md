@@ -129,3 +129,5 @@ An allowlisted structural refresh checked the shared sound chip component and it
 `graphify update db` found no supported code files; SQL extraction is unsupported. `portal_onboarding_db` and its source-backed references were added manually to the existing graph. See `FEATURE_TREE.md` for the database boundary and test evidence. Full semantic coverage remains incomplete.
 
 The onboarding review added family-lock ordering and explicit temporary-schema precedence. A repeat scoped update still reports no supported files; the existing onboarding node remains the correct source reference. The feature tree links the added upgrade and security regression checks.
+
+The portal node is partial, reflecting its existing onboarding database foundation. The source-backed PORTAL → PORTAL-ONBOARDING edge follows `FEATURE_TREE.md`; the current graph contains 132 nodes and 93 directed edges. SQL remains outside automated extraction.

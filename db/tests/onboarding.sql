@@ -20,17 +20,47 @@ DO $$ BEGIN
     RAISE EXCEPTION 'parent created family';
   EXCEPTION WHEN insufficient_privilege THEN NULL; END;
 END $$;
--- Reissue after revocation is required before reactivating the membership.
+-- Invites issued before revocation stay invalid even when timestamps move backwards or tie.
 SELECT portal.issue_invitation('admin', :'family', 'parent@example.com', decode(repeat('02', 32), 'hex'), now() + interval '1 day');
-UPDATE portal.memberships SET revoked_at = clock_timestamp() WHERE subject = 'parent';
+SELECT portal.issue_invitation('admin', :'family', 'alternate@example.com', decode(repeat('05', 32), 'hex'), now() + interval '1 day');
+UPDATE portal.invitations SET created_at = now() + interval '1 hour' WHERE token_digest = decode(repeat('02', 32), 'hex');
+SELECT portal.revoke_membership('admin', (SELECT id FROM portal.memberships WHERE subject = 'parent'));
+UPDATE portal.invitations SET created_at = (SELECT revoked_at FROM portal.memberships WHERE subject = 'parent') WHERE token_digest = decode(repeat('05', 32), 'hex');
 DO $$ BEGIN
   BEGIN
     PERFORM portal.accept_invitation('parent', 'parent@example.com', decode(repeat('02', 32), 'hex'));
-    RAISE EXCEPTION 'revoked membership reactivated by old invitation';
+    RAISE EXCEPTION 'old future-dated invitation accepted';
+  EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+  BEGIN
+    PERFORM portal.accept_invitation('parent', 'alternate@example.com', decode(repeat('05', 32), 'hex'));
+    RAISE EXCEPTION 'old tied invitation accepted';
   EXCEPTION WHEN insufficient_privilege THEN NULL; END;
 END $$;
 SELECT portal.issue_invitation('admin', :'family', 'parent@example.com', decode(repeat('03', 32), 'hex'), now() + interval '1 day');
+UPDATE portal.invitations SET created_at = now() - interval '1 day' WHERE token_digest = decode(repeat('03', 32), 'hex');
 SELECT portal.accept_invitation('parent', 'PARENT@example.com', decode(repeat('03', 32), 'hex'));
+DO $$ BEGIN
+  BEGIN
+    PERFORM portal.accept_invitation('parent', 'alternate@example.com', decode(repeat('05', 32), 'hex'));
+    RAISE EXCEPTION 'old invitation accepted after reactivation';
+  EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+END $$;
+-- Explicit revocation and resending invalidate their previous tokens.
+SELECT portal.issue_invitation('admin', :'family', 'revoked@example.com', decode(repeat('06', 32), 'hex'), now() + interval '1 day') AS revoked_invitation \gset
+SELECT portal.revoke_invitation('admin', :'revoked_invitation');
+SELECT portal.issue_invitation('admin', :'family', 'resend@example.com', decode(repeat('07', 32), 'hex'), now() + interval '1 day');
+SELECT portal.issue_invitation('admin', :'family', 'RESEND@example.com', decode(repeat('08', 32), 'hex'), now() + interval '1 day');
+DO $$ BEGIN
+  BEGIN
+    PERFORM portal.accept_invitation('revoked', 'revoked@example.com', decode(repeat('06', 32), 'hex'));
+    RAISE EXCEPTION 'explicitly revoked invitation accepted';
+  EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+  BEGIN
+    PERFORM portal.accept_invitation('resend', 'resend@example.com', decode(repeat('07', 32), 'hex'));
+    RAISE EXCEPTION 'superseded invitation accepted';
+  EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+END $$;
+SELECT portal.accept_invitation('resend', 'resend@example.com', decode(repeat('08', 32), 'hex'));
 SELECT portal.issue_invitation('admin', :'family', 'expired@example.com', decode(repeat('04', 32), 'hex'), now() + interval '1 second');
 UPDATE portal.invitations SET expires_at = created_at + interval '1 microsecond' WHERE token_digest = decode(repeat('04', 32), 'hex');
 SELECT pg_sleep(0.01);

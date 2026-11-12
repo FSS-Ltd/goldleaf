@@ -874,8 +874,8 @@
       "file_type": "document",
       "source_file": "FEATURE_TREE.md",
       "source_location": "L34-L41",
-      "status": "planned",
-      "scope": "No application routes, authentication, family/staff permissions, messages or billing implementation.",
+      "status": "partial",
+      "scope": "Private onboarding database foundation exists; application routes, integrated authentication, messages and billing remain planned.",
       "community": 2,
       "norm_label": "portal partial database foundation ui planned",
       "id": "portal_planned"
@@ -2394,6 +2394,18 @@
       "confidence_score": 1.0,
       "source_file": "db/README.md",
       "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "portal_planned",
+      "target": "portal_onboarding_db",
+      "_src": "portal_planned",
+      "_tgt": "portal_onboarding_db",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "FEATURE_TREE.md",
+      "source_location": "L35-L36",
       "weight": 1.0
     }
   ],

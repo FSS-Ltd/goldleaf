@@ -1,6 +1,8 @@
 -- Forward-only. Functions are callable only by an explicitly provisioned trusted server role.
 BEGIN;
-ALTER TABLE portal.families ADD COLUMN display_name text CHECK (display_name IS NULL OR (length(btrim(display_name)) BETWEEN 1 AND 120));
+ALTER TABLE portal.families
+  ADD COLUMN display_name text CHECK (display_name IS NULL OR (length(btrim(display_name)) BETWEEN 1 AND 120)),
+  ADD COLUMN invitation_version bigint NOT NULL DEFAULT 0 CHECK (invitation_version >= 0);
 CREATE TABLE portal.memberships (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   subject text NOT NULL CHECK (subject <> ''),
@@ -9,12 +11,14 @@ CREATE TABLE portal.memberships (
   created_at timestamptz NOT NULL DEFAULT clock_timestamp(),
   revoked_at timestamptz,
   revoked_by uuid REFERENCES portal.memberships(id),
+  revoked_invitation_version bigint NOT NULL DEFAULT 0 CHECK (revoked_invitation_version >= 0),
   CHECK ((role = 'parent') = (family_id IS NOT NULL)),
   UNIQUE NULLS NOT DISTINCT (subject, role, family_id)
 );
 CREATE TABLE portal.invitations (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   family_id uuid NOT NULL REFERENCES portal.families(id),
+  issued_version bigint NOT NULL CHECK (issued_version > 0),
   email text NOT NULL CHECK (email = lower(btrim(email)) AND email <> ''),
   token_digest bytea NOT NULL UNIQUE CHECK (octet_length(token_digest) = 32),
   created_at timestamptz NOT NULL DEFAULT clock_timestamp(),
@@ -23,7 +27,8 @@ CREATE TABLE portal.invitations (
   consumed_at timestamptz,
   revoked_at timestamptz,
   revoked_by uuid REFERENCES portal.memberships(id),
-  CHECK (expires_at > created_at)
+  CHECK (expires_at > created_at),
+  UNIQUE (family_id, issued_version)
 );
 CREATE INDEX invitations_family_email ON portal.invitations (family_id, email) WHERE consumed_at IS NULL AND revoked_at IS NULL;
 CREATE TABLE portal.founding_history (
@@ -73,30 +78,32 @@ BEGIN
 END $$;
 CREATE FUNCTION portal.revoke_membership(p_subject text, p_membership uuid) RETURNS void
 LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
-DECLARE actor uuid; target_family uuid;
+DECLARE actor uuid; target_family uuid; family_version bigint;
 BEGIN
   actor := portal.require_admin(p_subject);
   SELECT family_id INTO target_family FROM portal.memberships WHERE id = p_membership AND role = 'parent';
   IF target_family IS NOT NULL THEN
-    PERFORM 1 FROM portal.families WHERE id = target_family FOR UPDATE;
+    SELECT invitation_version INTO family_version FROM portal.families WHERE id = target_family FOR UPDATE;
   END IF;
-  UPDATE portal.memberships SET revoked_at = clock_timestamp(), revoked_by = actor
+  UPDATE portal.memberships SET revoked_at = clock_timestamp(), revoked_by = actor,
+    revoked_invitation_version = COALESCE(family_version, revoked_invitation_version)
     WHERE id = p_membership AND role IN ('parent', 'staff') AND revoked_at IS NULL;
 END $$;
 CREATE FUNCTION portal.issue_invitation(p_subject text, p_family uuid, p_email text, p_digest bytea, p_expires timestamptz) RETURNS uuid
 LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
-DECLARE actor uuid; result uuid; canonical text := lower(btrim(p_email));
+DECLARE actor uuid; result uuid; issued_version bigint; canonical text := lower(btrim(p_email));
 BEGIN
   actor := portal.require_admin(p_subject);
   IF canonical IS NULL OR canonical = '' OR p_digest IS NULL OR octet_length(p_digest) <> 32 OR p_expires IS NULL OR p_expires <= clock_timestamp() THEN
     RAISE EXCEPTION 'invalid invitation' USING ERRCODE = '22023';
   END IF;
-  PERFORM 1 FROM portal.families WHERE id = p_family FOR UPDATE;
+  UPDATE portal.families SET invitation_version = invitation_version + 1
+    WHERE id = p_family RETURNING invitation_version INTO issued_version;
   IF NOT FOUND THEN RAISE EXCEPTION 'family not found' USING ERRCODE = '22023'; END IF;
   UPDATE portal.invitations SET revoked_at = clock_timestamp(), revoked_by = actor
     WHERE family_id = p_family AND email = canonical AND consumed_at IS NULL AND revoked_at IS NULL;
-  INSERT INTO portal.invitations (family_id, email, token_digest, expires_at, created_by)
-    VALUES (p_family, canonical, p_digest, p_expires, actor) RETURNING id INTO result;
+  INSERT INTO portal.invitations (family_id, issued_version, email, token_digest, expires_at, created_by)
+    VALUES (p_family, issued_version, canonical, p_digest, p_expires, actor) RETURNING id INTO result;
   RETURN result;
 END $$;
 CREATE FUNCTION portal.revoke_invitation(p_subject text, p_invitation uuid) RETURNS void
@@ -124,7 +131,7 @@ BEGIN
     RAISE EXCEPTION 'invalid invitation' USING ERRCODE = '42501';
   END IF;
   SELECT * INTO existing FROM portal.memberships WHERE subject = p_subject AND role = 'parent' AND family_id = invitation.family_id FOR UPDATE;
-  IF FOUND AND existing.revoked_at IS NOT NULL AND invitation.created_at <= existing.revoked_at THEN
+  IF FOUND AND invitation.issued_version <= existing.revoked_invitation_version THEN
     RAISE EXCEPTION 'invalid invitation' USING ERRCODE = '42501';
   END IF;
   INSERT INTO portal.memberships (subject, role, family_id) VALUES (p_subject, 'parent', invitation.family_id)

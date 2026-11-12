@@ -21,26 +21,64 @@ INSERT INTO portal.memberships(subject,role) VALUES ('race-admin','admin');
 INSERT INTO portal.families(id) SELECT ('00000000-0000-0000-0000-' || lpad(i::text,12,'0'))::uuid FROM generate_series(1,6) i;
 SELECT portal.set_founding('race-admin', ('00000000-0000-0000-0000-' || lpad(i::text,12,'0'))::uuid, true) FROM generate_series(1,4) i;
 SQL
-psql_test -c "BEGIN; SELECT portal.set_founding('race-admin','00000000-0000-0000-0000-000000000005',true); SELECT pg_sleep(1); COMMIT" >"$TASK_TMP_DIR/race-a" &
+mkfifo "$TASK_TMP_DIR/slot-input"
+psql_test <"$TASK_TMP_DIR/slot-input" >"$TASK_TMP_DIR/race-a" 2>&1 &
 first=$!
-sleep 0.2
-if psql_test -c "SELECT portal.set_founding('race-admin','00000000-0000-0000-0000-000000000006',true)" >"$TASK_TMP_DIR/race-b" 2>&1; then
+exec 3>"$TASK_TMP_DIR/slot-input"
+printf '%s\n' 'BEGIN;' "SELECT portal.set_founding('race-admin','00000000-0000-0000-0000-000000000005',true);" '\echo slot_locked' >&3
+wait_for grep -q slot_locked "$TASK_TMP_DIR/race-a"
+PGAPPNAME=slot-competitor psql_test -c "SELECT portal.set_founding('race-admin','00000000-0000-0000-0000-000000000006',true)" >"$TASK_TMP_DIR/race-b" 2>&1 &
+second=$!
+wait_for is_lock_waiting slot-competitor
+printf '%s\n' 'COMMIT;' '\q' >&3
+exec 3>&-
+wait "$first"
+if wait "$second"; then
   echo 'Over-capacity claim succeeded' >&2
   exit 1
 fi
-wait "$first"
 grep -q "founding capacity reached" "$TASK_TMP_DIR/race-b"
 [ "$(psql_test -c 'SELECT count(*) FROM portal.founding_slots WHERE family_id IS NOT NULL')" = 5 ]
-psql_test -c "SELECT portal.issue_invitation('race-admin','00000000-0000-0000-0000-000000000001','race@example.com',decode(repeat('aa',32),'hex'),now()+interval '1 day')" >/dev/null
-psql_test -c "BEGIN; SELECT portal.accept_invitation('race-parent','race@example.com',decode(repeat('aa',32),'hex')); SELECT pg_sleep(1); COMMIT" >"$TASK_TMP_DIR/accept-a" &
+[ "$(psql_test -c "SELECT count(*) FROM portal.founding_slots WHERE family_id = '00000000-0000-0000-0000-000000000005'")" = 1 ]
+[ "$(psql_test -c "SELECT count(*) FROM portal.founding_slots WHERE family_id = '00000000-0000-0000-0000-000000000006'")" = 0 ]
+psql_test -c "SELECT portal.set_founding('race-admin','00000000-0000-0000-0000-000000000005',false)" >/dev/null
+mkfifo "$TASK_TMP_DIR/same-family-input"
+psql_test <"$TASK_TMP_DIR/same-family-input" >"$TASK_TMP_DIR/same-family-a" 2>&1 &
 first=$!
-sleep 0.2
-if psql_test -c "SELECT portal.accept_invitation('race-parent','race@example.com',decode(repeat('aa',32),'hex'))" >"$TASK_TMP_DIR/accept-b" 2>&1; then
+exec 3>"$TASK_TMP_DIR/same-family-input"
+printf '%s\n' 'BEGIN;' "SELECT portal.set_founding('race-admin','00000000-0000-0000-0000-000000000006',true);" '\echo same_family_locked' >&3
+wait_for grep -q same_family_locked "$TASK_TMP_DIR/same-family-a"
+PGAPPNAME=same-family-competitor psql_test -c "SELECT portal.set_founding('race-admin','00000000-0000-0000-0000-000000000006',true)" >"$TASK_TMP_DIR/same-family-b" 2>&1 &
+second=$!
+wait_for is_lock_waiting same-family-competitor
+printf '%s\n' 'COMMIT;' '\q' >&3
+exec 3>&-
+wait "$first"
+wait "$second"
+grep -qx t "$TASK_TMP_DIR/same-family-a"
+grep -qx t "$TASK_TMP_DIR/same-family-b"
+[ "$(psql_test -c "SELECT count(*) FROM portal.founding_slots WHERE family_id = '00000000-0000-0000-0000-000000000006'")" = 1 ]
+[ "$(psql_test -c "SELECT count(*) FROM portal.founding_history WHERE family_id = '00000000-0000-0000-0000-000000000006' AND is_founding")" = 1 ]
+psql_test -c "SELECT portal.issue_invitation('race-admin','00000000-0000-0000-0000-000000000001','race@example.com',decode(repeat('aa',32),'hex'),now()+interval '1 day')" >/dev/null
+mkfifo "$TASK_TMP_DIR/accept-input"
+psql_test <"$TASK_TMP_DIR/accept-input" >"$TASK_TMP_DIR/accept-a" 2>&1 &
+first=$!
+exec 3>"$TASK_TMP_DIR/accept-input"
+printf '%s\n' 'BEGIN;' "SELECT portal.accept_invitation('race-parent','race@example.com',decode(repeat('aa',32),'hex'));" '\echo accepted_locked' >&3
+wait_for grep -q accepted_locked "$TASK_TMP_DIR/accept-a"
+PGAPPNAME=accept-competitor psql_test -c "SELECT portal.accept_invitation('race-parent','race@example.com',decode(repeat('aa',32),'hex'))" >"$TASK_TMP_DIR/accept-b" 2>&1 &
+second=$!
+wait_for is_lock_waiting accept-competitor
+printf '%s\n' 'COMMIT;' '\q' >&3
+exec 3>&-
+wait "$first"
+if wait "$second"; then
   echo 'Concurrent invitation replay succeeded' >&2
   exit 1
 fi
-wait "$first"
-[ "$(psql_test -c "SELECT count(*) FROM portal.memberships WHERE subject='race-parent' AND revoked_at IS NULL")" = 1 ]
+grep -q 'invalid invitation' "$TASK_TMP_DIR/accept-b"
+[ "$(psql_test -c "SELECT count(*) FROM portal.memberships WHERE subject='race-parent' AND role='parent' AND family_id='00000000-0000-0000-0000-000000000001' AND revoked_at IS NULL")" = 1 ]
+[ "$(psql_test -c "SELECT count(*) FROM portal.invitations WHERE token_digest=decode(repeat('aa',32),'hex') AND consumed_at IS NOT NULL")" = 1 ]
 # A committed admin mutation holds a shared membership lock until transaction end.
 mkfifo "$TASK_TMP_DIR/admin-input"
 psql_test <"$TASK_TMP_DIR/admin-input" >"$TASK_TMP_DIR/admin-mutation" 2>&1 &

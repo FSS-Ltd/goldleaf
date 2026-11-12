@@ -25,6 +25,8 @@ The six final Stitch screen exports set composition, visual order, component pro
 
 Create companion Stitch frames for missing flows before implementing their visible UI. Sprint 2 needs sign-in, invite acceptance and the admin family form. Sprint 3 needs staff invitations and assignments. Sprint 4 needs parent invoice list and detail, plus admin draft, issue and record-payment states. Sprints 5 and 6 need mobile detail, session list, messages and settings. Archive each selected frame ID, device, expected controls, and empty, pending, error and success states. Preserve the six baseline frames. Put an independent Jury recommendation and supporting screenshots in the PR for any design deviation.
 
+The desktop admin family form has a companion Stitch draft, `ee9f8cc112ad420d8ba1e65b7137dd06`. Its inspected screenshot and HTML include the family name, parent email, founding checkbox, synthetic capacity, and create-and-invite action. The active navigation uses the original Staff Today gold treatment. Verify interaction and responsive states on the implemented form.
+
 ## Delivery and verification
 
 - Branch each sprint from current `origin/main`. Use named, isolated worktrees and give each Terra agent exclusive file ownership. Sprint 1 and missing-frame preparation can run concurrently. Sprint 3 and Sprint 4 can run concurrently after Sprint 2, using separate migrations and routes. Rebase shared map changes and repeat checks on the final commit.

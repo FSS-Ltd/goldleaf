@@ -38,7 +38,7 @@ REVOKE ALL ON ALL TABLES IN SCHEMA portal FROM PUBLIC;
 REVOKE ALL ON ALL SEQUENCES IN SCHEMA portal FROM PUBLIC;
 
 CREATE FUNCTION portal.require_admin(p_subject text) RETURNS uuid
-LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal AS $$
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
 DECLARE actor uuid;
 BEGIN
   SELECT id INTO actor FROM portal.memberships
@@ -47,7 +47,7 @@ BEGIN
   RETURN actor;
 END $$;
 CREATE FUNCTION portal.create_family(p_subject text, p_display_name text DEFAULT NULL, p_family uuid DEFAULT gen_random_uuid()) RETURNS uuid
-LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal AS $$
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
 DECLARE result uuid;
 BEGIN
   PERFORM portal.require_admin(p_subject);
@@ -59,28 +59,32 @@ BEGIN
 END $$;
 CREATE FUNCTION portal.active_memberships(p_subject text)
 RETURNS TABLE (role text, family_id uuid)
-LANGUAGE sql SECURITY DEFINER SET search_path = pg_catalog, portal AS $$
+LANGUAGE sql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
   SELECT m.role, m.family_id FROM portal.memberships AS m
   WHERE m.subject = p_subject AND m.revoked_at IS NULL;
 $$;
 CREATE FUNCTION portal.family_memberships(p_subject text, p_family uuid)
 RETURNS TABLE (id uuid, subject text, role text)
-LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal AS $$
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
 BEGIN
   PERFORM portal.require_admin(p_subject);
   RETURN QUERY SELECT m.id, m.subject, m.role FROM portal.memberships AS m
     WHERE m.family_id = p_family AND m.revoked_at IS NULL;
 END $$;
 CREATE FUNCTION portal.revoke_membership(p_subject text, p_membership uuid) RETURNS void
-LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal AS $$
-DECLARE actor uuid;
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
+DECLARE actor uuid; target_family uuid;
 BEGIN
   actor := portal.require_admin(p_subject);
+  SELECT family_id INTO target_family FROM portal.memberships WHERE id = p_membership AND role = 'parent';
+  IF target_family IS NOT NULL THEN
+    PERFORM 1 FROM portal.families WHERE id = target_family FOR UPDATE;
+  END IF;
   UPDATE portal.memberships SET revoked_at = clock_timestamp(), revoked_by = actor
     WHERE id = p_membership AND role IN ('parent', 'staff') AND revoked_at IS NULL;
 END $$;
 CREATE FUNCTION portal.issue_invitation(p_subject text, p_family uuid, p_email text, p_digest bytea, p_expires timestamptz) RETURNS uuid
-LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal AS $$
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
 DECLARE actor uuid; result uuid; canonical text := lower(btrim(p_email));
 BEGIN
   actor := portal.require_admin(p_subject);
@@ -96,7 +100,7 @@ BEGIN
   RETURN result;
 END $$;
 CREATE FUNCTION portal.revoke_invitation(p_subject text, p_invitation uuid) RETURNS void
-LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal AS $$
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
 DECLARE actor uuid;
 BEGIN
   actor := portal.require_admin(p_subject);
@@ -104,7 +108,7 @@ BEGIN
     WHERE id = p_invitation AND consumed_at IS NULL AND revoked_at IS NULL;
 END $$;
 CREATE FUNCTION portal.accept_invitation(p_subject text, p_verified_email text, p_digest bytea) RETURNS uuid
-LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal AS $$
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
 DECLARE invitation portal.invitations%ROWTYPE; result uuid; existing portal.memberships%ROWTYPE;
 BEGIN
   IF p_subject IS NULL OR p_subject = '' OR p_verified_email IS NULL OR p_digest IS NULL THEN
@@ -129,7 +133,7 @@ BEGIN
   RETURN result;
 END $$;
 CREATE FUNCTION portal.set_founding(p_subject text, p_family uuid, p_enabled boolean) RETURNS boolean
-LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal AS $$
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
 DECLARE actor uuid; selected_slot smallint;
 BEGIN
   actor := portal.require_admin(p_subject);

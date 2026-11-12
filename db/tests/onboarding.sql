@@ -56,4 +56,25 @@ DO $$ BEGIN
   IF has_schema_privilege('public', 'portal', 'USAGE') THEN RAISE EXCEPTION 'public schema access'; END IF;
   IF has_function_privilege('public', 'portal.create_family(text,text,uuid)', 'EXECUTE') THEN RAISE EXCEPTION 'public function access'; END IF;
 END $$;
+DO $$
+DECLARE i integer; new_family uuid := gen_random_uuid();
+BEGIN
+  FOR i IN 1..5 LOOP
+    PERFORM portal.set_founding('admin', portal.create_family('admin', 'Capacity fixture'), true);
+  END LOOP;
+  BEGIN
+    PERFORM portal.create_family('admin', 'Must roll back', new_family);
+    PERFORM portal.issue_invitation('admin', new_family, 'atomic@example.com', decode(repeat('fe', 32), 'hex'), now() + interval '1 day');
+    PERFORM portal.set_founding('admin', new_family, true);
+    RAISE EXCEPTION 'capacity failure missing';
+  EXCEPTION WHEN SQLSTATE 'P0001' THEN
+    IF SQLERRM <> 'founding capacity reached' THEN RAISE; END IF;
+  END;
+  IF EXISTS (SELECT 1 FROM portal.families WHERE id = new_family)
+     OR EXISTS (SELECT 1 FROM portal.invitations WHERE family_id = new_family)
+     OR EXISTS (SELECT 1 FROM portal.founding_history WHERE family_id = new_family)
+     OR (SELECT remaining FROM public_offer.founding_availability) <> 0 THEN
+    RAISE EXCEPTION 'capacity failure did not roll back';
+  END IF;
+END $$;
 ROLLBACK;

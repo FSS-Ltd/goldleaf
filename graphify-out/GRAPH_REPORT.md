@@ -127,3 +127,5 @@ An allowlisted structural refresh checked the shared sound chip component and it
 ## Onboarding database scoped update
 
 `graphify update db` found no supported code files; SQL extraction is unsupported. `portal_onboarding_db` and its source-backed references were added manually to the existing graph. See `FEATURE_TREE.md` for the database boundary and test evidence. Full semantic coverage remains incomplete.
+
+The onboarding review added family-lock ordering and explicit temporary-schema precedence. A repeat scoped update still reports no supported files; the existing onboarding node remains the correct source reference. The feature tree links the added upgrade and security regression checks.

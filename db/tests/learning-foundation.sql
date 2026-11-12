@@ -2,14 +2,14 @@
 BEGIN;
 CREATE ROLE learning_runtime_test NOLOGIN;
 GRANT USAGE ON SCHEMA portal TO learning_runtime_test;
-GRANT EXECUTE ON FUNCTION portal.create_child(text,uuid,text,uuid),portal.rename_child(text,uuid,text),portal.list_children(text,uuid),portal.schedule_child_session(text,uuid,timestamptz,integer,uuid,text),portal.set_session_location(text,uuid,text),portal.reschedule_child_session(text,uuid,timestamptz),portal.list_child_sessions(text,uuid),portal.update_session(text,uuid,text,text),portal.learning_workspace(text,uuid),portal.save_private_note(text,uuid,text,integer),portal.save_learning_draft(text,uuid,text,smallint,text,text,integer),portal.preview_learning_draft(text,uuid,integer),portal.publish_learning_draft(text,uuid,integer,uuid,text),portal.list_published_learning(text,uuid,uuid) TO learning_runtime_test;
+GRANT EXECUTE ON FUNCTION portal.create_child(text,uuid,text,uuid),portal.rename_child(text,uuid,text),portal.list_children(text,uuid),portal.schedule_child_session(text,uuid,timestamptz,integer,uuid,text),portal.set_session_location(text,uuid,text),portal.reschedule_child_session(text,uuid,timestamptz),portal.list_child_sessions(text,uuid),portal.update_session(text,uuid,text,text),portal.learning_workspace(text,uuid),portal.save_private_note(text,uuid,text,integer),portal.save_learning_draft(text,uuid,text,smallint,text,text,text[],integer),portal.preview_learning_draft(text,uuid,integer),portal.publish_learning_draft(text,uuid,integer,uuid,text),portal.list_published_learning(text,uuid,uuid) TO learning_runtime_test;
 INSERT INTO portal.memberships(subject,role) VALUES ('learning-admin','admin'),('learning-staff','staff'),('learning-unassigned','staff');
 SELECT portal.create_family('learning-admin','First','10000000-0000-4000-8000-000000000001');
 SELECT portal.create_family('learning-admin','Second','10000000-0000-4000-8000-000000000002');
 INSERT INTO portal.memberships(subject,role,family_id) VALUES ('parent-one','parent','10000000-0000-4000-8000-000000000001'),('parent-two','parent','10000000-0000-4000-8000-000000000002');
 INSERT INTO portal.staff_family_assignments(staff_id,family_id) SELECT id,'10000000-0000-4000-8000-000000000001' FROM portal.memberships WHERE subject='learning-staff';
 DO $$ BEGIN
- IF has_function_privilege('learning_runtime_test','portal.require_family_worker(text,uuid)','EXECUTE') OR has_function_privilege('learning_runtime_test','portal.learning_fingerprint(uuid,uuid,uuid,integer,text,smallint,text,text)','EXECUTE') THEN RAISE EXCEPTION 'internal helper granted'; END IF;
+ IF has_function_privilege('learning_runtime_test','portal.require_family_worker(text,uuid)','EXECUTE') OR has_function_privilege('learning_runtime_test','portal.learning_fingerprint(uuid,uuid,uuid,integer,text,smallint,text,text,text[])','EXECUTE') THEN RAISE EXCEPTION 'internal helper granted'; END IF;
 END $$;
 SET LOCAL ROLE learning_runtime_test;
 SELECT portal.create_child('learning-admin','10000000-0000-4000-8000-000000000001','Child','20000000-0000-4000-8000-000000000001');
@@ -29,24 +29,37 @@ DO $$ BEGIN
  BEGIN PERFORM * FROM portal.session_private_notes; RAISE EXCEPTION 'direct private access'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
 END $$;
 SELECT portal.save_private_note('learning-staff','30000000-0000-4000-8000-000000000001','private text',0);
-SELECT portal.save_learning_draft('learning-staff','30000000-0000-4000-8000-000000000001','parent draft',2::smallint,'focus','practice',0);
+SELECT portal.save_learning_draft('learning-staff','30000000-0000-4000-8000-000000000001','parent draft',2::smallint,'focus','practice',ARRAY[' s ','a','s'],0);
 DO $$ BEGIN
  IF EXISTS (SELECT 1 FROM portal.list_published_learning('parent-one','10000000-0000-4000-8000-000000000001','20000000-0000-4000-8000-000000000001')) THEN RAISE EXCEPTION 'draft leaked'; END IF;
+ BEGIN PERFORM portal.save_learning_draft('learning-staff','30000000-0000-4000-8000-000000000001','x',NULL,NULL,NULL,ARRAY[E' \t '],1); RAISE EXCEPTION 'blank sound accepted'; EXCEPTION WHEN invalid_parameter_value THEN NULL; END;
+ BEGIN PERFORM portal.save_learning_draft('learning-staff','30000000-0000-4000-8000-000000000001','x',NULL,NULL,NULL,array_fill('a'::text,ARRAY[33]),1); RAISE EXCEPTION 'too many sounds accepted'; EXCEPTION WHEN invalid_parameter_value THEN NULL; END;
  BEGIN PERFORM portal.save_private_note('learning-staff','30000000-0000-4000-8000-000000000001','overwrite',0); RAISE EXCEPTION 'stale note accepted'; EXCEPTION WHEN serialization_failure THEN NULL; END;
  BEGIN PERFORM portal.publish_learning_draft('learning-staff','30000000-0000-4000-8000-000000000001',2,'40000000-0000-4000-8000-000000000001',repeat('0',64)); RAISE EXCEPTION 'stale publication accepted'; EXCEPTION WHEN serialization_failure THEN NULL; END;
 END $$;
 DO $$ BEGIN
  BEGIN PERFORM portal.publish_learning_draft('learning-staff','30000000-0000-4000-8000-000000000001',1,'40000000-0000-4000-8000-000000000001',repeat('0',64)); RAISE EXCEPTION 'mismatched preview published'; EXCEPTION WHEN serialization_failure THEN NULL; END;
 END $$;
-SELECT fingerprint FROM portal.preview_learning_draft('learning-staff','30000000-0000-4000-8000-000000000001',1) \gset
-SELECT portal.publish_learning_draft('learning-staff','30000000-0000-4000-8000-000000000001',1,'40000000-0000-4000-8000-000000000001',:'fingerprint') AS published \gset
-SELECT portal.publish_learning_draft('learning-staff','30000000-0000-4000-8000-000000000001',1,'40000000-0000-4000-8000-000000000001',:'fingerprint') = :'published'::uuid AS same_publication \gset
+SELECT fingerprint AS old_fingerprint FROM portal.preview_learning_draft('learning-staff','30000000-0000-4000-8000-000000000001',1) \gset
+SELECT portal.save_learning_draft('learning-staff','30000000-0000-4000-8000-000000000001','parent draft',2::smallint,'focus','practice',ARRAY[' s ','a','s','t'],1);
+SELECT fingerprint FROM portal.preview_learning_draft('learning-staff','30000000-0000-4000-8000-000000000001',2) \gset
+SELECT :'old_fingerprint' <> :'fingerprint' AS fingerprint_changed \gset
+\if :fingerprint_changed
+\else
+\quit 1
+\endif
+DO $$ BEGIN
+ BEGIN PERFORM portal.publish_learning_draft('learning-staff','30000000-0000-4000-8000-000000000001',1,'40000000-0000-4000-8000-000000000002',repeat('0',64)); RAISE EXCEPTION 'stale sound preview published'; EXCEPTION WHEN serialization_failure THEN NULL; END;
+END $$;
+SELECT portal.publish_learning_draft('learning-staff','30000000-0000-4000-8000-000000000001',2,'40000000-0000-4000-8000-000000000001',:'fingerprint') AS published \gset
+SELECT portal.publish_learning_draft('learning-staff','30000000-0000-4000-8000-000000000001',2,'40000000-0000-4000-8000-000000000001',:'fingerprint') = :'published'::uuid AS same_publication \gset
 \if :same_publication
 \else
 \quit 1
 \endif
-SELECT portal.save_learning_draft('learning-staff','30000000-0000-4000-8000-000000000001','new private draft',NULL,NULL,NULL,1);
+SELECT portal.save_learning_draft('learning-staff','30000000-0000-4000-8000-000000000001','new private draft',NULL,NULL,NULL,ARRAY['new'],2);
 DO $$ BEGIN
+ IF (SELECT explored_sounds FROM portal.list_published_learning('parent-one','10000000-0000-4000-8000-000000000001','20000000-0000-4000-8000-000000000001')) <> ARRAY['s','a','t'] THEN RAISE EXCEPTION 'published sounds missing or changed'; END IF;
  IF (SELECT body FROM portal.list_published_learning('parent-one','10000000-0000-4000-8000-000000000001','20000000-0000-4000-8000-000000000001')) <> 'parent draft' THEN RAISE EXCEPTION 'published snapshot changed'; END IF;
  IF EXISTS (SELECT 1 FROM portal.list_published_learning('parent-two','10000000-0000-4000-8000-000000000002','20000000-0000-4000-8000-000000000001')) THEN RAISE EXCEPTION 'cross family publication leaked'; END IF;
 END $$;

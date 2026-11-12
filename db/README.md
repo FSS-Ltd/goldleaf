@@ -247,15 +247,15 @@ GRANT EXECUTE ON FUNCTION
   portal.update_session(text, uuid, text, text),
   portal.learning_workspace(text, uuid),
   portal.save_private_note(text, uuid, text, integer),
-  portal.save_learning_draft(text, uuid, text, smallint, text, text, integer),
+  portal.save_learning_draft(text, uuid, text, smallint, text, text, text[], integer),
   portal.preview_learning_draft(text, uuid, integer),
   portal.publish_learning_draft(text, uuid, integer, uuid, text),
   portal.list_published_learning(text, uuid, uuid)
 TO goldleaf_portal_runtime;
 ```
 
-Do not grant the internal `require_family_worker` or `learning_fingerprint` helper. Subjects come only from verified server identity; SQL rechecks membership and locks staff assignment for writes. A session begins with attendance unrecorded, independently of its lifecycle. The optional location is an actual admin-entered label, visible only to authorised family members and assigned staff. The server schedules using `site.sessionMinutes` and the existing `sessionBlocks`; no duration is inferred from archived mockups.
+Do not grant the internal `require_family_worker`, `normalise_explored_sounds` or `learning_fingerprint` helpers. Subjects come only from verified server identity; SQL rechecks membership and locks staff assignment for writes. A session begins with attendance unrecorded, independently of its lifecycle. The optional location is an actual admin-entered label, visible only to authorised family members and assigned staff. The server schedules using `site.sessionMinutes` and the existing `sessionBlocks`; no duration is inferred from archived mockups.
 
-A preview returns a SHA-256 fingerprint over the exact draft, version, session, child and family. Publishing locks and rechecks that context and the current authority. The fingerprint is a consistency check, not an authorization capability. Reuse the same operation UUID, version and fingerprint on retry; a successful replay returns the original publication. Publications are shared in the child's family archive, not addressed to a frozen list of individuals. Parents read only published snapshots, never the workspace or draft. Stale note and draft edits report a conflict and must be refreshed. PostgreSQL notifications carry only changed record IDs and are delivered on commit; consumers must re-read durable, authorised state on notification and reconnect. This migration does not provide a subscription transport or live UI, and has not been applied to development or production.
+A preview returns a SHA-256 fingerprint over the exact draft, explicitly explored sounds, version, session, child and family. Publishing locks and rechecks that context and the current authority. The fingerprint is a consistency check, not an authorization capability. Reuse the same operation UUID, version and fingerprint on retry; a successful replay returns the original publication. Publications are shared in the child's family archive, not addressed to a frozen list of individuals. Parents read only published snapshots, never the workspace or draft. Stale note and draft edits report a conflict and must be refreshed. PostgreSQL notifications carry only changed record IDs and are delivered on commit; consumers must re-read durable, authorised state on notification and reconnect. This migration does not provide a subscription transport or live UI, and has not been applied to development or production.
 
 Run `db/tests/learning-foundation.sql` and `db/tests/learning-concurrency.sh` only on a disposable PostgreSQL database. The tests use synthetic records and cover scoped access, privacy, preview consistency, replay, conflicting edits and assignment removal.

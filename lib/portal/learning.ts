@@ -28,7 +28,7 @@ export async function saveLearningDraft(input: unknown): Promise<number> {
   const { userId } = await requirePortalIdentity();
   const sql = portalDatabase();
   try {
-    return intResult.parse(await sql`SELECT portal.save_learning_draft(${userId},${value.sessionId},${value.body},${value.stage}::smallint,${value.focus},${value.practice},${value.expectedVersion}) AS result`)[0].result;
+    return intResult.parse(await sql`SELECT portal.save_learning_draft(${userId},${value.sessionId},${value.body},${value.stage}::smallint,${value.focus},${value.practice},${value.exploredSounds}::text[],${value.expectedVersion}) AS result`)[0].result;
   } catch (error) {
     throw translateLearningError(error);
   }

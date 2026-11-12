@@ -211,3 +211,5 @@ The session-location contract re-extracted three allowlisted files: 400 nodes an
 Learning schema readability update re-extracted its source: 400 nodes, 401 edges, 1 unresolved edges omitted.
 
 Typed learning DAL update re-extracted four allowlisted files: 400 nodes and 397 edges; 20 unresolved extractor edges omitted.
+
+Explicit explored-sounds update re-extracted three allowlisted files: 400 nodes and 397 edges; 12 unresolved extractor edges omitted.

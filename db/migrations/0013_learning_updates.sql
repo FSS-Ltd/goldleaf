@@ -13,6 +13,7 @@ CREATE TABLE portal.learning_drafts (
   stage smallint CHECK (stage BETWEEN 0 AND 4),
   focus text CHECK (length(focus)<=1000),
   practice text CHECK (length(practice)<=1000),
+  explored_sounds text[] NOT NULL DEFAULT '{}',
   version integer NOT NULL DEFAULT 1 CHECK (version>0),
   updated_at timestamptz NOT NULL DEFAULT clock_timestamp(),
   updated_by uuid NOT NULL REFERENCES portal.memberships(id)
@@ -29,6 +30,7 @@ CREATE TABLE portal.published_learning_updates (
   stage smallint CHECK (stage BETWEEN 0 AND 4),
   focus text,
   practice text,
+  explored_sounds text[] NOT NULL DEFAULT '{}',
   published_at timestamptz NOT NULL DEFAULT clock_timestamp(),
   published_by uuid NOT NULL REFERENCES portal.memberships(id),
   FOREIGN KEY (session_id,child_id,family_id) REFERENCES portal.sessions(id,child_id,family_id)
@@ -36,15 +38,29 @@ CREATE TABLE portal.published_learning_updates (
 CREATE INDEX published_learning_family_child ON portal.published_learning_updates(family_id,child_id,published_at,id);
 REVOKE ALL ON portal.session_private_notes,portal.learning_drafts,portal.published_learning_updates FROM PUBLIC;
 
+CREATE FUNCTION portal.normalise_explored_sounds(p_sounds text[]) RETURNS text[]
+LANGUAGE plpgsql IMMUTABLE SET search_path = pg_catalog, pg_temp AS $$
+DECLARE result text[];
+BEGIN
+  IF p_sounds IS NULL OR cardinality(p_sounds)>32 OR COALESCE(array_ndims(p_sounds),1)>1 OR EXISTS (
+    SELECT 1 FROM unnest(p_sounds) sound WHERE sound IS NULL OR length(btrim(sound,E' \t\n\r')) NOT BETWEEN 1 AND 40
+  ) THEN RAISE EXCEPTION 'invalid explored sounds' USING ERRCODE='22023'; END IF;
+  SELECT COALESCE(array_agg(label ORDER BY first_position),'{}'::text[]) INTO result FROM (
+    SELECT btrim(sound,E' \t\n\r') AS label,min(position) AS first_position FROM unnest(p_sounds) WITH ORDINALITY AS items(sound,position)
+    GROUP BY btrim(sound,E' \t\n\r')
+  ) AS labels;
+  RETURN result;
+END $$;
+
 CREATE FUNCTION portal.learning_workspace(p_subject text,p_session uuid)
-RETURNS TABLE(note text,note_version integer,draft text,draft_version integer,stage smallint,focus text,practice text)
+RETURNS TABLE(note text,note_version integer,draft text,draft_version integer,stage smallint,focus text,practice text,explored_sounds text[])
 LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
 DECLARE family uuid;
 BEGIN
   SELECT s.family_id INTO family FROM portal.sessions s WHERE s.id=p_session;
   IF family IS NULL THEN RAISE EXCEPTION 'not authorised' USING ERRCODE='42501'; END IF;
   PERFORM portal.require_family_worker(p_subject,family);
-  RETURN QUERY SELECT n.body,COALESCE(n.version,0),d.body,COALESCE(d.version,0),d.stage,d.focus,d.practice
+  RETURN QUERY SELECT n.body,COALESCE(n.version,0),d.body,COALESCE(d.version,0),d.stage,d.focus,d.practice,COALESCE(d.explored_sounds,'{}'::text[])
     FROM (SELECT 1) AS seed LEFT JOIN portal.session_private_notes n ON n.session_id=p_session
     LEFT JOIN portal.learning_drafts d ON d.session_id=p_session;
 END $$;
@@ -64,36 +80,37 @@ BEGIN
   PERFORM pg_notify('portal_changes',json_build_object('kind','session','id',p_session)::text);
   RETURN result;
 END $$;
-CREATE FUNCTION portal.save_learning_draft(p_subject text,p_session uuid,p_body text,p_stage smallint,p_focus text,p_practice text,p_expected integer) RETURNS integer
+CREATE FUNCTION portal.save_learning_draft(p_subject text,p_session uuid,p_body text,p_stage smallint,p_focus text,p_practice text,p_sounds text[],p_expected integer) RETURNS integer
 LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
-DECLARE family uuid; actor uuid; current_version integer; result integer;
+DECLARE family uuid; actor uuid; current_version integer; result integer; sounds text[];
 BEGIN
   SELECT s.family_id INTO family FROM portal.sessions s WHERE s.id=p_session;
   IF family IS NULL THEN RAISE EXCEPTION 'not authorised' USING ERRCODE='42501'; END IF;
   actor:=portal.require_family_worker(p_subject,family);
+  sounds:=portal.normalise_explored_sounds(p_sounds);
   IF p_body IS NULL OR length(btrim(p_body)) NOT BETWEEN 1 AND 10000 OR (p_stage IS NOT NULL AND p_stage NOT BETWEEN 0 AND 4) OR length(p_focus)>1000 OR length(p_practice)>1000 OR p_expected IS NULL OR p_expected<0 THEN RAISE EXCEPTION 'invalid draft' USING ERRCODE='22023'; END IF;
   PERFORM 1 FROM portal.sessions WHERE id=p_session FOR UPDATE;
   SELECT version INTO current_version FROM portal.learning_drafts WHERE session_id=p_session;
   IF COALESCE(current_version,0)<>p_expected THEN RAISE EXCEPTION 'draft changed' USING ERRCODE='40001'; END IF;
-  INSERT INTO portal.learning_drafts(session_id,body,stage,focus,practice,updated_by) VALUES(p_session,p_body,p_stage,p_focus,p_practice,actor)
-    ON CONFLICT(session_id) DO UPDATE SET body=EXCLUDED.body,stage=EXCLUDED.stage,focus=EXCLUDED.focus,practice=EXCLUDED.practice,version=portal.learning_drafts.version+1,updated_at=clock_timestamp(),updated_by=EXCLUDED.updated_by RETURNING version INTO result;
+  INSERT INTO portal.learning_drafts(session_id,body,stage,focus,practice,explored_sounds,updated_by) VALUES(p_session,p_body,p_stage,p_focus,p_practice,sounds,actor)
+    ON CONFLICT(session_id) DO UPDATE SET body=EXCLUDED.body,stage=EXCLUDED.stage,focus=EXCLUDED.focus,practice=EXCLUDED.practice,explored_sounds=EXCLUDED.explored_sounds,version=portal.learning_drafts.version+1,updated_at=clock_timestamp(),updated_by=EXCLUDED.updated_by RETURNING version INTO result;
   PERFORM pg_notify('portal_changes',json_build_object('kind','session','id',p_session)::text);
   RETURN result;
 END $$;
 -- This fingerprint is an optimistic comparison, never an authorization token.
-CREATE FUNCTION portal.learning_fingerprint(p_session uuid,p_child uuid,p_family uuid,p_version integer,p_body text,p_stage smallint,p_focus text,p_practice text) RETURNS text
+CREATE FUNCTION portal.learning_fingerprint(p_session uuid,p_child uuid,p_family uuid,p_version integer,p_body text,p_stage smallint,p_focus text,p_practice text,p_sounds text[]) RETURNS text
 LANGUAGE sql IMMUTABLE SET search_path = pg_catalog, pg_temp AS $$
-  SELECT encode(sha256(convert_to(jsonb_build_array(p_session,p_child,p_family,p_version,p_body,p_stage,p_focus,p_practice)::text,'UTF8')),'hex')
+  SELECT encode(sha256(convert_to(jsonb_build_array(p_session,p_child,p_family,p_version,p_body,p_stage,p_focus,p_practice,p_sounds)::text,'UTF8')),'hex')
 $$;
 CREATE FUNCTION portal.preview_learning_draft(p_subject text,p_session uuid,p_expected integer)
-RETURNS TABLE(body text,stage smallint,focus text,practice text,version integer,fingerprint text)
+RETURNS TABLE(body text,stage smallint,focus text,practice text,explored_sounds text[],version integer,fingerprint text)
 LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
 DECLARE family uuid;
 BEGIN
   SELECT s.family_id INTO family FROM portal.sessions s WHERE s.id=p_session;
   IF family IS NULL THEN RAISE EXCEPTION 'not authorised' USING ERRCODE='42501'; END IF;
   PERFORM portal.require_family_worker(p_subject,family);
-  RETURN QUERY SELECT d.body,d.stage,d.focus,d.practice,d.version,portal.learning_fingerprint(s.id,s.child_id,s.family_id,d.version,d.body,d.stage,d.focus,d.practice)
+  RETURN QUERY SELECT d.body,d.stage,d.focus,d.practice,d.explored_sounds,d.version,portal.learning_fingerprint(s.id,s.child_id,s.family_id,d.version,d.body,d.stage,d.focus,d.practice,d.explored_sounds)
     FROM portal.learning_drafts d JOIN portal.sessions s ON s.id=d.session_id WHERE d.session_id=p_session AND d.version=p_expected;
   IF NOT FOUND THEN RAISE EXCEPTION 'draft changed' USING ERRCODE='40001'; END IF;
 END $$;
@@ -115,19 +132,19 @@ BEGIN
   PERFORM 1 FROM portal.sessions WHERE id=p_session FOR UPDATE;
   SELECT * INTO draft_row FROM portal.learning_drafts WHERE session_id=p_session;
   IF NOT FOUND OR draft_row.version<>p_expected THEN RAISE EXCEPTION 'draft changed' USING ERRCODE='40001'; END IF;
-  IF p_fingerprint<>portal.learning_fingerprint(session_row.id,session_row.child_id,session_row.family_id,draft_row.version,draft_row.body,draft_row.stage,draft_row.focus,draft_row.practice) THEN RAISE EXCEPTION 'draft changed' USING ERRCODE='40001'; END IF;
-  INSERT INTO portal.published_learning_updates(operation_id,session_id,child_id,family_id,draft_version,preview_fingerprint,body,stage,focus,practice,published_by)
-    VALUES(p_operation,p_session,session_row.child_id,session_row.family_id,draft_row.version,p_fingerprint,draft_row.body,draft_row.stage,draft_row.focus,draft_row.practice,actor) RETURNING id INTO result;
+  IF p_fingerprint<>portal.learning_fingerprint(session_row.id,session_row.child_id,session_row.family_id,draft_row.version,draft_row.body,draft_row.stage,draft_row.focus,draft_row.practice,draft_row.explored_sounds) THEN RAISE EXCEPTION 'draft changed' USING ERRCODE='40001'; END IF;
+  INSERT INTO portal.published_learning_updates(operation_id,session_id,child_id,family_id,draft_version,preview_fingerprint,body,stage,focus,practice,explored_sounds,published_by)
+    VALUES(p_operation,p_session,session_row.child_id,session_row.family_id,draft_row.version,p_fingerprint,draft_row.body,draft_row.stage,draft_row.focus,draft_row.practice,draft_row.explored_sounds,actor) RETURNING id INTO result;
   PERFORM pg_notify('portal_changes',json_build_object('kind','learning','id',result)::text);
   RETURN result;
 END $$;
 CREATE FUNCTION portal.list_published_learning(p_subject text,p_family uuid,p_child uuid)
-RETURNS TABLE(id uuid,session_id uuid,child_id uuid,family_id uuid,body text,stage smallint,focus text,practice text,published_at timestamptz,published_by uuid)
+RETURNS TABLE(id uuid,session_id uuid,child_id uuid,family_id uuid,body text,stage smallint,focus text,practice text,explored_sounds text[],published_at timestamptz,published_by uuid)
 LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
 BEGIN
   IF NOT EXISTS (SELECT 1 FROM portal.read_family(p_subject,p_family)) THEN RAISE EXCEPTION 'not authorised' USING ERRCODE='42501'; END IF;
-  RETURN QUERY SELECT u.id,u.session_id,u.child_id,u.family_id,u.body,u.stage,u.focus,u.practice,u.published_at,u.published_by
+  RETURN QUERY SELECT u.id,u.session_id,u.child_id,u.family_id,u.body,u.stage,u.focus,u.practice,u.explored_sounds,u.published_at,u.published_by
     FROM portal.published_learning_updates u WHERE u.family_id=p_family AND u.child_id=p_child ORDER BY u.published_at DESC,u.id DESC;
 END $$;
-REVOKE ALL ON FUNCTION portal.learning_fingerprint(uuid,uuid,uuid,integer,text,smallint,text,text),portal.learning_workspace(text,uuid),portal.save_private_note(text,uuid,text,integer),portal.save_learning_draft(text,uuid,text,smallint,text,text,integer),portal.preview_learning_draft(text,uuid,integer),portal.publish_learning_draft(text,uuid,integer,uuid,text),portal.list_published_learning(text,uuid,uuid) FROM PUBLIC;
+REVOKE ALL ON FUNCTION portal.normalise_explored_sounds(text[]),portal.learning_fingerprint(uuid,uuid,uuid,integer,text,smallint,text,text,text[]),portal.learning_workspace(text,uuid),portal.save_private_note(text,uuid,text,integer),portal.save_learning_draft(text,uuid,text,smallint,text,text,text[],integer),portal.preview_learning_draft(text,uuid,integer),portal.publish_learning_draft(text,uuid,integer,uuid,text),portal.list_published_learning(text,uuid,uuid) FROM PUBLIC;
 COMMIT;

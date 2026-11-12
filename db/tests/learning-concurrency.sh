@@ -20,7 +20,7 @@ INSERT INTO portal.memberships(subject,role) VALUES ('learning-race-admin','admi
 SELECT portal.create_family('learning-race-admin','Race','51000000-0000-4000-8000-000000000001');
 SELECT portal.create_child('learning-race-admin','51000000-0000-4000-8000-000000000001','Child','52000000-0000-4000-8000-000000000001');
 SELECT portal.schedule_child_session('learning-race-admin','52000000-0000-4000-8000-000000000001','2026-12-01 10:00+00',120,'53000000-0000-4000-8000-000000000001',NULL);
-SELECT portal.save_learning_draft('learning-race-admin','53000000-0000-4000-8000-000000000001','Update',NULL,NULL,NULL,0);
+SELECT portal.save_learning_draft('learning-race-admin','53000000-0000-4000-8000-000000000001','Update',NULL,NULL,NULL,ARRAY[]::text[],0);
 
 SQL
 fingerprint=$(psql_test -c "SELECT fingerprint FROM portal.preview_learning_draft('learning-race-admin','53000000-0000-4000-8000-000000000001',1)")

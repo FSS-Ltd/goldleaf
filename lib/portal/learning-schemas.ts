@@ -37,12 +37,17 @@ export const noteInput = z.object({
   body: z.string().max(10000),
   expectedVersion: version,
 }).strict();
+export const exploredSounds = z.array(z.string().trim().min(1).max(40)).max(32)
+  .transform((sounds) => [...new Set(sounds)]);
+const exploredSoundsRow = z.array(z.string().min(1).max(40).refine((sound) => sound === sound.trim()))
+  .max(32).refine((sounds) => new Set(sounds).size === sounds.length);
 export const draftInput = z.object({
   sessionId: uuid,
   body: z.string().trim().min(1).max(10000),
   stage: z.number().int().min(0).max(4).nullable(),
   focus: z.string().max(1000).nullable(),
   practice: z.string().max(1000).nullable(),
+  exploredSounds: exploredSounds.default([]),
   expectedVersion: version,
 }).strict();
 export const publishInput = z.object({
@@ -56,11 +61,13 @@ export const workspaceRow = z.object({
   note_version: version,
   draft: z.string().nullable(),
   draft_version: version,
+  explored_sounds: exploredSoundsRow,
   stage: z.number().int().min(0).max(4).nullable(),
   focus: z.string().nullable(),
   practice: z.string().nullable(),
 });
 export const previewRow = z.object({
+  explored_sounds: exploredSoundsRow,
   body: z.string(),
   stage: z.number().int().min(0).max(4).nullable(),
   focus: z.string().nullable(),
@@ -69,6 +76,7 @@ export const previewRow = z.object({
   fingerprint: z.string().regex(/^[0-9a-f]{64}$/),
 });
 export const publishedRow = z.object({
+  explored_sounds: exploredSoundsRow,
   id: uuid,
   session_id: uuid,
   child_id: uuid,

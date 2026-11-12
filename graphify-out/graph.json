@@ -1334,6 +1334,15 @@
       "source_location": "L1",
       "community": 5,
       "norm_label": "invoice-pricing.test.ts"
+    },
+    {
+      "id": "portal_staff_onboarding",
+      "label": "Staff onboarding database foundation",
+      "file_type": "code",
+      "source_file": "db/migrations/0004_staff_onboarding.sql",
+      "source_location": "L1",
+      "community": 15,
+      "norm_label": "staff onboarding database foundation"
     }
   ],
   "links": [
@@ -2493,6 +2502,18 @@
       "confidence_score": 1.0,
       "source_file": "lib/portal/invoice-pricing.ts",
       "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_staff_onboarding",
+      "target": "portal_onboarding_db",
+      "_src": "portal_staff_onboarding",
+      "_tgt": "portal_onboarding_db",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "db/migrations/0004_staff_onboarding.sql",
+      "source_location": "L1",
       "weight": 1.0
     }
   ],

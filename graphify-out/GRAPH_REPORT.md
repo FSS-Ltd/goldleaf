@@ -135,3 +135,9 @@ An allowlisted structural refresh checked the shared sound chip component and it
 The onboarding review added family-lock ordering and explicit temporary-schema precedence. A repeat scoped update still reports no supported files; the existing onboarding node remains the correct source reference. The feature tree links the added upgrade and security regression checks.
 
 The portal node is partial, reflecting its existing onboarding database foundation. The source-backed PORTAL → PORTAL-ONBOARDING edge follows `FEATURE_TREE.md`; the current graph contains 132 nodes and 93 directed edges. SQL remains outside automated extraction.
+
+## Staff onboarding update
+
+`portal_staff_onboarding` links `db/migrations/0004_staff_onboarding.sql` to `portal_onboarding_db`. Graphify does not extract SQL: scoped `graphify update db/migrations` found no supported code files, so this source-backed node and edge were added manually. The structural summary above describes the previous extraction.
+
+Staff migration holds a parent invitation writer lock across digest backfill and trigger installation; `db/tests/staff-migration-concurrency.sh` exercises the upgrade race on PostgreSQL 17.

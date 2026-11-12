@@ -39,3 +39,23 @@ export async function setSessionLocation(input: unknown): Promise<void> {
   const sql = portalDatabase();
   await sql`SELECT portal.set_session_location(${userId},${value.sessionId},${value.locationLabel})`;
 }
+
+const scopedSessionRow = sessionRow.extend({
+  child_name: z.string().min(1).max(120),
+  family_name: z.string().nullable(),
+});
+export type ScopedSession = z.infer<typeof scopedSessionRow>;
+
+export async function readScopedSession(sessionId: unknown, role: "parent" | "staff" | "admin"): Promise<ScopedSession | null> {
+  const session = uuid.parse(sessionId);
+  const { userId } = await requirePortalIdentity();
+  const sql = portalDatabase();
+  const rows = z.array(scopedSessionRow).max(1).parse(await sql`SELECT * FROM portal.read_scoped_session(${userId},${session},${role})`);
+  return rows[0] ?? null;
+}
+
+export async function listStaffSessions(): Promise<ScopedSession[]> {
+  const { userId } = await requirePortalIdentity();
+  const sql = portalDatabase();
+  return z.array(scopedSessionRow).parse(await sql`SELECT * FROM portal.list_staff_sessions(${userId})`);
+}

@@ -861,14 +861,14 @@
       "id": "portal_concepts"
     },
     {
-      "label": "PORTAL: partial authenticated routes, billing and learning foundation",
+      "label": "PORTAL: partial authenticated family, staff, billing, learning and messaging UI",
       "file_type": "document",
       "source_file": "FEATURE_TREE.md",
       "source_location": "L35",
       "status": "partial",
-      "scope": "Authenticated parent, staff and admin routes, invoice UI and learning data foundation are present; session and learning UI, messages and production deployment remain pending.",
+      "scope": "Custom authentication, role-scoped parent/admin/staff, billing, learning and messaging UI and event transport are present; 0017/0018 deployment, populated workflow validation and production portal activation remain pending.",
       "community": 2,
-      "norm_label": "portal partial authenticated routes billing learning foundation",
+      "norm_label": "portal partial authenticated family staff billing learning messaging ui",
       "id": "portal_planned"
     },
     {
@@ -1735,7 +1735,7 @@
       "label": "ParentHome()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/page.tsx",
-      "source_location": "L6",
+      "source_location": "L13",
       "id": "page_parenthome",
       "community": 2,
       "norm_label": "parenthome()"
@@ -2048,22 +2048,6 @@
       "source_file": "app/(portal)/(provider)/sso-callback/page.tsx",
       "source_location": "L13",
       "norm_label": "ssocallbackpage()"
-    },
-    {
-      "id": "components_portal_auth_accountmenu_tsx",
-      "label": "AccountMenu.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountMenu.tsx",
-      "source_location": "L1",
-      "norm_label": "accountmenu.tsx"
-    },
-    {
-      "id": "accountmenu_accountmenu",
-      "label": "AccountMenu()",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountMenu.tsx",
-      "source_location": "L7",
-      "norm_label": "accountmenu()"
     },
     {
       "id": "components_portal_auth_googlebutton_tsx",
@@ -3327,7 +3311,7 @@
       "label": "StaffToday()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L7"
+      "source_location": "L10"
     },
     {
       "id": "lib_portal_children_ts",
@@ -4191,20 +4175,6 @@
       "source_location": "L5"
     },
     {
-      "id": "components_portal_portalshell_tsx",
-      "label": "PortalShell.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "portalshell_portalshell",
-      "label": "PortalShell()",
-      "file_type": "code",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L9"
-    },
-    {
       "id": "components_portal_invoices_billingsettingsform_tsx",
       "label": "BillingSettingsForm.tsx",
       "file_type": "code",
@@ -4256,20 +4226,6 @@
       "norm_label": "portal scoped event notifications"
     },
     {
-      "id": "app_api_portal_events_route_ts",
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/portal/events/route.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "route_get",
-      "label": "GET()",
-      "file_type": "code",
-      "source_file": "app/api/portal/events/route.ts",
-      "source_location": "L5"
-    },
-    {
       "id": "lib_events_protocol_test_ts",
       "label": "events-protocol.test.ts",
       "file_type": "code",
@@ -4289,20 +4245,6 @@
       "file_type": "code",
       "source_file": "lib/events-session.test.ts",
       "source_location": "L7"
-    },
-    {
-      "id": "lib_events_stream_test_ts",
-      "label": "events-stream.test.ts",
-      "file_type": "code",
-      "source_file": "lib/events-stream.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "events_stream_test_fakeclient",
-      "label": "fakeClient()",
-      "file_type": "code",
-      "source_file": "lib/events-stream.test.ts",
-      "source_location": "L5"
     },
     {
       "id": "lib_messages_schemas_test_ts",
@@ -4326,20 +4268,6 @@
       "source_location": "L8"
     },
     {
-      "id": "lib_portal_events_server_ts",
-      "label": "events-server.ts",
-      "file_type": "code",
-      "source_file": "lib/portal/events-server.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "events_server_openportaleventstream",
-      "label": "openPortalEventStream()",
-      "file_type": "code",
-      "source_file": "lib/portal/events-server.ts",
-      "source_location": "L5"
-    },
-    {
       "id": "lib_portal_events_session_ts",
       "label": "events-session.ts",
       "file_type": "code",
@@ -4352,20 +4280,6 @@
       "file_type": "code",
       "source_file": "lib/portal/events-session.ts",
       "source_location": "L7"
-    },
-    {
-      "id": "lib_portal_events_stream_ts",
-      "label": "events-stream.ts",
-      "file_type": "code",
-      "source_file": "lib/portal/events-stream.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "events_stream_openeventstream",
-      "label": "openEventStream()",
-      "file_type": "code",
-      "source_file": "lib/portal/events-stream.ts",
-      "source_location": "L32"
     },
     {
       "id": "lib_portal_messages_schemas_ts",
@@ -4431,27 +4345,6 @@
       "source_location": "L83"
     },
     {
-      "id": "tests_e2e_portal_spec_ts",
-      "label": "portal.spec.ts",
-      "file_type": "code",
-      "source_file": "tests/e2e/portal.spec.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "components_portal_events_portalliveupdates_tsx",
-      "label": "PortalLiveUpdates.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "portalliveupdates_portalliveupdates",
-      "label": "PortalLiveUpdates()",
-      "file_type": "code",
-      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
-      "source_location": "L14"
-    },
-    {
       "id": "lib_events_reader_test_ts",
       "label": "events-reader.test.ts",
       "file_type": "code",
@@ -4485,6 +4378,1163 @@
       "file_type": "code",
       "source_file": "lib/portal/events-reader.ts",
       "source_location": "L15"
+    },
+    {
+      "id": "app_portal_provider_admin_children_actions_ts",
+      "label": "actions.ts",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "actions_registerchild",
+      "label": "registerChild()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "actions_createsession",
+      "label": "createSession()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L50"
+    },
+    {
+      "id": "app_portal_provider_admin_children_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/children/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_portal_provider_parent_learning_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/learning/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_portal_provider_parent_sessions_id_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/sessions/[id]/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_sessiondetail",
+      "label": "SessionDetail()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/sessions/[id]/page.tsx",
+      "source_location": "L14"
+    },
+    {
+      "id": "app_portal_provider_parent_sessions_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_parentsessions",
+      "label": "ParentSessions()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
+      "source_location": "L14"
+    },
+    {
+      "id": "page_sessionspage",
+      "label": "SessionsPage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
+      "source_location": "L84"
+    },
+    {
+      "id": "page_formatuksession",
+      "label": "formatUkSession()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L59"
+    },
+    {
+      "id": "app_portal_provider_staff_sessions_id_actions_ts",
+      "label": "actions.ts",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_portal_provider_staff_sessions_id_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_portal_provider_staff_sessions_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/sessions/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_learning_adminlearningforms_tsx",
+      "label": "AdminLearningForms.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/learning/AdminLearningForms.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "adminlearningforms_feedback",
+      "label": "Feedback()",
+      "file_type": "code",
+      "source_file": "components/portal/learning/AdminLearningForms.tsx",
+      "source_location": "L19"
+    },
+    {
+      "id": "adminlearningforms_registerchildform",
+      "label": "RegisterChildForm()",
+      "file_type": "code",
+      "source_file": "components/portal/learning/AdminLearningForms.tsx",
+      "source_location": "L41"
+    },
+    {
+      "id": "adminlearningforms_schedulesessionform",
+      "label": "ScheduleSessionForm()",
+      "file_type": "code",
+      "source_file": "components/portal/learning/AdminLearningForms.tsx",
+      "source_location": "L67"
+    },
+    {
+      "id": "components_portal_learning_childselector_tsx",
+      "label": "ChildSelector.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/learning/ChildSelector.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_learning_privatenoteeditor_tsx",
+      "label": "PrivateNoteEditor.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/learning/PrivateNoteEditor.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "privatenoteeditor_save",
+      "label": "save()",
+      "file_type": "code",
+      "source_file": "components/portal/learning/PrivateNoteEditor.tsx",
+      "source_location": "L25"
+    },
+    {
+      "id": "components_portal_learning_sessioncontrols_tsx",
+      "label": "SessionControls.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/learning/SessionControls.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "sessioncontrols_update",
+      "label": "update()",
+      "file_type": "code",
+      "source_file": "components/portal/learning/SessionControls.tsx",
+      "source_location": "L18"
+    },
+    {
+      "id": "components_portal_learning_workspaceeditor_tsx",
+      "label": "WorkspaceEditor.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/learning/WorkspaceEditor.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "workspaceeditor_textvalue",
+      "label": "textValue()",
+      "file_type": "code",
+      "source_file": "components/portal/learning/WorkspaceEditor.tsx",
+      "source_location": "L15"
+    },
+    {
+      "id": "workspaceeditor_workspaceeditor",
+      "label": "WorkspaceEditor()",
+      "file_type": "code",
+      "source_file": "components/portal/learning/WorkspaceEditor.tsx",
+      "source_location": "L17"
+    },
+    {
+      "id": "lib_action_actor_test_ts",
+      "label": "action-actor.test.ts",
+      "file_type": "code",
+      "source_file": "lib/action-actor.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_portal_action_actor_state_ts",
+      "label": "action-actor-state.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/action-actor-state.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "action_actor_state_matchesactionactor",
+      "label": "matchesActionActor()",
+      "file_type": "code",
+      "source_file": "lib/portal/action-actor-state.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "lib_portal_action_actor_ts",
+      "label": "action-actor.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/action-actor.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "action_actor_requireactionactor",
+      "label": "requireActionActor()",
+      "file_type": "code",
+      "source_file": "lib/portal/action-actor.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "lib_portal_parent_children_ts",
+      "label": "parent-children.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/parent-children.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "parent_children_parentchildren",
+      "label": "parentChildren()",
+      "file_type": "code",
+      "source_file": "lib/portal/parent-children.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "sessions_readscopedsession",
+      "label": "readScopedSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L49"
+    },
+    {
+      "id": "sessions_liststaffsessions",
+      "label": "listStaffSessions()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L57"
+    },
+    {
+      "id": "lib_portal_uk_time_ts",
+      "label": "uk-time.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "uk_time_partsat",
+      "label": "partsAt()",
+      "file_type": "code",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "uk_time_uklocaltoiso",
+      "label": "ukLocalToIso()",
+      "file_type": "code",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L21"
+    },
+    {
+      "id": "uk_time_formatuksession",
+      "label": "formatUkSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L47"
+    },
+    {
+      "id": "uk_time_currentuktime",
+      "label": "currentUkTime()",
+      "file_type": "code",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L71"
+    },
+    {
+      "id": "lib_recorded_sounds_test_ts",
+      "label": "recorded-sounds.test.ts",
+      "file_type": "code",
+      "source_file": "lib/recorded-sounds.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_uk_time_test_ts",
+      "label": "uk-time.test.ts",
+      "file_type": "code",
+      "source_file": "lib/uk-time.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_session_ui_sql",
+      "label": "Scoped session and parent reads with publication operation binding",
+      "source_file": "db/migrations/0014_session_ui_access.sql",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "components_portal_learning_parentupdatefields_tsx",
+      "label": "ParentUpdateFields.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/learning/ParentUpdateFields.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "parentupdatefields_parentupdatefields",
+      "label": "ParentUpdateFields()",
+      "file_type": "code",
+      "source_file": "components/portal/learning/ParentUpdateFields.tsx",
+      "source_location": "L13"
+    },
+    {
+      "id": "components_portal_learning_parentupdatepreview_tsx",
+      "label": "ParentUpdatePreview.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/learning/ParentUpdatePreview.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "actions_text",
+      "label": "text()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "app_portal_provider_admin_sessions_id_actions_ts",
+      "label": "actions.ts",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/sessions/[id]/actions.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "admin_actions_updatesessionaction",
+      "label": "updateSessionAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/sessions/[id]/actions.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "admin_actions_savenoteaction",
+      "label": "saveNoteAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/sessions/[id]/actions.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "admin_actions_savedraftaction",
+      "label": "saveDraftAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/sessions/[id]/actions.ts",
+      "source_location": "L15"
+    },
+    {
+      "id": "admin_actions_previewdraftaction",
+      "label": "previewDraftAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/sessions/[id]/actions.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "admin_actions_publishdraftaction",
+      "label": "publishDraftAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/sessions/[id]/actions.ts",
+      "source_location": "L21"
+    },
+    {
+      "id": "app_portal_provider_admin_sessions_id_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/sessions/[id]/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "staff_actions_updatesessionaction",
+      "label": "updateSessionAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "staff_actions_savenoteaction",
+      "label": "saveNoteAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "staff_actions_savedraftaction",
+      "label": "saveDraftAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L15"
+    },
+    {
+      "id": "staff_actions_previewdraftaction",
+      "label": "previewDraftAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "staff_actions_publishdraftaction",
+      "label": "publishDraftAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L21"
+    },
+    {
+      "id": "components_portal_learning_admininputfields_tsx",
+      "label": "AdminInputFields.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/learning/AdminInputFields.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "adminlearningforms_actorfields",
+      "label": "ActorFields()",
+      "file_type": "code",
+      "source_file": "components/portal/learning/AdminLearningForms.tsx",
+      "source_location": "L26"
+    },
+    {
+      "id": "components_portal_learning_sessionworkspace_tsx",
+      "label": "SessionWorkspace.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/learning/SessionWorkspace.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_admin_form_state_test_ts",
+      "label": "admin-form-state.test.ts",
+      "file_type": "code",
+      "source_file": "lib/admin-form-state.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_portal_admin_form_state_ts",
+      "label": "admin-form-state.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/admin-form-state.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "admin_form_state_adminformdefaults",
+      "label": "adminFormDefaults()",
+      "file_type": "code",
+      "source_file": "lib/portal/admin-form-state.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "learning_listparentlatestlearning",
+      "label": "listParentLatestLearning()",
+      "file_type": "code",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L65"
+    },
+    {
+      "id": "lib_portal_session_status_ts",
+      "label": "session-status.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/session-status.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "session_status_sessionstatuslabel",
+      "label": "sessionStatusLabel()",
+      "file_type": "code",
+      "source_file": "lib/portal/session-status.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "lib_portal_workspace_action_types_ts",
+      "label": "workspace-action-types.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/workspace-action-types.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_portal_workspace_actions_ts",
+      "label": "workspace-actions.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "workspace_actions_message",
+      "label": "message()",
+      "file_type": "code",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "workspace_actions_refresh",
+      "label": "refresh()",
+      "file_type": "code",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L21"
+    },
+    {
+      "id": "workspace_actions_updatesessionfor",
+      "label": "updateSessionFor()",
+      "file_type": "code",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L32"
+    },
+    {
+      "id": "workspace_actions_savenotefor",
+      "label": "saveNoteFor()",
+      "file_type": "code",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L54"
+    },
+    {
+      "id": "workspace_actions_savedraftfor",
+      "label": "saveDraftFor()",
+      "file_type": "code",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L67"
+    },
+    {
+      "id": "workspace_actions_previewdraftfor",
+      "label": "previewDraftFor()",
+      "file_type": "code",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L80"
+    },
+    {
+      "id": "workspace_actions_publishdraftfor",
+      "label": "publishDraftFor()",
+      "file_type": "code",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L93"
+    },
+    {
+      "id": "lib_session_status_test_ts",
+      "label": "session-status.test.ts",
+      "file_type": "code",
+      "source_file": "lib/session-status.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_learning_bind_trigger",
+      "label": "Publication operation binding trigger",
+      "source_file": "db/migrations/0014_session_ui_access.sql",
+      "source_location": "L18",
+      "file_type": "sql"
+    },
+    {
+      "id": "portal_learning_migration_overlap_test",
+      "label": "Legacy publication migration overlap regression",
+      "source_file": "db/tests/session-ui-migration-concurrency.sh",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "portal_message_views_sql",
+      "label": "Role-scoped messaging views",
+      "file_type": "sql",
+      "source_file": "db/migrations/0017_message_views.sql",
+      "source_location": "L1",
+      "norm_label": "role-scoped messaging views"
+    },
+    {
+      "id": "portal_invalidation_sql",
+      "label": "Role-fenced portal invalidation",
+      "file_type": "sql",
+      "source_file": "db/migrations/0018_portal_invalidation.sql",
+      "source_location": "L1",
+      "norm_label": "role-fenced portal invalidation"
+    },
+    {
+      "id": "app_portal_provider_admin_messages_actions_ts",
+      "label": "actions.ts",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "actions_sendforrole",
+      "label": "sendForRole()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "actions_markforrole",
+      "label": "markForRole()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L27"
+    },
+    {
+      "id": "actions_sendparentmessage",
+      "label": "sendParentMessage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L40"
+    },
+    {
+      "id": "actions_sendstaffmessage",
+      "label": "sendStaffMessage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L43"
+    },
+    {
+      "id": "actions_sendadminmessage",
+      "label": "sendAdminMessage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L46"
+    },
+    {
+      "id": "actions_markparentmessages",
+      "label": "markParentMessages()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L49"
+    },
+    {
+      "id": "actions_markstaffmessages",
+      "label": "markStaffMessages()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L52"
+    },
+    {
+      "id": "actions_markadminmessages",
+      "label": "markAdminMessages()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L55"
+    },
+    {
+      "id": "actions_requestchangeaction",
+      "label": "requestChangeAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L58"
+    },
+    {
+      "id": "actions_resolverequestaction",
+      "label": "resolveRequestAction()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L86"
+    },
+    {
+      "id": "app_portal_provider_admin_messages_error_tsx",
+      "label": "error.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/error.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "error_errorpage_6c00e81c94",
+      "label": "ErrorPage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/error.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "app_portal_provider_admin_messages_layout_tsx",
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/layout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "layout_layout_4d09a44101",
+      "label": "Layout()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/layout.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "app_portal_provider_admin_messages_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_data_f8e971b5b3",
+      "label": "Data()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/page.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "page_page_f8e971b5b3",
+      "label": "Page()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/messages/page.tsx",
+      "source_location": "L11"
+    },
+    {
+      "id": "app_portal_provider_parent_messages_error_tsx",
+      "label": "error.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/messages/error.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "error_errorpage_db786e0b61",
+      "label": "ErrorPage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/messages/error.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "app_portal_provider_parent_messages_layout_tsx",
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/messages/layout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "layout_layout_84e1c36fd5",
+      "label": "Layout()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/messages/layout.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "app_portal_provider_parent_messages_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/messages/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_data_ff9bbc860b",
+      "label": "Data()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/messages/page.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "page_page_ff9bbc860b",
+      "label": "Page()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/parent/messages/page.tsx",
+      "source_location": "L11"
+    },
+    {
+      "id": "app_portal_provider_staff_messages_error_tsx",
+      "label": "error.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/messages/error.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "error_errorpage_e06bfd0ab3",
+      "label": "ErrorPage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/messages/error.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "app_portal_provider_staff_messages_layout_tsx",
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/messages/layout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "layout_layout_7ef5cb81d6",
+      "label": "Layout()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/messages/layout.tsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "app_portal_provider_staff_messages_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/messages/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_data_77f7a60717",
+      "label": "Data()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/messages/page.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "page_page_77f7a60717",
+      "label": "Page()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/messages/page.tsx",
+      "source_location": "L11"
+    },
+    {
+      "id": "app_api_portal_events_route_ts",
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/portal/events/route.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "route_get",
+      "label": "GET()",
+      "file_type": "code",
+      "source_file": "app/api/portal/events/route.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "components_portal_portalshell_tsx",
+      "label": "PortalShell.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "portalshell_portalshell",
+      "label": "PortalShell()",
+      "file_type": "code",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L29"
+    },
+    {
+      "id": "components_portal_auth_accountmenu_tsx",
+      "label": "AccountMenu.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountMenu.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_events_portalliveupdates_tsx",
+      "label": "PortalLiveUpdates.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "portalliveupdates_portalliveupdates",
+      "label": "PortalLiveUpdates()",
+      "file_type": "code",
+      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
+      "source_location": "L14"
+    },
+    {
+      "id": "components_portal_messages_actorscope_tsx",
+      "label": "ActorScope.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/ActorScope.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "actorscope_actorscope",
+      "label": "ActorScope()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/ActorScope.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "components_portal_messages_adminrequests_tsx",
+      "label": "AdminRequests.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/AdminRequests.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "adminrequests_current",
+      "label": "current()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/AdminRequests.tsx",
+      "source_location": "L43"
+    },
+    {
+      "id": "adminrequests_submit",
+      "label": "submit()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/AdminRequests.tsx",
+      "source_location": "L49"
+    },
+    {
+      "id": "components_portal_messages_conversation_tsx",
+      "label": "Conversation.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/Conversation.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "conversation_conversation",
+      "label": "Conversation()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/Conversation.tsx",
+      "source_location": "L14"
+    },
+    {
+      "id": "components_portal_messages_draftboundary_tsx",
+      "label": "DraftBoundary.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/DraftBoundary.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "draftboundary_draftboundary",
+      "label": "DraftBoundary()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/DraftBoundary.tsx",
+      "source_location": "L7"
+    },
+    {
+      "id": "components_portal_messages_draftprovider_tsx",
+      "label": "DraftProvider.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/DraftProvider.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "draftprovider_draftprovider",
+      "label": "DraftProvider()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/DraftProvider.tsx",
+      "source_location": "L12"
+    },
+    {
+      "id": "draftprovider_usemessagedrafts",
+      "label": "useMessageDrafts()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/DraftProvider.tsx",
+      "source_location": "L20"
+    },
+    {
+      "id": "components_portal_messages_messagecomposer_tsx",
+      "label": "MessageComposer.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/MessageComposer.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "messagecomposer_current",
+      "label": "current()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/MessageComposer.tsx",
+      "source_location": "L43"
+    },
+    {
+      "id": "messagecomposer_send",
+      "label": "send()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/MessageComposer.tsx",
+      "source_location": "L49"
+    },
+    {
+      "id": "components_portal_messages_messageerror_tsx",
+      "label": "MessageError.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/MessageError.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "messageerror_messageerror",
+      "label": "MessageError()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/MessageError.tsx",
+      "source_location": "L2"
+    },
+    {
+      "id": "components_portal_messages_messageworkspace_tsx",
+      "label": "MessageWorkspace.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/MessageWorkspace.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_messages_parentrequests_tsx",
+      "label": "ParentRequests.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/messages/ParentRequests.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "parentrequests_formatuksession",
+      "label": "formatUkSession()",
+      "file_type": "code",
+      "source_file": "components/portal/messages/ParentRequests.tsx",
+      "source_location": "L110"
+    },
+    {
+      "id": "lib_events_stream_test_ts",
+      "label": "events-stream.test.ts",
+      "file_type": "code",
+      "source_file": "lib/events-stream.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "events_stream_test_fakeclient",
+      "label": "fakeClient()",
+      "file_type": "code",
+      "source_file": "lib/events-stream.test.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "lib_message_display_test_ts",
+      "label": "message-display.test.ts",
+      "file_type": "code",
+      "source_file": "lib/message-display.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_message_draft_state_test_ts",
+      "label": "message-draft-state.test.ts",
+      "file_type": "code",
+      "source_file": "lib/message-draft-state.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_portal_events_server_ts",
+      "label": "events-server.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/events-server.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "events_server_openportaleventstream",
+      "label": "openPortalEventStream()",
+      "file_type": "code",
+      "source_file": "lib/portal/events-server.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "lib_portal_events_stream_ts",
+      "label": "events-stream.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/events-stream.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "events_stream_openeventstream",
+      "label": "openEventStream()",
+      "file_type": "code",
+      "source_file": "lib/portal/events-stream.ts",
+      "source_location": "L37"
+    },
+    {
+      "id": "lib_portal_message_display_ts",
+      "label": "message-display.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/message-display.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "message_display_displaymessages",
+      "label": "displayMessages()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-display.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "lib_portal_message_draft_state_ts",
+      "label": "message-draft-state.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/message-draft-state.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "message_draft_state_messagedraftreducer",
+      "label": "messageDraftReducer()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-draft-state.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "message_draft_state_messagedraftkey",
+      "label": "messageDraftKey()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-draft-state.ts",
+      "source_location": "L26"
+    },
+    {
+      "id": "lib_portal_message_views_ts",
+      "label": "message-views.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "message_views_lookupnames",
+      "label": "lookupNames()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L63"
+    },
+    {
+      "id": "message_views_listmessagefamilies",
+      "label": "listMessageFamilies()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L88"
+    },
+    {
+      "id": "message_views_listmessagesessions",
+      "label": "listMessageSessions()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L99"
+    },
+    {
+      "id": "message_views_listmessagerequestcontexts",
+      "label": "listMessageRequestContexts()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L112"
+    },
+    {
+      "id": "message_views_listmessageauthors",
+      "label": "listMessageAuthors()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L132"
+    },
+    {
+      "id": "message_views_readmessagethread",
+      "label": "readMessageThread()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L154"
+    },
+    {
+      "id": "message_views_sendmessageasrole",
+      "label": "sendMessageAsRole()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L167"
+    },
+    {
+      "id": "message_views_markmessagesasrole",
+      "label": "markMessagesAsRole()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L181"
+    },
+    {
+      "id": "message_views_resolverequestchecked",
+      "label": "resolveRequestChecked()",
+      "file_type": "code",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L191"
+    },
+    {
+      "id": "tests_e2e_portal_spec_ts",
+      "label": "portal.spec.ts",
+      "file_type": "code",
+      "source_file": "tests/e2e/portal.spec.ts",
+      "source_location": "L1"
     },
     {
       "id": "portal_invoice_ui_db",
@@ -6169,18 +7219,6 @@
       "_tgt": "invitation_delivery_listfamilyinvitations",
       "source": "page_familydetail",
       "target": "invitation_delivery_listfamilyinvitations"
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "app/(portal)/(provider)/parent/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "page_parenthome",
-      "_tgt": "require_role_requirerole",
-      "source": "page_parenthome",
-      "target": "require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -8811,18 +9849,6 @@
       "confidence_score": 1.0
     },
     {
-      "source": "components_portal_auth_accountmenu_tsx",
-      "target": "accountmenu_accountmenu",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/auth/AccountMenu.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "components_portal_auth_accountmenu_tsx",
-      "_tgt": "accountmenu_accountmenu",
-      "confidence_score": 1.0
-    },
-    {
       "source": "components_portal_staffforms_tsx",
       "target": "staffforms_feedback",
       "relation": "contains",
@@ -8883,30 +9909,6 @@
       "confidence_score": 1.0
     },
     {
-      "source": "app_portal_provider_parent_page_tsx",
-      "target": "page_parenthome",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/parent/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_src": "app_portal_provider_parent_page_tsx",
-      "_tgt": "page_parenthome",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "app_portal_provider_staff_page_tsx",
-      "target": "page_stafftoday",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "app_portal_provider_staff_page_tsx",
-      "_tgt": "page_stafftoday",
-      "confidence_score": 1.0
-    },
-    {
       "source": "actions_acceptportalinvitation",
       "target": "invitation_cookie_invitationdestination",
       "relation": "calls",
@@ -8917,18 +9919,6 @@
       "weight": 1.0,
       "_src": "actions_acceptportalinvitation",
       "_tgt": "invitation_cookie_invitationdestination"
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "components/portal/auth/AccountMenu.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "_src": "accountmenu_accountmenu",
-      "_tgt": "role_links_portalrolelinks",
-      "source": "accountmenu_accountmenu",
-      "target": "role_links_portalrolelinks",
-      "confidence_score": 0.5
     },
     {
       "source": "lib_portal_learning_errors_ts",
@@ -9096,138 +10086,6 @@
       "weight": 1.0,
       "_src": "lib_portal_children_ts",
       "_tgt": "children_renamechild",
-      "confidence_score": 1
-    },
-    {
-      "source": "lib_portal_sessions_ts",
-      "target": "sessions_schedulesession",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "sessions_schedulesession",
-      "confidence_score": 1
-    },
-    {
-      "source": "lib_portal_sessions_ts",
-      "target": "sessions_listsessions",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L16",
-      "weight": 1.0,
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "sessions_listsessions",
-      "confidence_score": 1
-    },
-    {
-      "source": "lib_portal_sessions_ts",
-      "target": "sessions_changesession",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L22",
-      "weight": 1.0,
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "sessions_changesession",
-      "confidence_score": 1
-    },
-    {
-      "source": "lib_portal_sessions_ts",
-      "target": "sessions_reschedulesession",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L29",
-      "weight": 1.0,
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "sessions_reschedulesession",
-      "confidence_score": 1
-    },
-    {
-      "source": "lib_portal_sessions_ts",
-      "target": "sessions_setsessionlocation",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L36",
-      "weight": 1.0,
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "sessions_setsessionlocation",
-      "confidence_score": 1
-    },
-    {
-      "source": "lib_portal_learning_ts",
-      "target": "learning_readlearningworkspace",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/learning.ts",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_src": "lib_portal_learning_ts",
-      "_tgt": "learning_readlearningworkspace",
-      "confidence_score": 1
-    },
-    {
-      "source": "lib_portal_learning_ts",
-      "target": "learning_saveprivatenote",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/learning.ts",
-      "source_location": "L16",
-      "weight": 1.0,
-      "_src": "lib_portal_learning_ts",
-      "_tgt": "learning_saveprivatenote",
-      "confidence_score": 1
-    },
-    {
-      "source": "lib_portal_learning_ts",
-      "target": "learning_savelearningdraft",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/learning.ts",
-      "source_location": "L26",
-      "weight": 1.0,
-      "_src": "lib_portal_learning_ts",
-      "_tgt": "learning_savelearningdraft",
-      "confidence_score": 1
-    },
-    {
-      "source": "lib_portal_learning_ts",
-      "target": "learning_previewlearningdraft",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/learning.ts",
-      "source_location": "L36",
-      "weight": 1.0,
-      "_src": "lib_portal_learning_ts",
-      "_tgt": "learning_previewlearningdraft",
-      "confidence_score": 1
-    },
-    {
-      "source": "lib_portal_learning_ts",
-      "target": "learning_publishlearningdraft",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/learning.ts",
-      "source_location": "L46",
-      "weight": 1.0,
-      "_src": "lib_portal_learning_ts",
-      "_tgt": "learning_publishlearningdraft",
-      "confidence_score": 1
-    },
-    {
-      "source": "lib_portal_learning_ts",
-      "target": "learning_listpublishedlearning",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/learning.ts",
-      "source_location": "L56",
-      "weight": 1.0,
-      "_src": "lib_portal_learning_ts",
-      "_tgt": "learning_listpublishedlearning",
       "confidence_score": 1
     },
     {
@@ -10071,15 +10929,6 @@
       "weight": 1.0
     },
     {
-      "source": "components_portal_portalshell_tsx",
-      "target": "portalshell_portalshell",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L9",
-      "weight": 1.0
-    },
-    {
       "source": "components_portal_invoices_billingsettingsform_tsx",
       "target": "billingsettingsform_billingsettingsform",
       "relation": "contains",
@@ -10134,30 +10983,12 @@
       "weight": 1.0
     },
     {
-      "source": "app_api_portal_events_route_ts",
-      "target": "route_get",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/portal/events/route.ts",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
       "source": "lib_events_session_test_ts",
       "target": "events_session_test_release",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/events-session.test.ts",
       "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "lib_events_stream_test_ts",
-      "target": "events_stream_test_fakeclient",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/events-stream.test.ts",
-      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -10170,30 +11001,12 @@
       "weight": 1.0
     },
     {
-      "source": "lib_portal_events_server_ts",
-      "target": "events_server_openportaleventstream",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/events-server.ts",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
       "source": "lib_portal_events_session_ts",
       "target": "events_session_getboundeventtoken",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/events-session.ts",
       "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "lib_portal_events_stream_ts",
-      "target": "events_stream_openeventstream",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/events-stream.ts",
-      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -10260,35 +11073,6 @@
       "weight": 1.0
     },
     {
-      "source": "route_get",
-      "target": "events_server_openportaleventstream",
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/api/portal/events/route.ts",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "events_server_openportaleventstream",
-      "target": "events_stream_openeventstream",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "lib/portal/events-server.ts",
-      "source_location": "L41",
-      "weight": 1.0
-    },
-    {
-      "source": "components_portal_events_portalliveupdates_tsx",
-      "target": "portalliveupdates_portalliveupdates",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
       "source": "lib_events_reader_test_ts",
       "target": "events_reader_test_source",
       "relation": "contains",
@@ -10313,6 +11097,1885 @@
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/events-reader.ts",
       "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_session_ui_sql",
+      "target": "portal_children_sessions_sql",
+      "_src": "portal_session_ui_sql",
+      "_tgt": "portal_children_sessions_sql",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "db/migrations/0014_session_ui_access.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_session_ui_sql",
+      "target": "portal_learning_updates_sql",
+      "_src": "portal_session_ui_sql",
+      "_tgt": "portal_learning_updates_sql",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "db/migrations/0014_session_ui_access.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "portal_session_ui_sql",
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "portal_session_ui_sql",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_children_actions_ts",
+      "target": "actions_text",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_children_actions_ts",
+      "_tgt": "actions_text",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_children_actions_ts",
+      "target": "actions_registerchild",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_children_actions_ts",
+      "_tgt": "actions_registerchild",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_children_actions_ts",
+      "target": "actions_createsession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_children_actions_ts",
+      "_tgt": "actions_createsession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "actions_registerchild",
+      "target": "actions_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "actions_registerchild",
+      "_tgt": "actions_text",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "actions_createsession",
+      "target": "actions_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_src": "actions_createsession",
+      "_tgt": "actions_text",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_sessions_id_actions_ts",
+      "target": "admin_actions_updatesessionaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/sessions/[id]/actions.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_sessions_id_actions_ts",
+      "_tgt": "admin_actions_updatesessionaction",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_sessions_id_actions_ts",
+      "target": "admin_actions_savenoteaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/sessions/[id]/actions.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_sessions_id_actions_ts",
+      "_tgt": "admin_actions_savenoteaction",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_sessions_id_actions_ts",
+      "target": "admin_actions_savedraftaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/sessions/[id]/actions.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_sessions_id_actions_ts",
+      "_tgt": "admin_actions_savedraftaction",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_sessions_id_actions_ts",
+      "target": "admin_actions_previewdraftaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/sessions/[id]/actions.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_sessions_id_actions_ts",
+      "_tgt": "admin_actions_previewdraftaction",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_sessions_id_actions_ts",
+      "target": "admin_actions_publishdraftaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/sessions/[id]/actions.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_sessions_id_actions_ts",
+      "_tgt": "admin_actions_publishdraftaction",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_sessions_id_page_tsx",
+      "target": "page_sessiondetail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/sessions/[id]/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "app_portal_provider_parent_sessions_id_page_tsx",
+      "_tgt": "page_sessiondetail",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_sessions_page_tsx",
+      "target": "page_parentsessions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "app_portal_provider_parent_sessions_page_tsx",
+      "_tgt": "page_parentsessions",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_sessions_page_tsx",
+      "target": "page_sessionspage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_src": "app_portal_provider_parent_sessions_page_tsx",
+      "_tgt": "page_sessionspage",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_page_tsx",
+      "target": "page_formatuksession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_src": "app_portal_provider_staff_page_tsx",
+      "_tgt": "page_formatuksession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_sessions_id_actions_ts",
+      "target": "staff_actions_updatesessionaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "app_portal_provider_staff_sessions_id_actions_ts",
+      "_tgt": "staff_actions_updatesessionaction",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_sessions_id_actions_ts",
+      "target": "staff_actions_savenoteaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "app_portal_provider_staff_sessions_id_actions_ts",
+      "_tgt": "staff_actions_savenoteaction",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_sessions_id_actions_ts",
+      "target": "staff_actions_savedraftaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "app_portal_provider_staff_sessions_id_actions_ts",
+      "_tgt": "staff_actions_savedraftaction",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_sessions_id_actions_ts",
+      "target": "staff_actions_previewdraftaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "app_portal_provider_staff_sessions_id_actions_ts",
+      "_tgt": "staff_actions_previewdraftaction",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_sessions_id_actions_ts",
+      "target": "staff_actions_publishdraftaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/sessions/[id]/actions.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "app_portal_provider_staff_sessions_id_actions_ts",
+      "_tgt": "staff_actions_publishdraftaction",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_learning_adminlearningforms_tsx",
+      "target": "adminlearningforms_feedback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/AdminLearningForms.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "components_portal_learning_adminlearningforms_tsx",
+      "_tgt": "adminlearningforms_feedback",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_learning_adminlearningforms_tsx",
+      "target": "adminlearningforms_actorfields",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/AdminLearningForms.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "components_portal_learning_adminlearningforms_tsx",
+      "_tgt": "adminlearningforms_actorfields",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_learning_adminlearningforms_tsx",
+      "target": "adminlearningforms_registerchildform",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/AdminLearningForms.tsx",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_src": "components_portal_learning_adminlearningforms_tsx",
+      "_tgt": "adminlearningforms_registerchildform",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_learning_adminlearningforms_tsx",
+      "target": "adminlearningforms_schedulesessionform",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/AdminLearningForms.tsx",
+      "source_location": "L67",
+      "weight": 1.0,
+      "_src": "components_portal_learning_adminlearningforms_tsx",
+      "_tgt": "adminlearningforms_schedulesessionform",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_learning_parentupdatefields_tsx",
+      "target": "parentupdatefields_parentupdatefields",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/ParentUpdateFields.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "components_portal_learning_parentupdatefields_tsx",
+      "_tgt": "parentupdatefields_parentupdatefields",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_learning_privatenoteeditor_tsx",
+      "target": "privatenoteeditor_save",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/PrivateNoteEditor.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "components_portal_learning_privatenoteeditor_tsx",
+      "_tgt": "privatenoteeditor_save",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_learning_sessioncontrols_tsx",
+      "target": "sessioncontrols_update",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/SessionControls.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "components_portal_learning_sessioncontrols_tsx",
+      "_tgt": "sessioncontrols_update",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_learning_workspaceeditor_tsx",
+      "target": "workspaceeditor_textvalue",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/WorkspaceEditor.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "components_portal_learning_workspaceeditor_tsx",
+      "_tgt": "workspaceeditor_textvalue",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_learning_workspaceeditor_tsx",
+      "target": "workspaceeditor_workspaceeditor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/WorkspaceEditor.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "components_portal_learning_workspaceeditor_tsx",
+      "_tgt": "workspaceeditor_workspaceeditor",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "workspaceeditor_workspaceeditor",
+      "target": "workspaceeditor_textvalue",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/WorkspaceEditor.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "workspaceeditor_workspaceeditor",
+      "_tgt": "workspaceeditor_textvalue",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_action_actor_state_ts",
+      "target": "action_actor_state_matchesactionactor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/action-actor-state.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "lib_portal_action_actor_state_ts",
+      "_tgt": "action_actor_state_matchesactionactor",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_action_actor_ts",
+      "target": "action_actor_requireactionactor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/action-actor.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "lib_portal_action_actor_ts",
+      "_tgt": "action_actor_requireactionactor",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_admin_form_state_ts",
+      "target": "admin_form_state_adminformdefaults",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/admin-form-state.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "lib_portal_admin_form_state_ts",
+      "_tgt": "admin_form_state_adminformdefaults",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_readlearningworkspace",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_readlearningworkspace",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_saveprivatenote",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_saveprivatenote",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_savelearningdraft",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_savelearningdraft",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_previewlearningdraft",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_previewlearningdraft",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_publishlearningdraft",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_publishlearningdraft",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_listpublishedlearning",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_listpublishedlearning",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_listparentlatestlearning",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L65",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_listparentlatestlearning",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_parent_children_ts",
+      "target": "parent_children_parentchildren",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/parent-children.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "lib_portal_parent_children_ts",
+      "_tgt": "parent_children_parentchildren",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_session_status_ts",
+      "target": "session_status_sessionstatuslabel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/session-status.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "lib_portal_session_status_ts",
+      "_tgt": "session_status_sessionstatuslabel",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_schedulesession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_schedulesession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_listsessions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_listsessions",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_changesession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_changesession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_reschedulesession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_reschedulesession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_setsessionlocation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_setsessionlocation",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_readscopedsession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_readscopedsession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_liststaffsessions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_liststaffsessions",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_uk_time_ts",
+      "target": "uk_time_partsat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "lib_portal_uk_time_ts",
+      "_tgt": "uk_time_partsat",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_uk_time_ts",
+      "target": "uk_time_uklocaltoiso",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "lib_portal_uk_time_ts",
+      "_tgt": "uk_time_uklocaltoiso",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_uk_time_ts",
+      "target": "uk_time_formatuksession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_src": "lib_portal_uk_time_ts",
+      "_tgt": "uk_time_formatuksession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_uk_time_ts",
+      "target": "uk_time_currentuktime",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_src": "lib_portal_uk_time_ts",
+      "_tgt": "uk_time_currentuktime",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "uk_time_uklocaltoiso",
+      "target": "uk_time_partsat",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/uk-time.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "uk_time_uklocaltoiso",
+      "_tgt": "uk_time_partsat",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_workspace_actions_ts",
+      "target": "workspace_actions_message",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "lib_portal_workspace_actions_ts",
+      "_tgt": "workspace_actions_message",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_workspace_actions_ts",
+      "target": "workspace_actions_refresh",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "lib_portal_workspace_actions_ts",
+      "_tgt": "workspace_actions_refresh",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_workspace_actions_ts",
+      "target": "workspace_actions_updatesessionfor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_src": "lib_portal_workspace_actions_ts",
+      "_tgt": "workspace_actions_updatesessionfor",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_workspace_actions_ts",
+      "target": "workspace_actions_savenotefor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L54",
+      "weight": 1.0,
+      "_src": "lib_portal_workspace_actions_ts",
+      "_tgt": "workspace_actions_savenotefor",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_workspace_actions_ts",
+      "target": "workspace_actions_savedraftfor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L67",
+      "weight": 1.0,
+      "_src": "lib_portal_workspace_actions_ts",
+      "_tgt": "workspace_actions_savedraftfor",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_workspace_actions_ts",
+      "target": "workspace_actions_previewdraftfor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L80",
+      "weight": 1.0,
+      "_src": "lib_portal_workspace_actions_ts",
+      "_tgt": "workspace_actions_previewdraftfor",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_workspace_actions_ts",
+      "target": "workspace_actions_publishdraftfor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L93",
+      "weight": 1.0,
+      "_src": "lib_portal_workspace_actions_ts",
+      "_tgt": "workspace_actions_publishdraftfor",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "workspace_actions_updatesessionfor",
+      "target": "workspace_actions_refresh",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_src": "workspace_actions_updatesessionfor",
+      "_tgt": "workspace_actions_refresh",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "workspace_actions_updatesessionfor",
+      "target": "workspace_actions_message",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_src": "workspace_actions_updatesessionfor",
+      "_tgt": "workspace_actions_message",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "workspace_actions_savenotefor",
+      "target": "workspace_actions_message",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_src": "workspace_actions_savenotefor",
+      "_tgt": "workspace_actions_message",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "workspace_actions_savedraftfor",
+      "target": "workspace_actions_message",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_src": "workspace_actions_savedraftfor",
+      "_tgt": "workspace_actions_message",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "workspace_actions_previewdraftfor",
+      "target": "workspace_actions_message",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L90",
+      "weight": 1.0,
+      "_src": "workspace_actions_previewdraftfor",
+      "_tgt": "workspace_actions_message",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "workspace_actions_publishdraftfor",
+      "target": "workspace_actions_refresh",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L116",
+      "weight": 1.0,
+      "_src": "workspace_actions_publishdraftfor",
+      "_tgt": "workspace_actions_refresh",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "workspace_actions_publishdraftfor",
+      "target": "workspace_actions_message",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L119",
+      "weight": 1.0,
+      "_src": "workspace_actions_publishdraftfor",
+      "_tgt": "workspace_actions_message",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "actions_registerchild",
+      "target": "action_actor_requireactionactor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "actions_registerchild",
+      "_tgt": "action_actor_requireactionactor"
+    },
+    {
+      "source": "actions_createsession",
+      "target": "action_actor_requireactionactor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "actions_createsession",
+      "_tgt": "action_actor_requireactionactor"
+    },
+    {
+      "source": "actions_createsession",
+      "target": "uk_time_uklocaltoiso",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L66",
+      "weight": 1.0,
+      "_src": "actions_createsession",
+      "_tgt": "uk_time_uklocaltoiso"
+    },
+    {
+      "source": "actions_createsession",
+      "target": "sessions_schedulesession",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/children/actions.ts",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_src": "actions_createsession",
+      "_tgt": "sessions_schedulesession"
+    },
+    {
+      "source": "admin_actions_updatesessionaction",
+      "target": "workspace_actions_updatesessionfor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/sessions/[id]/actions.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "admin_actions_updatesessionaction",
+      "_tgt": "workspace_actions_updatesessionfor"
+    },
+    {
+      "source": "admin_actions_savenoteaction",
+      "target": "workspace_actions_savenotefor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/sessions/[id]/actions.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "admin_actions_savenoteaction",
+      "_tgt": "workspace_actions_savenotefor"
+    },
+    {
+      "source": "admin_actions_savedraftaction",
+      "target": "workspace_actions_savedraftfor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/sessions/[id]/actions.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "admin_actions_savedraftaction",
+      "_tgt": "workspace_actions_savedraftfor"
+    },
+    {
+      "source": "admin_actions_previewdraftaction",
+      "target": "workspace_actions_previewdraftfor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/sessions/[id]/actions.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "admin_actions_previewdraftaction",
+      "_tgt": "workspace_actions_previewdraftfor"
+    },
+    {
+      "source": "admin_actions_publishdraftaction",
+      "target": "workspace_actions_publishdraftfor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/admin/sessions/[id]/actions.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "admin_actions_publishdraftaction",
+      "_tgt": "workspace_actions_publishdraftfor"
+    },
+    {
+      "source": "page_sessiondetail",
+      "target": "sessions_readscopedsession",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/parent/sessions/[id]/page.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "page_sessiondetail",
+      "_tgt": "sessions_readscopedsession"
+    },
+    {
+      "source": "page_sessiondetail",
+      "target": "uk_time_formatuksession",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/parent/sessions/[id]/page.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_src": "page_sessiondetail",
+      "_tgt": "uk_time_formatuksession"
+    },
+    {
+      "source": "page_parentsessions",
+      "target": "parent_children_parentchildren",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "page_parentsessions",
+      "_tgt": "parent_children_parentchildren"
+    },
+    {
+      "source": "page_parentsessions",
+      "target": "sessions_listsessions",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_src": "page_parentsessions",
+      "_tgt": "sessions_listsessions"
+    },
+    {
+      "source": "action_actor_requireactionactor",
+      "target": "action_actor_state_matchesactionactor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "lib/portal/action-actor.ts",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "action_actor_requireactionactor",
+      "_tgt": "action_actor_state_matchesactionactor"
+    },
+    {
+      "source": "workspace_actions_updatesessionfor",
+      "target": "action_actor_requireactionactor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_src": "workspace_actions_updatesessionfor",
+      "_tgt": "action_actor_requireactionactor"
+    },
+    {
+      "source": "workspace_actions_updatesessionfor",
+      "target": "sessions_changesession",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_src": "workspace_actions_updatesessionfor",
+      "_tgt": "sessions_changesession"
+    },
+    {
+      "source": "workspace_actions_savenotefor",
+      "target": "action_actor_requireactionactor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_src": "workspace_actions_savenotefor",
+      "_tgt": "action_actor_requireactionactor"
+    },
+    {
+      "source": "workspace_actions_savenotefor",
+      "target": "learning_saveprivatenote",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_src": "workspace_actions_savenotefor",
+      "_tgt": "learning_saveprivatenote"
+    },
+    {
+      "source": "workspace_actions_savedraftfor",
+      "target": "action_actor_requireactionactor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L73",
+      "weight": 1.0,
+      "_src": "workspace_actions_savedraftfor",
+      "_tgt": "action_actor_requireactionactor"
+    },
+    {
+      "source": "workspace_actions_savedraftfor",
+      "target": "learning_savelearningdraft",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L74",
+      "weight": 1.0,
+      "_src": "workspace_actions_savedraftfor",
+      "_tgt": "learning_savelearningdraft"
+    },
+    {
+      "source": "workspace_actions_previewdraftfor",
+      "target": "action_actor_requireactionactor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L86",
+      "weight": 1.0,
+      "_src": "workspace_actions_previewdraftfor",
+      "_tgt": "action_actor_requireactionactor"
+    },
+    {
+      "source": "workspace_actions_previewdraftfor",
+      "target": "learning_previewlearningdraft",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_src": "workspace_actions_previewdraftfor",
+      "_tgt": "learning_previewlearningdraft"
+    },
+    {
+      "source": "workspace_actions_publishdraftfor",
+      "target": "action_actor_requireactionactor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L99",
+      "weight": 1.0,
+      "_src": "workspace_actions_publishdraftfor",
+      "_tgt": "action_actor_requireactionactor"
+    },
+    {
+      "source": "workspace_actions_publishdraftfor",
+      "target": "sessions_readscopedsession",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L109",
+      "weight": 1.0,
+      "_src": "workspace_actions_publishdraftfor",
+      "_tgt": "sessions_readscopedsession"
+    },
+    {
+      "source": "workspace_actions_publishdraftfor",
+      "target": "learning_publishlearningdraft",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L111",
+      "weight": 1.0,
+      "_src": "workspace_actions_publishdraftfor",
+      "_tgt": "learning_publishlearningdraft"
+    },
+    {
+      "source": "workspace_actions_publishdraftfor",
+      "target": "learning_listpublishedlearning",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "lib/portal/workspace-actions.ts",
+      "source_location": "L113",
+      "weight": 1.0,
+      "_src": "workspace_actions_publishdraftfor",
+      "_tgt": "learning_listpublishedlearning"
+    },
+    {
+      "source": "app_portal_provider_parent_page_tsx",
+      "target": "page_parenthome",
+      "_src": "app_portal_provider_parent_page_tsx",
+      "_tgt": "page_parenthome",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/parent/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_page_tsx",
+      "target": "page_stafftoday",
+      "_src": "app_portal_provider_staff_page_tsx",
+      "_tgt": "page_stafftoday",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "page_parenthome",
+      "target": "parent_children_parentchildren",
+      "_src": "page_parenthome",
+      "_tgt": "parent_children_parentchildren",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/parent/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "page_stafftoday",
+      "target": "require_role_requirerole",
+      "_src": "page_stafftoday",
+      "_tgt": "require_role_requirerole",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_session_ui_sql",
+      "target": "portal_learning_bind_trigger",
+      "_src": "portal_session_ui_sql",
+      "_tgt": "portal_learning_bind_trigger",
+      "relation": "contains",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "db/migrations/0014_session_ui_access.sql",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_learning_migration_overlap_test",
+      "target": "portal_session_ui_sql",
+      "_src": "portal_learning_migration_overlap_test",
+      "_tgt": "portal_session_ui_sql",
+      "relation": "tests",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "db/tests/session-ui-migration-concurrency.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_message_views_sql",
+      "target": "portal_messages_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrations/0017_message_views.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_message_views_sql",
+      "target": "portal_events_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrations/0017_message_views.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_invalidation_sql",
+      "target": "portal_messages_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrations/0018_portal_invalidation.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_invalidation_sql",
+      "target": "portal_events_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrations/0018_portal_invalidation.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_sendforrole",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_markforrole",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_sendparentmessage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_sendstaffmessage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_sendadminmessage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_markparentmessages",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_markstaffmessages",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_markadminmessages",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_requestchangeaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_actions_ts",
+      "target": "actions_resolverequestaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_sendparentmessage",
+      "target": "actions_sendforrole",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_sendstaffmessage",
+      "target": "actions_sendforrole",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_sendadminmessage",
+      "target": "actions_sendforrole",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_markparentmessages",
+      "target": "actions_markforrole",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_markstaffmessages",
+      "target": "actions_markforrole",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_markadminmessages",
+      "target": "actions_markforrole",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_error_tsx",
+      "target": "error_errorpage_6c00e81c94",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/error.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_layout_tsx",
+      "target": "layout_layout_4d09a44101",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_page_tsx",
+      "target": "page_data_f8e971b5b3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_messages_page_tsx",
+      "target": "page_page_f8e971b5b3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/messages/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_messages_error_tsx",
+      "target": "error_errorpage_db786e0b61",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/messages/error.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_messages_layout_tsx",
+      "target": "layout_layout_84e1c36fd5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/messages/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_messages_page_tsx",
+      "target": "page_data_ff9bbc860b",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/messages/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_parent_messages_page_tsx",
+      "target": "page_page_ff9bbc860b",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/parent/messages/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_messages_error_tsx",
+      "target": "error_errorpage_e06bfd0ab3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/messages/error.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_messages_layout_tsx",
+      "target": "layout_layout_7ef5cb81d6",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/messages/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_messages_page_tsx",
+      "target": "page_data_77f7a60717",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/messages/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_staff_messages_page_tsx",
+      "target": "page_page_77f7a60717",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/staff/messages/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "app_api_portal_events_route_ts",
+      "target": "route_get",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/portal/events/route.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_portalshell_tsx",
+      "target": "portalshell_portalshell",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_events_portalliveupdates_tsx",
+      "target": "portalliveupdates_portalliveupdates",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_actorscope_tsx",
+      "target": "actorscope_actorscope",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/ActorScope.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_adminrequests_tsx",
+      "target": "adminrequests_current",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/AdminRequests.tsx",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_adminrequests_tsx",
+      "target": "adminrequests_submit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/AdminRequests.tsx",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "adminrequests_submit",
+      "target": "adminrequests_current",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/AdminRequests.tsx",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_conversation_tsx",
+      "target": "conversation_conversation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/Conversation.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_draftboundary_tsx",
+      "target": "draftboundary_draftboundary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/DraftBoundary.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_draftprovider_tsx",
+      "target": "draftprovider_draftprovider",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/DraftProvider.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_draftprovider_tsx",
+      "target": "draftprovider_usemessagedrafts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/DraftProvider.tsx",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_messagecomposer_tsx",
+      "target": "messagecomposer_current",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/MessageComposer.tsx",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_messagecomposer_tsx",
+      "target": "messagecomposer_send",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/MessageComposer.tsx",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "messagecomposer_send",
+      "target": "messagecomposer_current",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/MessageComposer.tsx",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_messageerror_tsx",
+      "target": "messageerror_messageerror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/MessageError.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_messages_parentrequests_tsx",
+      "target": "parentrequests_formatuksession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/messages/ParentRequests.tsx",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_events_stream_test_ts",
+      "target": "events_stream_test_fakeclient",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/events-stream.test.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_events_server_ts",
+      "target": "events_server_openportaleventstream",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/events-server.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_events_stream_ts",
+      "target": "events_stream_openeventstream",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/events-stream.ts",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_display_ts",
+      "target": "message_display_displaymessages",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-display.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_draft_state_ts",
+      "target": "message_draft_state_messagedraftreducer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-draft-state.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_draft_state_ts",
+      "target": "message_draft_state_messagedraftkey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-draft-state.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_views_ts",
+      "target": "message_views_lookupnames",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_views_ts",
+      "target": "message_views_listmessagefamilies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_views_ts",
+      "target": "message_views_listmessagesessions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_views_ts",
+      "target": "message_views_listmessagerequestcontexts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_views_ts",
+      "target": "message_views_listmessageauthors",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L132",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_views_ts",
+      "target": "message_views_readmessagethread",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L154",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_views_ts",
+      "target": "message_views_sendmessageasrole",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L167",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_views_ts",
+      "target": "message_views_markmessagesasrole",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L181",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_message_views_ts",
+      "target": "message_views_resolverequestchecked",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L191",
+      "weight": 1.0
+    },
+    {
+      "source": "message_views_listmessagerequestcontexts",
+      "target": "message_views_lookupnames",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "message_views_listmessageauthors",
+      "target": "message_views_lookupnames",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/message-views.ts",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_sendforrole",
+      "target": "message_views_sendmessageasrole",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_markforrole",
+      "target": "message_views_markmessagesasrole",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "actions_resolverequestaction",
+      "target": "message_views_resolverequestchecked",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/(portal)/(provider)/admin/messages/actions.ts",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "route_get",
+      "target": "events_server_openportaleventstream",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/api/portal/events/route.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "adminrequests_submit",
+      "target": "actions_resolverequestaction",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "components/portal/messages/AdminRequests.tsx",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "messagecomposer_send",
+      "target": "actions_requestchangeaction",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "components/portal/messages/MessageComposer.tsx",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "events_server_openportaleventstream",
+      "target": "events_stream_openeventstream",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "lib/portal/events-server.ts",
+      "source_location": "L42",
       "weight": 1.0
     },
     {

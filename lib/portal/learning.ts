@@ -60,3 +60,10 @@ export async function listPublishedLearning(familyId: unknown, childId: unknown)
   const sql = portalDatabase();
   return z.array(publishedRow).parse(await sql`SELECT * FROM portal.list_published_learning(${userId},${family},${child})`);
 }
+
+/** Latest published update per child across this parent's active families. */
+export async function listParentLatestLearning(): Promise<PublishedLearningUpdate[]> {
+  const { userId } = await requirePortalIdentity();
+  const sql = portalDatabase();
+  return z.array(publishedRow).parse(await sql`SELECT * FROM portal.list_parent_latest_learning(${userId})`);
+}

@@ -1,27 +1,168 @@
+import Link from "next/link";
 import { Suspense } from "react";
+import { RecordedSoundChips } from "@/components/SoundTiles";
 import { PortalShell } from "@/components/portal/PortalShell";
-import { requireRole } from "@/lib/portal/require-role";
-import { readFamily } from "@/lib/portal/families";
+import { parentChildren } from "@/lib/portal/parent-children";
+import { listSessions } from "@/lib/portal/sessions";
+import { listParentLatestLearning } from "@/lib/portal/learning";
+import { listParentInvoices } from "@/lib/portal/invoices";
+import { invoicePaymentStatus } from "@/lib/portal/invoice-status";
+import { sessionStatusLabel } from "@/lib/portal/session-status";
+import { currentUkTime, formatUkSession } from "@/lib/portal/uk-time";
 
 async function ParentHome() {
-  const { identity, memberships } = await requireRole("parent");
-  const familyIds = memberships.filter((membership) => membership.role === "parent").map((membership) => membership.family_id);
-  const families = (await Promise.all(familyIds.map(readFamily))).filter((family) => family !== null);
-  if (!families.length) return <PortalShell role="parent" userId={identity.userId} memberships={memberships}><h1>Your family portal</h1><p className="mt-4">Your family details are unavailable. Please ask Deborah for help.</p></PortalShell>;
-  const cards = [
-    { title: "Next session", body: "Sessions are not available here yet." },
-    { title: "Tutor notes", body: "Tutor notes are not available here yet." },
-    { title: "Learning", body: "Learning updates are not available here yet." },
-    { title: "Billing", body: "Billing is not available here yet." },
-  ];
-  return <PortalShell role="parent" userId={identity.userId} memberships={memberships}>
-    <h1 className="!text-[clamp(2rem,4vw,2.6rem)]">Your family portal</h1>
-    {families.length > 1 && <p className="mt-3 text-sm text-[#35594a]">{families.map((family) => family.display_name ?? "Family").join(" · ")}</p>}
-    <div className="mt-8 grid gap-6 lg:grid-cols-3">
-      {cards.map((card, index) => <section key={card.title} className={`min-h-36 rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6 ${index % 2 === 0 ? "lg:col-span-2" : ""}`}>
-        <h2 className="!font-sans !text-base font-medium">{card.title}</h2><p className="mt-6 text-sm text-[#35594a]">{card.body}</p>
-      </section>)}
-    </div>
-  </PortalShell>;
+  const { identity, memberships, families } = await parentChildren();
+  const children = families.flatMap((item) => item.children);
+  const [familySessions, childUpdates, invoices] = await Promise.all([
+    Promise.all(
+      families.map((item) =>
+        item.family ? listSessions(item.family.id) : Promise.resolve([]),
+      ),
+    ),
+    listParentLatestLearning(),
+    listParentInvoices(),
+  ]);
+  const now = currentUkTime();
+  const next = familySessions
+    .flat()
+    .filter(
+      (session) =>
+        (session.status === "scheduled" || session.status === "in_progress") &&
+        Date.parse(session.starts_at) + session.duration_minutes * 60000 >= now,
+    )
+    .sort((a, b) => Date.parse(a.starts_at) - Date.parse(b.starts_at))[0];
+  const latestUpdate = childUpdates.sort(
+    (a, b) => Date.parse(b.published_at) - Date.parse(a.published_at),
+  )[0];
+  const latestChild =
+    latestUpdate &&
+    children.find((child) => child.id === latestUpdate.child_id);
+  const latest =
+    latestUpdate && latestChild
+      ? { update: latestUpdate, child: latestChild }
+      : undefined;
+  const invoice = invoices[0];
+  const payment = invoice
+    ? invoicePaymentStatus(invoice.snapshot.total_pence, invoice.paid_pence)
+    : null;
+  const when = next
+    ? formatUkSession(next.starts_at, next.duration_minutes)
+    : null;
+  return (
+    <PortalShell
+      role="parent"
+      userId={identity.userId}
+      memberships={memberships}
+    >
+      <h1 className="!text-[clamp(2rem,4vw,2.6rem)]">Your family portal</h1>
+      {children.length === 0 && (
+        <p className="mt-4 text-sm">
+          No children have been added to your family yet.
+        </p>
+      )}
+      <div className="mt-8 grid gap-6 lg:grid-cols-3">
+        <section className="min-h-36 rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6 lg:col-span-2">
+          <h2 className="!font-sans !text-base font-medium">Next session</h2>
+          {next && when ? (
+            <p className="mt-5">
+              {children.find((child) => child.id === next.child_id)
+                ?.display_name ?? "Child"}{" "}
+              · {when.day} · {when.time} · {sessionStatusLabel(next.status)}
+            </p>
+          ) : (
+            <p className="mt-5 text-sm">No upcoming sessions scheduled.</p>
+          )}
+          <Link
+            prefetch={false}
+            className="mt-4 inline-block text-sm underline"
+            href="/parent/sessions"
+          >
+            View sessions
+          </Link>
+        </section>
+        <section className="min-h-36 rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6">
+          <h2 className="!font-sans !text-base font-medium">Billing</h2>
+          {invoice ? (
+            <p className="mt-5 text-sm">
+              Invoice {invoice.snapshot.number} ·{" "}
+              {payment === "partially-paid"
+                ? "Partially paid"
+                : payment === "paid"
+                  ? "Paid"
+                  : "Unpaid"}
+            </p>
+          ) : (
+            <p className="mt-5 text-sm">No invoices issued yet.</p>
+          )}
+          <Link
+            prefetch={false}
+            className="mt-4 inline-block text-sm underline"
+            href="/parent/billing"
+          >
+            View invoices
+          </Link>
+        </section>
+        <section className="min-h-36 rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6 lg:col-span-2">
+          <h2 className="!font-sans !text-base font-medium">
+            Latest tutor note
+          </h2>
+          {latest ? (
+            <>
+              <p className="mt-5 text-sm">
+                {latest.child.display_name} ·{" "}
+                {new Intl.DateTimeFormat("en-GB", {
+                  dateStyle: "medium",
+                  timeZone: "Europe/London",
+                }).format(new Date(latest.update.published_at))}
+              </p>
+              <p className="mt-3 whitespace-pre-wrap [overflow-wrap:anywhere]">
+                {latest.update.body}
+              </p>
+            </>
+          ) : (
+            <p className="mt-5 text-sm">No learning updates shared yet.</p>
+          )}
+          <a
+            className="mt-4 inline-block text-sm underline"
+            href="/parent/learning"
+          >
+            View learning
+          </a>
+        </section>
+        <section className="min-h-36 rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6">
+          <h2 className="!font-sans !text-base font-medium">
+            Latest shared focus
+          </h2>
+          {latest && latest.update.explored_sounds.length > 0 && (
+            <div className="mt-4">
+              <p className="text-sm font-medium">
+                Sounds explored · {latest.child.display_name}
+              </p>
+              <RecordedSoundChips sounds={latest.update.explored_sounds} />
+            </div>
+          )}
+          {latest?.update.focus ? (
+            <p className="mt-5 [overflow-wrap:anywhere]">
+              {latest.child.display_name} · {latest.update.focus}
+            </p>
+          ) : (
+            <p className="mt-5 text-sm">No focus in the latest update.</p>
+          )}
+        </section>
+      </div>
+    </PortalShell>
+  );
 }
-export default function ParentPage() { return <Suspense fallback={<main className="section wrap"><p>Opening your family portal…</p></main>}><ParentHome /></Suspense>; }
+export default function ParentPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="section wrap">
+          <p>Opening your family portal…</p>
+        </main>
+      }
+    >
+      <ParentHome />
+    </Suspense>
+  );
+}

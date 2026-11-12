@@ -71,6 +71,8 @@ jobs:
             -f db/migrations/0011_invoice_ui.sql -f db/migrations/0012_children_sessions.sql \
             -f db/migrations/0013_learning_updates.sql \
             -f db/tests/learning-foundation.sql \
+            -f db/tests/session-ui-legacy-before.sql -f db/migrations/0014_session_ui_access.sql \
+            -f db/tests/session-ui-legacy-after.sql -f db/tests/session-ui-access.sql \
             -f db/migrations/0015_messages.sql -f db/migrations/0016_portal_events.sql \
             -f db/tests/messages.sql \
             -f db/migrations/0017_message_views.sql -f db/migrations/0018_portal_invalidation.sql \
@@ -97,6 +99,8 @@ jobs:
             -f db/tests/invoice-ui-upgrade-before.sql \
             -f db/migrations/0011_invoice_ui.sql -f db/tests/invoice-ui.sql
           sh db/tests/invoice-ui-concurrency.sh 127.0.0.1 goldleaf_invoice_ui
+          createdb -h 127.0.0.1 -p 55439 goldleaf_session_ui_migration
+          sh db/tests/session-ui-migration-concurrency.sh 127.0.0.1 goldleaf_session_ui_migration
           createdb -h 127.0.0.1 -p 55439 goldleaf_migration_race
           sh db/tests/staff-migration-concurrency.sh 127.0.0.1 goldleaf_migration_race
 

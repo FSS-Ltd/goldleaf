@@ -222,9 +222,9 @@ Explicit explored-sounds update re-extracted three allowlisted files: 400 nodes 
 
 Four historical edge directions were checked against source and corrected: seedling mount calls shadowTexture (scene.ts:128), weekly calls roundTo5 (pricing.ts:11), organisationSchema calls url (schema-org.ts:17), and the provisioning runbook references the founding inventory migrations (db/README.md:3). No remaining source/target versus _src/_tgt mismatches were found. Other SQL extraction, unresolved-edge and historical corpus coverage limits remain.
 
-The PORTAL semantic node now reflects the current custom authentication, parent/admin/staff screens and learning data foundation. Invoice UI is present; session/learning UI and messages remain planned. Node and edge counts are unchanged.
+Historical extraction: the PORTAL semantic node then reflected the current custom authentication, parent/admin/staff screens and learning data foundation. Invoice UI is present; session/learning UI and messages remain planned. Node and edge counts are unchanged.
 
-The combined checkout reconciles the learning graph with the invoice graph: 500 nodes and 492 source-backed edges. The four corrected historical edge directions from the learning branch are retained. SQL links remain manually source-linked and unresolved cross-scope extraction remains a known gap. Invoice UI and learning data foundations are present; learning/session UI and messages remain planned.
+Historical extraction: the combined checkout reconciled the learning graph with the invoice graph: 500 nodes and 492 source-backed edges. The four corrected historical edge directions from the learning branch are retained. SQL links remain manually source-linked and unresolved cross-scope extraction remains a known gap. Invoice UI and learning data foundations are present; learning/session UI and messages remain planned.
 
 Invoice page metadata and the conditional VAT settings form were re-extracted after UI review. SQL and unresolved cross-scope extraction limits above remain.
 
@@ -232,6 +232,27 @@ The Jury UI fixes refreshed invoice and navigation AST nodes, including billing 
 
 Messaging foundation: migration 0015 is manually source-linked to the existing session foundation; SQL extraction remains unsupported. Runtime notification transport and UI are pending. TypeScript nodes are refreshed using the scoped AST workflow; unresolved cross-scope relationships remain a coverage gap.
 
-Scoped event transport adds `portal_events_sql` manually source-linked to messaging, session and learning SQL because Graphify does not extract SQL. The API route, generic stream protocol, auth-filtered stream and unmounted client were extracted; cross-scope AST relationships remain incomplete. No production transport or remote migration is claimed.
+Scoped event transport adds `portal_events_sql` manually source-linked to messaging, session and learning SQL because Graphify does not extract SQL. The API route, generic stream protocol, auth-filtered stream and then-unmounted client were extracted; cross-scope AST relationships remain incomplete. No production transport or remote migration is claimed.
 
 Stream-reader cleanup was re-extracted. The source-verified call edge runs from `route_get` to `events_server_openportaleventstream` (`app/api/portal/events/route.ts:16`); consumers release and cancel each response reader before reconnecting.
+Session and learning UI re-extracted 27 allowlisted source files and added the source-linked 0014 migration node: 554 nodes, 546 edges; 134 unresolved extractor edges omitted. SQL extraction and earlier corpus coverage gaps remain. Development deployment of 0014 and live UI verification are pending.
+
+Final session UI, actor-fence and UK-time changes re-extracted 27 allowlisted source files: 554 nodes and 548 edges; 136 unresolved extractor edges omitted. SQL remains manually source-linked; UI verification and development 0014 deployment are pending.
+
+Final scope refresh after scheduling and display review re-extracted 27 allowlisted files: 554 nodes, 548 edges; 136 unresolved extractor edges omitted. Historical corpus and SQL extraction limits remain.
+
+Focused editor split and session-key safeguards re-extracted 29 allowlisted files: 557 nodes, 549 edges; 139 unresolved extractor edges omitted. Existing SQL and historical corpus limitations remain.
+
+UK session end-date display re-extracted two allowlisted files: 557 nodes, 549 edges; 3 unresolved extractor edges omitted.
+
+Review fixes refreshed 40 allowlisted files with a fresh temporary extraction cache. Five colliding admin/staff action symbols were disambiguated by path; stale moved helper nodes were removed. The graph has 582 nodes and 574 edges; 178 unresolved or ambiguous edges were omitted. Existing SQL extraction and corpus limits remain.
+
+Final review scope re-extracted 40 allowlisted files using a fresh cache: 582 nodes, 574 edges. Five colliding admin/staff action symbols were disambiguated; 178 unresolved or ambiguous edges were omitted. SQL remains manually source-linked and historical corpus gaps remain.
+
+Rebased review scope reconciles messaging/event nodes with session UI: 616 nodes, 602 edges after fresh extraction of 40 allowlisted files; five admin/staff action ID collisions were disambiguated and 178 unresolved or ambiguous edges omitted. SQL nodes are manually source-linked; historical corpus gaps remain.
+
+Post-rebase actor-fence and publication review refresh: 616 nodes, 602 edges across the project index; 40 allowlisted files re-extracted, 5 admin/staff symbol collisions disambiguated, 178 unresolved or ambiguous edges omitted. Messaging/event nodes remain present; SQL and historical corpus limits remain.
+
+Migration-overlap review adds source-linked publication binding trigger and concurrency test nodes: 618 nodes and 604 edges. SQL is manually linked; earlier unresolved extractor and corpus gaps remain.
+
+Messaging UI and role-fenced transport: scoped TypeScript AST extraction refreshed the changed route, shared shell, stream and message components. `portal_message_views_sql` and `portal_invalidation_sql` are manually source-linked because SQL extraction is unsupported. Earlier cluster counts are historical; event coverage and projection ACLs are backed by local tests. Migrations 0017/0018 and populated signed-in UI verification remain pending.

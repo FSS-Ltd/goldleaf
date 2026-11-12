@@ -11,7 +11,11 @@ import { getBoundEventToken } from "@/lib/portal/events-session";
 import { sameSession } from "@/lib/portal/session-binding";
 
 // One instance per authenticated portal view. Refresh always rechecks server authority.
-export function PortalLiveUpdates({ role }: { role: "admin" | "parent" | "staff" }) {
+export function PortalLiveUpdates({
+  role,
+}: {
+  role: "admin" | "parent" | "staff";
+}) {
   const { isLoaded, userId, sessionId } = useAuth();
   const clerk = useClerk();
   const router = useRouter();

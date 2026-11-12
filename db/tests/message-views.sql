@@ -20,9 +20,17 @@ DO $$ BEGIN
  BEGIN PERFORM portal.message_request_context('views-staff','staff'); RAISE EXCEPTION 'staff request leak'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
  IF (SELECT count(*) FROM portal.message_sessions('views-parent','parent','a1000000-0000-4000-8000-000000000001'))<>1 THEN RAISE EXCEPTION 'session scope failed'; END IF;
 END $$;
+DO $$ BEGIN
+ PERFORM portal.reschedule_child_session('views-admin','a3000000-0000-4000-8000-000000000001','2027-01-02 10:00Z');
+ BEGIN PERFORM portal.resolve_request_checked('views-admin','a5000000-0000-4000-8000-000000000001','Agreed','2027-01-03 10:00Z','2027-01-01 10:00Z','scheduled'); RAISE EXCEPTION 'stale resolution accepted'; EXCEPTION WHEN serialization_failure THEN NULL; END;
+ IF (SELECT resolved_at FROM portal.session_change_requests WHERE id='a5000000-0000-4000-8000-000000000001') IS NOT NULL THEN RAISE EXCEPTION 'stale resolution changed request'; END IF;
+ PERFORM portal.resolve_request_checked('views-admin','a5000000-0000-4000-8000-000000000001','Agreed','2027-01-03 10:00Z','2027-01-02 10:00Z','scheduled');
+ PERFORM portal.resolve_request_checked('views-admin','a5000000-0000-4000-8000-000000000001','Agreed','2027-01-03 10:00Z','2027-01-02 10:00Z','scheduled');
+ BEGIN PERFORM portal.resolve_request_checked('views-admin','a5000000-0000-4000-8000-000000000001','Changed',NULL,'2027-01-02 10:00Z','scheduled'); RAISE EXCEPTION 'changed replay accepted'; EXCEPTION WHEN invalid_parameter_value THEN NULL; END;
+END $$;
 CREATE ROLE message_views_runtime NOLOGIN;
 GRANT USAGE ON SCHEMA portal TO message_views_runtime;
-GRANT EXECUTE ON FUNCTION portal.message_family_summaries(text,text),portal.message_author_identities(text,text,uuid),portal.message_sessions(text,text,uuid),portal.message_request_context(text,text),portal.message_view_thread(text,text,uuid),portal.send_message_as_role(text,text,uuid,uuid,text),portal.mark_messages_as_role(text,text,uuid,bigint) TO message_views_runtime;
+GRANT EXECUTE ON FUNCTION portal.message_family_summaries(text,text),portal.message_author_identities(text,text,uuid),portal.message_sessions(text,text,uuid),portal.message_request_context(text,text),portal.message_view_thread(text,text,uuid),portal.send_message_as_role(text,text,uuid,uuid,text),portal.mark_messages_as_role(text,text,uuid,bigint),portal.resolve_request_checked(text,uuid,text,timestamptz,timestamptz,text) TO message_views_runtime;
 DO $$ BEGIN
  IF has_table_privilege('message_views_runtime','portal.family_messages','SELECT') OR has_function_privilege('message_views_runtime','portal.require_message_view_role(text,text,uuid)','EXECUTE') THEN RAISE EXCEPTION 'runtime access too broad'; END IF;
 END $$;

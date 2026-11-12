@@ -9,7 +9,7 @@ const ageTag: Record<number, string> = {
 };
 
 /** Seed at Stage 0, then one more leaf at each stage, with a gold bloom at Stage 4. */
-function StageGlyph({ id }: { id: number }) {
+export function StageGlyph({ id }: { id: number }) {
   const top = 38 - id * 5;
   return (
     <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" className="stage-glyph block rounded-full bg-paper ring-2 ring-gold">

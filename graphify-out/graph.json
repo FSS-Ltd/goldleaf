@@ -3802,8 +3802,8 @@
       "weight": 1.0,
       "_src": "scene_mountseedling",
       "_tgt": "scene_shadowtexture",
-      "source": "scene_shadowtexture",
-      "target": "scene_mountseedling",
+      "source": "scene_mountseedling",
+      "target": "scene_shadowtexture",
       "confidence_score": 1.0
     },
     {
@@ -3898,8 +3898,8 @@
       "weight": 1.0,
       "_src": "pricing_weekly",
       "_tgt": "pricing_roundto5",
-      "source": "pricing_roundto5",
-      "target": "pricing_weekly",
+      "source": "pricing_weekly",
+      "target": "pricing_roundto5",
       "confidence_score": 1.0
     },
     {
@@ -3982,8 +3982,8 @@
       "weight": 1.0,
       "_src": "schema_org_organisationschema",
       "_tgt": "schema_org_url",
-      "source": "schema_org_url",
-      "target": "schema_org_organisationschema",
+      "source": "schema_org_organisationschema",
+      "target": "schema_org_url",
       "confidence_score": 1.0
     },
     {
@@ -4383,10 +4383,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "db/README.md",
-      "source_location": null,
+      "source_location": "L3",
       "weight": 1.0,
-      "source": "founding_inventory",
-      "target": "founding_provision"
+      "source": "founding_provision",
+      "target": "founding_inventory"
     },
     {
       "source": "lib_founding_availability_ts",

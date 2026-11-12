@@ -186,7 +186,7 @@ Scoped public-shell and portal-session AST reconciliation added source-backed er
 
 Scoped custom-auth refresh extracted 39 explicitly selected changed TypeScript files and retained the earlier semantic and SQL nodes. Twelve source-verified auth dependencies were added directly. The graph now has 298 nodes and 286 directed edges; 115 extractor edges with unresolved endpoints were omitted, chiefly external or out-of-scope references. Historical coverage remains unaudited. The Protect challenge adapter uses a provider-supplied HTTPS SDK URL; the provider does not publish a fixed host allowlist, and actual challenged-provider execution remains unverified.
 
-After merging invoice and staff access, the combined graph retains both branches' source-linked nodes and edges: 336 nodes and 332 edges. Removed pre-route-group paths remain removed. Four older, unrelated edges still have `source`/`target` directions that disagree with `_src`/`_tgt`; they remain unaudited. Unresolved historical coverage and SQL extraction limits still apply.
+After merging invoice and staff access, the combined graph retains both branches' source-linked nodes and edges: 336 nodes and 332 edges. Removed pre-route-group paths remain removed. Four older edge directions were subsequently checked against source and corrected, as recorded below. Unresolved historical coverage and SQL extraction limits still apply.
 
 The scoped auth/profile typography and account-return update re-extracted eight affected files; the graph remains at 336 nodes and 332 edges. Thirty-seven unresolved extractor edges were omitted.
 
@@ -213,3 +213,5 @@ Learning schema readability update re-extracted its source: 400 nodes, 401 edges
 Typed learning DAL update re-extracted four allowlisted files: 400 nodes and 397 edges; 20 unresolved extractor edges omitted.
 
 Explicit explored-sounds update re-extracted three allowlisted files: 400 nodes and 397 edges; 12 unresolved extractor edges omitted.
+
+Four historical edge directions were checked against source and corrected: seedling mount calls shadowTexture (scene.ts:128), weekly calls roundTo5 (pricing.ts:11), organisationSchema calls url (schema-org.ts:17), and the provisioning runbook references the founding inventory migrations (db/README.md:3). No remaining source/target versus _src/_tgt mismatches were found. Other SQL extraction, unresolved-edge and historical corpus coverage limits remain.

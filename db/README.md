@@ -324,3 +324,8 @@ GRANT EXECUTE ON FUNCTION portal.create_invoice_children_draft_checked(text,uuid
 ```
 
 Verify the function is not executable by PUBLIC, the runtime has this individual grant and no table or internal helper access, and old request replays and new child-count writes work on a disposable database. Until the migration and grant are present, child draft saves remain unavailable; do not treat an unavailable save as successful. Run `db/tests/invoice-quantity-before.sql` before 0019 and `db/tests/invoice-quantity-after.sql` afterward on a disposable database.
+
+Migration 0020 adds `portal.list_admin_sessions(text,date)` for the admin Today page. After review, apply the migration and run `GRANT EXECUTE ON FUNCTION portal.list_admin_sessions(text,date) TO goldleaf_portal_runtime;` as the owner; it checks active admin membership on every read and does not require staff membership. Run `db/tests/admin-today.sql` against a disposable database. Apply migration and grant before deploying the route.
+
+
+Migrations 0019 and 0020 and their individual runtime grants were verified in QA, development and production on 12 November 2026. Each environment had 84 restricted runtime function grants; invoice snapshots remained unchanged. This verifies database state, not application deployment.

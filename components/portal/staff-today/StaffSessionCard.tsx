@@ -6,9 +6,11 @@ import { formatUkSession } from "@/lib/portal/uk-time";
 export function StaffSessionCard({
   session,
   priority,
+  role = "staff",
 }: {
   session: ScopedSession;
   priority: boolean;
+  role?: "admin" | "staff";
 }) {
   return (
     <li
@@ -45,7 +47,7 @@ export function StaffSessionCard({
               ? "btn btn-primary w-full sm:w-auto"
               : "inline-flex min-h-10 items-center gap-2 font-semibold text-[#06451d] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2"
           }
-          href={`/staff/sessions/${session.id}`}
+          href={`/${role}/sessions/${session.id}`}
         >
           Open session <ArrowRight size={17} aria-hidden="true" />
         </a>

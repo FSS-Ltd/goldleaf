@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { MobileMore } from "./admin/MobileMore";
 import { AccountMenu } from "./auth/AccountMenu";
 import {
   Home,
@@ -18,6 +19,7 @@ import { PortalLiveUpdates } from "./events/PortalLiveUpdates";
 
 type Section =
   | "home"
+  | "today"
   | "staff"
   | "invoices"
   | "settings"
@@ -41,7 +43,7 @@ export function PortalShell({
 }) {
   const admin = role === "admin";
   const staff = role === "staff";
-  const home = admin ? "/admin" : staff ? "/staff" : "/parent";
+  const home = admin ? "/admin/today" : staff ? "/staff" : "/parent";
   const title = admin ? "Families" : staff ? "Today" : "Your family portal";
   const links: {
     href: string;
@@ -49,8 +51,9 @@ export function PortalShell({
     section: Section;
     icon: typeof Home;
   }[] = [
+    ...(admin ? [{ href: "/admin/today", label: "Today", section: "today" as const, icon: Home }] : []),
     {
-      href: home,
+      href: admin ? "/admin" : home,
       label: admin ? "Families" : staff ? "Today" : "Home",
       section: "home",
       icon: admin ? Users : Home,
@@ -217,27 +220,24 @@ export function PortalShell({
         aria-label="Portal"
         className="fixed inset-x-0 bottom-0 z-20 border-t border-[#e3d7c3] bg-[#f8f3ee] px-2 py-2 md:hidden"
       >
-        <div className="flex gap-1 overflow-x-auto">
+        <div className="flex gap-1">
           {links
-            .filter((link) => link.section !== "settings")
+            .filter((link) => link.section !== "settings" && (!admin || (link.section !== "staff" && link.section !== "invoices")))
             .map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 prefetch={false}
                 aria-current={
-                  section === link.section
-                    ? "page"
-                    : section === "settings" && link.section === "invoices"
-                      ? "location"
-                      : undefined
+                  section === link.section ? "page" : undefined
                 }
-                className={`flex min-h-12 min-w-12 flex-1 flex-col items-center justify-center gap-1 rounded-lg px-1 py-1 text-xs font-medium text-[#1b3022] ${section === link.section || (section === "settings" && link.section === "invoices") ? "bg-[#ecd081]" : ""}`}
+                className={`flex min-h-12 min-w-12 flex-1 flex-col items-center justify-center gap-1 rounded-lg px-1 py-1 text-xs font-medium text-[#1b3022] ${section === link.section ? "bg-[#ecd081]" : ""}`}
               >
                 <link.icon size={19} className="shrink-0" aria-hidden="true" />
                 {link.label}
               </Link>
             ))}
+          {admin && <MobileMore section={section} />}
         </div>
       </nav>
     </div>

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { selectPrioritySession } from "./portal/staff-today";
+import { selectPrioritySession, selectTodaySessions, ukDayKey } from "./portal/staff-today";
 import type { ScopedSession } from "./portal/sessions";
 
 const session = (
@@ -41,4 +41,23 @@ test("completed and cancelled sessions are never the priority", () => {
     ),
     undefined,
   );
+});
+
+
+test("today selection follows London dates across daylight saving changes", () => {
+  assert.equal(ukDayKey(new Date("2026-03-29T23:30:00Z")), "2026-03-30");
+  assert.equal(ukDayKey(new Date("2026-10-25T23:30:00Z")), "2026-10-25");
+  const sessions = [session("before", "scheduled", "2026-03-28T23:59:00Z"), session("inside", "scheduled", "2026-03-29T22:59:00Z"), session("after", "scheduled", "2026-03-29T23:00:00Z")];
+  assert.deepEqual(selectTodaySessions(sessions, new Date("2026-03-29T12:00:00Z")).map((item) => item.id), ["inside"]);
+});
+
+test("shared session cards target the fixed portal role", async () => {
+  const { createElement } = await import("react");
+  const { renderToStaticMarkup } = await import("react-dom/server");
+  const { StaffSessionCard } = await import("../components/portal/staff-today/StaffSessionCard");
+  const item = session("session-1", "scheduled", "2026-11-11T13:00:00Z");
+  const admin = renderToStaticMarkup(createElement(StaffSessionCard, { session: item, priority: true, role: "admin" }));
+  const staff = renderToStaticMarkup(createElement(StaffSessionCard, { session: item, priority: true }));
+  assert.match(admin, /href="\/admin\/sessions\/session-1"/);
+  assert.match(staff, /href="\/staff\/sessions\/session-1"/);
 });

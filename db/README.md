@@ -297,3 +297,14 @@ Only verified server identity may provide a subject. The runtime role needs indi
 Migration `0016_portal_events.sql` adds commit-only opaque-ID notifications for session public fields and membership/assignment changes. Legacy session signals also cover private notes and drafts, so the resolver never delivers them to parents. Published learning, family messages and parent-owned requests resolve current authority before emitting a generic client invalidation. The affected subject receives `access_changed` even after revocation, which prompts a fresh authorised read and does not grant access. Grant only `portal.portal_event_active(text)` and `portal.resolve_portal_event(text,text,uuid)` to the trusted runtime; do not grant the trigger functions or tables.
 
 The Node route uses `GOLDLEAF_PORTAL_EVENT_DATABASE_URL` with a direct, unpooled connection for LISTEN. One open portal view consumes one direct database connection; JWT expiry or 55 seconds closes it, and reconnect establishes LISTEN before a current-authority check and client refresh. Each connection performs one LISTEN and one authority query at startup; each genuine notification performs one scoped authority query. Heartbeats do not query the database. Short-lived Clerk tokens and the platform duration limit cause reconnects; operators should account for connection and function duration costs before enabling the transport. The standalone client component is not yet integrated into the shared shell. No paid service, worker or polling fallback is included.
+
+## Session UI scoped reads
+
+After review, apply `0014_session_ui_access.sql` and grant only its two entry points to the restricted runtime:
+
+```sql
+GRANT EXECUTE ON FUNCTION portal.read_scoped_session(text, uuid), portal.list_staff_sessions(text)
+TO goldleaf_portal_runtime;
+```
+
+The single-session reader checks current family scope; the batched staff reader joins current assignments and active staff membership. Neither grants table access. Run `db/tests/session-ui-access.sql` on disposable PostgreSQL. No development or production deployment is implied.

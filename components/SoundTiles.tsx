@@ -28,3 +28,8 @@ export function SoundChips({ text }: { text: string }) {
     </span>
   );
 }
+
+/** Display explicitly recorded labels without splitting digraphs or parenthetical text. */
+export function RecordedSoundChips({ sounds }: { sounds: string[] }) {
+  return <span>{sounds.map((sound) => <span key={sound} className="chip">{sound}</span>)}</span>;
+}

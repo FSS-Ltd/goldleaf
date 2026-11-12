@@ -5820,20 +5820,6 @@
       "norm_label": "portalloading()"
     },
     {
-      "label": "tierLabel()",
-      "file_type": "code",
-      "source_file": "components/portal/invoices/DraftPreview.tsx",
-      "source_location": "L58",
-      "id": "draftpreview_tierlabel"
-    },
-    {
-      "label": "quantityLabel()",
-      "file_type": "code",
-      "source_file": "components/portal/invoices/AdminDraftInvoice.tsx",
-      "source_location": "L39",
-      "id": "admindraftinvoice_quantitylabel"
-    },
-    {
       "label": "quantityLabel()",
       "file_type": "code",
       "source_file": "components/portal/invoices/format.ts",
@@ -5876,6 +5862,20 @@
       "source_file": "db/migrations/0019_invoice_quantity_basis.sql",
       "source_location": "L65",
       "norm_label": "create_invoice_children_draft_checked"
+    },
+    {
+      "label": "DraftUnitRate.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/DraftUnitRate.tsx",
+      "source_location": "L1",
+      "id": "components_portal_invoices_draftunitrate_tsx"
+    },
+    {
+      "label": "DraftUnitRate()",
+      "file_type": "code",
+      "source_file": "components/portal/invoices/DraftUnitRate.tsx",
+      "source_location": "L3",
+      "id": "draftunitrate_draftunitrate"
     }
   ],
   "links": [
@@ -14272,18 +14272,6 @@
       "target": "invoices_issueinvoice"
     },
     {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "components/portal/invoices/InvoiceDocument.tsx",
-      "source_location": "L60",
-      "weight": 1.0,
-      "_src": "invoicedocument_invoicedate",
-      "_tgt": "format_quantitylabel",
-      "source": "invoicedocument_invoicedate",
-      "target": "format_quantitylabel"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/portal/invoices/format.ts",
@@ -14326,18 +14314,6 @@
       "_tgt": "format_tierlabel",
       "source": "components_portal_invoices_format_ts",
       "target": "format_tierlabel"
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "components/portal/invoices/DraftPreview.tsx",
-      "source_location": "L58",
-      "weight": 1.0,
-      "_src": "draftpreview_tierlabel",
-      "_tgt": "format_pounds",
-      "source": "format_pounds",
-      "target": "draftpreview_tierlabel"
     },
     {
       "relation": "calls",
@@ -14425,40 +14401,6 @@
       "_tgt": "draftpreview_draftpreview",
       "source": "components_portal_invoices_draftpreview_tsx",
       "target": "draftpreview_draftpreview"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/invoices/DraftPreview.tsx",
-      "source_location": "L58",
-      "weight": 1.0,
-      "_src": "components_portal_invoices_draftpreview_tsx",
-      "_tgt": "draftpreview_tierlabel",
-      "source": "components_portal_invoices_draftpreview_tsx",
-      "target": "draftpreview_tierlabel"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/invoices/AdminDraftInvoice.tsx",
-      "source_location": "L84",
-      "weight": 1.0,
-      "_src": "components_portal_invoices_admindraftinvoice_tsx",
-      "_tgt": "admindraftinvoice_quantitylabel",
-      "source": "components_portal_invoices_admindraftinvoice_tsx",
-      "target": "admindraftinvoice_quantitylabel"
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "components/portal/invoices/InvoiceDocument.tsx",
-      "source_location": "L60",
-      "weight": 1.0,
-      "_src": "invoicedocument_invoicedate",
-      "_tgt": "admindraftinvoice_quantitylabel",
-      "source": "admindraftinvoice_quantitylabel",
-      "target": "invoicedocument_invoicedate"
     },
     {
       "relation": "contains",
@@ -14641,6 +14583,105 @@
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/invoices.ts",
       "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/DraftUnitRate.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "components_portal_invoices_draftunitrate_tsx",
+      "_tgt": "draftunitrate_draftunitrate",
+      "source": "components_portal_invoices_draftunitrate_tsx",
+      "target": "draftunitrate_draftunitrate"
+    },
+    {
+      "source": "components_portal_invoices_draftpreview_tsx",
+      "target": "format_quantitylabel",
+      "_src": "components_portal_invoices_draftpreview_tsx",
+      "_tgt": "format_quantitylabel",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/DraftPreview.tsx",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_draftpreview_tsx",
+      "target": "format_tierlabel",
+      "_src": "components_portal_invoices_draftpreview_tsx",
+      "_tgt": "format_tierlabel",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/DraftPreview.tsx",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_admindraftinvoice_tsx",
+      "target": "format_quantitylabel",
+      "_src": "components_portal_invoices_admindraftinvoice_tsx",
+      "_tgt": "format_quantitylabel",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/AdminDraftInvoice.tsx",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_admindraftinvoice_tsx",
+      "target": "format_tierlabel",
+      "_src": "components_portal_invoices_admindraftinvoice_tsx",
+      "_tgt": "format_tierlabel",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/AdminDraftInvoice.tsx",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_admindraftinvoice_tsx",
+      "target": "draftunitrate_draftunitrate",
+      "_src": "components_portal_invoices_admindraftinvoice_tsx",
+      "_tgt": "draftunitrate_draftunitrate",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/AdminDraftInvoice.tsx",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_invoicedocument_tsx",
+      "target": "format_quantitylabel",
+      "_src": "components_portal_invoices_invoicedocument_tsx",
+      "_tgt": "format_quantitylabel",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/InvoiceDocument.tsx",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_invoicedocument_tsx",
+      "target": "format_tierlabel",
+      "_src": "components_portal_invoices_invoicedocument_tsx",
+      "_tgt": "format_tierlabel",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/InvoiceDocument.tsx",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "draftunitrate_draftunitrate",
+      "target": "format_pounds",
+      "_src": "draftunitrate_draftunitrate",
+      "_tgt": "format_pounds",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/DraftUnitRate.tsx",
+      "source_location": "L8",
       "weight": 1.0
     }
   ],

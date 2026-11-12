@@ -47,3 +47,16 @@ test("issued and printed invoice text wraps inside a shrinkable line grid", () =
   assert.ok(html.includes(longText));
   assert.ok(html.includes("£220.00"));
 });
+
+test("saved draft rates show each child cadence and retain legacy period copy", async () => {
+  const { DraftUnitRate } = await import("../components/portal/invoices/DraftUnitRate");
+  for (const [cadence, basis, expected] of [
+    ["weekly", "children", "£110.00 per week per child"],
+    ["monthly", "children", "£110.00 per month per child"],
+    ["weekly", "periods", "£110.00 per period"],
+    ["monthly", undefined, "£110.00 per period"],
+  ] as const) {
+    const html = renderToStaticMarkup(createElement(DraftUnitRate, { amountPence: 11000, cadence, basis }));
+    assert.equal(html, expected);
+  }
+});

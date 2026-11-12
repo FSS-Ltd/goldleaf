@@ -3,6 +3,7 @@ import type {
   previewSavedInvoice,
 } from "@/lib/portal/invoices";
 import { IssueForm } from "./InvoiceActions";
+import { DraftUnitRate } from "./DraftUnitRate";
 import { card, pounds, quantityLabel, tierLabel, subcard } from "./format";
 type AdminInvoice = NonNullable<Awaited<ReturnType<typeof readAdminInvoice>>>;
 type Preview = Awaited<ReturnType<typeof previewSavedInvoice>> | null;
@@ -38,7 +39,7 @@ export function AdminDraftInvoice({
                 <p className="mt-1 text-xs text-[#5a6a5e]">
                   {quantityLabel(line.quantity, line.cadence, line.quantity_basis)} · {line.days} days per week ·{" "}
                   {tierLabel(line.rate_tier)} · {pounds(line.hourly_rate_pence)} per hour ·{" "}
-                  {pounds(line.unit_amount_pence)} per {line.quantity_basis === "children" ? "child per period" : "period"}
+                  <DraftUnitRate amountPence={line.unit_amount_pence} cadence={line.cadence} basis={line.quantity_basis} />
                   {line.discount_percent
                     ? ` · ${line.discount_percent}% discount included`
                     : ""}
@@ -82,7 +83,7 @@ export function AdminDraftInvoice({
                 </p>
                 <p className="mt-1 text-[#5a6a5e]">
                   {quantityLabel(line.quantity, line.cadence, line.quantity_basis)} · {line.days} days per week ·
-                  saved amount {pounds(line.unit_amount_pence)} per {line.quantity_basis === "children" ? "child per period" : "period"}
+                  saved amount <DraftUnitRate amountPence={line.unit_amount_pence} cadence={line.cadence} basis={line.quantity_basis} />
                 </p>
               </li>
             ))}

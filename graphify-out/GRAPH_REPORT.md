@@ -149,3 +149,15 @@ Identity scope update: AST extraction added portal identity and sign-in route no
 Staff migration holds a parent invitation writer lock across digest backfill and trigger installation; `db/tests/staff-migration-concurrency.sh` exercises the upgrade race on PostgreSQL 17.
 
 Scoped library extraction added the Clerk proxy matcher regression test node. `proxy.ts` includes `/__clerk/:path*`; frontend proxy activation depends on provider and deployment configuration.
+
+## Portal access layer update
+
+Allowlisted structural refresh added server-only portal access files; SQL and SQL-test nodes were added from source because SQL extraction is unsupported. Existing semantic nodes remain. The graph has 161 nodes and 138 edges; existing semantic coverage limitations remain.
+
+Corrected 4 portal edge directions where serialized source/target contradicted the source-backed `_src`/`_tgt` fields. Historical graph directions outside this affected scope remain unaudited.
+
+## Invoice and portal access merge
+
+The invoice database node and source-backed edges were retained alongside the access-layer graph. This merged graph contains 162 nodes and 141 edges; older structural summaries above describe earlier scopes.
+
+Founding DTO update: scoped extraction adds the `setFamilyFounding` wrapper. The current merged graph contains 163 nodes and 144 edges; SQL is source-linked manually.

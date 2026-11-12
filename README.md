@@ -14,6 +14,14 @@ pnpm dev
 bun dev
 ```
 
+For this project, use Node 22 or later and the `localhost` hostname. For example, if Node 22 is installed with nvm:
+
+```bash
+PATH="$HOME/.nvm/versions/node/v22.23.3/bin:$PATH" "$HOME/.nvm/versions/node/v22.23.3/bin/node" node_modules/next/dist/bin/next dev
+```
+
+Open `http://localhost:3000`, not a numeric loopback address, when testing the Clerk proxy. If `.next/dev` was created with Node 21, stop the server, preserve that cache separately, and restart under Node 22 before troubleshooting.
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.

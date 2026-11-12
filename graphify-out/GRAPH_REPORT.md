@@ -1,5 +1,9 @@
 # Graph Report - goldleaf-graph-refresh  (2026-11-11)
 
+## Scoped invoice-pricing update (2026-11-12)
+
+Graphify AST extraction added `lib/portal/invoice-pricing.ts` and `lib/invoice-pricing.test.ts`. Source-verified edges connect the quote to the existing weekly/monthly functions, business content and test. The earlier report below describes the prior corpus and clustering; it has not been recomputed. No semantic extraction or external upload was performed.
+
 ## Corpus Check
 - 53 files · ~12,931 words
 - Verdict: corpus is large enough that graph structure adds value.
@@ -134,3 +138,8 @@ The portal node is partial, reflecting its existing onboarding database foundati
 
 
 Identity scope update: AST extraction added portal identity and sign-in route nodes. Cross-scope dependencies, proxy, and test edges remain incomplete; see FEATURE_TREE.md for source-backed connections.
+## Staff onboarding update
+
+`portal_staff_onboarding` links `db/migrations/0004_staff_onboarding.sql` to `portal_onboarding_db`. Graphify does not extract SQL: scoped `graphify update db/migrations` found no supported code files, so this source-backed node and edge were added manually. The structural summary above describes the previous extraction.
+
+Staff migration holds a parent invitation writer lock across digest backfill and trigger installation; `db/tests/staff-migration-concurrency.sh` exercises the upgrade race on PostgreSQL 17.

@@ -135,3 +135,54 @@ psql_test -c "SELECT portal.issue_invitation('overlap-admin','00000000-0000-0000
 run_overlap revoke-first cc \
   "SELECT portal.revoke_membership('overlap-admin',(SELECT id FROM portal.memberships WHERE subject='overlap-parent'));" \
   "SELECT portal.issue_invitation('overlap-admin','00000000-0000-0000-0000-000000000001','overlap@example.com',decode(repeat('cc',32),'hex'),now()+interval '1 day');"
+
+# Staff issuance and revocation serialize on the invitation version, in either order.
+psql_test <<'SQL'
+INSERT INTO portal.memberships(subject, role) VALUES ('staff-race-admin', 'admin'), ('staff-race', 'staff');
+SQL
+run_staff_overlap() {
+  order=$1
+  digest=$2
+  mkfifo "$TASK_TMP_DIR/staff-$order"
+  psql_test <"$TASK_TMP_DIR/staff-$order" >"$TASK_TMP_DIR/staff-first-$order" 2>&1 &
+  first=$!
+  exec 3>"$TASK_TMP_DIR/staff-$order"
+  printf '%s\n' 'BEGIN;' "$3" '\echo first_locked' >&3
+  wait_for grep -q first_locked "$TASK_TMP_DIR/staff-first-$order"
+  PGAPPNAME="staff-$order" psql_test -c "$4" >"$TASK_TMP_DIR/staff-second-$order" 2>&1 &
+  second=$!
+  wait_for is_lock_waiting "staff-$order"
+  printf '%s\n' 'COMMIT;' '\q' >&3
+  exec 3>&-
+  wait "$first"
+  wait "$second"
+  if [ "$order" = issue-first ]; then
+    if psql_test -c "SELECT portal.accept_staff_invitation('staff-race','staff-race@example.com',decode(repeat('$digest',32),'hex'))" >"$TASK_TMP_DIR/staff-stale" 2>&1; then
+      echo 'Staff invitation issued before revocation restored membership' >&2; exit 1
+    fi
+  else
+    psql_test -c "SELECT portal.accept_staff_invitation('staff-race','staff-race@example.com',decode(repeat('$digest',32),'hex'))" >/dev/null
+  fi
+}
+run_staff_overlap issue-first e1 \
+  "SELECT portal.issue_staff_invitation('staff-race-admin','staff-race@example.com',decode(repeat('e1',32),'hex'),now()+interval '1 day');" \
+  "SELECT portal.revoke_membership('staff-race-admin',(SELECT id FROM portal.memberships WHERE subject='staff-race'));"
+psql_test -c "SELECT portal.issue_staff_invitation('staff-race-admin','staff-race@example.com',decode(repeat('e4',32),'hex'),now()+interval '1 day'); SELECT portal.accept_staff_invitation('staff-race','staff-race@example.com',decode(repeat('e4',32),'hex'));" >/dev/null
+run_staff_overlap revoke-first e2 \
+  "SELECT portal.revoke_membership('staff-race-admin',(SELECT id FROM portal.memberships WHERE subject='staff-race'));" \
+  "SELECT portal.issue_staff_invitation('staff-race-admin','staff-race@example.com',decode(repeat('e2',32),'hex'),now()+interval '1 day');"
+psql_test -c "SELECT portal.issue_staff_invitation('staff-race-admin','replay@example.com',decode(repeat('e3',32),'hex'),now()+interval '1 day')" >/dev/null
+mkfifo "$TASK_TMP_DIR/staff-accept"
+psql_test <"$TASK_TMP_DIR/staff-accept" >"$TASK_TMP_DIR/staff-accept-first" 2>&1 &
+first=$!
+exec 3>"$TASK_TMP_DIR/staff-accept"
+printf '%s\n' 'BEGIN;' "SELECT portal.accept_staff_invitation('staff-replay','replay@example.com',decode(repeat('e3',32),'hex'));" '\echo accepted_locked' >&3
+wait_for grep -q accepted_locked "$TASK_TMP_DIR/staff-accept-first"
+PGAPPNAME=staff-accept-competitor psql_test -c "SELECT portal.accept_staff_invitation('staff-replay','replay@example.com',decode(repeat('e3',32),'hex'))" >"$TASK_TMP_DIR/staff-accept-second" 2>&1 &
+second=$!
+wait_for is_lock_waiting staff-accept-competitor
+printf '%s\n' 'COMMIT;' '\q' >&3
+exec 3>&-
+wait "$first"
+if wait "$second"; then echo 'Concurrent staff invitation replay succeeded' >&2; exit 1; fi
+grep -q 'invalid invitation' "$TASK_TMP_DIR/staff-accept-second"

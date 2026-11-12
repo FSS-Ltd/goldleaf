@@ -898,7 +898,7 @@
       "source_file": "docs/portal-mockups/DESIGN-BRIEF.md",
       "source_location": "L85-L97",
       "status": "planned",
-      "scope": "Parents access only their child’s shared information. Private notes remain separate; sharing is explicit. Billing is conceptual. Permissions, delivery, payment flows and accessibility remain unimplemented or unverified.",
+      "scope": "Parents access only their child\u2019s shared information. Private notes remain separate; sharing is explicit. Billing is conceptual. Permissions, delivery, payment flows and accessibility remain unimplemented or unverified.",
       "community": 2,
       "norm_label": "planned portal information boundaries and unverified behaviour",
       "id": "portal_information_boundaries"
@@ -914,7 +914,7 @@
     },
     {
       "label": "Parent home desktop concept",
-      "description": "Static fictional family portal mockup, explicitly labelled CONCEPT · FICTIONAL DATA · TERM 1; not evidence of runtime implementation. Sidebar shows Home, Sessions, Learning, Messages with badge 1, Billing and Help; parent profile Alex Taylor; child selector Robin T. · Age 3.",
+      "description": "Static fictional family portal mockup, explicitly labelled CONCEPT \u00b7 FICTIONAL DATA \u00b7 TERM 1; not evidence of runtime implementation. Sidebar shows Home, Sessions, Learning, Messages with badge 1, Billing and Help; parent profile Alex Taylor; child selector Robin T. \u00b7 Age 3.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/parent-home-desktop.png",
       "confidence": "EXTRACTED",
@@ -925,7 +925,7 @@
     },
     {
       "label": "Parent desktop next-session card",
-      "description": "Visible next session Thu 12 Nov 2026, 09:00–10:45; Sounds, stories & small discoveries; With Sam · Home visit; actions View session and Request a change. The historical 105-minute interval describes this screenshot only, not current requirements.",
+      "description": "Visible next session Thu 12 Nov 2026, 09:00\u201310:45; Sounds, stories & small discoveries; With Sam \u00b7 Home visit; actions View session and Request a change. The historical 105-minute interval describes this screenshot only, not current requirements.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/parent-home-desktop.png",
       "confidence": "EXTRACTED",
@@ -936,7 +936,7 @@
     },
     {
       "label": "Parent desktop learning overview",
-      "description": "Current focus Stage 1, Early Phonics. Stage 0 completed; Stage 1 current; Stages 2–4 upcoming. Letter cards s/sun, a/apple, t/tree and p/pebble; View learning journey action.",
+      "description": "Current focus Stage 1, Early Phonics. Stage 0 completed; Stage 1 current; Stages 2\u20134 upcoming. Letter cards s/sun, a/apple, t/tree and p/pebble; View learning journey action.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/parent-home-desktop.png",
       "confidence": "EXTRACTED",
@@ -958,7 +958,7 @@
     },
     {
       "label": "Parent learning desktop concept",
-      "description": "Static fictional UI, explicitly labelled Concept · fictional data. Goldleaf family portal shows Learning selected in a left navigation with Home, Sessions, Messages, Billing and Help; a parent account footer and child selector surround a two-column learning view.",
+      "description": "Static fictional UI, explicitly labelled Concept \u00b7 fictional data. Goldleaf family portal shows Learning selected in a left navigation with Home, Sessions, Messages, Billing and Help; a parent account footer and child selector surround a two-column learning view.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/parent-learning-desktop.png",
       "source_location": null,
@@ -990,7 +990,7 @@
     },
     {
       "label": "Shared tutor observations",
-      "description": "Right column shows dated tutor notes shared directly with the fictional child’s family, followed by an optional two-minute sound hunt card and a View full learning journey action.",
+      "description": "Right column shows dated tutor notes shared directly with the fictional child\u2019s family, followed by an optional two-minute sound hunt card and a View full learning journey action.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/parent-learning-desktop.png",
       "source_location": null,
@@ -1022,7 +1022,7 @@
     },
     {
       "label": "Staff today desktop concept",
-      "description": "Static fictional staff portal mockup, explicitly labelled Concept · fictional data; not evidence of runtime implementation. Wed 11 Nov 2026, 11:00; greeting Sam (Tutor); 3 sessions today, 1 completed, 2 remaining. Sidebar Today, Sessions, Children, Learning plans, Messages and Settings. Needs Attention shows 4 items including a parent message and a time-change request.",
+      "description": "Static fictional staff portal mockup, explicitly labelled Concept \u00b7 fictional data; not evidence of runtime implementation. Wed 11 Nov 2026, 11:00; greeting Sam (Tutor); 3 sessions today, 1 completed, 2 remaining. Sidebar Today, Sessions, Children, Learning plans, Messages and Settings. Needs Attention shows 4 items including a parent message and a time-change request.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/staff-today-desktop.png",
       "confidence": "EXTRACTED",
@@ -1033,7 +1033,7 @@
     },
     {
       "label": "Staff desktop daily schedule",
-      "description": "Chronological home-visit schedule: Casey R. age 4, 09:00–10:45 completed and attended; Ellis M. age 3, 11:15–13:00 next up starting in 15m; Rowan P. age 3, 14:00–15:45 upcoming and scheduled. Ellis learning focus blends s, a and t through play; attendance not recorded with Record attendance and Open session actions. Historical 105-minute intervals describe this screenshot only, not current requirements.",
+      "description": "Chronological home-visit schedule: Casey R. age 4, 09:00\u201310:45 completed and attended; Ellis M. age 3, 11:15\u201313:00 next up starting in 15m; Rowan P. age 3, 14:00\u201315:45 upcoming and scheduled. Ellis learning focus blends s, a and t through play; attendance not recorded with Record attendance and Open session actions. Historical 105-minute intervals describe this screenshot only, not current requirements.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/staff-today-desktop.png",
       "confidence": "EXTRACTED",
@@ -1055,7 +1055,7 @@
     },
     {
       "label": "Staff desktop parent update draft",
-      "description": "Separate Needs Attention card for Casey R. 09:00 session labelled Parent update · Draft and FAMILY COPY. Draft observation update prepared for family; Preview parent update action. Distinct visible UI from the internal private staff note; no sending action shown in this card.",
+      "description": "Separate Needs Attention card for Casey R. 09:00 session labelled Parent update \u00b7 Draft and FAMILY COPY. Draft observation update prepared for family; Preview parent update action. Distinct visible UI from the internal private staff note; no sending action shown in this card.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/staff-today-desktop.png",
       "confidence": "EXTRACTED",
@@ -1082,7 +1082,7 @@
     },
     {
       "label": "Historical 105-minute session timeline",
-      "description": "Screenshot shows nine pending blocks from 11:15 to 13:00, labelled 105 minutes total: arrive and settle, welcome circle, phonics, move, snack and story, maths through play, singing and music, make and explore, review and goodbye. The 11:30–11:45 phonics block is selected. This is a historical static design, not a verified current scheduling rule.",
+      "description": "Screenshot shows nine pending blocks from 11:15 to 13:00, labelled 105 minutes total: arrive and settle, welcome circle, phonics, move, snack and story, maths through play, singing and music, make and explore, review and goodbye. The 11:30\u201311:45 phonics block is selected. This is a historical static design, not a verified current scheduling rule.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/staff-session-desktop.png",
       "source_location": null,
@@ -1098,7 +1098,7 @@
     },
     {
       "label": "Selected phonics activity and materials",
-      "description": "Central panel shows Stage 1 sound blending, s / sun, a / apple, t / tap and p / pan tiles; an activity summary; three materials rows marked Ready; and a tutor cue to keep a gentle pace and follow the child’s interest.",
+      "description": "Central panel shows Stage 1 sound blending, s / sun, a / apple, t / tap and p / pan tiles; an activity summary; three materials rows marked Ready; and a tutor cue to keep a gentle pace and follow the child\u2019s interest.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/staff-session-desktop.png",
       "source_location": null,
@@ -1130,7 +1130,7 @@
     },
     {
       "label": "Parent home mobile concept",
-      "description": "Static fictional mobile portal preview explicitly labelled Concept · fictional data, not evidence of runtime implementation. Greeting Alex; child selector Robin T. · Age 3. Bottom navigation shows Home selected, Sessions, Learning, Messages with a notification dot, and Account.",
+      "description": "Static fictional mobile portal preview explicitly labelled Concept \u00b7 fictional data, not evidence of runtime implementation. Greeting Alex; child selector Robin T. \u00b7 Age 3. Bottom navigation shows Home selected, Sessions, Learning, Messages with a notification dot, and Account.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/parent-home-mobile.png",
       "confidence": "EXTRACTED",
@@ -1141,7 +1141,7 @@
     },
     {
       "label": "Parent mobile next-session card",
-      "description": "Next session Thu 12 Nov 2026, 09:00–10:45 (1h 45m), Sounds, stories & small discoveries. With Sam · Home visit; Playful sound practice and a story. View session and Request a change actions. The displayed historical 105-minute duration describes this screenshot only, not current requirements.",
+      "description": "Next session Thu 12 Nov 2026, 09:00\u201310:45 (1h 45m), Sounds, stories & small discoveries. With Sam \u00b7 Home visit; Playful sound practice and a story. View session and Request a change actions. The displayed historical 105-minute duration describes this screenshot only, not current requirements.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/parent-home-mobile.png",
       "confidence": "EXTRACTED",
@@ -1174,7 +1174,7 @@
     },
     {
       "label": "Staff today mobile concept",
-      "description": "Static UI explicitly labelled Concept · fictional data. Single-column Goldleaf Staff dashboard greets Sam (Tutor), shows three sessions today with one completed and two remaining, and bottom navigation for Today, Sessions, Children, Messages and More.",
+      "description": "Static UI explicitly labelled Concept \u00b7 fictional data. Single-column Goldleaf Staff dashboard greets Sam (Tutor), shows three sessions today with one completed and two remaining, and bottom navigation for Today, Sessions, Children, Messages and More.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/staff-today-mobile.png",
       "source_location": null,
@@ -1190,7 +1190,7 @@
     },
     {
       "label": "Mobile next-session and attendance affordances",
-      "description": "Next-up card shows fictional Ellis M., age 3, 11:15–13:00 home visit, a learning focus, attendance Not recorded, separate Mark present and Mark absent buttons, and Open session. These explicit attendance controls are design affordances, not verified functionality.",
+      "description": "Next-up card shows fictional Ellis M., age 3, 11:15\u201313:00 home visit, a learning focus, attendance Not recorded, separate Mark present and Mark absent buttons, and Open session. These explicit attendance controls are design affordances, not verified functionality.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/staff-today-mobile.png",
       "source_location": null,
@@ -1206,7 +1206,7 @@
     },
     {
       "label": "Mobile three-session timeline",
-      "description": "Stacked cards show Casey R. 09:00–10:45 Completed · Attended with View summary, Ellis M. 11:15–13:00 Next up, and Rowan P. 14:00–15:45 Upcoming with Not recorded. Times and statuses are fictional static examples.",
+      "description": "Stacked cards show Casey R. 09:00\u201310:45 Completed \u00b7 Attended with View summary, Ellis M. 11:15\u201313:00 Next up, and Rowan P. 14:00\u201315:45 Upcoming with Not recorded. Times and statuses are fictional static examples.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/staff-today-mobile.png",
       "source_location": null,
@@ -5711,6 +5711,62 @@
       "file_type": "code",
       "source_file": "lib/portal/onboarding-form-controls.tsx",
       "source_location": "L17"
+    },
+    {
+      "id": "lib_portal_staff_today_ts",
+      "label": "staff-today.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/staff-today.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "staff_today_selectprioritysession",
+      "label": "selectPrioritySession()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff-today.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "lib_staff_today_test_ts",
+      "label": "staff-today.test.ts",
+      "file_type": "code",
+      "source_file": "lib/staff-today.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "staff_today_test_session",
+      "label": "session()",
+      "file_type": "code",
+      "source_file": "lib/staff-today.test.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "components_portal_staff_today_staffsessioncard_tsx",
+      "label": "StaffSessionCard.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/staff-today/StaffSessionCard.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "staffsessioncard_staffsessioncard",
+      "label": "StaffSessionCard()",
+      "file_type": "code",
+      "source_file": "components/portal/staff-today/StaffSessionCard.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "components_portal_staff_today_stafftodayheader_tsx",
+      "label": "StaffTodayHeader.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/staff-today/StaffTodayHeader.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "stafftodayheader_stafftodayheader",
+      "label": "StaffTodayHeader()",
+      "file_type": "code",
+      "source_file": "components/portal/staff-today/StaffTodayHeader.tsx",
+      "source_location": "L4"
     }
   ],
   "links": [
@@ -13671,6 +13727,102 @@
       "_src": "staffforms_staffinviteform",
       "_tgt": "onboarding_form_controls_onboardingattemptid",
       "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_staff_today_ts",
+      "target": "staff_today_selectprioritysession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff-today.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "lib_portal_staff_today_ts",
+      "_tgt": "staff_today_selectprioritysession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_staff_today_test_ts",
+      "target": "staff_today_test_session",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/staff-today.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "lib_staff_today_test_ts",
+      "_tgt": "staff_today_test_session",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "page_stafftoday",
+      "target": "staff_today_selectprioritysession",
+      "_src": "page_stafftoday",
+      "_tgt": "staff_today_selectprioritysession",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_staff_today_test_ts",
+      "target": "staff_today_selectprioritysession",
+      "_src": "lib_staff_today_test_ts",
+      "_tgt": "staff_today_selectprioritysession",
+      "relation": "tests",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/staff-today.test.ts",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_staff_today_staffsessioncard_tsx",
+      "target": "staffsessioncard_staffsessioncard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/staff-today/StaffSessionCard.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "components_portal_staff_today_staffsessioncard_tsx",
+      "_tgt": "staffsessioncard_staffsessioncard",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "page_stafftoday",
+      "target": "staffsessioncard_staffsessioncard",
+      "_src": "page_stafftoday",
+      "_tgt": "staffsessioncard_staffsessioncard",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_staff_today_stafftodayheader_tsx",
+      "target": "stafftodayheader_stafftodayheader",
+      "_src": "components_portal_staff_today_stafftodayheader_tsx",
+      "_tgt": "stafftodayheader_stafftodayheader",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/portal/staff-today/StaffTodayHeader.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "page_stafftoday",
+      "target": "stafftodayheader_stafftodayheader",
+      "_src": "page_stafftoday",
+      "_tgt": "stafftodayheader_stafftodayheader",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L50",
+      "weight": 1.0
     }
   ],
   "hyperedges": []

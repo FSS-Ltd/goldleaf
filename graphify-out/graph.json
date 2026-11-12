@@ -3266,14 +3266,6 @@
       "norm_label": "staff-access.test.ts"
     },
     {
-      "id": "tests_e2e_portal_spec_ts",
-      "label": "portal.spec.ts",
-      "file_type": "code",
-      "source_file": "tests/e2e/portal.spec.ts",
-      "source_location": "L1",
-      "norm_label": "portal.spec.ts"
-    },
-    {
       "id": "portal_staff_delivery_sql",
       "label": "Staff delivery and atomic assignment SQL",
       "file_type": "document",
@@ -4245,6 +4237,218 @@
       "label": "billingSettingsStatus()",
       "file_type": "code",
       "source_file": "lib/portal/billing-settings-status.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_messages_sql",
+      "label": "Family messaging database foundation",
+      "source_file": "db/migrations/0015_messages.sql",
+      "source_location": "L1",
+      "file_type": "sql",
+      "norm_label": "family messaging database foundation"
+    },
+    {
+      "id": "portal_events_sql",
+      "label": "Portal scoped event notifications",
+      "file_type": "sql",
+      "source_file": "db/migrations/0016_portal_events.sql",
+      "source_location": "L1",
+      "norm_label": "portal scoped event notifications"
+    },
+    {
+      "id": "app_api_portal_events_route_ts",
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/portal/events/route.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "route_get",
+      "label": "GET()",
+      "file_type": "code",
+      "source_file": "app/api/portal/events/route.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "components_portal_events_portalliveupdates_tsx",
+      "label": "PortalLiveUpdates.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "portalliveupdates_portalliveupdates",
+      "label": "PortalLiveUpdates()",
+      "file_type": "code",
+      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
+      "source_location": "L11"
+    },
+    {
+      "id": "lib_events_protocol_test_ts",
+      "label": "events-protocol.test.ts",
+      "file_type": "code",
+      "source_file": "lib/events-protocol.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_events_session_test_ts",
+      "label": "events-session.test.ts",
+      "file_type": "code",
+      "source_file": "lib/events-session.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "events_session_test_release",
+      "label": "release()",
+      "file_type": "code",
+      "source_file": "lib/events-session.test.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "lib_events_stream_test_ts",
+      "label": "events-stream.test.ts",
+      "file_type": "code",
+      "source_file": "lib/events-stream.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "events_stream_test_fakeclient",
+      "label": "fakeClient()",
+      "file_type": "code",
+      "source_file": "lib/events-stream.test.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "lib_messages_schemas_test_ts",
+      "label": "messages-schemas.test.ts",
+      "file_type": "code",
+      "source_file": "lib/messages-schemas.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_portal_events_protocol_ts",
+      "label": "events-protocol.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/events-protocol.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "events_protocol_parseportalevent",
+      "label": "parsePortalEvent()",
+      "file_type": "code",
+      "source_file": "lib/portal/events-protocol.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "lib_portal_events_server_ts",
+      "label": "events-server.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/events-server.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "events_server_openportaleventstream",
+      "label": "openPortalEventStream()",
+      "file_type": "code",
+      "source_file": "lib/portal/events-server.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "lib_portal_events_session_ts",
+      "label": "events-session.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/events-session.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "events_session_getboundeventtoken",
+      "label": "getBoundEventToken()",
+      "file_type": "code",
+      "source_file": "lib/portal/events-session.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "lib_portal_events_stream_ts",
+      "label": "events-stream.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/events-stream.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "events_stream_openeventstream",
+      "label": "openEventStream()",
+      "file_type": "code",
+      "source_file": "lib/portal/events-stream.ts",
+      "source_location": "L32"
+    },
+    {
+      "id": "lib_portal_messages_schemas_ts",
+      "label": "messages-schemas.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/messages-schemas.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_portal_messages_ts",
+      "label": "messages.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/messages.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "messages_sendfamilymessage",
+      "label": "sendFamilyMessage()",
+      "file_type": "code",
+      "source_file": "lib/portal/messages.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "messages_listfamilymessages",
+      "label": "listFamilyMessages()",
+      "file_type": "code",
+      "source_file": "lib/portal/messages.ts",
+      "source_location": "L30"
+    },
+    {
+      "id": "messages_markfamilymessagesread",
+      "label": "markFamilyMessagesRead()",
+      "file_type": "code",
+      "source_file": "lib/portal/messages.ts",
+      "source_location": "L42"
+    },
+    {
+      "id": "messages_familymessageunread",
+      "label": "familyMessageUnread()",
+      "file_type": "code",
+      "source_file": "lib/portal/messages.ts",
+      "source_location": "L48"
+    },
+    {
+      "id": "messages_requestsessionchange",
+      "label": "requestSessionChange()",
+      "file_type": "code",
+      "source_file": "lib/portal/messages.ts",
+      "source_location": "L60"
+    },
+    {
+      "id": "messages_listsessionchangerequests",
+      "label": "listSessionChangeRequests()",
+      "file_type": "code",
+      "source_file": "lib/portal/messages.ts",
+      "source_location": "L71"
+    },
+    {
+      "id": "messages_resolvesessionchange",
+      "label": "resolveSessionChange()",
+      "file_type": "code",
+      "source_file": "lib/portal/messages.ts",
+      "source_location": "L83"
+    },
+    {
+      "id": "tests_e2e_portal_spec_ts",
+      "label": "portal.spec.ts",
+      "file_type": "code",
+      "source_file": "tests/e2e/portal.spec.ts",
       "source_location": "L1"
     },
     {
@@ -9856,6 +10060,197 @@
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/billing-settings-status.ts",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_messages_sql",
+      "target": "portal_children_sessions_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrations/0015_messages.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_events_sql",
+      "target": "portal_messages_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrations/0016_portal_events.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_events_sql",
+      "target": "portal_children_sessions_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrations/0016_portal_events.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_events_sql",
+      "target": "portal_learning_updates_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrations/0016_portal_events.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_api_portal_events_route_ts",
+      "target": "route_get",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/portal/events/route.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_events_portalliveupdates_tsx",
+      "target": "portalliveupdates_portalliveupdates",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/events/PortalLiveUpdates.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_events_session_test_ts",
+      "target": "events_session_test_release",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/events-session.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_events_stream_test_ts",
+      "target": "events_stream_test_fakeclient",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/events-stream.test.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_events_protocol_ts",
+      "target": "events_protocol_parseportalevent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/events-protocol.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_events_server_ts",
+      "target": "events_server_openportaleventstream",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/events-server.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_events_session_ts",
+      "target": "events_session_getboundeventtoken",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/events-session.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_events_stream_ts",
+      "target": "events_stream_openeventstream",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/events-stream.ts",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_messages_ts",
+      "target": "messages_sendfamilymessage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/messages.ts",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_messages_ts",
+      "target": "messages_listfamilymessages",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/messages.ts",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_messages_ts",
+      "target": "messages_markfamilymessagesread",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/messages.ts",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_messages_ts",
+      "target": "messages_familymessageunread",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/messages.ts",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_messages_ts",
+      "target": "messages_requestsessionchange",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/messages.ts",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_messages_ts",
+      "target": "messages_listsessionchangerequests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/messages.ts",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_messages_ts",
+      "target": "messages_resolvesessionchange",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/messages.ts",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "route_get",
+      "target": "events_server_openportaleventstream",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/api/portal/events/route.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "events_server_openportaleventstream",
+      "target": "events_stream_openeventstream",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "lib/portal/events-server.ts",
+      "source_location": "L41",
       "weight": 1.0
     },
     {

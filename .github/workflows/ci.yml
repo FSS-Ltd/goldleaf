@@ -70,7 +70,9 @@ jobs:
             -f db/migrations/0010_staff_delivery.sql -f db/tests/staff-delivery.sql \
             -f db/migrations/0011_invoice_ui.sql -f db/migrations/0012_children_sessions.sql \
             -f db/migrations/0013_learning_updates.sql \
-            -f db/tests/learning-foundation.sql
+            -f db/tests/learning-foundation.sql \
+            -f db/migrations/0015_messages.sql -f db/migrations/0016_portal_events.sql \
+            -f db/tests/messages.sql
           # A fresh backend ensures the temporary-type attack tests initial function compilation.
           psql -X -h 127.0.0.1 -p 55439 -d goldleaf_test -v ON_ERROR_STOP=1 \
             -f db/tests/onboarding-grants.sql
@@ -78,6 +80,8 @@ jobs:
           sh db/tests/invitation-delivery-concurrency.sh 127.0.0.1 goldleaf_test
           sh db/tests/staff-delivery-concurrency.sh 127.0.0.1 goldleaf_test
           sh db/tests/learning-concurrency.sh 127.0.0.1 goldleaf_test
+          sh db/tests/messages-concurrency.sh 127.0.0.1 goldleaf_test
+          sh db/tests/events-notify.sh 127.0.0.1 goldleaf_test
           sh db/tests/invoice-concurrency.sh 127.0.0.1 goldleaf_test
           sh db/tests/invoice-runtime-concurrency.sh 127.0.0.1 goldleaf_test
           createdb -h 127.0.0.1 -p 55439 goldleaf_invoice_ui

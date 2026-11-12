@@ -1,8 +1,14 @@
 import "server-only";
-import { currentUser } from "@clerk/nextjs/server";
-import { verifiedIdentity, type PortalIdentity } from "./verified-identity";
+import { auth, currentUser } from "@clerk/nextjs/server";
+import { portalSessionState, type PortalIdentity, type PortalSession } from "./verified-identity";
+
+export async function getPortalSession(): Promise<PortalSession> {
+  if (!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || !process.env.CLERK_SECRET_KEY) return { status: "signed-out" };
+  const { userId } = await auth();
+  return portalSessionState(userId, userId ? await currentUser() : null);
+}
 
 export async function getPortalIdentity(): Promise<PortalIdentity | null> {
-  if (!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || !process.env.CLERK_SECRET_KEY) return null;
-  return verifiedIdentity(await currentUser());
+  const session = await getPortalSession();
+  return session.status === "verified" ? session.identity : null;
 }

@@ -124,7 +124,7 @@
       "label": "NotFound()",
       "file_type": "code",
       "source_file": "app/not-found.tsx",
-      "source_location": "L18",
+      "source_location": "L7",
       "id": "not_found_notfound",
       "community": 18,
       "norm_label": "notfound()"
@@ -1384,7 +1384,7 @@
       "label": "getPortalIdentity()",
       "file_type": "code",
       "source_file": "lib/portal/identity.ts",
-      "source_location": "L5",
+      "source_location": "L11",
       "id": "identity_getportalidentity",
       "community": 0,
       "norm_label": "getportalidentity()"
@@ -1906,7 +1906,7 @@
       "label": "PublicLayout()",
       "file_type": "code",
       "source_file": "app/(public)/layout.tsx",
-      "source_location": "L6",
+      "source_location": "L4",
       "id": "layout_publiclayout",
       "community": 26,
       "norm_label": "publiclayout()"
@@ -2144,6 +2144,159 @@
       "source_location": "L1",
       "community": 15,
       "norm_label": "invitation delivery replay concurrency test"
+    },
+    {
+      "id": "app_portal_not_found_tsx",
+      "label": "not-found.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/not-found.tsx",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "not-found.tsx"
+    },
+    {
+      "id": "not_found_portalnotfound",
+      "label": "PortalNotFound()",
+      "file_type": "code",
+      "source_file": "app/(portal)/not-found.tsx",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "portalnotfound()"
+    },
+    {
+      "id": "app_public_error_tsx",
+      "label": "error.tsx",
+      "file_type": "code",
+      "source_file": "app/(public)/error.tsx",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "error.tsx"
+    },
+    {
+      "id": "app_public_not_found_tsx",
+      "label": "not-found.tsx",
+      "file_type": "code",
+      "source_file": "app/(public)/not-found.tsx",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "not-found.tsx"
+    },
+    {
+      "id": "components_publicnotfound_tsx",
+      "label": "PublicNotFound.tsx",
+      "file_type": "code",
+      "source_file": "components/PublicNotFound.tsx",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "publicnotfound.tsx"
+    },
+    {
+      "id": "publicnotfound_notfound",
+      "label": "NotFound()",
+      "file_type": "code",
+      "source_file": "components/PublicNotFound.tsx",
+      "source_location": "L15",
+      "community": 0,
+      "norm_label": "notfound()"
+    },
+    {
+      "id": "components_publicshell_tsx",
+      "label": "PublicShell.tsx",
+      "file_type": "code",
+      "source_file": "components/PublicShell.tsx",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "publicshell.tsx"
+    },
+    {
+      "id": "publicshell_publicshell",
+      "label": "PublicShell()",
+      "file_type": "code",
+      "source_file": "components/PublicShell.tsx",
+      "source_location": "L6",
+      "community": 0,
+      "norm_label": "publicshell()"
+    },
+    {
+      "id": "components_portal_verifyemailnotice_tsx",
+      "label": "VerifyEmailNotice.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/VerifyEmailNotice.tsx",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "verifyemailnotice.tsx"
+    },
+    {
+      "id": "verifyemailnotice_verifyemailnotice",
+      "label": "VerifyEmailNotice()",
+      "file_type": "code",
+      "source_file": "components/portal/VerifyEmailNotice.tsx",
+      "source_location": "L3",
+      "community": 0,
+      "norm_label": "verifyemailnotice()"
+    },
+    {
+      "id": "lib_public_shell_test_ts",
+      "label": "public-shell.test.ts",
+      "file_type": "code",
+      "source_file": "lib/public-shell.test.ts",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "public-shell.test.ts"
+    },
+    {
+      "id": "page_signinpage",
+      "label": "SignInPage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/sign-in/[[...sign-in]]/page.tsx",
+      "source_location": "L34",
+      "community": 0,
+      "norm_label": "signinpage()"
+    },
+    {
+      "id": "lib_portal_identity_test_ts",
+      "label": "portal-identity.test.ts",
+      "file_type": "code",
+      "source_file": "lib/portal-identity.test.ts",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "portal-identity.test.ts"
+    },
+    {
+      "id": "lib_portal_identity_ts",
+      "label": "identity.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/identity.ts",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "identity.ts"
+    },
+    {
+      "id": "identity_getportalsession",
+      "label": "getPortalSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/identity.ts",
+      "source_location": "L5",
+      "community": 0,
+      "norm_label": "getportalsession()"
+    },
+    {
+      "id": "lib_portal_verified_identity_ts",
+      "label": "verified-identity.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/verified-identity.ts",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "verified-identity.ts"
+    },
+    {
+      "id": "verified_identity_portalsessionstate",
+      "label": "portalSessionState()",
+      "file_type": "code",
+      "source_file": "lib/portal/verified-identity.ts",
+      "source_location": "L21",
+      "community": 0,
+      "norm_label": "portalsessionstate()"
     }
   ],
   "links": [
@@ -3174,42 +3327,6 @@
       "weight": 1.0
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/identity.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_src": "identity_ts",
-      "_tgt": "identity_getportalidentity",
-      "source": "identity_ts",
-      "target": "identity_getportalidentity",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "lib/portal/identity.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "identity_getportalidentity",
-      "_tgt": "verified_identity_verifiedidentity",
-      "source": "identity_getportalidentity",
-      "target": "verified_identity_verifiedidentity"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/verified-identity.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_src": "verified_identity_ts",
-      "_tgt": "verified_identity_verifiedidentity",
-      "source": "verified_identity_ts",
-      "target": "verified_identity_verifiedidentity",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "calls",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
@@ -3714,18 +3831,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/not-found.tsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "_src": "app_not_found_tsx",
-      "_tgt": "not_found_notfound",
-      "source": "app_not_found_tsx",
-      "target": "not_found_notfound",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "calls",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
@@ -4000,18 +4105,6 @@
       "_tgt": "require_role_requirerole",
       "source": "page_staffunavailable",
       "target": "require_role_requirerole"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/layout.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_src": "app_public_layout_tsx",
-      "_tgt": "layout_publiclayout",
-      "source": "app_public_layout_tsx",
-      "target": "layout_publiclayout",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4660,6 +4753,258 @@
       "weight": 1.0,
       "_src": "invitation_delivery_deliverparentinvitation",
       "_tgt": "invitation_mail_sendinvitationmail"
+    },
+    {
+      "source": "app_portal_not_found_tsx",
+      "target": "not_found_portalnotfound",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/not-found.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "app_portal_not_found_tsx",
+      "_tgt": "not_found_portalnotfound",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_publicnotfound_tsx",
+      "target": "publicnotfound_notfound",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/PublicNotFound.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "components_publicnotfound_tsx",
+      "_tgt": "publicnotfound_notfound",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_publicshell_tsx",
+      "target": "publicshell_publicshell",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/PublicShell.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "components_publicshell_tsx",
+      "_tgt": "publicshell_publicshell",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_verifyemailnotice_tsx",
+      "target": "verifyemailnotice_verifyemailnotice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/VerifyEmailNotice.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "components_portal_verifyemailnotice_tsx",
+      "_tgt": "verifyemailnotice_verifyemailnotice",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_sign_in_sign_in_page_tsx",
+      "target": "page_signinpage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/sign-in/[[...sign-in]]/page.tsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "app_portal_provider_sign_in_sign_in_page_tsx",
+      "_tgt": "page_signinpage",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_public_layout_tsx",
+      "target": "layout_publiclayout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "app_public_layout_tsx",
+      "_tgt": "layout_publiclayout",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_not_found_tsx",
+      "target": "not_found_notfound",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "app_not_found_tsx",
+      "_tgt": "not_found_notfound",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_identity_ts",
+      "target": "identity_getportalsession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/identity.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "lib_portal_identity_ts",
+      "_tgt": "identity_getportalsession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_identity_ts",
+      "target": "identity_getportalidentity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/identity.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "lib_portal_identity_ts",
+      "_tgt": "identity_getportalidentity",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "identity_getportalidentity",
+      "target": "identity_getportalsession",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/identity.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "identity_getportalidentity",
+      "_tgt": "identity_getportalsession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_verified_identity_ts",
+      "target": "verified_identity_verifiedidentity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/verified-identity.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "lib_portal_verified_identity_ts",
+      "_tgt": "verified_identity_verifiedidentity",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_verified_identity_ts",
+      "target": "verified_identity_portalsessionstate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/verified-identity.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "lib_portal_verified_identity_ts",
+      "_tgt": "verified_identity_portalsessionstate",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "verified_identity_portalsessionstate",
+      "target": "verified_identity_verifiedidentity",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/verified-identity.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_src": "verified_identity_portalsessionstate",
+      "_tgt": "verified_identity_verifiedidentity",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "identity_getportalsession",
+      "target": "verified_identity_portalsessionstate",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "lib/portal/identity.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "identity_getportalsession",
+      "_tgt": "verified_identity_portalsessionstate"
+    },
+    {
+      "source": "app_public_layout_tsx",
+      "target": "components_publicshell_tsx",
+      "_src": "app_public_layout_tsx",
+      "_tgt": "components_publicshell_tsx",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(public)/layout.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "components_publicshell_tsx",
+      "target": "components_header_tsx",
+      "_src": "components_publicshell_tsx",
+      "_tgt": "components_header_tsx",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/PublicShell.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "components_publicshell_tsx",
+      "target": "components_footer_tsx",
+      "_src": "components_publicshell_tsx",
+      "_tgt": "components_footer_tsx",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/PublicShell.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "app_not_found_tsx",
+      "target": "components_publicshell_tsx",
+      "_src": "app_not_found_tsx",
+      "_tgt": "components_publicshell_tsx",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/not-found.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "app_not_found_tsx",
+      "target": "components_publicnotfound_tsx",
+      "_src": "app_not_found_tsx",
+      "_tgt": "components_publicnotfound_tsx",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/not-found.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "lib_public_shell_test_ts",
+      "target": "components_publicshell_tsx",
+      "_src": "lib_public_shell_test_ts",
+      "_tgt": "components_publicshell_tsx",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/public-shell.test.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_identity_ts",
+      "target": "verified_identity_portalsessionstate",
+      "_src": "lib_portal_identity_ts",
+      "_tgt": "verified_identity_portalsessionstate",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/identity.ts",
+      "source_location": null,
+      "weight": 1.0
     }
   ],
   "hyperedges": []

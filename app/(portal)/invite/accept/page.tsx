@@ -3,16 +3,18 @@ import { cookies } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 import { InviteAcceptForm } from "@/components/portal/InviteAcceptForm";
-import { getPortalIdentity } from "@/lib/portal/identity";
+import { getPortalSession } from "@/lib/portal/identity";
+import { VerifyEmailNotice } from "@/components/portal/VerifyEmailNotice";
 
 async function Invitation() {
   const hasCookie = Boolean((await cookies()).get("goldleaf_invite")?.value);
   if (!hasCookie) return <><h1>This invitation isn’t available</h1><p className="mt-4 text-[#35594a]">Ask Deborah for a new invitation.</p></>;
-  const identity = await getPortalIdentity();
-  return identity ? <>
+  const session = await getPortalSession();
+  if (session.status === "unverified") return <VerifyEmailNotice retryUrl="/invite/accept" />;
+  return session.status === "verified" ? <>
     <h1>Accept your invitation</h1>
-    <p className="mt-4 text-sm text-[#35594a]">Signed in with verified account {identity.verifiedEmails.length === 1 ? "email" : "emails"}:</p>
-    <ul className="mt-2 text-sm font-medium">{identity.verifiedEmails.map((email) => <li key={email}>{email}</li>)}</ul>
+    <p className="mt-4 text-sm text-[#35594a]">Signed in with verified account {session.identity.verifiedEmails.length === 1 ? "email" : "emails"}:</p>
+    <ul className="mt-2 text-sm font-medium">{session.identity.verifiedEmails.map((email) => <li key={email}>{email}</li>)}</ul>
     <InviteAcceptForm />
   </> : <>
     <h1>You’re invited to Goldleaf</h1>

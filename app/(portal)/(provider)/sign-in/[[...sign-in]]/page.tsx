@@ -1,7 +1,8 @@
 import { SignIn } from "@clerk/nextjs";
-import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
+import { getPortalSession } from "@/lib/portal/identity";
+import { VerifyEmailNotice } from "@/components/portal/VerifyEmailNotice";
 import { AuthShell } from "@/components/portal/AuthShell";
 
 export const metadata = { title: "Sign in", robots: { index: false, follow: false } };
@@ -9,8 +10,9 @@ export const metadata = { title: "Sign in", robots: { index: false, follow: fals
 async function SignInContent({ searchParams }: { searchParams: Promise<{ redirect_url?: string }> }) {
   const params = await searchParams;
   const destination = params.redirect_url === "/invite/accept" ? "/invite/accept" : "/portal";
-  const { userId } = await auth();
-  if (userId) redirect(destination);
+  const session = await getPortalSession();
+  if (session.status === "verified") redirect(destination);
+  if (session.status === "unverified") return <VerifyEmailNotice retryUrl={destination === "/invite/accept" ? "/invite/accept" : "/sign-in"} />;
   return <SignIn forceRedirectUrl={destination} appearance={{
     variables: {
       colorPrimary: "var(--color-ink)",

@@ -169,3 +169,5 @@ An allowlisted structural refresh reconciled public route-group moves, the Clerk
 Final targeted AST reconciliation updated changed invitation and action symbols and removed an extractor artefact named `if()`. The full scoped graph update refused to overwrite the larger mixed graph, so its existing semantic and SQL nodes were retained. The final graph has 225 nodes and 211 directed edges. Historical unrelated coverage remains unaudited.
 
 Scoped proxy refresh: `/portal` and nested paths now receive Clerk middleware; `/invite` capture remains excluded. Source-backed matcher regression is `lib/portal-proxy.test.ts`. No structural nodes or edges changed.
+
+Scoped public-shell and portal-session AST reconciliation added source-backed error, 404 and verified-email decision nodes while preserving prior SQL and semantic nodes. Current graph: 242 nodes, 227 directed edges; unrelated historical coverage remains unaudited.

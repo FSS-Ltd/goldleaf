@@ -7778,40 +7778,28 @@
       "confidence_score": 1.0
     },
     {
-      "source": "actions_exchangeinvitation",
-      "target": "invitation_cookie_encodeinvitationcookie",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 1.0,
-      "source_file": "app/(portal)/invite/actions.ts",
-      "source_location": "L19",
-      "weight": 1.0,
-      "_src": "actions_exchangeinvitation",
-      "_tgt": "invitation_cookie_encodeinvitationcookie"
-    },
-    {
-      "source": "actions_acceptportalinvitation",
-      "target": "invitation_cookie_parseinvitationcookie",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 1.0,
-      "source_file": "app/(portal)/invite/actions.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "_src": "actions_acceptportalinvitation",
-      "_tgt": "invitation_cookie_parseinvitationcookie"
-    },
-    {
       "source": "actions_acceptportalinvitation",
       "target": "invitation_cookie_invitationdestination",
       "relation": "calls",
       "confidence": "INFERRED",
-      "confidence_score": 1.0,
+      "confidence_score": 0.5,
       "source_file": "app/(portal)/invite/actions.ts",
       "source_location": "L33",
       "weight": 1.0,
       "_src": "actions_acceptportalinvitation",
       "_tgt": "invitation_cookie_invitationdestination"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "components/portal/auth/AccountMenu.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "accountmenu_accountmenu",
+      "_tgt": "role_links_portalrolelinks",
+      "source": "accountmenu_accountmenu",
+      "target": "role_links_portalrolelinks",
+      "confidence_score": 0.5
     }
   ],
   "hyperedges": []

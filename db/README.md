@@ -257,3 +257,33 @@ Revoking the old writer can interrupt an older running application version, so c
 Issued invoices create pending notification records for active parent memberships. Sending and retrying are explicit admin actions. The server resolves a verified Clerk address and rechecks the active membership before sending a protected link, with no child data. `PORTAL_INVOICE_FROM_EMAIL`, `RESEND_API_KEY` and `NEXT_PUBLIC_SITE_URL` must be configured for delivery. The email provider retains idempotency keys for 24 hours; this implementation stops reusing an uncertain attempt after 23 hours 55 minutes and requires an explicit duplicate warning before a new attempt. Each claim has a separate fencing ID; a late completion cannot overwrite a newer claim while the provider idempotency key remains stable. An uncertain result or a stale sending lease may already have sent; provider acceptance is not proof of delivery. There is no polling, scheduled worker or automatic resend. Membership can change after the final check while a message is in flight; the linked page rechecks authority on access. Never store raw provider secrets in notification rows.
 
 A payment operation first commits a durable intent with the validated invoice, amount, date, reference and admin actor. Completion records the existing idempotent payment and marks the intent in one transaction. Only one intent per invoice can remain pending; any authorised admin can resume that exact operation after a session change. A balance change can reject an uncompleted intent and free the pending slot. While the browser response is unconfirmed, tab-scoped retry data is bound to the Clerk session and cleared after confirmation or session change; absence alone does not authorise a new attempt. Test `db/tests/invoice-ui-upgrade-before.sql`, migration 0011, `db/tests/invoice-ui.sql` and the concurrency script only against a disposable database. Signed-in browser, Clerk lookup, Neon HTTP and real email delivery remain unverified locally.
+
+
+## Children, sessions and learning foundation
+
+Apply forward-only migrations `0012_children_sessions.sql` and `0013_learning_updates.sql` after preceding migrations, including 0011 when present. They create child identities and scheduled sessions, separate private staff notes from parent drafts, and store published family updates as snapshots. No runtime table or sequence access is required. After review, grant only the following to the existing restricted portal runtime:
+
+```sql
+GRANT EXECUTE ON FUNCTION
+  portal.create_child(text, uuid, text, uuid),
+  portal.rename_child(text, uuid, text),
+  portal.list_children(text, uuid),
+  portal.schedule_child_session(text, uuid, timestamptz, integer, uuid, text),
+  portal.set_session_location(text, uuid, text),
+  portal.reschedule_child_session(text, uuid, timestamptz),
+  portal.list_child_sessions(text, uuid),
+  portal.update_session(text, uuid, text, text),
+  portal.learning_workspace(text, uuid),
+  portal.save_private_note(text, uuid, text, integer),
+  portal.save_learning_draft(text, uuid, text, smallint, text, text, text[], integer),
+  portal.preview_learning_draft(text, uuid, integer),
+  portal.publish_learning_draft(text, uuid, integer, uuid, text),
+  portal.list_published_learning(text, uuid, uuid)
+TO goldleaf_portal_runtime;
+```
+
+Do not grant the internal `require_family_worker`, `normalise_explored_sounds` or `learning_fingerprint` helpers. Subjects come only from verified server identity; SQL rechecks membership and locks staff assignment for writes. A session begins with attendance unrecorded, independently of its lifecycle. The optional location is an actual admin-entered label, visible only to authorised family members and assigned staff. The server schedules using `site.sessionMinutes` and the existing `sessionBlocks`; no duration is inferred from archived mockups.
+
+A preview returns a SHA-256 fingerprint over the exact draft, explicitly explored sounds, version, session, child and family. Publishing locks and rechecks that context and the current authority. The fingerprint is a consistency check, not an authorization capability. Reuse the same operation UUID, version and fingerprint on retry; a successful replay returns the original publication. Publications are shared in the child's family archive, not addressed to a frozen list of individuals. Parents read only published snapshots, never the workspace or draft. Stale note and draft edits report a conflict and must be refreshed. PostgreSQL notifications carry only changed record IDs and are delivered on commit; consumers must re-read durable, authorised state on notification and reconnect. This migration does not provide a subscription transport or live UI, and has not been applied to development or production.
+
+Run `db/tests/learning-foundation.sql` and `db/tests/learning-concurrency.sh` only on a disposable PostgreSQL database. The tests use synthetic records and cover scoped access, privacy, preview consistency, replay, conflicting edits and assignment removal.

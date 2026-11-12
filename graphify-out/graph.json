@@ -861,14 +861,14 @@
       "id": "portal_concepts"
     },
     {
-      "label": "PORTAL: partial authenticated routes and billing",
+      "label": "PORTAL: partial authenticated routes, billing and learning foundation",
       "file_type": "document",
       "source_file": "FEATURE_TREE.md",
-      "source_location": "L34-L41",
+      "source_location": "L35",
       "status": "partial",
-      "scope": "Authenticated parent, staff and admin routes and invoice UI are present; messages and production deployment remain pending.",
+      "scope": "Authenticated parent, staff and admin routes, invoice UI and learning data foundation are present; session and learning UI, messages and production deployment remain pending.",
       "community": 2,
-      "norm_label": "portal partial authenticated routes and billing",
+      "norm_label": "portal partial authenticated routes billing learning foundation",
       "id": "portal_planned"
     },
     {
@@ -1759,6 +1759,24 @@
       "norm_label": "publiclayout()"
     },
     {
+      "label": "PortalSessionGuard.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/PortalSessionGuard.tsx",
+      "source_location": "L1",
+      "id": "components_portal_portalsessionguard_tsx",
+      "community": 37,
+      "norm_label": "portalsessionguard.tsx"
+    },
+    {
+      "label": "PortalSessionGuard()",
+      "file_type": "code",
+      "source_file": "components/portal/PortalSessionGuard.tsx",
+      "source_location": "L6",
+      "id": "portalsessionguard_portalsessionguard",
+      "community": 37,
+      "norm_label": "portalsessionguard()"
+    },
+    {
       "label": "AdminForms.tsx",
       "file_type": "code",
       "source_file": "components/portal/AdminForms.tsx",
@@ -2030,6 +2048,22 @@
       "source_file": "app/(portal)/(provider)/sso-callback/page.tsx",
       "source_location": "L13",
       "norm_label": "ssocallbackpage()"
+    },
+    {
+      "id": "components_portal_auth_accountmenu_tsx",
+      "label": "AccountMenu.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountMenu.tsx",
+      "source_location": "L1",
+      "norm_label": "accountmenu.tsx"
+    },
+    {
+      "id": "accountmenu_accountmenu",
+      "label": "AccountMenu()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountMenu.tsx",
+      "source_location": "L7",
+      "norm_label": "accountmenu()"
     },
     {
       "id": "components_portal_auth_googlebutton_tsx",
@@ -2345,6 +2379,51 @@
       "norm_label": "invoice runtime checked operations"
     },
     {
+      "id": "lib_portal_billing_settings_schema_ts",
+      "label": "billing-settings-schema.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/billing-settings-schema.ts",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "billing-settings-schema.ts"
+    },
+    {
+      "id": "lib_portal_billing_settings_ts",
+      "label": "billing-settings.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/billing-settings.ts",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "billing-settings.ts"
+    },
+    {
+      "id": "billing_settings_readbillingsettings",
+      "label": "readBillingSettings()",
+      "file_type": "code",
+      "source_file": "lib/portal/billing-settings.ts",
+      "source_location": "L7",
+      "community": 1,
+      "norm_label": "readbillingsettings()"
+    },
+    {
+      "id": "billing_settings_savebillingsettings",
+      "label": "saveBillingSettings()",
+      "file_type": "code",
+      "source_file": "lib/portal/billing-settings.ts",
+      "source_location": "L17",
+      "community": 1,
+      "norm_label": "savebillingsettings()"
+    },
+    {
+      "id": "lib_portal_invoice_schemas_ts",
+      "label": "invoice-schemas.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-schemas.ts",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "invoice-schemas.ts"
+    },
+    {
       "id": "lib_portal_invoice_quote_ts",
       "label": "invoice-quote.ts",
       "file_type": "code",
@@ -2442,6 +2521,96 @@
       "source_location": "L7",
       "community": 1,
       "norm_label": "translateinvoiceerror()"
+    },
+    {
+      "id": "lib_portal_invoices_ts",
+      "label": "invoices.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "invoices.ts"
+    },
+    {
+      "id": "invoices_listfamilyinvoices",
+      "label": "listFamilyInvoices()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L13",
+      "community": 1,
+      "norm_label": "listfamilyinvoices()"
+    },
+    {
+      "id": "invoices_readfamilyinvoice",
+      "label": "readFamilyInvoice()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L19",
+      "community": 1,
+      "norm_label": "readfamilyinvoice()"
+    },
+    {
+      "id": "invoices_readadmininvoice",
+      "label": "readAdminInvoice()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L27",
+      "community": 1,
+      "norm_label": "readadmininvoice()"
+    },
+    {
+      "id": "invoices_previewinvoice",
+      "label": "previewInvoice()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L34",
+      "community": 1,
+      "norm_label": "previewinvoice()"
+    },
+    {
+      "id": "invoices_createinvoicedraft",
+      "label": "createInvoiceDraft()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L44",
+      "community": 1,
+      "norm_label": "createinvoicedraft()"
+    },
+    {
+      "id": "invoices_issueinvoice",
+      "label": "issueInvoice()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L62",
+      "community": 1,
+      "norm_label": "issueinvoice()"
+    },
+    {
+      "id": "invoices_recordinvoicepayment",
+      "label": "recordInvoicePayment()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L77",
+      "community": 1,
+      "norm_label": "recordinvoicepayment()"
+    },
+    {
+      "id": "lib_billing_settings_test_ts",
+      "label": "billing-settings.test.ts",
+      "file_type": "code",
+      "source_file": "lib/billing-settings.test.ts",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "billing-settings.test.ts"
+    },
+    {
+      "id": "lib_invoice_schema_test_ts",
+      "label": "invoice-schema.test.ts",
+      "file_type": "code",
+      "source_file": "lib/invoice-schema.test.ts",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "invoice-schema.test.ts"
     },
     {
       "id": "lib_invoice_quote_test_ts",
@@ -2721,6 +2890,46 @@
       "norm_label": "complete()"
     },
     {
+      "id": "components_portal_auth_accountprofile_tsx",
+      "label": "AccountProfile.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L1",
+      "norm_label": "accountprofile.tsx"
+    },
+    {
+      "id": "accountprofile_values",
+      "label": "values()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L13",
+      "norm_label": "values()"
+    },
+    {
+      "id": "accountprofile_field",
+      "label": "field()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L14",
+      "norm_label": "field()"
+    },
+    {
+      "id": "accountprofile_accountprofile",
+      "label": "AccountProfile()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L16",
+      "norm_label": "accountprofile()"
+    },
+    {
+      "id": "accountprofile_accountprofilecontent",
+      "label": "AccountProfileContent()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L24",
+      "norm_label": "accountprofilecontent()"
+    },
+    {
       "id": "components_portal_auth_signupform_tsx",
       "label": "SignUpForm.tsx",
       "file_type": "code",
@@ -2937,6 +3146,22 @@
       "norm_label": "inviteacceptform()"
     },
     {
+      "id": "components_portal_portalshell_tsx",
+      "label": "PortalShell.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L1",
+      "norm_label": "portalshell.tsx"
+    },
+    {
+      "id": "portalshell_portalshell",
+      "label": "PortalShell()",
+      "file_type": "code",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L7",
+      "norm_label": "portalshell()"
+    },
+    {
       "id": "lib_invitation_mail_test_ts",
       "label": "invitation-mail.test.ts",
       "file_type": "code",
@@ -3057,6 +3282,14 @@
       "norm_label": "staff-access.test.ts"
     },
     {
+      "id": "tests_e2e_portal_spec_ts",
+      "label": "portal.spec.ts",
+      "file_type": "code",
+      "source_file": "tests/e2e/portal.spec.ts",
+      "source_location": "L1",
+      "norm_label": "portal.spec.ts"
+    },
+    {
       "id": "portal_staff_delivery_sql",
       "label": "Staff delivery and atomic assignment SQL",
       "file_type": "document",
@@ -3119,6 +3352,181 @@
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/staff/page.tsx",
       "source_location": "L7"
+    },
+    {
+      "id": "lib_portal_children_ts",
+      "label": "children.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/children.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "children_createchild",
+      "label": "createChild()",
+      "file_type": "code",
+      "source_file": "lib/portal/children.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "children_listchildren",
+      "label": "listChildren()",
+      "file_type": "code",
+      "source_file": "lib/portal/children.ts",
+      "source_location": "L13"
+    },
+    {
+      "id": "children_renamechild",
+      "label": "renameChild()",
+      "file_type": "code",
+      "source_file": "lib/portal/children.ts",
+      "source_location": "L20"
+    },
+    {
+      "id": "lib_portal_sessions_ts",
+      "label": "sessions.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "sessions_schedulesession",
+      "label": "scheduleSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "sessions_listsessions",
+      "label": "listSessions()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "sessions_changesession",
+      "label": "changeSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L22"
+    },
+    {
+      "id": "sessions_reschedulesession",
+      "label": "rescheduleSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L29"
+    },
+    {
+      "id": "lib_portal_learning_ts",
+      "label": "learning.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "learning_readlearningworkspace",
+      "label": "readLearningWorkspace()",
+      "file_type": "code",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "learning_saveprivatenote",
+      "label": "savePrivateNote()",
+      "file_type": "code",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "learning_savelearningdraft",
+      "label": "saveLearningDraft()",
+      "file_type": "code",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L26"
+    },
+    {
+      "id": "learning_previewlearningdraft",
+      "label": "previewLearningDraft()",
+      "file_type": "code",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L36"
+    },
+    {
+      "id": "learning_publishlearningdraft",
+      "label": "publishLearningDraft()",
+      "file_type": "code",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L46"
+    },
+    {
+      "id": "learning_listpublishedlearning",
+      "label": "listPublishedLearning()",
+      "file_type": "code",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L56"
+    },
+    {
+      "id": "lib_portal_learning_schemas_ts",
+      "label": "learning-schemas.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/learning-schemas.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_portal_learning_errors_ts",
+      "label": "learning-errors.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/learning-errors.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "learning_errors_learningconflicterror",
+      "label": "LearningConflictError",
+      "file_type": "code",
+      "source_file": "lib/portal/learning-errors.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "learning_errors_learningconflicterror_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "lib/portal/learning-errors.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "learning_errors_translatelearningerror",
+      "label": "translateLearningError()",
+      "file_type": "code",
+      "source_file": "lib/portal/learning-errors.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "lib_learning_schemas_test_ts",
+      "label": "learning-schemas.test.ts",
+      "file_type": "code",
+      "source_file": "lib/learning-schemas.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_children_sessions_sql",
+      "label": "Child and session database foundation",
+      "source_file": "db/migrations/0012_children_sessions.sql",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "portal_learning_updates_sql",
+      "label": "Private and published learning database foundation",
+      "source_file": "db/migrations/0013_learning_updates.sql",
+      "source_location": "L1",
+      "file_type": "code"
+    },
+    {
+      "id": "sessions_setsessionlocation",
+      "label": "setSessionLocation()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L36"
     },
     {
       "id": "app_portal_provider_admin_billing_settings_error_tsx",
@@ -3352,34 +3760,6 @@
       "source_location": "L3"
     },
     {
-      "id": "components_portal_portalsessionguard_tsx",
-      "label": "PortalSessionGuard.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/PortalSessionGuard.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "portalsessionguard_portalsessionguard",
-      "label": "PortalSessionGuard()",
-      "file_type": "code",
-      "source_file": "components/portal/PortalSessionGuard.tsx",
-      "source_location": "L7"
-    },
-    {
-      "id": "components_portal_portalshell_tsx",
-      "label": "PortalShell.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "portalshell_portalshell",
-      "label": "PortalShell()",
-      "file_type": "code",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L9"
-    },
-    {
       "id": "components_portal_invoices_admindraftinvoice_tsx",
       "label": "AdminDraftInvoice.tsx",
       "file_type": "code",
@@ -3611,13 +3991,6 @@
       "source_location": "L54"
     },
     {
-      "id": "lib_billing_settings_test_ts",
-      "label": "billing-settings.test.ts",
-      "file_type": "code",
-      "source_file": "lib/billing-settings.test.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "lib_decimal_input_test_ts",
       "label": "decimal-input.test.ts",
       "file_type": "code",
@@ -3639,13 +4012,6 @@
       "source_location": "L1"
     },
     {
-      "id": "lib_invoice_schema_test_ts",
-      "label": "invoice-schema.test.ts",
-      "file_type": "code",
-      "source_file": "lib/invoice-schema.test.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "lib_invoice_status_test_ts",
       "label": "invoice-status.test.ts",
       "file_type": "code",
@@ -3658,34 +4024,6 @@
       "file_type": "code",
       "source_file": "lib/payment-retry.test.ts",
       "source_location": "L1"
-    },
-    {
-      "id": "lib_portal_billing_settings_schema_ts",
-      "label": "billing-settings-schema.ts",
-      "file_type": "code",
-      "source_file": "lib/portal/billing-settings-schema.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "lib_portal_billing_settings_ts",
-      "label": "billing-settings.ts",
-      "file_type": "code",
-      "source_file": "lib/portal/billing-settings.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "billing_settings_readbillingsettings",
-      "label": "readBillingSettings()",
-      "file_type": "code",
-      "source_file": "lib/portal/billing-settings.ts",
-      "source_location": "L7"
-    },
-    {
-      "id": "billing_settings_savebillingsettings",
-      "label": "saveBillingSettings()",
-      "file_type": "code",
-      "source_file": "lib/portal/billing-settings.ts",
-      "source_location": "L17"
     },
     {
       "id": "lib_portal_decimal_input_ts",
@@ -3737,13 +4075,6 @@
       "source_location": "L4"
     },
     {
-      "id": "lib_portal_invoice_schemas_ts",
-      "label": "invoice-schemas.ts",
-      "file_type": "code",
-      "source_file": "lib/portal/invoice-schemas.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "lib_portal_invoice_status_ts",
       "label": "invoice-status.ts",
       "file_type": "code",
@@ -3758,32 +4089,11 @@
       "source_location": "L1"
     },
     {
-      "id": "lib_portal_invoices_ts",
-      "label": "invoices.ts",
-      "file_type": "code",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "invoices_listparentinvoices",
       "label": "listParentInvoices()",
       "file_type": "code",
       "source_file": "lib/portal/invoices.ts",
       "source_location": "L16"
-    },
-    {
-      "id": "invoices_listfamilyinvoices",
-      "label": "listFamilyInvoices()",
-      "file_type": "code",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L21"
-    },
-    {
-      "id": "invoices_readfamilyinvoice",
-      "label": "readFamilyInvoice()",
-      "file_type": "code",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L27"
     },
     {
       "id": "invoices_listadmininvoices",
@@ -3793,39 +4103,11 @@
       "source_location": "L35"
     },
     {
-      "id": "invoices_readadmininvoice",
-      "label": "readAdminInvoice()",
-      "file_type": "code",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L40"
-    },
-    {
-      "id": "invoices_previewinvoice",
-      "label": "previewInvoice()",
-      "file_type": "code",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L47"
-    },
-    {
-      "id": "invoices_createinvoicedraft",
-      "label": "createInvoiceDraft()",
-      "file_type": "code",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L57"
-    },
-    {
       "id": "invoices_previewsavedinvoice",
       "label": "previewSavedInvoice()",
       "file_type": "code",
       "source_file": "lib/portal/invoices.ts",
       "source_location": "L77"
-    },
-    {
-      "id": "invoices_issueinvoice",
-      "label": "issueInvoice()",
-      "file_type": "code",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L90"
     },
     {
       "id": "invoices_prepareinvoicepayment",
@@ -3875,55 +4157,6 @@
       "file_type": "code",
       "source_file": "lib/portal/payment-retry.ts",
       "source_location": "L1"
-    },
-    {
-      "id": "tests_e2e_portal_spec_ts",
-      "label": "portal.spec.ts",
-      "file_type": "code",
-      "source_file": "tests/e2e/portal.spec.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "components_portal_auth_accountmenu_tsx",
-      "label": "AccountMenu.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountMenu.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "components_portal_auth_accountprofile_tsx",
-      "label": "AccountProfile.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "accountprofile_values",
-      "label": "values()",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L15"
-    },
-    {
-      "id": "accountprofile_field",
-      "label": "field()",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L16"
-    },
-    {
-      "id": "accountprofile_accountprofile",
-      "label": "AccountProfile()",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L18"
-    },
-    {
-      "id": "accountprofile_accountprofilecontent",
-      "label": "AccountProfileContent()",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L34"
     },
     {
       "id": "lib_payment_storage_test_ts",
@@ -4270,8 +4503,8 @@
       "weight": 1.0,
       "_src": "scene_mountseedling",
       "_tgt": "scene_shadowtexture",
-      "source": "scene_shadowtexture",
-      "target": "scene_mountseedling",
+      "source": "scene_mountseedling",
+      "target": "scene_shadowtexture",
       "confidence_score": 1.0
     },
     {
@@ -4366,8 +4599,8 @@
       "weight": 1.0,
       "_src": "pricing_weekly",
       "_tgt": "pricing_roundto5",
-      "source": "pricing_roundto5",
-      "target": "pricing_weekly",
+      "source": "pricing_weekly",
+      "target": "pricing_roundto5",
       "confidence_score": 1.0
     },
     {
@@ -4450,8 +4683,8 @@
       "weight": 1.0,
       "_src": "schema_org_organisationschema",
       "_tgt": "schema_org_url",
-      "source": "schema_org_url",
-      "target": "schema_org_organisationschema",
+      "source": "schema_org_organisationschema",
+      "target": "schema_org_url",
       "confidence_score": 1.0
     },
     {
@@ -4851,10 +5084,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "db/README.md",
-      "source_location": null,
+      "source_location": "L3",
       "weight": 1.0,
-      "source": "founding_inventory",
-      "target": "founding_provision"
+      "source": "founding_provision",
+      "target": "founding_inventory"
     },
     {
       "source": "lib_founding_availability_ts",
@@ -5805,6 +6038,18 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/PortalSessionGuard.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "components_portal_portalsessionguard_tsx",
+      "_tgt": "portalsessionguard_portalsessionguard",
+      "source": "components_portal_portalsessionguard_tsx",
+      "target": "portalsessionguard_portalsessionguard",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
@@ -6417,6 +6662,18 @@
       "weight": 1.0
     },
     {
+      "source": "accountprofile_accountprofile",
+      "target": "useaccountprofile_useaccountprofile",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "accountprofile_accountprofile",
+      "_tgt": "useaccountprofile_useaccountprofile"
+    },
+    {
       "source": "signinform_signinform",
       "target": "usesigninflow_usesigninflow",
       "relation": "calls",
@@ -6957,6 +7214,30 @@
       "weight": 1.0
     },
     {
+      "source": "lib_portal_billing_settings_ts",
+      "target": "billing_settings_readbillingsettings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/billing-settings.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "lib_portal_billing_settings_ts",
+      "_tgt": "billing_settings_readbillingsettings",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_billing_settings_ts",
+      "target": "billing_settings_savebillingsettings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/billing-settings.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "lib_portal_billing_settings_ts",
+      "_tgt": "billing_settings_savebillingsettings",
+      "confidence_score": 1.0
+    },
+    {
       "source": "lib_portal_invoice_quote_ts",
       "target": "invoice_quote_billingconfigurationerror",
       "relation": "contains",
@@ -7077,6 +7358,198 @@
       "confidence_score": 1.0
     },
     {
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_listfamilyinvoices",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_listfamilyinvoices",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_readfamilyinvoice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_readfamilyinvoice",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_readadmininvoice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_readadmininvoice",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_previewinvoice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_previewinvoice",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_createinvoicedraft",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_createinvoicedraft",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_issueinvoice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_issueinvoice",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_invoices_ts",
+      "target": "invoices_recordinvoicepayment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "invoices_recordinvoicepayment",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "invoices_previewinvoice",
+      "target": "invoice_quote_quotedraftlines",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_src": "invoices_previewinvoice",
+      "_tgt": "invoice_quote_quotedraftlines"
+    },
+    {
+      "source": "invoices_previewinvoice",
+      "target": "invoice_quote_calculateinvoicetotals",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_src": "invoices_previewinvoice",
+      "_tgt": "invoice_quote_calculateinvoicetotals"
+    },
+    {
+      "source": "invoices_createinvoicedraft",
+      "target": "invoice_quote_quotedraftlines",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "invoices_createinvoicedraft",
+      "_tgt": "invoice_quote_quotedraftlines"
+    },
+    {
+      "source": "invoices_createinvoicedraft",
+      "target": "invoice_quote_calculateinvoicetotals",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_src": "invoices_createinvoicedraft",
+      "_tgt": "invoice_quote_calculateinvoicetotals"
+    },
+    {
+      "source": "invoices_createinvoicedraft",
+      "target": "invoice_errors_translateinvoiceerror",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_src": "invoices_createinvoicedraft",
+      "_tgt": "invoice_errors_translateinvoiceerror"
+    },
+    {
+      "source": "invoices_issueinvoice",
+      "target": "invoice_quote_validateissuancesettings",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_src": "invoices_issueinvoice",
+      "_tgt": "invoice_quote_validateissuancesettings"
+    },
+    {
+      "source": "invoices_issueinvoice",
+      "target": "invoice_quote_verifyinvoicelines",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_src": "invoices_issueinvoice",
+      "_tgt": "invoice_quote_verifyinvoicelines"
+    },
+    {
+      "source": "invoices_issueinvoice",
+      "target": "invoice_quote_calculateinvoicetotals",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_src": "invoices_issueinvoice",
+      "_tgt": "invoice_quote_calculateinvoicetotals"
+    },
+    {
+      "source": "invoices_issueinvoice",
+      "target": "invoice_errors_translateinvoiceerror",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_src": "invoices_issueinvoice",
+      "_tgt": "invoice_errors_translateinvoiceerror"
+    },
+    {
       "source": "invoice_quote_quotedraftlines",
       "target": "invoice_pricing_quoteinvoice",
       "_src": "invoice_quote_quotedraftlines",
@@ -7085,6 +7558,66 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "invoices_issueinvoice",
+      "target": "invoice_quote_verifyinvoicelines",
+      "_src": "invoices_issueinvoice",
+      "_tgt": "invoice_quote_verifyinvoicelines",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "invoices_createinvoicedraft",
+      "target": "invoice_quote_quotedraftlines",
+      "_src": "invoices_createinvoicedraft",
+      "_tgt": "invoice_quote_quotedraftlines",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoices_ts",
+      "target": "portal_invoice_runtime_db",
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "portal_invoice_runtime_db",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_billing_settings_ts",
+      "target": "portal_invoice_billing_db",
+      "_src": "lib_portal_billing_settings_ts",
+      "_tgt": "portal_invoice_billing_db",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/billing-settings.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoices_ts",
+      "target": "access_requireportalidentity",
+      "_src": "lib_portal_invoices_ts",
+      "_tgt": "access_requireportalidentity",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/invoices.ts",
       "source_location": null,
       "weight": 1.0
     },
@@ -7449,6 +7982,54 @@
       "source_location": "L17"
     },
     {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "accountprofile_values",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "accountprofile_values",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "accountprofile_field",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "accountprofile_field",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "accountprofile_accountprofile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "accountprofile_accountprofile",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "accountprofile_accountprofilecontent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "accountprofile_accountprofilecontent",
+      "confidence_score": 1.0
+    },
+    {
       "source": "components_portal_auth_signupform_tsx",
       "target": "signupform_signupform",
       "relation": "contains",
@@ -7459,6 +8040,30 @@
       "_src": "components_portal_auth_signupform_tsx",
       "_tgt": "signupform_signupform",
       "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "useaccountprofile_useaccountprofile",
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "useaccountprofile_useaccountprofile",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L25"
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "accountidentitysummary_accountidentitysummary",
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "accountidentitysummary_accountidentitysummary",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L34"
     },
     {
       "source": "signupform_signupform",
@@ -7941,6 +8546,30 @@
       "confidence_score": 1.0
     },
     {
+      "source": "components_portal_auth_accountmenu_tsx",
+      "target": "accountmenu_accountmenu",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountMenu.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountmenu_tsx",
+      "_tgt": "accountmenu_accountmenu",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_portalshell_tsx",
+      "target": "portalshell_portalshell",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "components_portal_portalshell_tsx",
+      "_tgt": "portalshell_portalshell",
+      "confidence_score": 1.0
+    },
+    {
       "source": "components_portal_staffforms_tsx",
       "target": "staffforms_feedback",
       "relation": "contains",
@@ -8035,6 +8664,318 @@
       "weight": 1.0,
       "_src": "actions_acceptportalinvitation",
       "_tgt": "invitation_cookie_invitationdestination"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "components/portal/auth/AccountMenu.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "accountmenu_accountmenu",
+      "_tgt": "role_links_portalrolelinks",
+      "source": "accountmenu_accountmenu",
+      "target": "role_links_portalrolelinks",
+      "confidence_score": 0.5
+    },
+    {
+      "source": "lib_portal_learning_errors_ts",
+      "target": "learning_errors_learningconflicterror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning-errors.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_errors_ts",
+      "_tgt": "learning_errors_learningconflicterror",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "learning_errors_learningconflicterror",
+      "target": "learning_errors_learningconflicterror_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning-errors.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "learning_errors_learningconflicterror",
+      "_tgt": "learning_errors_learningconflicterror_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_learning_errors_ts",
+      "target": "learning_errors_translatelearningerror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning-errors.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_errors_ts",
+      "_tgt": "learning_errors_translatelearningerror",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "portal_children_sessions_sql",
+      "target": "portal_access_sql",
+      "_src": "portal_children_sessions_sql",
+      "_tgt": "portal_access_sql",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "db/migrations/0012_children_sessions.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_children_sessions_sql",
+      "target": "portal_staff_access",
+      "_src": "portal_children_sessions_sql",
+      "_tgt": "portal_staff_access",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "db/migrations/0012_children_sessions.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_learning_updates_sql",
+      "target": "portal_children_sessions_sql",
+      "_src": "portal_learning_updates_sql",
+      "_tgt": "portal_children_sessions_sql",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "db/migrations/0013_learning_updates.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_children_ts",
+      "target": "portal_children_sessions_sql",
+      "_src": "lib_portal_children_ts",
+      "_tgt": "portal_children_sessions_sql",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "lib/portal/children.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "portal_children_sessions_sql",
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "portal_children_sessions_sql",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "portal_learning_updates_sql",
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "portal_learning_updates_sql",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "content_session_ts",
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "content_session_ts",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "content_progression_ts",
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "content_progression_ts",
+      "relation": "depends_on",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_children_ts",
+      "target": "children_createchild",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/children.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "lib_portal_children_ts",
+      "_tgt": "children_createchild",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_children_ts",
+      "target": "children_listchildren",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/children.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "lib_portal_children_ts",
+      "_tgt": "children_listchildren",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_children_ts",
+      "target": "children_renamechild",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/children.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "lib_portal_children_ts",
+      "_tgt": "children_renamechild",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_schedulesession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_schedulesession",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_listsessions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_listsessions",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_changesession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_changesession",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_reschedulesession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_reschedulesession",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_setsessionlocation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "lib_portal_sessions_ts",
+      "_tgt": "sessions_setsessionlocation",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_readlearningworkspace",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_readlearningworkspace",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_saveprivatenote",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_saveprivatenote",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_savelearningdraft",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_savelearningdraft",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_previewlearningdraft",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_previewlearningdraft",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_publishlearningdraft",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_publishlearningdraft",
+      "confidence_score": 1
+    },
+    {
+      "source": "lib_portal_learning_ts",
+      "target": "learning_listpublishedlearning",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/learning.ts",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_src": "lib_portal_learning_ts",
+      "_tgt": "learning_listpublishedlearning",
+      "confidence_score": 1
     },
     {
       "source": "app_portal_provider_admin_billing_settings_error_tsx",
@@ -8280,24 +9221,6 @@
       "weight": 1.0
     },
     {
-      "source": "components_portal_portalsessionguard_tsx",
-      "target": "portalsessionguard_portalsessionguard",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/PortalSessionGuard.tsx",
-      "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "components_portal_portalshell_tsx",
-      "target": "portalshell_portalshell",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L9",
-      "weight": 1.0
-    },
-    {
       "source": "components_portal_invoices_adminissuedinvoice_tsx",
       "target": "adminissuedinvoice_invoicedate",
       "relation": "contains",
@@ -8487,24 +9410,6 @@
       "weight": 1.0
     },
     {
-      "source": "lib_portal_billing_settings_ts",
-      "target": "billing_settings_readbillingsettings",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/billing-settings.ts",
-      "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "lib_portal_billing_settings_ts",
-      "target": "billing_settings_savebillingsettings",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/billing-settings.ts",
-      "source_location": "L17",
-      "weight": 1.0
-    },
-    {
       "source": "lib_portal_decimal_input_ts",
       "target": "decimal_input_parsedecimalminorunits",
       "relation": "contains",
@@ -8569,24 +9474,6 @@
     },
     {
       "source": "lib_portal_invoices_ts",
-      "target": "invoices_listfamilyinvoices",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L21",
-      "weight": 1.0
-    },
-    {
-      "source": "lib_portal_invoices_ts",
-      "target": "invoices_readfamilyinvoice",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L27",
-      "weight": 1.0
-    },
-    {
-      "source": "lib_portal_invoices_ts",
       "target": "invoices_listadmininvoices",
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -8596,47 +9483,11 @@
     },
     {
       "source": "lib_portal_invoices_ts",
-      "target": "invoices_readadmininvoice",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L40",
-      "weight": 1.0
-    },
-    {
-      "source": "lib_portal_invoices_ts",
-      "target": "invoices_previewinvoice",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L47",
-      "weight": 1.0
-    },
-    {
-      "source": "lib_portal_invoices_ts",
-      "target": "invoices_createinvoicedraft",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L57",
-      "weight": 1.0
-    },
-    {
-      "source": "lib_portal_invoices_ts",
       "target": "invoices_previewsavedinvoice",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/invoices.ts",
       "source_location": "L77",
-      "weight": 1.0
-    },
-    {
-      "source": "lib_portal_invoices_ts",
-      "target": "invoices_issueinvoice",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoices.ts",
-      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -8921,42 +9772,6 @@
       "confidence_score": 0.8,
       "source_file": "lib/portal/invoices.ts",
       "source_location": "L101",
-      "weight": 1.0
-    },
-    {
-      "source": "components_portal_auth_accountprofile_tsx",
-      "target": "accountprofile_values",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "components_portal_auth_accountprofile_tsx",
-      "target": "accountprofile_field",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "components_portal_auth_accountprofile_tsx",
-      "target": "accountprofile_accountprofile",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L18",
-      "weight": 1.0
-    },
-    {
-      "source": "components_portal_auth_accountprofile_tsx",
-      "target": "accountprofile_accountprofilecontent",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L34",
       "weight": 1.0
     },
     {

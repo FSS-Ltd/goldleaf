@@ -260,3 +260,9 @@ Messaging UI and role-fenced transport: scoped TypeScript AST extraction refresh
 Review fixes re-extracted the server-side provider guard, message read acknowledgement helper and mobile shell navigation. Failed read acknowledgements do not advance the cursor and remain retryable. SQL links remain manually maintained.
 
 Jury review updated request expansion, focus, read-only uncertain text and visible-only read acknowledgements. The visibility observer reattaches on return without polling; the SQL graph coverage limitations remain unchanged.
+
+Onboarding reliability re-extracted 10 allowlisted files with a fresh cache: 631 nodes and 606 edges; one colliding actor-helper identifier was disambiguated by path, and 64 unresolved or ambiguous edges were omitted. Existing SQL and historical corpus limits remain.
+
+Source-verified admin page, actor-fence and DAL call relationships were reconciled after scoped extraction: 631 nodes and 633 edges. Existing unresolved cross-scope and SQL limitations remain.
+
+Controlled field components and their consumers were source-verified after the inventory-change guard: 636 nodes and 641 edges. Existing extractor and corpus limitations remain.

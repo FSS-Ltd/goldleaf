@@ -1,3 +1,6 @@
+import { onboardingScopeKey } from "@/lib/portal/onboarding-form-state";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 import { randomUUID } from "node:crypto";
 import { Suspense } from "react";
 import { z } from "zod";
@@ -18,6 +21,10 @@ function deliveryLabel(status: "sent" | "failed" | "pending") {
 
 async function StaffAdmin({ searchParams }: { searchParams: Promise<{ staff?: string }> }) {
   const { identity, memberships } = await requireRole("admin");
+  const { sessionId: authSessionId } = await auth();
+  if (!authSessionId) redirect("/sign-in");
+  const actor = { userId: identity.userId, authSessionId };
+  const actorKey = onboardingScopeKey(actor);
   const [families, invitations, profiles, params] = await Promise.all([
     listFamilies(), listStaffDeliveries(), listStaffProfiles(), searchParams,
   ]);
@@ -33,7 +40,7 @@ async function StaffAdmin({ searchParams }: { searchParams: Promise<{ staff?: st
             <h2 className="!text-xl">Invite a staff member</h2>
             <p className="mt-3 text-sm text-[#35594a]">Staff can be assigned families after accepting their invitation.</p>
             <div className="mt-5">
-              <StaffInviteForm requestId={randomUUID()} />
+              <StaffInviteForm key={actorKey} actor={actor} requestId={randomUUID()} />
             </div>
           </section>
           <section className="rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6">
@@ -61,7 +68,7 @@ async function StaffAdmin({ searchParams }: { searchParams: Promise<{ staff?: st
                 <p className="text-sm font-medium">{selected.name ?? "Staff member"}</p>
                 <p className="mt-1 break-all text-sm text-[#35594a]">{selected.email}</p>
                 {families.length ? (
-                  <StaffAssignmentsForm key={selected.id} staffId={selected.id} families={families} assigned={assigned.map((family) => family.id)} />
+                  <StaffAssignmentsForm key={onboardingScopeKey(actor, selected.id)} actor={actor} staffId={selected.id} families={families} assigned={assigned.map((family) => family.id)} />
                 ) : (
                   <p className="mt-4 text-sm text-[#35594a]">There are no families to assign yet.</p>
                 )}
@@ -79,8 +86,8 @@ async function StaffAdmin({ searchParams }: { searchParams: Promise<{ staff?: st
                   <p className="text-sm text-[#35594a]">
                     {invitation.active ? "Active" : "No longer active"} · {deliveryLabel(invitation.delivery_status)}
                   </p>
-                  <StaffInviteForm requestId={randomUUID()} email={invitation.email} />
-                  {invitation.active && <RevokeStaffForm invitationId={invitation.id} />}
+                  <StaffInviteForm key={onboardingScopeKey(actor, invitation.id)} actor={actor} requestId={randomUUID()} email={invitation.email} />
+                  {invitation.active && <RevokeStaffForm key={onboardingScopeKey(actor, invitation.id)} actor={actor} invitationId={invitation.id} />}
                 </li>
               ))}
             </ul>

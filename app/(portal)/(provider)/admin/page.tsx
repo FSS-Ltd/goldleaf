@@ -1,3 +1,6 @@
+import { onboardingScopeKey } from "@/lib/portal/onboarding-form-state";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 import { randomUUID } from "node:crypto";
 import { Suspense } from "react";
 import { PortalShell } from "@/components/portal/PortalShell";
@@ -8,6 +11,10 @@ import { getFoundingAvailability } from "@/lib/founding-availability";
 
 async function AdminHome() {
   const { identity, memberships } = await requireRole("admin");
+  const { sessionId: authSessionId } = await auth();
+  if (!authSessionId) redirect("/sign-in");
+  const actor = { userId: identity.userId, authSessionId };
+  const actorKey = onboardingScopeKey(actor);
   const [families, availability] = await Promise.all([listFamilies(), getFoundingAvailability()]);
   return <PortalShell role="admin" userId={identity.userId} memberships={memberships}>
     <div className="grid gap-8 lg:grid-cols-3">
@@ -17,7 +24,7 @@ async function AdminHome() {
         <div className="mt-7 rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] px-5 py-4 text-sm" aria-label="Founding availability">
           {availability ? `${availability.remaining} of ${availability.total} founding places available` : "Founding availability is currently unavailable."}
         </div>
-        <div className="mt-6"><CreateFamilyForm familyId={randomUUID()} full={availability?.remaining === 0} /></div>
+        <div className="mt-6"><CreateFamilyForm key={actorKey} actor={actor} familyId={randomUUID()} full={availability?.remaining === 0} /></div>
       </div>
       <section className="rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6 lg:mt-1" aria-labelledby="family-list-title">
         <h2 id="family-list-title" className="!font-sans !text-base font-medium">Family list</h2>

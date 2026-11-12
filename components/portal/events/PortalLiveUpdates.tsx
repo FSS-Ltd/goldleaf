@@ -11,7 +11,7 @@ import { getBoundEventToken } from "@/lib/portal/events-session";
 import { sameSession } from "@/lib/portal/session-binding";
 
 // One instance per authenticated portal view. Refresh always rechecks server authority.
-export function PortalLiveUpdates() {
+export function PortalLiveUpdates({ role }: { role: "admin" | "parent" | "staff" }) {
   const { isLoaded, userId, sessionId } = useAuth();
   const clerk = useClerk();
   const router = useRouter();
@@ -45,7 +45,7 @@ export function PortalLiveUpdates() {
           hardStop = true;
           return;
         }
-        const response = await fetch("/api/portal/events", {
+        const response = await fetch(`/api/portal/events?role=${role}`, {
           headers: { Authorization: `Bearer ${token}` },
           cache: "no-store",
           signal: abort.signal,
@@ -119,7 +119,7 @@ export function PortalLiveUpdates() {
       window.removeEventListener("online", wake);
       document.removeEventListener("visibilitychange", wake);
     };
-  }, [isLoaded, userId, sessionId, clerk, router, retry]);
+  }, [isLoaded, userId, sessionId, clerk, router, retry, role]);
   return unavailable ? (
     <p role="status">
       Live updates unavailable.{" "}

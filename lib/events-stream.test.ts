@@ -23,7 +23,7 @@ function fakeClient() {
               event:
                 values?.[1] === "access"
                   ? "access_changed"
-                  : values?.[1] === "message"
+                  : ["message", "admin_change", "family_profile", "founding_profile", "invoice_family", "read_cursor"].includes(String(values?.[1]))
                     ? "change"
                     : null,
             },
@@ -63,6 +63,7 @@ test("LISTEN precedes catch-up, notifications reauthorize, and abort closes conn
   const response = await openEventStream(
     fake.client,
     "user",
+    "parent",
     Date.now() / 1000 + 60,
     abort.signal,
   );
@@ -93,6 +94,7 @@ test("inactive and cancelled connections never expose a stream", async () => {
   const response = await openEventStream(
     fake.client,
     "user",
+    "parent",
     Date.now() / 1000 + 60,
     abort.signal,
   );
@@ -105,6 +107,7 @@ test("duplicate events are harmless and reconnect repeats authoritative catch-up
   const one = await openEventStream(
     first.client,
     "user",
+    "parent",
     Date.now() / 1000 + 60,
     abort.signal,
   );
@@ -123,6 +126,7 @@ test("duplicate events are harmless and reconnect repeats authoritative catch-up
   const two = await openEventStream(
     second.client,
     "user",
+    "parent",
     Date.now() / 1000 + 60,
     nextAbort.signal,
   );
@@ -138,7 +142,7 @@ test("duplicate events are harmless and reconnect repeats authoritative catch-up
 test("idle heartbeat does not query the database", async () => {
   const fake = fakeClient();
   const abort = new AbortController();
-  const response = await openEventStream(fake.client, "user", Date.now() / 1000 + 60, abort.signal);
+  const response = await openEventStream(fake.client, "user", "parent", Date.now() / 1000 + 60, abort.signal);
   assert.ok(response.body);
   const reader = response.body.getReader();
   await reader.read();
@@ -146,4 +150,15 @@ test("idle heartbeat does not query the database", async () => {
   assert.equal(fake.queries.length, 2);
   abort.abort();
   assert.equal(fake.ended(), true);
+});
+
+
+test("new scoped invalidations reach the role-aware resolver", async () => {
+ const fake = fakeClient(); const abort = new AbortController();
+ const response = await openEventStream(fake.client, "user", "parent", Date.now() / 1000 + 60, abort.signal);
+ assert.ok(response.body); const reader = response.body.getReader(); await reader.read();
+ for (const kind of ["admin_change", "family_profile", "founding_profile", "invoice_family", "read_cursor"]) {
+  fake.notify(kind); assert.match(new TextDecoder().decode((await reader.read()).value), /change/);
+ }
+ assert.equal(fake.queries.length, 7); abort.abort();
 });

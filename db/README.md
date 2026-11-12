@@ -314,3 +314,13 @@ TO goldleaf_portal_runtime;
 ```
 
 Migration 0014 preserves any existing duplicate publication history. Every acknowledged operation is durably bound to its actor, session, version and fingerprint; legacy operation IDs are seeded while publication inserts are locked. A pre-insert trigger binds publication IDs even for an already-running older publisher; a deferred foreign key keeps the binding and publication atomic. New runtime publications serialize on the session row; a retry of an already published draft version returns the earliest matching publication after verifying its preview fingerprint, even with a new operation UUID. Direct table writes remain prohibited for the runtime. The single-session reader checks current family scope for the trusted route’s fixed admin, parent or staff role; the batched staff reader joins current assignments and active staff membership; the parent dashboard reads only the latest published update per child across active parent families. Neither grants table access. Run `db/tests/session-ui-access.sql` on disposable PostgreSQL. No development or production deployment is implied.
+
+## Invoice child-count rollout
+
+Migration `0019_invoice_quantity_basis.sql` keeps legacy requests and issued snapshots intact. New child-count writes call `portal.create_invoice_children_draft_checked`; before 0019 or its grant, this call fails without creating a draft. Existing period callers retain their original entry point. Once child-count invoices exist, keep a child-aware application version for reads: an older application renders their quantities as periods. After review and successful CI, apply 0019 as the database owner and provision only this additional trusted runtime grant:
+
+```sql
+GRANT EXECUTE ON FUNCTION portal.create_invoice_children_draft_checked(text,uuid,jsonb,jsonb,jsonb) TO goldleaf_portal_runtime;
+```
+
+Verify the function is not executable by PUBLIC, the runtime has this individual grant and no table or internal helper access, and old request replays and new child-count writes work on a disposable database. Until the migration and grant are present, child draft saves remain unavailable; do not treat an unavailable save as successful. Run `db/tests/invoice-quantity-before.sql` before 0019 and `db/tests/invoice-quantity-after.sql` afterward on a disposable database.

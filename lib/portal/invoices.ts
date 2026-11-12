@@ -51,7 +51,7 @@ export async function previewInvoice(input: unknown) {
   const dates = JSON.stringify(draft.lines.map((line) => line.serviceDate));
   const rows = await sql`SELECT portal.invoice_draft_context(${userId}, ${draft.familyId}, ${dates}::jsonb) AS context`;
   const context = pricingContextSchema.parse(oneJson.parse(rows)[0].context);
-  const lines = quoteDraftLines(draft.lines, context);
+  const lines = quoteDraftLines(draft.lines, context, draft.quantityIntent === "children-v1" ? "children" : "periods");
   return { lines, ...calculateInvoiceTotals(lines, context.settings), settings: billingSettingsRowSchema.parse(context.settings), fingerprint: invoiceFingerprint({ draft, context, lines }) };
 }
 export async function createInvoiceDraft(input: unknown, reviewed: unknown) {
@@ -66,11 +66,13 @@ export async function createInvoiceDraft(input: unknown, reviewed: unknown) {
   const dates = JSON.stringify(draft.lines.map((line) => line.serviceDate));
   const rows = await sql`SELECT portal.invoice_draft_context(${userId}, ${draft.familyId}, ${dates}::jsonb) AS context`;
   const context = pricingContextSchema.parse(oneJson.parse(rows)[0].context);
-  const lines = quoteDraftLines(draft.lines, context);
+  const lines = quoteDraftLines(draft.lines, context, draft.quantityIntent === "children-v1" ? "children" : "periods");
   calculateInvoiceTotals(lines, context.settings);
   assertInvoiceFingerprint(expected, { draft, context, lines });
   try {
-    const result = await sql`SELECT portal.create_invoice_draft_checked(${userId}, ${draft.operationId}, ${request}::jsonb, ${JSON.stringify(context)}::jsonb, ${JSON.stringify(lines)}::jsonb) AS id`;
+    const result = draft.quantityIntent === "children-v1"
+      ? await sql`SELECT portal.create_invoice_children_draft_checked(${userId}, ${draft.operationId}, ${request}::jsonb, ${JSON.stringify(context)}::jsonb, ${JSON.stringify(lines)}::jsonb) AS id`
+      : await sql`SELECT portal.create_invoice_draft_checked(${userId}, ${draft.operationId}, ${request}::jsonb, ${JSON.stringify(context)}::jsonb, ${JSON.stringify(lines)}::jsonb) AS id`;
     return idRow.parse(result)[0].id;
   } catch (error) { throw translateInvoiceError(error); }
 }

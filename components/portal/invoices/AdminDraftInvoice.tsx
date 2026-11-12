@@ -3,7 +3,8 @@ import type {
   previewSavedInvoice,
 } from "@/lib/portal/invoices";
 import { IssueForm } from "./InvoiceActions";
-import { card, pounds, subcard } from "./format";
+import { DraftUnitRate } from "./DraftUnitRate";
+import { card, pounds, quantityLabel, tierLabel, subcard } from "./format";
 type AdminInvoice = NonNullable<Awaited<ReturnType<typeof readAdminInvoice>>>;
 type Preview = Awaited<ReturnType<typeof previewSavedInvoice>> | null;
 export function AdminDraftInvoice({
@@ -14,7 +15,7 @@ export function AdminDraftInvoice({
   preview: Preview;
 }) {
   return (
-    <section className={card}>
+    <section className={`${card} min-w-0 [overflow-wrap:anywhere]`}>
       <h2 className="!text-xl">Saved draft</h2>
       <p className="mt-2 text-sm">
         {invoice.recipient_name} · {invoice.recipient_address}
@@ -30,16 +31,15 @@ export function AdminDraftInvoice({
             {preview.lines.map((line, index) => (
               <li key={index} className="py-3 text-sm">
                 <div className="flex justify-between gap-3">
-                  <span>
+                  <span className="min-w-0 flex-1">
                     {line.description} · {line.service_date}
                   </span>
-                  <span>{pounds(line.quantity * line.unit_amount_pence)}</span>
+                  <span className="shrink-0 whitespace-nowrap">{pounds(line.quantity * line.unit_amount_pence)}</span>
                 </div>
                 <p className="mt-1 text-xs text-[#5a6a5e]">
-                  {line.quantity} {line.cadence === "weekly" ? "week" : "month"}
-                  {line.quantity === 1 ? "" : "s"} · {line.days} days per week ·{" "}
-                  {pounds(line.hourly_rate_pence)} per hour ·{" "}
-                  {pounds(line.unit_amount_pence)} per period
+                  {quantityLabel(line.quantity, line.cadence, line.quantity_basis)} · {line.days} days per week ·{" "}
+                  {tierLabel(line.rate_tier)} · {pounds(line.hourly_rate_pence)} per hour ·{" "}
+                  <DraftUnitRate amountPence={line.unit_amount_pence} cadence={line.cadence} basis={line.quantity_basis} />
                   {line.discount_percent
                     ? ` · ${line.discount_percent}% discount included`
                     : ""}
@@ -82,9 +82,8 @@ export function AdminDraftInvoice({
                   {line.description} · {line.service_date}
                 </p>
                 <p className="mt-1 text-[#5a6a5e]">
-                  {line.quantity} {line.cadence === "weekly" ? "week" : "month"}
-                  {line.quantity === 1 ? "" : "s"} · {line.days} days per week ·
-                  saved amount {pounds(line.unit_amount_pence)} per period
+                  {quantityLabel(line.quantity, line.cadence, line.quantity_basis)} · {line.days} days per week ·
+                  saved amount <DraftUnitRate amountPence={line.unit_amount_pence} cadence={line.cadence} basis={line.quantity_basis} />
                 </p>
               </li>
             ))}

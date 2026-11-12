@@ -51,3 +51,13 @@ test("issuing requires configured payment and billing settings", async () => {
  assert.throws(() => validateIssuanceSettings(priced, { ...settings, billing_cadence: "monthly" }), /cadence/);
  assert.throws(() => validateIssuanceSettings(priced, { ...settings, vat_enabled: true }), /VAT/);
 });
+
+test("child-count quotes multiply the per-child price at tier boundaries", async () => {
+ const { calculateInvoiceTotals } = await import("./portal/invoice-quote");
+ for (const [date, founding, rate, total] of [["2027-04-04", true, 2500, 40000], ["2027-04-05", true, 2800, 45000], ["2027-04-06", true, 2800, 45000], ["2027-04-05", false, 3000, 46000]] as const) {
+   const quote = quoteDraftLines([{ ...lines[0], quantity: 2, serviceDate: date }], { settings: { founding_transition_date: "2027-04-05" }, eligibility: [{ service_date: date, is_founding: founding }] }, "children");
+   assert.equal(quote[0].quantity_basis, "children");
+   assert.equal(quote[0].hourly_rate_pence, rate);
+   assert.equal(calculateInvoiceTotals(quote, { vat_enabled: false, vat_rate_basis_points: null }).netPence, total);
+ }
+});

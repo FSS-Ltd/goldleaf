@@ -48,6 +48,8 @@ psql_test -c "UPDATE public.workflow_test_context SET context=portal.invoice_iss
 run_race tag "SELECT portal.set_founding('workflow-race-admin','81000000-0000-0000-0000-000000000001',true);" '81000000-0000-0000-0000-000000000003'
 psql_test -c "UPDATE public.workflow_test_context SET context=portal.invoice_issue_context('workflow-race-admin',invoice_id)" >/dev/null
 run_race line "UPDATE portal.invoice_lines SET unit_amount_pence=6100 WHERE invoice_id='81000000-0000-0000-0000-000000000004';" '81000000-0000-0000-0000-000000000004'
+psql_test -c "UPDATE public.workflow_test_context SET context=portal.invoice_issue_context('workflow-race-admin',invoice_id)" >/dev/null
+run_race basis "UPDATE portal.invoice_lines SET quantity_basis='children' WHERE invoice_id='81000000-0000-0000-0000-000000000004';" '81000000-0000-0000-0000-000000000004'
 psql_test -c 'DROP TABLE public.workflow_test_context' >/dev/null
 # Duplicate draft operations serialize and return the original ID after a lost response.
 psql_test <<'SQL'

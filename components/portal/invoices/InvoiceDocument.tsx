@@ -1,6 +1,6 @@
 import type { IssuedInvoice } from "@/lib/portal/invoice-schemas";
 import { invoicePaymentStatus } from "@/lib/portal/invoice-status";
-import { invoiceDate, pounds } from "./format";
+import { invoiceDate, pounds, quantityLabel, tierLabel } from "./format";
 
 export function InvoiceDocument({ invoice }: { invoice: IssuedInvoice }) {
   const s = invoice.snapshot;
@@ -13,7 +13,7 @@ export function InvoiceDocument({ invoice }: { invoice: IssuedInvoice }) {
         : "Unpaid";
   return (
     <article
-      className="rounded-[14px] border border-[#e3d7c3] bg-white p-5 text-[#1b3022] shadow-sm sm:p-8 print:border-0 print:p-0 print:shadow-none"
+      className="min-w-0 [overflow-wrap:anywhere] rounded-[14px] border border-[#e3d7c3] bg-white p-5 text-[#1b3022] shadow-sm sm:p-8 print:border-0 print:p-0 print:shadow-none"
       aria-label={`Invoice ${s.number}`}
     >
       <div className="flex flex-wrap justify-between gap-4 border-b border-[#e3d7c3] pb-6">
@@ -52,20 +52,18 @@ export function InvoiceDocument({ invoice }: { invoice: IssuedInvoice }) {
         {s.lines.map((line, index) => (
           <div
             key={index}
-            className="grid gap-2 py-5 text-sm sm:grid-cols-[1fr_auto]"
+            className="grid gap-2 py-5 text-sm sm:grid-cols-[minmax(0,1fr)_auto]"
           >
-            <div>
+            <div className="min-w-0">
               <p className="font-medium">{line.description}</p>
               <p className="mt-1 text-[#5a6a5e]">
-                {invoiceDate(line.service_date)} · {line.quantity}{" "}
-                {line.cadence === "weekly" ? "week" : "month"}
-                {line.quantity === 1 ? "" : "s"} · {line.days}{" "}
+                {invoiceDate(line.service_date)} · {quantityLabel(line.quantity, line.cadence, line.quantity_basis)} · {line.days}{" "}
                 {line.days === 1 ? "day" : "days"} per week
               </p>
               <p className="mt-1 text-[#5a6a5e]">
-                {pounds(line.hourly_rate_pence)} per hour ·{" "}
+                {line.quantity_basis === "children" ? `${tierLabel(line.rate_tier)} · ` : ""}{pounds(line.hourly_rate_pence)} per hour ·{" "}
                 {pounds(line.unit_amount_pence)} per{" "}
-                {line.cadence === "weekly" ? "week" : "month"}
+                {line.cadence === "weekly" ? "week" : "month"}{line.quantity_basis === "children" ? " per child" : ""}
                 {line.discount_percent > 0
                   ? ` · ${line.discount_percent}% discount included`
                   : ""}

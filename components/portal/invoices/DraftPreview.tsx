@@ -1,7 +1,7 @@
 import type { z } from "zod";
 import type { billingSettingsRowSchema } from "@/lib/portal/billing-settings-schema";
 import type { previewInvoice } from "@/lib/portal/invoices";
-import { pounds, subcard } from "./format";
+import { pounds, quantityLabel, tierLabel, subcard } from "./format";
 
 export function DraftPreview({
   quote,
@@ -15,7 +15,7 @@ export function DraftPreview({
   recipientAddress: string;
 }) {
   return (
-    <div className={subcard} aria-live="polite">
+    <div className={`${subcard} min-w-0 [overflow-wrap:anywhere]`} aria-live="polite">
       <h3 className="!font-sans !text-xs font-semibold uppercase tracking-wide">
         Invoice preview
       </h3>
@@ -46,20 +46,18 @@ export function DraftPreview({
               {quote.lines.map((line, index) => (
                 <li key={index} className="py-3 text-sm">
                   <div className="flex justify-between gap-3">
-                    <span className="font-medium">{line.description}</span>
-                    <span>
+                    <span className="min-w-0 flex-1 font-medium">{line.description}</span>
+                    <span className="shrink-0 whitespace-nowrap">
                       {pounds(line.unit_amount_pence * line.quantity)}
                     </span>
                   </div>
                   <p className="mt-1 text-xs text-[#5a6a5e]">
-                    {line.service_date} · {line.quantity}{" "}
-                    {line.cadence === "weekly" ? "week" : "month"}
-                    {line.quantity === 1 ? "" : "s"} · {line.days} days/week
+                    {line.service_date} · {quantityLabel(line.quantity, line.cadence, line.quantity_basis)} · {line.days} days/week
                   </p>
                   <p className="mt-1 text-xs text-[#5a6a5e]">
-                    {pounds(line.hourly_rate_pence)} per hour ·{" "}
+                    {tierLabel(line.rate_tier)} · {pounds(line.hourly_rate_pence)} per hour ·{" "}
                     {pounds(line.unit_amount_pence)} per{" "}
-                    {line.cadence === "weekly" ? "week" : "month"}
+                    {line.cadence === "weekly" ? "week" : "month"}{line.quantity_basis === "children" ? " per child" : ""}
                     {line.discount_percent
                       ? ` · ${line.discount_percent}% discount included`
                       : ""}

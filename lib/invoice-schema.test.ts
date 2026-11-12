@@ -44,7 +44,25 @@ test("admin invoice rows distinguish issued and draft data", async () => {
 test("issued snapshot accepts legacy missing contact and retains new contact", async () => {
  const { issuedInvoiceRowSchema } = await import("./portal/invoice-schemas");
  const snapshot = { number: 1, issuer_name: "Goldleaf Learning Ltd", issuer_address: "51 Hurst rd", recipient_name: "Parent", recipient_address: "Address", issue_date: "2027-01-01", due_date: "2027-01-15", payment_terms_days: 14, payment_method: "Bank", billing_cadence: "weekly", founding_transition_date: null, vat_enabled: false, vat_rate_basis_points: null, vat_registration: null, currency: "GBP", lines: [{ description: "Tuition", quantity: 1, unit_amount_pence: 6000, service_date: "2027-01-01", rate_tier: "standard", hourly_rate_pence: 3000, days: 1, cadence: "weekly", session_minutes: 120, discount_percent: 0, net_pence: 6000, vat_pence: 0 }], net_pence: 6000, vat_pence: 0, total_pence: 6000 };
- assert.equal(issuedInvoiceRowSchema.safeParse({ id: draft.operationId, snapshot, paid_pence: 0 }).success, true);
+ const legacy = issuedInvoiceRowSchema.parse({ id: draft.operationId, snapshot, paid_pence: 0 });
+ assert.equal(legacy.snapshot.lines[0].quantity_basis, undefined);
+ const childSnapshot = { ...snapshot, lines: [{ ...snapshot.lines[0], quantity_basis: "children" }] };
+ assert.equal(issuedInvoiceRowSchema.parse({ id: draft.operationId, snapshot: childSnapshot, paid_pence: 0 }).snapshot.lines[0].quantity_basis, "children");
+ assert.equal(issuedInvoiceRowSchema.safeParse({ id: draft.operationId, snapshot: { ...snapshot, lines: [{ ...snapshot.lines[0], quantity_basis: "unknown" }] }, paid_pence: 0 }).success, false);
  const current = issuedInvoiceRowSchema.parse({ id: draft.operationId, snapshot: { ...snapshot, issuer_contact: "billing@example.com" }, paid_pence: 0 });
  assert.equal(current.snapshot.issuer_contact, "billing@example.com");
+});
+
+test("child-count intent is explicit while legacy request stays unchanged", () => {
+ assert.deepEqual(draftInputSchema.parse(draft), draft);
+ assert.deepEqual(draftInputSchema.parse({ ...draft, quantityIntent: "children-v1" }), { ...draft, quantityIntent: "children-v1" });
+ assert.equal(draftInputSchema.safeParse({ ...draft, quantityIntent: "periods" }).success, false);
+});
+
+test("quantity labels preserve historical periods and show new child counts", async () => {
+ const { quantityLabel } = await import("../components/portal/invoices/format");
+ assert.equal(quantityLabel(2, "weekly"), "2 weeks");
+ assert.equal(quantityLabel(1, "monthly", "periods"), "1 month");
+ assert.equal(quantityLabel(1, "weekly", "children"), "1 child");
+ assert.equal(quantityLabel(2, "monthly", "children"), "2 children");
 });

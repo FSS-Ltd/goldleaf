@@ -14,3 +14,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Business facts live in `content/site.ts` and `lib/pricing.ts`. Pricing must keep matching the client table (`lib/pricing.test.ts`).
 - Trust claims render only when their flag in `content/site.ts` is true. No Ofsted claims.
 - Same branch and commit rules as `CLAUDE.md`. No AI attribution.
+
+## Low-friction UX
+
+Use the fewest meaningful clicks and steps. Apply safe selections immediately; use progressive steps for complex forms and preserve values when moving Back. Retain authorization, validation, and required review.

@@ -10,7 +10,7 @@ export const draftLineSchema = z.strictObject({
   description, quantity: z.number().int().min(1).max(1000000), days, cadence, serviceDate: z.iso.date(),
 });
 export const draftInputSchema = z.strictObject({
-  operationId: id, familyId: id, recipientName: z.string().trim().min(1).max(200),
+  operationId: id, quantityIntent: z.literal("children-v1").optional(), familyId: id, recipientName: z.string().trim().min(1).max(200),
   recipientAddress: z.string().trim().min(1).max(1000), lines: z.array(draftLineSchema).min(1).max(100),
 });
 export const paymentInputSchema = z.strictObject({
@@ -22,7 +22,7 @@ export type DraftInput = z.infer<typeof draftInputSchema>;
 export type DraftLine = z.infer<typeof draftLineSchema>;
 
 const pricedLineSchema = z.object({
-  description: z.string().min(1).max(500), quantity: z.number().int().min(1).max(1000000), unit_amount_pence: money,
+  description: z.string().min(1).max(500), quantity: z.number().int().min(1).max(1000000), quantity_basis: z.enum(["periods", "children"]).optional(), unit_amount_pence: money,
   service_date: z.iso.date(), rate_tier: z.enum(["standard", "founding", "founding-post-intro"]),
   hourly_rate_pence: money, days, cadence, session_minutes: z.number().int().positive(), discount_percent: z.number().int().min(0).max(100),
 });

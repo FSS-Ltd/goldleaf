@@ -287,3 +287,6 @@ Parent-home scoped extraction was reconciled with the merged staff Today graph; 
 AST extraction refreshed changed TS/TSX files and added the static PortalLoading component and rendering test. Existing graph nodes and source-valid relationships were retained; unresolved cross-file imports are not inferred. The baseline SQL and semantic extraction gaps remain unchanged. Extraction used zero model tokens. See FEATURE_TREE.md PORTAL-LOADING for entry points, boundaries and verification.
 
 ActorScope review correction: scoped AST extraction refreshed the actor fence and its regression test; the fallback now owns a full-page landmark before PortalShell mounts. Existing SQL and semantic coverage limitations remain.
+Invoice quantity update: scoped AST extraction refreshed changed invoice TypeScript nodes; migration `db/migrations/0019_invoice_quantity_basis.sql` and its child-write guard are manually source-linked. SQL and docs remain outside AST semantic extraction.
+
+Invoice graph review correction: Graphify misidentified imported JSX calls as local definitions in `DraftPreview.tsx` and `AdminDraftInvoice.tsx`; those false nodes and affected pseudo-caller edges were removed. Source-verified component-file calls now point to the canonical helpers in `format.ts`. Other legacy AST and SQL coverage gaps remain.

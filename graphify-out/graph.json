@@ -2840,22 +2840,6 @@
       "norm_label": "signinform()"
     },
     {
-      "id": "components_portal_auth_signupform_tsx",
-      "label": "SignUpForm.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/auth/SignUpForm.tsx",
-      "source_location": "L1",
-      "norm_label": "signupform.tsx"
-    },
-    {
-      "id": "signupform_signupform",
-      "label": "SignUpForm()",
-      "file_type": "code",
-      "source_file": "components/portal/auth/SignUpForm.tsx",
-      "source_location": "L13",
-      "norm_label": "signupform()"
-    },
-    {
       "id": "components_portal_auth_ssocallback_tsx",
       "label": "SsoCallback.tsx",
       "file_type": "code",
@@ -2950,38 +2934,6 @@
       "source_file": "components/portal/AuthShell.tsx",
       "source_location": "L5",
       "norm_label": "authshell()"
-    },
-    {
-      "id": "components_portal_auth_accountprofile_tsx",
-      "label": "AccountProfile.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L1",
-      "norm_label": "accountprofile.tsx"
-    },
-    {
-      "id": "accountprofile_values",
-      "label": "values()",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L12",
-      "norm_label": "values()"
-    },
-    {
-      "id": "accountprofile_field",
-      "label": "field()",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L13",
-      "norm_label": "field()"
-    },
-    {
-      "id": "accountprofile_accountprofile",
-      "label": "AccountProfile()",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L15",
-      "norm_label": "accountprofile()"
     },
     {
       "id": "components_portal_auth_useaccountprofile_ts",
@@ -3110,6 +3062,86 @@
       "source_file": "tests/e2e/portal.spec.ts",
       "source_location": "L1",
       "norm_label": "portal.spec.ts"
+    },
+    {
+      "id": "components_portal_auth_accountidentitysummary_tsx",
+      "label": "AccountIdentitySummary.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountIdentitySummary.tsx",
+      "source_location": "L1",
+      "norm_label": "accountidentitysummary.tsx"
+    },
+    {
+      "id": "accountidentitysummary_accountidentitysummary",
+      "label": "AccountIdentitySummary()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountIdentitySummary.tsx",
+      "source_location": "L3",
+      "norm_label": "accountidentitysummary()"
+    },
+    {
+      "id": "components_portal_auth_accountprofile_tsx",
+      "label": "AccountProfile.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L1",
+      "norm_label": "accountprofile.tsx"
+    },
+    {
+      "id": "accountprofile_values",
+      "label": "values()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L13",
+      "norm_label": "values()"
+    },
+    {
+      "id": "accountprofile_field",
+      "label": "field()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L14",
+      "norm_label": "field()"
+    },
+    {
+      "id": "accountprofile_accountprofile",
+      "label": "AccountProfile()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L16",
+      "norm_label": "accountprofile()"
+    },
+    {
+      "id": "accountprofile_accountprofilecontent",
+      "label": "AccountProfileContent()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L24",
+      "norm_label": "accountprofilecontent()"
+    },
+    {
+      "id": "components_portal_auth_signupform_tsx",
+      "label": "SignUpForm.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/SignUpForm.tsx",
+      "source_location": "L1",
+      "norm_label": "signupform.tsx"
+    },
+    {
+      "id": "signupform_signupform",
+      "label": "SignUpForm()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/SignUpForm.tsx",
+      "source_location": "L13",
+      "norm_label": "signupform()"
+    },
+    {
+      "id": "lib_account_identity_summary_test_ts",
+      "label": "account-identity-summary.test.ts",
+      "file_type": "code",
+      "source_file": "lib/account-identity-summary.test.ts",
+      "source_location": "L1",
+      "norm_label": "account-identity-summary.test.ts"
     }
   ],
   "links": [
@@ -6814,18 +6846,6 @@
       "confidence_score": 1.0
     },
     {
-      "source": "components_portal_auth_signupform_tsx",
-      "target": "signupform_signupform",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/auth/SignUpForm.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "_src": "components_portal_auth_signupform_tsx",
-      "_tgt": "signupform_signupform",
-      "confidence_score": 1.0
-    },
-    {
       "source": "components_portal_auth_ssocallback_tsx",
       "target": "ssocallback_ssocallback",
       "relation": "contains",
@@ -6886,30 +6906,6 @@
       "source_location": "L16"
     },
     {
-      "source": "signupform_signupform",
-      "target": "usesignupflow_usesignupflow",
-      "_src": "signupform_signupform",
-      "_tgt": "usesignupflow_usesignupflow",
-      "relation": "uses",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "weight": 1.0,
-      "source_file": "components/portal/auth/SignUpForm.tsx",
-      "source_location": "L14"
-    },
-    {
-      "source": "signupform_signupform",
-      "target": "usesigninflow_usesigninflow",
-      "_src": "signupform_signupform",
-      "_tgt": "usesigninflow_usesigninflow",
-      "relation": "uses",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "weight": 1.0,
-      "source_file": "components/portal/auth/SignUpForm.tsx",
-      "source_location": "L15"
-    },
-    {
       "source": "ssocallback_ssocallback",
       "target": "useprotectgate_useprotectgate",
       "_src": "ssocallback_ssocallback",
@@ -6943,42 +6939,6 @@
       "weight": 1.0,
       "_src": "components_portal_authshell_tsx",
       "_tgt": "authshell_authshell",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "components_portal_auth_accountprofile_tsx",
-      "target": "accountprofile_values",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_src": "components_portal_auth_accountprofile_tsx",
-      "_tgt": "accountprofile_values",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "components_portal_auth_accountprofile_tsx",
-      "target": "accountprofile_field",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "_src": "components_portal_auth_accountprofile_tsx",
-      "_tgt": "accountprofile_field",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "components_portal_auth_accountprofile_tsx",
-      "target": "accountprofile_accountprofile",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_src": "components_portal_auth_accountprofile_tsx",
-      "_tgt": "accountprofile_accountprofile",
       "confidence_score": 1.0
     },
     {
@@ -7174,18 +7134,6 @@
       "_tgt": "session_binding_assertactiveverification"
     },
     {
-      "source": "components_portal_auth_accountprofile_tsx",
-      "target": "useaccountprofile_useaccountprofile",
-      "_src": "components_portal_auth_accountprofile_tsx",
-      "_tgt": "useaccountprofile_useaccountprofile",
-      "relation": "uses",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "weight": 1.0,
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L24"
-    },
-    {
       "source": "useaccountprofile_useaccountprofile",
       "target": "useaccountverification_useaccountverification",
       "_src": "useaccountprofile_useaccountprofile",
@@ -7232,6 +7180,126 @@
       "weight": 1.0,
       "source_file": "components/portal/auth/ResetPasswordTask.tsx",
       "source_location": "L17"
+    },
+    {
+      "source": "components_portal_auth_accountidentitysummary_tsx",
+      "target": "accountidentitysummary_accountidentitysummary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountIdentitySummary.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountidentitysummary_tsx",
+      "_tgt": "accountidentitysummary_accountidentitysummary",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "accountprofile_values",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "accountprofile_values",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "accountprofile_field",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "accountprofile_field",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "accountprofile_accountprofile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "accountprofile_accountprofile",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "accountprofile_accountprofilecontent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "accountprofile_accountprofilecontent",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_signupform_tsx",
+      "target": "signupform_signupform",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/SignUpForm.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "components_portal_auth_signupform_tsx",
+      "_tgt": "signupform_signupform",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "useaccountprofile_useaccountprofile",
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "useaccountprofile_useaccountprofile",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L25"
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "accountidentitysummary_accountidentitysummary",
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "accountidentitysummary_accountidentitysummary",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L34"
+    },
+    {
+      "source": "signupform_signupform",
+      "target": "usesignupflow_usesignupflow",
+      "_src": "signupform_signupform",
+      "_tgt": "usesignupflow_usesignupflow",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/SignUpForm.tsx",
+      "source_location": "L14"
+    },
+    {
+      "source": "signupform_signupform",
+      "target": "usesigninflow_usesigninflow",
+      "_src": "signupform_signupform",
+      "_tgt": "usesigninflow_usesigninflow",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/SignUpForm.tsx",
+      "source_location": "L15"
     }
   ],
   "hyperedges": []

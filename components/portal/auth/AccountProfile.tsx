@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import { AccountVerificationPanel } from "./AccountVerificationPanel";
 import { useAccountProfile } from "./useAccountProfile";
+import { AccountIdentitySummary } from "./AccountIdentitySummary";
 
 const card = "rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6";
 const input = "mt-2 w-full rounded-lg border border-[#e3d7c3] bg-[#fef8f3] px-4 py-3";
@@ -27,10 +28,10 @@ function AccountProfileContent() {
   if (!flow.isLoaded) return <p>Loading your account…</p>;
   if (!flow.user) return <p>Please <Link className="underline" href="/sign-in">sign in</Link> to view your account.</p>;
   const user = flow.user;
-  const google = user.externalAccounts.find((account) => account.provider === "google");
   return <div className="w-full max-w-3xl text-[#1b3022]">
     <h1 className="font-display !text-3xl text-[#06451d]">Account &amp; profile</h1>
     <p className="mt-3 text-[#35594a]">Manage your personal details and sign-in methods.</p>
+    <AccountIdentitySummary user={user} pending={flow.pending} connectGoogle={() => void flow.connectGoogle()} />
     {flow.message && <p role="status" className="mt-5 rounded-lg border border-[#e3d7c3] bg-[#fef8f3] p-3 text-sm">{flow.message}</p>}
     <AccountVerificationPanel flow={flow.verification} />
     <div className="mt-6 space-y-5">
@@ -59,11 +60,6 @@ function AccountProfileContent() {
           <label className="block text-sm font-medium">New password<input name="next" type="password" autoComplete="new-password" required className={input} /></label>
           <button className={button} disabled={flow.pending}>Update password</button>
         </form>
-      </section>
-      <section className={card}>
-        <h2 className="font-display !text-lg text-[#06451d]">Connected accounts</h2>
-        <p className="mt-3 text-sm">Google: {google ? `${google.verification?.status === "verified" ? "Connected" : "Verification pending"}${google.emailAddress ? ` · ${google.emailAddress}` : ""}` : "Not connected"}</p>
-        {!google && <button type="button" disabled={flow.pending} onClick={() => void flow.connectGoogle()} className={`${button} mt-4`}>Connect Google</button>}
       </section>
       <button type="button" onClick={() => void signOut({ redirectUrl: "/sign-in" }).catch(() => setSignOutError("Could not sign out. Please try again."))} className="text-sm font-medium text-[#9e2a2b] underline">Sign out</button>
       {signOutError && <p role="alert" className="text-sm">{signOutError}</p>}

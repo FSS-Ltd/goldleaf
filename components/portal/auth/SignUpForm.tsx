@@ -26,8 +26,10 @@ export function SignUpForm() {
       <div className="mt-6"><GoogleButton pending={pending} onClick={() => void google.google()} /></div>
       <div className="my-5 flex items-center gap-3 text-xs uppercase text-[#718277]"><span className="h-px flex-1 bg-[#e3d7c3]" />or<span className="h-px flex-1 bg-[#e3d7c3]" /></div>
       <form className="space-y-4" onSubmit={(event) => { const data = values(event); void flow.create(field(data, "email"), field(data, "password"), field(data, "firstName"), field(data, "lastName")); }}>
-        <label className="block text-sm font-medium">First name<input className={input} name="firstName" autoComplete="given-name" required /></label>
-        <label className="block text-sm font-medium">Last name<input className={input} name="lastName" autoComplete="family-name" required /></label>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <label className="block text-sm font-medium">First name<input className={input} name="firstName" autoComplete="given-name" required /></label>
+          <label className="block text-sm font-medium">Last name<input className={input} name="lastName" autoComplete="family-name" required /></label>
+        </div>
         <label className="block text-sm font-medium">Email<input className={input} name="email" type="email" autoComplete="email" required /></label>
         <label className="block text-sm font-medium">Password<input className={input} name="password" type="password" autoComplete="new-password" required /></label>
         <div id="clerk-captcha" />

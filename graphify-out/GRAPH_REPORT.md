@@ -140,8 +140,12 @@ The onboarding review added family-lock ordering and explicit temporary-schema p
 
 The portal node is partial, reflecting its existing onboarding database foundation. The source-backed PORTAL → PORTAL-ONBOARDING edge follows `FEATURE_TREE.md`; the current graph contains 132 nodes and 93 directed edges. SQL remains outside automated extraction.
 
+
+Identity scope update: AST extraction added portal identity and sign-in route nodes. Cross-scope dependencies, proxy, and test edges remain incomplete; see FEATURE_TREE.md for source-backed connections.
 ## Staff onboarding update
 
 `portal_staff_onboarding` links `db/migrations/0004_staff_onboarding.sql` to `portal_onboarding_db`. Graphify does not extract SQL: scoped `graphify update db/migrations` found no supported code files, so this source-backed node and edge were added manually. The structural summary above describes the previous extraction.
 
 Staff migration holds a parent invitation writer lock across digest backfill and trigger installation; `db/tests/staff-migration-concurrency.sh` exercises the upgrade race on PostgreSQL 17.
+
+Scoped library extraction added the Clerk proxy matcher regression test node. `proxy.ts` includes `/__clerk/:path*`; frontend proxy activation depends on provider and deployment configuration.

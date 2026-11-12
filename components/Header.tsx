@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 import { ButtonLink } from "./Button";
 import { MobileNav } from "./MobileNav";
 
@@ -8,6 +9,7 @@ const nav = [
   { href: "/#pricing", label: "Pricing" },
   { href: "/about", label: "About" },
   { href: "/#faq", label: "FAQ" },
+  { href: "/sign-in", label: "Sign in" },
 ];
 
 export function Header() {
@@ -36,7 +38,7 @@ export function Header() {
           <ButtonLink href="/enquire" className="!min-h-11 !px-5 !py-2 text-[0.95rem]">
             Enquire
           </ButtonLink>
-          <MobileNav items={nav} />
+          <Suspense><MobileNav items={nav} /></Suspense>
         </div>
       </div>
     </header>

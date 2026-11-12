@@ -1406,6 +1406,15 @@
       "id": "verified_identity_verifiedidentity",
       "community": 1,
       "norm_label": "verifiedidentity()"
+    },
+    {
+      "label": "portal-proxy.test.ts",
+      "file_type": "code",
+      "source_file": "lib/portal-proxy.test.ts",
+      "source_location": "L1",
+      "id": "portal_proxy_test_ts",
+      "community": 8,
+      "norm_label": "portal-proxy.test.ts"
     }
   ],
   "links": [

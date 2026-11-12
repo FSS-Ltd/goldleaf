@@ -11,5 +11,5 @@ export default function proxy(...args: Parameters<typeof clerk>) {
 }
 
 export const config = {
-  matcher: ["/parent/:path*", "/staff/:path*", "/admin/:path*", "/sign-in/:path*", "/invite/:path*", "/api/portal/:path*"],
+  matcher: ["/parent/:path*", "/staff/:path*", "/admin/:path*", "/sign-in/:path*", "/invite/:path*", "/api/portal/:path*", "/__clerk/:path*"],
 };

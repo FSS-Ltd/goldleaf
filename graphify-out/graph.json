@@ -3064,22 +3064,6 @@
       "norm_label": "portal.spec.ts"
     },
     {
-      "id": "components_portal_auth_accountidentitysummary_tsx",
-      "label": "AccountIdentitySummary.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountIdentitySummary.tsx",
-      "source_location": "L1",
-      "norm_label": "accountidentitysummary.tsx"
-    },
-    {
-      "id": "accountidentitysummary_accountidentitysummary",
-      "label": "AccountIdentitySummary()",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountIdentitySummary.tsx",
-      "source_location": "L3",
-      "norm_label": "accountidentitysummary()"
-    },
-    {
       "id": "components_portal_auth_accountprofile_tsx",
       "label": "AccountProfile.tsx",
       "file_type": "code",
@@ -3134,6 +3118,22 @@
       "source_file": "components/portal/auth/SignUpForm.tsx",
       "source_location": "L13",
       "norm_label": "signupform()"
+    },
+    {
+      "id": "components_portal_auth_accountidentitysummary_tsx",
+      "label": "AccountIdentitySummary.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountIdentitySummary.tsx",
+      "source_location": "L1",
+      "norm_label": "accountidentitysummary.tsx"
+    },
+    {
+      "id": "accountidentitysummary_accountidentitysummary",
+      "label": "AccountIdentitySummary()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountIdentitySummary.tsx",
+      "source_location": "L3",
+      "norm_label": "accountidentitysummary()"
     },
     {
       "id": "lib_account_identity_summary_test_ts",
@@ -7182,18 +7182,6 @@
       "source_location": "L17"
     },
     {
-      "source": "components_portal_auth_accountidentitysummary_tsx",
-      "target": "accountidentitysummary_accountidentitysummary",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/auth/AccountIdentitySummary.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_src": "components_portal_auth_accountidentitysummary_tsx",
-      "_tgt": "accountidentitysummary_accountidentitysummary",
-      "confidence_score": 1.0
-    },
-    {
       "source": "components_portal_auth_accountprofile_tsx",
       "target": "accountprofile_values",
       "relation": "contains",
@@ -7300,6 +7288,18 @@
       "weight": 1.0,
       "source_file": "components/portal/auth/SignUpForm.tsx",
       "source_location": "L15"
+    },
+    {
+      "source": "components_portal_auth_accountidentitysummary_tsx",
+      "target": "accountidentitysummary_accountidentitysummary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountIdentitySummary.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountidentitysummary_tsx",
+      "_tgt": "accountidentitysummary_accountidentitysummary",
+      "confidence_score": 1.0
     }
   ],
   "hyperedges": []

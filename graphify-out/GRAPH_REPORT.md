@@ -193,3 +193,5 @@ The scoped auth/profile typography and account-return update re-extracted eight 
 The account actor-binding and invitation-capture fixes re-extracted nine affected files. The graph now has 342 nodes and 345 edges; 27 unresolved extractor edges were omitted. Existing SQL and semantic nodes remain intact.
 
 The provider-derived account summary and responsive signup name fields re-extracted four affected files. The graph now has 346 nodes and 348 edges; 18 unresolved extractor edges were omitted.
+
+The account-summary wrapping correction re-extracted two affected files; the graph remains at 346 nodes and 348 edges, with six unresolved extractor edges omitted.

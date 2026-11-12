@@ -15,7 +15,7 @@ test("account summary displays the provider's primary email and linked Google id
     connectGoogle: () => {},
   }));
   assert.match(html, /Example Parent/);
-  assert.match(html, /parent@example\.invalid.*Verified/);
+  assert.match(html, /Verified.*parent@example\.invalid/);
   assert.match(html, /Connected.*google@example\.invalid/);
   assert.doesNotMatch(html, /Connect Google/);
 });

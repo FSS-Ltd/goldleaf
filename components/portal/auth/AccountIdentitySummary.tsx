@@ -20,11 +20,11 @@ export function AccountIdentitySummary({ user, pending, connectGoogle }: {
     <dl className="mt-5 space-y-4 border-t border-[#e3d7c3] pt-5 text-sm">
       <div className="flex flex-col gap-1 sm:flex-row sm:justify-between sm:gap-5">
         <dt className="font-medium text-[#35594a]">Primary email</dt>
-        <dd className="min-w-0 break-all sm:text-right">{primary ? <>{primary.emailAddress} <span className="text-[#35594a]">· {primary.verification?.status === "verified" ? "Verified" : "Not verified"}</span></> : "Not set"}</dd>
+        <dd className="min-w-0 sm:text-right">{primary ? <><span className="block whitespace-nowrap text-[#35594a]">{primary.verification?.status === "verified" ? "Verified" : "Not verified"}</span><span className="block [overflow-wrap:anywhere]">{primary.emailAddress}</span></> : "Not set"}</dd>
       </div>
       <div className="flex flex-col gap-1 sm:flex-row sm:justify-between sm:gap-5">
         <dt className="font-medium text-[#35594a]">Google account</dt>
-        <dd className="min-w-0 break-all sm:text-right">{google ? <>{google.verification?.status === "verified" ? "Connected" : "Verification pending"}{google.emailAddress ? ` · ${google.emailAddress}` : ""}</> : "Not connected"}</dd>
+        <dd className="min-w-0 sm:text-right">{google ? <><span className="block whitespace-nowrap">{google.verification?.status === "verified" ? "Connected" : "Verification pending"}</span>{google.emailAddress && <span className="block [overflow-wrap:anywhere]">{google.emailAddress}</span>}</> : "Not connected"}</dd>
       </div>
     </dl>
     {!google && <button type="button" disabled={pending} onClick={connectGoogle} className="mt-4 rounded-lg bg-[#06451d] px-4 py-3 text-sm font-medium text-white disabled:opacity-60">Connect Google</button>}

@@ -2,7 +2,9 @@
 
 import { useClerk, useSession, useUser } from "@clerk/nextjs";
 import Link from "next/link";
-import { useState, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
+import { clearPaymentStorage, signOutAndClearPaymentStorage } from "@/lib/portal/payment-storage";
+import { useEffect, useState, type FormEvent } from "react";
 import { AccountVerificationPanel } from "./AccountVerificationPanel";
 import { useAccountProfile } from "./useAccountProfile";
 import { AccountIdentitySummary } from "./AccountIdentitySummary";
@@ -16,6 +18,14 @@ function field(data: FormData, key: string) { const value = data.get(key); retur
 export function AccountProfile() {
   const { user, isLoaded } = useUser();
   const { session, isLoaded: sessionLoaded } = useSession();
+  useEffect(() => {
+    if (!isLoaded || !sessionLoaded) return;
+    try {
+      clearPaymentStorage(sessionStorage, user && session ? { userId: user.id, sessionId: session.id } : undefined);
+    } catch {
+      // Browser storage may be unavailable.
+    }
+  }, [isLoaded, sessionLoaded, user, session]);
   if (!isLoaded || !sessionLoaded) return <p>Loading your account…</p>;
   if (!user || !session) return <p>Please <Link className="underline" href="/sign-in">sign in</Link> to view your account.</p>;
   return <AccountProfileContent key={`${session.id}:${user.id}`} />;
@@ -24,6 +34,7 @@ export function AccountProfile() {
 function AccountProfileContent() {
   const flow = useAccountProfile();
   const { signOut } = useClerk();
+  const router = useRouter();
   const [signOutError, setSignOutError] = useState("");
   if (!flow.isLoaded) return <p>Loading your account…</p>;
   if (!flow.user) return <p>Please <Link className="underline" href="/sign-in">sign in</Link> to view your account.</p>;
@@ -61,7 +72,7 @@ function AccountProfileContent() {
           <button className={button} disabled={flow.pending}>Update password</button>
         </form>
       </section>
-      <button type="button" onClick={() => void signOut({ redirectUrl: "/sign-in" }).catch(() => setSignOutError("Could not sign out. Please try again."))} className="text-sm font-medium text-[#9e2a2b] underline">Sign out</button>
+      <button type="button" onClick={() => void signOutAndClearPaymentStorage(() => signOut(), () => sessionStorage).then(() => { router.push("/sign-in"); router.refresh(); }).catch(() => setSignOutError("Could not sign out. Please try again."))} className="text-sm font-medium text-[#9e2a2b] underline">Sign out</button>
       {signOutError && <p role="alert" className="text-sm">{signOutError}</p>}
     </div>
   </div>;

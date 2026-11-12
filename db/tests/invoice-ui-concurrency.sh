@@ -69,7 +69,7 @@ wait "$first"
 if wait "$second"; then echo 'Concurrent notification claim succeeded' >&2; exit 1; fi
 grep -q 'notification in progress' "$tmp/second"
 psql_test <<SQL
-SELECT portal.finish_invoice_notification('ui-invoice-admin','$notice','85000000-0000-4000-8000-000000000002','uncertain');
+SELECT portal.finish_invoice_notification('ui-invoice-admin','$notice',(SELECT claim_id FROM portal.invoice_notifications WHERE id='$notice'),'uncertain');
 UPDATE portal.memberships SET revoked_at=clock_timestamp() WHERE subject='ui-invoice-parent';
 DO \$\$ BEGIN
  BEGIN PERFORM portal.claim_invoice_notification('ui-invoice-admin','$notice',gen_random_uuid(),'parent@example.com','Goldleaf <billing@example.com>','https://goldleaf.example',false); RAISE EXCEPTION 'revoked parent claimed'; EXCEPTION WHEN invalid_parameter_value THEN NULL; END;

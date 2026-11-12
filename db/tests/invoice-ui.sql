@@ -45,22 +45,28 @@ DO $$ DECLARE old_invoice uuid; new_invoice uuid; snap jsonb; old_snap jsonb; ct
  BEGIN PERFORM portal.save_billing_settings_with_contact('ui-invoice-parent','X','X','X',false,NULL,NULL,14,'Bank','weekly',NULL); RAISE EXCEPTION 'parent changed settings'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
 END $$;
 DO $$
-DECLARE inv uuid; notice uuid; first_attempt uuid; retry_attempt uuid; claimed record;
+DECLARE inv uuid; notice uuid; first_attempt uuid; retry_attempt uuid; stale_claim uuid; claimed record;
 BEGIN
  SELECT id INTO inv FROM portal.invoices WHERE family_id='82000000-0000-4000-8000-000000000001' AND issued_at IS NOT NULL ORDER BY invoice_number DESC LIMIT 1;
  SELECT id INTO notice FROM portal.prepare_invoice_notifications('ui-invoice-admin',inv);
  SELECT * INTO claimed FROM portal.claim_invoice_notification('ui-invoice-admin', notice, '83000000-0000-4000-8000-000000000001', 'parent@example.com', 'Goldleaf <billing@example.com>', 'https://goldleaf.example', false);
  first_attempt := claimed.attempt_id;
- PERFORM portal.finish_invoice_notification('ui-invoice-admin',notice,first_attempt,'uncertain');
+ stale_claim := claimed.claim_id;
+ UPDATE portal.invoice_notifications SET lease_until=clock_timestamp()-interval '1 second' WHERE id=notice;
  SELECT * INTO claimed FROM portal.claim_invoice_notification('ui-invoice-admin', notice, '83000000-0000-4000-8000-000000000002', 'parent@example.com', 'Goldleaf <billing@example.com>', 'https://goldleaf.example', false);
  retry_attempt := claimed.attempt_id;
- IF retry_attempt <> first_attempt THEN RAISE EXCEPTION 'retry changed idempotency key'; END IF;
- PERFORM portal.finish_invoice_notification('ui-invoice-admin',notice,retry_attempt,'uncertain');
+ IF retry_attempt <> first_attempt OR claimed.claim_id = stale_claim THEN RAISE EXCEPTION 'retry key or claim fencing incorrect'; END IF;
+ BEGIN PERFORM portal.finish_invoice_notification('ui-invoice-admin',notice,stale_claim,'failed'); RAISE EXCEPTION 'stale claim completed'; EXCEPTION WHEN invalid_parameter_value THEN NULL; END;
+ IF (SELECT status FROM portal.invoice_notifications WHERE id=notice) <> 'sending' THEN RAISE EXCEPTION 'stale claim changed active claim'; END IF;
+ PERFORM portal.finish_invoice_notification('ui-invoice-admin',notice,claimed.claim_id,'sent');
+ BEGIN PERFORM portal.finish_invoice_notification('ui-invoice-admin',notice,stale_claim,'uncertain'); RAISE EXCEPTION 'stale claim overwrote sent'; EXCEPTION WHEN invalid_parameter_value THEN NULL; END;
+ IF (SELECT status FROM portal.invoice_notifications WHERE id=notice) <> 'sent' THEN RAISE EXCEPTION 'stale claim changed sent state'; END IF;
+ UPDATE portal.invoice_notifications SET status='uncertain' WHERE id=notice;
  UPDATE portal.invoice_notifications SET attempt_started_at=clock_timestamp()-interval '25 hours' WHERE id=notice;
  BEGIN PERFORM portal.claim_invoice_notification('ui-invoice-admin', notice, '83000000-0000-4000-8000-000000000003', 'parent@example.com', 'Goldleaf <billing@example.com>', 'https://goldleaf.example', false); RAISE EXCEPTION 'ambiguous expiry retried without acknowledgement'; EXCEPTION WHEN invalid_parameter_value THEN NULL; END;
  SELECT * INTO claimed FROM portal.claim_invoice_notification('ui-invoice-admin', notice, '83000000-0000-4000-8000-000000000003', 'parent@example.com', 'Goldleaf <billing@example.com>', 'https://goldleaf.example', true);
  IF claimed.attempt_id = first_attempt THEN RAISE EXCEPTION 'expired key reused'; END IF;
- PERFORM portal.finish_invoice_notification('ui-invoice-admin',notice,claimed.attempt_id,'sent');
+ PERFORM portal.finish_invoice_notification('ui-invoice-admin',notice,claimed.claim_id,'sent');
  IF (SELECT status FROM portal.invoice_notifications WHERE id=notice) <> 'sent' THEN RAISE EXCEPTION 'notification state missing'; END IF;
  BEGIN PERFORM portal.claim_invoice_notification('ui-invoice-parent', notice, gen_random_uuid(), 'x', 'x', 'x', true); RAISE EXCEPTION 'parent sent notification'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
 END $$;

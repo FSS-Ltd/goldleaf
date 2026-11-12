@@ -10,7 +10,7 @@ import { verifiedIdentity } from "./verified-identity";
 import { sendInvoiceMail } from "./invoice-mail";
 
 const noticeSchema = z.object({ id: z.string().uuid(), parent_subject: z.string().min(1), status: z.enum(["pending", "sending", "sent", "failed", "uncertain"]), may_duplicate: z.boolean() });
-const claimSchema = z.object({ attempt_id: z.string().uuid(), recipient_email: z.string().email(), sender: z.string().min(1), origin: z.string().url(), invoice_id: z.string().uuid(), family_id: z.string().uuid() });
+const claimSchema = z.object({ attempt_id: z.string().uuid(), claim_id: z.string().uuid(), recipient_email: z.string().email(), sender: z.string().min(1), origin: z.string().url(), invoice_id: z.string().uuid(), family_id: z.string().uuid() });
 
 export async function listInvoiceNotifications(invoiceId: unknown) {
   const invoice = invoiceIdSchema.parse(invoiceId);
@@ -60,6 +60,6 @@ export async function deliverInvoiceNotification(input: unknown): Promise<"sent"
     from: claim.sender, to: claim.recipient_email, origin: claim.origin, invoiceId: claim.invoice_id,
     familyId: claim.family_id, attemptId: claim.attempt_id, requireHttps: process.env.NODE_ENV === "production",
   });
-  await sql`SELECT portal.finish_invoice_notification(${userId}, ${notice.id}, ${claim.attempt_id}, ${status})`;
+  await sql`SELECT portal.finish_invoice_notification(${userId}, ${notice.id}, ${claim.claim_id}, ${status})`;
   return status;
 }

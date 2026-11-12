@@ -55,7 +55,7 @@ export function AccountMenu({
         <button
           type="button"
           onClick={() =>
-            void signOutAndClearPaymentStorage(() => signOut(), sessionStorage)
+            void signOutAndClearPaymentStorage(() => signOut(), () => sessionStorage)
               .then(() => {
                 router.push("/sign-in");
                 router.refresh();

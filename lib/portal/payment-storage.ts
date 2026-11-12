@@ -16,7 +16,11 @@ export function clearPaymentStorage(storage: StorageReader, current?: { userId: 
   }
 }
 
-export async function signOutAndClearPaymentStorage(signOut: () => Promise<unknown>, storage: StorageReader): Promise<void> {
+export async function signOutAndClearPaymentStorage(signOut: () => Promise<unknown>, getStorage: () => StorageReader): Promise<void> {
   await signOut();
-  clearPaymentStorage(storage);
+  try {
+    clearPaymentStorage(getStorage());
+  } catch {
+    // Storage may be disabled; sign-out has already succeeded.
+  }
 }

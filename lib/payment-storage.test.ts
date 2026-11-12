@@ -23,8 +23,16 @@ test("clears payment operations on sign-out or actor change without touching unr
 test("keeps retry data if provider sign-out fails", async () => {
  const { signOutAndClearPaymentStorage } = await import("./portal/payment-storage");
  const key = `${paymentStoragePrefix}invoice`; const s = storage({ [key]: "pending" });
- await assert.rejects(signOutAndClearPaymentStorage(async () => { throw new Error("unavailable"); }, s));
+ await assert.rejects(signOutAndClearPaymentStorage(async () => { throw new Error("unavailable"); }, () => s));
  assert.equal(s.values.has(key), true);
- await signOutAndClearPaymentStorage(async () => {}, s);
+ await signOutAndClearPaymentStorage(async () => {}, () => s);
  assert.equal(s.values.has(key), false);
+});
+
+
+test("storage failures never prevent confirmed sign-out", async () => {
+ const { signOutAndClearPaymentStorage } = await import("./portal/payment-storage");
+ let signedOut = false;
+ await signOutAndClearPaymentStorage(async () => { signedOut = true; }, () => { throw new Error("storage disabled"); });
+ assert.equal(signedOut, true);
 });

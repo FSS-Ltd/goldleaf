@@ -6,7 +6,7 @@ Scoped Graphify AST extraction covers the invoice and settings DAL, DTOs and tes
 
 ## Scoped invoice data update (2026-11-12)
 
-SQL extraction is unsupported. The invoice billing migration node and links to onboarding, pricing and the planned portal were added manually from source and runbook references. Prior clustering and semantic coverage are unchanged.
+SQL extraction is unsupported. The invoice billing migration node and links to onboarding, pricing and the partial portal were added manually from source and runbook references. Prior clustering and semantic coverage are unchanged.
 
 ## Scoped invoice-pricing update (2026-11-12)
 
@@ -71,7 +71,7 @@ Nodes (4): Home(), faqSchema(), organisationSchema(), url()
 
 ### Community 2 - "Community 2"
 Cohesion: 0.43
-Nodes (7): Goldleaf portal concept brief and design references, PORTAL-CONCEPTS: implemented design archive only, Portal delivery plan (planned), Known limitation: archived 105-minute plan versus current 120-minute sessions, Planned portal information boundaries and unverified behaviour, PORTAL: planned staff and parent portal; no runtime, Public-site design document and portal archive reference
+Nodes (7): Goldleaf portal concept brief and design references, PORTAL-CONCEPTS: implemented design archive only, Portal delivery plan (planned), Known limitation: archived 105-minute plan versus current 120-minute sessions, Planned portal information boundaries and unverified behaviour, PORTAL: partial authenticated routes and billing, Public-site design document and portal archive reference
 
 ### Community 4 - "Community 4"
 Cohesion: 0.5
@@ -207,3 +207,5 @@ Team header route correction changes no symbols or graph relationships; the exis
 ## Invoice UI scope (2026-11-12)
 
 Incremental AST extraction refreshed the changed TypeScript and TSX files for invoice routes, shared portal navigation, reviewed quotes, notifications, and payment recovery. File-qualified IDs disambiguate repeated route component names. SQL is not supported by the extractor: `portal_invoice_ui_db` and its links to the existing invoice runtime and server DAL are manually source-linked to migration 0011. Semantic extraction and cross-scope edges remain incomplete; consult `FEATURE_TREE.md` and source for authority. Migration 0011 and provider delivery remain undeployed and signed-in UI verification is pending.
+
+Lease fencing and account sign-out cleanup were refreshed in the affected invoice and auth nodes. Earlier cluster summaries are historical; the graph JSON and feature tree describe current source.

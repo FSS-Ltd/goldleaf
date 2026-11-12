@@ -142,6 +142,7 @@ CREATE TABLE portal.invoice_notifications (
   membership_id uuid NOT NULL REFERENCES portal.memberships(id),
   status text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','sending','sent','failed','uncertain')),
   attempt_id uuid,
+  claim_id uuid,
   attempt_started_at timestamptz,
   lease_until timestamptz,
   recipient_email text,
@@ -199,7 +200,7 @@ BEGIN
     );
 END $$;
 CREATE FUNCTION portal.claim_invoice_notification(p_subject text,p_notice uuid,p_attempt uuid,p_email text,p_sender text,p_origin text,p_accept_duplicate boolean)
-RETURNS TABLE(attempt_id uuid, recipient_email text, sender text, origin text, invoice_id uuid, family_id uuid)
+RETURNS TABLE(attempt_id uuid, claim_id uuid, recipient_email text, sender text, origin text, invoice_id uuid, family_id uuid)
 LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
 DECLARE n portal.invoice_notifications%ROWTYPE; fresh boolean;
 BEGIN
@@ -220,17 +221,17 @@ BEGIN
     recipient_email=CASE WHEN fresh THEN p_email ELSE n.recipient_email END,
     sender=CASE WHEN fresh THEN p_sender ELSE n.sender END,
     origin=CASE WHEN fresh THEN p_origin ELSE n.origin END,
-    status='sending', lease_until=clock_timestamp()+interval '1 minute', updated_at=clock_timestamp()
+    status='sending', claim_id=gen_random_uuid(), lease_until=clock_timestamp()+interval '1 minute', updated_at=clock_timestamp()
     WHERE n1.id=n.id RETURNING n1.* INTO n;
-  RETURN QUERY SELECT n.attempt_id,n.recipient_email,n.sender,n.origin,n.invoice_id,i.family_id FROM portal.invoices i WHERE i.id=n.invoice_id;
+  RETURN QUERY SELECT n.attempt_id,n.claim_id,n.recipient_email,n.sender,n.origin,n.invoice_id,i.family_id FROM portal.invoices i WHERE i.id=n.invoice_id;
 END $$;
-CREATE FUNCTION portal.finish_invoice_notification(p_subject text,p_notice uuid,p_attempt uuid,p_status text) RETURNS void
+CREATE FUNCTION portal.finish_invoice_notification(p_subject text,p_notice uuid,p_claim uuid,p_status text) RETURNS void
 LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, portal, pg_temp AS $$
 BEGIN
   PERFORM portal.require_admin(p_subject);
   IF p_status IS NULL OR p_status NOT IN ('sent','failed','uncertain') THEN RAISE EXCEPTION 'invalid notification state' USING ERRCODE='22023'; END IF;
   UPDATE portal.invoice_notifications SET status=p_status, lease_until=NULL, updated_at=clock_timestamp()
-    WHERE id=p_notice AND attempt_id=p_attempt AND status='sending';
+    WHERE id=p_notice AND claim_id=p_claim AND status='sending';
   IF NOT FOUND THEN RAISE EXCEPTION 'notification attempt unavailable' USING ERRCODE='22023'; END IF;
 END $$;
 REVOKE ALL ON FUNCTION portal.enqueue_invoice_notifications(), portal.prepare_invoice_notifications(text,uuid), portal.list_invoice_notifications(text,uuid), portal.fail_invoice_notification(text,uuid), portal.claim_invoice_notification(text,uuid,uuid,text,text,text,boolean), portal.finish_invoice_notification(text,uuid,uuid,text) FROM PUBLIC;

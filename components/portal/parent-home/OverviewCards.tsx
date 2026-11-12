@@ -15,11 +15,13 @@ export function SessionCard({
     : null;
   return (
     <section className="rounded-[18px] border border-[#d8c9ad] bg-[#f6eee2] p-6 sm:p-8">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#766947]">
-        Your next session
-      </p>
       {session && child && when ? (
         <>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#766947]">
+            {session.status === "in_progress"
+              ? "Your current session"
+              : "Your next session"}
+          </p>
           <h2 className="mt-4 !text-3xl">Session for {child.display_name}</h2>
           <p className="mt-5 text-lg font-medium">{when.day}</p>
           <p className="mt-1 text-sm">

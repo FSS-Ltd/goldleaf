@@ -31,3 +31,23 @@ test("session actions target its actual session and family", () => {
   );
   assert.match(html, /Library/);
 });
+
+test("session heading reflects scheduled, active, and empty states", () => {
+  const scheduled = renderToStaticMarkup(
+    createElement(SessionCard, { session, child }),
+  );
+  const active = renderToStaticMarkup(
+    createElement(SessionCard, {
+      session: { ...session, status: "in_progress" },
+      child,
+    }),
+  );
+  const empty = renderToStaticMarkup(
+    createElement(SessionCard, { session: undefined, child: undefined }),
+  );
+  assert.match(scheduled, /Your next session/);
+  assert.match(active, /Your current session/);
+  assert.doesNotMatch(active, /Your next session/);
+  assert.match(empty, /No upcoming sessions scheduled/);
+  assert.doesNotMatch(empty, /Your next session|Your current session/);
+});

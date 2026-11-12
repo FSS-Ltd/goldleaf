@@ -49,9 +49,6 @@ async function AdminChildren({
       <h1 className="!text-[clamp(2rem,4vw,2.6rem)]">
         Children &amp; sessions
       </h1>
-      {families.length > 0 && (
-        <FamilySelector families={families} selectedId={selected?.id ?? ""} />
-      )}
       {families.length === 0 ? (
         <p className="mt-6 text-sm">
           No families have been added yet.{" "}
@@ -60,64 +57,68 @@ async function AdminChildren({
           </Link>{" "}
           first.
         </p>
-      ) : selected ? (
-        <div className="mt-8 grid gap-6 lg:grid-cols-2">
-          <section className="rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6">
-            <h2 className="!text-xl">Register a child</h2>
-            <p className="mt-3 text-sm">
-              Family: {selected.display_name ?? "Unnamed family"}
-            </p>
-            <RegisterChildForm
-              actor={actor}
-              key={selected.id}
-              familyId={selected.id}
-              requestId={randomUUID()}
-            />
-          </section>
-          <section className="rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6">
-            <h2 className="!text-xl">Schedule a session</h2>
-            <ScheduleSessionForm
-              actor={actor}
-              key={selected.id}
-              childOptions={children}
-              requestId={randomUUID()}
-            />
-          </section>
-          <section className="rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6 lg:col-span-2">
-            <h2 className="!text-xl">Sessions</h2>
-            {sessions.length ? (
-              <ul className="mt-4 divide-y divide-[#e3d7c3]">
-                {sessions.map((session) => {
-                  const when = formatUkSession(
-                    session.starts_at,
-                    session.duration_minutes,
-                  );
-                  return (
-                    <li key={session.id} className="py-3 text-sm">
-                      <a
-                        className="underline"
-                        href={`/admin/sessions/${session.id}`}
-                      >
-                        {children.find((child) => child.id === session.child_id)
-                          ?.display_name ?? "Child"}{" "}
-                        · {when.day} · {when.time} ·{" "}
-                        {sessionStatusLabel(session.status)}
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-            ) : (
-              <p className="mt-4 text-sm">
-                No sessions scheduled for this family yet.
-              </p>
-            )}
-          </section>
-        </div>
       ) : (
-        <p className="mt-6 text-sm">
-          Select a family to manage children and sessions.
-        </p>
+        <FamilySelector families={families} selectedId={selected?.id ?? ""}>
+          {selected ? (
+            <div className="mt-8 grid gap-6 lg:grid-cols-2">
+              <section className="rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6">
+                <h2 className="!text-xl">Register a child</h2>
+                <p className="mt-3 text-sm">
+                  Family: {selected.display_name ?? "Unnamed family"}
+                </p>
+                <RegisterChildForm
+                  actor={actor}
+                  key={selected.id}
+                  familyId={selected.id}
+                  requestId={randomUUID()}
+                />
+              </section>
+              <section className="rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6">
+                <h2 className="!text-xl">Schedule a session</h2>
+                <ScheduleSessionForm
+                  actor={actor}
+                  key={selected.id}
+                  childOptions={children}
+                  requestId={randomUUID()}
+                />
+              </section>
+              <section className="rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6 lg:col-span-2">
+                <h2 className="!text-xl">Sessions</h2>
+                {sessions.length ? (
+                  <ul className="mt-4 divide-y divide-[#e3d7c3]">
+                    {sessions.map((session) => {
+                      const when = formatUkSession(
+                        session.starts_at,
+                        session.duration_minutes,
+                      );
+                      return (
+                        <li key={session.id} className="py-3 text-sm">
+                          <a
+                            className="underline"
+                            href={`/admin/sessions/${session.id}`}
+                          >
+                            {children.find((child) => child.id === session.child_id)
+                              ?.display_name ?? "Child"}{" "}
+                            · {when.day} · {when.time} ·{" "}
+                            {sessionStatusLabel(session.status)}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                ) : (
+                  <p className="mt-4 text-sm">
+                    No sessions scheduled for this family yet.
+                  </p>
+                )}
+              </section>
+            </div>
+          ) : (
+            <p className="mt-6 text-sm">
+              Select a family to manage children and sessions.
+            </p>
+          )}
+        </FamilySelector>
       )}
     </PortalShell>
   );

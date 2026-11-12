@@ -2,7 +2,7 @@
 
 ## Scoped admin Today update (2026-11-12)
 
-Scoped AST extraction refreshed the changed Today, navigation, selector, DAL and test files while retaining the existing graph. SQL extraction is unsupported; migration 0020 is represented by a source-linked node. Earlier clustering and semantic coverage were not recomputed; browser and separate-user verification remain open.
+Scoped AST extraction refreshed the changed Today, navigation, selector, DAL and test files while retaining the existing graph. SQL extraction is unsupported; migration 0020 is represented by a source-linked node. Migrations 0019 and 0020 and 84 restricted runtime grants were verified in QA, development and production; invoice snapshots remained unchanged. Earlier clustering and semantic coverage were not recomputed; browser and separate-user verification remain open.
 
 ## Scoped invoice workflow update (2026-11-12)
 

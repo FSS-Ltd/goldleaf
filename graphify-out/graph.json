@@ -5689,13 +5689,6 @@
       "source_location": "L1"
     },
     {
-      "id": "app_portal_provider_admin_children_page_tsx",
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/children/page.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "app_portal_provider_staff_page_tsx",
       "label": "page.tsx",
       "file_type": "code",
@@ -5728,13 +5721,6 @@
       "label": "PortalShell.tsx",
       "file_type": "code",
       "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "components_portal_admin_familyselector_tsx",
-      "label": "FamilySelector.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/admin/FamilySelector.tsx",
       "source_location": "L1"
     },
     {
@@ -5910,6 +5896,41 @@
       "label": "Admin Today batch SQL",
       "file_type": "code",
       "source_file": "db/migrations/0020_admin_today.sql",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_portal_provider_admin_children_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/children/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_admin_familyselector_tsx",
+      "label": "FamilySelector.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/admin/FamilySelector.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_admin_familyworkspace_tsx",
+      "label": "FamilyWorkspace.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/admin/FamilyWorkspace.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "familyworkspace_familyworkspace",
+      "label": "FamilyWorkspace()",
+      "file_type": "code",
+      "source_file": "components/portal/admin/FamilyWorkspace.tsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "lib_admin_family_workspace_test_ts",
+      "label": "admin-family-workspace.test.ts",
+      "file_type": "code",
+      "source_file": "lib/admin-family-workspace.test.ts",
       "source_location": "L1"
     }
   ],
@@ -14589,6 +14610,45 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/(portal)/(provider)/admin/today/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_admin_familyworkspace_tsx",
+      "target": "familyworkspace_familyworkspace",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/admin/FamilyWorkspace.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_admin_familyselector_tsx",
+      "target": "components_portal_admin_familyworkspace_tsx",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/children/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_admin_familyworkspace_tsx",
+      "target": "portalloading_portalloading",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/children/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_children_page_tsx",
+      "target": "components_portal_admin_familyselector_tsx",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/children/page.tsx",
       "source_location": "L1",
       "weight": 1.0
     }

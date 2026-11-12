@@ -1615,33 +1615,6 @@
       "norm_label": "page.tsx"
     },
     {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/portal/page.tsx",
-      "source_location": "L2",
-      "id": "app_portal_provider_portal_page_tsx",
-      "community": 5,
-      "norm_label": "page.tsx"
-    },
-    {
-      "label": "PortalLanding()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/portal/page.tsx",
-      "source_location": "L7",
-      "id": "page_portallanding",
-      "community": 5,
-      "norm_label": "portallanding()"
-    },
-    {
-      "label": "PortalPage()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/portal/page.tsx",
-      "source_location": "L15",
-      "id": "page_portalpage",
-      "community": 5,
-      "norm_label": "portalpage()"
-    },
-    {
       "label": "actions.ts",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/actions.ts",
@@ -3037,14 +3010,6 @@
       "norm_label": "staff-profile.test.ts"
     },
     {
-      "id": "app_portal_provider_staff_page_tsx",
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L2",
-      "norm_label": "page.tsx"
-    },
-    {
       "id": "app_portal_invite_actions_ts",
       "label": "actions.ts",
       "file_type": "code",
@@ -3213,27 +3178,6 @@
       "norm_label": "staff delivery and atomic assignment sql"
     },
     {
-      "id": "lib_portal_role_links_ts",
-      "label": "role-links.ts",
-      "file_type": "code",
-      "source_file": "lib/portal/role-links.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "role_links_portalrolelinks",
-      "label": "portalRoleLinks()",
-      "file_type": "code",
-      "source_file": "lib/portal/role-links.ts",
-      "source_location": "L9"
-    },
-    {
-      "id": "lib_portal_role_links_test_ts",
-      "label": "portal-role-links.test.ts",
-      "file_type": "code",
-      "source_file": "lib/portal-role-links.test.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "invitation_cookie_invitationdestination",
       "label": "invitationDestination()",
       "file_type": "code",
@@ -3262,13 +3206,6 @@
       "source_location": "L90"
     },
     {
-      "id": "page_stafftoday",
-      "label": "StaffToday()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L11"
-    },
-    {
       "id": "lib_portal_children_ts",
       "label": "children.ts",
       "file_type": "code",
@@ -3295,41 +3232,6 @@
       "file_type": "code",
       "source_file": "lib/portal/children.ts",
       "source_location": "L20"
-    },
-    {
-      "id": "lib_portal_sessions_ts",
-      "label": "sessions.ts",
-      "file_type": "code",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "sessions_schedulesession",
-      "label": "scheduleSession()",
-      "file_type": "code",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L10"
-    },
-    {
-      "id": "sessions_listsessions",
-      "label": "listSessions()",
-      "file_type": "code",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L16"
-    },
-    {
-      "id": "sessions_changesession",
-      "label": "changeSession()",
-      "file_type": "code",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L22"
-    },
-    {
-      "id": "sessions_reschedulesession",
-      "label": "rescheduleSession()",
-      "file_type": "code",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L29"
     },
     {
       "id": "lib_portal_learning_ts",
@@ -3435,13 +3337,6 @@
       "source_file": "db/migrations/0013_learning_updates.sql",
       "source_location": "L1",
       "file_type": "code"
-    },
-    {
-      "id": "sessions_setsessionlocation",
-      "label": "setSessionLocation()",
-      "file_type": "code",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L36"
     },
     {
       "id": "app_portal_provider_admin_billing_settings_error_tsx",
@@ -4342,13 +4237,6 @@
       "source_location": "L50"
     },
     {
-      "id": "app_portal_provider_admin_children_page_tsx",
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/admin/children/page.tsx",
-      "source_location": "L2"
-    },
-    {
       "id": "app_portal_provider_parent_learning_page_tsx",
       "label": "page.tsx",
       "file_type": "code",
@@ -4389,13 +4277,6 @@
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/sessions/page.tsx",
       "source_location": "L85"
-    },
-    {
-      "id": "page_formatuksession",
-      "label": "formatUkSession()",
-      "file_type": "code",
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L60"
     },
     {
       "id": "app_portal_provider_staff_sessions_id_actions_ts",
@@ -4550,20 +4431,6 @@
       "file_type": "code",
       "source_file": "lib/portal/parent-children.ts",
       "source_location": "L6"
-    },
-    {
-      "id": "sessions_readscopedsession",
-      "label": "readScopedSession()",
-      "file_type": "code",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L49"
-    },
-    {
-      "id": "sessions_liststaffsessions",
-      "label": "listStaffSessions()",
-      "file_type": "code",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L57"
     },
     {
       "id": "lib_portal_uk_time_ts",
@@ -5647,74 +5514,11 @@
       "source_location": "L17"
     },
     {
-      "id": "lib_portal_staff_today_ts",
-      "label": "staff-today.ts",
-      "file_type": "code",
-      "source_file": "lib/portal/staff-today.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "staff_today_selectprioritysession",
-      "label": "selectPrioritySession()",
-      "file_type": "code",
-      "source_file": "lib/portal/staff-today.ts",
-      "source_location": "L3"
-    },
-    {
-      "id": "lib_staff_today_test_ts",
-      "label": "staff-today.test.ts",
-      "file_type": "code",
-      "source_file": "lib/staff-today.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "staff_today_test_session",
-      "label": "session()",
-      "file_type": "code",
-      "source_file": "lib/staff-today.test.ts",
-      "source_location": "L6"
-    },
-    {
-      "id": "components_portal_staff_today_staffsessioncard_tsx",
-      "label": "StaffSessionCard.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/staff-today/StaffSessionCard.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "staffsessioncard_staffsessioncard",
-      "label": "StaffSessionCard()",
-      "file_type": "code",
-      "source_file": "components/portal/staff-today/StaffSessionCard.tsx",
-      "source_location": "L6"
-    },
-    {
-      "id": "components_portal_staff_today_stafftodayheader_tsx",
-      "label": "StaffTodayHeader.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/staff-today/StaffTodayHeader.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "stafftodayheader_stafftodayheader",
-      "label": "StaffTodayHeader()",
-      "file_type": "code",
-      "source_file": "components/portal/staff-today/StaffTodayHeader.tsx",
-      "source_location": "L4"
-    },
-    {
       "id": "app_portal_provider_parent_page_tsx",
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/parent/page.tsx",
       "source_location": "L2"
-    },
-    {
-      "id": "components_portal_portalshell_tsx",
-      "label": "PortalShell.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/PortalShell.tsx",
-      "source_location": "L1"
     },
     {
       "id": "components_portal_parent_home_learningcards_tsx",
@@ -5876,6 +5680,237 @@
       "source_file": "components/portal/invoices/DraftUnitRate.tsx",
       "source_location": "L3",
       "id": "draftunitrate_draftunitrate"
+    },
+    {
+      "id": "app_portal_provider_admin_today_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/today/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_portal_provider_admin_children_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/children/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_portal_provider_staff_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/staff/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_portal_provider_portal_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/portal/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_portallanding",
+      "label": "PortalLanding()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/portal/page.tsx",
+      "source_location": "L7"
+    },
+    {
+      "id": "page_portalpage",
+      "label": "PortalPage()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/portal/page.tsx",
+      "source_location": "L15"
+    },
+    {
+      "id": "components_portal_portalshell_tsx",
+      "label": "PortalShell.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/PortalShell.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_admin_familyselector_tsx",
+      "label": "FamilySelector.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/admin/FamilySelector.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_admin_mobilemore_tsx",
+      "label": "MobileMore.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/admin/MobileMore.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "mobilemore_onkey",
+      "label": "onKey()",
+      "file_type": "code",
+      "source_file": "components/portal/admin/MobileMore.tsx",
+      "source_location": "L15"
+    },
+    {
+      "id": "mobilemore_onpointer",
+      "label": "onPointer()",
+      "file_type": "code",
+      "source_file": "components/portal/admin/MobileMore.tsx",
+      "source_location": "L21"
+    },
+    {
+      "id": "components_portal_staff_today_stafftodayheader_tsx",
+      "label": "StaffTodayHeader.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/staff-today/StaffTodayHeader.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_staff_today_staffsessioncard_tsx",
+      "label": "StaffSessionCard.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/staff-today/StaffSessionCard.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "staffsessioncard_staffsessioncard",
+      "label": "StaffSessionCard()",
+      "file_type": "code",
+      "source_file": "components/portal/staff-today/StaffSessionCard.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "lib_portal_sessions_ts",
+      "label": "sessions.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "sessions_schedulesession",
+      "label": "scheduleSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "sessions_listsessions",
+      "label": "listSessions()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "sessions_changesession",
+      "label": "changeSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L22"
+    },
+    {
+      "id": "sessions_reschedulesession",
+      "label": "rescheduleSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L29"
+    },
+    {
+      "id": "sessions_setsessionlocation",
+      "label": "setSessionLocation()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L36"
+    },
+    {
+      "id": "sessions_readscopedsession",
+      "label": "readScopedSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L49"
+    },
+    {
+      "id": "sessions_liststaffsessions",
+      "label": "listStaffSessions()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L57"
+    },
+    {
+      "id": "sessions_listadminsessions",
+      "label": "listAdminSessions()",
+      "file_type": "code",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L63"
+    },
+    {
+      "id": "lib_portal_staff_today_ts",
+      "label": "staff-today.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/staff-today.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "staff_today_selectprioritysession",
+      "label": "selectPrioritySession()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff-today.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "staff_today_ukdaykey",
+      "label": "ukDayKey()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff-today.ts",
+      "source_location": "L21"
+    },
+    {
+      "id": "staff_today_selecttodaysessions",
+      "label": "selectTodaySessions()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff-today.ts",
+      "source_location": "L30"
+    },
+    {
+      "id": "lib_portal_role_links_ts",
+      "label": "role-links.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/role-links.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "role_links_portalrolelinks",
+      "label": "portalRoleLinks()",
+      "file_type": "code",
+      "source_file": "lib/portal/role-links.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "lib_staff_today_test_ts",
+      "label": "staff-today.test.ts",
+      "file_type": "code",
+      "source_file": "lib/staff-today.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "staff_today_test_session",
+      "label": "session()",
+      "file_type": "code",
+      "source_file": "lib/staff-today.test.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "lib_portal_role_links_test_ts",
+      "label": "portal-role-links.test.ts",
+      "file_type": "code",
+      "source_file": "lib/portal-role-links.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_admin_today_sql",
+      "label": "Admin Today batch SQL",
+      "file_type": "code",
+      "source_file": "db/migrations/0020_admin_today.sql",
+      "source_location": "L1"
     }
   ],
   "links": [
@@ -7432,54 +7467,6 @@
       "source": "app_portal_invite_page_tsx",
       "target": "page_invitepage",
       "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/portal/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_src": "app_portal_provider_portal_page_tsx",
-      "_tgt": "page_portallanding",
-      "source": "app_portal_provider_portal_page_tsx",
-      "target": "page_portallanding",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/portal/page.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "_src": "app_portal_provider_portal_page_tsx",
-      "_tgt": "page_portalpage",
-      "source": "app_portal_provider_portal_page_tsx",
-      "target": "page_portalpage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "app/(portal)/(provider)/portal/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "page_portallanding",
-      "_tgt": "identity_getportalidentity",
-      "source": "page_portallanding",
-      "target": "identity_getportalidentity"
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "app/(portal)/(provider)/portal/page.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_src": "page_portallanding",
-      "_tgt": "access_getactivememberships",
-      "source": "page_portallanding",
-      "target": "access_getactivememberships"
     },
     {
       "source": "page_adminhome",
@@ -9762,18 +9749,6 @@
       "source_location": "L1"
     },
     {
-      "source": "lib_portal_role_links_ts",
-      "target": "role_links_portalrolelinks",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/role-links.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_src": "lib_portal_role_links_ts",
-      "_tgt": "role_links_portalrolelinks",
-      "confidence_score": 1.0
-    },
-    {
       "source": "lib_portal_invitation_cookie_ts",
       "target": "invitation_cookie_encodeinvitationcookie",
       "relation": "contains",
@@ -9990,18 +9965,6 @@
       "weight": 1.0
     },
     {
-      "source": "lib_portal_sessions_ts",
-      "target": "portal_children_sessions_sql",
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "portal_children_sessions_sql",
-      "relation": "depends_on",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
       "source": "lib_portal_learning_ts",
       "target": "portal_learning_updates_sql",
       "_src": "lib_portal_learning_ts",
@@ -10010,18 +9973,6 @@
       "confidence": "INFERRED",
       "confidence_score": 0.9,
       "source_file": "lib/portal/learning.ts",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "lib_portal_sessions_ts",
-      "target": "content_session_ts",
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "content_session_ts",
-      "relation": "depends_on",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "lib/portal/sessions.ts",
       "source_location": "L1",
       "weight": 1.0
     },
@@ -10898,18 +10849,6 @@
       "weight": 1.0
     },
     {
-      "source": "lib_portal_sessions_ts",
-      "target": "portal_session_ui_sql",
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "portal_session_ui_sql",
-      "relation": "depends_on",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
       "source": "app_portal_provider_admin_children_actions_ts",
       "target": "actions_text",
       "relation": "contains",
@@ -11063,18 +11002,6 @@
       "weight": 1.0,
       "_src": "app_portal_provider_parent_sessions_page_tsx",
       "_tgt": "page_sessionspage",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "app_portal_provider_staff_page_tsx",
-      "target": "page_formatuksession",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L59",
-      "weight": 1.0,
-      "_src": "app_portal_provider_staff_page_tsx",
-      "_tgt": "page_formatuksession",
       "confidence_score": 1.0
     },
     {
@@ -11399,90 +11326,6 @@
       "weight": 1.0,
       "_src": "lib_portal_session_status_ts",
       "_tgt": "session_status_sessionstatuslabel",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "lib_portal_sessions_ts",
-      "target": "sessions_schedulesession",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "sessions_schedulesession",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "lib_portal_sessions_ts",
-      "target": "sessions_listsessions",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L16",
-      "weight": 1.0,
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "sessions_listsessions",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "lib_portal_sessions_ts",
-      "target": "sessions_changesession",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L22",
-      "weight": 1.0,
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "sessions_changesession",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "lib_portal_sessions_ts",
-      "target": "sessions_reschedulesession",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L29",
-      "weight": 1.0,
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "sessions_reschedulesession",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "lib_portal_sessions_ts",
-      "target": "sessions_setsessionlocation",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L36",
-      "weight": 1.0,
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "sessions_setsessionlocation",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "lib_portal_sessions_ts",
-      "target": "sessions_readscopedsession",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L49",
-      "weight": 1.0,
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "sessions_readscopedsession",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "lib_portal_sessions_ts",
-      "target": "sessions_liststaffsessions",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/sessions.ts",
-      "source_location": "L57",
-      "weight": 1.0,
-      "_src": "lib_portal_sessions_ts",
-      "_tgt": "sessions_liststaffsessions",
       "confidence_score": 1.0
     },
     {
@@ -12024,30 +11867,6 @@
       "weight": 1.0,
       "_src": "workspace_actions_publishdraftfor",
       "_tgt": "learning_listpublishedlearning"
-    },
-    {
-      "source": "app_portal_provider_staff_page_tsx",
-      "target": "page_stafftoday",
-      "_src": "app_portal_provider_staff_page_tsx",
-      "_tgt": "page_stafftoday",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "page_stafftoday",
-      "target": "require_role_requirerole",
-      "_src": "page_stafftoday",
-      "_tgt": "require_role_requirerole",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L11",
-      "weight": 1.0
     },
     {
       "source": "portal_session_ui_sql",
@@ -13267,102 +13086,6 @@
       "confidence_score": 1
     },
     {
-      "source": "lib_portal_staff_today_ts",
-      "target": "staff_today_selectprioritysession",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/staff-today.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_src": "lib_portal_staff_today_ts",
-      "_tgt": "staff_today_selectprioritysession",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "lib_staff_today_test_ts",
-      "target": "staff_today_test_session",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/staff-today.test.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_src": "lib_staff_today_test_ts",
-      "_tgt": "staff_today_test_session",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "page_stafftoday",
-      "target": "staff_today_selectprioritysession",
-      "_src": "page_stafftoday",
-      "_tgt": "staff_today_selectprioritysession",
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L30",
-      "weight": 1.0
-    },
-    {
-      "source": "lib_staff_today_test_ts",
-      "target": "staff_today_selectprioritysession",
-      "_src": "lib_staff_today_test_ts",
-      "_tgt": "staff_today_selectprioritysession",
-      "relation": "tests",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/staff-today.test.ts",
-      "source_location": "L24",
-      "weight": 1.0
-    },
-    {
-      "source": "components_portal_staff_today_staffsessioncard_tsx",
-      "target": "staffsessioncard_staffsessioncard",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/staff-today/StaffSessionCard.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_src": "components_portal_staff_today_staffsessioncard_tsx",
-      "_tgt": "staffsessioncard_staffsessioncard",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "page_stafftoday",
-      "target": "staffsessioncard_staffsessioncard",
-      "_src": "page_stafftoday",
-      "_tgt": "staffsessioncard_staffsessioncard",
-      "relation": "renders",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L64",
-      "weight": 1.0
-    },
-    {
-      "source": "components_portal_staff_today_stafftodayheader_tsx",
-      "target": "stafftodayheader_stafftodayheader",
-      "_src": "components_portal_staff_today_stafftodayheader_tsx",
-      "_tgt": "stafftodayheader_stafftodayheader",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "components/portal/staff-today/StaffTodayHeader.tsx",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "page_stafftoday",
-      "target": "stafftodayheader_stafftodayheader",
-      "_src": "page_stafftoday",
-      "_tgt": "stafftodayheader_stafftodayheader",
-      "relation": "renders",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L50",
-      "weight": 1.0
-    },
-    {
       "source": "lib_portal_parent_home_selection_ts",
       "target": "parent_home_selection_selectparenthomedata",
       "relation": "contains",
@@ -13434,18 +13157,6 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/(portal)/invite/accept/page.tsx",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "app_portal_provider_portal_page_tsx",
-      "target": "components_portal_loading_portalloading_tsx",
-      "_src": "app_portal_provider_portal_page_tsx",
-      "_tgt": "components_portal_loading_portalloading_tsx",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/(portal)/(provider)/portal/page.tsx",
       "source_location": "L1",
       "weight": 1.0
     },
@@ -13582,18 +13293,6 @@
       "weight": 1.0
     },
     {
-      "source": "app_portal_provider_staff_page_tsx",
-      "target": "components_portal_loading_portalloading_tsx",
-      "_src": "app_portal_provider_staff_page_tsx",
-      "_tgt": "components_portal_loading_portalloading_tsx",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/(portal)/(provider)/staff/page.tsx",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
       "source": "app_portal_provider_admin_billing_settings_page_tsx",
       "target": "components_portal_loading_portalloading_tsx",
       "_src": "app_portal_provider_admin_billing_settings_page_tsx",
@@ -13674,18 +13373,6 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/(portal)/(provider)/parent/billing/page.tsx",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "app_portal_provider_admin_children_page_tsx",
-      "target": "components_portal_loading_portalloading_tsx",
-      "_src": "app_portal_provider_admin_children_page_tsx",
-      "_tgt": "components_portal_loading_portalloading_tsx",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/(portal)/(provider)/admin/children/page.tsx",
       "source_location": "L1",
       "weight": 1.0
     },
@@ -14682,6 +14369,227 @@
       "confidence": "EXTRACTED",
       "source_file": "components/portal/invoices/DraftUnitRate.tsx",
       "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_portal_page_tsx",
+      "target": "page_portallanding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/portal/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_portal_page_tsx",
+      "target": "page_portalpage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/portal/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_admin_mobilemore_tsx",
+      "target": "mobilemore_onkey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/admin/MobileMore.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_admin_mobilemore_tsx",
+      "target": "mobilemore_onpointer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/admin/MobileMore.tsx",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_staff_today_staffsessioncard_tsx",
+      "target": "staffsessioncard_staffsessioncard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/staff-today/StaffSessionCard.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_schedulesession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_listsessions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_changesession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_reschedulesession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_setsessionlocation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_readscopedsession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_liststaffsessions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_sessions_ts",
+      "target": "sessions_listadminsessions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_staff_today_ts",
+      "target": "staff_today_selectprioritysession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff-today.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_staff_today_ts",
+      "target": "staff_today_ukdaykey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff-today.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_staff_today_ts",
+      "target": "staff_today_selecttodaysessions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff-today.ts",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "staff_today_selecttodaysessions",
+      "target": "staff_today_ukdaykey",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff-today.ts",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_role_links_ts",
+      "target": "role_links_portalrolelinks",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/role-links.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_staff_today_test_ts",
+      "target": "staff_today_test_session",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/staff-today.test.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "sessions_listadminsessions",
+      "target": "portal_admin_today_sql",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/sessions.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_today_page_tsx",
+      "target": "sessions_listadminsessions",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/today/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_today_page_tsx",
+      "target": "staff_today_selecttodaysessions",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/today/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_today_page_tsx",
+      "target": "staff_today_selectprioritysession",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/today/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_today_page_tsx",
+      "target": "portalloading_portalloading",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/today/page.tsx",
+      "source_location": "L1",
       "weight": 1.0
     }
   ],

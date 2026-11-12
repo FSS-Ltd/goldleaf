@@ -215,3 +215,5 @@ Typed learning DAL update re-extracted four allowlisted files: 400 nodes and 397
 Explicit explored-sounds update re-extracted three allowlisted files: 400 nodes and 397 edges; 12 unresolved extractor edges omitted.
 
 Four historical edge directions were checked against source and corrected: seedling mount calls shadowTexture (scene.ts:128), weekly calls roundTo5 (pricing.ts:11), organisationSchema calls url (schema-org.ts:17), and the provisioning runbook references the founding inventory migrations (db/README.md:3). No remaining source/target versus _src/_tgt mismatches were found. Other SQL extraction, unresolved-edge and historical corpus coverage limits remain.
+
+The PORTAL semantic node now reflects the current custom authentication, parent/admin/staff screens and learning data foundation. Billing UI, session/learning UI and messages remain planned in this checkout; invoice work on another branch must reconcile this label after merging. Node and edge counts are unchanged.

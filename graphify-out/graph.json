@@ -861,14 +861,14 @@
       "id": "portal_concepts"
     },
     {
-      "label": "PORTAL: partial database foundation; UI planned",
+      "label": "PORTAL: partial auth and family/staff UI; learning foundation",
       "file_type": "document",
       "source_file": "FEATURE_TREE.md",
-      "source_location": "L34-L41",
+      "source_location": "L35",
       "status": "partial",
-      "scope": "Private onboarding database foundation exists; application routes, integrated authentication, messages and billing remain planned.",
+      "scope": "Custom authentication, invitations, parent and admin family screens, and staff onboarding and assigned-family screens exist; child/session and learning data foundations are present. Billing UI, session/learning UI and messages remain planned in this checkout.",
       "community": 2,
-      "norm_label": "portal partial database foundation ui planned",
+      "norm_label": "portal partial auth and family staff ui learning foundation",
       "id": "portal_planned"
     },
     {

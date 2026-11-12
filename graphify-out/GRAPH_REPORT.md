@@ -1,5 +1,9 @@
 # Graph Report - goldleaf-graph-refresh  (2026-11-11)
 
+## Scoped invoice data update (2026-11-12)
+
+SQL extraction is unsupported. The invoice billing migration node and links to onboarding, pricing and the planned portal were added manually from source and runbook references. Prior clustering and semantic coverage are unchanged.
+
 ## Scoped invoice-pricing update (2026-11-12)
 
 Graphify AST extraction added `lib/portal/invoice-pricing.ts` and `lib/invoice-pricing.test.ts`. Source-verified edges connect the quote to the existing weekly/monthly functions, business content and test. The earlier report below describes the prior corpus and clustering; it has not been recomputed. No semantic extraction or external upload was performed.
@@ -151,3 +155,7 @@ Scoped library extraction added the Clerk proxy matcher regression test node. `p
 Allowlisted structural refresh added server-only portal access files; SQL and SQL-test nodes were added from source because SQL extraction is unsupported. Existing semantic nodes remain. The graph has 161 nodes and 138 edges; existing semantic coverage limitations remain.
 
 Corrected 4 portal edge directions where serialized source/target contradicted the source-backed `_src`/`_tgt` fields. Historical graph directions outside this affected scope remain unaudited.
+
+## Invoice and portal access merge
+
+The invoice database node and source-backed edges were retained alongside the access-layer graph. This merged graph contains 162 nodes and 141 edges; older structural summaries above describe earlier scopes.

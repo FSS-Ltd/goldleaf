@@ -1568,6 +1568,15 @@
       "id": "lib_portal_schemas_ts",
       "community": 67,
       "norm_label": "schemas.ts"
+    },
+    {
+      "id": "portal_invoice_billing_db",
+      "label": "Invoice billing database foundation",
+      "file_type": "code",
+      "source_file": "db/migrations/0005_invoice_billing.sql",
+      "source_location": "L1",
+      "community": 15,
+      "norm_label": "invoice billing database foundation"
     }
   ],
   "links": [
@@ -3206,6 +3215,42 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "lib/portal-access.test.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "portal_invoice_billing_db",
+      "target": "portal_onboarding_db",
+      "_src": "portal_invoice_billing_db",
+      "_tgt": "portal_onboarding_db",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "db/migrations/0005_invoice_billing.sql",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "portal_invoice_billing_db",
+      "target": "invoice_pricing_quoteinvoice",
+      "_src": "portal_invoice_billing_db",
+      "_tgt": "invoice_pricing_quoteinvoice",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "db/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "portal_invoice_billing_db",
+      "target": "portal_planned",
+      "_src": "portal_invoice_billing_db",
+      "_tgt": "portal_planned",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "FEATURE_TREE.md",
       "source_location": null,
       "weight": 1.0
     }

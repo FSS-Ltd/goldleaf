@@ -61,15 +61,15 @@ async function ParentHome() {
           No children have been added to your family yet.
         </p>
       )}
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-        <div className="space-y-6">
+      <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-6 [overflow-wrap:anywhere] lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+        <div className="min-w-0 space-y-6">
           <SessionCard
             session={next}
             child={children.find((child) => child.id === next?.child_id)}
           />
           <LearningCard latest={latest} />
         </div>
-        <div className="space-y-6">
+        <div className="min-w-0 space-y-6">
           <NoteCard latest={latest} />
           <BillingCard invoice={billing} />
         </div>

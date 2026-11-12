@@ -1,0 +1,7 @@
+import { ClerkProvider } from "@clerk/nextjs";
+import type { ReactNode } from "react";
+
+export default function ProviderLayout({ children }: { children: ReactNode }) {
+  if (!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || !process.env.CLERK_SECRET_KEY) return children;
+  return <ClerkProvider prefetchUI={false}>{children}</ClerkProvider>;
+}

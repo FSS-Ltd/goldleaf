@@ -7,7 +7,7 @@ export default defineConfig({
   use: { baseURL: `http://localhost:${PORT}` },
   webServer: {
     command: `pnpm exec next dev -p ${PORT}`,
-    env: { GOLDLEAF_OFFER_DATABASE_URL: "" },
+    env: { GOLDLEAF_OFFER_DATABASE_URL: "", GOLDLEAF_PORTAL_DATABASE_URL: "", NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: "", CLERK_SECRET_KEY: "", RESEND_API_KEY: "" },
     url: `http://localhost:${PORT}`,
     reuseExistingServer: false,
     timeout: 120_000,

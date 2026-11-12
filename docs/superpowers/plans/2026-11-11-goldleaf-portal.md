@@ -25,6 +25,12 @@ The six final Stitch screen exports set composition, visual order, component pro
 
 Create companion Stitch frames for missing flows before implementing their visible UI. Sprint 2 needs sign-in, invite acceptance and the admin family form. Sprint 3 needs staff invitations and assignments. Sprint 4 needs parent invoice list and detail, plus admin draft, issue and record-payment states. Sprints 5 and 6 need mobile detail, session list, messages and settings. Archive each selected frame ID, device, expected controls, and empty, pending, error and success states. Preserve the six baseline frames. Put an independent Jury recommendation and supporting screenshots in the PR for any design deviation.
 
+The custom authentication reference boards are desktop Stitch screens `d7f0b9ce50b642b88a0e3313b1b5902c` (sign-in and recovery), `a9c844086aea416bafa24f934cb7722a` (signup and verification), and `e7145a748fce40be80e9c2223e6adb83` (account and profile). They show conditional states, not simultaneous forms. Omit synthetic identities, invented password rules and expiry times, and unavailable controls. The invitation email is entered by the user; only the authenticated acceptance operation checks it against the invitation. Use current provider-derived identity and verified status. Preserve the user's requirement for custom visible authentication and account controls while keeping provider security checks.
+
+The Google sign-in image is the light Android/Web button from [Google's official sign-in asset bundle](https://developers.google.com/static/identity/images/signin-assets.zip); the action itself uses the existing provider SDK.
+
+Custom identity work handles a required username only when the provider reports it missing, plus the provider's pending compromised-password task using the same bound session. The selected development and production instances currently do not require organization selection or MFA setup; any other pending task remains blocked with an account-support message. Verify real provider task, challenge, signup, recovery and authorization paths before production use; local state tests alone are not evidence that those paths ran.
+
 The desktop admin family form has a companion Stitch draft, `ee9f8cc112ad420d8ba1e65b7137dd06`. Its inspected screenshot and HTML include the family name, parent email, founding checkbox, synthetic capacity, and create-and-invite action. The active navigation uses the original Staff Today gold treatment. Verify interaction and responsive states on the implemented form.
 
 ## Delivery and verification
@@ -47,7 +53,7 @@ The desktop admin family form has a companion Stitch draft, `ee9f8cc112ad420d8ba
 
 ## Sprint 2 · Parent and admin onboarding with founding pricing
 
-**Owns** `app/(portal)/sign-in/`, `app/(portal)/invite/`, `app/(portal)/parent/`, `app/(portal)/admin/families/`, `lib/portal/access.ts`, `lib/portal/invitations.ts`, `lib/portal/families.ts`, and identity, family and assignment-history migrations. Keep the public enquiry form as an enquiry. Admin starts onboarding a family after accepting them.
+**Owns** `app/(portal)/(provider)/sign-in/`, `app/(portal)/invite/`, `app/(portal)/(provider)/parent/`, `app/(portal)/(provider)/admin/`, `lib/portal/access.ts`, `lib/portal/invitations.ts`, `lib/portal/families.ts`, and identity, family and assignment-history migrations. Keep the public enquiry form as an enquiry. Admin starts onboarding a family after accepting them.
 
 Ship the private database foundation first. Verify invitation acceptance, revocation, family isolation, and founding-slot races against Postgres before connecting request identity. The access-layer slice connects verified identity to scoped database operations. The following slice connects these operations to the Stitch-led forms and parent home. Release stays gated on the synthetic end-to-end workflow.
 
@@ -60,6 +66,8 @@ The earlier isolated development Neon Auth probe established provider behavior b
 - [ ] Show the parent home using both Stitch frames with genuine empty states until sessions and invoices exist. Select children only from authorised family membership. Deny forged child or family IDs, including action calls, and recheck access after revocation. Disable portal indexing and private response caching.
 - [ ] Add a labelled admin Founding family selection. Atomically claim or release a slot and record actor, time and previous state. Competing claims cannot exceed five. Keep pricing eligibility history so removing a tag cannot rewrite an issued invoice. Announce success/failure accessibly and reread committed availability. Public count reflects the slot change on the next navigation or refresh.
 - [ ] Run a synthetic admin-to-parent acceptance walkthrough on desktop and mobile. Keep production onboarding disabled until identities, invite delivery, notice and account scope pass review.
+
+Draft onboarding UI uses companion Stitch frames `ee9f8cc112ad420d8ba1e65b7137dd06` (admin), `548ddd2e897b4ddba79a919953b1a5af` (invitation states), and `7c4c7f2e5f8d411a91a15d0e7a1777a9` (parent empty state). The invitation frame’s unlabelled read-only email input is presented as labelled, verified-account text; the parent frame’s unsupported pastoral/help placeholders are omitted. Unimplemented sessions, learning, notes and billing show unavailable states rather than unverified empty claims. Delivery is explicit, hash-only and records pending/sent/failed; provider acceptance is not proof of receipt. Real signed-in and provider delivery workflows remain release gates.
 
 ## Sprint 3 · Staff onboarding and assignment
 

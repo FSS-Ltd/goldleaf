@@ -29,6 +29,10 @@ test("unknown route shows the custom 404", async ({ page }) => {
   expect(res?.status()).toBe(404);
   await expect(page.getByRole("heading", { level: 1, name: "This page has not sprouted yet" })).toBeVisible();
   await expect(page.getByRole("link", { name: "Back to the home page" })).toBeVisible();
+  await expect(page.getByRole("banner")).toHaveCount(1);
+  await expect(page.getByRole("main")).toHaveCount(1);
+  await expect(page.getByRole("contentinfo")).toHaveCount(1);
+  await expect(page.getByRole("link", { name: "Skip to content" })).toHaveAttribute("href", "#main");
 });
 
 test("home hero draws a 3D canvas without console errors", async ({ page }) => {

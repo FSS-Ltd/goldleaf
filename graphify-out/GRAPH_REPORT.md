@@ -173,3 +173,25 @@ Founding DTO update: scoped extraction adds the `setFamilyFounding` wrapper. The
 The staff and invoice runtime maps were reconciled after merging main: the combined graph contains 200 nodes and 189 edges. Existing nodes from both branches are retained; SQL remains source-linked rather than extracted.
 
 Staff access schema was re-extracted after normalizing Neon timestamp values; `staff_access_test` now links the regression test to the shared schema. SQL and cross-scope semantic coverage remain limited.
+
+## Parent and admin onboarding update
+
+An allowlisted structural refresh reconciled public route-group moves, the Clerk-free invitation capture, provider-backed acceptance, scoped portal UI and tests. SQL migration and test references were added manually because SQL extraction is unsupported. Existing semantic nodes are retained where their source paths and endpoints resolve. The graph contains 226 nodes and 213 directed edges, including the source-linked resend concurrency test. Other semantic coverage and older unrelated edge directions remain unaudited.
+
+Final targeted AST reconciliation updated changed invitation and action symbols and removed an extractor artefact named `if()`. The full scoped graph update refused to overwrite the larger mixed graph, so its existing semantic and SQL nodes were retained. The final graph has 225 nodes and 211 directed edges. Historical unrelated coverage remains unaudited.
+
+Scoped proxy refresh: `/portal` and nested paths now receive Clerk middleware; `/invite` capture remains excluded. Source-backed matcher regression is `lib/portal-proxy.test.ts`. No structural nodes or edges changed.
+
+Scoped public-shell and portal-session AST reconciliation added source-backed error, 404 and verified-email decision nodes while preserving prior SQL and semantic nodes. Current graph: 242 nodes, 227 directed edges; unrelated historical coverage remains unaudited.
+
+Scoped custom-auth refresh extracted 39 explicitly selected changed TypeScript files and retained the earlier semantic and SQL nodes. Twelve source-verified auth dependencies were added directly. The graph now has 298 nodes and 286 directed edges; 115 extractor edges with unresolved endpoints were omitted, chiefly external or out-of-scope references. Historical coverage remains unaudited. The Protect challenge adapter uses a provider-supplied HTTPS SDK URL; the provider does not publish a fixed host allowlist, and actual challenged-provider execution remains unverified.
+
+After merging invoice and staff access, the combined graph retains both branches' source-linked nodes and edges: 336 nodes and 332 edges. Removed pre-route-group paths remain removed. Four older, unrelated edges still have `source`/`target` directions that disagree with `_src`/`_tgt`; they remain unaudited. Unresolved historical coverage and SQL extraction limits still apply.
+
+The scoped auth/profile typography and account-return update re-extracted eight affected files; the graph remains at 336 nodes and 332 edges. Thirty-seven unresolved extractor edges were omitted.
+
+The account actor-binding and invitation-capture fixes re-extracted nine affected files. The graph now has 342 nodes and 345 edges; 27 unresolved extractor edges were omitted. Existing SQL and semantic nodes remain intact.
+
+The provider-derived account summary and responsive signup name fields re-extracted four affected files. The graph now has 346 nodes and 348 edges; 18 unresolved extractor edges were omitted.
+
+The account-summary wrapping correction re-extracted two affected files; the graph remains at 346 nodes and 348 edges, with six unresolved extractor edges omitted.

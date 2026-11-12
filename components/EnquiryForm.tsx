@@ -2,7 +2,7 @@
 
 import { useActionState } from "react";
 import Link from "next/link";
-import { sendEnquiry, type EnquiryState } from "@/app/enquire/actions";
+import { sendEnquiry, type EnquiryState } from "@/app/(public)/enquire/actions";
 import { site } from "@/content/site";
 
 const initial: EnquiryState = { status: "idle" };

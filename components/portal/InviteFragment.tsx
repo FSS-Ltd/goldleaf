@@ -1,25 +1,27 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { exchangeInvitation } from "@/app/(portal)/invite/actions";
 
 export function InviteFragment() {
   const [status, setStatus] = useState<"checking" | "unavailable">("checking");
+  const exchange = useRef<Promise<boolean> | null>(null);
   useEffect(() => {
-    const hasFragment = Boolean(window.location.hash);
-    const hash = new URLSearchParams(window.location.hash.slice(1));
-    const token = hash.get("token");
-    const purpose = hash.get("purpose");
-    if (hasFragment) window.history.replaceState(null, "", window.location.pathname + window.location.search);
-    async function check(): Promise<"checking" | "unavailable"> {
-      if (!hasFragment) return "unavailable";
-      if (await exchangeInvitation(token?.length === 43 ? token : "", purpose ?? "")) {
-        window.location.replace("/invite/accept");
-        return "checking";
-      }
-      return "unavailable";
+    if (!exchange.current) {
+      const hasFragment = Boolean(window.location.hash);
+      const hash = new URLSearchParams(window.location.hash.slice(1));
+      const token = hash.get("token");
+      const purpose = hash.get("purpose");
+      if (hasFragment) window.history.replaceState(null, "", window.location.pathname + window.location.search);
+      exchange.current = exchangeInvitation(hasFragment && token?.length === 43 ? token : "", hasFragment ? purpose ?? "" : "");
     }
-    void check().then(setStatus).catch(() => setStatus("unavailable"));
+    let active = true;
+    void exchange.current.then((accepted) => {
+      if (!active) return;
+      if (accepted) window.location.replace("/invite/accept");
+      else setStatus("unavailable");
+    }).catch(() => { if (active) setStatus("unavailable"); });
+    return () => { active = false; };
   }, []);
   if (status === "checking") return <p role="status">Checking your invitation…</p>;
   if (status === "unavailable") return <><h1>This invitation isn’t available</h1><p className="mt-4 text-[#35594a]">Ask Deborah for a new invitation.</p></>;

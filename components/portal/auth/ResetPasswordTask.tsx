@@ -5,7 +5,7 @@ import { useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
 import { AccountVerificationPanel } from "./AccountVerificationPanel";
 import { useAccountVerification } from "./useAccountVerification";
-import { sameSession, type SessionBinding } from "@/lib/portal/session-binding";
+import { assertSession, type SessionBinding } from "@/lib/portal/session-binding";
 
 export function ResetPasswordTask({ destination }: { destination: "/portal" | "/invite/accept" }) {
   const clerk = useClerk();
@@ -14,7 +14,8 @@ export function ResetPasswordTask({ destination }: { destination: "/portal" | "/
   const [message, setMessage] = useState("");
   const inFlight = useRef(false);
   const updatePassword = useReverification(async (newPassword: string, binding: SessionBinding) => {
-    if (!clerk.user || !sameSession(binding, clerk.session?.id, clerk.user.id)) throw new Error("Session changed");
+    assertSession(binding, clerk.session?.id, clerk.user?.id);
+    if (!clerk.user) throw new Error("Account unavailable");
     return clerk.user.updatePassword({ newPassword, signOutOfOtherSessions: true });
   }, { onNeedsReverification: verification.onNeedsReverification });
 
@@ -22,14 +23,15 @@ export function ResetPasswordTask({ destination }: { destination: "/portal" | "/
     event.preventDefault();
     const password = new FormData(event.currentTarget).get("password");
     if (typeof password !== "string" || !password || !clerk.session || !clerk.user || inFlight.current) return;
-    const binding = { sessionId: clerk.session.id, userId: clerk.user.id };
+    const actor = { sessionId: clerk.session.id, userId: clerk.user.id };
     event.currentTarget.reset();
     inFlight.current = true;
     setPending(true);
     setMessage("");
     try {
+      const binding = verification.bind(actor);
       await updatePassword(password, binding);
-      if (!sameSession(binding, clerk.session?.id, clerk.user?.id)) throw new Error("Session changed");
+      assertSession(binding, clerk.session?.id, clerk.user?.id);
       await clerk.setActive({ session: binding.sessionId, navigate: ({ session, decorateUrl }) => {
         if (session?.currentTask) {
           setMessage("Your account needs another security step. Please contact Goldleaf for help.");
@@ -60,7 +62,7 @@ export function ResetPasswordTask({ destination }: { destination: "/portal" | "/
     <p className="mt-3 text-sm text-[#35594a]">For your account security, please update your password before continuing.</p>
     {message && <p role="status" className="mt-4 text-sm">{message}</p>}
     <AccountVerificationPanel flow={verification} />
-    <form onSubmit={(event) => void submit(event)} className="mt-5 space-y-4">
+    <form key={verification.actorKey} onSubmit={(event) => void submit(event)} className="mt-5 space-y-4">
       <label className="block text-sm font-medium">New password<input name="password" type="password" autoComplete="new-password" required className="mt-2 w-full rounded-lg border border-[#e3d7c3] bg-[#fef8f3] px-4 py-3" /></label>
       <button disabled={pending} className="w-full rounded-lg bg-[#06451d] px-5 py-3 font-semibold text-white disabled:opacity-60">Update password</button>
     </form>

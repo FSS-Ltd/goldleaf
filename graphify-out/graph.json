@@ -1804,42 +1804,6 @@
       "norm_label": "portalsessionguard()"
     },
     {
-      "label": "AuthShell.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/AuthShell.tsx",
-      "source_location": "L1",
-      "id": "components_portal_authshell_tsx",
-      "community": 38,
-      "norm_label": "authshell.tsx"
-    },
-    {
-      "label": "AuthShell()",
-      "file_type": "code",
-      "source_file": "components/portal/AuthShell.tsx",
-      "source_location": "L5",
-      "id": "authshell_authshell",
-      "community": 38,
-      "norm_label": "authshell()"
-    },
-    {
-      "label": "InviteFragment.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/InviteFragment.tsx",
-      "source_location": "L1",
-      "id": "components_portal_invitefragment_tsx",
-      "community": 9,
-      "norm_label": "invitefragment.tsx"
-    },
-    {
-      "label": "InviteFragment()",
-      "file_type": "code",
-      "source_file": "components/portal/InviteFragment.tsx",
-      "source_location": "L6",
-      "id": "invitefragment_invitefragment",
-      "community": 9,
-      "norm_label": "invitefragment()"
-    },
-    {
       "label": "InviteAcceptForm.tsx",
       "file_type": "code",
       "source_file": "components/portal/InviteAcceptForm.tsx",
@@ -2206,38 +2170,6 @@
       "norm_label": "protectgate()"
     },
     {
-      "id": "components_portal_auth_useaccountprofile_ts",
-      "label": "useAccountProfile.ts",
-      "file_type": "code",
-      "source_file": "components/portal/auth/useAccountProfile.ts",
-      "source_location": "L1",
-      "norm_label": "useaccountprofile.ts"
-    },
-    {
-      "id": "useaccountprofile_useaccountprofile",
-      "label": "useAccountProfile()",
-      "file_type": "code",
-      "source_file": "components/portal/auth/useAccountProfile.ts",
-      "source_location": "L7",
-      "norm_label": "useaccountprofile()"
-    },
-    {
-      "id": "components_portal_auth_useaccountverification_ts",
-      "label": "useAccountVerification.ts",
-      "file_type": "code",
-      "source_file": "components/portal/auth/useAccountVerification.ts",
-      "source_location": "L1",
-      "norm_label": "useaccountverification.ts"
-    },
-    {
-      "id": "useaccountverification_useaccountverification",
-      "label": "useAccountVerification()",
-      "file_type": "code",
-      "source_file": "components/portal/auth/useAccountVerification.ts",
-      "source_location": "L12",
-      "norm_label": "useaccountverification()"
-    },
-    {
       "id": "components_portal_auth_useprotectgate_ts",
       "label": "useProtectGate.ts",
       "file_type": "code",
@@ -2308,14 +2240,6 @@
       "source_file": "lib/portal-protect-check.test.ts",
       "source_location": "L1",
       "norm_label": "portal-protect-check.test.ts"
-    },
-    {
-      "id": "lib_portal_session_binding_test_ts",
-      "label": "portal-session-binding.test.ts",
-      "file_type": "code",
-      "source_file": "lib/portal-session-binding.test.ts",
-      "source_location": "L1",
-      "norm_label": "portal-session-binding.test.ts"
     },
     {
       "id": "lib_portal_signup_step_test_ts",
@@ -2396,22 +2320,6 @@
       "source_file": "lib/portal/protect-widget.ts",
       "source_location": "L9",
       "norm_label": "runprotectwidget()"
-    },
-    {
-      "id": "lib_portal_session_binding_ts",
-      "label": "session-binding.ts",
-      "file_type": "code",
-      "source_file": "lib/portal/session-binding.ts",
-      "source_location": "L1",
-      "norm_label": "session-binding.ts"
-    },
-    {
-      "id": "session_binding_samesession",
-      "label": "sameSession()",
-      "file_type": "code",
-      "source_file": "lib/portal/session-binding.ts",
-      "source_location": "L3",
-      "norm_label": "samesession()"
     },
     {
       "id": "lib_portal_signup_step_ts",
@@ -2572,14 +2480,6 @@
       "source_file": "proxy.ts",
       "source_location": "L6",
       "norm_label": "proxy()"
-    },
-    {
-      "id": "tests_e2e_portal_spec_ts",
-      "label": "portal.spec.ts",
-      "file_type": "code",
-      "source_file": "tests/e2e/portal.spec.ts",
-      "source_location": "L1",
-      "norm_label": "portal.spec.ts"
     },
     {
       "id": "portal_invoice_runtime_db",
@@ -2924,38 +2824,6 @@
       "norm_label": "staff access boundary tests"
     },
     {
-      "id": "components_portal_auth_accountprofile_tsx",
-      "label": "AccountProfile.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L1",
-      "norm_label": "accountprofile.tsx"
-    },
-    {
-      "id": "accountprofile_values",
-      "label": "values()",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L12",
-      "norm_label": "values()"
-    },
-    {
-      "id": "accountprofile_field",
-      "label": "field()",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L13",
-      "norm_label": "field()"
-    },
-    {
-      "id": "accountprofile_accountprofile",
-      "label": "AccountProfile()",
-      "file_type": "code",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L15",
-      "norm_label": "accountprofile()"
-    },
-    {
       "id": "components_portal_auth_signinform_tsx",
       "label": "SignInForm.tsx",
       "file_type": "code",
@@ -3004,22 +2872,6 @@
       "norm_label": "ssocallback()"
     },
     {
-      "id": "components_portal_auth_resetpasswordtask_tsx",
-      "label": "ResetPasswordTask.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/auth/ResetPasswordTask.tsx",
-      "source_location": "L1",
-      "norm_label": "resetpasswordtask.tsx"
-    },
-    {
-      "id": "resetpasswordtask_resetpasswordtask",
-      "label": "ResetPasswordTask()",
-      "file_type": "code",
-      "source_file": "components/portal/auth/ResetPasswordTask.tsx",
-      "source_location": "L10",
-      "norm_label": "resetpasswordtask()"
-    },
-    {
       "id": "components_portal_auth_accountverificationpanel_tsx",
       "label": "AccountVerificationPanel.tsx",
       "file_type": "code",
@@ -3066,6 +2918,198 @@
       "source_file": "app/(portal)/(provider)/account/page.tsx",
       "source_location": "L9",
       "norm_label": "accountcontent()"
+    },
+    {
+      "id": "components_portal_invitefragment_tsx",
+      "label": "InviteFragment.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/InviteFragment.tsx",
+      "source_location": "L1",
+      "norm_label": "invitefragment.tsx"
+    },
+    {
+      "id": "invitefragment_invitefragment",
+      "label": "InviteFragment()",
+      "file_type": "code",
+      "source_file": "components/portal/InviteFragment.tsx",
+      "source_location": "L6",
+      "norm_label": "invitefragment()"
+    },
+    {
+      "id": "components_portal_authshell_tsx",
+      "label": "AuthShell.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/AuthShell.tsx",
+      "source_location": "L1",
+      "norm_label": "authshell.tsx"
+    },
+    {
+      "id": "authshell_authshell",
+      "label": "AuthShell()",
+      "file_type": "code",
+      "source_file": "components/portal/AuthShell.tsx",
+      "source_location": "L5",
+      "norm_label": "authshell()"
+    },
+    {
+      "id": "components_portal_auth_accountprofile_tsx",
+      "label": "AccountProfile.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L1",
+      "norm_label": "accountprofile.tsx"
+    },
+    {
+      "id": "accountprofile_values",
+      "label": "values()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L12",
+      "norm_label": "values()"
+    },
+    {
+      "id": "accountprofile_field",
+      "label": "field()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L13",
+      "norm_label": "field()"
+    },
+    {
+      "id": "accountprofile_accountprofile",
+      "label": "AccountProfile()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L15",
+      "norm_label": "accountprofile()"
+    },
+    {
+      "id": "components_portal_auth_useaccountprofile_ts",
+      "label": "useAccountProfile.ts",
+      "file_type": "code",
+      "source_file": "components/portal/auth/useAccountProfile.ts",
+      "source_location": "L1",
+      "norm_label": "useaccountprofile.ts"
+    },
+    {
+      "id": "useaccountprofile_useaccountprofile",
+      "label": "useAccountProfile()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/useAccountProfile.ts",
+      "source_location": "L8",
+      "norm_label": "useaccountprofile()"
+    },
+    {
+      "id": "components_portal_auth_useaccountverification_ts",
+      "label": "useAccountVerification.ts",
+      "file_type": "code",
+      "source_file": "components/portal/auth/useAccountVerification.ts",
+      "source_location": "L1",
+      "norm_label": "useaccountverification.ts"
+    },
+    {
+      "id": "useaccountverification_useaccountverification",
+      "label": "useAccountVerification()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/useAccountVerification.ts",
+      "source_location": "L14",
+      "norm_label": "useaccountverification()"
+    },
+    {
+      "id": "components_portal_auth_resetpasswordtask_tsx",
+      "label": "ResetPasswordTask.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/auth/ResetPasswordTask.tsx",
+      "source_location": "L1",
+      "norm_label": "resetpasswordtask.tsx"
+    },
+    {
+      "id": "resetpasswordtask_resetpasswordtask",
+      "label": "ResetPasswordTask()",
+      "file_type": "code",
+      "source_file": "components/portal/auth/ResetPasswordTask.tsx",
+      "source_location": "L10",
+      "norm_label": "resetpasswordtask()"
+    },
+    {
+      "id": "lib_portal_session_binding_ts",
+      "label": "session-binding.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/session-binding.ts",
+      "source_location": "L1",
+      "norm_label": "session-binding.ts"
+    },
+    {
+      "id": "session_binding_samesession",
+      "label": "sameSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/session-binding.ts",
+      "source_location": "L3",
+      "norm_label": "samesession()"
+    },
+    {
+      "id": "session_binding_assertsession",
+      "label": "assertSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/session-binding.ts",
+      "source_location": "L7",
+      "norm_label": "assertsession()"
+    },
+    {
+      "id": "session_binding_assertactiveverification",
+      "label": "assertActiveVerification()",
+      "file_type": "code",
+      "source_file": "lib/portal/session-binding.ts",
+      "source_location": "L11",
+      "norm_label": "assertactiveverification()"
+    },
+    {
+      "id": "session_binding_runwithsession",
+      "label": "runWithSession()",
+      "file_type": "code",
+      "source_file": "lib/portal/session-binding.ts",
+      "source_location": "L16",
+      "norm_label": "runwithsession()"
+    },
+    {
+      "id": "lib_portal_session_binding_test_ts",
+      "label": "portal-session-binding.test.ts",
+      "file_type": "code",
+      "source_file": "lib/portal-session-binding.test.ts",
+      "source_location": "L1",
+      "norm_label": "portal-session-binding.test.ts"
+    },
+    {
+      "id": "portal_session_binding_test_retry",
+      "label": "retry()",
+      "file_type": "code",
+      "source_file": "lib/portal-session-binding.test.ts",
+      "source_location": "L17",
+      "norm_label": "retry()"
+    },
+    {
+      "id": "portal_session_binding_test_resume",
+      "label": "resume()",
+      "file_type": "code",
+      "source_file": "lib/portal-session-binding.test.ts",
+      "source_location": "L18",
+      "norm_label": "resume()"
+    },
+    {
+      "id": "portal_session_binding_test_complete",
+      "label": "complete()",
+      "file_type": "code",
+      "source_file": "lib/portal-session-binding.test.ts",
+      "source_location": "L42",
+      "norm_label": "complete()"
+    },
+    {
+      "id": "tests_e2e_portal_spec_ts",
+      "label": "portal.spec.ts",
+      "file_type": "code",
+      "source_file": "tests/e2e/portal.spec.ts",
+      "source_location": "L1",
+      "norm_label": "portal.spec.ts"
     }
   ],
   "links": [
@@ -4938,18 +4982,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "components/portal/AuthShell.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_src": "components_portal_authshell_tsx",
-      "_tgt": "authshell_authshell",
-      "source": "components_portal_authshell_tsx",
-      "target": "authshell_authshell",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "components/portal/InviteAcceptForm.tsx",
       "source_location": "L6",
       "weight": 1.0,
@@ -5040,18 +5072,6 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/(portal)/invite/page.tsx",
-      "source_location": null,
-      "weight": 1.0
-    },
-    {
-      "source": "components_portal_invitefragment_tsx",
-      "target": "app_portal_invite_actions_ts",
-      "_src": "components_portal_invitefragment_tsx",
-      "_tgt": "app_portal_invite_actions_ts",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "components/portal/InviteFragment.tsx",
       "source_location": null,
       "weight": 1.0
     },
@@ -5173,18 +5193,6 @@
       "weight": 1.0,
       "_src": "app_portal_invite_actions_ts",
       "_tgt": "actions_acceptparentinvitation",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "components_portal_invitefragment_tsx",
-      "target": "invitefragment_invitefragment",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/InviteFragment.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_src": "components_portal_invitefragment_tsx",
-      "_tgt": "invitefragment_invitefragment",
       "confidence_score": 1.0
     },
     {
@@ -5872,30 +5880,6 @@
       "confidence_score": 1.0
     },
     {
-      "source": "components_portal_auth_useaccountprofile_ts",
-      "target": "useaccountprofile_useaccountprofile",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/auth/useAccountProfile.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_src": "components_portal_auth_useaccountprofile_ts",
-      "_tgt": "useaccountprofile_useaccountprofile",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "components_portal_auth_useaccountverification_ts",
-      "target": "useaccountverification_useaccountverification",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/auth/useAccountVerification.ts",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_src": "components_portal_auth_useaccountverification_ts",
-      "_tgt": "useaccountverification_useaccountverification",
-      "confidence_score": 1.0
-    },
-    {
       "source": "components_portal_auth_useprotectgate_ts",
       "target": "useprotectgate_useprotectgate",
       "relation": "contains",
@@ -6001,18 +5985,6 @@
       "weight": 1.0,
       "_src": "protect_widget_runprotectwidget",
       "_tgt": "protect_widget_protectsdkurl",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "lib_portal_session_binding_ts",
-      "target": "session_binding_samesession",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/session-binding.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_src": "lib_portal_session_binding_ts",
-      "_tgt": "session_binding_samesession",
       "confidence_score": 1.0
     },
     {
@@ -6266,18 +6238,6 @@
       "weight": 1.0,
       "source_file": "components/portal/auth/useProtectGate.ts",
       "source_location": "L26"
-    },
-    {
-      "source": "useaccountprofile_useaccountprofile",
-      "target": "useaccountverification_useaccountverification",
-      "_src": "useaccountprofile_useaccountprofile",
-      "_tgt": "useaccountverification_useaccountverification",
-      "relation": "uses",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "weight": 1.0,
-      "source_file": "components/portal/auth/useAccountProfile.ts",
-      "source_location": "L9"
     },
     {
       "source": "usesignupflow_usesignupflow",
@@ -6842,42 +6802,6 @@
       "weight": 1.0
     },
     {
-      "source": "components_portal_auth_accountprofile_tsx",
-      "target": "accountprofile_values",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_src": "components_portal_auth_accountprofile_tsx",
-      "_tgt": "accountprofile_values",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "components_portal_auth_accountprofile_tsx",
-      "target": "accountprofile_field",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "_src": "components_portal_auth_accountprofile_tsx",
-      "_tgt": "accountprofile_field",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "components_portal_auth_accountprofile_tsx",
-      "target": "accountprofile_accountprofile",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_src": "components_portal_auth_accountprofile_tsx",
-      "_tgt": "accountprofile_accountprofile",
-      "confidence_score": 1.0
-    },
-    {
       "source": "components_portal_auth_signinform_tsx",
       "target": "signinform_signinform",
       "relation": "contains",
@@ -6911,18 +6835,6 @@
       "weight": 1.0,
       "_src": "components_portal_auth_ssocallback_tsx",
       "_tgt": "ssocallback_ssocallback",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "components_portal_auth_resetpasswordtask_tsx",
-      "target": "resetpasswordtask_resetpasswordtask",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/portal/auth/ResetPasswordTask.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_src": "components_portal_auth_resetpasswordtask_tsx",
-      "_tgt": "resetpasswordtask_resetpasswordtask",
       "confidence_score": 1.0
     },
     {
@@ -7010,22 +6922,310 @@
       "source_location": "L14"
     },
     {
-      "source": "accountprofile_accountprofile",
+      "source": "components_portal_invitefragment_tsx",
+      "target": "invitefragment_invitefragment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/InviteFragment.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "components_portal_invitefragment_tsx",
+      "_tgt": "invitefragment_invitefragment",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_authshell_tsx",
+      "target": "authshell_authshell",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/AuthShell.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "components_portal_authshell_tsx",
+      "_tgt": "authshell_authshell",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "accountprofile_values",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "accountprofile_values",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "accountprofile_field",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "accountprofile_field",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "accountprofile_accountprofile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/AccountProfile.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "components_portal_auth_accountprofile_tsx",
+      "_tgt": "accountprofile_accountprofile",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_useaccountprofile_ts",
       "target": "useaccountprofile_useaccountprofile",
-      "_src": "accountprofile_accountprofile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/useAccountProfile.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "components_portal_auth_useaccountprofile_ts",
+      "_tgt": "useaccountprofile_useaccountprofile",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_useaccountverification_ts",
+      "target": "useaccountverification_useaccountverification",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/useAccountVerification.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "components_portal_auth_useaccountverification_ts",
+      "_tgt": "useaccountverification_useaccountverification",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_auth_resetpasswordtask_tsx",
+      "target": "resetpasswordtask_resetpasswordtask",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/auth/ResetPasswordTask.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "components_portal_auth_resetpasswordtask_tsx",
+      "_tgt": "resetpasswordtask_resetpasswordtask",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_session_binding_ts",
+      "target": "session_binding_samesession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/session-binding.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "lib_portal_session_binding_ts",
+      "_tgt": "session_binding_samesession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_session_binding_ts",
+      "target": "session_binding_assertsession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/session-binding.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "lib_portal_session_binding_ts",
+      "_tgt": "session_binding_assertsession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_session_binding_ts",
+      "target": "session_binding_assertactiveverification",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/session-binding.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "lib_portal_session_binding_ts",
+      "_tgt": "session_binding_assertactiveverification",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_session_binding_ts",
+      "target": "session_binding_runwithsession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/session-binding.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "lib_portal_session_binding_ts",
+      "_tgt": "session_binding_runwithsession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "session_binding_assertsession",
+      "target": "session_binding_samesession",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/session-binding.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "session_binding_assertsession",
+      "_tgt": "session_binding_samesession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "session_binding_assertactiveverification",
+      "target": "session_binding_assertsession",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/session-binding.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "session_binding_assertactiveverification",
+      "_tgt": "session_binding_assertsession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "session_binding_runwithsession",
+      "target": "session_binding_assertsession",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/session-binding.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "session_binding_runwithsession",
+      "_tgt": "session_binding_assertsession",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_session_binding_test_ts",
+      "target": "portal_session_binding_test_retry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal-session-binding.test.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "lib_portal_session_binding_test_ts",
+      "_tgt": "portal_session_binding_test_retry",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_session_binding_test_ts",
+      "target": "portal_session_binding_test_resume",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal-session-binding.test.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "lib_portal_session_binding_test_ts",
+      "_tgt": "portal_session_binding_test_resume",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_session_binding_test_ts",
+      "target": "portal_session_binding_test_complete",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal-session-binding.test.ts",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_src": "lib_portal_session_binding_test_ts",
+      "_tgt": "portal_session_binding_test_complete",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "useaccountprofile_useaccountprofile",
+      "target": "useaccountverification_useaccountverification",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "components/portal/auth/useAccountProfile.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "useaccountprofile_useaccountprofile",
+      "_tgt": "useaccountverification_useaccountverification"
+    },
+    {
+      "source": "portal_session_binding_test_retry",
+      "target": "session_binding_runwithsession",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "lib/portal-session-binding.test.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "portal_session_binding_test_retry",
+      "_tgt": "session_binding_runwithsession"
+    },
+    {
+      "source": "portal_session_binding_test_complete",
+      "target": "session_binding_assertactiveverification",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.5,
+      "source_file": "lib/portal-session-binding.test.ts",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_src": "portal_session_binding_test_complete",
+      "_tgt": "session_binding_assertactiveverification"
+    },
+    {
+      "source": "components_portal_auth_accountprofile_tsx",
+      "target": "useaccountprofile_useaccountprofile",
+      "_src": "components_portal_auth_accountprofile_tsx",
       "_tgt": "useaccountprofile_useaccountprofile",
       "relation": "uses",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "weight": 1.0,
       "source_file": "components/portal/auth/AccountProfile.tsx",
-      "source_location": "L16"
+      "source_location": "L24"
+    },
+    {
+      "source": "useaccountprofile_useaccountprofile",
+      "target": "useaccountverification_useaccountverification",
+      "_src": "useaccountprofile_useaccountprofile",
+      "_tgt": "useaccountverification_useaccountverification",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/useAccountProfile.ts",
+      "source_location": "L11"
+    },
+    {
+      "source": "useaccountprofile_useaccountprofile",
+      "target": "session_binding_runwithsession",
+      "_src": "useaccountprofile_useaccountprofile",
+      "_tgt": "session_binding_runwithsession",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/useAccountProfile.ts",
+      "source_location": "L20"
+    },
+    {
+      "source": "useaccountverification_useaccountverification",
+      "target": "session_binding_assertactiveverification",
+      "_src": "useaccountverification_useaccountverification",
+      "_tgt": "session_binding_assertactiveverification",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "source_file": "components/portal/auth/useAccountVerification.ts",
+      "source_location": "L77"
     },
     {
       "source": "resetpasswordtask_resetpasswordtask",
-      "target": "session_binding_samesession",
+      "target": "session_binding_assertsession",
       "_src": "resetpasswordtask_resetpasswordtask",
-      "_tgt": "session_binding_samesession",
+      "_tgt": "session_binding_assertsession",
       "relation": "uses",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,

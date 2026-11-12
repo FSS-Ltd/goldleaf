@@ -1,6 +1,6 @@
 "use client";
 
-import { useClerk } from "@clerk/nextjs";
+import { useClerk, useSession, useUser } from "@clerk/nextjs";
 import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import { AccountVerificationPanel } from "./AccountVerificationPanel";
@@ -13,6 +13,14 @@ function values(event: FormEvent<HTMLFormElement>) { event.preventDefault(); ret
 function field(data: FormData, key: string) { const value = data.get(key); return typeof value === "string" ? value : ""; }
 
 export function AccountProfile() {
+  const { user, isLoaded } = useUser();
+  const { session, isLoaded: sessionLoaded } = useSession();
+  if (!isLoaded || !sessionLoaded) return <p>Loading your account…</p>;
+  if (!user || !session) return <p>Please <Link className="underline" href="/sign-in">sign in</Link> to view your account.</p>;
+  return <AccountProfileContent key={`${session.id}:${user.id}`} />;
+}
+
+function AccountProfileContent() {
   const flow = useAccountProfile();
   const { signOut } = useClerk();
   const [signOutError, setSignOutError] = useState("");

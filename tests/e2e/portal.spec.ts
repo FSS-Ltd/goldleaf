@@ -34,3 +34,10 @@ test("invalid invitation fragments clear the URL and any stale invitation", asyn
   expect(new URL(page.url()).hash).toBe("");
   expect((await context.cookies()).find((entry) => entry.name === "goldleaf_invite")).toBeUndefined();
 });
+
+test("an invitation page without a fragment clears any stale invitation", async ({ page, context }) => {
+  await context.addCookies([{ name: "goldleaf_invite", value: "a".repeat(43), domain: "localhost", path: "/invite", httpOnly: true, sameSite: "Lax" }]);
+  await page.goto("/invite");
+  await expect(page.getByRole("heading", { name: "This invitation isn’t available" })).toBeVisible();
+  expect((await context.cookies()).find((entry) => entry.name === "goldleaf_invite")).toBeUndefined();
+});

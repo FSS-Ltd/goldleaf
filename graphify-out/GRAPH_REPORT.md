@@ -189,3 +189,5 @@ Scoped custom-auth refresh extracted 39 explicitly selected changed TypeScript f
 After merging invoice and staff access, the combined graph retains both branches' source-linked nodes and edges: 336 nodes and 332 edges. Removed pre-route-group paths remain removed. Four older, unrelated edges still have `source`/`target` directions that disagree with `_src`/`_tgt`; they remain unaudited. Unresolved historical coverage and SQL extraction limits still apply.
 
 The scoped auth/profile typography and account-return update re-extracted eight affected files; the graph remains at 336 nodes and 332 edges. Thirty-seven unresolved extractor edges were omitted.
+
+The account actor-binding and invitation-capture fixes re-extracted nine affected files. The graph now has 342 nodes and 345 edges; 27 unresolved extractor edges were omitted. Existing SQL and semantic nodes remain intact.

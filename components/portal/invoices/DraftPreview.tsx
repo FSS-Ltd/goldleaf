@@ -1,7 +1,7 @@
 import type { z } from "zod";
 import type { billingSettingsRowSchema } from "@/lib/portal/billing-settings-schema";
 import type { previewInvoice } from "@/lib/portal/invoices";
-import { pounds, subcard } from "./format";
+import { pounds, quantityLabel, tierLabel, subcard } from "./format";
 
 export function DraftPreview({
   quote,
@@ -52,14 +52,12 @@ export function DraftPreview({
                     </span>
                   </div>
                   <p className="mt-1 text-xs text-[#5a6a5e]">
-                    {line.service_date} · {line.quantity}{" "}
-                    {line.cadence === "weekly" ? "week" : "month"}
-                    {line.quantity === 1 ? "" : "s"} · {line.days} days/week
+                    {line.service_date} · {quantityLabel(line.quantity, line.cadence, line.quantity_basis)} · {line.days} days/week
                   </p>
                   <p className="mt-1 text-xs text-[#5a6a5e]">
-                    {pounds(line.hourly_rate_pence)} per hour ·{" "}
+                    {tierLabel(line.rate_tier)} · {pounds(line.hourly_rate_pence)} per hour ·{" "}
                     {pounds(line.unit_amount_pence)} per{" "}
-                    {line.cadence === "weekly" ? "week" : "month"}
+                    {line.cadence === "weekly" ? "week" : "month"}{line.quantity_basis === "children" ? " per child" : ""}
                     {line.discount_percent
                       ? ` · ${line.discount_percent}% discount included`
                       : ""}

@@ -3,7 +3,7 @@ import type {
   previewSavedInvoice,
 } from "@/lib/portal/invoices";
 import { IssueForm } from "./InvoiceActions";
-import { card, pounds, subcard } from "./format";
+import { card, pounds, quantityLabel, tierLabel, subcard } from "./format";
 type AdminInvoice = NonNullable<Awaited<ReturnType<typeof readAdminInvoice>>>;
 type Preview = Awaited<ReturnType<typeof previewSavedInvoice>> | null;
 export function AdminDraftInvoice({
@@ -36,10 +36,9 @@ export function AdminDraftInvoice({
                   <span>{pounds(line.quantity * line.unit_amount_pence)}</span>
                 </div>
                 <p className="mt-1 text-xs text-[#5a6a5e]">
-                  {line.quantity} {line.cadence === "weekly" ? "week" : "month"}
-                  {line.quantity === 1 ? "" : "s"} · {line.days} days per week ·{" "}
-                  {pounds(line.hourly_rate_pence)} per hour ·{" "}
-                  {pounds(line.unit_amount_pence)} per period
+                  {quantityLabel(line.quantity, line.cadence, line.quantity_basis)} · {line.days} days per week ·{" "}
+                  {tierLabel(line.rate_tier)} · {pounds(line.hourly_rate_pence)} per hour ·{" "}
+                  {pounds(line.unit_amount_pence)} per {line.quantity_basis === "children" ? "child per period" : "period"}
                   {line.discount_percent
                     ? ` · ${line.discount_percent}% discount included`
                     : ""}
@@ -82,9 +81,8 @@ export function AdminDraftInvoice({
                   {line.description} · {line.service_date}
                 </p>
                 <p className="mt-1 text-[#5a6a5e]">
-                  {line.quantity} {line.cadence === "weekly" ? "week" : "month"}
-                  {line.quantity === 1 ? "" : "s"} · {line.days} days per week ·
-                  saved amount {pounds(line.unit_amount_pence)} per period
+                  {quantityLabel(line.quantity, line.cadence, line.quantity_basis)} · {line.days} days per week ·
+                  saved amount {pounds(line.unit_amount_pence)} per {line.quantity_basis === "children" ? "child per period" : "period"}
                 </p>
               </li>
             ))}

@@ -9,12 +9,12 @@ export class BillingConfigurationError extends Error {}
 export class InvoiceQuoteMismatchError extends Error {}
 
 export type PricedLine = {
-  description: string; quantity: number; unit_amount_pence: number; service_date: string;
+  description: string; quantity: number; quantity_basis?: "periods" | "children"; unit_amount_pence: number; service_date: string;
   rate_tier: "standard" | "founding" | "founding-post-intro"; hourly_rate_pence: number;
   days: DraftLine["days"]; cadence: DraftLine["cadence"]; session_minutes: number; discount_percent: number;
 };
 
-export function quoteDraftLines(lines: readonly DraftLine[], context: PricingContext): PricedLine[] {
+export function quoteDraftLines(lines: readonly DraftLine[], context: PricingContext, basis: "periods" | "children" = "periods"): PricedLine[] {
   if (lines.length !== context.eligibility.length) throw new BillingConfigurationError("Eligibility context does not match service dates");
   return lines.map((line, index) => {
     const eligibility = context.eligibility[index];
@@ -26,7 +26,7 @@ export function quoteDraftLines(lines: readonly DraftLine[], context: PricingCon
       ? quoteInvoice({ ...common, tier: "founding", foundingTransitionDate: context.settings.founding_transition_date })
       : quoteInvoice({ ...common, tier: "standard" });
     if (BigInt(line.quantity) * BigInt(quote.amountPence) > BigInt(2147483647)) throw new BillingConfigurationError("Invoice line exceeds supported amount");
-    return { description: line.description, quantity: line.quantity, unit_amount_pence: quote.amountPence,
+    return { description: line.description, quantity: line.quantity, ...(basis === "children" ? { quantity_basis: basis } : {}), unit_amount_pence: quote.amountPence,
       service_date: line.serviceDate, rate_tier: quote.tier, hourly_rate_pence: quote.hourlyRatePence,
       days: quote.days, cadence: quote.cadence, session_minutes: quote.sessionMinutes, discount_percent: quote.discountPercent };
   });

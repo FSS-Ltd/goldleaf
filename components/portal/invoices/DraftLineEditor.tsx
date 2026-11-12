@@ -64,7 +64,7 @@ export function DraftLineEditor({
           </select>
         </label>
         <label className="text-sm">
-          Quantity of periods
+          Number of children
           <input
             className={field}
             type="number"
@@ -94,8 +94,7 @@ export function DraftLineEditor({
         </label>
       </div>
       <p className="text-xs text-[#5a6a5e]">
-        Quantity multiplies the weekly or monthly quote; it is not the number of
-        days or sessions.
+        The weekly or monthly quote is per child.
       </p>
       {canRemove && (
         <button

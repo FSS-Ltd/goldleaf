@@ -20,3 +20,12 @@ export const button =
   "inline-flex min-h-11 items-center justify-center rounded-full bg-[#06451d] px-5 py-2 text-sm font-medium text-white hover:bg-[#175128] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#06451d] disabled:cursor-not-allowed disabled:opacity-50";
 export const secondary =
   "inline-flex min-h-11 items-center justify-center rounded-full border border-[#bdae96] px-5 py-2 text-sm font-medium text-[#06451d] hover:bg-[#fffdfa] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#06451d] disabled:cursor-not-allowed disabled:opacity-50";
+
+export function quantityLabel(quantity: number, cadence: "weekly" | "monthly", basis?: "periods" | "children"): string {
+  if (basis === "children") return `${quantity} ${quantity === 1 ? "child" : "children"}`;
+  return `${quantity} ${cadence === "weekly" ? "week" : "month"}${quantity === 1 ? "" : "s"}`;
+}
+
+export function tierLabel(tier: "standard" | "founding" | "founding-post-intro"): string {
+  return tier === "standard" ? "Standard" : tier === "founding" ? "Founding" : "Founding (after introductory period)";
+}

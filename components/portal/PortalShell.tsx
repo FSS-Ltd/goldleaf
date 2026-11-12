@@ -182,7 +182,16 @@ export function PortalShell({
           href={current?.href ?? home}
           className="min-w-0 truncate font-display text-xl md:text-sm"
         >
-          {section === "home" ? title : (current?.label ?? title)}
+          {role === "parent" && section === "home" ? (
+            <>
+              <span className="md:hidden">Home</span>
+              <span className="hidden md:inline">{title}</span>
+            </>
+          ) : section === "home" ? (
+            title
+          ) : (
+            (current?.label ?? title)
+          )}
         </a>
         <AccountMenu
           roles={memberships.map((membership) => membership.role)}

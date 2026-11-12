@@ -39,3 +39,13 @@ test("empty learning links to the unselected learning view", () => {
   );
   assert.match(html, /href="\/parent\/learning"/);
 });
+
+test("published stage uses its actual canonical label", () => {
+  const html = renderToStaticMarkup(
+    createElement(LearningCard, {
+      latest: { child, update: { ...update, stage: 1 } },
+    }),
+  );
+  assert.match(html, /Stage 1/);
+  assert.doesNotMatch(html, /mastered|completed/i);
+});

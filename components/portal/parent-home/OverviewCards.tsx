@@ -25,16 +25,26 @@ export function SessionCard({
           <p className="mt-1 text-sm">
             {when.time} · {session.duration_minutes} minutes
           </p>
+          {session.location_label && (
+            <p className="mt-2 text-sm">{session.location_label}</p>
+          )}
           <p className="mt-4 inline-block rounded-full bg-[#e5eadc] px-3 py-1 text-xs font-semibold text-[#365440]">
             {sessionStatusLabel(session.status)}
           </p>
-          <div>
+          <div className="mt-6 flex flex-wrap gap-3">
             <Link
               prefetch={false}
-              className="btn btn-primary mt-6"
+              className="btn btn-primary"
               href={`/parent/sessions/${session.id}`}
             >
               View session
+            </Link>
+            <Link
+              prefetch={false}
+              className="btn btn-ghost"
+              href={`/parent/messages?family=${encodeURIComponent(session.family_id)}#request-button-${encodeURIComponent(session.id)}`}
+            >
+              Request a change
             </Link>
           </div>
         </>
@@ -60,18 +70,20 @@ export function BillingCard({
   invoice: { number: number; status: string } | null;
 }) {
   return (
-    <section className="rounded-[18px] border border-[#e3d7c3] bg-[#f6eee2] p-6 sm:p-8">
-      <h2 className="!text-2xl">Billing</h2>
-      {invoice ? (
-        <p className="mt-5 text-sm">
-          Invoice {invoice.number} · {invoice.status}
-        </p>
-      ) : (
-        <p className="mt-5 text-sm">No invoices issued yet.</p>
-      )}
+    <section className="flex flex-wrap items-center justify-between gap-x-4 rounded-[18px] border border-[#e3d7c3] bg-[#f6eee2] p-5 sm:block sm:p-8">
+      <div>
+        <h2 className="!text-xl sm:!text-2xl">Billing</h2>
+        {invoice ? (
+          <p className="mt-5 text-sm">
+            Invoice {invoice.number} · {invoice.status}
+          </p>
+        ) : (
+          <p className="mt-5 text-sm">No invoices issued yet.</p>
+        )}
+      </div>
       <Link
         prefetch={false}
-        className="mt-5 inline-flex min-h-12 items-center text-sm font-semibold underline underline-offset-4"
+        className="inline-flex min-h-12 items-center text-sm font-semibold underline underline-offset-4 sm:mt-5"
         href="/parent/billing"
       >
         View invoices

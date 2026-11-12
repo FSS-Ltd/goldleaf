@@ -171,3 +171,5 @@ Founding DTO update: scoped extraction adds the `setFamilyFounding` wrapper. The
 `graphify update lib/portal` extracted the staff wrapper and validation nodes into a scoped graph; the affected nodes and internal edges were merged into this persistent graph. SQL extraction remains unsupported, so `portal_staff_access` and its source-backed connections were added manually. Prior semantic nodes remain. PostgreSQL and application tests are recorded in the feature tree.
 
 The staff and invoice runtime maps were reconciled after merging main: the combined graph contains 200 nodes and 189 edges. Existing nodes from both branches are retained; SQL remains source-linked rather than extracted.
+
+Staff access schema was re-extracted after normalizing Neon timestamp values; `staff_access_test` now links the regression test to the shared schema. SQL and cross-scope semantic coverage remain limited.

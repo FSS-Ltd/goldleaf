@@ -1919,6 +1919,15 @@
       "source_location": "L1",
       "community": 15,
       "norm_label": "staff scoped access sql"
+    },
+    {
+      "id": "staff_access_test",
+      "label": "Staff access boundary tests",
+      "file_type": "code",
+      "source_file": "lib/staff-access.test.ts",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "staff access boundary tests"
     }
   ],
   "links": [
@@ -4169,6 +4178,16 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "lib/portal/staff.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "staff_access_test",
+      "target": "staff_schemas_ts",
+      "relation": "tests",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/staff-access.test.ts",
       "source_location": "L1",
       "weight": 1.0
     }

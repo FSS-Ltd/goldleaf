@@ -1,0 +1,40 @@
+\set ON_ERROR_STOP on
+BEGIN;
+CREATE ROLE generation_runtime NOLOGIN;
+GRANT USAGE ON SCHEMA portal TO generation_runtime;
+GRANT EXECUTE ON FUNCTION portal.list_removable_memberships(text,text,uuid), portal.revoke_membership_checked(text,uuid,text,uuid,bigint) TO generation_runtime;
+DO $$ DECLARE p uuid; s uuid; a uuid; BEGIN
+ SELECT id INTO p FROM portal.memberships WHERE subject='generation-active';
+ SELECT id INTO s FROM portal.memberships WHERE subject='generation-staff';
+ SELECT id INTO a FROM portal.memberships WHERE subject='generation-admin';
+ IF (SELECT access_generation FROM portal.memberships WHERE id=p) <> 0 OR (SELECT access_generation FROM portal.memberships WHERE subject='generation-revoked') <> 0 THEN RAISE EXCEPTION 'migration changed existing generation'; END IF;
+ IF has_function_privilege('public','portal.revoke_membership_checked(text,uuid,text,uuid,bigint)','EXECUTE') OR has_function_privilege('generation_runtime','portal.revoke_membership(text,uuid)','EXECUTE') OR has_table_privilege('generation_runtime','portal.memberships','SELECT') THEN RAISE EXCEPTION 'grant boundary'; END IF;
+ IF portal.revoke_membership_checked('generation-admin',a,'staff',NULL,0) OR portal.revoke_membership_checked('generation-admin',p,'staff',NULL,0) OR portal.revoke_membership_checked('generation-admin',p,'parent','21000000-0000-4000-8000-000000000002',0) THEN RAISE EXCEPTION 'wrong target accepted'; END IF;
+ BEGIN PERFORM portal.revoke_membership_checked('generation-active',s,'staff',NULL,0); RAISE EXCEPTION 'non-admin accepted'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+ IF NOT portal.revoke_membership_checked('generation-admin',p,'parent','21000000-0000-4000-8000-000000000001',0) THEN RAISE EXCEPTION 'valid parent failed'; END IF;
+ IF portal.revoke_membership_checked('generation-admin',p,'parent','21000000-0000-4000-8000-000000000001',0) THEN RAISE EXCEPTION 'retry revoked'; END IF;
+ UPDATE portal.memberships SET revoked_at=clock_timestamp() WHERE subject='generation-revoked';
+ IF (SELECT access_generation FROM portal.memberships WHERE subject='generation-revoked') <> 0 THEN RAISE EXCEPTION 'revoked-to-revoked changed generation'; END IF;
+ PERFORM portal.issue_invitation('generation-admin','21000000-0000-4000-8000-000000000001','previously-revoked@example.invalid',decode(repeat('a6',32),'hex'),now()+interval '1 day');
+ PERFORM portal.accept_invitation('generation-revoked','previously-revoked@example.invalid',decode(repeat('a6',32),'hex'));
+ IF (SELECT access_generation FROM portal.memberships WHERE subject='generation-revoked') <> 1 OR portal.revoke_membership_checked('generation-admin',(SELECT id FROM portal.memberships WHERE subject='generation-revoked'),'parent','21000000-0000-4000-8000-000000000001',0) THEN RAISE EXCEPTION 'pre-migration revoked generation unsafe'; END IF;
+ PERFORM portal.issue_invitation('generation-admin','21000000-0000-4000-8000-000000000001','generation@example.invalid',decode(repeat('a7',32),'hex'),now()+interval '1 day');
+ PERFORM portal.accept_invitation('generation-active','generation@example.invalid',decode(repeat('a7',32),'hex'));
+ IF (SELECT access_generation FROM portal.memberships WHERE id=p) <> 2 OR portal.revoke_membership_checked('generation-admin',p,'parent','21000000-0000-4000-8000-000000000001',0) THEN RAISE EXCEPTION 'stale parent removed reaccepted member'; END IF;
+ UPDATE portal.memberships SET revoked_by=NULL WHERE id=p;
+ IF (SELECT access_generation FROM portal.memberships WHERE id=p) <> 2 THEN RAISE EXCEPTION 'unrelated update changed generation'; END IF;
+ IF NOT portal.revoke_membership_checked('generation-admin',s,'staff',NULL,0) THEN RAISE EXCEPTION 'valid staff failed'; END IF;
+ PERFORM portal.issue_staff_invitation('generation-admin','generation-staff@example.invalid',decode(repeat('a8',32),'hex'),now()+interval '1 day');
+ PERFORM portal.accept_staff_invitation('generation-staff','generation-staff@example.invalid',decode(repeat('a8',32),'hex'));
+ IF (SELECT access_generation FROM portal.memberships WHERE id=s) <> 2 OR portal.revoke_membership_checked('generation-admin',s,'staff',NULL,0) THEN RAISE EXCEPTION 'stale staff removed reaccepted member'; END IF;
+END $$;
+SET ROLE generation_runtime;
+CREATE TEMP TABLE memberships(id uuid, subject text, role text, family_id uuid, revoked_at timestamptz, access_generation bigint);
+INSERT INTO memberships VALUES ('21000000-0000-4000-8000-000000000099','generation-active','admin',NULL,NULL,0);
+DO $$ BEGIN
+ IF (SELECT generation FROM portal.list_removable_memberships('generation-admin','parent','21000000-0000-4000-8000-000000000001') WHERE subject='generation-active') <> '2' THEN RAISE EXCEPTION 'generation not visible'; END IF;
+ BEGIN PERFORM portal.revoke_membership_checked('generation-admin','21000000-0000-4000-8000-000000000099',NULL,NULL,0); RAISE EXCEPTION 'null role accepted'; EXCEPTION WHEN invalid_parameter_value THEN NULL; END;
+ BEGIN PERFORM portal.list_removable_memberships('generation-active','staff',NULL); RAISE EXCEPTION 'non-admin listed'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
+END $$;
+RESET ROLE;
+ROLLBACK;

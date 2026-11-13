@@ -11,6 +11,9 @@ import { listFamilies } from "@/lib/portal/families";
 import { requireRole } from "@/lib/portal/require-role";
 import { listStaffDeliveries, listStaffFamilyAssignments } from "@/lib/portal/staff";
 import { listStaffProfiles } from "@/lib/portal/staff-profiles";
+import { membershipRemovalKey } from "@/lib/portal/membership-target";
+import { RevokeMembershipForm } from "@/components/portal/RevokeMembershipForm";
+import { revokeAcceptedMember } from "../membership-actions";
 
 export const metadata = { title: "Team", robots: { index: false, follow: false } };
 
@@ -20,7 +23,7 @@ function deliveryLabel(status: "sent" | "failed" | "pending") {
   return "Email pending or unconfirmed";
 }
 
-async function StaffAdmin({ searchParams }: { searchParams: Promise<{ staff?: string }> }) {
+async function StaffAdmin({ searchParams }: { searchParams: Promise<{ staff?: string; access?: string }> }) {
   const { identity, memberships } = await requireRole("admin");
   const { sessionId: authSessionId } = await auth();
   if (!authSessionId) redirect("/sign-in");
@@ -35,6 +38,7 @@ async function StaffAdmin({ searchParams }: { searchParams: Promise<{ staff?: st
   return (
     <PortalShell role="admin" userId={identity.userId} memberships={memberships} section="staff">
       <h1 className="!text-[clamp(2rem,4vw,2.6rem)]">Team</h1>
+      {params.access === "removed" && <p role="status" className="mt-4 text-sm text-[#06451d]">Staff access and family assignments removed.</p>}
       <div className="mt-8 grid gap-6 lg:grid-cols-3">
         <div className="space-y-6 lg:col-span-2">
           <section className="rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6">
@@ -54,7 +58,7 @@ async function StaffAdmin({ searchParams }: { searchParams: Promise<{ staff?: st
                     <option value="">Select a staff member</option>
                     {profiles.map((profile) => (
                       <option key={profile.id} value={profile.id} disabled={!profile.email}>
-                        {profile.email ? `${profile.name ?? "Staff member"} · ${profile.email}` : "Account identity unavailable"}
+                        {profile.email ? `${profile.name ?? "Staff member"} · ${profile.email}` : "Verified account identity unavailable"}
                       </option>
                     ))}
                   </select>
@@ -73,6 +77,7 @@ async function StaffAdmin({ searchParams }: { searchParams: Promise<{ staff?: st
                 ) : (
                   <p className="mt-4 text-sm text-[#35594a]">There are no families to assign yet.</p>
                 )}
+                {selected.email && <RevokeMembershipForm key={membershipRemovalKey(actor, selected.id, selected.generation)} actor={actor} role="staff" label={selected.email} revoke={revokeAcceptedMember.bind(null, { role: "staff", membershipId: selected.id, generation: selected.generation })} />}
               </div>
             )}
           </section>
@@ -101,7 +106,7 @@ async function StaffAdmin({ searchParams }: { searchParams: Promise<{ staff?: st
   );
 }
 
-export default function AdminStaffPage({ searchParams }: { searchParams: Promise<{ staff?: string }> }) {
+export default function AdminStaffPage({ searchParams }: { searchParams: Promise<{ staff?: string; access?: string }> }) {
   return (
     <Suspense fallback={<PortalLoading label="Opening team…" variant="list" />}>
       <StaffAdmin searchParams={searchParams} />

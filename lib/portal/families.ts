@@ -3,6 +3,7 @@ import { randomBytes, createHash } from "node:crypto";
 import { z } from "zod";
 import { requirePortalIdentity } from "./access";
 import { portalDatabase } from "./database";
+import { membershipScopeSchema, type MembershipScope } from "./membership-target";
 
 import { familySchema, familyMemberSchema, staffSchema, familyInputSchema, familyFoundingInputSchema, idResultSchema } from "./schemas";
 
@@ -24,13 +25,21 @@ export async function listFamilyMemberships(familyId: string) {
   const id = z.string().uuid().parse(familyId);
   const { userId } = await requirePortalIdentity();
   const sql = portalDatabase();
-  return z.array(familyMemberSchema).parse(await sql`SELECT * FROM portal.family_memberships(${userId}, ${id})`);
+  return z.array(familyMemberSchema).parse(await sql`SELECT * FROM portal.list_removable_memberships(${userId}, 'parent', ${id})`);
+}
+
+export async function revokeMembership(input: MembershipScope): Promise<boolean> {
+  const target = membershipScopeSchema.parse(input);
+  const { userId } = await requirePortalIdentity();
+  const sql = portalDatabase();
+  const rows = await sql`SELECT portal.revoke_membership_checked(${userId}, ${target.membershipId}::uuid, ${target.role}, ${target.role === "parent" ? target.familyId : null}::uuid, ${target.generation}::bigint) AS removed`;
+  return z.array(z.object({ removed: z.boolean() })).length(1).parse(rows)[0].removed;
 }
 
 export async function listStaff() {
   const { userId } = await requirePortalIdentity();
   const sql = portalDatabase();
-  return z.array(staffSchema).parse(await sql`SELECT * FROM portal.list_staff(${userId})`);
+  return z.array(staffSchema).parse(await sql`SELECT * FROM portal.list_removable_memberships(${userId}, 'staff', NULL)`);
 }
 
 export async function createFamilyWithInvitation(input: unknown) {

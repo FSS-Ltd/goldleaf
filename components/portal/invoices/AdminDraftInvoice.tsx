@@ -38,7 +38,7 @@ export function AdminDraftInvoice({
                 </div>
                 <p className="mt-1 text-xs text-[#5a6a5e]">
                   {quantityLabel(line.quantity, line.cadence, line.quantity_basis)} · {line.days} days per week ·{" "}
-                  {tierLabel(line.rate_tier)} · {pounds(line.hourly_rate_pence)} per hour ·{" "}
+                  {tierLabel(line.rate_tier)} · {line.pricing_basis === "session" ? `${pounds(line.session_fee_pence)} per session` : `${pounds(line.hourly_rate_pence)} per hour`} ·{" "}
                   <DraftUnitRate amountPence={line.unit_amount_pence} cadence={line.cadence} basis={line.quantity_basis} />
                   {line.discount_percent
                     ? ` · ${line.discount_percent}% discount included`

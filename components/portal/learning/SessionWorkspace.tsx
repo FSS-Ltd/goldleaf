@@ -85,7 +85,7 @@ export async function SessionWorkspace({
           <section className="rounded-[14px] border border-[#e3d7c3] bg-[#f6eee2] p-6">
             <h2 className="!text-xl">Session routine</h2>
             <p className="mt-2 text-sm">
-              Reference only; the routine does not run automatically.
+              Reference timetable for the standard afternoon session; these clock times do not change this session’s scheduled time. The routine does not run automatically.
             </p>
             <ol className="mt-4 divide-y divide-[#e3d7c3]">
               {sessionBlocks.map((block) => (

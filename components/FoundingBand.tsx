@@ -18,8 +18,8 @@ export function FoundingBand({ availability }: { availability: FoundingAvailabil
               </h2>
               <p className="mt-3 max-w-2xl text-paper/90">
                 <span className="mr-2 inline-block size-2.5 rounded-full bg-clay align-middle" aria-hidden="true" />
-                £{f.rate} an hour until {f.endsLabel}, then £{f.rateAfter} an hour for as long as you stay.
-                The standard rate is £{site.standardRate} an hour.
+                £{f.sessionFee} a session until {f.endsLabel}, then £{f.sessionFeeAfter} a session for as long as you stay.
+                The standard rate is £{site.standardSessionFee} a session.
               </p>
             </>
           ) : availability ? (
@@ -27,12 +27,12 @@ export function FoundingBand({ availability }: { availability: FoundingAvailabil
               <h2 id="founding-title" className="mt-3 !text-[clamp(1.6rem,3.4vw,2.4rem)]">
                 Founding places are full
               </h2>
-              <p className="mt-3 max-w-2xl text-paper/90">New families pay the standard rate of £{site.standardRate} an hour.</p>
+              <p className="mt-3 max-w-2xl text-paper/90">New families pay the standard rate of £{site.standardSessionFee} a session.</p>
             </>
           ) : (
             <>
               <h2 id="founding-title" className="mt-3 !text-[clamp(1.6rem,3.4vw,2.4rem)]">Ask about a place</h2>
-              <p className="mt-3 max-w-2xl text-paper/90">The standard rate is £{site.standardRate} an hour.</p>
+              <p className="mt-3 max-w-2xl text-paper/90">The standard rate is £{site.standardSessionFee} a session.</p>
             </>
           )}
         </div>

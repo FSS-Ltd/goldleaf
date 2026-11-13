@@ -1,12 +1,12 @@
-import { site } from "@/content/site";
+import { site, sessionEndLabel } from "@/content/site";
 
 export function SafeHands() {
   const items = [
     "At home, a parent or carer stays in the house for the whole session.",
     "At church, children are signed in and out, and only go home with named adults. The door stays open or the room stays visible.",
-    "You can stay for the session or drop off. Your child's routine, naps and mealtimes come first.",
+    `Parents wait in the café or drop off, so children can settle and focus. Children are collected promptly at ${sessionEndLabel}.`,
     "Food is safe by design. Allergies are checked before any tasting, we only offer foods you have approved, grapes are cut lengthways and whole nuts are never used.",
-    "A short chat at handover keeps you in the loop on what your child tried and enjoyed.",
+    "A short chat at handover, plus our parent portal, keeps you in the loop on what your child tried and enjoyed.",
   ];
   if (site.trust.dbsEnhanced) items.push("Enhanced DBS checked.");
   if (site.trust.insured) items.push("Public liability and professional indemnity insurance in place.");

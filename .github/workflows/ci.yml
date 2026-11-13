@@ -79,7 +79,8 @@ jobs:
             -f db/migrations/0017_message_views.sql -f db/migrations/0018_portal_invalidation.sql \
             -f db/tests/message-views.sql -f db/tests/portal-invalidation.sql \
             -f db/migrations/0019_invoice_quantity_basis.sql \
-            -f db/migrations/0020_admin_today.sql -f db/tests/admin-today.sql
+            -f db/migrations/0020_admin_today.sql -f db/tests/admin-today.sql \
+            -f db/migrations/0022_session_fee_pricing.sql
           # A fresh backend ensures the temporary-type attack tests initial function compilation.
           psql -X -h 127.0.0.1 -p 55439 -d goldleaf_test -v ON_ERROR_STOP=1 \
             -f db/tests/onboarding-grants.sql
@@ -93,6 +94,14 @@ jobs:
           sh db/tests/events-notify.sh 127.0.0.1 goldleaf_test
           sh db/tests/invoice-concurrency.sh 127.0.0.1 goldleaf_test
           sh db/tests/invoice-runtime-concurrency.sh 127.0.0.1 goldleaf_test
+          createdb -h 127.0.0.1 -p 55439 goldleaf_invoice_session_fee
+          for migration in db/migrations/*.sql; do
+            [ "$migration" = db/migrations/0022_session_fee_pricing.sql ] && break
+            psql -X -h 127.0.0.1 -p 55439 -d goldleaf_invoice_session_fee -v ON_ERROR_STOP=1 -f "$migration"
+          done
+          psql -X -h 127.0.0.1 -p 55439 -d goldleaf_invoice_session_fee -v ON_ERROR_STOP=1 \
+            -f db/tests/invoice-session-fee-before.sql -f db/migrations/0022_session_fee_pricing.sql \
+            -f db/tests/invoice-session-fee-after.sql
           createdb -h 127.0.0.1 -p 55439 goldleaf_invoice_quantity
           psql -X -h 127.0.0.1 -p 55439 -d goldleaf_invoice_quantity -v ON_ERROR_STOP=1 \
             -f db/tests/onboarding-upgrade.sql -f db/migrations/0004_staff_onboarding.sql \

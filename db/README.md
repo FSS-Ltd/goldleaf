@@ -329,3 +329,16 @@ Migration 0020 adds `portal.list_admin_sessions(text,date)` for the admin Today 
 
 
 Migrations 0019 and 0020 and their individual runtime grants were verified in QA, development and production on 12 November 2026. Each environment had 84 restricted runtime function grants; invoice snapshots remained unchanged. This verifies database state, not application deployment.
+
+## Session-fee invoice rollout
+
+Migration `0022_session_fee_pricing.sql` is forward-only and independent of migration 0021, which is reserved by the separate portal-completion work. Review and apply 0022 before deploying the session-fee writer. The migration adds a pricing basis and separate session-fee amount, retains legacy hourly metadata, and replaces internal invoice creation and issue-context functions. Its table alteration and constraint validation take locks and may scan invoice lines; assess the production table size and a suitable rollout window first. It does not change existing issued snapshots or historical operation replay records.
+
+An authorised database owner must grant only this additional entry point to the restricted runtime after the migration:
+
+```sql
+GRANT EXECUTE ON FUNCTION portal.create_invoice_session_draft_checked(text,uuid,jsonb,jsonb,jsonb)
+  TO goldleaf_portal_runtime;
+```
+
+Verify that the runtime has this grant, PUBLIC does not, and direct invoice-table or internal helper privileges have not been added. Existing hourly drafts are preserved, but the current application rejects them at issue-time quote verification; create and review a new draft using the current session fee. Once session-fee invoices can be written, retain a session-aware application version for all invoice readers: older readers cannot safely interpret the new metadata. Application rollback must respect that boundary. Run `db/tests/invoice-session-fee-before.sql` before 0022 and `db/tests/invoice-session-fee-after.sql` afterward against disposable PostgreSQL. Migration and grants have not been applied remotely.

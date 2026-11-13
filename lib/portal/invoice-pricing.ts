@@ -19,7 +19,7 @@ export type InvoiceQuote = {
   cadence: "weekly" | "monthly";
   serviceDate: string;
   foundingTransitionDate?: string;
-  hourlyRatePence: number;
+  sessionFeePence: number;
   discountPercent: number;
   sessionMinutes: number;
   amountPence: number;
@@ -29,14 +29,14 @@ export type InvoiceQuote = {
 export function quoteInvoice(input: unknown): InvoiceQuote {
   const parsed = quoteInput.parse(input);
   const postIntro = parsed.tier === "founding" && parsed.serviceDate >= parsed.foundingTransitionDate;
-  const rate = parsed.tier === "standard" ? site.standardRate : postIntro ? site.founding.rateAfter : site.founding.rate;
+  const rate = parsed.tier === "standard" ? site.standardSessionFee : postIntro ? site.founding.sessionFeeAfter : site.founding.sessionFee;
   const isStandard = parsed.tier === "standard";
   const weeklyPrice = weekly(rate, parsed.days, isStandard);
 
   return {
     ...parsed,
     tier: postIntro ? "founding-post-intro" : parsed.tier,
-    hourlyRatePence: rate * 100,
+    sessionFeePence: rate * 100,
     discountPercent: isStandard ? DISCOUNT[parsed.days] * 100 : 0,
     sessionMinutes: site.sessionMinutes,
     amountPence: (parsed.cadence === "weekly" ? weeklyPrice : monthly(weeklyPrice)) * 100,

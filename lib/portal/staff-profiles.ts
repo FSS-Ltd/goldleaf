@@ -4,7 +4,10 @@ import { listStaff } from "./families";
 import { staffProfile } from "./staff-profile";
 
 export async function listStaffProfiles() {
-  const staff = await listStaff();
+  return membershipProfiles(await listStaff());
+}
+
+export async function membershipProfiles(staff: { id: string; subject: string }[]): Promise<ReturnType<typeof staffProfile>[]> {
   if (!staff.length) return [];
   const client = await clerkClient();
   const users: Awaited<ReturnType<typeof client.users.getUserList>>["data"] = [];

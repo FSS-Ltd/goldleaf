@@ -27,6 +27,13 @@ export async function listFamilyMemberships(familyId: string) {
   return z.array(familyMemberSchema).parse(await sql`SELECT * FROM portal.family_memberships(${userId}, ${id})`);
 }
 
+export async function revokeMembership(membershipId: string): Promise<void> {
+  const id = z.string().uuid().parse(membershipId);
+  const { userId } = await requirePortalIdentity();
+  const sql = portalDatabase();
+  await sql`SELECT portal.revoke_membership(${userId}, ${id})`;
+}
+
 export async function listStaff() {
   const { userId } = await requirePortalIdentity();
   const sql = portalDatabase();

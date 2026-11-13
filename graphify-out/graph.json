@@ -898,7 +898,7 @@
       "source_file": "docs/portal-mockups/DESIGN-BRIEF.md",
       "source_location": "L85-L97",
       "status": "planned",
-      "scope": "Parents access only their child\u2019s shared information. Private notes remain separate; sharing is explicit. Billing is conceptual. Permissions, delivery, payment flows and accessibility remain unimplemented or unverified.",
+      "scope": "Parents access only their child’s shared information. Private notes remain separate; sharing is explicit. Billing is conceptual. Permissions, delivery, payment flows and accessibility remain unimplemented or unverified.",
       "community": 2,
       "norm_label": "planned portal information boundaries and unverified behaviour",
       "id": "portal_information_boundaries"
@@ -914,7 +914,7 @@
     },
     {
       "label": "Parent home desktop concept",
-      "description": "Static fictional family portal mockup, explicitly labelled CONCEPT \u00b7 FICTIONAL DATA \u00b7 TERM 1; not evidence of runtime implementation. Sidebar shows Home, Sessions, Learning, Messages with badge 1, Billing and Help; parent profile Alex Taylor; child selector Robin T. \u00b7 Age 3.",
+      "description": "Static fictional family portal mockup, explicitly labelled CONCEPT · FICTIONAL DATA · TERM 1; not evidence of runtime implementation. Sidebar shows Home, Sessions, Learning, Messages with badge 1, Billing and Help; parent profile Alex Taylor; child selector Robin T. · Age 3.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/parent-home-desktop.png",
       "confidence": "EXTRACTED",
@@ -925,7 +925,7 @@
     },
     {
       "label": "Parent desktop next-session card",
-      "description": "Visible next session Thu 12 Nov 2026, 09:00\u201310:45; Sounds, stories & small discoveries; With Sam \u00b7 Home visit; actions View session and Request a change. The historical 105-minute interval describes this screenshot only, not current requirements.",
+      "description": "Visible next session Thu 12 Nov 2026, 09:00–10:45; Sounds, stories & small discoveries; With Sam · Home visit; actions View session and Request a change. The historical 105-minute interval describes this screenshot only, not current requirements.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/parent-home-desktop.png",
       "confidence": "EXTRACTED",
@@ -936,7 +936,7 @@
     },
     {
       "label": "Parent desktop learning overview",
-      "description": "Current focus Stage 1, Early Phonics. Stage 0 completed; Stage 1 current; Stages 2\u20134 upcoming. Letter cards s/sun, a/apple, t/tree and p/pebble; View learning journey action.",
+      "description": "Current focus Stage 1, Early Phonics. Stage 0 completed; Stage 1 current; Stages 2–4 upcoming. Letter cards s/sun, a/apple, t/tree and p/pebble; View learning journey action.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/parent-home-desktop.png",
       "confidence": "EXTRACTED",
@@ -958,7 +958,7 @@
     },
     {
       "label": "Parent learning desktop concept",
-      "description": "Static fictional UI, explicitly labelled Concept \u00b7 fictional data. Goldleaf family portal shows Learning selected in a left navigation with Home, Sessions, Messages, Billing and Help; a parent account footer and child selector surround a two-column learning view.",
+      "description": "Static fictional UI, explicitly labelled Concept · fictional data. Goldleaf family portal shows Learning selected in a left navigation with Home, Sessions, Messages, Billing and Help; a parent account footer and child selector surround a two-column learning view.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/parent-learning-desktop.png",
       "source_location": null,
@@ -990,7 +990,7 @@
     },
     {
       "label": "Shared tutor observations",
-      "description": "Right column shows dated tutor notes shared directly with the fictional child\u2019s family, followed by an optional two-minute sound hunt card and a View full learning journey action.",
+      "description": "Right column shows dated tutor notes shared directly with the fictional child’s family, followed by an optional two-minute sound hunt card and a View full learning journey action.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/parent-learning-desktop.png",
       "source_location": null,
@@ -1022,7 +1022,7 @@
     },
     {
       "label": "Staff today desktop concept",
-      "description": "Static fictional staff portal mockup, explicitly labelled Concept \u00b7 fictional data; not evidence of runtime implementation. Wed 11 Nov 2026, 11:00; greeting Sam (Tutor); 3 sessions today, 1 completed, 2 remaining. Sidebar Today, Sessions, Children, Learning plans, Messages and Settings. Needs Attention shows 4 items including a parent message and a time-change request.",
+      "description": "Static fictional staff portal mockup, explicitly labelled Concept · fictional data; not evidence of runtime implementation. Wed 11 Nov 2026, 11:00; greeting Sam (Tutor); 3 sessions today, 1 completed, 2 remaining. Sidebar Today, Sessions, Children, Learning plans, Messages and Settings. Needs Attention shows 4 items including a parent message and a time-change request.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/staff-today-desktop.png",
       "confidence": "EXTRACTED",
@@ -1033,7 +1033,7 @@
     },
     {
       "label": "Staff desktop daily schedule",
-      "description": "Chronological home-visit schedule: Casey R. age 4, 09:00\u201310:45 completed and attended; Ellis M. age 3, 11:15\u201313:00 next up starting in 15m; Rowan P. age 3, 14:00\u201315:45 upcoming and scheduled. Ellis learning focus blends s, a and t through play; attendance not recorded with Record attendance and Open session actions. Historical 105-minute intervals describe this screenshot only, not current requirements.",
+      "description": "Chronological home-visit schedule: Casey R. age 4, 09:00–10:45 completed and attended; Ellis M. age 3, 11:15–13:00 next up starting in 15m; Rowan P. age 3, 14:00–15:45 upcoming and scheduled. Ellis learning focus blends s, a and t through play; attendance not recorded with Record attendance and Open session actions. Historical 105-minute intervals describe this screenshot only, not current requirements.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/staff-today-desktop.png",
       "confidence": "EXTRACTED",
@@ -1055,7 +1055,7 @@
     },
     {
       "label": "Staff desktop parent update draft",
-      "description": "Separate Needs Attention card for Casey R. 09:00 session labelled Parent update \u00b7 Draft and FAMILY COPY. Draft observation update prepared for family; Preview parent update action. Distinct visible UI from the internal private staff note; no sending action shown in this card.",
+      "description": "Separate Needs Attention card for Casey R. 09:00 session labelled Parent update · Draft and FAMILY COPY. Draft observation update prepared for family; Preview parent update action. Distinct visible UI from the internal private staff note; no sending action shown in this card.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/staff-today-desktop.png",
       "confidence": "EXTRACTED",
@@ -1082,7 +1082,7 @@
     },
     {
       "label": "Historical 105-minute session timeline",
-      "description": "Screenshot shows nine pending blocks from 11:15 to 13:00, labelled 105 minutes total: arrive and settle, welcome circle, phonics, move, snack and story, maths through play, singing and music, make and explore, review and goodbye. The 11:30\u201311:45 phonics block is selected. This is a historical static design, not a verified current scheduling rule.",
+      "description": "Screenshot shows nine pending blocks from 11:15 to 13:00, labelled 105 minutes total: arrive and settle, welcome circle, phonics, move, snack and story, maths through play, singing and music, make and explore, review and goodbye. The 11:30–11:45 phonics block is selected. This is a historical static design, not a verified current scheduling rule.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/staff-session-desktop.png",
       "source_location": null,
@@ -1098,7 +1098,7 @@
     },
     {
       "label": "Selected phonics activity and materials",
-      "description": "Central panel shows Stage 1 sound blending, s / sun, a / apple, t / tap and p / pan tiles; an activity summary; three materials rows marked Ready; and a tutor cue to keep a gentle pace and follow the child\u2019s interest.",
+      "description": "Central panel shows Stage 1 sound blending, s / sun, a / apple, t / tap and p / pan tiles; an activity summary; three materials rows marked Ready; and a tutor cue to keep a gentle pace and follow the child’s interest.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/staff-session-desktop.png",
       "source_location": null,
@@ -1130,7 +1130,7 @@
     },
     {
       "label": "Parent home mobile concept",
-      "description": "Static fictional mobile portal preview explicitly labelled Concept \u00b7 fictional data, not evidence of runtime implementation. Greeting Alex; child selector Robin T. \u00b7 Age 3. Bottom navigation shows Home selected, Sessions, Learning, Messages with a notification dot, and Account.",
+      "description": "Static fictional mobile portal preview explicitly labelled Concept · fictional data, not evidence of runtime implementation. Greeting Alex; child selector Robin T. · Age 3. Bottom navigation shows Home selected, Sessions, Learning, Messages with a notification dot, and Account.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/parent-home-mobile.png",
       "confidence": "EXTRACTED",
@@ -1141,7 +1141,7 @@
     },
     {
       "label": "Parent mobile next-session card",
-      "description": "Next session Thu 12 Nov 2026, 09:00\u201310:45 (1h 45m), Sounds, stories & small discoveries. With Sam \u00b7 Home visit; Playful sound practice and a story. View session and Request a change actions. The displayed historical 105-minute duration describes this screenshot only, not current requirements.",
+      "description": "Next session Thu 12 Nov 2026, 09:00–10:45 (1h 45m), Sounds, stories & small discoveries. With Sam · Home visit; Playful sound practice and a story. View session and Request a change actions. The displayed historical 105-minute duration describes this screenshot only, not current requirements.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/parent-home-mobile.png",
       "confidence": "EXTRACTED",
@@ -1174,7 +1174,7 @@
     },
     {
       "label": "Staff today mobile concept",
-      "description": "Static UI explicitly labelled Concept \u00b7 fictional data. Single-column Goldleaf Staff dashboard greets Sam (Tutor), shows three sessions today with one completed and two remaining, and bottom navigation for Today, Sessions, Children, Messages and More.",
+      "description": "Static UI explicitly labelled Concept · fictional data. Single-column Goldleaf Staff dashboard greets Sam (Tutor), shows three sessions today with one completed and two remaining, and bottom navigation for Today, Sessions, Children, Messages and More.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/staff-today-mobile.png",
       "source_location": null,
@@ -1190,7 +1190,7 @@
     },
     {
       "label": "Mobile next-session and attendance affordances",
-      "description": "Next-up card shows fictional Ellis M., age 3, 11:15\u201313:00 home visit, a learning focus, attendance Not recorded, separate Mark present and Mark absent buttons, and Open session. These explicit attendance controls are design affordances, not verified functionality.",
+      "description": "Next-up card shows fictional Ellis M., age 3, 11:15–13:00 home visit, a learning focus, attendance Not recorded, separate Mark present and Mark absent buttons, and Open session. These explicit attendance controls are design affordances, not verified functionality.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/staff-today-mobile.png",
       "source_location": null,
@@ -1206,7 +1206,7 @@
     },
     {
       "label": "Mobile three-session timeline",
-      "description": "Stacked cards show Casey R. 09:00\u201310:45 Completed \u00b7 Attended with View summary, Ellis M. 11:15\u201313:00 Next up, and Rowan P. 14:00\u201315:45 Upcoming with Not recorded. Times and statuses are fictional static examples.",
+      "description": "Stacked cards show Casey R. 09:00–10:45 Completed · Attended with View summary, Ellis M. 11:15–13:00 Next up, and Rowan P. 14:00–15:45 Upcoming with Not recorded. Times and statuses are fictional static examples.",
       "file_type": "image",
       "source_file": "docs/portal-mockups/staff-today-mobile.png",
       "source_location": null,
@@ -1420,7 +1420,7 @@
       "label": "listFamilies()",
       "file_type": "code",
       "source_file": "lib/portal/families.ts",
-      "source_location": "L12",
+      "source_location": "L9",
       "id": "families_listfamilies",
       "community": 1,
       "norm_label": "listfamilies()"
@@ -1429,7 +1429,7 @@
       "label": "readFamily()",
       "file_type": "code",
       "source_file": "lib/portal/families.ts",
-      "source_location": "L18",
+      "source_location": "L15",
       "id": "families_readfamily",
       "community": 1,
       "norm_label": "readfamily()"
@@ -1438,7 +1438,7 @@
       "label": "listFamilyMemberships()",
       "file_type": "code",
       "source_file": "lib/portal/families.ts",
-      "source_location": "L26",
+      "source_location": "L23",
       "id": "families_listfamilymemberships",
       "community": 1,
       "norm_label": "listfamilymemberships()"
@@ -1447,7 +1447,7 @@
       "label": "listStaff()",
       "file_type": "code",
       "source_file": "lib/portal/families.ts",
-      "source_location": "L33",
+      "source_location": "L37",
       "id": "families_liststaff",
       "community": 1,
       "norm_label": "liststaff()"
@@ -1456,7 +1456,7 @@
       "label": "createFamilyWithInvitation()",
       "file_type": "code",
       "source_file": "lib/portal/families.ts",
-      "source_location": "L39",
+      "source_location": "L43",
       "id": "families_createfamilywithinvitation",
       "community": 1,
       "norm_label": "createfamilywithinvitation()"
@@ -1555,7 +1555,7 @@
       "label": "setFamilyFounding()",
       "file_type": "code",
       "source_file": "lib/portal/families.ts",
-      "source_location": "L55",
+      "source_location": "L62",
       "id": "families_setfamilyfounding",
       "community": 0,
       "norm_label": "setfamilyfounding()"
@@ -1681,7 +1681,7 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
-      "source_location": "L2",
+      "source_location": "L1",
       "id": "app_portal_provider_admin_families_familyid_page_tsx",
       "community": 2,
       "norm_label": "page.tsx"
@@ -1690,7 +1690,7 @@
       "label": "FamilyDetail()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
-      "source_location": "L16",
+      "source_location": "L19",
       "id": "page_familydetail",
       "community": 2,
       "norm_label": "familydetail()"
@@ -2918,7 +2918,7 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L2",
+      "source_location": "L1",
       "norm_label": "page.tsx"
     },
     {
@@ -3196,14 +3196,14 @@
       "label": "deliveryLabel()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L17"
+      "source_location": "L19"
     },
     {
       "id": "page_randomuuid",
       "label": "randomUUID()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L90"
+      "source_location": "L94"
     },
     {
       "id": "lib_portal_children_ts",
@@ -5406,7 +5406,7 @@
       "label": "onboardingScopeKey()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L90"
+      "source_location": "L94"
     },
     {
       "id": "adminforms_feedback",
@@ -5931,6 +5931,97 @@
       "label": "admin-family-workspace.test.ts",
       "file_type": "code",
       "source_file": "lib/admin-family-workspace.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "lib_portal_membership_target_ts",
+      "label": "membership-target.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/membership-target.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "membership_target_removescopedmembership",
+      "label": "removeScopedMembership()",
+      "file_type": "code",
+      "source_file": "lib/portal/membership-target.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "app_portal_provider_admin_membership_actions_ts",
+      "label": "membership-actions.ts",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/membership-actions.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "membership_actions_revokeacceptedmember",
+      "label": "revokeAcceptedMember()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/membership-actions.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "components_portal_revokemembershipform_tsx",
+      "label": "RevokeMembershipForm.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/RevokeMembershipForm.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "revokemembershipform_revokemembershipform",
+      "label": "RevokeMembershipForm()",
+      "file_type": "code",
+      "source_file": "components/portal/RevokeMembershipForm.tsx",
+      "source_location": "L8"
+    },
+    {
+      "id": "lib_membership_target_test_ts",
+      "label": "membership-target.test.ts",
+      "file_type": "code",
+      "source_file": "lib/membership-target.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "families_revokemembership",
+      "label": "revokeMembership()",
+      "file_type": "code",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L30"
+    },
+    {
+      "id": "staff_profiles_membershipprofiles",
+      "label": "membershipProfiles()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff-profiles.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "portal_completion_acceptance",
+      "label": "Portal completion acceptance evidence",
+      "file_type": "document",
+      "source_file": "docs/portal-completion/acceptance.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_completion_data_policy",
+      "label": "Portal data inventory and policy draft",
+      "file_type": "document",
+      "source_file": "docs/portal-completion/data-policy.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_completion_rehearsal",
+      "label": "Portal recovery rehearsal runbook",
+      "file_type": "document",
+      "source_file": "docs/portal-completion/rehearsal.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_completion_restore_script",
+      "label": "Local synthetic restore rehearsal",
+      "file_type": "code",
+      "source_file": "scripts/portal-completion/local-restore-rehearsal.sh",
       "source_location": "L1"
     }
   ],
@@ -14649,6 +14740,330 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/(portal)/(provider)/admin/children/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_membership_target_ts",
+      "target": "membership_target_removescopedmembership",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/membership-target.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "lib_portal_membership_target_ts",
+      "_tgt": "membership_target_removescopedmembership",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_membership_actions_ts",
+      "target": "membership_actions_revokeacceptedmember",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/membership-actions.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_membership_actions_ts",
+      "_tgt": "membership_actions_revokeacceptedmember",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_revokemembershipform_tsx",
+      "target": "revokemembershipform_revokemembershipform",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/RevokeMembershipForm.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "components_portal_revokemembershipform_tsx",
+      "_tgt": "revokemembershipform_revokemembershipform",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_families_ts",
+      "target": "families_listfamilies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_listfamilies",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_families_ts",
+      "target": "families_readfamily",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_readfamily",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_families_ts",
+      "target": "families_listfamilymemberships",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_listfamilymemberships",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_families_ts",
+      "target": "families_revokemembership",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_revokemembership",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_families_ts",
+      "target": "families_liststaff",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_liststaff",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_families_ts",
+      "target": "families_createfamilywithinvitation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_createfamilywithinvitation",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_families_ts",
+      "target": "families_setfamilyfounding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_setfamilyfounding",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_staff_profiles_ts",
+      "target": "staff_profiles_membershipprofiles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff-profiles.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "lib_portal_staff_profiles_ts",
+      "_tgt": "staff_profiles_membershipprofiles",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "staff_profiles_liststaffprofiles",
+      "target": "staff_profiles_membershipprofiles",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff-profiles.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "staff_profiles_liststaffprofiles",
+      "_tgt": "staff_profiles_membershipprofiles",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_families_familyid_page_tsx",
+      "target": "page_familydetail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_families_familyid_page_tsx",
+      "_tgt": "page_familydetail",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_staff_page_tsx",
+      "target": "page_deliverylabel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_staff_page_tsx",
+      "_tgt": "page_deliverylabel",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_staff_page_tsx",
+      "target": "page_onboardingscopekey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L94",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_staff_page_tsx",
+      "_tgt": "page_onboardingscopekey",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_staff_page_tsx",
+      "target": "page_randomuuid",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L94",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_staff_page_tsx",
+      "_tgt": "page_randomuuid",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "membership_actions_revokeacceptedmember",
+      "target": "membership_target_removescopedmembership",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "app/(portal)/(provider)/admin/membership-actions.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "membership_actions_revokeacceptedmember",
+      "_tgt": "membership_target_removescopedmembership"
+    },
+    {
+      "source": "staff_profiles_liststaffprofiles",
+      "target": "families_liststaff",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "lib/portal/staff-profiles.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "staff_profiles_liststaffprofiles",
+      "_tgt": "families_liststaff"
+    },
+    {
+      "source": "page_familydetail",
+      "target": "families_readfamily",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "page_familydetail",
+      "_tgt": "families_readfamily"
+    },
+    {
+      "source": "page_familydetail",
+      "target": "families_listfamilymemberships",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "page_familydetail",
+      "_tgt": "families_listfamilymemberships"
+    },
+    {
+      "source": "page_familydetail",
+      "target": "staff_profiles_membershipprofiles",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "page_familydetail",
+      "_tgt": "staff_profiles_membershipprofiles"
+    },
+    {
+      "source": "membership_actions_revokeacceptedmember",
+      "target": "membership_target_removescopedmembership",
+      "_src": "membership_actions_revokeacceptedmember",
+      "_tgt": "membership_target_removescopedmembership",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/membership-actions.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "membership_actions_revokeacceptedmember",
+      "target": "families_revokemembership",
+      "_src": "membership_actions_revokeacceptedmember",
+      "_tgt": "families_revokemembership",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/membership-actions.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "families_revokemembership",
+      "target": "portal_staff_onboarding",
+      "_src": "families_revokemembership",
+      "_tgt": "portal_staff_onboarding",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_completion_rehearsal",
+      "target": "portal_completion_restore_script",
+      "_src": "portal_completion_rehearsal",
+      "_tgt": "portal_completion_restore_script",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/portal-completion/rehearsal.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_delivery_plan",
+      "target": "portal_completion_acceptance",
+      "_src": "portal_delivery_plan",
+      "_tgt": "portal_completion_acceptance",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "docs/superpowers/plans/2026-11-11-goldleaf-portal.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "launch_checklist",
+      "target": "portal_completion_acceptance",
+      "_src": "launch_checklist",
+      "_tgt": "portal_completion_acceptance",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "docs/launch-checklist.md",
       "source_location": "L1",
       "weight": 1.0
     }

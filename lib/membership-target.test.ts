@@ -1,11 +1,38 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { membershipScopeSchema, removeScopedMembership, type MembershipScope } from "./portal/membership-target";
+import { readFileSync } from "node:fs";
+import { createElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { RevokeMembershipForm } from "../components/portal/RevokeMembershipForm";
+import { membershipRemovalKey, membershipScopeSchema, removeScopedMembership, type MembershipScope } from "./portal/membership-target";
 
 const member = "10000000-0000-4000-8000-000000000001";
 const family = "10000000-0000-4000-8000-000000000002";
 const other = "10000000-0000-4000-8000-000000000003";
 const parent: MembershipScope = { role: "parent", familyId: family, membershipId: member, generation: "0" };
+
+test("removal form identity changes with the access generation for parent and staff", () => {
+  const actor = { userId: "admin", authSessionId: "session" };
+  const revoke = async () => ({ status: "idle" as const, message: "" });
+  for (const role of ["parent", "staff"] as const) {
+    const form = (generation: string) => createElement(RevokeMembershipForm, {
+      key: membershipRemovalKey(actor, member, generation), actor, role,
+      label: "member@example.invalid", revoke,
+    });
+    assert.equal(form("0").key, form("0").key);
+    assert.notEqual(form("0").key, form("2").key);
+    assert.notEqual(form("0").key, membershipRemovalKey({ ...actor, userId: "other" }, member, "0"));
+    assert.notEqual(form("0").key, membershipRemovalKey({ ...actor, authSessionId: "other" }, member, "0"));
+    assert.notEqual(form("0").key, membershipRemovalKey(actor, family, "0"));
+    const html = renderToStaticMarkup(form("2"));
+    assert.match(html, /<input(?=[^>]*name="confirm")(?=[^>]*required="")(?![^>]*checked)/);
+    assert.doesNotMatch(html, /role="alert"/);
+  }
+  const familyPage = readFileSync("app/(portal)/(provider)/admin/families/[familyId]/page.tsx", "utf8");
+  const staffPage = readFileSync("app/(portal)/(provider)/admin/staff/page.tsx", "utf8");
+  assert.match(familyPage, /key=\{membershipRemovalKey\(actor, parent\.id, parent\.generation\)\}/);
+  assert.match(staffPage, /key=\{membershipRemovalKey\(actor, selected\.id, selected\.generation\)\}/);
+});
 
 test("removal authorizes twice, checks the selected family, then revokes", async () => {
   const calls: string[] = [];

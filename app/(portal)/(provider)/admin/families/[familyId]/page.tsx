@@ -11,6 +11,7 @@ import { FoundingForm, InvitationActions } from "@/components/portal/AdminForms"
 import { getFoundingAvailability } from "@/lib/founding-availability";
 import { listFamilyMemberships, readFamily } from "@/lib/portal/families";
 import { membershipProfiles } from "@/lib/portal/staff-profiles";
+import { membershipRemovalKey } from "@/lib/portal/membership-target";
 import { RevokeMembershipForm } from "@/components/portal/RevokeMembershipForm";
 import { revokeAcceptedMember } from "../../membership-actions";
 import { listFamilyInvitations } from "@/lib/portal/invitation-delivery";
@@ -37,7 +38,7 @@ async function FamilyDetail({ params, searchParams }: { params: Promise<{ family
         {parents.length ? <ul className="mt-4 divide-y divide-[#e3d7c3]">{parents.map((parent) => <li key={parent.id} className="py-4">
           <p className="font-medium">{parent.name ?? "Parent"}</p>
           <p className="mt-1 break-all text-sm text-[#35594a]">{parent.email ?? "Verified account identity unavailable"}</p>
-          {parent.email && <RevokeMembershipForm key={onboardingScopeKey(actor, parent.id)} actor={actor} role="parent" label={parent.email} revoke={revokeAcceptedMember.bind(null, { role: "parent", familyId: family.id, membershipId: parent.id, generation: parent.generation })} />}
+          {parent.email && <RevokeMembershipForm key={membershipRemovalKey(actor, parent.id, parent.generation)} actor={actor} role="parent" label={parent.email} revoke={revokeAcceptedMember.bind(null, { role: "parent", familyId: family.id, membershipId: parent.id, generation: parent.generation })} />}
         </li>)}</ul> : <p className="mt-4 text-sm text-[#35594a]">No parents have accepted an invitation yet.</p>}
         <hr className="my-6 border-[#e3d7c3]" />
         <h2 className="!font-sans !text-base font-medium">Parent invitations</h2>

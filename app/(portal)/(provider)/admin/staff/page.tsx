@@ -11,6 +11,7 @@ import { listFamilies } from "@/lib/portal/families";
 import { requireRole } from "@/lib/portal/require-role";
 import { listStaffDeliveries, listStaffFamilyAssignments } from "@/lib/portal/staff";
 import { listStaffProfiles } from "@/lib/portal/staff-profiles";
+import { membershipRemovalKey } from "@/lib/portal/membership-target";
 import { RevokeMembershipForm } from "@/components/portal/RevokeMembershipForm";
 import { revokeAcceptedMember } from "../membership-actions";
 
@@ -76,7 +77,7 @@ async function StaffAdmin({ searchParams }: { searchParams: Promise<{ staff?: st
                 ) : (
                   <p className="mt-4 text-sm text-[#35594a]">There are no families to assign yet.</p>
                 )}
-                {selected.email && <RevokeMembershipForm key={onboardingScopeKey(actor, selected.id)} actor={actor} role="staff" label={selected.email} revoke={revokeAcceptedMember.bind(null, { role: "staff", membershipId: selected.id, generation: selected.generation })} />}
+                {selected.email && <RevokeMembershipForm key={membershipRemovalKey(actor, selected.id, selected.generation)} actor={actor} role="staff" label={selected.email} revoke={revokeAcceptedMember.bind(null, { role: "staff", membershipId: selected.id, generation: selected.generation })} />}
               </div>
             )}
           </section>

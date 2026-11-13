@@ -1690,7 +1690,7 @@
       "label": "FamilyDetail()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "id": "page_familydetail",
       "community": 2,
       "norm_label": "familydetail()"
@@ -3196,14 +3196,14 @@
       "label": "deliveryLabel()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L19"
+      "source_location": "L20"
     },
     {
       "id": "page_randomuuid",
       "label": "randomUUID()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L94"
+      "source_location": "L95"
     },
     {
       "id": "lib_portal_children_ts",
@@ -5406,7 +5406,7 @@
       "label": "onboardingScopeKey()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L94"
+      "source_location": "L95"
     },
     {
       "id": "adminforms_feedback",
@@ -5945,7 +5945,7 @@
       "label": "removeScopedMembership()",
       "file_type": "code",
       "source_file": "lib/portal/membership-target.ts",
-      "source_location": "L11"
+      "source_location": "L21"
     },
     {
       "id": "app_portal_provider_admin_membership_actions_ts",
@@ -6051,6 +6051,27 @@
       "file_type": "document",
       "source_file": "docs/portal-completion/notice-draft.md",
       "source_location": "L1"
+    },
+    {
+      "id": "membership_target_membershipremovalkey",
+      "label": "membershipRemovalKey()",
+      "file_type": "code",
+      "source_file": "lib/portal/membership-target.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "membership_target_test_revoke",
+      "label": "revoke()",
+      "file_type": "code",
+      "source_file": "lib/membership-target.test.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "membership_target_test_form",
+      "label": "form()",
+      "file_type": "code",
+      "source_file": "lib/membership-target.test.ts",
+      "source_location": "L18"
     }
   ],
   "links": [
@@ -14712,18 +14733,6 @@
       "weight": 1.0
     },
     {
-      "source": "lib_portal_membership_target_ts",
-      "target": "membership_target_removescopedmembership",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/membership-target.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_src": "lib_portal_membership_target_ts",
-      "_tgt": "membership_target_removescopedmembership",
-      "confidence_score": 1.0
-    },
-    {
       "source": "app_portal_provider_admin_membership_actions_ts",
       "target": "membership_actions_revokeacceptedmember",
       "relation": "contains",
@@ -14868,12 +14877,72 @@
       "confidence_score": 1.0
     },
     {
+      "source": "portal_completion_notice_draft",
+      "target": "portal_completion_data_policy",
+      "_src": "portal_completion_notice_draft",
+      "_tgt": "portal_completion_data_policy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/portal-completion/notice-draft.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_membership_target_ts",
+      "target": "membership_target_membershipremovalkey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/membership-target.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "lib_portal_membership_target_ts",
+      "_tgt": "membership_target_membershipremovalkey",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_membership_target_ts",
+      "target": "membership_target_removescopedmembership",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/membership-target.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "lib_portal_membership_target_ts",
+      "_tgt": "membership_target_removescopedmembership",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_membership_target_test_ts",
+      "target": "membership_target_test_revoke",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/membership-target.test.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "lib_membership_target_test_ts",
+      "_tgt": "membership_target_test_revoke",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_membership_target_test_ts",
+      "target": "membership_target_test_form",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/membership-target.test.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "lib_membership_target_test_ts",
+      "_tgt": "membership_target_test_form",
+      "confidence_score": 1.0
+    },
+    {
       "source": "app_portal_provider_admin_families_familyid_page_tsx",
       "target": "page_familydetail",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "_src": "app_portal_provider_admin_families_familyid_page_tsx",
       "_tgt": "page_familydetail",
@@ -14885,7 +14954,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "_src": "app_portal_provider_admin_staff_page_tsx",
       "_tgt": "page_deliverylabel",
@@ -14897,7 +14966,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L94",
+      "source_location": "L95",
       "weight": 1.0,
       "_src": "app_portal_provider_admin_staff_page_tsx",
       "_tgt": "page_onboardingscopekey",
@@ -14909,23 +14978,47 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L94",
+      "source_location": "L95",
       "weight": 1.0,
       "_src": "app_portal_provider_admin_staff_page_tsx",
       "_tgt": "page_randomuuid",
       "confidence_score": 1.0
     },
     {
-      "source": "portal_completion_notice_draft",
-      "target": "portal_completion_data_policy",
-      "_src": "portal_completion_notice_draft",
-      "_tgt": "portal_completion_data_policy",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/portal-completion/notice-draft.md",
-      "source_location": "L1",
-      "weight": 1.0
+      "source": "membership_target_membershipremovalkey",
+      "target": "page_onboardingscopekey",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "lib/portal/membership-target.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "membership_target_membershipremovalkey",
+      "_tgt": "page_onboardingscopekey"
+    },
+    {
+      "source": "membership_target_removescopedmembership",
+      "target": "membership_target_test_revoke",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "lib/portal/membership-target.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_src": "membership_target_removescopedmembership",
+      "_tgt": "membership_target_test_revoke"
+    },
+    {
+      "source": "membership_target_test_form",
+      "target": "membership_target_membershipremovalkey",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "lib/membership-target.test.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "membership_target_test_form",
+      "_tgt": "membership_target_membershipremovalkey"
     }
   ],
   "hyperedges": []

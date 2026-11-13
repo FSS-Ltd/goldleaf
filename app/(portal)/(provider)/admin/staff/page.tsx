@@ -76,7 +76,7 @@ async function StaffAdmin({ searchParams }: { searchParams: Promise<{ staff?: st
                 ) : (
                   <p className="mt-4 text-sm text-[#35594a]">There are no families to assign yet.</p>
                 )}
-                {selected.email && <RevokeMembershipForm key={onboardingScopeKey(actor, selected.id)} actor={actor} role="staff" label={selected.email} revoke={revokeAcceptedMember.bind(null, { role: "staff", membershipId: selected.id })} />}
+                {selected.email && <RevokeMembershipForm key={onboardingScopeKey(actor, selected.id)} actor={actor} role="staff" label={selected.email} revoke={revokeAcceptedMember.bind(null, { role: "staff", membershipId: selected.id, generation: selected.generation })} />}
               </div>
             )}
           </section>

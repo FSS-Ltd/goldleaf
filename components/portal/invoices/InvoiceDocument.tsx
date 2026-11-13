@@ -61,7 +61,7 @@ export function InvoiceDocument({ invoice }: { invoice: IssuedInvoice }) {
                 {line.days === 1 ? "day" : "days"} per week
               </p>
               <p className="mt-1 text-[#5a6a5e]">
-                {line.quantity_basis === "children" ? `${tierLabel(line.rate_tier)} · ` : ""}{pounds(line.hourly_rate_pence)} per hour ·{" "}
+                {line.quantity_basis === "children" ? `${tierLabel(line.rate_tier)} · ` : ""}{line.pricing_basis === "session" ? `${pounds(line.session_fee_pence)} per session` : `${pounds(line.hourly_rate_pence)} per hour`} ·{" "}
                 {pounds(line.unit_amount_pence)} per{" "}
                 {line.cadence === "weekly" ? "week" : "month"}{line.quantity_basis === "children" ? " per child" : ""}
                 {line.discount_percent > 0

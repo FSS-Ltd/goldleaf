@@ -13,9 +13,9 @@ test("quotes match every published single-child price", () => {
       for (const cadence of ["weekly", "monthly"] as const) {
         const quote = quoteInvoice({ tier: row.tier, days, cadence, serviceDate: "2027-01-01", ...(row.tier === "founding" ? { foundingTransitionDate: "2027-04-01" } : {}) });
         assert.equal(quote.amountPence, row[cadence][days - 1] * 100);
-        assert.equal(quote.hourlyRatePence, row.tier === "standard" ? 3000 : 2500);
+        assert.equal(quote.sessionFeePence, row.tier === "standard" ? 6000 : 5000);
         assert.equal(quote.discountPercent, row.tier === "standard" ? [0, 0, 0, 5, 10][days - 1] : 0);
-        assert.equal(quote.sessionMinutes, 120);
+        assert.equal(quote.sessionMinutes, 105);
         assert.equal(quote.currency, "GBP");
         assert.equal(quote.days, days);
         assert.equal(quote.cadence, cadence);
@@ -26,13 +26,13 @@ test("quotes match every published single-child price", () => {
 
 test("founding rate changes on the confirmed transition date", () => {
   const input = { tier: "founding", days: 4, cadence: "weekly", foundingTransitionDate: "2027-04-01" } as const;
-  assert.equal(quoteInvoice({ ...input, serviceDate: "2027-03-31" }).hourlyRatePence, 2500);
+  assert.equal(quoteInvoice({ ...input, serviceDate: "2027-03-31" }).sessionFeePence, 5000);
   const quote = quoteInvoice({ ...input, serviceDate: "2027-04-01" });
   assert.equal(quote.tier, "founding-post-intro");
-  assert.equal(quote.hourlyRatePence, 2800);
+  assert.equal(quote.sessionFeePence, 5600);
   assert.equal(quote.discountPercent, 0);
-  assert.equal(quote.amountPence, 22500);
-  assert.equal(quoteInvoice({ ...input, cadence: "monthly", serviceDate: "2027-04-02" }).amountPence, 97500);
+  assert.equal(quote.amountPence, 22400);
+  assert.equal(quoteInvoice({ ...input, cadence: "monthly", serviceDate: "2027-04-02" }).amountPence, 97100);
 });
 
 test("rejects invalid dates and incomplete or malformed inputs", () => {

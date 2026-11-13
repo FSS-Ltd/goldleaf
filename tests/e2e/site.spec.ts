@@ -15,9 +15,10 @@ test("sitemap and robots respond", async ({ request }) => {
   expect((await request.get("/robots.txt")).status()).toBe(200);
 });
 
-test("pricing table shows the 2 hour prices", async ({ page }) => {
+test("pricing table shows per-session and weekly prices", async ({ page }) => {
   await page.goto("/#pricing");
   const table = page.locator("#pricing table");
+  await expect(table).toContainText("£60 a session");
   await expect(table).toContainText("£270");
   await expect(table).toContainText("£1170");
   await expect(table).not.toContainText("£250");

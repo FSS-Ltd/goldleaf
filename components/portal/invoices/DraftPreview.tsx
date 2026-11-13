@@ -55,7 +55,7 @@ export function DraftPreview({
                     {line.service_date} · {quantityLabel(line.quantity, line.cadence, line.quantity_basis)} · {line.days} days/week
                   </p>
                   <p className="mt-1 text-xs text-[#5a6a5e]">
-                    {tierLabel(line.rate_tier)} · {pounds(line.hourly_rate_pence)} per hour ·{" "}
+                    {tierLabel(line.rate_tier)} · {pounds(line.session_fee_pence)} per session ·{" "}
                     {pounds(line.unit_amount_pence)} per{" "}
                     {line.cadence === "weekly" ? "week" : "month"}{line.quantity_basis === "children" ? " per child" : ""}
                     {line.discount_percent

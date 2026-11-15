@@ -29,8 +29,8 @@ export function Pricing({ availability }: { availability: Awaited<ReturnType<typ
     <>
       <p className="mt-4 max-w-2xl text-ink-soft">
         {foundingOpen
-          ? `Standard rate £${site.standardRate} an hour. Founding families pay £${site.founding.rate} an hour until ${site.founding.endsLabel}, then £${site.founding.rateAfter} an hour for as long as they stay.`
-          : `The standard rate is £${site.standardRate} an hour.`}
+          ? `Standard rate £${site.standardSessionFee} a session. Founding families pay £${site.founding.sessionFee} a session until ${site.founding.endsLabel}, then £${site.founding.sessionFeeAfter} a session for as long as they stay.`
+          : `The standard rate is £${site.standardSessionFee} a session.`}
       </p>
       <div className="mt-8"><PricingTable availability={availability} /></div>
     </>
@@ -45,8 +45,8 @@ export async function EnquiryPrice() {
 export function EnquiryPriceText({ open = false }: { open?: boolean }) {
   return <p className="prose-x mt-4 mb-10 text-ink-soft">
     {open
-      ? `Founding places are £${site.founding.rate} an hour until ${site.founding.endsLabel}. The standard rate is £${site.standardRate} an hour.`
-      : `The standard rate is £${site.standardRate} an hour.`}{" "}
+      ? `Founding places are £${site.founding.sessionFee} a session until ${site.founding.endsLabel}. The standard rate is £${site.standardSessionFee} a session.`
+      : `The standard rate is £${site.standardSessionFee} a session.`}{" "}
     This is not a booking. It starts a conversation.
   </p>;
 }

@@ -1,6 +1,6 @@
 # Design doc: Goldleaf Tutoring public site
 
-Portal design references: [staff and parent mockup archive](portal-mockups/README.md). These are dated concepts, not implemented public-site or portal features; their 105-minute example sessions predate the current two-hour session plan.
+Portal design references: [staff and parent mockup archive](portal-mockups/README.md). These are dated concepts, not implemented public-site or portal features; their historical examples are design references; the current 105-minute routine is in `content/session.ts`.
 
 Status: approved plan, build in progress. Branch: `feat/public-site`.
 
@@ -17,7 +17,7 @@ Source of truth for business facts: the client's "Goldleaf Learning Business Pla
 - Hosting: Vercel. Analytics: `@vercel/analytics` (cookieless, no banner).
 
 Key decisions
-- Founding offer: 5 places at 25 pounds an hour until Easter 2027, then 28 pounds an hour while the family stays. Standard rate 30 pounds. Shown side by side, as the plan requires.
+- Founding offer: 5 places at 50 pounds a session until Easter 2027, then 56 pounds a session while the family stays. Standard rate 60 pounds a session. Shown side by side, as the plan requires.
 - Service-area business: no street address in markup or schema.
 - Trust claims (DBS, insurance, safeguarding policy) are flags in `content/site.ts` and render only when true.
 - No Ofsted claims anywhere. The client's legal position is still to be confirmed with the local authority.

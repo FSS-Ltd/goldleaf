@@ -51,6 +51,9 @@ test("issued snapshot accepts legacy missing contact and retains new contact", a
  assert.equal(issuedInvoiceRowSchema.safeParse({ id: draft.operationId, snapshot: { ...snapshot, lines: [{ ...snapshot.lines[0], quantity_basis: "unknown" }] }, paid_pence: 0 }).success, false);
  const current = issuedInvoiceRowSchema.parse({ id: draft.operationId, snapshot: { ...snapshot, issuer_contact: "billing@example.com" }, paid_pence: 0 });
  assert.equal(current.snapshot.issuer_contact, "billing@example.com");
+ const sessionLine = { ...snapshot.lines[0], pricing_basis: "session", hourly_rate_pence: null, session_fee_pence: 6000, session_minutes: 105 };
+ assert.equal(issuedInvoiceRowSchema.safeParse({ id: draft.operationId, snapshot: { ...snapshot, lines: [sessionLine] }, paid_pence: 0 }).success, true);
+ assert.equal(issuedInvoiceRowSchema.safeParse({ id: draft.operationId, snapshot: { ...snapshot, lines: [{ ...sessionLine, hourly_rate_pence: 3000 }] }, paid_pence: 0 }).success, false);
 });
 
 test("child-count intent is explicit while legacy request stays unchanged", () => {

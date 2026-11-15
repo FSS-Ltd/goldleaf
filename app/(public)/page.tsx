@@ -17,24 +17,26 @@ import { SubjectGrid } from "@/components/SubjectGrid";
 import { SeedlingScene } from "@/components/seedling/SeedlingScene";
 import { SoundMoment } from "@/components/SoundMoment";
 import { StagePath } from "@/components/StagePath";
-import { site } from "@/content/site";
+import { site, sessionEndLabel, sessionTimeLabel } from "@/content/site";
 import { faqSchema, organisationSchema } from "@/lib/schema-org";
+
+const description = "Small-group and one-to-one, play-based early learning for 2 to 4 year olds in Ashford, Kent: phonics, stories, maths, science, art and music. At a local church, with one-to-one sessions also available at home.";
 
 export const metadata: Metadata = {
   title: { absolute: "Phonics & Early Years Tutor in Ashford, Kent | Goldleaf" },
-  description:
-    "One-to-one, play-based early learning for 2 to 4 year olds in Ashford, Kent: phonics, stories, maths, science, art and music. In your home or at a local church.",
+  description,
   alternates: { canonical: "/" },
-  openGraph: { title: "Phonics & Early Years Tutor in Ashford, Kent | Goldleaf", url: "/", images: ["/opengraph-image.png"] },
+  openGraph: { title: "Phonics & Early Years Tutor in Ashford, Kent | Goldleaf", description, url: "/", images: ["/opengraph-image.png"] },
+  twitter: { card: "summary_large_image", description },
 };
 
 const heroLetters = ["s", "a", "t", "p", "i", "n", "m", "d"];
 
 const facts = [
   { icon: Sprout, title: "Ages 2 to 4", text: "For children not yet in school." },
-  { icon: UserRound, title: "One to one", text: "Your child gets the tutor's full attention. No groups." },
-  { icon: House, title: "Home or church", text: "In your home, or at a local church room." },
-  { icon: Clock, title: "Stay or drop off", text: "You choose. Sessions fit around naps." },
+  { icon: UserRound, title: "Small groups", text: `Up to ${site.maxGroupSize} children, so every child gets plenty of attention. One to one is available on request.` },
+  { icon: House, title: "Home or church", text: "Group sessions take place at a local church room in Ashford. One to one sessions can be there or in your home." },
+  { icon: Clock, title: "Café for parents", text: `To help children settle and focus, parents do not stay in the session room. You are welcome to wait in the café, or drop off and collect at ${sessionEndLabel}.` },
 ];
 
 export default function Home() {
@@ -43,14 +45,14 @@ export default function Home() {
       <JsonLd data={[...organisationSchema(), faqSchema()]} />
 
       {/* Hero */}
-      <section className="section pb-12 md:pb-20">
+      <section className="section overflow-x-clip pb-12 md:pb-20">
         <div className="wrap grid items-center gap-10 md:grid-cols-[1.2fr_0.8fr] md:gap-14">
           <div className="order-1">
             <Eyebrow left>Tutoring in Ashford, Kent</Eyebrow>
             <h1 className="mt-4">A gentle head start in learning for 2 to 4 year olds in Ashford</h1>
             <p className="prose-x mt-6 text-ink-soft">
-              One-to-one, play-based sessions across reading, maths, science, art and music. In your home or at a local
-              church, with one clear reading path from first sounds to first books.
+              Small-group and one-to-one, play-based sessions across reading, maths, science, art and music. At a local
+              church, or one to one in your home, with one clear reading path from first sounds to first books.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Suspense fallback={<ButtonLink href="/enquire">Make an enquiry</ButtonLink>}><FoundingButton /></Suspense>
@@ -105,7 +107,7 @@ export default function Home() {
             <Eyebrow left>A session</Eyebrow>
             <h2 id="session-title" className="mt-3">What a session looks like</h2>
             <p className="prose-x mt-4 text-ink-soft">
-              Two hours of short, varied, play-based activities. Songs, movement, a story, counting games,
+              Sessions run from {sessionTimeLabel}, with short, varied, play-based activities. Songs, movement, a story, counting games,
               discovery and making, with phonics woven through it.
             </p>
             <p className="mt-4 font-semibold">You get a short handover note at the end of every session.</p>

@@ -44,7 +44,7 @@ export function ScheduleFields({
 }) {
   const [childId, setChildId] = useState(defaults.childId ?? "");
   const [date, setDate] = useState(defaults.date ?? "");
-  const [time, setTime] = useState(defaults.time ?? "");
+  const [time, setTime] = useState(defaults.time ?? site.sessionStartTime);
   const [location, setLocation] = useState(defaults.location ?? "");
   let end: ReturnType<typeof formatUkSession> | null = null;
   let invalidTime = false;

@@ -21,18 +21,24 @@ export const invoiceIdSchema = id;
 export type DraftInput = z.infer<typeof draftInputSchema>;
 export type DraftLine = z.infer<typeof draftLineSchema>;
 
-const pricedLineSchema = z.object({
+const lineFields = {
   description: z.string().min(1).max(500), quantity: z.number().int().min(1).max(1000000), quantity_basis: z.enum(["periods", "children"]).optional(), unit_amount_pence: money,
   service_date: z.iso.date(), rate_tier: z.enum(["standard", "founding", "founding-post-intro"]),
-  hourly_rate_pence: money, days, cadence, session_minutes: z.number().int().positive(), discount_percent: z.number().int().min(0).max(100),
-});
+  days, cadence, session_minutes: z.number().int().positive(), discount_percent: z.number().int().min(0).max(100),
+};
+const legacyLineSchema = z.object({ ...lineFields, pricing_basis: z.literal("hourly").optional(), hourly_rate_pence: money, session_fee_pence: z.null().optional() });
+const sessionLineSchema = z.object({ ...lineFields, pricing_basis: z.literal("session"), hourly_rate_pence: z.null(), session_fee_pence: money });
+const pricedLineSchema = z.union([legacyLineSchema, sessionLineSchema]);
+const snapshotLineSchema = z.union([legacyLineSchema.extend({ net_pence: money, vat_pence: money }), sessionLineSchema.extend({ net_pence: money, vat_pence: money })]);
+const issueLineSchema = z.union([legacyLineSchema.loose(), sessionLineSchema.loose()]);
+export type PricedLine = z.infer<typeof pricedLineSchema>;
 const invoiceSnapshotSchema = z.object({
   number: z.number().int().positive().safe(), issuer_name: z.string().min(1), issuer_address: z.string().min(1),
   issuer_contact: z.string().min(1).optional(), recipient_name: z.string().min(1), recipient_address: z.string().min(1), issue_date: z.iso.date(), due_date: z.iso.date(),
   payment_terms_days: z.number().int().nonnegative(), payment_method: z.string().min(1), billing_cadence: cadence,
   founding_transition_date: z.iso.date().nullable(), vat_enabled: z.boolean(), vat_rate_basis_points: z.number().int().nullable(),
   vat_registration: z.string().nullable(), currency: z.literal("GBP"),
-  lines: z.array(pricedLineSchema.extend({ net_pence: money, vat_pence: money })).min(1),
+  lines: z.array(snapshotLineSchema).min(1),
   net_pence: money, vat_pence: money, total_pence: money,
 });
 export const issuedInvoiceRowSchema = z.object({ id, snapshot: invoiceSnapshotSchema, paid_pence: money });
@@ -51,7 +57,7 @@ export const pricingContextSchema = z.looseObject({
 });
 export const issueContextSchema = z.looseObject({
   invoice_id: id, invoice_number: z.string().regex(/^[1-9]\d*$/).nullable(), recipient_name: z.string().min(1), recipient_address: z.string().min(1),
-  pricing: pricingContextSchema, lines: z.array(pricedLineSchema.loose()).min(1).max(100),
+  pricing: pricingContextSchema, lines: z.array(issueLineSchema).min(1).max(100),
 });
 
 const listCommon = { id, family_id: id, family_name: z.string().nullable(), recipient_name: z.string().min(1), paid_pence: money };

@@ -1,5 +1,5 @@
 import { quoteInvoice } from "./invoice-pricing";
-import type { DraftLine } from "./invoice-schemas";
+import type { DraftLine, PricedLine } from "./invoice-schemas";
 
 type PricingContext = {
   settings: { founding_transition_date: string | null };
@@ -8,13 +8,10 @@ type PricingContext = {
 export class BillingConfigurationError extends Error {}
 export class InvoiceQuoteMismatchError extends Error {}
 
-export type PricedLine = {
-  description: string; quantity: number; quantity_basis?: "periods" | "children"; unit_amount_pence: number; service_date: string;
-  rate_tier: "standard" | "founding" | "founding-post-intro"; hourly_rate_pence: number;
-  days: DraftLine["days"]; cadence: DraftLine["cadence"]; session_minutes: number; discount_percent: number;
-};
+export type { PricedLine } from "./invoice-schemas";
+type SessionPricedLine = Extract<PricedLine, { pricing_basis: "session" }>;
 
-export function quoteDraftLines(lines: readonly DraftLine[], context: PricingContext, basis: "periods" | "children" = "periods"): PricedLine[] {
+export function quoteDraftLines(lines: readonly DraftLine[], context: PricingContext, basis: "periods" | "children" = "periods"): SessionPricedLine[] {
   if (lines.length !== context.eligibility.length) throw new BillingConfigurationError("Eligibility context does not match service dates");
   return lines.map((line, index) => {
     const eligibility = context.eligibility[index];
@@ -27,7 +24,7 @@ export function quoteDraftLines(lines: readonly DraftLine[], context: PricingCon
       : quoteInvoice({ ...common, tier: "standard" });
     if (BigInt(line.quantity) * BigInt(quote.amountPence) > BigInt(2147483647)) throw new BillingConfigurationError("Invoice line exceeds supported amount");
     return { description: line.description, quantity: line.quantity, ...(basis === "children" ? { quantity_basis: basis } : {}), unit_amount_pence: quote.amountPence,
-      service_date: line.serviceDate, rate_tier: quote.tier, hourly_rate_pence: quote.hourlyRatePence,
+      service_date: line.serviceDate, rate_tier: quote.tier, pricing_basis: "session" as const, hourly_rate_pence: null, session_fee_pence: quote.sessionFeePence,
       days: quote.days, cadence: quote.cadence, session_minutes: quote.sessionMinutes, discount_percent: quote.discountPercent };
   });
 }
@@ -38,7 +35,7 @@ export function verifyInvoiceLines(lines: readonly PricedLine[], context: Pricin
   for (let i = 0; i < lines.length; i++) {
     const actual = lines[i];
     const quote = expected[i];
-    if (actual.unit_amount_pence !== quote.unit_amount_pence || actual.hourly_rate_pence !== quote.hourly_rate_pence ||
+    if (actual.unit_amount_pence !== quote.unit_amount_pence || actual.pricing_basis !== "session" || actual.session_fee_pence !== quote.session_fee_pence ||
         actual.rate_tier !== quote.rate_tier || actual.discount_percent !== quote.discount_percent || actual.session_minutes !== quote.session_minutes) {
       throw new InvoiceQuoteMismatchError("Stored invoice line does not match the current quote");
     }

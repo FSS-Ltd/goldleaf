@@ -8,6 +8,7 @@ import { SoundChips, SoundTiles } from "@/components/SoundTiles";
 import { SessionTable, SessionTimeline } from "@/components/SessionTimeline";
 import { StagePath } from "@/components/StagePath";
 import { SubjectGrid } from "@/components/SubjectGrid";
+import { sessionTimeLabel } from "@/content/site";
 import { ageMap, stages } from "@/content/progression";
 import { progressSteps, unitA } from "@/content/units";
 import { breadcrumbSchema } from "@/lib/schema-org";
@@ -157,7 +158,7 @@ export default function HowWeTeach() {
         <div className="wrap">
           <h2 id="session-title">A session, block by block</h2>
           <p className="prose-x mt-4 text-ink-soft">
-            Sessions last up to 2 hours, including arrival, review and handover. Two year olds do shorter, simpler
+            Sessions run from {sessionTimeLabel}, including arrival, review and handover. Two year olds do shorter, simpler
             versions of each block. The tutor watches and notes progress throughout, then gives you a short
             handover note at the end.
           </p>

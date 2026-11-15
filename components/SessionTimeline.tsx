@@ -39,7 +39,7 @@ export function SessionTable() {
   return (
     <div className="overflow-x-auto rounded-card border border-line bg-paper">
       <table className="w-full min-w-[40rem] border-collapse text-left">
-        <caption className="sr-only">The 2 hour session, block by block, for age 2 and ages 3 to 4.</caption>
+        <caption className="sr-only">The session, block by block, for age 2 and ages 3 to 4.</caption>
         <thead>
           <tr className="border-b border-line bg-paper-deep text-sm">
             <th scope="col" className="p-3 font-semibold">Time</th>

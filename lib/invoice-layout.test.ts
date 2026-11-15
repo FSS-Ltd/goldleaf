@@ -19,9 +19,10 @@ const line = {
   rate_tier: "founding-post-intro" as const, hourly_rate_pence: 2800,
   days: 2 as const, cadence: "weekly" as const, session_minutes: 120, discount_percent: 0,
 };
+const sessionLine = { ...line, pricing_basis: "session" as const, hourly_rate_pence: null, session_fee_pence: 5600, session_minutes: 105 };
 
 test("invoice preview constrains long text and keeps the amount visible", () => {
-  const quote = { settings, lines: [line], netPence: 22000, vatPence: 0, totalPence: 22000, fingerprint: "test" };
+  const quote = { settings, lines: [sessionLine], netPence: 22000, vatPence: 0, totalPence: 22000, fingerprint: "test" };
   const html = renderToStaticMarkup(createElement(DraftPreview, {
     settings, recipientName: longText, recipientAddress: longText, quote,
   }));
@@ -29,6 +30,7 @@ test("invoice preview constrains long text and keeps the amount visible", () => 
   assert.match(html, /class="min-w-0 flex-1 font-medium">LongInvoice/);
   assert.match(html, /class="shrink-0 whitespace-nowrap">£220\.00/);
   assert.ok(html.includes(longText));
+  assert.match(html, /£56\.00 per session/);
 });
 
 test("issued and printed invoice text wraps inside a shrinkable line grid", () => {
@@ -46,6 +48,11 @@ test("issued and printed invoice text wraps inside a shrinkable line grid", () =
   assert.match(html, /sm:grid-cols-\[minmax\(0,1fr\)_auto\]/);
   assert.ok(html.includes(longText));
   assert.ok(html.includes("£220.00"));
+  assert.match(html, /£28\.00 per hour/);
+  const sessionInvoice = issuedInvoiceRowSchema.parse({ id: invoice.id, snapshot: { ...snapshot, lines: [{ ...sessionLine, net_pence: 22000, vat_pence: 0 }] }, paid_pence: 0 });
+  const sessionHtml = renderToStaticMarkup(createElement(InvoiceDocument, { invoice: sessionInvoice }));
+  assert.match(sessionHtml, /£56\.00 per session/);
+  assert.doesNotMatch(sessionHtml, /per hour/);
 });
 
 test("saved draft rates show each child cadence and retain legacy period copy", async () => {

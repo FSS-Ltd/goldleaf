@@ -1,5 +1,9 @@
 # Graph Report - goldleaf-graph-refresh  (2026-11-11)
 
+## Scoped client website and pricing update (2026-11-13)
+
+Graphify AST extraction refreshed 31 changed TypeScript/TSX files while retaining the project-wide index (754 nodes, 780 links). The session-fee migration, SQL tests and client checklist are manually source-linked because SQL and document semantic extraction were not run. Subsequent home-hero clipping and pricing-note spacing changes were re-extracted and introduced no structural nodes. Unresolved AST import targets are omitted; clustering and earlier semantic coverage were not recomputed. Consult `FEATURE_TREE.md` and source for current dependencies and rollout boundaries. No external upload or background watcher was used.
+
 ## Scoped admin Today update (2026-11-12)
 
 Scoped AST extraction refreshed the changed Today, navigation, selector, DAL and test files while retaining the existing graph. SQL extraction is unsupported; migration 0020 is represented by a source-linked node. Migrations 0019 and 0020 and 84 restricted runtime grants were verified in QA, development and production; invoice snapshots remained unchanged. Isolated QA verified the family transition, retained unsaved value, settled selection and Back/Forward navigation; Admin Today at 320px had no horizontal overflow and session links remained above fixed navigation. Earlier clustering and semantic coverage were not recomputed; assistive technology and separate-user verification remain open.
@@ -300,3 +304,5 @@ Membership and pilot handoff refresh (13 November 2026): eight allowlisted TypeS
 Checked membership refresh (13 November 2026): scoped TypeScript extraction includes generation validation and bound targets; 60 unresolved external/cross-scope AST edges were omitted. Changed-source extracted edges were replaced while unrelated graph nodes and connections were retained. Migration 0021 and its synthetic upgrade/concurrency tests are manually source-linked because SQL extraction is unsupported. Two functions need explicit runtime grants after review; migration and grants are not deployed. The separate synthetic restore passed with migrations 0001–0021; cross-scope and semantic coverage remains incomplete.
 
 Removal confirmation refresh: four affected TypeScript files re-extracted; generation-bound React form keys and their regression test are mapped. Existing SQL and cross-scope coverage limits remain.
+
+Merge reconciliation: retained the membership-revocation graph and the session-fee website graph, using current-main nodes and extracted edges for source files changed there. Existing source-backed SQL links and unrelated nodes remain; SQL and cross-scope semantic coverage remain incomplete. A scoped AST refresh processed 39 relevant files; 212 unresolved external or cross-scope edges were omitted. Migrations 0021 and 0022 remain separate deployment steps.

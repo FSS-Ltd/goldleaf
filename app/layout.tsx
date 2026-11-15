@@ -17,20 +17,22 @@ const lexend = Lexend({
 
 export const viewport: Viewport = { themeColor: "#fef8f3" };
 
+const description = "Small-group and one-to-one, play-based phonics, maths and music tutoring for 2 to 4 year olds in Ashford, Kent. At a local church, with one-to-one sessions also available at home.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.siteUrl),
   title: {
     default: `${site.service}, ${areaLabel}`,
     template: `%s | ${site.service}, ${site.area.town}`,
   },
-  description:
-    "One-to-one, play-based phonics, maths and music tutoring for 2 to 4 year olds in Ashford, Kent. In your home or at a local church.",
+  description,
   openGraph: {
     type: "website",
     locale: "en_GB",
     siteName: site.name,
+    description,
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", description },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

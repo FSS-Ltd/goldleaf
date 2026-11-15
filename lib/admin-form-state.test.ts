@@ -89,6 +89,7 @@ test("rendered controlled fields retain failure values and clear after success",
       pending: false,
     }),
   );
+  assert.match(cleanSchedule, /value="13:00"/);
   assert.doesNotMatch(
     cleanChild + cleanSchedule,
     /A child|2026-11-10|10:30|The studio/,

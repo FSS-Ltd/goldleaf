@@ -23,7 +23,7 @@ export function organisationSchema() {
       areaServed,
       founder: { "@type": "Person", name: site.tutor.name },
       description:
-        "One-to-one, play-based phonics, maths and music tutoring for 2 to 4 year olds in Ashford, Kent.",
+        "Small-group and one-to-one, play-based phonics, maths and music tutoring for 2 to 4 year olds in Ashford, Kent.",
     },
     {
       "@context": "https://schema.org",
@@ -38,9 +38,9 @@ export function organisationSchema() {
         priceCurrency: "GBP",
         priceSpecification: {
           "@type": "UnitPriceSpecification",
-          price: site.standardRate,
+          price: site.standardSessionFee,
           priceCurrency: "GBP",
-          unitCode: "HUR",
+          unitText: "session",
         },
       },
     },

@@ -7,7 +7,7 @@ const context = { settings: { founding_transition_date: "2027-04-01" }, eligibil
 
 test("quotes derive rates from eligibility and cutover", () => {
  const after = quoteDraftLines(lines, context);
- assert.equal(after[0].unit_amount_pence, 22500);
+ assert.equal(after[0].unit_amount_pence, 22400);
  assert.equal(after[0].rate_tier, "founding-post-intro");
  assert.equal(after[0].discount_percent, 0);
  const standard = quoteDraftLines(lines, { ...context, eligibility: [{ service_date: "2027-04-01", is_founding: false }] });
@@ -21,9 +21,11 @@ test("quotes derive rates from eligibility and cutover", () => {
 test("issue rejects changed stored price or quote metadata", () => {
  const quoted = quoteDraftLines(lines, context);
  assert.doesNotThrow(() => verifyInvoiceLines(quoted, context));
- for (const change of [{ unit_amount_pence: 1 }, { hourly_rate_pence: 1 }, { discount_percent: 5 }, { rate_tier: "standard" as const }]) {
+ for (const change of [{ unit_amount_pence: 1 }, { session_fee_pence: 1 }, { discount_percent: 5 }, { rate_tier: "standard" as const }]) {
    assert.throws(() => verifyInvoiceLines([{ ...quoted[0], ...change }], context), /quote/);
  }
+ const legacy = { description: "Tuition", quantity: 1, unit_amount_pence: 22500, service_date: "2027-04-01", rate_tier: "founding-post-intro" as const, hourly_rate_pence: 2800, days: 4 as const, cadence: "weekly" as const, session_minutes: 120, discount_percent: 0 };
+ assert.throws(() => verifyInvoiceLines([legacy], context), /quote/);
 });
 
 test("VAT rounds half pennies up per line and rejects excessive totals", async () => {
@@ -31,7 +33,7 @@ test("VAT rounds half pennies up per line and rejects excessive totals", async (
  const priced = quoteDraftLines(lines, context)[0];
  assert.deepEqual(calculateInvoiceTotals([{ ...priced, unit_amount_pence: 3 }], { vat_enabled: true, vat_rate_basis_points: 5000 }), { netPence: 3, vatPence: 2, totalPence: 5 });
  assert.deepEqual(calculateInvoiceTotals([{ ...priced, unit_amount_pence: 1 }, { ...priced, unit_amount_pence: 1 }], { vat_enabled: true, vat_rate_basis_points: 5000 }), { netPence: 2, vatPence: 2, totalPence: 4 });
- assert.deepEqual(calculateInvoiceTotals([priced], { vat_enabled: false, vat_rate_basis_points: null }), { netPence: 22500, vatPence: 0, totalPence: 22500 });
+ assert.deepEqual(calculateInvoiceTotals([priced], { vat_enabled: false, vat_rate_basis_points: null }), { netPence: 22400, vatPence: 0, totalPence: 22400 });
  assert.throws(() => calculateInvoiceTotals([{ ...priced, quantity: 1000000 }], { vat_enabled: false, vat_rate_basis_points: null }), /exceeds/);
 });
 
@@ -54,10 +56,10 @@ test("issuing requires configured payment and billing settings", async () => {
 
 test("child-count quotes multiply the per-child price at tier boundaries", async () => {
  const { calculateInvoiceTotals } = await import("./portal/invoice-quote");
- for (const [date, founding, rate, total] of [["2027-04-04", true, 2500, 40000], ["2027-04-05", true, 2800, 45000], ["2027-04-06", true, 2800, 45000], ["2027-04-05", false, 3000, 46000]] as const) {
+ for (const [date, founding, rate, total] of [["2027-04-04", true, 5000, 40000], ["2027-04-05", true, 5600, 44800], ["2027-04-06", true, 5600, 44800], ["2027-04-05", false, 6000, 46000]] as const) {
    const quote = quoteDraftLines([{ ...lines[0], quantity: 2, serviceDate: date }], { settings: { founding_transition_date: "2027-04-05" }, eligibility: [{ service_date: date, is_founding: founding }] }, "children");
    assert.equal(quote[0].quantity_basis, "children");
-   assert.equal(quote[0].hourly_rate_pence, rate);
+   assert.equal(quote[0].session_fee_pence, rate);
    assert.equal(calculateInvoiceTotals(quote, { vat_enabled: false, vat_rate_basis_points: null }).netPence, total);
  }
 });

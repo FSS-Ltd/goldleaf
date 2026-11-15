@@ -306,3 +306,5 @@ Checked membership refresh (13 November 2026): scoped TypeScript extraction incl
 Removal confirmation refresh: four affected TypeScript files re-extracted; generation-bound React form keys and their regression test are mapped. Existing SQL and cross-scope coverage limits remain.
 
 Merge reconciliation: retained the membership-revocation graph and the session-fee website graph, using current-main nodes and extracted edges for source files changed there. Existing source-backed SQL links and unrelated nodes remain; SQL and cross-scope semantic coverage remain incomplete. A scoped AST refresh processed 39 relevant files; 212 unresolved external or cross-scope edges were omitted. Migrations 0021 and 0022 remain separate deployment steps.
+
+Scoped PortalShell refresh: the desktop brand link now derives its name from the wordmark alternative text and role label. Production admin axe evidence and the outstanding candidate retest are recorded in the feature tree and acceptance matrix. SQL and cross-scope semantic coverage remain incomplete.

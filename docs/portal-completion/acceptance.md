@@ -18,3 +18,9 @@ Evidence baseline: main `1af85fd44ad57bd26c16b85dadfb0436e32be913`, 13 November 
 | Accessibility, visual, performance and release | Unverified at full-app scope. Plan: `docs/superpowers/plans/2026-11-11-goldleaf-portal.md:36`. | Keyboard, focus, zoom, reduced motion, screen reader, axe, performance and independent Jury evidence against plan. Codex in-app browser inventory was empty and opening it failed; no Chrome fallback. Fresh browser checks blocked until IAB works. |
 
 Final release evidence must name the exact revision, reviews, CI and deployment, test results and fixtures, approved recipients and send counts, cleanup, policy decisions and remaining blockers. Historical CI run `43323490003` succeeded for the baseline commit; it is not evidence for a later revision.
+
+## Scoped admin browser evidence — 15 November 2026
+
+On production main `812022e867be7f17a0999bb4154999d6fe85676f`, the existing admin Google sign-in succeeded. At 320px and 390px, Today and Account had no horizontal overflow. Mobile More opened by keyboard; Tab reached Invoices, and Escape closed it and returned focus to More. The checked pages had one main landmark and `noindex,nofollow`. Reduced-motion emulation was effective; animation behavior was not verified. The observed idle network included two Clerk `/v1/client` POSTs and no portal-content requests; database query counts were not measured. No account, mail or profile writes were performed.
+
+Axe-core 4.14 reported no violations on the 390px Today view. At 1280px it reported a serious label-content-name mismatch on the desktop brand link: its `aria-label` omitted the visible role label. The shared `PortalShell` now relies on its image alternative text and visible role text for the link name; candidate authenticated browser retest remains pending. Full screen-reader, zoom, performance, parent and staff acceptance remain open. Clerk CLI was unavailable for provider-log verification.

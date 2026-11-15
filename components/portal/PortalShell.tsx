@@ -148,7 +148,6 @@ export function PortalShell({
         <a
           href={home}
           className="block px-2 py-2"
-          aria-label="Goldleaf portal home"
         >
           <Image
             src="/brand/goldleaf-wordmark-trim.webp"

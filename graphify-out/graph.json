@@ -6128,6 +6128,13 @@
       "file_type": "code",
       "source_file": "db/tests/invoice-session-fee-after.sql",
       "source_location": "L1"
+    },
+    {
+      "id": "portal_provider_audit",
+      "label": "Clerk production sign-in log observation and limits",
+      "file_type": "document",
+      "source_file": "docs/portal-completion/provider-audit.md",
+      "source_location": "L1"
     }
   ],
   "links": [
@@ -15504,6 +15511,30 @@
       "weight": 1.0,
       "_src": "page_familydetail",
       "_tgt": "staff_profiles_membershipprofiles"
+    },
+    {
+      "source": "portal_completion_acceptance",
+      "target": "portal_provider_audit",
+      "_src": "portal_completion_acceptance",
+      "_tgt": "portal_provider_audit",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/portal-completion/acceptance.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_provider_audit",
+      "target": "lib_portal_identity_ts",
+      "_src": "portal_provider_audit",
+      "_tgt": "lib_portal_identity_ts",
+      "relation": "related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "docs/portal-completion/provider-audit.md",
+      "source_location": "L1",
+      "weight": 1.0
     }
   ],
   "hyperedges": []

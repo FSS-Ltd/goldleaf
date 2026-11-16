@@ -6001,7 +6001,7 @@
       "label": "Portal completion acceptance evidence",
       "file_type": "document",
       "source_file": "docs/portal-completion/acceptance.md",
-      "source_location": "L1"
+      "source_location": "L32"
     },
     {
       "id": "portal_completion_data_policy",
@@ -6268,7 +6268,7 @@
       "label": "Local adapter QA evidence",
       "file_type": "document",
       "source_file": "docs/superpowers/plans/2026-11-16-portal-alerts.md",
-      "source_location": "L1"
+      "source_location": "L18"
     },
     {
       "id": "lib_alert_adapters_test_ts",
@@ -15936,6 +15936,18 @@
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/plans/2026-11-16-portal-alerts.md",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_alert_qa_evidence",
+      "target": "portal_completion_acceptance",
+      "_src": "portal_alert_qa_evidence",
+      "_tgt": "portal_completion_acceptance",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-11-16-portal-alerts.md",
+      "source_location": "L24",
       "weight": 1.0
     }
   ],

@@ -316,3 +316,7 @@ Local recovery refresh (16 November 2026): the source-linked restore script now 
 ## Scoped alert update, 16 November 2026
 
 Graphify AST extraction was run on `lib/portal/alerts` and merged into the existing project graph with prefixed node IDs. The alert SQL, UI and local worker entry points and their source-backed links were added manually. SQL and shell relationships are not AST-extracted; this scoped update does not re-cluster the full graph or establish semantic coverage for new documentation.
+
+## Local adapter and role fixture evidence, 16 November 2026
+
+Scoped AST extraction added the mocked adapter tests, with source-linked adapter, data inventory and QA evidence nodes. The acceptance document records synthetic in-app browser fixtures; its link to the actual components is source-backed documentation, not an extraction of browser state. No full semantic extraction or re-clustering was performed. Existing SQL, cross-scope and semantic coverage gaps remain.

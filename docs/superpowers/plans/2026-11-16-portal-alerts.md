@@ -14,3 +14,11 @@ Request resolutions for records predating migration 0023 cannot prove original m
 Frozen email uses the existing protected `/portal` router rather than a role-specific link. This can add one navigation step, while keeping the payload stable across surviving roles. The pre-migration limitation affects resolution email only, not request resolution.
 
 Commit the frozen payload and key before opening the authorization gate transaction. Otherwise a crash during provider submission would roll back the idempotency record. Then hold the gate locks through bounded submit and fenced completion in the next transaction.
+
+## Local adapter QA, 16 November 2026
+
+`lib/alert-adapters.test.ts` uses isolated `node:test` fetch mocks and synthetic addresses. It checks fixed provider endpoints, authorization and abort signals, invalid subjects, provider failures, malformed identity responses, subject matching, verified-only filtering, the generic Resend payload and idempotency key. A successful HTTP response is provider acceptance, not proof of receipt. The existing canonical identity function preserves address casing and duplicates and does not impose an address-count cap; the worker validates the selected address. No real provider or email was contacted.
+
+Local checks: `pnpm test:unit` passed 139 tests; `pnpm lint`, `pnpm typecheck`, and `pnpm build` passed with Node 22.23.3 and synthetic public configuration. This does not verify provider delivery, separate-user isolation, or production readiness.
+
+The scoped local role fixture audit is recorded in `docs/portal-completion/acceptance.md`. It does not exercise alert delivery, authenticated routes, persistence or live actions. PR 30 merged at main `5a86589`, with CI run `43844051819` successful; no new remote 0023 migration or worker grants were applied. Deployment is not functional QA.

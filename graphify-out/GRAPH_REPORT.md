@@ -312,3 +312,7 @@ Scoped PortalShell refresh: the desktop brand link now derives its name from the
 Provider-log evidence refresh (15 November 2026): `portal_provider_audit` is source-linked from the acceptance matrix and related to portal identity source by an explicitly inferred edge. It records a selected existing-admin sign-in and an automatically delivered provider security notification, not complete auth-event coverage or underlying retention. The observation is manually source-linked; external provider state, SQL extraction and broader semantic/cross-scope coverage remain outside the structural graph.
 
 Local recovery refresh (16 November 2026): the source-linked restore script now exercises 0021 membership generations and checked grants and 0022 session-fee snapshots alongside a pre-0022 legacy hourly snapshot. The 0021 edge is inferred from migration ordering and tested behavior; the 0022 edge is explicit. Shell and SQL remain manually source-linked; broader semantic and external deployment coverage remains incomplete.
+
+## Scoped alert update, 16 November 2026
+
+Graphify AST extraction was run on `lib/portal/alerts` and merged into the existing project graph with prefixed node IDs. The alert SQL, UI and local worker entry points and their source-backed links were added manually. SQL and shell relationships are not AST-extracted; this scoped update does not re-cluster the full graph or establish semantic coverage for new documentation.

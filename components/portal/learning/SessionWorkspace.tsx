@@ -106,7 +106,7 @@ export async function SessionWorkspace({
         </div>
         <div className="space-y-6 lg:col-span-2">
           <PrivateNoteEditor
-            key={session.id}
+            key={`note:${session.id}`}
             sessionId={session.id}
             actor={actor}
             actions={actions}
@@ -114,7 +114,7 @@ export async function SessionWorkspace({
             version={workspace.note_version}
           />
           <WorkspaceEditor
-            key={session.id}
+            key={`draft:${session.id}`}
             sessionId={session.id}
             actor={actor}
             actions={actions}

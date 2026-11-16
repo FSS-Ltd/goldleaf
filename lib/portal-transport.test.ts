@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { readFileSync } from "node:fs";
 import { neonConfig } from "@neondatabase/serverless";
 import { configurePortalTransport, localPortalTransport } from "./portal/transport";
 
@@ -19,6 +20,7 @@ test("local transport accepts only development and synthetic local databases", (
   assert.deepEqual(localPortalTransport(valid), {
     fetchEndpoint: "http://127.0.0.1:8080/sql",
     wsProxy: "127.0.0.1:8080/v1",
+    requestTimeoutMs: 30_000,
   });
   for (const host of ["localhost", "127.0.0.1", "[::1]", "db.localtest.me"]) {
     assert.ok(localPortalTransport({ ...valid, GOLDLEAF_PORTAL_DATABASE_URL: `postgres://u:p@${host}/goldleaf_auth_qa` }));
@@ -65,4 +67,11 @@ test("driver configuration changes only after both database URLs pass validation
   } finally {
     neonConfig.fetchEndpoint = original;
   }
+});
+
+
+test("portal database keeps the five-second default outside local mode", () => {
+  const source = readFileSync("lib/portal/database.ts", "utf8");
+  assert.match(source, /AbortSignal\.timeout\(transport\?\.requestTimeoutMs \?\? 5_000\)/);
+  assert.equal(localPortalTransport({ NODE_ENV: "production" }), undefined);
 });

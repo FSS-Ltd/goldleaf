@@ -24,7 +24,7 @@ function validDatabase(value: string | undefined): boolean {
 
 export function localPortalTransport(
   env: Readonly<Record<string, string | undefined>>,
-): { fetchEndpoint: string; wsProxy: string } | undefined {
+): { fetchEndpoint: string; wsProxy: string; requestTimeoutMs: number } | undefined {
   const proxy = env.GOLDLEAF_PORTAL_LOCAL_PROXY_URL;
   if (!proxy) return undefined;
   if (
@@ -41,7 +41,8 @@ export function localPortalTransport(
   } catch {
     throw new Error("Invalid local portal transport configuration");
   }
-  return { fetchEndpoint: `${parsed.origin}/sql`, wsProxy: `${parsed.host}/v1` };
+  // Local proxy handshakes need a bounded budget beyond the production deadline.
+  return { fetchEndpoint: `${parsed.origin}/sql`, wsProxy: `${parsed.host}/v1`, requestTimeoutMs: 30_000 };
 }
 
 export function configurePortalTransport(

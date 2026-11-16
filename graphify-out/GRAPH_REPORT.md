@@ -1,5 +1,9 @@
 # Graph Report - goldleaf-graph-refresh  (2026-11-11)
 
+## Scoped local transport timeout update (2026-11-16)
+
+Graphify AST extraction refreshed `lib/portal/database.ts`, `lib/portal/transport.ts` and `lib/portal-transport.test.ts` (7 nodes, 16 extracted edges). The retained graph has 804 nodes and 868 links; unresolved imports were omitted and source-verified imports linked. Validated local proxy mode alone supplies a bounded 30-second HTTP timeout; the ordinary deadline remains five seconds. No prior clustering or semantic coverage was recomputed.
+
 ## Local QA documentation update (2026-11-16)
 
 The existing `portal_completion_acceptance` and `portal_completion_rehearsal` document nodes still point to their source files and prior anchors. Local QA preparation, localhost startup guidance and the unresolved browser attachment are recorded in those documents and linked from the feature tree. No TypeScript changed; scoped AST extraction was not repeated. Earlier semantic and clustering coverage remains unchanged.

@@ -6299,20 +6299,6 @@
       "status": "planned"
     },
     {
-      "id": "lib_portal_database_ts",
-      "label": "database.ts",
-      "file_type": "code",
-      "source_file": "lib/portal/database.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "database_portaldatabase",
-      "label": "portalDatabase()",
-      "file_type": "code",
-      "source_file": "lib/portal/database.ts",
-      "source_location": "L5"
-    },
-    {
       "id": "lib_portal_events_server_ts",
       "label": "events-server.ts",
       "file_type": "code",
@@ -6325,6 +6311,20 @@
       "file_type": "code",
       "source_file": "lib/portal/events-server.ts",
       "source_location": "L6"
+    },
+    {
+      "id": "lib_portal_database_ts",
+      "label": "database.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/database.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "database_portaldatabase",
+      "label": "portalDatabase()",
+      "file_type": "code",
+      "source_file": "lib/portal/database.ts",
+      "source_location": "L5"
     },
     {
       "id": "lib_portal_transport_ts",
@@ -6352,7 +6352,7 @@
       "label": "configurePortalTransport()",
       "file_type": "code",
       "source_file": "lib/portal/transport.ts",
-      "source_location": "L47"
+      "source_location": "L48"
     },
     {
       "id": "lib_portal_transport_test_ts",
@@ -16019,21 +16019,49 @@
       "weight": 1.0
     },
     {
-      "source": "lib_portal_database_ts",
-      "target": "database_portaldatabase",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/database.ts",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
       "source": "lib_portal_events_server_ts",
       "target": "events_server_openportaleventstream",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/events-server.ts",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "events_server_openportaleventstream",
+      "target": "transport_configureportaltransport",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "lib/portal/events-server.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_events_server_ts",
+      "target": "lib_portal_transport_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/events-server.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "events_server_openportaleventstream",
+      "target": "events_stream_openeventstream",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/events-server.ts",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_database_ts",
+      "target": "database_portaldatabase",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/database.ts",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -16060,7 +16088,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/transport.ts",
-      "source_location": "L47",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -16078,7 +16106,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal/transport.ts",
-      "source_location": "L50",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -16092,16 +16120,6 @@
       "weight": 1.0
     },
     {
-      "source": "events_server_openportaleventstream",
-      "target": "transport_configureportaltransport",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "lib/portal/events-server.ts",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
       "source": "lib_portal_database_ts",
       "target": "lib_portal_transport_ts",
       "relation": "imports_from",
@@ -16111,30 +16129,12 @@
       "weight": 1.0
     },
     {
-      "source": "lib_portal_events_server_ts",
-      "target": "lib_portal_transport_ts",
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/events-server.ts",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
       "source": "lib_portal_transport_test_ts",
       "target": "lib_portal_transport_ts",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "lib/portal-transport.test.ts",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "events_server_openportaleventstream",
-      "target": "events_stream_openeventstream",
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/events-server.ts",
-      "source_location": "L49",
+      "source_location": "L5",
       "weight": 1.0
     }
   ],

@@ -10,6 +10,8 @@
 
 **Spec.** [Live Stitch project](https://stitch.withgoogle.com/projects/8457214603129819597), [six archived exports](../../portal-mockups/README.md), [portal brief](../../portal-mockups/DESIGN-BRIEF.md), [feature tree](../../../FEATURE_TREE.md) and [Graphify map](../../../graphify-out/graph.json).
 
+> **Evidence update, 13 November 2026.** This plan preserves historical sprint requirements and progress statements. Current source and verified tests take precedence over old checkboxes and earlier Clerk, mail and migration setup statements. Production Clerk setup and migrations 0001–0020 were completed; the user confirmed receipt of one authorised enquiry. Invitation and invoice mail and other provider flows remain unverified. Consult the [current acceptance matrix](../../portal-completion/acceptance.md) for per-workflow status, evidence and release gaps. Unchecked items are not automatically missing or complete.
+
 ## Design contract
 
 The six final Stitch screen exports set composition, visual order, component proportions, typography and interaction hierarchy. Use the final screen HTML and archive for review. The project's global theme metadata contains older font settings. Use the screen-level Fraunces and Lexend typography, actual wordmark, and existing paper, forest and gold tokens. Render current business data from [site](../../../content/site.ts), [pricing](../../../lib/pricing.ts) and [session blocks](../../../content/session.ts). The samples show fictional families and historical 105-minute sessions. Use the current 120-minute duration and actual authorised records.

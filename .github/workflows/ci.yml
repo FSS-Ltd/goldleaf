@@ -54,6 +54,12 @@ jobs:
           --health-retries 5
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
       - name: Verify onboarding database
         env:
           PGPASSWORD: local-test-only
@@ -80,11 +86,14 @@ jobs:
             -f db/tests/message-views.sql -f db/tests/portal-invalidation.sql \
             -f db/migrations/0019_invoice_quantity_basis.sql \
             -f db/migrations/0020_admin_today.sql -f db/tests/admin-today.sql \
+            -f db/tests/membership-generation-before.sql -f db/migrations/0021_checked_membership_revocation.sql \
+            -f db/tests/membership-generation.sql \
             -f db/migrations/0022_session_fee_pricing.sql
           # A fresh backend ensures the temporary-type attack tests initial function compilation.
           psql -X -h 127.0.0.1 -p 55439 -d goldleaf_test -v ON_ERROR_STOP=1 \
             -f db/tests/onboarding-grants.sql
           sh db/tests/onboarding-concurrency.sh 127.0.0.1 goldleaf_test
+          sh db/tests/membership-generation-concurrency.sh 127.0.0.1 goldleaf_test
           sh db/tests/invitation-delivery-concurrency.sh 127.0.0.1 goldleaf_test
           sh db/tests/staff-delivery-concurrency.sh 127.0.0.1 goldleaf_test
           sh db/tests/learning-concurrency.sh 127.0.0.1 goldleaf_test
@@ -127,6 +136,25 @@ jobs:
           sh db/tests/session-ui-migration-concurrency.sh 127.0.0.1 goldleaf_session_ui_migration
           createdb -h 127.0.0.1 -p 55439 goldleaf_migration_race
           sh db/tests/staff-migration-concurrency.sh 127.0.0.1 goldleaf_migration_race
+
+      - name: Verify native alert worker
+        env:
+          PGPASSWORD: local-test-only
+          PGUSER: postgres
+          ALERT_TEST_DATABASE_URL: postgres://postgres:local-test-only@127.0.0.1:55439/goldleaf_alert_test
+        run: |
+          createdb -h 127.0.0.1 -p 55439 goldleaf_alert_test
+          for migration in db/migrations/*.sql; do
+            psql -X -h 127.0.0.1 -p 55439 -d goldleaf_alert_test -v ON_ERROR_STOP=1 -f "$migration"
+          done
+          psql -X -h 127.0.0.1 -p 55439 -d goldleaf_alert_test -v ON_ERROR_STOP=1 \
+            -f db/tests/alerts.sql -f db/tests/alert-lifecycle.sql -f db/tests/alert-worker-grants.sql
+          pnpm exec tsx --test tests/alerts/*.test.ts
+      - name: Verify alert concurrency and local restore
+        run: |
+          docker pull postgres:17-alpine
+          sh db/tests/alert-concurrency.sh
+          bash scripts/portal-completion/local-restore-rehearsal.sh
 
   deploy:
     if: github.event_name != 'pull_request'

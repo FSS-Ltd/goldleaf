@@ -298,3 +298,21 @@ ActorScope review correction: scoped AST extraction refreshed the actor fence an
 Invoice quantity update: scoped AST extraction refreshed changed invoice TypeScript nodes; migration `db/migrations/0019_invoice_quantity_basis.sql` and its child-write guard are manually source-linked. SQL and docs remain outside AST semantic extraction.
 
 Invoice graph review correction: Graphify misidentified imported JSX calls as local definitions in `DraftPreview.tsx` and `AdminDraftInvoice.tsx`; those false nodes and affected pseudo-caller edges were removed. Source-verified component-file calls now point to the canonical helpers in `format.ts`. Other legacy AST and SQL coverage gaps remain.
+
+Membership and pilot handoff refresh (13 November 2026): eight allowlisted TypeScript files were structurally re-extracted and reconciled with the retained project index; 57 unresolved external or cross-scope edges were omitted. The membership action, scoped target check, verified identity reuse, existing SQL revocation and new pilot evidence documents are source-linked. SQL extraction is unsupported; historical semantic and cross-scope coverage remain incomplete. The local synthetic restore tests schema access off/on only; browser, separate-user and remote recovery evidence remain pending.
+
+Checked membership refresh (13 November 2026): scoped TypeScript extraction includes generation validation and bound targets; 60 unresolved external/cross-scope AST edges were omitted. Changed-source extracted edges were replaced while unrelated graph nodes and connections were retained. Migration 0021 and its synthetic upgrade/concurrency tests are manually source-linked because SQL extraction is unsupported. Two functions need explicit runtime grants after review; migration and grants are not deployed. The separate synthetic restore passed with migrations 0001–0021; cross-scope and semantic coverage remains incomplete.
+
+Removal confirmation refresh: four affected TypeScript files re-extracted; generation-bound React form keys and their regression test are mapped. Existing SQL and cross-scope coverage limits remain.
+
+Merge reconciliation: retained the membership-revocation graph and the session-fee website graph, using current-main nodes and extracted edges for source files changed there. Existing source-backed SQL links and unrelated nodes remain; SQL and cross-scope semantic coverage remain incomplete. A scoped AST refresh processed 39 relevant files; 212 unresolved external or cross-scope edges were omitted. Migrations 0021 and 0022 remain separate deployment steps.
+
+Scoped PortalShell refresh: the desktop brand link now derives its name from the wordmark alternative text and role label. Production admin axe evidence and the outstanding candidate retest are recorded in the feature tree and acceptance matrix. SQL and cross-scope semantic coverage remain incomplete.
+
+Provider-log evidence refresh (15 November 2026): `portal_provider_audit` is source-linked from the acceptance matrix and related to portal identity source by an explicitly inferred edge. It records a selected existing-admin sign-in and an automatically delivered provider security notification, not complete auth-event coverage or underlying retention. The observation is manually source-linked; external provider state, SQL extraction and broader semantic/cross-scope coverage remain outside the structural graph.
+
+Local recovery refresh (16 November 2026): the source-linked restore script now exercises 0021 membership generations and checked grants and 0022 session-fee snapshots alongside a pre-0022 legacy hourly snapshot. The 0021 edge is inferred from migration ordering and tested behavior; the 0022 edge is explicit. Shell and SQL remain manually source-linked; broader semantic and external deployment coverage remains incomplete.
+
+## Scoped alert update, 16 November 2026
+
+Graphify AST extraction was run on `lib/portal/alerts` and merged into the existing project graph with prefixed node IDs. The alert SQL, UI and local worker entry points and their source-backed links were added manually. SQL and shell relationships are not AST-extracted; this scoped update does not re-cluster the full graph or establish semantic coverage for new documentation.

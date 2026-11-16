@@ -1420,7 +1420,7 @@
       "label": "listFamilies()",
       "file_type": "code",
       "source_file": "lib/portal/families.ts",
-      "source_location": "L12",
+      "source_location": "L10",
       "id": "families_listfamilies",
       "community": 1,
       "norm_label": "listfamilies()"
@@ -1429,7 +1429,7 @@
       "label": "readFamily()",
       "file_type": "code",
       "source_file": "lib/portal/families.ts",
-      "source_location": "L18",
+      "source_location": "L16",
       "id": "families_readfamily",
       "community": 1,
       "norm_label": "readfamily()"
@@ -1438,7 +1438,7 @@
       "label": "listFamilyMemberships()",
       "file_type": "code",
       "source_file": "lib/portal/families.ts",
-      "source_location": "L26",
+      "source_location": "L24",
       "id": "families_listfamilymemberships",
       "community": 1,
       "norm_label": "listfamilymemberships()"
@@ -1447,7 +1447,7 @@
       "label": "listStaff()",
       "file_type": "code",
       "source_file": "lib/portal/families.ts",
-      "source_location": "L33",
+      "source_location": "L39",
       "id": "families_liststaff",
       "community": 1,
       "norm_label": "liststaff()"
@@ -1456,7 +1456,7 @@
       "label": "createFamilyWithInvitation()",
       "file_type": "code",
       "source_file": "lib/portal/families.ts",
-      "source_location": "L39",
+      "source_location": "L45",
       "id": "families_createfamilywithinvitation",
       "community": 1,
       "norm_label": "createfamilywithinvitation()"
@@ -1555,7 +1555,7 @@
       "label": "setFamilyFounding()",
       "file_type": "code",
       "source_file": "lib/portal/families.ts",
-      "source_location": "L55",
+      "source_location": "L64",
       "id": "families_setfamilyfounding",
       "community": 0,
       "norm_label": "setfamilyfounding()"
@@ -1681,7 +1681,7 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
-      "source_location": "L2",
+      "source_location": "L1",
       "id": "app_portal_provider_admin_families_familyid_page_tsx",
       "community": 2,
       "norm_label": "page.tsx"
@@ -1690,7 +1690,7 @@
       "label": "FamilyDetail()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
-      "source_location": "L16",
+      "source_location": "L20",
       "id": "page_familydetail",
       "community": 2,
       "norm_label": "familydetail()"
@@ -2918,7 +2918,7 @@
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L2",
+      "source_location": "L1",
       "norm_label": "page.tsx"
     },
     {
@@ -3196,14 +3196,14 @@
       "label": "deliveryLabel()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L17"
+      "source_location": "L20"
     },
     {
       "id": "page_randomuuid",
       "label": "randomUUID()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L90"
+      "source_location": "L95"
     },
     {
       "id": "lib_portal_children_ts",
@@ -5406,7 +5406,7 @@
       "label": "onboardingScopeKey()",
       "file_type": "code",
       "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L90"
+      "source_location": "L95"
     },
     {
       "id": "adminforms_feedback",
@@ -5934,6 +5934,146 @@
       "source_location": "L1"
     },
     {
+      "id": "lib_portal_membership_target_ts",
+      "label": "membership-target.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/membership-target.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "membership_target_removescopedmembership",
+      "label": "removeScopedMembership()",
+      "file_type": "code",
+      "source_file": "lib/portal/membership-target.ts",
+      "source_location": "L21"
+    },
+    {
+      "id": "app_portal_provider_admin_membership_actions_ts",
+      "label": "membership-actions.ts",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/membership-actions.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "membership_actions_revokeacceptedmember",
+      "label": "revokeAcceptedMember()",
+      "file_type": "code",
+      "source_file": "app/(portal)/(provider)/admin/membership-actions.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "components_portal_revokemembershipform_tsx",
+      "label": "RevokeMembershipForm.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/RevokeMembershipForm.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "revokemembershipform_revokemembershipform",
+      "label": "RevokeMembershipForm()",
+      "file_type": "code",
+      "source_file": "components/portal/RevokeMembershipForm.tsx",
+      "source_location": "L8"
+    },
+    {
+      "id": "lib_membership_target_test_ts",
+      "label": "membership-target.test.ts",
+      "file_type": "code",
+      "source_file": "lib/membership-target.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "families_revokemembership",
+      "label": "revokeMembership()",
+      "file_type": "code",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L31"
+    },
+    {
+      "id": "staff_profiles_membershipprofiles",
+      "label": "membershipProfiles()",
+      "file_type": "code",
+      "source_file": "lib/portal/staff-profiles.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "portal_completion_acceptance",
+      "label": "Portal completion acceptance evidence",
+      "file_type": "document",
+      "source_file": "docs/portal-completion/acceptance.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_completion_data_policy",
+      "label": "Portal data inventory and policy draft",
+      "file_type": "document",
+      "source_file": "docs/portal-completion/data-policy.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_completion_rehearsal",
+      "label": "Portal recovery rehearsal runbook",
+      "file_type": "document",
+      "source_file": "docs/portal-completion/rehearsal.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_completion_restore_script",
+      "label": "Local synthetic restore rehearsal",
+      "file_type": "code",
+      "source_file": "scripts/portal-completion/local-restore-rehearsal.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_checked_membership_sql",
+      "label": "Checked membership revocation and access generation",
+      "file_type": "code",
+      "source_file": "db/migrations/0021_checked_membership_revocation.sql",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_membership_generation_tests",
+      "label": "Membership generation upgrade and scope tests",
+      "file_type": "code",
+      "source_file": "db/tests/membership-generation.sql",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_membership_generation_concurrency",
+      "label": "Concurrent checked revocation tests",
+      "file_type": "code",
+      "source_file": "db/tests/membership-generation-concurrency.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_completion_notice_draft",
+      "label": "Unapproved portal privacy notice draft",
+      "file_type": "document",
+      "source_file": "docs/portal-completion/notice-draft.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "membership_target_membershipremovalkey",
+      "label": "membershipRemovalKey()",
+      "file_type": "code",
+      "source_file": "lib/portal/membership-target.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "membership_target_test_revoke",
+      "label": "revoke()",
+      "file_type": "code",
+      "source_file": "lib/membership-target.test.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "membership_target_test_form",
+      "label": "form()",
+      "file_type": "code",
+      "source_file": "lib/membership-target.test.ts",
+      "source_location": "L18"
+    },
+    {
       "id": "admindraftinvoice_quantitylabel",
       "label": "quantityLabel()",
       "file_type": "code",
@@ -5988,6 +6128,133 @@
       "file_type": "code",
       "source_file": "db/tests/invoice-session-fee-after.sql",
       "source_location": "L1"
+    },
+    {
+      "id": "portal_provider_audit",
+      "label": "Clerk production sign-in log observation and limits",
+      "file_type": "document",
+      "source_file": "docs/portal-completion/provider-audit.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_alert_sql",
+      "label": "Alert outbox SQL",
+      "file_type": "code",
+      "source_file": "db/migrations/0023_message_alerts.sql",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_alert_worker",
+      "label": "Local alert worker",
+      "file_type": "code",
+      "source_file": "scripts/portal-alert-worker.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_alert_attention",
+      "label": "Message attention",
+      "file_type": "code",
+      "source_file": "components/portal/MessageAttention.tsx",
+      "source_location": "L1"
+    },
+    {
+      "label": "adapters.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/alerts/adapters.ts",
+      "source_location": "L1",
+      "id": "portal_alert_ast_adapters_ts",
+      "community": 0,
+      "norm_label": "adapters.ts"
+    },
+    {
+      "label": "clerkIdentity()",
+      "file_type": "code",
+      "source_file": "lib/portal/alerts/adapters.ts",
+      "source_location": "L7",
+      "id": "portal_alert_ast_adapters_clerkidentity",
+      "community": 0,
+      "norm_label": "clerkidentity()"
+    },
+    {
+      "label": "resendSubmit()",
+      "file_type": "code",
+      "source_file": "lib/portal/alerts/adapters.ts",
+      "source_location": "L19",
+      "id": "portal_alert_ast_adapters_resendsubmit",
+      "community": 0,
+      "norm_label": "resendsubmit()"
+    },
+    {
+      "label": "model.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/alerts/model.ts",
+      "source_location": "L1",
+      "id": "portal_alert_ast_model_ts",
+      "community": 1,
+      "norm_label": "model.ts"
+    },
+    {
+      "label": "portalOrigin()",
+      "file_type": "code",
+      "source_file": "lib/portal/alerts/model.ts",
+      "source_location": "L14",
+      "id": "portal_alert_ast_model_portalorigin",
+      "community": 1,
+      "norm_label": "portalorigin()"
+    },
+    {
+      "label": "createPayload()",
+      "file_type": "code",
+      "source_file": "lib/portal/alerts/model.ts",
+      "source_location": "L21",
+      "id": "portal_alert_ast_model_createpayload",
+      "community": 1,
+      "norm_label": "createpayload()"
+    },
+    {
+      "label": "retryAt()",
+      "file_type": "code",
+      "source_file": "lib/portal/alerts/model.ts",
+      "source_location": "L25",
+      "id": "portal_alert_ast_model_retryat",
+      "community": 2,
+      "norm_label": "retryat()"
+    },
+    {
+      "label": "delivery.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/alerts/delivery.ts",
+      "source_location": "L1",
+      "id": "portal_alert_ast_delivery_ts",
+      "community": 2,
+      "norm_label": "delivery.ts"
+    },
+    {
+      "label": "deliverClaim()",
+      "file_type": "code",
+      "source_file": "lib/portal/alerts/delivery.ts",
+      "source_location": "L6",
+      "id": "portal_alert_ast_delivery_deliverclaim",
+      "community": 2,
+      "norm_label": "deliverclaim()"
+    },
+    {
+      "label": "worker.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/alerts/worker.ts",
+      "source_location": "L1",
+      "id": "portal_alert_ast_worker_ts",
+      "community": 3,
+      "norm_label": "worker.ts"
+    },
+    {
+      "label": "runWorker()",
+      "file_type": "code",
+      "source_file": "lib/portal/alerts/worker.ts",
+      "source_location": "L5",
+      "id": "portal_alert_ast_worker_runworker",
+      "community": 3,
+      "norm_label": "runworker()"
     }
   ],
   "links": [
@@ -6682,6 +6949,18 @@
       "weight": 1.0
     },
     {
+      "source": "components_foundingcontent_tsx",
+      "target": "lib_founding_availability_ts",
+      "_src": "components_foundingcontent_tsx",
+      "_tgt": "lib_founding_availability_ts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/FoundingContent.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
       "source": "launch_checklist",
       "target": "founding_provision",
       "_src": "launch_checklist",
@@ -6812,66 +7091,6 @@
       "_tgt": "database_portaldatabase",
       "source": "invitations_acceptinvitation",
       "target": "database_portaldatabase"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/families.ts",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_src": "lib_portal_families_ts",
-      "_tgt": "families_listfamilies",
-      "source": "lib_portal_families_ts",
-      "target": "families_listfamilies",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/families.ts",
-      "source_location": "L18",
-      "weight": 1.0,
-      "_src": "lib_portal_families_ts",
-      "_tgt": "families_readfamily",
-      "source": "lib_portal_families_ts",
-      "target": "families_readfamily",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/families.ts",
-      "source_location": "L26",
-      "weight": 1.0,
-      "_src": "lib_portal_families_ts",
-      "_tgt": "families_listfamilymemberships",
-      "source": "lib_portal_families_ts",
-      "target": "families_listfamilymemberships",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/families.ts",
-      "source_location": "L33",
-      "weight": 1.0,
-      "_src": "lib_portal_families_ts",
-      "_tgt": "families_liststaff",
-      "source": "lib_portal_families_ts",
-      "target": "families_liststaff",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/families.ts",
-      "source_location": "L39",
-      "weight": 1.0,
-      "_src": "lib_portal_families_ts",
-      "_tgt": "families_createfamilywithinvitation",
-      "source": "lib_portal_families_ts",
-      "target": "families_createfamilywithinvitation",
-      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -7066,30 +7285,6 @@
       "weight": 1.0
     },
     {
-      "source": "lib_portal_families_ts",
-      "target": "lib_portal_access_ts",
-      "_src": "lib_portal_families_ts",
-      "_tgt": "lib_portal_access_ts",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/portal/families.ts",
-      "source_location": null,
-      "weight": 1.0
-    },
-    {
-      "source": "lib_portal_families_ts",
-      "target": "portal_access_sql",
-      "_src": "lib_portal_families_ts",
-      "_tgt": "portal_access_sql",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/portal/families.ts",
-      "source_location": null,
-      "weight": 1.0
-    },
-    {
       "source": "lib_portal_invitations_ts",
       "target": "lib_portal_access_ts",
       "_src": "lib_portal_invitations_ts",
@@ -7146,18 +7341,6 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "lib/portal/access.ts",
-      "source_location": null,
-      "weight": 1.0
-    },
-    {
-      "source": "lib_portal_families_ts",
-      "target": "lib_portal_schemas_ts",
-      "_src": "lib_portal_families_ts",
-      "_tgt": "lib_portal_schemas_ts",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/portal/families.ts",
       "source_location": null,
       "weight": 1.0
     },
@@ -7220,18 +7403,6 @@
       "source_file": "FEATURE_TREE.md",
       "source_location": null,
       "weight": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/families.ts",
-      "source_location": "L55",
-      "weight": 1.0,
-      "_src": "lib_portal_families_ts",
-      "_tgt": "families_setfamilyfounding",
-      "source": "lib_portal_families_ts",
-      "target": "families_setfamilyfounding",
-      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -9226,18 +9397,6 @@
       "confidence_score": 1.0
     },
     {
-      "source": "lib_portal_staff_profiles_ts",
-      "target": "staff_profiles_liststaffprofiles",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/staff-profiles.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_src": "lib_portal_staff_profiles_ts",
-      "_tgt": "staff_profiles_liststaffprofiles",
-      "confidence_score": 1.0
-    },
-    {
       "source": "components_portal_inviteacceptform_tsx",
       "target": "inviteacceptform_inviteacceptform",
       "relation": "contains",
@@ -9622,30 +9781,6 @@
       "confidence_score": 1
     },
     {
-      "source": "app_portal_provider_admin_staff_page_tsx",
-      "target": "page_deliverylabel",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "_src": "app_portal_provider_admin_staff_page_tsx",
-      "_tgt": "page_deliverylabel",
-      "confidence_score": 1
-    },
-    {
-      "source": "app_portal_provider_admin_staff_page_tsx",
-      "target": "page_randomuuid",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L89",
-      "weight": 1.0,
-      "_src": "app_portal_provider_admin_staff_page_tsx",
-      "_tgt": "page_randomuuid",
-      "confidence_score": 1
-    },
-    {
       "source": "app_portal_provider_admin_page_tsx",
       "target": "page_adminhome",
       "relation": "contains",
@@ -9655,18 +9790,6 @@
       "weight": 1.0,
       "_src": "app_portal_provider_admin_page_tsx",
       "_tgt": "page_adminhome",
-      "confidence_score": 1
-    },
-    {
-      "source": "app_portal_provider_admin_families_familyid_page_tsx",
-      "target": "page_familydetail",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_src": "app_portal_provider_admin_families_familyid_page_tsx",
-      "_tgt": "page_familydetail",
       "confidence_score": 1
     },
     {
@@ -12527,18 +12650,6 @@
       "confidence_score": 1
     },
     {
-      "source": "app_portal_provider_admin_staff_page_tsx",
-      "target": "page_onboardingscopekey",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L89",
-      "weight": 1.0,
-      "_src": "app_portal_provider_admin_staff_page_tsx",
-      "_tgt": "page_onboardingscopekey",
-      "confidence_score": 1
-    },
-    {
       "source": "components_portal_adminforms_tsx",
       "target": "adminforms_feedback",
       "relation": "contains",
@@ -12645,18 +12756,6 @@
       "weight": 1.0,
       "_src": "actions_sendstaffinvite",
       "_tgt": "onboarding_form_state_nextonboardingrevision"
-    },
-    {
-      "source": "app_portal_provider_admin_staff_page_tsx",
-      "target": "page_staffadmin",
-      "_src": "app_portal_provider_admin_staff_page_tsx",
-      "_tgt": "page_staffadmin",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1,
-      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L22",
-      "weight": 1.0
     },
     {
       "source": "page_staffadmin",
@@ -12974,18 +13073,6 @@
       "weight": 1.0
     },
     {
-      "source": "app_portal_provider_admin_families_familyid_page_tsx",
-      "target": "components_portal_loading_portalloading_tsx",
-      "_src": "app_portal_provider_admin_families_familyid_page_tsx",
-      "_tgt": "components_portal_loading_portalloading_tsx",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
       "source": "app_portal_provider_session_task_reset_password_page_tsx",
       "target": "components_portal_loading_portalloading_tsx",
       "_src": "app_portal_provider_session_task_reset_password_page_tsx",
@@ -13079,18 +13166,6 @@
       "confidence_score": 1.0,
       "source_file": "components/portal/auth/AccountProfile.tsx",
       "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "app_portal_provider_admin_staff_page_tsx",
-      "target": "components_portal_loading_portalloading_tsx",
-      "_src": "app_portal_provider_admin_staff_page_tsx",
-      "_tgt": "components_portal_loading_portalloading_tsx",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
-      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -14094,6 +14169,630 @@
       "weight": 1.0
     },
     {
+      "source": "membership_actions_revokeacceptedmember",
+      "target": "membership_target_removescopedmembership",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "app/(portal)/(provider)/admin/membership-actions.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "membership_actions_revokeacceptedmember",
+      "_tgt": "membership_target_removescopedmembership"
+    },
+    {
+      "source": "staff_profiles_liststaffprofiles",
+      "target": "families_liststaff",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "lib/portal/staff-profiles.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "staff_profiles_liststaffprofiles",
+      "_tgt": "families_liststaff"
+    },
+    {
+      "source": "page_familydetail",
+      "target": "families_readfamily",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "page_familydetail",
+      "_tgt": "families_readfamily"
+    },
+    {
+      "source": "page_familydetail",
+      "target": "families_listfamilymemberships",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "page_familydetail",
+      "_tgt": "families_listfamilymemberships"
+    },
+    {
+      "source": "page_familydetail",
+      "target": "staff_profiles_membershipprofiles",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "page_familydetail",
+      "_tgt": "staff_profiles_membershipprofiles"
+    },
+    {
+      "source": "portal_completion_rehearsal",
+      "target": "portal_completion_restore_script",
+      "_src": "portal_completion_rehearsal",
+      "_tgt": "portal_completion_restore_script",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/portal-completion/rehearsal.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_delivery_plan",
+      "target": "portal_completion_acceptance",
+      "_src": "portal_delivery_plan",
+      "_tgt": "portal_completion_acceptance",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "docs/superpowers/plans/2026-11-11-goldleaf-portal.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "launch_checklist",
+      "target": "portal_completion_acceptance",
+      "_src": "launch_checklist",
+      "_tgt": "portal_completion_acceptance",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "docs/launch-checklist.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "families_revokemembership",
+      "target": "portal_checked_membership_sql",
+      "_src": "families_revokemembership",
+      "_tgt": "portal_checked_membership_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_checked_membership_sql",
+      "target": "portal_staff_onboarding",
+      "_src": "portal_checked_membership_sql",
+      "_tgt": "portal_staff_onboarding",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "db/migrations/0021_checked_membership_revocation.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_membership_generation_tests",
+      "target": "portal_checked_membership_sql",
+      "_src": "portal_membership_generation_tests",
+      "_tgt": "portal_checked_membership_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "db/tests/membership-generation.sql",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_membership_generation_concurrency",
+      "target": "portal_checked_membership_sql",
+      "_src": "portal_membership_generation_concurrency",
+      "_tgt": "portal_checked_membership_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "db/tests/membership-generation-concurrency.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_membership_actions_ts",
+      "target": "membership_actions_revokeacceptedmember",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/membership-actions.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_membership_actions_ts",
+      "_tgt": "membership_actions_revokeacceptedmember",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "components_portal_revokemembershipform_tsx",
+      "target": "revokemembershipform_revokemembershipform",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/RevokeMembershipForm.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "components_portal_revokemembershipform_tsx",
+      "_tgt": "revokemembershipform_revokemembershipform",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_families_ts",
+      "target": "families_listfamilies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_listfamilies",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_families_ts",
+      "target": "families_readfamily",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_readfamily",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_families_ts",
+      "target": "families_listfamilymemberships",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_listfamilymemberships",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_families_ts",
+      "target": "families_revokemembership",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_revokemembership",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_families_ts",
+      "target": "families_liststaff",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_liststaff",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_families_ts",
+      "target": "families_createfamilywithinvitation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_createfamilywithinvitation",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_families_ts",
+      "target": "families_setfamilyfounding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_setfamilyfounding",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_staff_profiles_ts",
+      "target": "staff_profiles_liststaffprofiles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff-profiles.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "lib_portal_staff_profiles_ts",
+      "_tgt": "staff_profiles_liststaffprofiles",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_staff_profiles_ts",
+      "target": "staff_profiles_membershipprofiles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff-profiles.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "lib_portal_staff_profiles_ts",
+      "_tgt": "staff_profiles_membershipprofiles",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "staff_profiles_liststaffprofiles",
+      "target": "staff_profiles_membershipprofiles",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/staff-profiles.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "staff_profiles_liststaffprofiles",
+      "_tgt": "staff_profiles_membershipprofiles",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "portal_completion_notice_draft",
+      "target": "portal_completion_data_policy",
+      "_src": "portal_completion_notice_draft",
+      "_tgt": "portal_completion_data_policy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/portal-completion/notice-draft.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_membership_target_ts",
+      "target": "membership_target_membershipremovalkey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/membership-target.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "lib_portal_membership_target_ts",
+      "_tgt": "membership_target_membershipremovalkey",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_membership_target_ts",
+      "target": "membership_target_removescopedmembership",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/membership-target.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "lib_portal_membership_target_ts",
+      "_tgt": "membership_target_removescopedmembership",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_membership_target_test_ts",
+      "target": "membership_target_test_revoke",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/membership-target.test.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "lib_membership_target_test_ts",
+      "_tgt": "membership_target_test_revoke",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_membership_target_test_ts",
+      "target": "membership_target_test_form",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/membership-target.test.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "lib_membership_target_test_ts",
+      "_tgt": "membership_target_test_form",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_families_familyid_page_tsx",
+      "target": "page_familydetail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_families_familyid_page_tsx",
+      "_tgt": "page_familydetail",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_staff_page_tsx",
+      "target": "page_deliverylabel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_staff_page_tsx",
+      "_tgt": "page_deliverylabel",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_staff_page_tsx",
+      "target": "page_onboardingscopekey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_staff_page_tsx",
+      "_tgt": "page_onboardingscopekey",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_staff_page_tsx",
+      "target": "page_randomuuid",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_staff_page_tsx",
+      "_tgt": "page_randomuuid",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "membership_target_membershipremovalkey",
+      "target": "page_onboardingscopekey",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "lib/portal/membership-target.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "membership_target_membershipremovalkey",
+      "_tgt": "page_onboardingscopekey"
+    },
+    {
+      "source": "membership_target_removescopedmembership",
+      "target": "membership_target_test_revoke",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "lib/portal/membership-target.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_src": "membership_target_removescopedmembership",
+      "_tgt": "membership_target_test_revoke"
+    },
+    {
+      "source": "membership_target_test_form",
+      "target": "membership_target_membershipremovalkey",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "lib/membership-target.test.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "membership_target_test_form",
+      "_tgt": "membership_target_membershipremovalkey"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_listfamilies",
+      "source": "lib_portal_families_ts",
+      "target": "families_listfamilies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_readfamily",
+      "source": "lib_portal_families_ts",
+      "target": "families_readfamily",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_listfamilymemberships",
+      "source": "lib_portal_families_ts",
+      "target": "families_listfamilymemberships",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_liststaff",
+      "source": "lib_portal_families_ts",
+      "target": "families_liststaff",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_createfamilywithinvitation",
+      "source": "lib_portal_families_ts",
+      "target": "families_createfamilywithinvitation",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "lib_portal_families_ts",
+      "target": "lib_portal_access_ts",
+      "_src": "lib_portal_families_ts",
+      "_tgt": "lib_portal_access_ts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/families.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_families_ts",
+      "target": "portal_access_sql",
+      "_src": "lib_portal_families_ts",
+      "_tgt": "portal_access_sql",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/families.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_families_ts",
+      "target": "lib_portal_schemas_ts",
+      "_src": "lib_portal_families_ts",
+      "_tgt": "lib_portal_schemas_ts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/families.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/families.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "lib_portal_families_ts",
+      "_tgt": "families_setfamilyfounding",
+      "source": "lib_portal_families_ts",
+      "target": "families_setfamilyfounding",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_staff_page_tsx",
+      "target": "page_deliverylabel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_staff_page_tsx",
+      "_tgt": "page_deliverylabel",
+      "confidence_score": 1
+    },
+    {
+      "source": "app_portal_provider_admin_staff_page_tsx",
+      "target": "page_randomuuid",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L89",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_staff_page_tsx",
+      "_tgt": "page_randomuuid",
+      "confidence_score": 1
+    },
+    {
+      "source": "app_portal_provider_admin_families_familyid_page_tsx",
+      "target": "page_familydetail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_families_familyid_page_tsx",
+      "_tgt": "page_familydetail",
+      "confidence_score": 1
+    },
+    {
+      "source": "app_portal_provider_admin_staff_page_tsx",
+      "target": "page_onboardingscopekey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L89",
+      "weight": 1.0,
+      "_src": "app_portal_provider_admin_staff_page_tsx",
+      "_tgt": "page_onboardingscopekey",
+      "confidence_score": 1
+    },
+    {
+      "source": "app_portal_provider_admin_staff_page_tsx",
+      "target": "page_staffadmin",
+      "_src": "app_portal_provider_admin_staff_page_tsx",
+      "_tgt": "page_staffadmin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_families_familyid_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_admin_families_familyid_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_portal_provider_admin_staff_page_tsx",
+      "target": "components_portal_loading_portalloading_tsx",
+      "_src": "app_portal_provider_admin_staff_page_tsx",
+      "_tgt": "components_portal_loading_portalloading_tsx",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(portal)/(provider)/admin/staff/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "invoicedocument_invoicedate",
       "target": "admindraftinvoice_quantitylabel",
       "relation": "calls",
@@ -14740,6 +15439,402 @@
       "source_file": "docs/client-changes/2026-11-13-website-updates.md",
       "source_location": "L1",
       "weight": 1.0
+    },
+    {
+      "source": "components_portal_invoices_admindraftinvoice_tsx",
+      "target": "admindraftinvoice_quantitylabel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/invoices/AdminDraftInvoice.tsx",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_src": "components_portal_invoices_admindraftinvoice_tsx",
+      "_tgt": "admindraftinvoice_quantitylabel",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "page_home",
+      "target": "schema_org_organisationschema",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "app/(public)/page.tsx",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_src": "page_home",
+      "_tgt": "schema_org_organisationschema"
+    },
+    {
+      "source": "page_home",
+      "target": "schema_org_faqschema",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "app/(public)/page.tsx",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_src": "page_home",
+      "_tgt": "schema_org_faqschema"
+    },
+    {
+      "source": "invoices_previewinvoice",
+      "target": "invoice_quote_quotedraftlines",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L54",
+      "weight": 1.0,
+      "_src": "invoices_previewinvoice",
+      "_tgt": "invoice_quote_quotedraftlines"
+    },
+    {
+      "source": "invoices_previewinvoice",
+      "target": "invoice_quote_calculateinvoicetotals",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "invoices_previewinvoice",
+      "_tgt": "invoice_quote_calculateinvoicetotals"
+    },
+    {
+      "source": "invoices_createinvoicedraft",
+      "target": "invoice_quote_quotedraftlines",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_src": "invoices_createinvoicedraft",
+      "_tgt": "invoice_quote_quotedraftlines"
+    },
+    {
+      "source": "invoices_createinvoicedraft",
+      "target": "invoice_quote_calculateinvoicetotals",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_src": "invoices_createinvoicedraft",
+      "_tgt": "invoice_quote_calculateinvoicetotals"
+    },
+    {
+      "source": "invoices_previewsavedinvoice",
+      "target": "invoice_quote_validateissuancesettings",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_src": "invoices_previewsavedinvoice",
+      "_tgt": "invoice_quote_validateissuancesettings"
+    },
+    {
+      "source": "invoices_previewsavedinvoice",
+      "target": "invoice_quote_verifyinvoicelines",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_src": "invoices_previewsavedinvoice",
+      "_tgt": "invoice_quote_verifyinvoicelines"
+    },
+    {
+      "source": "invoices_previewsavedinvoice",
+      "target": "invoice_quote_calculateinvoicetotals",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L86",
+      "weight": 1.0,
+      "_src": "invoices_previewsavedinvoice",
+      "_tgt": "invoice_quote_calculateinvoicetotals"
+    },
+    {
+      "source": "invoices_issueinvoice",
+      "target": "invoice_quote_validateissuancesettings",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L98",
+      "weight": 1.0,
+      "_src": "invoices_issueinvoice",
+      "_tgt": "invoice_quote_validateissuancesettings"
+    },
+    {
+      "source": "invoices_issueinvoice",
+      "target": "invoice_quote_verifyinvoicelines",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L99",
+      "weight": 1.0,
+      "_src": "invoices_issueinvoice",
+      "_tgt": "invoice_quote_verifyinvoicelines"
+    },
+    {
+      "source": "invoices_issueinvoice",
+      "target": "invoice_quote_calculateinvoicetotals",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "lib/portal/invoices.ts",
+      "source_location": "L100",
+      "weight": 1.0,
+      "_src": "invoices_issueinvoice",
+      "_tgt": "invoice_quote_calculateinvoicetotals"
+    },
+    {
+      "source": "page_familydetail",
+      "target": "families_readfamily",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "page_familydetail",
+      "_tgt": "families_readfamily"
+    },
+    {
+      "source": "page_familydetail",
+      "target": "families_listfamilymemberships",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "page_familydetail",
+      "_tgt": "families_listfamilymemberships"
+    },
+    {
+      "source": "page_familydetail",
+      "target": "staff_profiles_membershipprofiles",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "app/(portal)/(provider)/admin/families/[familyId]/page.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_src": "page_familydetail",
+      "_tgt": "staff_profiles_membershipprofiles"
+    },
+    {
+      "source": "portal_completion_acceptance",
+      "target": "portal_provider_audit",
+      "_src": "portal_completion_acceptance",
+      "_tgt": "portal_provider_audit",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/portal-completion/acceptance.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_provider_audit",
+      "target": "lib_portal_identity_ts",
+      "_src": "portal_provider_audit",
+      "_tgt": "lib_portal_identity_ts",
+      "relation": "related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "docs/portal-completion/provider-audit.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_completion_restore_script",
+      "target": "portal_checked_membership_sql",
+      "_src": "portal_completion_restore_script",
+      "_tgt": "portal_checked_membership_sql",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "scripts/portal-completion/local-restore-rehearsal.sh",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_completion_restore_script",
+      "target": "portal_session_fee_sql",
+      "_src": "portal_completion_restore_script",
+      "_tgt": "portal_session_fee_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/portal-completion/local-restore-rehearsal.sh",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_alert_worker",
+      "target": "portal_alert_ast_worker_ts",
+      "_src": "portal_alert_worker",
+      "_tgt": "portal_alert_ast_worker_ts",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/portal-alert-worker.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_alert_attention",
+      "target": "portal_alert_sql",
+      "_src": "portal_alert_attention",
+      "_tgt": "portal_alert_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/portal/message-attention.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_completion_restore_script",
+      "target": "portal_alert_sql",
+      "_src": "portal_completion_restore_script",
+      "_tgt": "portal_alert_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/portal-completion/local-restore-rehearsal.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/alerts/adapters.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "portal_alert_ast_adapters_ts",
+      "_tgt": "portal_alert_ast_adapters_clerkidentity",
+      "source": "portal_alert_ast_adapters_ts",
+      "target": "portal_alert_ast_adapters_clerkidentity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/alerts/adapters.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "portal_alert_ast_adapters_ts",
+      "_tgt": "portal_alert_ast_adapters_resendsubmit",
+      "source": "portal_alert_ast_adapters_ts",
+      "target": "portal_alert_ast_adapters_resendsubmit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/alerts/model.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "portal_alert_ast_model_ts",
+      "_tgt": "portal_alert_ast_model_portalorigin",
+      "source": "portal_alert_ast_model_ts",
+      "target": "portal_alert_ast_model_portalorigin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/alerts/model.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "portal_alert_ast_model_ts",
+      "_tgt": "portal_alert_ast_model_createpayload",
+      "source": "portal_alert_ast_model_ts",
+      "target": "portal_alert_ast_model_createpayload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/alerts/model.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "portal_alert_ast_model_ts",
+      "_tgt": "portal_alert_ast_model_retryat",
+      "source": "portal_alert_ast_model_ts",
+      "target": "portal_alert_ast_model_retryat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "lib/portal/alerts/delivery.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_src": "portal_alert_ast_delivery_deliverclaim",
+      "_tgt": "portal_alert_ast_model_createpayload",
+      "source": "portal_alert_ast_model_createpayload",
+      "target": "portal_alert_ast_delivery_deliverclaim"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "lib/portal/alerts/delivery.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "portal_alert_ast_delivery_deliverclaim",
+      "_tgt": "portal_alert_ast_model_retryat",
+      "source": "portal_alert_ast_model_retryat",
+      "target": "portal_alert_ast_delivery_deliverclaim"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/alerts/delivery.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "portal_alert_ast_delivery_ts",
+      "_tgt": "portal_alert_ast_delivery_deliverclaim",
+      "source": "portal_alert_ast_delivery_ts",
+      "target": "portal_alert_ast_delivery_deliverclaim",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "lib/portal/alerts/worker.ts",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_src": "portal_alert_ast_worker_runworker",
+      "_tgt": "portal_alert_ast_delivery_deliverclaim",
+      "source": "portal_alert_ast_delivery_deliverclaim",
+      "target": "portal_alert_ast_worker_runworker"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/alerts/worker.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "portal_alert_ast_worker_ts",
+      "_tgt": "portal_alert_ast_worker_runworker",
+      "source": "portal_alert_ast_worker_ts",
+      "target": "portal_alert_ast_worker_runworker",
+      "confidence_score": 1.0
     }
   ],
   "hyperedges": []

@@ -16,6 +16,8 @@ import {
 import type { ReactNode } from "react";
 import { PortalSessionGuard } from "./PortalSessionGuard";
 import { PortalLiveUpdates } from "./events/PortalLiveUpdates";
+import { MessageAttention } from "./MessageAttention";
+import { getMessageAttention } from "@/lib/portal/message-attention";
 
 type Section =
   | "home"
@@ -28,7 +30,7 @@ type Section =
   | "sessions"
   | "learning"
   | "messages";
-export function PortalShell({
+export async function PortalShell({
   role,
   userId,
   memberships,
@@ -41,6 +43,7 @@ export function PortalShell({
   children: ReactNode;
   section?: Section;
 }) {
+  const attention = await getMessageAttention(role);
   const admin = role === "admin";
   const staff = role === "staff";
   const home = admin ? "/admin/today" : staff ? "/staff" : "/parent";
@@ -175,6 +178,7 @@ export function PortalShell({
             >
               <link.icon size={19} aria-hidden="true" />
               {link.label}
+              {link.section === "messages" && <MessageAttention role={role} counts={attention} />}
             </Link>
           ))}
         </nav>
@@ -230,10 +234,11 @@ export function PortalShell({
                 aria-current={
                   section === link.section ? "page" : undefined
                 }
-                className={`flex min-h-12 min-w-12 flex-1 flex-col items-center justify-center gap-1 rounded-lg px-1 py-1 text-xs font-medium text-[#1b3022] ${section === link.section ? "bg-[#ecd081]" : ""}`}
+                className={`relative flex min-h-12 min-w-0 flex-1 flex-col items-center justify-center gap-1 rounded-lg px-1 py-1 text-xs font-medium text-[#1b3022] ${section === link.section ? "bg-[#ecd081]" : ""}`}
               >
                 <link.icon size={19} className="shrink-0" aria-hidden="true" />
                 {link.label}
+                {link.section === "messages" && <MessageAttention role={role} counts={attention} mobile />}
               </Link>
             ))}
           {admin && <MobileMore section={section} />}

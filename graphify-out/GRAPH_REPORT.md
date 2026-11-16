@@ -1,5 +1,9 @@
 # Graph Report - goldleaf-graph-refresh  (2026-11-11)
 
+## Scoped local QA evidence update (2026-11-16)
+
+Source-linked document nodes record the observed development Google sign-in and the later local active-membership timeout. Their links identify acceptance evidence and the rehearsal runbook; they do not imply authenticated role or workflow acceptance. The approved parent workflow design remains unimplemented. No code changed and no AST re-extraction was needed; prior semantic coverage and clustering remain unchanged.
+
 ## Scoped local transport timeout update (2026-11-16)
 
 Graphify AST extraction refreshed `lib/portal/database.ts`, `lib/portal/transport.ts` and `lib/portal-transport.test.ts` (7 nodes, 16 extracted edges). The retained graph has 804 nodes and 868 links; unresolved imports were omitted and source-verified imports linked. Validated local proxy mode alone supplies a bounded 30-second HTTP timeout; the ordinary deadline remains five seconds. No prior clustering or semantic coverage was recomputed.

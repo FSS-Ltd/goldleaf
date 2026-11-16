@@ -6360,6 +6360,13 @@
       "file_type": "code",
       "source_file": "lib/portal-transport.test.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "portal_local_signin_timeout_evidence",
+      "label": "Local development sign-in and membership timeout evidence",
+      "file_type": "document",
+      "source_file": "docs/portal-completion/acceptance.md",
+      "source_location": "L57"
     }
   ],
   "links": [
@@ -16135,6 +16142,24 @@
       "confidence": "EXTRACTED",
       "source_file": "lib/portal-transport.test.ts",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_completion_acceptance",
+      "target": "portal_local_signin_timeout_evidence",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/portal-completion/acceptance.md",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_local_signin_timeout_evidence",
+      "target": "portal_completion_rehearsal",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/portal-completion/acceptance.md",
+      "source_location": "L55",
       "weight": 1.0
     }
   ],

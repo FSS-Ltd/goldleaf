@@ -100,17 +100,23 @@ BEGIN
 END $$;
 
 CREATE FUNCTION portal.alert_claim(p_lease_seconds integer)
-RETURNS TABLE(delivery_id uuid,lease_token uuid,subject text,event_kind text,family_id uuid,payload jsonb,idempotency_key text,first_attempt_at timestamptz)
+RETURNS TABLE(delivery_id uuid,lease_token uuid,subject text,event_kind text,family_id uuid,payload jsonb,idempotency_key text,first_attempt_at timestamptz,attempts integer)
 LANGUAGE plpgsql SECURITY DEFINER SET search_path=pg_catalog,portal,pg_temp AS $$
 DECLARE target uuid; token uuid:=gen_random_uuid();
 BEGIN
  IF p_lease_seconds IS NULL OR p_lease_seconds NOT BETWEEN 1 AND 300 THEN RAISE EXCEPTION 'invalid lease' USING ERRCODE='22023'; END IF;
- SELECT d.id INTO target FROM portal.alert_deliveries d
- WHERE (d.status='pending' AND d.due_at<=clock_timestamp()) OR (d.status='leased' AND d.lease_until<=clock_timestamp())
- ORDER BY CASE WHEN d.status='pending' THEN d.due_at ELSE d.lease_until END,d.id FOR UPDATE SKIP LOCKED LIMIT 1;
- IF target IS NULL THEN RETURN; END IF;
- UPDATE portal.alert_deliveries d SET status='leased',attempts=d.attempts+1,lease_token=token,lease_until=clock_timestamp()+make_interval(secs=>p_lease_seconds) WHERE d.id=target;
- RETURN QUERY SELECT d.id,d.lease_token,d.subject,e.kind,e.family_id,d.payload,d.idempotency_key,d.first_attempt_at FROM portal.alert_deliveries d JOIN portal.alert_events e ON e.id=d.event_id WHERE d.id=target;
+ LOOP
+  SELECT d.id INTO target FROM portal.alert_deliveries d
+  WHERE (d.status='pending' AND d.due_at<=clock_timestamp()) OR (d.status='leased' AND d.lease_until<=clock_timestamp())
+  ORDER BY CASE WHEN d.status='pending' THEN d.due_at ELSE d.lease_until END,d.id FOR UPDATE SKIP LOCKED LIMIT 1;
+  IF target IS NULL THEN RETURN; END IF;
+  UPDATE portal.alert_deliveries d SET status='uncertain',lease_token=NULL,lease_until=NULL
+  WHERE d.id=target AND (d.attempts>=8 OR d.first_attempt_at<=clock_timestamp()-interval '23 hours');
+  IF FOUND THEN CONTINUE; END IF;
+  UPDATE portal.alert_deliveries d SET status='leased',attempts=d.attempts+1,lease_token=token,lease_until=clock_timestamp()+make_interval(secs=>p_lease_seconds) WHERE d.id=target;
+  RETURN QUERY SELECT d.id,d.lease_token,d.subject,e.kind,e.family_id,d.payload,d.idempotency_key,d.first_attempt_at,d.attempts FROM portal.alert_deliveries d JOIN portal.alert_events e ON e.id=d.event_id WHERE d.id=target;
+  RETURN;
+ END LOOP;
 END $$;
 CREATE FUNCTION portal.alert_next_due() RETURNS timestamptz
 LANGUAGE sql SECURITY DEFINER SET search_path=pg_catalog,portal,pg_temp AS $$

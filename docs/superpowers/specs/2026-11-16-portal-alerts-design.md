@@ -33,3 +33,5 @@ Request creation snapshots the parent membership generation. Requests created be
 The generic link deliberately uses the existing `/portal` router, which rechecks current role access. This adds a navigation step but keeps one immutable payload when a subject has multiple eligible paths. The pre-migration limitation applies only to resolution email; the underlying request can still be resolved.
 
 The payload and key are frozen and committed before the separate gate and provider submission transaction. This preserves the idempotency record if the worker crashes while the provider call is in flight.
+
+Claims expose a one-based attempt count for bounded backoff. A due claim moves a job to manual review after eight claims or the 23-hour frozen-payload cutoff, including repeated worker crashes, before moving on to the next due job.

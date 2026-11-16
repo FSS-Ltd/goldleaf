@@ -6,3 +6,13 @@ export type WorkspaceActions = {
   previewDraftAction: typeof actions.previewDraftAction;
   publishDraftAction: typeof actions.publishDraftAction;
 };
+
+export function workspaceActionReferences(actions: WorkspaceActions): WorkspaceActions {
+  return {
+    updateSessionAction: actions.updateSessionAction,
+    saveNoteAction: actions.saveNoteAction,
+    saveDraftAction: actions.saveDraftAction,
+    previewDraftAction: actions.previewDraftAction,
+    publishDraftAction: actions.publishDraftAction,
+  };
+}

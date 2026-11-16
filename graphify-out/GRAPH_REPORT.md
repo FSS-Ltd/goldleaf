@@ -1,5 +1,9 @@
 # Graph Report - goldleaf-graph-refresh  (2026-11-11)
 
+## Scoped local portal transport update (2026-11-16)
+
+Graphify AST extraction refreshed `lib/portal/database.ts`, `lib/portal/events-server.ts`, `lib/portal/transport.ts` and `lib/portal-transport.test.ts`. It produced 9 nodes and 21 edges; the retained project graph contains 804 nodes and 868 links. Unresolved import targets were omitted; source-verified imports and the event-stream call were linked to existing graph nodes. Earlier clustering and semantic coverage were not recomputed. SQL, configuration, private QA bootstrap and generated output were excluded from this extraction. The feature tree and source describe the guard, its consumers and limits. No external upload or watcher was used.
+
 ## Scoped client website and pricing update (2026-11-13)
 
 Graphify AST extraction refreshed 31 changed TypeScript/TSX files while retaining the project-wide index (754 nodes, 780 links). The session-fee migration, SQL tests and client checklist are manually source-linked because SQL and document semantic extraction were not run. Subsequent home-hero clipping and pricing-note spacing changes were re-extracted and introduced no structural nodes. Unresolved AST import targets are omitted; clustering and earlier semantic coverage were not recomputed. Consult `FEATURE_TREE.md` and source for current dependencies and rollout boundaries. No external upload or background watcher was used.

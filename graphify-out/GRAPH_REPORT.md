@@ -1,5 +1,9 @@
 # Graph Report - goldleaf-graph-refresh  (2026-11-11)
 
+## Local QA documentation update (2026-11-16)
+
+The existing `portal_completion_acceptance` and `portal_completion_rehearsal` document nodes still point to their source files and prior anchors. Local QA preparation, localhost startup guidance and the unresolved browser attachment are recorded in those documents and linked from the feature tree. No TypeScript changed; scoped AST extraction was not repeated. Earlier semantic and clustering coverage remains unchanged.
+
 ## Scoped local portal transport update (2026-11-16)
 
 Graphify AST extraction refreshed `lib/portal/database.ts`, `lib/portal/events-server.ts`, `lib/portal/transport.ts` and `lib/portal-transport.test.ts`. It produced 9 nodes and 21 edges; the retained project graph contains 804 nodes and 868 links. Unresolved import targets were omitted; source-verified imports and the event-stream call were linked to existing graph nodes. Earlier clustering and semantic coverage were not recomputed. SQL, configuration, private QA bootstrap and generated output were excluded from this extraction. The feature tree and source describe the guard, its consumers and limits. No external upload or watcher was used.

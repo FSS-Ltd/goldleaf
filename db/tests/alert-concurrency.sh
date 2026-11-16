@@ -37,6 +37,8 @@ start_gate() {
 }
 finish_gate() { printf '%s\n' 'COMMIT;' '\q' >&3; exec 3>&-; wait "$gate_pid"; }
 start_gate parent
+# Parent gate must not lock the unrelated staff invitation-order row.
+psql_test -c 'SELECT 1 FROM portal.staff_invitation_order WHERE singleton FOR UPDATE NOWAIT' >/dev/null
 # The only due job is already locked by the first claim.
 [ "$(psql_test -c 'SET ROLE alert_race_worker; SELECT count(*) FROM portal.alert_claim(60)')" = 0 ]
 docker exec -i -e PGAPPNAME=alert-parent-revoke "$container" psql -X -U postgres -qAt -v ON_ERROR_STOP=1 -c "SELECT portal.revoke_membership('race-admin',(SELECT id FROM portal.memberships WHERE subject='race-parent'))" >"$tmp/revoke" 2>&1 & revoke_pid=$!
@@ -50,6 +52,8 @@ INSERT INTO portal.staff_family_assignments(staff_id,family_id) SELECT id,'d1000
 SELECT portal.send_family_message('race-admin','d1000000-0000-4000-8000-000000000001','d2000000-0000-4000-8000-000000000002','test');
 SQL
 start_gate staff
+# Staff gate must not lock the unrelated family row.
+psql_test -c "SELECT 1 FROM portal.families WHERE id='d1000000-0000-4000-8000-000000000001' FOR UPDATE NOWAIT" >/dev/null
 docker exec -i -e PGAPPNAME=alert-staff-remove "$container" psql -X -U postgres -qAt -v ON_ERROR_STOP=1 -c "SELECT portal.set_staff_family_access('race-admin',(SELECT id FROM portal.memberships WHERE subject='race-staff'),'d1000000-0000-4000-8000-000000000001',false)" >"$tmp/remove" 2>&1 & remove_pid=$!
 wait_for waiting alert-staff-remove
 finish_gate

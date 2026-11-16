@@ -129,10 +129,14 @@ BEGIN
  SELECT * INTO d FROM portal.alert_deliveries WHERE id=p_delivery AND status='leased' AND lease_token=p_token AND lease_until>clock_timestamp() FOR UPDATE;
  IF NOT FOUND THEN RETURN false; END IF;
  SELECT * INTO e FROM portal.alert_events WHERE id=d.event_id;
- -- Family before membership follows parent revocation; staff revocation takes the order row first.
- PERFORM 1 FROM portal.families WHERE id=e.family_id FOR SHARE;
- PERFORM 1 FROM portal.staff_invitation_order WHERE singleton FOR SHARE;
- FOR path IN SELECT p.* FROM portal.alert_paths p WHERE p.delivery_id=d.id ORDER BY p.membership_id LOOP
+ -- Try paths in a fixed role order; lock each path in the writer's order.
+ FOR path IN SELECT p.* FROM portal.alert_paths p WHERE p.delivery_id=d.id
+  ORDER BY CASE p.role WHEN 'admin' THEN 0 WHEN 'parent' THEN 1 ELSE 2 END,p.membership_id LOOP
+  IF path.role='parent' THEN
+   PERFORM 1 FROM portal.families WHERE id=e.family_id FOR SHARE;
+  ELSIF path.role='staff' THEN
+   PERFORM 1 FROM portal.staff_invitation_order WHERE singleton FOR SHARE;
+  END IF;
   PERFORM 1 FROM portal.memberships m WHERE m.id=path.membership_id AND m.subject=d.subject AND m.role=path.role AND (m.role<>'parent' OR m.family_id=e.family_id) AND m.revoked_at IS NULL AND m.access_generation=path.membership_generation FOR SHARE;
   IF FOUND THEN
    IF path.assignment_generation IS NULL THEN RETURN true; END IF;

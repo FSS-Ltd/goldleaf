@@ -9,7 +9,7 @@ Scope: synthetic local PostgreSQL and mocked provider QA only. No remote migrati
 
 ## Decisions
 
-Request resolutions for records predating migration 0023 cannot prove original membership generation; email fails closed. Email already accepted by a provider cannot be recalled. Parent revocation uses family then membership locks; staff revocation uses staff invitation order then membership and assignment. The gate acquires family, staff order, then surviving membership and assignment. It holds these locks until the bounded submit and finish transaction ends. The worker must never hold that transaction while resolving identity, reconnecting, or waiting to retry.
+Request resolutions for records predating migration 0023 cannot prove original membership generation; email fails closed. Email already accepted by a provider cannot be recalled. Parent revocation uses family then membership locks; staff revocation uses staff invitation order then membership and assignment. The gate tries original paths in admin, parent, staff order: an admin path locks membership; a parent path locks family then membership; a staff path locks staff order, membership and assignment. If an earlier path fails, its locks remain held until transaction end; no canonical staff writer takes a family row lock after the staff-order lock. It holds these locks until the bounded submit and finish transaction ends. The worker must never hold that transaction while resolving identity, reconnecting, or waiting to retry.
 
 Frozen email uses the existing protected `/portal` router rather than a role-specific link. This can add one navigation step, while keeping the payload stable across surviving roles. The pre-migration limitation affects resolution email only, not request resolution.
 

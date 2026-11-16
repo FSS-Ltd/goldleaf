@@ -15535,6 +15535,30 @@
       "source_file": "docs/portal-completion/provider-audit.md",
       "source_location": "L1",
       "weight": 1.0
+    },
+    {
+      "source": "portal_completion_restore_script",
+      "target": "portal_checked_membership_sql",
+      "_src": "portal_completion_restore_script",
+      "_tgt": "portal_checked_membership_sql",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "scripts/portal-completion/local-restore-rehearsal.sh",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_completion_restore_script",
+      "target": "portal_session_fee_sql",
+      "_src": "portal_completion_restore_script",
+      "_tgt": "portal_session_fee_sql",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/portal-completion/local-restore-rehearsal.sh",
+      "source_location": "L38",
+      "weight": 1.0
     }
   ],
   "hyperedges": []

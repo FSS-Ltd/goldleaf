@@ -6297,6 +6297,38 @@
       "file_type": "code",
       "source_file": "lib/alert-adapters.test.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "portal_parent_pack_gap",
+      "label": "Planned parent onboarding pack gap",
+      "file_type": "document",
+      "source_file": "FEATURE_TREE.md",
+      "source_location": "L130",
+      "status": "planned"
+    },
+    {
+      "id": "portal_parent_child_registration_gap",
+      "label": "Planned parent child registration gap",
+      "file_type": "document",
+      "source_file": "FEATURE_TREE.md",
+      "source_location": "L131",
+      "status": "planned"
+    },
+    {
+      "id": "portal_parent_contacts_gap",
+      "label": "Planned onboarding contacts gap",
+      "file_type": "document",
+      "source_file": "FEATURE_TREE.md",
+      "source_location": "L132",
+      "status": "planned"
+    },
+    {
+      "id": "portal_policy_acknowledgement_gap",
+      "label": "Planned portal policy acknowledgement gap",
+      "file_type": "document",
+      "source_file": "FEATURE_TREE.md",
+      "source_location": "L133",
+      "status": "planned"
     }
   ],
   "links": [
@@ -15948,6 +15980,42 @@
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/plans/2026-11-16-portal-alerts.md",
       "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_parent_pack_gap",
+      "target": "portal_completion_acceptance",
+      "_src": "portal_parent_pack_gap",
+      "_tgt": "portal_completion_acceptance",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "FEATURE_TREE.md",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_parent_child_registration_gap",
+      "target": "portal_children_sessions_sql",
+      "_src": "portal_parent_child_registration_gap",
+      "_tgt": "portal_children_sessions_sql",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "FEATURE_TREE.md",
+      "source_location": "L131",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_policy_acknowledgement_gap",
+      "target": "portal_completion_data_policy",
+      "_src": "portal_policy_acknowledgement_gap",
+      "_tgt": "portal_completion_data_policy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "FEATURE_TREE.md",
+      "source_location": "L133",
       "weight": 1.0
     }
   ],

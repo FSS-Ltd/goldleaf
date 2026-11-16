@@ -320,3 +320,7 @@ Graphify AST extraction was run on `lib/portal/alerts` and merged into the exist
 ## Local adapter and role fixture evidence, 16 November 2026
 
 Scoped AST extraction added the mocked adapter tests, with source-linked adapter, data inventory and QA evidence nodes. The acceptance document records synthetic in-app browser fixtures; its link to the actual components is source-backed documentation, not an extraction of browser state. No full semantic extraction or re-clustering was performed. Existing SQL, cross-scope and semantic coverage gaps remain.
+
+## Parent onboarding pack gap inventory
+
+Four planned feature nodes in `FEATURE_TREE.md` and explicit document references were added from source review. They describe missing capabilities, not runtime implementation or proven dependencies. No full semantic extraction or re-clustering was performed; existing SQL, cross-scope and semantic coverage gaps remain.

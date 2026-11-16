@@ -72,3 +72,62 @@ test("expired frozen delivery remains uncertain without contacting providers", a
     await db.end();
   }
 });
+
+test("listener reconnect catches up, stays idle and closes connections", async () => {
+  const db = new Client({ connectionString: url });
+  await db.connect();
+  const subject = `alert_test_${randomUUID()}`;
+  const family = (await db.query("INSERT INTO portal.families DEFAULT VALUES RETURNING id")).rows[0].id;
+  const admin = (await db.query("INSERT INTO portal.memberships(subject,role) VALUES($1,'admin') RETURNING id", [`author_${randomUUID()}`])).rows[0].id;
+  await db.query("INSERT INTO portal.memberships(subject,role,family_id) VALUES($1,'parent',$2)", [subject, family]);
+  const controller = new AbortController();
+  let submissions = 0;
+  const worker = runWorker({ connectionString: url, from: "alerts@example.test", origin: "https://example.test", signal: controller.signal,
+    identity: async (id) => id === subject ? ["parent@example.test"] : null,
+    submit: async () => { submissions++; return "sent"; },
+  });
+  try {
+    await waitFor(async () => (await db.query("SELECT count(*)::int AS n FROM pg_stat_activity WHERE application_name IN ('goldleaf-alert-listener','goldleaf-alert-jobs') AND state='idle'")).rows[0].n === 2);
+    const before = (await db.query("SELECT pid, query_start FROM pg_stat_activity WHERE application_name='goldleaf-alert-jobs'")).rows[0];
+    await new Promise((resolve) => setTimeout(resolve, 150));
+    const after = (await db.query("SELECT pid, query_start FROM pg_stat_activity WHERE application_name='goldleaf-alert-jobs'")).rows[0];
+    assert.equal(after.pid, before.pid);
+    assert.equal(after.query_start.getTime(), before.query_start.getTime());
+    const listener = (await db.query("SELECT pid FROM pg_stat_activity WHERE application_name='goldleaf-alert-listener'")).rows[0].pid;
+    await db.query("SELECT pg_terminate_backend($1)", [listener]);
+    await db.query("INSERT INTO portal.family_messages(operation_id,family_id,author_id,body) VALUES($1,$2,$3,'private')", [randomUUID(), family, admin]);
+    await waitFor(async () => (await db.query("SELECT status FROM portal.alert_deliveries WHERE subject=$1", [subject])).rows[0]?.status === "sent");
+    assert.equal(submissions, 1);
+  } finally {
+    controller.abort();
+    await worker;
+    await waitFor(async () => (await db.query("SELECT count(*)::int AS n FROM pg_stat_activity WHERE application_name IN ('goldleaf-alert-listener','goldleaf-alert-jobs')")).rows[0].n === 0);
+    await db.end();
+  }
+});
+
+test("worker wakes at a crashed lease expiry and recovers it", async () => {
+  const db = new Client({ connectionString: url });
+  await db.connect();
+  const subject = `alert_test_${randomUUID()}`;
+  const family = (await db.query("INSERT INTO portal.families DEFAULT VALUES RETURNING id")).rows[0].id;
+  const admin = (await db.query("INSERT INTO portal.memberships(subject,role) VALUES($1,'admin') RETURNING id", [`author_${randomUUID()}`])).rows[0].id;
+  await db.query("INSERT INTO portal.memberships(subject,role,family_id) VALUES($1,'parent',$2)", [subject, family]);
+  await db.query("INSERT INTO portal.family_messages(operation_id,family_id,author_id,body) VALUES($1,$2,$3,'private')", [randomUUID(), family, admin]);
+  await db.query("UPDATE portal.alert_deliveries SET status='leased',lease_token=$2,lease_until=clock_timestamp()+interval '1 second',attempts=1 WHERE subject=$1", [subject, randomUUID()]);
+  const controller = new AbortController();
+  let submissions = 0;
+  const worker = runWorker({ connectionString: url, from: "alerts@example.test", origin: "https://example.test", signal: controller.signal,
+    identity: async (id) => id === subject ? ["parent@example.test"] : null,
+    submit: async () => { submissions++; return "sent"; },
+  });
+  try {
+    await waitFor(async () => (await db.query("SELECT status FROM portal.alert_deliveries WHERE subject=$1", [subject])).rows[0]?.status === "sent");
+    assert.equal(submissions, 1);
+    assert.equal((await db.query("SELECT attempts FROM portal.alert_deliveries WHERE subject=$1", [subject])).rows[0].attempts, 2);
+  } finally {
+    controller.abort();
+    await worker;
+    await db.end();
+  }
+});

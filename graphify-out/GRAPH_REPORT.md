@@ -1,5 +1,13 @@
 # Graph Report - goldleaf-graph-refresh  (2026-11-11)
 
+## Scoped invoice dialog lifecycle update (2026-11-16)
+
+Graphify AST extraction refreshed `DraftComposer.tsx`, `lib/portal/dialog-lifecycle.ts` and `lib/invoice-dialog-lifecycle.test.ts`; source-verified lifecycle and test links were added. Modal cleanup on Activity hide/unmount and successful navigation awaits authenticated browser verification. Earlier clustering and semantic coverage remain unchanged.
+
+## Scoped billing settings reset fix (2026-11-16)
+
+Graphify AST extraction refreshed `BillingSettingsForm.tsx`; source-linked calls were reconciled. The action-form reset is cancelled to retain controlled billing fields; an authenticated local save retained cadence and other edited values after success. No clustering or prior semantic/SQL coverage was recomputed.
+
 ## Local alert pipeline evidence (2026-11-16)
 
 A source-linked acceptance node records synthetic canonical message/attention, restricted worker delivery with development identity and mock-only submission. It links the existing alert outbox and delivery nodes; it does not establish live provider delivery or authenticated UI acceptance. No code changed; prior AST, semantic and clustering limits remain.

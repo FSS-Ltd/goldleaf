@@ -6367,6 +6367,20 @@
       "file_type": "document",
       "source_file": "docs/portal-completion/acceptance.md",
       "source_location": "L57"
+    },
+    {
+      "id": "portal_parent_workflow_spec",
+      "label": "Approved parent workflow specification (not implemented)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-11-16-parent-workflow.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_parent_workflow_plan",
+      "label": "Parent workflow implementation plan (gated)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/plans/2026-11-16-parent-workflow.md",
+      "source_location": "L1"
     }
   ],
   "links": [
@@ -16160,6 +16174,42 @@
       "confidence": "EXTRACTED",
       "source_file": "docs/portal-completion/acceptance.md",
       "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_parent_workflow_plan",
+      "target": "portal_parent_workflow_spec",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-11-16-parent-workflow.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_parent_workflow_spec",
+      "target": "portal_parent_pack_gap",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-11-16-parent-workflow.md",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_parent_workflow_plan",
+      "target": "portal_delivery_plan",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/plans/2026-11-16-parent-workflow.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_parent_workflow_spec",
+      "target": "portal_completion_data_policy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-11-16-parent-workflow.md",
+      "source_location": "L13",
       "weight": 1.0
     }
   ],

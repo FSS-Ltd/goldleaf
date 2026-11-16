@@ -14,7 +14,7 @@
 
 ## Design contract
 
-The six final Stitch screen exports set composition, visual order, component proportions, typography and interaction hierarchy. Use the final screen HTML and archive for review. The project's global theme metadata contains older font settings. Use the screen-level Fraunces and Lexend typography, actual wordmark, and existing paper, forest and gold tokens. Render current business data from [site](../../../content/site.ts), [pricing](../../../lib/pricing.ts) and [session blocks](../../../content/session.ts). The samples show fictional families and historical 105-minute sessions. Use the current 120-minute duration and actual authorised records.
+The six final Stitch screen exports set composition, visual order, component proportions, typography and interaction hierarchy. Use the final screen HTML and archive for review. The project's global theme metadata contains older font settings. Use the screen-level Fraunces and Lexend typography, actual wordmark, and existing paper, forest and gold tokens. Render current business data from [site](../../../content/site.ts), [pricing](../../../lib/pricing.ts) and [session blocks](../../../content/session.ts). The samples show fictional families. **16 November correction:** the user confirmed scheduled sessions are 105 minutes (13:00–14:45), superseding the earlier 120-minute instruction. Use current authorised records; actual arrival and collection are separate.
 
 | Stitch frame | Screen ID | Route | Sprint |
 | --- | --- | --- | --- |
@@ -99,7 +99,7 @@ The server DAL and migration `0008_invoice_runtime.sql` provide configured setti
 
 **Owns** `app/(portal)/staff/sessions/`, `app/(portal)/parent/sessions/`, `app/(portal)/parent/learning/`, `lib/portal/sessions.ts`, `lib/portal/observations.ts` and session/observation migrations.
 
-- [ ] Store scheduled sessions with timezone-aware timestamps and present UK local time. Render Staff Today schedule, next-session context and session workspace. Share the canonical 120-minute session blocks with the public explanation. Default attendance to Not recorded. Persist Present and Absent only after an explicit action.
+- [ ] Store scheduled sessions with timezone-aware timestamps and present UK local time. Render Staff Today schedule, next-session context and session workspace. Share the canonical 105-minute session blocks with the public explanation (user correction, 16 November; supersedes 120 minutes). Default attendance to Not recorded. Persist Present and Absent only after an explicit action.
 - [ ] Store private staff notes separately from parent updates. Preview the family and child recipients before publishing. Parents can read shared, dated observations and current practice. Staff can see authorised private notes and drafts. Test preview/publish retries, stale access, wrong recipients and separation of content.
 - [ ] Render the Parent Learning Journey with the existing Stage 0–4 progression, stage path and sound tile treatment. Test empty history, a change of selected child and a real published observation moving into the parent home.
 

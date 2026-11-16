@@ -1,5 +1,9 @@
 # Graph Report - goldleaf-graph-refresh  (2026-11-11)
 
+## Parent workflow design and plan (2026-11-16)
+
+Source-linked document nodes connect the user-approved, unimplemented parent workflow specification and plan to the existing parent-pack gap, pilot plan and policy inventory. The older pilot plan now records the 105-minute user correction; its unchecked acceptance remains open. No code changed, AST extraction was not repeated, and the source-register links are not evidence of policy approval or regulatory applicability. Semantic and SQL coverage and earlier clustering remain incomplete.
+
 ## Scoped local QA evidence update (2026-11-16)
 
 Source-linked document nodes record the observed development Google sign-in and the later local active-membership timeout. Their links identify acceptance evidence and the rehearsal runbook; they do not imply authenticated role or workflow acceptance. The approved parent workflow design remains unimplemented. No code changed and no AST re-extraction was needed; prior semantic coverage and clustering remain unchanged.

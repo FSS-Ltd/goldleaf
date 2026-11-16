@@ -6381,6 +6381,13 @@
       "file_type": "document",
       "source_file": "docs/superpowers/plans/2026-11-16-parent-workflow.md",
       "source_location": "L1"
+    },
+    {
+      "id": "portal_local_alert_pipeline_proof",
+      "label": "Local synthetic alert pipeline proof",
+      "file_type": "document",
+      "source_file": "docs/portal-completion/acceptance.md",
+      "source_location": "L62"
     }
   ],
   "links": [
@@ -16210,6 +16217,34 @@
       "confidence": "EXTRACTED",
       "source_file": "docs/superpowers/specs/2026-11-16-parent-workflow.md",
       "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_completion_acceptance",
+      "target": "portal_local_alert_pipeline_proof",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/portal-completion/acceptance.md",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_local_alert_pipeline_proof",
+      "target": "portal_alert_sql",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "source_file": "docs/portal-completion/acceptance.md",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 0.8
+    },
+    {
+      "source": "portal_local_alert_pipeline_proof",
+      "target": "portal_alert_ast_delivery_deliverclaim",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/portal-completion/acceptance.md",
+      "source_location": "L64",
       "weight": 1.0
     }
   ],

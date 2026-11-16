@@ -57,3 +57,10 @@ The app responded on `http://localhost:3000` after the process-local hostname an
 Later on 16 November, the in-app browser completed a genuine Google sign-in to the separate development application. The account page showed the Google-connected account as verified, and its authenticated subject matched the synthetic membership fixture. No identity or authorization bypass was used. A subsequent `/portal` request still produced a generic error; the local application log showed the active-membership Neon request timing out after the local 30-second budget. Earlier browser attachment failures above describe the preparation stage and were subsequently overcome.
 
 **Authenticated role and workflow verification remains pending.** Sign-in and the preparation checks do not establish role isolation, actions, live updates or full application acceptance. The user approved the parent workflow design on 16 November, with implementation deferred until alerts and QA are complete. Portal policies remain unwritten and unapproved. The parent onboarding pack remains planned; there are no child or consent records in this fixture.
+
+
+## Local alert pipeline proof — 16 November 2026
+
+A local synthetic parent message used the canonical insertion path and raised admin attention. A restricted worker claimed the transactional outbox delivery; `deliverClaim` used the real development `clerkIdentity` adapter, which confirmed the approved recipient was verified, and a mock-only submission checked a generic protected link. The outbox reached sent status. The canonical read action returned the attention count to its baseline, and the test removed its own synthetic fixture and worker role.
+
+No live provider mail was sent. This evidence does not establish authenticated UI, separate-role workflows, live email delivery or broad application acceptance; those checks remain pending.

@@ -1,5 +1,9 @@
 # Graph Report - goldleaf-graph-refresh  (2026-11-11)
 
+## Local alert pipeline evidence (2026-11-16)
+
+A source-linked acceptance node records synthetic canonical message/attention, restricted worker delivery with development identity and mock-only submission. It links the existing alert outbox and delivery nodes; it does not establish live provider delivery or authenticated UI acceptance. No code changed; prior AST, semantic and clustering limits remain.
+
 ## Parent workflow design and plan (2026-11-16)
 
 Source-linked document nodes connect the user-approved, unimplemented parent workflow specification and plan to the existing parent-pack gap, pilot plan and policy inventory. The older pilot plan now records the 105-minute user correction; its unchecked acceptance remains open. No code changed, AST extraction was not repeated, and the source-register links are not evidence of policy approval or regulatory applicability. Semantic and SQL coverage and earlier clustering remain incomplete.

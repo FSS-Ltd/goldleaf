@@ -5,8 +5,8 @@ import { payloadSchema, type Claim, type IdentityLookup, type MailSubmit } from 
 export async function runWorker(options: { connectionString: string; identity: IdentityLookup; submit: MailSubmit; from: string; origin: string; signal: AbortSignal; now?: () => Date }): Promise<void> {
   let delay = 250;
   while (!options.signal.aborted) {
-    const listener = new Client({ connectionString: options.connectionString, application_name: "goldleaf-alert-listener" });
-    const jobs = new Client({ connectionString: options.connectionString, application_name: "goldleaf-alert-jobs" });
+    const listener = new Client({ connectionString: options.connectionString, connectionTimeoutMillis: 5_000, query_timeout: 15_000, application_name: "goldleaf-alert-listener" });
+    const jobs = new Client({ connectionString: options.connectionString, connectionTimeoutMillis: 5_000, query_timeout: 15_000, application_name: "goldleaf-alert-jobs" });
     let timer: ReturnType<typeof setTimeout> | undefined;
     let wake: (() => void) | undefined;
     let dirty = true;

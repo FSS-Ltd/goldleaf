@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { randomUUID } from "node:crypto";
 import { Client } from "pg";
 import { runWorker } from "../../lib/portal/alerts/worker";
+import { deliverClaim } from "../../lib/portal/alerts/delivery";
 import type { AlertPayload } from "../../lib/portal/alerts/model";
 
 const url = process.env.ALERT_TEST_DATABASE_URL;
@@ -128,6 +129,34 @@ test("worker wakes at a crashed lease expiry and recovers it", async () => {
   } finally {
     controller.abort();
     await worker;
+    await db.end();
+  }
+});
+
+
+test("a blocked authorisation lock never submits or cancels a valid claim", async () => {
+  const db = new Client({ connectionString: url });
+  const locker = new Client({ connectionString: url });
+  await db.connect();
+  await locker.connect();
+  try {
+    const family = (await db.query("INSERT INTO portal.families DEFAULT VALUES RETURNING id")).rows[0].id;
+    const admin = (await db.query("INSERT INTO portal.memberships(subject,role) VALUES($1,'admin') RETURNING id", [`author_${randomUUID()}`])).rows[0].id;
+    const subject = `alert_test_${randomUUID()}`;
+    await db.query("INSERT INTO portal.memberships(subject,role,family_id) VALUES($1,'parent',$2)", [subject, family]);
+    await db.query("INSERT INTO portal.family_messages(operation_id,family_id,author_id,body) VALUES($1,$2,$3,'private')", [randomUUID(), family, admin]);
+    await db.query("UPDATE portal.alert_deliveries SET due_at=clock_timestamp()+interval '1 hour' WHERE status='pending' AND subject<>$1", [subject]);
+    const claim = (await db.query("SELECT * FROM portal.alert_claim(60)")).rows[0];
+    assert.equal(claim.subject, subject);
+    await locker.query("BEGIN");
+    await locker.query("SELECT 1 FROM portal.families WHERE id=$1 FOR UPDATE", [family]);
+    let submissions = 0;
+    await assert.rejects(deliverClaim(db, claim, { identity: async () => ["parent@example.test"], submit: async () => { submissions++; return "sent"; }, from: "alerts@example.test", origin: "https://example.test", now: () => new Date() }));
+    assert.equal(submissions, 0);
+    assert.equal((await db.query("SELECT status FROM portal.alert_deliveries WHERE id=$1", [claim.delivery_id])).rows[0].status, "leased");
+  } finally {
+    await locker.query("ROLLBACK");
+    await locker.end();
     await db.end();
   }
 });

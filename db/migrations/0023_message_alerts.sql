@@ -139,9 +139,11 @@ BEGIN
   END IF;
   PERFORM 1 FROM portal.memberships m WHERE m.id=path.membership_id AND m.subject=d.subject AND m.role=path.role AND (m.role<>'parent' OR m.family_id=e.family_id) AND m.revoked_at IS NULL AND m.access_generation=path.membership_generation FOR SHARE;
   IF FOUND THEN
-   IF path.assignment_generation IS NULL THEN RETURN true; END IF;
-   PERFORM 1 FROM portal.staff_family_assignments a WHERE a.staff_id=path.membership_id AND a.family_id=e.family_id AND a.alert_generation=path.assignment_generation FOR SHARE;
-   IF FOUND THEN RETURN true; END IF;
+   IF path.assignment_generation IS NOT NULL THEN
+    PERFORM 1 FROM portal.staff_family_assignments a WHERE a.staff_id=path.membership_id AND a.family_id=e.family_id AND a.alert_generation=path.assignment_generation FOR SHARE;
+    IF NOT FOUND THEN CONTINUE; END IF;
+   END IF;
+   RETURN EXISTS (SELECT 1 FROM portal.alert_deliveries current_delivery WHERE current_delivery.id=p_delivery AND current_delivery.status='leased' AND current_delivery.lease_token=p_token AND current_delivery.lease_until>clock_timestamp() AND (current_delivery.first_attempt_at IS NULL OR current_delivery.first_attempt_at>clock_timestamp()-interval '23 hours'));
   END IF;
  END LOOP;
  RETURN false;
@@ -169,7 +171,7 @@ CREATE FUNCTION portal.alert_finish(p_delivery uuid,p_token uuid,p_outcome text,
 LANGUAGE plpgsql SECURITY DEFINER SET search_path=pg_catalog,portal,pg_temp AS $$
 BEGIN
  IF p_outcome NOT IN ('sent','retry','uncertain','cancelled') OR (p_outcome='retry' AND (p_retry_at IS NULL OR p_retry_at<=clock_timestamp())) THEN RAISE EXCEPTION 'invalid outcome' USING ERRCODE='22023'; END IF;
- UPDATE portal.alert_deliveries d SET status=CASE WHEN p_outcome='retry' AND (d.attempts>=8 OR (d.first_attempt_at IS NOT NULL AND p_retry_at>=d.first_attempt_at+interval '23 hours')) THEN 'uncertain' WHEN p_outcome='retry' THEN 'pending' ELSE p_outcome END,
+ UPDATE portal.alert_deliveries d SET status=CASE WHEN p_outcome='cancelled' AND d.first_attempt_at<=clock_timestamp()-interval '23 hours' THEN 'uncertain' WHEN p_outcome='retry' AND (d.attempts>=8 OR (d.first_attempt_at IS NOT NULL AND p_retry_at>=d.first_attempt_at+interval '23 hours')) THEN 'uncertain' WHEN p_outcome='retry' THEN 'pending' ELSE p_outcome END,
  due_at=CASE WHEN p_outcome='retry' THEN p_retry_at ELSE d.due_at END,lease_token=NULL,lease_until=NULL
  WHERE d.id=p_delivery AND d.status='leased' AND d.lease_token=p_token AND d.lease_until>clock_timestamp();
  RETURN FOUND;

@@ -33,6 +33,8 @@ export async function deliverClaim(client: Client, claim: Claim, options: { iden
   if (typeof row.idempotency_key !== "string" || payload.to !== address) throw new Error("Invalid frozen alert");
   await client.query("BEGIN");
   try {
+    await client.query("SET LOCAL lock_timeout = '2s'");
+    await client.query("SET LOCAL statement_timeout = '5s'");
     const gate = await client.query("SELECT portal.alert_gate($1, $2) AS allowed", [claim.delivery_id, claim.lease_token]);
     if (gate.rows[0]?.allowed !== true) {
       await client.query("SELECT portal.alert_finish($1, $2, 'cancelled', NULL)", [claim.delivery_id, claim.lease_token]);

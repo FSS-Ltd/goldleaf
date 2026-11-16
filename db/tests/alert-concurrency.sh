@@ -60,4 +60,29 @@ finish_gate
 wait "$remove_pid"
 psql_test -c "SELECT portal.set_staff_family_access('race-admin',(SELECT id FROM portal.memberships WHERE subject='race-staff'),'d1000000-0000-4000-8000-000000000001',true)" >/dev/null
 [ "$(psql_test -c "SELECT portal.alert_gate(id,lease_token) FROM portal.alert_deliveries WHERE subject='race-staff'")" = f ]
+# Both lease and frozen-attempt cutoff must be checked after waiting for family locks.
+psql_test <<'SQL' >/dev/null
+UPDATE portal.memberships SET revoked_at=NULL WHERE subject='race-parent';
+UPDATE portal.alert_deliveries SET status='cancelled',lease_token=NULL,lease_until=NULL;
+SELECT portal.send_family_message('race-admin','d1000000-0000-4000-8000-000000000001','d2000000-0000-4000-8000-000000000003','test');
+SQL
+for mode in lease cutoff; do
+ psql_test -c "UPDATE portal.alert_deliveries SET status='leased',lease_token=gen_random_uuid(),lease_until=clock_timestamp()+interval '60 seconds',payload=jsonb_build_object('from','a','to','b','subject','x','text','x'),idempotency_key='race',first_attempt_at=clock_timestamp() WHERE subject='race-parent' AND event_id=(SELECT id FROM portal.alert_events WHERE source_id=(SELECT max(sequence)::text FROM portal.family_messages))" >/dev/null
+ if [ "$mode" = lease ]; then
+  psql_test -c "UPDATE portal.alert_deliveries SET lease_until=clock_timestamp()+interval '1 second' WHERE subject='race-parent' AND status='leased'" >/dev/null
+ else
+  psql_test -c "UPDATE portal.alert_deliveries SET first_attempt_at=clock_timestamp()-interval '23 hours'+interval '1 second' WHERE subject='race-parent' AND status='leased'" >/dev/null
+ fi
+ fifo="$tmp/family-$mode"; mkfifo "$fifo"
+ psql_test <"$fifo" >"$tmp/family-output-$mode" 2>&1 & family_pid=$!
+ exec 3>"$fifo"
+ printf '%s\n' 'BEGIN;' "SELECT 1 FROM portal.families WHERE id='d1000000-0000-4000-8000-000000000001' FOR UPDATE;" '\echo family_locked' >&3
+ wait_for grep -q family_locked "$tmp/family-output-$mode"
+ docker exec -i -e PGAPPNAME="alert-expiry-$mode" "$container" psql -X -U postgres -qAt -v ON_ERROR_STOP=1 -c "SELECT portal.alert_gate(id,lease_token) FROM portal.alert_deliveries WHERE subject='race-parent' AND status='leased'" >"$tmp/expiry-$mode" 2>&1 & expiry_pid=$!
+ wait_for waiting "alert-expiry-$mode"
+ sleep 1.2
+ printf '%s\n' 'COMMIT;' '\q' >&3; exec 3>&-; wait "$family_pid"; wait "$expiry_pid"
+ grep -qx f "$tmp/expiry-$mode" || { cat "$tmp/expiry-$mode" >&2; exit 1; }
+ psql_test -c "UPDATE portal.alert_deliveries SET status='cancelled',lease_token=NULL,lease_until=NULL WHERE subject='race-parent' AND status='leased'" >/dev/null
+done
 echo 'alert concurrency and worker grants passed'

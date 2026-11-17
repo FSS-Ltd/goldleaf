@@ -2,7 +2,7 @@ import { quoteInvoice } from "./invoice-pricing";
 import type { DraftLine, PricedLine } from "./invoice-schemas";
 
 type PricingContext = {
-  settings: { founding_transition_date: string | null };
+  settings: { founding_transition_date: string | null; billing_cadence?: "weekly" | "monthly" | null };
   eligibility: { service_date: string; is_founding: boolean | null }[];
 };
 export class BillingConfigurationError extends Error {}
@@ -13,6 +13,7 @@ type SessionPricedLine = Extract<PricedLine, { pricing_basis: "session" }>;
 
 export function quoteDraftLines(lines: readonly DraftLine[], context: PricingContext, basis: "periods" | "children" = "periods"): SessionPricedLine[] {
   if (lines.length !== context.eligibility.length) throw new BillingConfigurationError("Eligibility context does not match service dates");
+  validateBillingCadence(lines, context.settings.billing_cadence);
   return lines.map((line, index) => {
     const eligibility = context.eligibility[index];
     if (eligibility.service_date !== line.serviceDate) throw new BillingConfigurationError("Eligibility context does not match service dates");
@@ -56,6 +57,12 @@ export function calculateInvoiceTotals(lines: readonly PricedLine[], settings: {
   return { netPence: Number(net), vatPence: Number(vat), totalPence: Number(total) };
 }
 
+function validateBillingCadence(lines: readonly { cadence: "weekly" | "monthly" }[], billingCadence: "weekly" | "monthly" | null | undefined): void {
+  if (billingCadence && lines.some((line) => line.cadence !== billingCadence)) {
+    throw new BillingConfigurationError("Service line cadence must match the billing cadence in settings.");
+  }
+}
+
 export function validateIssuanceSettings(lines: readonly PricedLine[], settings: {
   payment_terms_days: number | null; payment_method: string | null; billing_cadence: "weekly" | "monthly" | null;
   vat_enabled: boolean; vat_rate_basis_points: number | null; vat_registration: string | null;
@@ -66,7 +73,5 @@ export function validateIssuanceSettings(lines: readonly PricedLine[], settings:
   if (settings.vat_enabled && (settings.vat_rate_basis_points === null || settings.vat_registration === null)) {
     throw new BillingConfigurationError("VAT rate and registration are required before issue");
   }
-  if (lines.some((line) => line.cadence !== settings.billing_cadence)) {
-    throw new BillingConfigurationError("Invoice cadence does not match billing settings");
-  }
+  validateBillingCadence(lines, settings.billing_cadence);
 }

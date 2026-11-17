@@ -1,5 +1,45 @@
 # Graph Report - goldleaf-graph-refresh  (2026-11-11)
 
+## Authenticated local workflow evidence (2026-11-16)
+
+A source-linked acceptance node records scoped synthetic UI evidence at source revision `ad7fc285451c8fcb421feb1277c9d008eedcfb2b`. One verified identity held all three roles. A committed parent message arrived live and duplicate notification did not duplicate it; reconnect and idle API query evidence remain open. Distinct-user isolation, live mail, full accessibility and release acceptance also remain open. SQL semantics, broad semantic coverage and earlier clustering were not re-extracted.
+
+## Scoped workspace and invoice quote update (2026-11-16)
+
+Graphify AST extraction refreshed the shared session workspace, action-reference boundary, focused test, invoice quote and quote tests. Source-verified links identify the plain server-action reference object and shared cadence validation used by draft quotes and issuance. Earlier semantic, SQL and clustering coverage remains unchanged.
+
+## Scoped invoice dialog lifecycle update (2026-11-16)
+
+Graphify AST extraction refreshed `DraftComposer.tsx`, `lib/portal/dialog-lifecycle.ts` and `lib/invoice-dialog-lifecycle.test.ts`; source-verified lifecycle and test links were added. Authenticated local retest confirmed successful navigation without an open dialog. Earlier clustering and semantic coverage remain unchanged.
+
+## Scoped billing settings reset fix (2026-11-16)
+
+Graphify AST extraction refreshed `BillingSettingsForm.tsx`; source-linked calls were reconciled. The action-form reset is cancelled to retain controlled billing fields; an authenticated local save retained cadence and other edited values after success. No clustering or prior semantic/SQL coverage was recomputed.
+
+## Local alert pipeline evidence (2026-11-16)
+
+A source-linked acceptance node records synthetic canonical message/attention, restricted worker delivery with development identity and mock-only submission. It links the existing alert outbox and delivery nodes; it does not establish live provider delivery or authenticated UI acceptance. No code changed; prior AST, semantic and clustering limits remain.
+
+## Parent workflow design and plan (2026-11-16)
+
+Source-linked document nodes connect the user-approved, unimplemented parent workflow specification and plan to the existing parent-pack gap, pilot plan and policy inventory. The older pilot plan now records the 105-minute user correction; its unchecked acceptance remains open. No code changed, AST extraction was not repeated, and the source-register links are not evidence of policy approval or regulatory applicability. Semantic and SQL coverage and earlier clustering remain incomplete.
+
+## Scoped local QA evidence update (2026-11-16)
+
+Source-linked document nodes record the observed development Google sign-in and the later local active-membership timeout. Their links identify acceptance evidence and the rehearsal runbook; they do not imply authenticated role or workflow acceptance. The approved parent workflow design remains unimplemented. No code changed and no AST re-extraction was needed; prior semantic coverage and clustering remain unchanged.
+
+## Scoped local transport timeout update (2026-11-16)
+
+Graphify AST extraction refreshed `lib/portal/database.ts`, `lib/portal/transport.ts` and `lib/portal-transport.test.ts` (7 nodes, 16 extracted edges). The retained graph has 804 nodes and 868 links; unresolved imports were omitted and source-verified imports linked. Validated local proxy mode alone supplies a bounded 30-second HTTP timeout; the ordinary deadline remains five seconds. No prior clustering or semantic coverage was recomputed.
+
+## Local QA documentation update (2026-11-16)
+
+The existing `portal_completion_acceptance` and `portal_completion_rehearsal` document nodes still point to their source files and prior anchors. Local QA preparation, localhost startup guidance and the unresolved browser attachment are recorded in those documents and linked from the feature tree. No TypeScript changed; scoped AST extraction was not repeated. Earlier semantic and clustering coverage remains unchanged.
+
+## Scoped local portal transport update (2026-11-16)
+
+Graphify AST extraction refreshed `lib/portal/database.ts`, `lib/portal/events-server.ts`, `lib/portal/transport.ts` and `lib/portal-transport.test.ts`. It produced 9 nodes and 21 edges; the retained project graph contains 804 nodes and 868 links. Unresolved import targets were omitted; source-verified imports and the event-stream call were linked to existing graph nodes. Earlier clustering and semantic coverage were not recomputed. SQL, configuration, private QA bootstrap and generated output were excluded from this extraction. The feature tree and source describe the guard, its consumers and limits. No external upload or watcher was used.
+
 ## Scoped client website and pricing update (2026-11-13)
 
 Graphify AST extraction refreshed 31 changed TypeScript/TSX files while retaining the project-wide index (754 nodes, 780 links). The session-fee migration, SQL tests and client checklist are manually source-linked because SQL and document semantic extraction were not run. Subsequent home-hero clipping and pricing-note spacing changes were re-extracted and introduced no structural nodes. Unresolved AST import targets are omitted; clustering and earlier semantic coverage were not recomputed. Consult `FEATURE_TREE.md` and source for current dependencies and rollout boundaries. No external upload or background watcher was used.
@@ -320,3 +360,7 @@ Graphify AST extraction was run on `lib/portal/alerts` and merged into the exist
 ## Local adapter and role fixture evidence, 16 November 2026
 
 Scoped AST extraction added the mocked adapter tests, with source-linked adapter, data inventory and QA evidence nodes. The acceptance document records synthetic in-app browser fixtures; its link to the actual components is source-backed documentation, not an extraction of browser state. No full semantic extraction or re-clustering was performed. Existing SQL, cross-scope and semantic coverage gaps remain.
+
+## Parent onboarding pack gap inventory
+
+Four planned feature nodes in `FEATURE_TREE.md` and explicit document references were added from source review. They describe missing capabilities, not runtime implementation or proven dependencies. No full semantic extraction or re-clustering was performed; existing SQL, cross-scope and semantic coverage gaps remain.

@@ -1,6 +1,7 @@
 import "server-only";
 import { Client } from "@neondatabase/serverless";
 import { openEventStream, type EventClient } from "./events-stream";
+import { configurePortalTransport } from "./transport";
 
 export async function openPortalEventStream(
   subject: string,
@@ -8,6 +9,7 @@ export async function openPortalEventStream(
   expiry: number,
   signal: AbortSignal,
 ): Promise<Response> {
+  const transport = configurePortalTransport();
   const connectionString = process.env.GOLDLEAF_PORTAL_EVENT_DATABASE_URL;
   try {
     if (
@@ -25,6 +27,11 @@ export async function openPortalEventStream(
     });
   }
   const client = new Client({ connectionString });
+  if (transport) {
+    client.neonConfig.wsProxy = transport.wsProxy;
+    client.neonConfig.useSecureWebSocket = false;
+    client.neonConfig.pipelineConnect = false;
+  }
   const adapter: EventClient = {
     connect: () => client.connect(),
     query: async (text, values) => client.query(text, values),

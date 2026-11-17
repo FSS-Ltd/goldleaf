@@ -1,10 +1,11 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useRef, useState, useTransition } from "react";
+import { useLayoutEffect, useRef, useState, useTransition } from "react";
 import type { z } from "zod";
 import type { billingSettingsRowSchema } from "@/lib/portal/billing-settings-schema";
 import { draftInputSchema } from "@/lib/portal/invoice-schemas";
+import { closeOpenDialog } from "@/lib/portal/dialog-lifecycle";
 import type { previewInvoice } from "@/lib/portal/invoices";
 import {
   previewDraft,
@@ -30,6 +31,10 @@ export function DraftComposer({
   const router = useRouter();
   const dialog = useRef<HTMLDialogElement>(null);
   const previewButton = useRef<HTMLButtonElement>(null);
+  useLayoutEffect(() => {
+    const currentDialog = dialog.current;
+    return () => closeOpenDialog(currentDialog);
+  }, []);
   const [step, setStep] = useState<"recipient" | "services">("recipient");
   const [busy, startTransition] = useTransition();
   const [operation, setOperation] = useState<"preview" | "save">("preview");
@@ -117,9 +122,10 @@ export function DraftComposer({
     startTransition(async () => {
       try {
         const result = await saveDraft(input(), quote.fingerprint);
-        if (result.status === "success")
+        if (result.status === "success") {
+          closeOpenDialog(dialog.current);
           router.push(`/admin/invoices/${result.id}`);
-        else {
+        } else {
           setQuote(null);
           setMessage(result.message);
         }

@@ -63,7 +63,13 @@ export function BillingSettingsForm({
           {billingSettingsStatus(pending, dirty, state.status === "error")}
         </span>
       </div>
-      <form action={action} onChange={() => setDirty(true)} className="mt-6">
+      {/* React resets action forms on resolution; settings must stay visible. */}
+      <form
+        action={action}
+        onReset={(event) => event.preventDefault()}
+        onChange={() => setDirty(true)}
+        className="mt-6"
+      >
         <fieldset
           disabled={pending}
           className="grid gap-5 lg:grid-cols-[1.2fr_1fr]"

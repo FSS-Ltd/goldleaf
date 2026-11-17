@@ -63,3 +63,11 @@ test("child-count quotes multiply the per-child price at tier boundaries", async
    assert.equal(calculateInvoiceTotals(quote, { vat_enabled: false, vat_rate_basis_points: null }).netPence, total);
  }
 });
+
+test("draft quotes reject a cadence that conflicts with configured billing", () => {
+ const weekly = [{ ...lines[0], days: 1 as const, serviceDate: "2026-11-17" }];
+ const founding = { settings: { founding_transition_date: "2027-04-01", billing_cadence: "monthly" as const }, eligibility: [{ service_date: "2026-11-17", is_founding: true }] };
+ assert.throws(() => quoteDraftLines(weekly, founding, "children"), /cadence.*billing/i);
+ assert.equal(quoteDraftLines([{ ...weekly[0], cadence: "monthly" }], founding, "children")[0].rate_tier, "founding");
+ assert.equal(quoteDraftLines(weekly, { ...founding, settings: { ...founding.settings, billing_cadence: null } }, "children")[0].unit_amount_pence, 5000);
+});

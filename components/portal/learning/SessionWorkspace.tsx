@@ -13,6 +13,7 @@ import { readScopedSession, sessionBlocks } from "@/lib/portal/sessions";
 import { readLearningWorkspace } from "@/lib/portal/learning";
 import { requireRole } from "@/lib/portal/require-role";
 import { formatUkSession } from "@/lib/portal/uk-time";
+import { workspaceActionReferences } from "@/lib/portal/workspace-action-types";
 
 export async function SessionWorkspace({
   id,
@@ -30,7 +31,9 @@ export async function SessionWorkspace({
   const session = await readScopedSession(parsed.data, role);
   if (!session) notFound();
   const workspace = await readLearningWorkspace(session.id);
-  const actions = role === "admin" ? adminActions : staffActions;
+  const actions = workspaceActionReferences(
+    role === "admin" ? adminActions : staffActions,
+  );
   const when = formatUkSession(session.starts_at, session.duration_minutes);
   const labels = {
     scheduled: "Not started",
@@ -103,7 +106,7 @@ export async function SessionWorkspace({
         </div>
         <div className="space-y-6 lg:col-span-2">
           <PrivateNoteEditor
-            key={session.id}
+            key={`note:${session.id}`}
             sessionId={session.id}
             actor={actor}
             actions={actions}
@@ -111,7 +114,7 @@ export async function SessionWorkspace({
             version={workspace.note_version}
           />
           <WorkspaceEditor
-            key={session.id}
+            key={`draft:${session.id}`}
             sessionId={session.id}
             actor={actor}
             actions={actions}

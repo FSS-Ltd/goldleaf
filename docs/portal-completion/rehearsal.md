@@ -22,6 +22,8 @@ The 16 November local probe used an isolated PostgreSQL container and a Neon-com
 
 For this local QA setup, start Next.js with hostname `localhost` and process option `NODE_OPTIONS=--dns-result-order=ipv4first`, then open `http://localhost:3000`. This is process-local; it needs no hosts-file, system DNS or repository configuration change. Binding the app to `127.0.0.1` caused a recursive self-proxy: Next normalized the URL to `localhost`, Clerk added a rewrite using that normalized host, and Next compared it against the `127.0.0.1` origin. A fresh development cache did not resolve it. With the `localhost` binding, sign-in returned HTTP 200 in 8.68 seconds initially and 2.27 seconds afterward; the public root returned 200 in 8.35 seconds, with no proxy errors observed. These timings are local startup observations, not performance acceptance.
 
+Later local authenticated workflow checks and their limits are recorded in [acceptance](acceptance.md#authenticated-local-workflow-evidence--16-november-2026). One verified development account exercised three synthetic roles; records remain local for continuing QA. The separate alert-worker fixture and role were cleaned. This does not establish distinct-user isolation, live mail, application entry-off or a production restore.
+
 ## Remaining release rehearsal
 
 1. Identify the exact approved environment, operator, rollback-compatible application version, intended entry-disable mechanism and affected users. There is no source-proven single portal-entry feature flag. Keep public site and issued records in scope of impact assessment. Record baseline counts, effective restricted grants, a snapshot digest and deployment identifier without copying personal data into the report.

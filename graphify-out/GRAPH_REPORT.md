@@ -1,8 +1,16 @@
 # Graph Report - goldleaf-graph-refresh  (2026-11-11)
 
+## Authenticated local workflow evidence (2026-11-16)
+
+A source-linked acceptance node records scoped synthetic UI evidence at source revision `ad7fc285451c8fcb421feb1277c9d008eedcfb2b`. One verified identity held all three roles. A committed parent message arrived live and duplicate notification did not duplicate it; reconnect and idle API query evidence remain open. Distinct-user isolation, live mail, full accessibility and release acceptance also remain open. SQL semantics, broad semantic coverage and earlier clustering were not re-extracted.
+
+## Scoped workspace and invoice quote update (2026-11-16)
+
+Graphify AST extraction refreshed the shared session workspace, action-reference boundary, focused test, invoice quote and quote tests. Source-verified links identify the plain server-action reference object and shared cadence validation used by draft quotes and issuance. Earlier semantic, SQL and clustering coverage remains unchanged.
+
 ## Scoped invoice dialog lifecycle update (2026-11-16)
 
-Graphify AST extraction refreshed `DraftComposer.tsx`, `lib/portal/dialog-lifecycle.ts` and `lib/invoice-dialog-lifecycle.test.ts`; source-verified lifecycle and test links were added. Modal cleanup on Activity hide/unmount and successful navigation awaits authenticated browser verification. Earlier clustering and semantic coverage remain unchanged.
+Graphify AST extraction refreshed `DraftComposer.tsx`, `lib/portal/dialog-lifecycle.ts` and `lib/invoice-dialog-lifecycle.test.ts`; source-verified lifecycle and test links were added. Authenticated local retest confirmed successful navigation without an open dialog. Earlier clustering and semantic coverage remain unchanged.
 
 ## Scoped billing settings reset fix (2026-11-16)
 

@@ -2345,69 +2345,6 @@
       "id": "lib_portal_invoice_schemas_ts"
     },
     {
-      "label": "invoice-quote.ts",
-      "file_type": "code",
-      "source_file": "lib/portal/invoice-quote.ts",
-      "source_location": "L1",
-      "community": 1,
-      "norm_label": "invoice-quote.ts",
-      "id": "lib_portal_invoice_quote_ts"
-    },
-    {
-      "label": "BillingConfigurationError",
-      "file_type": "code",
-      "source_file": "lib/portal/invoice-quote.ts",
-      "source_location": "L8",
-      "community": 1,
-      "norm_label": "billingconfigurationerror",
-      "id": "invoice_quote_billingconfigurationerror"
-    },
-    {
-      "label": "InvoiceQuoteMismatchError",
-      "file_type": "code",
-      "source_file": "lib/portal/invoice-quote.ts",
-      "source_location": "L9",
-      "community": 1,
-      "norm_label": "invoicequotemismatcherror",
-      "id": "invoice_quote_invoicequotemismatcherror"
-    },
-    {
-      "label": "quoteDraftLines()",
-      "file_type": "code",
-      "source_file": "lib/portal/invoice-quote.ts",
-      "source_location": "L14",
-      "community": 1,
-      "norm_label": "quotedraftlines()",
-      "id": "invoice_quote_quotedraftlines"
-    },
-    {
-      "label": "verifyInvoiceLines()",
-      "file_type": "code",
-      "source_file": "lib/portal/invoice-quote.ts",
-      "source_location": "L32",
-      "community": 1,
-      "norm_label": "verifyinvoicelines()",
-      "id": "invoice_quote_verifyinvoicelines"
-    },
-    {
-      "label": "calculateInvoiceTotals()",
-      "file_type": "code",
-      "source_file": "lib/portal/invoice-quote.ts",
-      "source_location": "L45",
-      "community": 1,
-      "norm_label": "calculateinvoicetotals()",
-      "id": "invoice_quote_calculateinvoicetotals"
-    },
-    {
-      "label": "validateIssuanceSettings()",
-      "file_type": "code",
-      "source_file": "lib/portal/invoice-quote.ts",
-      "source_location": "L59",
-      "community": 1,
-      "norm_label": "validateissuancesettings()",
-      "id": "invoice_quote_validateissuancesettings"
-    },
-    {
       "id": "lib_portal_invoice_errors_ts",
       "label": "invoice-errors.ts",
       "file_type": "code",
@@ -2507,13 +2444,6 @@
       "source_file": "lib/invoice-schema.test.ts",
       "source_location": "L1",
       "id": "lib_invoice_schema_test_ts"
-    },
-    {
-      "label": "invoice-quote.test.ts",
-      "file_type": "code",
-      "source_file": "lib/invoice-quote.test.ts",
-      "source_location": "L1",
-      "id": "lib_invoice_quote_test_ts"
     },
     {
       "label": "staff.ts",
@@ -4541,13 +4471,6 @@
       "source_location": "L26"
     },
     {
-      "id": "components_portal_learning_sessionworkspace_tsx",
-      "label": "SessionWorkspace.tsx",
-      "file_type": "code",
-      "source_file": "components/portal/learning/SessionWorkspace.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "lib_admin_form_state_test_ts",
       "label": "admin-form-state.test.ts",
       "file_type": "code",
@@ -4588,13 +4511,6 @@
       "file_type": "code",
       "source_file": "lib/portal/session-status.ts",
       "source_location": "L8"
-    },
-    {
-      "id": "lib_portal_workspace_action_types_ts",
-      "label": "workspace-action-types.ts",
-      "file_type": "code",
-      "source_file": "lib/portal/workspace-action-types.ts",
-      "source_location": "L1"
     },
     {
       "id": "lib_portal_workspace_actions_ts",
@@ -6409,6 +6325,125 @@
       "file_type": "code",
       "source_file": "lib/invoice-dialog-lifecycle.test.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "lib_portal_workspace_action_types_ts",
+      "label": "workspace-action-types.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/workspace-action-types.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "workspace_action_types_workspaceactionreferences",
+      "label": "workspaceActionReferences()",
+      "file_type": "code",
+      "source_file": "lib/portal/workspace-action-types.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "lib_workspace_action_references_test_ts",
+      "label": "workspace-action-references.test.ts",
+      "file_type": "code",
+      "source_file": "lib/workspace-action-references.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "workspace_action_references_test_modulelikeactions",
+      "label": "moduleLikeActions()",
+      "file_type": "code",
+      "source_file": "lib/workspace-action-references.test.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "lib_portal_invoice_quote_ts",
+      "label": "invoice-quote.ts",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "invoice-quote.ts"
+    },
+    {
+      "id": "invoice_quote_billingconfigurationerror",
+      "label": "BillingConfigurationError",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": "L8",
+      "community": 1,
+      "norm_label": "billingconfigurationerror"
+    },
+    {
+      "id": "invoice_quote_invoicequotemismatcherror",
+      "label": "InvoiceQuoteMismatchError",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": "L9",
+      "community": 1,
+      "norm_label": "invoicequotemismatcherror"
+    },
+    {
+      "id": "invoice_quote_quotedraftlines",
+      "label": "quoteDraftLines()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": "L14",
+      "community": 1,
+      "norm_label": "quotedraftlines()"
+    },
+    {
+      "id": "invoice_quote_verifyinvoicelines",
+      "label": "verifyInvoiceLines()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": "L33",
+      "community": 1,
+      "norm_label": "verifyinvoicelines()"
+    },
+    {
+      "id": "invoice_quote_calculateinvoicetotals",
+      "label": "calculateInvoiceTotals()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": "L46",
+      "community": 1,
+      "norm_label": "calculateinvoicetotals()"
+    },
+    {
+      "id": "invoice_quote_validatebillingcadence",
+      "label": "validateBillingCadence()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": "L60"
+    },
+    {
+      "id": "invoice_quote_validateissuancesettings",
+      "label": "validateIssuanceSettings()",
+      "file_type": "code",
+      "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": "L66",
+      "community": 1,
+      "norm_label": "validateissuancesettings()"
+    },
+    {
+      "id": "lib_invoice_quote_test_ts",
+      "label": "invoice-quote.test.ts",
+      "file_type": "code",
+      "source_file": "lib/invoice-quote.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_portal_learning_sessionworkspace_tsx",
+      "label": "SessionWorkspace.tsx",
+      "file_type": "code",
+      "source_file": "components/portal/learning/SessionWorkspace.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "portal_local_workflow_evidence",
+      "label": "Scoped authenticated local workflow evidence",
+      "file_type": "document",
+      "source_file": "docs/portal-completion/acceptance.md",
+      "source_location": "L69"
     }
   ],
   "links": [
@@ -15069,90 +15104,6 @@
       "confidence_score": 1.0
     },
     {
-      "source": "lib_portal_invoice_quote_ts",
-      "target": "invoice_quote_billingconfigurationerror",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoice-quote.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_src": "lib_portal_invoice_quote_ts",
-      "_tgt": "invoice_quote_billingconfigurationerror",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "lib_portal_invoice_quote_ts",
-      "target": "invoice_quote_invoicequotemismatcherror",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoice-quote.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_src": "lib_portal_invoice_quote_ts",
-      "_tgt": "invoice_quote_invoicequotemismatcherror",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "lib_portal_invoice_quote_ts",
-      "target": "invoice_quote_quotedraftlines",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoice-quote.ts",
-      "source_location": "L14",
-      "weight": 1.0,
-      "_src": "lib_portal_invoice_quote_ts",
-      "_tgt": "invoice_quote_quotedraftlines",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "lib_portal_invoice_quote_ts",
-      "target": "invoice_quote_verifyinvoicelines",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoice-quote.ts",
-      "source_location": "L32",
-      "weight": 1.0,
-      "_src": "lib_portal_invoice_quote_ts",
-      "_tgt": "invoice_quote_verifyinvoicelines",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "lib_portal_invoice_quote_ts",
-      "target": "invoice_quote_calculateinvoicetotals",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoice-quote.ts",
-      "source_location": "L45",
-      "weight": 1.0,
-      "_src": "lib_portal_invoice_quote_ts",
-      "_tgt": "invoice_quote_calculateinvoicetotals",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "lib_portal_invoice_quote_ts",
-      "target": "invoice_quote_validateissuancesettings",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoice-quote.ts",
-      "source_location": "L59",
-      "weight": 1.0,
-      "_src": "lib_portal_invoice_quote_ts",
-      "_tgt": "invoice_quote_validateissuancesettings",
-      "confidence_score": 1.0
-    },
-    {
-      "source": "invoice_quote_verifyinvoicelines",
-      "target": "invoice_quote_quotedraftlines",
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/portal/invoice-quote.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "_src": "invoice_quote_verifyinvoicelines",
-      "_tgt": "invoice_quote_quotedraftlines",
-      "confidence_score": 1.0
-    },
-    {
       "source": "lib_portal_invoices_ts",
       "target": "invoices_listparentinvoices",
       "relation": "contains",
@@ -16308,6 +16259,180 @@
       "confidence": "EXTRACTED",
       "source_file": "lib/invoice-dialog-lifecycle.test.ts",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_workspace_action_types_ts",
+      "target": "workspace_action_types_workspaceactionreferences",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/workspace-action-types.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_workspace_action_references_test_ts",
+      "target": "workspace_action_references_test_modulelikeactions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/workspace-action-references.test.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoice_quote_ts",
+      "target": "invoice_quote_billingconfigurationerror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoice_quote_ts",
+      "target": "invoice_quote_invoicequotemismatcherror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoice_quote_ts",
+      "target": "invoice_quote_quotedraftlines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoice_quote_ts",
+      "target": "invoice_quote_verifyinvoicelines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoice_quote_ts",
+      "target": "invoice_quote_calculateinvoicetotals",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoice_quote_ts",
+      "target": "invoice_quote_validatebillingcadence",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_portal_invoice_quote_ts",
+      "target": "invoice_quote_validateissuancesettings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "invoice_quote_quotedraftlines",
+      "target": "invoice_quote_validatebillingcadence",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "invoice_quote_verifyinvoicelines",
+      "target": "invoice_quote_quotedraftlines",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "invoice_quote_validateissuancesettings",
+      "target": "invoice_quote_validatebillingcadence",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/portal/invoice-quote.ts",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_workspace_action_references_test_ts",
+      "target": "workspace_action_types_workspaceactionreferences",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/workspace-action-references.test.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "lib_invoice_quote_test_ts",
+      "target": "lib_portal_invoice_quote_ts",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/invoice-quote.test.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "components_portal_learning_sessionworkspace_tsx",
+      "target": "workspace_action_types_workspaceactionreferences",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "components/portal/learning/SessionWorkspace.tsx",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_completion_acceptance",
+      "target": "portal_local_workflow_evidence",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/portal-completion/acceptance.md",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_local_workflow_evidence",
+      "target": "components_portal_learning_sessionworkspace_tsx",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "docs/portal-completion/acceptance.md",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_local_workflow_evidence",
+      "target": "lib_portal_invoice_quote_ts",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "docs/portal-completion/acceptance.md",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "portal_local_workflow_evidence",
+      "target": "portal_completion_rehearsal",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "docs/portal-completion/acceptance.md",
+      "source_location": "L77",
       "weight": 1.0
     }
   ],
